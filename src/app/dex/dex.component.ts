@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import DEX from '../shared/gamemaster.json';
+
+interface Pokemon {
+  speciesName: string;
+}
+
 
 @Component({
   selector: 'app-dex',
@@ -7,9 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DexComponent implements OnInit {
 
+  pks: Pokemon[] = DEX.pokemon;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
