@@ -1,3 +1,63 @@
-<p>
-  iv works!
-</p>
+<mat-card>
+  Choose a Pokémon, a league and input its IVs. The app will tell you how good
+  those IVs are for PvP.
+</mat-card>
+
+<mat-card class="maincard">
+  <mat-card-content>
+    <form (submit)="onSearch(ivForm)" #ivForm="ngForm">
+      <mat-form-field>
+        <input matInput placeholder="Name" name="name" [(ngModel)]="name" />
+      </mat-form-field>
+
+      <mat-form-field class="linput">
+        <mat-select placeholder="League" [(ngModel)]="league" name="league">
+          <mat-option value="great">Great</mat-option>
+          <mat-option value="ultra">Ultra</mat-option>
+          <mat-option value="master">Master</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <input
+        class="ivnumber"
+        matInput
+        type="number"
+        placeholder="Attack IV"
+        [(ngModel)]="att"
+        name="att"
+        value="15"
+      />
+      <input
+        class="ivnumber"
+        matInput
+        type="number"
+        placeholder="Defense IV"
+        [(ngModel)]="def"
+        name="def"
+        value="15"
+      />
+      <input
+        class="ivnumber"
+        matInput
+        type="number"
+        placeholder="HP IV"
+        [(ngModel)]="hp"
+        name="hp"
+        value="15"
+      />
+      <br />
+      <br />
+
+      <button mat-raised-button color="primary">Search</button>
+      <br />
+
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="maincard">
+  <mat-card-content>
+    {{ result }}
+  </mat-card-content>
+</mat-card>
