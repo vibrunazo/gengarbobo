@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import DEX from './gamemaster.json';
+import CPM from './cpm.json';
 
 @NgModule({
   declarations: [],
@@ -43,6 +44,12 @@ export class Pokemon {
 
   static getStatProduct(): number {
     return 0;
+  }
+
+  static getCPMFromLevel(level: number): number {
+    const i = level * 2 - 2;
+
+    return CPM[i].cpm;
   }
 
 }

@@ -27,9 +27,8 @@ export class IvComponent implements OnInit {
     }
     const pk = Pokemon.searchPkByName(form.value.name);
     if (pk !== undefined) {
-      this.result = `Pokémon is: ${pk.speciesName}, it has ${
-        pk.baseStats.atk
-      } attack, ${pk.baseStats.def} defense and ${pk.baseStats.hp} hp`;
+      this.result = `Pokémon is: ${pk.speciesName}, it has ${pk.baseStats.atk} attack,
+      ${pk.baseStats.def} defense and ${pk.baseStats.hp} hp -- CPM is ${Pokemon.getCPMFromLevel(24.5)}`;
     } else {
       this.result = `Could not find a Pokémon named '${form.value.name}'`;
     }
