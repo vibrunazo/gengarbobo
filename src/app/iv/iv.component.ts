@@ -11,7 +11,7 @@ import DEX from '../shared/gamemaster.json';
 export class IvComponent implements OnInit {
   name = 'Skarmory';
   league = 'Great';
-  att = 15;
+  atk = 15;
   def = 15;
   hp = 15;
   result = 'Result will show here.';
@@ -25,10 +25,12 @@ export class IvComponent implements OnInit {
     if (form.value.name === '') {
       return;
     }
-    const pk = Pokemon.searchPkByName(form.value.name);
-    if (pk !== undefined) {
-      this.result = `Pokémon is: ${pk.speciesName}, it has ${pk.baseStats.atk} attack,
-      ${pk.baseStats.def} defense and ${pk.baseStats.hp} hp -- CPM is ${Pokemon.getCPMFromLevel(24.5)}`;
+    const species = Pokemon.searchPkByName(form.value.name);
+    if (species !== undefined) {
+      const pk = new Pokemon(species, 40, this.atk, this.def, this.hp);
+      this.result = `Pokémon is: ${species.speciesName} level ${pk.level}, it has ${pk.stats.atk} attack,
+      ${pk.stats.def} defense and ${pk.stats.hp} hp -- Stat product is ${pk.getStatProd()}
+      and CP = ${pk.getCP()}`;
     } else {
       this.result = `Could not find a Pokémon named '${form.value.name}'`;
     }
