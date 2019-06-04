@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Pokemon } from '../shared/shared.module';
+import { Pokemon, PokemonSpecies } from '../shared/shared.module';
 import DEX from '../shared/gamemaster.json';
 
 @Component({
@@ -10,12 +10,13 @@ import DEX from '../shared/gamemaster.json';
 })
 export class IvComponent implements OnInit {
   name = 'Skarmory';
-  league = 'Great';
+  species: PokemonSpecies;
+  league = 'master';
   atk = 15;
   def = 15;
   hp = 15;
   result = 'Result will show here.';
-  pks: Pokemon[];
+  pks: Pokemon[] = [];
 
   constructor() {}
 
@@ -25,12 +26,17 @@ export class IvComponent implements OnInit {
     if (form.value.name === '') {
       return;
     }
-    const species = Pokemon.searchPkByName(form.value.name);
-    if (species !== undefined) {
-      const pk = new Pokemon(species, 40, this.atk, this.def, this.hp);
-      this.result = `Pokémon is: ${species.speciesName} level ${pk.level}, it has ${pk.stats.atk} attack,
-      ${pk.stats.def} defense and ${pk.stats.hp} hp -- Stat product is ${pk.getStatProd()}
-      and CP = ${pk.getCP()}`;
+    this.species = Pokemon.searchPkByName(form.value.name);
+    if (this.species !== undefined) {
+      // const pk = new Pokemon(this.species, 40, this.atk, this.def, this.hp);
+      // this.result = `Pokémon is: ${this.species.speciesName} level ${pk.level},
+      // it has ${pk.stats.atk} attack,
+      // ${pk.stats.def} defense and ${pk.stats.hp} hp --
+      // Stat product is ${pk.getStatProd()}
+      // and CP = ${pk.getCP()}`;
+
+      this.buildList();
+      this.writeList();
     } else {
       this.result = `Could not find a Pokémon named '${form.value.name}'`;
     }
@@ -44,5 +50,40 @@ export class IvComponent implements OnInit {
     //     '/' +
     //     form.value.hp +
     //     ' IVs.';
+  }
+
+  writeList() {
+    this.result = '\nCP      IV      ATK DEF HP      STATS';
+    this.pks.forEach(pk => {
+      this.result += '\n';
+      this.result += pk.getCP() + '  ';
+      this.result += pk.iv.atk + '/';
+      this.result += pk.iv.def + '/';
+      this.result += pk.iv.hp + '  ';
+      this.result += Math.round(pk.stats.atk) + '  ';
+      this.result += Math.round(pk.stats.def) + '  ';
+      this.result += Math.round(pk.stats.hp) + '   ';
+      this.result += Math.round(pk.statprod) + '   ';
+    });
+  }
+
+  buildList() {
+    // let atk = 0; let def = 0; let hp = 0;
+    this.pks = [];
+    for (let atk = 0; atk < 16; atk++) {
+      for (let def = 0; def < 16; def++) {
+        for (let hp = 0; hp < 16; hp++) {
+          this.addPkToList(new Pokemon(this.species, 40, atk, def, hp));
+        }
+      }
+    }
+
+    this.pks.sort((a, b) => {
+      return b.statprod - a.statprod;
+    });
+  }
+
+  addPkToList(pokemon: Pokemon) {
+    this.pks.push(pokemon);
   }
 }

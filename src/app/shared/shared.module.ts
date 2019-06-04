@@ -36,6 +36,7 @@ export class Pokemon {
     atk: 0, def: 0, hp: 0
   };
   cpm = 0;
+  statprod = 0;
 
   // search a Pokémon by name, return Dex number
   static searchDexByName(name: string): number {
@@ -77,6 +78,7 @@ export class Pokemon {
     this.stats.def = ((species.baseStats.def + defiv) * cpm);
     this.stats.hp = ((species.baseStats.hp + hpiv) * cpm);
     this.cpm = cpm;
+    this.statprod = this.getStatProd();
 
   }
 
