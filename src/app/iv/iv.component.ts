@@ -8,7 +8,8 @@ import { Pokemon, PokemonSpecies, Move } from '../shared/shared.module';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  name = isDevMode ? 'Skarmory' : '';
+  // name = isDevMode ? 'Skarmory' : '';
+  name = '';
   species: PokemonSpecies;
   league = 'great';
   atk = 15;
@@ -125,9 +126,9 @@ export class IvComponent implements OnInit {
   }
 
   gaSend() {
-    if (isDevMode()) {
-      return;
-    }
+    // if (isDevMode()) {
+    //   return;
+    // }
 
     // Send the event to the Google Analytics property
     // with tracking ID GA_TRACKING_ID.
