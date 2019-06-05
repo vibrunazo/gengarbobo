@@ -1,6 +1,6 @@
 import { Component, OnInit, isDevMode } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Pokemon, PokemonSpecies } from '../shared/shared.module';
+import { Pokemon, PokemonSpecies, Move } from '../shared/shared.module';
 
 @Component({
   selector: 'app-iv',
@@ -18,6 +18,8 @@ export class IvComponent implements OnInit {
   pks: Pokemon[] = [];
   yourrank = 0;
   max = 0;
+  yourpk: Pokemon;
+  yourfastmove: Move;
 
   constructor() {}
 
@@ -40,10 +42,12 @@ export class IvComponent implements OnInit {
   }
 
   writeList() {
-    const yourpk = this.pks[this.yourrank - 1];
+    this.yourpk = this.pks[this.yourrank - 1];
+    const yourpk = this.yourpk;
+    this.yourfastmove = yourpk.getBestFastMove();
     this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
-    this.result += `\nMoves: ${yourpk.getBestFastMove().name} ${yourpk.getBestChargedMove().name} ${yourpk.getBestDPS()}`;
-    this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP';
+    this.result += `\nFast Move ${this.yourfastmove.name}.`;
+    this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP    Breakpoints';
     this.result += '\n';
     this.writePkm(yourpk, this.yourrank);
     this.result += '\n';
@@ -66,7 +70,11 @@ export class IvComponent implements OnInit {
     this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
+    // this.result += ((pk.stats.atk) + ' ').padStart(6);
+    // this.result += ((pk.stats.def) + ' ').padStart(4);
     this.result += (Math.round(pk.stats.hp) + '  ').padStart(5);
+    this.result += (this.yourpk.getDamageToEnemy(this.yourfastmove, pk) + ' - ').padStart(5);
+    this.result += (pk.getDamageToEnemy(this.yourfastmove, this.yourpk) + '  ').padStart(3);
   }
 
   buildList() {

@@ -22,16 +22,13 @@ export class Move {
   buffApplyChance?: string;
 
   static findMoveById(id: string): Move {
-    const move: Move = DEX.moves.find((m) => {
+    const move: Move = DEX.moves.find(m => {
       return m.moveId === id;
     });
     return move;
   }
 
-  constructor() {
-
-  }
-
+  constructor() {}
 }
 
 // "moveId": "ANCIENT_POWER",
@@ -98,7 +95,7 @@ export class Pokemon {
   static getCPMFromLevel(level: number): number {
     const i = level * 2 - 2;
 
-    return CPM[i].cpm;
+    return CPM[i];
   }
 
   constructor(
@@ -135,7 +132,7 @@ export class Pokemon {
     const cpm = Pokemon.getCPMFromLevel(newLevel);
     this.stats.atk = (this.species.baseStats.atk + this.iv.atk) * cpm;
     this.stats.def = (this.species.baseStats.def + this.iv.def) * cpm;
-    this.stats.hp = (this.species.baseStats.hp + this.iv.hp) * cpm;
+    this.stats.hp = Math.floor((this.species.baseStats.hp + this.iv.hp) * cpm);
     this.cpm = cpm;
     this.cp = this.getCP();
     this.statprod = this.getStatProd();
@@ -166,7 +163,7 @@ export class Pokemon {
   // returns an array with all the fast moves as 'Move' objects
   getFastMoves(): Move[] {
     const moves: Move[] = [];
-    this.species.fastMoves.forEach((m) => {
+    this.species.fastMoves.forEach(m => {
       moves.push(Move.findMoveById(m));
     });
     return moves;
@@ -180,7 +177,7 @@ export class Pokemon {
     const charged = this.getBestChargedMove();
     let best = moves[0];
     let bestdps = 0;
-    moves.forEach((m) => {
+    moves.forEach(m => {
       if (bestdps < this.getMovesetDPS(m, charged)) {
         bestdps = this.getMovesetDPS(m, charged);
         best = m;
@@ -190,28 +187,33 @@ export class Pokemon {
   }
 
   getBestDPS(): number {
-    return this.getMovesetDPS(this.getBestFastMove(), this.getBestChargedMove());
+    return this.getMovesetDPS(
+      this.getBestFastMove(),
+      this.getBestChargedMove()
+    );
   }
 
   getMovesetDPS(fast: Move, charged: Move): number {
-
-    return this.getFastMoveDPS(fast) + (this.getChargedMoveDpe(charged) * this.getFastMoveEPS(fast));
+    return (
+      this.getFastMoveDPS(fast) +
+      this.getChargedMoveDpe(charged) * this.getFastMoveEPS(fast)
+    );
   }
 
   // returns the dps of spamming this fast move, STAB considered if any
   getFastMoveDPS(move: Move): number {
-    return this.getSTAB(move) * 1000 * move.power / move.cooldown;
+    return (this.getSTAB(move) * 1000 * move.power) / move.cooldown;
   }
 
   // returns the energy per second of spamming this fast move
   getFastMoveEPS(move: Move): number {
-    return move.energyGain * 1000 / move.cooldown;
+    return (move.energyGain * 1000) / move.cooldown;
   }
 
   // returns an array with all charged Moves as Move objects
   getChargedMoves(): Move[] {
     const moves: Move[] = [];
-    this.species.chargedMoves.forEach((m) => {
+    this.species.chargedMoves.forEach(m => {
       moves.push(Move.findMoveById(m));
     });
     return moves;
@@ -224,7 +226,7 @@ export class Pokemon {
     const moves: Move[] = this.getChargedMoves();
     let best: Move;
     let bestdpe = 0;
-    moves.forEach((m) => {
+    moves.forEach(m => {
       if (bestdpe < this.getChargedMoveDpe(m)) {
         bestdpe = this.getChargedMoveDpe(m);
         best = m;
@@ -235,7 +237,7 @@ export class Pokemon {
 
   // returns the Damage Per Energy of a charged move for this pokémon, considers STAB
   getChargedMoveDpe(move: Move): number {
-    return this.getSTAB(move) * move.power / move.energy;
+    return (this.getSTAB(move) * move.power) / move.energy;
   }
 
   // returns 1.2 if this move has STAB with this pokémon, 1 if it does not
@@ -246,6 +248,208 @@ export class Pokemon {
     return 1;
   }
 
+  // how much damage I do with this move to this enemy
+  getDamageToEnemy(move: Move, enemy: Pokemon) {
+    const atk = this.stats.atk;
+    const def = enemy.stats.def;
+    const pow = move.power;
+    const bonus = 1.3;
+    const eff = this.getEffectiveness(move.type, enemy.species.types);
+
+    return Math.floor((0.5 * this.getSTAB(move) * eff * bonus * pow * atk) / def) + 1;
+  }
+
+  // Given a move type and array of defensive types, return the final type effectiveness multiplier
+  // taken from pvpoke
+  getEffectiveness(moveType: string, targetTypes: string[]): number {
+    let effectiveness = 1;
+
+    moveType = moveType.toLowerCase();
+
+    for (let type of targetTypes) {
+      type = type.toLowerCase();
+      const traits = this.getTypeTraits(type);
+
+      if (traits.weaknesses.includes(moveType)) {
+        effectiveness *= 1.6;
+      } else if (traits.resistances.includes(moveType)) {
+        effectiveness *= 0.625;
+      } else if (traits.immunities.includes(moveType)) {
+        effectiveness *= 0.390625;
+      }
+    }
+
+    return effectiveness;
+  }
+
+  // Helper function that returns an array of weaknesses, resistances, and immunities given defensive type
+  // taken from https://github.com/pvpoke/pvpoke/blob/master/src/js/battle/Battle.js
+  getTypeTraits(type) {
+    let traits = {
+      weaknesses: [],
+      resistances: [],
+      immunities: []
+    };
+
+    switch (type) {
+      case 'normal':
+        traits = {
+          resistances: [],
+          weaknesses: ['fighting'],
+          immunities: ['ghost']
+        };
+        break;
+
+      case 'fighting':
+        traits = {
+          resistances: ['rock', 'bug', 'dark'],
+          weaknesses: ['flying', 'psychic', 'fairy'],
+          immunities: []
+        };
+        break;
+
+      case 'flying':
+        traits = {
+          resistances: ['fighting', 'bug', 'grass'],
+          weaknesses: ['rock', 'electric', 'ice'],
+          immunities: ['ground']
+        };
+        break;
+
+      case 'poison':
+        traits = {
+          resistances: ['fighting', 'poison', 'bug', 'fairy', 'grass'],
+          weaknesses: ['ground', 'psychic'],
+          immunities: []
+        };
+        break;
+
+      case 'ground':
+        traits = {
+          resistances: ['poison', 'rock'],
+          weaknesses: ['water', 'grass', 'ice'],
+          immunities: ['electric']
+        };
+        break;
+
+      case 'rock':
+        traits = {
+          resistances: ['normal', 'flying', 'poison', 'fire'],
+          weaknesses: ['fighting', 'ground', 'steel', 'water', 'grass'],
+          immunities: []
+        };
+        break;
+
+      case 'bug':
+        traits = {
+          resistances: ['fighting', 'ground', 'grass'],
+          weaknesses: ['flying', 'rock', 'fire'],
+          immunities: []
+        };
+        break;
+
+      case 'ghost':
+        traits = {
+          resistances: ['poison', 'bug'],
+          weaknesses: ['ghost', 'dark'],
+          immunities: ['normal', 'fighting']
+        };
+        break;
+
+      case 'steel':
+        traits = {
+          resistances: [
+            'normal',
+            'flying',
+            'rock',
+            'bug',
+            'steel',
+            'grass',
+            'psychic',
+            'ice',
+            'dragon',
+            'fairy'
+          ],
+          weaknesses: ['fighting', 'ground', 'fire'],
+          immunities: ['poison']
+        };
+        break;
+
+      case 'fire':
+        traits = {
+          resistances: ['bug', 'steel', 'fire', 'grass', 'ice', 'fairy'],
+          weaknesses: ['ground', 'rock', 'water'],
+          immunities: []
+        };
+        break;
+
+      case 'water':
+        traits = {
+          resistances: ['steel', 'fire', 'water', 'ice'],
+          weaknesses: ['grass', 'electric'],
+          immunities: []
+        };
+        break;
+
+      case 'grass':
+        traits = {
+          resistances: ['ground', 'water', 'grass', 'electric'],
+          weaknesses: ['flying', 'poison', 'bug', 'fire', 'ice'],
+          immunities: []
+        };
+        break;
+
+      case 'electric':
+        traits = {
+          resistances: ['flying', 'steel', 'electric'],
+          weaknesses: ['ground'],
+          immunities: []
+        };
+        break;
+
+      case 'psychic':
+        traits = {
+          resistances: ['fighting', 'psychic'],
+          weaknesses: ['bug', 'ghost', 'dark'],
+          immunities: []
+        };
+        break;
+
+      case 'ice':
+        traits = {
+          resistances: ['ice'],
+          weaknesses: ['fighting', 'fire', 'steel', 'rock'],
+          immunities: []
+        };
+        break;
+
+      case 'dragon':
+        traits = {
+          resistances: ['fire', 'water', 'grass', 'electric'],
+          weaknesses: ['dragon', 'ice', 'fairy'],
+          immunities: []
+        };
+        break;
+
+      case 'dark':
+        traits = {
+          resistances: ['ghost', 'dark'],
+          weaknesses: ['fighting', 'fairy', 'bug'],
+          immunities: ['psychic']
+        };
+        break;
+
+      case 'fairy':
+        traits = {
+          resistances: ['fighting', 'bug', 'dark'],
+          weaknesses: ['poison', 'steel'],
+          immunities: ['dragon']
+        };
+        break;
+    }
+
+    return traits;
+  }
 }
 
 // "dex": 3,
