@@ -2,7 +2,7 @@
 
 @include mat-core();
 
-$gengartheme-primary: mat-palette($mat-purple);
+$gengartheme-primary: mat-palette($mat-purple, 600, 700, 800);
 $gengartheme-accent: mat-palette($mat-amber, 500, 400, 600);
 $gengartheme-warn: mat-palette($mat-red, 600, 500, 700);
 
