@@ -18,6 +18,10 @@ mat-card a {
   color: mat-color(mat-palette($mat-amber, 500, 400, 600));
 }
 
+button.mat-raised-button.mat-primary {
+  background-color: mat-color(mat-palette($mat-purple, A400, 700, 800)) !important;
+}
+
 a {
   text-decoration: none;
   outline: 0;
