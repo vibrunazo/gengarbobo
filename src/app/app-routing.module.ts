@@ -7,6 +7,7 @@ import { IvComponent } from './iv/iv.component';
 
 const routes: Routes = [
   { path: '', component: NewsComponent },
+  { path: 'news', component: NewsComponent },
   { path: 'dex', component: DexComponent },
   { path: 'iv', component: IvComponent },
   { path: 'about', component: AboutComponent },

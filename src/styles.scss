@@ -1,4 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/gengartheme.scss';
+
+$primary: map-get($gengartheme, primary);
+$accent: map-get($gengartheme, accent);
+$warn: map-get($gengartheme, warn);
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// disable gray background when the icon button is focused
+.mat-button,
+.mat-icon-button {
+  &.cdk-focused,
+  &.cdk-program-focused {
+    background-color: none !important;
+
+    .mat-button-focus-overlay {
+      display: none !important;
+    }
+  }
+}
+
+
+mat-card {
+  margin: 4px;
+}
