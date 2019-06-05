@@ -56,7 +56,7 @@ export class IvComponent implements OnInit {
 
   writeList() {
     this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
-    this.result += '\nRANK CP   LEVEL    IV       ATK  DEF  HP   STATS  %';
+    this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP';
     const yourpk = this.pks[this.yourrank - 1];
     this.result += '\n';
     this.writePkm(yourpk, this.yourrank);
@@ -74,11 +74,11 @@ export class IvComponent implements OnInit {
     this.result += (pk.iv.atk + '/').padStart(3);
     this.result += (pk.iv.def + '/').padStart(3);
     this.result += (pk.iv.hp + '  ').padStart(4);
-    this.result += (Math.round(pk.stats.atk) + '  ').padStart(5);
-    this.result += (Math.round(pk.stats.def) + '  ').padStart(5);
-    this.result += (Math.round(pk.stats.hp) + '   ').padStart(6);
-    this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(5);
     this.result += ((100 * pk.statprod / this.max).toFixed(2) + '%').padStart(7);
+    this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
+    this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
+    this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
+    this.result += (Math.round(pk.stats.hp) + '  ').padStart(5);
   }
 
   buildList() {
