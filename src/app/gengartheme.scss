@@ -2,8 +2,8 @@
 
 @include mat-core();
 
-$gengartheme-primary: mat-palette($mat-purple, 600, 700, 800);
-$gengartheme-accent: mat-palette($mat-amber, 500, 400, 600);
+$gengartheme-primary: mat-palette($mat-purple, A200, 700, 800);
+$gengartheme-accent: mat-palette($mat-purple, 600, 700, 800);
 $gengartheme-warn: mat-palette($mat-red, 600, 500, 700);
 
 $gengartheme: mat-dark-theme($gengartheme-primary, $gengartheme-accent, $gengartheme-warn);
@@ -15,7 +15,7 @@ $accent: map-get($gengartheme, accent);
 $warn: map-get($gengartheme, warn);
 
 mat-card a {
-  color: mat-color($accent);
+  color: mat-color(mat-palette($mat-amber, 500, 400, 600));
 }
 
 a {
