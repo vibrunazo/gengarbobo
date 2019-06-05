@@ -9,7 +9,7 @@ import DEX from '../shared/gamemaster.json';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  name = 'Skarmory';
+  name = '';
   species: PokemonSpecies;
   league = 'great';
   atk = 15;
@@ -52,6 +52,8 @@ export class IvComponent implements OnInit {
     //     '/' +
     //     form.value.hp +
     //     ' IVs.';
+
+    this.gaSend();
   }
 
   writeList() {
@@ -74,7 +76,9 @@ export class IvComponent implements OnInit {
     this.result += (pk.iv.atk + '/').padStart(3);
     this.result += (pk.iv.def + '/').padStart(3);
     this.result += (pk.iv.hp + '  ').padStart(4);
-    this.result += ((100 * pk.statprod / this.max).toFixed(2) + '%').padStart(7);
+    this.result += (((100 * pk.statprod) / this.max).toFixed(2) + '%').padStart(
+      7
+    );
     this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
@@ -126,5 +130,18 @@ export class IvComponent implements OnInit {
     }
     this.max = Math.max(this.max, pokemon.statprod);
     this.pks.push(pokemon);
+  }
+
+  gaSend() {
+    // Send the event to the Google Analytics property
+    // with tracking ID GA_TRACKING_ID.
+    // (<any>window).gtag('config', 'UA-122077579-2', {'page_path': event.urlAfterRedirects});
+    (window as any).gtag('event', 'search', {
+      send_to: 'UA-122077579-2',
+      event_category: 'Iv',
+      event_action: `Pk: ${this.name} l: ${this.league} iv: ${this.atk}/${this.def}/${this.hp}`,
+      event_value: 'iv',
+      event_label: 'iv'
+    });
   }
 }
