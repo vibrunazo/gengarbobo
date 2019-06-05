@@ -30,11 +30,16 @@ export class Pokemon {
   species: PokemonSpecies;
   level: number;
   stats = {
-    atk: 0, def: 0, hp: 0
+    atk: 0,
+    def: 0,
+    hp: 0
   };
   iv = {
-    atk: 0, def: 0, hp: 0
+    atk: 0,
+    def: 0,
+    hp: 0
   };
+  cp = 10;
   cpm = 0;
   statprod = 0;
 
@@ -52,34 +57,27 @@ export class Pokemon {
     return r;
   }
 
-  static getStatProduct(): number {
-    return 0;
-  }
-
+  // returns the CP Multiplier for a pokémon of this level
   static getCPMFromLevel(level: number): number {
     const i = level * 2 - 2;
 
     return CPM[i].cpm;
   }
 
-  // returns how much Attack stat a pokémon with
-  static getAtk(): number {
-    return 0;
-  }
-
-  constructor(species: PokemonSpecies, level: number, atkiv: number, defiv: number, hpiv: number) {
+  constructor(
+    species: PokemonSpecies,
+    level: number,
+    atkiv: number,
+    defiv: number,
+    hpiv: number
+  ) {
     this.iv.atk = atkiv;
     this.iv.def = defiv;
     this.iv.hp = hpiv;
-    this.level = level;
-    this.species = species;
-    const cpm = Pokemon.getCPMFromLevel(level);
-    this.stats.atk = ((species.baseStats.atk + atkiv) * cpm);
-    this.stats.def = ((species.baseStats.def + defiv) * cpm);
-    this.stats.hp = ((species.baseStats.hp + hpiv) * cpm);
-    this.cpm = cpm;
-    this.statprod = this.getStatProd();
 
+    this.species = species;
+
+    this.setLevel(level);
   }
 
   getStatProd(): number {
@@ -92,9 +90,41 @@ export class Pokemon {
     const def = this.species.baseStats.def + this.iv.def;
     const hp = this.species.baseStats.hp + this.iv.hp;
     const cpm = this.cpm;
-    return Math.floor( (atk * (def ** 0.5) * (hp ** 0.5) * (cpm ** 2) / 10) );
+    return Math.floor((atk * def ** 0.5 * hp ** 0.5 * cpm ** 2) / 10);
   }
 
+  setLevel(newLevel: number) {
+    this.level = newLevel;
+    const cpm = Pokemon.getCPMFromLevel(newLevel);
+    this.stats.atk = (this.species.baseStats.atk + this.iv.atk) * cpm;
+    this.stats.def = (this.species.baseStats.def + this.iv.def) * cpm;
+    this.stats.hp = (this.species.baseStats.hp + this.iv.hp) * cpm;
+    this.cpm = cpm;
+    this.cp = this.getCP();
+    this.statprod = this.getStatProd();
+  }
+
+  // returns whether this pokémon can fight in 'great' or 'ultra' league.
+  // Returns true if CP is <= 1500 for 'great', or <= 2500 for 'ultra'. False otherwise
+  canFightLeague(league: string): boolean {
+    switch (league) {
+      case 'great':
+        if (this.cp <= 1500) {
+          return true;
+        }
+        return false;
+        break;
+      case 'ultra':
+        if (this.cp <= 2500) {
+          return true;
+        }
+        return false;
+
+      default:
+        break;
+    }
+    return true;
+  }
 }
 
 // "dex": 3,

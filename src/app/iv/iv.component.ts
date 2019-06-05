@@ -11,12 +11,13 @@ import DEX from '../shared/gamemaster.json';
 export class IvComponent implements OnInit {
   name = 'Skarmory';
   species: PokemonSpecies;
-  league = 'master';
+  league = 'great';
   atk = 15;
   def = 15;
   hp = 15;
   result = 'Result will show here.';
   pks: Pokemon[] = [];
+  yourrank = 0;
 
   constructor() {}
 
@@ -53,18 +54,29 @@ export class IvComponent implements OnInit {
   }
 
   writeList() {
-    this.result = '\nCP      IV      ATK DEF HP      STATS';
-    this.pks.forEach(pk => {
-      this.result += '\n';
-      this.result += pk.getCP() + '  ';
-      this.result += pk.iv.atk + '/';
-      this.result += pk.iv.def + '/';
-      this.result += pk.iv.hp + '  ';
-      this.result += Math.round(pk.stats.atk) + '  ';
-      this.result += Math.round(pk.stats.def) + '  ';
-      this.result += Math.round(pk.stats.hp) + '   ';
-      this.result += Math.round(pk.statprod) + '   ';
+    this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
+    this.result += '\nRANK CP   LEVEL    IV       ATK  DEF  HP   STATS';
+    const yourpk = this.pks[this.yourrank - 1];
+    this.result += '\n';
+    this.writePkm(yourpk, this.yourrank);
+    this.result += '\n';
+    this.pks.forEach((pk, i) => {
+      this.writePkm(pk, i + 1);
     });
+  }
+
+  writePkm(pk: Pokemon, rank: number) {
+    this.result += '\n';
+    this.result += (rank + ' ').padStart(5);
+    this.result += (pk.cp + '  ').padStart(5);
+    this.result += (pk.level + '  ').padStart(6);
+    this.result += (pk.iv.atk + '/').padStart(3);
+    this.result += (pk.iv.def + '/').padStart(3);
+    this.result += (pk.iv.hp + '  ').padStart(4);
+    this.result += (Math.round(pk.stats.atk) + '  ').padStart(5);
+    this.result += (Math.round(pk.stats.def) + '  ').padStart(5);
+    this.result += (Math.round(pk.stats.hp) + '   ').padStart(6);
+    this.result += (Math.round(pk.statprod / 1000));
   }
 
   buildList() {
@@ -73,7 +85,8 @@ export class IvComponent implements OnInit {
     for (let atk = 0; atk < 16; atk++) {
       for (let def = 0; def < 16; def++) {
         for (let hp = 0; hp < 16; hp++) {
-          this.addPkToList(new Pokemon(this.species, 40, atk, def, hp));
+          const level = 40;
+          this.addPkToList(new Pokemon(this.species, level, atk, def, hp));
         }
       }
     }
@@ -81,9 +94,33 @@ export class IvComponent implements OnInit {
     this.pks.sort((a, b) => {
       return b.statprod - a.statprod;
     });
+
+    this.yourrank =
+      1 +
+      this.pks.findIndex(pk => {
+        return (
+          pk.iv.atk === this.atk &&
+          pk.iv.def === this.def &&
+          pk.iv.hp === this.hp
+        );
+        // return pk.iv === { atk: this.atk, def: this.def, hp: this.hp };
+      });
   }
 
   addPkToList(pokemon: Pokemon) {
+    if (this.league !== 'master') {
+      const ivs = `${pokemon.iv.atk}/${pokemon.iv.def}/${pokemon.iv.hp}`;
+      // if (pokemon.canFightLeague(this.league)) {
+
+      // } else {
+
+      // }
+      while (!pokemon.canFightLeague(this.league)) {
+        // console.log(`${this.name} ${pokemon.cp} ${ivs} lv${pokemon.level} canNOT fight in ${this.league}.`);
+        pokemon.setLevel(pokemon.level - 0.5);
+      }
+      // console.log(`${this.name} ${pokemon.cp} ${ivs} lv${pokemon.level} can fight in ${this.league}.`);
+    }
     this.pks.push(pokemon);
   }
 }
