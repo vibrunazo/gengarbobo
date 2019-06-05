@@ -177,7 +177,16 @@ export class Pokemon {
   // depends on best getBestChargedMove to calculate moveset dps
   getBestFastMove(): Move {
     const moves: Move[] = this.getFastMoves();
-    return moves[0];
+    const charged = this.getBestChargedMove();
+    let best = moves[0];
+    let bestdps = 0;
+    moves.forEach((m) => {
+      if (bestdps < this.getMovesetDPS(m, charged)) {
+        bestdps = this.getMovesetDPS(m, charged);
+        best = m;
+      }
+    });
+    return best;
   }
 
   getBestDPS(): number {
