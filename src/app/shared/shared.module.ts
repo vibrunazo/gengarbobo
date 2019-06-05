@@ -9,6 +9,43 @@ import CPM from './cpm.json';
 })
 export class SharedModule {}
 
+export class Move {
+  moveId: string;
+  name: string;
+  type: string;
+  power: number;
+  energy: number;
+  energyGain: number;
+  cooldown?: number;
+  buffs?: number[];
+  buffTarget?: string;
+  buffApplyChance?: string;
+
+  static findMoveById(id: string): Move {
+    const move: Move = DEX.moves.find((m) => {
+      return m.moveId === id;
+    });
+    return move;
+  }
+
+  constructor() {
+
+  }
+
+}
+
+// "moveId": "ANCIENT_POWER",
+//       "name": "Ancient Power",
+//       "type": "rock",
+//       "power": 70,
+//       "energy": 45,
+//       "energyGain": 0,
+//       "cooldown": 500,
+// 	  "buffs": [2, 2],
+// 	  "buffTarget": "self",
+// 	  "buffApplyChance": ".1"
+//     },
+
 export class PokemonSpecies {
   speciesName: string;
   speciesId: string;
@@ -125,6 +162,81 @@ export class Pokemon {
     }
     return true;
   }
+
+  // returns an array with all the fast moves as 'Move' objects
+  getFastMoves(): Move[] {
+    const moves: Move[] = [];
+    this.species.fastMoves.forEach((m) => {
+      moves.push(Move.findMoveById(m));
+    });
+    return moves;
+  }
+
+  // returns the fast Move that offers the best moveset dps
+  // considers both the move dps and energy gain,
+  // depends on best getBestChargedMove to calculate moveset dps
+  getBestFastMove(): Move {
+    const moves: Move[] = this.getFastMoves();
+    return moves[0];
+  }
+
+  getBestDPS(): number {
+    return this.getMovesetDPS(this.getBestFastMove(), this.getBestChargedMove());
+  }
+
+  getMovesetDPS(fast: Move, charged: Move): number {
+
+    return this.getFastMoveDPS(fast) + (this.getChargedMoveDpe(charged) * this.getFastMoveEPS(fast));
+  }
+
+  // returns the dps of spamming this fast move, STAB considered if any
+  getFastMoveDPS(move: Move): number {
+    return this.getSTAB(move) * 1000 * move.power / move.cooldown;
+  }
+
+  // returns the energy per second of spamming this fast move
+  getFastMoveEPS(move: Move): number {
+    return move.energyGain * 1000 / move.cooldown;
+  }
+
+  // returns an array with all charged Moves as Move objects
+  getChargedMoves(): Move[] {
+    const moves: Move[] = [];
+    this.species.chargedMoves.forEach((m) => {
+      moves.push(Move.findMoveById(m));
+    });
+    return moves;
+  }
+
+  // returns the charged Move that offers the best moveset dpe
+  // it's a simple damage per energy calculation,
+  // modified by STAB if it has it
+  getBestChargedMove(): Move {
+    const moves: Move[] = this.getChargedMoves();
+    let best: Move;
+    let bestdpe = 0;
+    moves.forEach((m) => {
+      if (bestdpe < this.getChargedMoveDpe(m)) {
+        bestdpe = this.getChargedMoveDpe(m);
+        best = m;
+      }
+    });
+    return best;
+  }
+
+  // returns the Damage Per Energy of a charged move for this pokémon, considers STAB
+  getChargedMoveDpe(move: Move): number {
+    return this.getSTAB(move) * move.power / move.energy;
+  }
+
+  // returns 1.2 if this move has STAB with this pokémon, 1 if it does not
+  getSTAB(move: Move): number {
+    if (this.species.types.includes(move.type)) {
+      return 1.2;
+    }
+    return 1;
+  }
+
 }
 
 // "dex": 3,

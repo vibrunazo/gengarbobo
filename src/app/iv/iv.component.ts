@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, isDevMode } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Pokemon, PokemonSpecies } from '../shared/shared.module';
-import DEX from '../shared/gamemaster.json';
 
 @Component({
   selector: 'app-iv',
@@ -9,13 +8,13 @@ import DEX from '../shared/gamemaster.json';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  name = '';
+  name = isDevMode ? 'Skarmory' : '';
   species: PokemonSpecies;
   league = 'great';
   atk = 15;
   def = 15;
   hp = 15;
-  result = 'Result will show here.';
+  result = 'Results will show here.';
   pks: Pokemon[] = [];
   yourrank = 0;
   max = 0;
@@ -30,36 +29,21 @@ export class IvComponent implements OnInit {
     }
     this.species = Pokemon.searchPkByName(form.value.name);
     if (this.species !== undefined) {
-      // const pk = new Pokemon(this.species, 40, this.atk, this.def, this.hp);
-      // this.result = `Pokémon is: ${this.species.speciesName} level ${pk.level},
-      // it has ${pk.stats.atk} attack,
-      // ${pk.stats.def} defense and ${pk.stats.hp} hp --
-      // Stat product is ${pk.getStatProd()}
-      // and CP = ${pk.getCP()}`;
 
       this.buildList();
       this.writeList();
     } else {
       this.result = `Could not find a Pokémon named '${form.value.name}'`;
     }
-    //   this.result =
-    //     'pokémon is: ' +
-    //     form.value.name +
-    //     ' with ' +
-    //     form.value.att +
-    //     '/' +
-    //     form.value.def +
-    //     '/' +
-    //     form.value.hp +
-    //     ' IVs.';
 
     this.gaSend();
   }
 
   writeList() {
-    this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
-    this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP';
     const yourpk = this.pks[this.yourrank - 1];
+    this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
+    this.result += `\nMoves: ${yourpk.getBestFastMove().name} ${yourpk.getBestChargedMove().name} ${yourpk.getBestDPS()}`;
+    this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP';
     this.result += '\n';
     this.writePkm(yourpk, this.yourrank);
     this.result += '\n';
@@ -133,6 +117,10 @@ export class IvComponent implements OnInit {
   }
 
   gaSend() {
+    if (isDevMode()) {
+      return;
+    }
+
     // Send the event to the Google Analytics property
     // with tracking ID GA_TRACKING_ID.
     // (<any>window).gtag('config', 'UA-122077579-2', {'page_path': event.urlAfterRedirects});
