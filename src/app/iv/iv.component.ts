@@ -18,6 +18,7 @@ export class IvComponent implements OnInit {
   result = 'Result will show here.';
   pks: Pokemon[] = [];
   yourrank = 0;
+  max = 0;
 
   constructor() {}
 
@@ -55,7 +56,7 @@ export class IvComponent implements OnInit {
 
   writeList() {
     this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
-    this.result += '\nRANK CP   LEVEL    IV       ATK  DEF  HP   STATS';
+    this.result += '\nRANK CP   LEVEL    IV       ATK  DEF  HP   STATS  %';
     const yourpk = this.pks[this.yourrank - 1];
     this.result += '\n';
     this.writePkm(yourpk, this.yourrank);
@@ -76,12 +77,14 @@ export class IvComponent implements OnInit {
     this.result += (Math.round(pk.stats.atk) + '  ').padStart(5);
     this.result += (Math.round(pk.stats.def) + '  ').padStart(5);
     this.result += (Math.round(pk.stats.hp) + '   ').padStart(6);
-    this.result += (Math.round(pk.statprod / 1000));
+    this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(5);
+    this.result += ((100 * pk.statprod / this.max).toFixed(2) + '%').padStart(7);
   }
 
   buildList() {
     // let atk = 0; let def = 0; let hp = 0;
     this.pks = [];
+    this.max = 0;
     for (let atk = 0; atk < 16; atk++) {
       for (let def = 0; def < 16; def++) {
         for (let hp = 0; hp < 16; hp++) {
@@ -121,6 +124,7 @@ export class IvComponent implements OnInit {
       }
       // console.log(`${this.name} ${pokemon.cp} ${ivs} lv${pokemon.level} can fight in ${this.league}.`);
     }
+    this.max = Math.max(this.max, pokemon.statprod);
     this.pks.push(pokemon);
   }
 }
