@@ -22,8 +22,8 @@ $warn: map-get($gengartheme, warn);
 }
 
 .active {
-  background-color: mat-color($primary, A400) !important;
-  color: mat-contrast($primary, A400)  !important;
+  background-color: mat-color($primary, 500) !important;
+  color: mat-contrast($primary, 500)  !important;
 }
 
 .handsetmenu {
