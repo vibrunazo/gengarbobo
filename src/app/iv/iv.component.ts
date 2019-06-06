@@ -1,6 +1,7 @@
 import { Component, OnInit, isDevMode } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Pokemon, PokemonSpecies, Move } from '../shared/shared.module';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-iv',
@@ -8,8 +9,8 @@ import { Pokemon, PokemonSpecies, Move } from '../shared/shared.module';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  // name = isDevMode ? 'Skarmory' : '';
-  name = '';
+  name = environment.production  ? '' : 'Skarmory';
+  // name = '';
   species: PokemonSpecies;
   league = 'great';
   atk = 15;
