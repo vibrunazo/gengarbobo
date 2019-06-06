@@ -1,13 +1,18 @@
 <mat-card>
-  Choose a Pokémon, a league and input its IVs. The app will tell you how good
-  those IVs are for PvP.
+  Choose a Pokémon, a league and input its IVs. The app will tell you how good those IVs are for PvP.
 </mat-card>
 
 <mat-card class="maincard">
   <mat-card-content>
     <form (submit)="onSearch(ivForm)" #ivForm="ngForm">
       <mat-form-field>
-        <input matInput placeholder="Name" name="name" [(ngModel)]="name" />
+        <input matInput placeholder="Name" name="name" [(ngModel)]="name" [matAutocomplete]="auto"
+        (ngModelChange)="allnames = filterNames(name)"/>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let poke of allnames" [value]="poke">
+            {{ poke }}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
 
       <mat-form-field class="linput">
@@ -19,39 +24,14 @@
       </mat-form-field>
       <br />
 
-      <input
-        class="ivnumber"
-        matInput
-        type="number"
-        placeholder="Attack IV"
-        [(ngModel)]="atk"
-        name="atk"
-        value="15"
-      />
-      <input
-        class="ivnumber"
-        matInput
-        type="number"
-        placeholder="Defense IV"
-        [(ngModel)]="def"
-        name="def"
-        value="15"
-      />
-      <input
-        class="ivnumber"
-        matInput
-        type="number"
-        placeholder="HP IV"
-        [(ngModel)]="hp"
-        name="hp"
-        value="15"
-      />
+      <input class="ivnumber" matInput type="number" placeholder="Attack IV" [(ngModel)]="atk" name="atk" value="15" />
+      <input class="ivnumber" matInput type="number" placeholder="Defense IV" [(ngModel)]="def" name="def" value="15" />
+      <input class="ivnumber" matInput type="number" placeholder="HP IV" [(ngModel)]="hp" name="hp" value="15" />
       <br />
       <br />
 
       <button mat-raised-button color="primary">Search</button>
       <br />
-
     </form>
   </mat-card-content>
 </mat-card>

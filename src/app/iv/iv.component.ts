@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  name = environment.production  ? '' : 'Skarmory';
+  name = environment.production ? '' : 'Skarmory';
   // name = '';
   species: PokemonSpecies;
   league = 'great';
@@ -22,10 +22,15 @@ export class IvComponent implements OnInit {
   max = 0;
   yourpk: Pokemon;
   yourfastmove: Move;
+  pokelist: string[] = [];
+  allnames: string[];
+  currentName: string;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.pokelist = Pokemon.getFullList();
+  }
 
   onSearch(form: NgForm) {
     if (form.value.name === '') {
@@ -33,7 +38,6 @@ export class IvComponent implements OnInit {
     }
     this.species = Pokemon.searchPkByName(form.value.name);
     if (this.species !== undefined) {
-
       this.buildList();
       this.writeList();
     } else {
@@ -66,9 +70,7 @@ export class IvComponent implements OnInit {
     this.result += (pk.iv.atk + '/').padStart(3);
     this.result += (pk.iv.def + '/').padStart(3);
     this.result += (pk.iv.hp + '  ').padStart(4);
-    this.result += (((100 * pk.statprod) / this.max).toFixed(2) + '%').padStart(
-      7
-    );
+    this.result += (((100 * pk.statprod) / this.max).toFixed(2) + '%').padStart(7);
     this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
@@ -99,11 +101,7 @@ export class IvComponent implements OnInit {
     this.yourrank =
       1 +
       this.pks.findIndex(pk => {
-        return (
-          pk.iv.atk === this.atk &&
-          pk.iv.def === this.def &&
-          pk.iv.hp === this.hp
-        );
+        return pk.iv.atk === this.atk && pk.iv.def === this.def && pk.iv.hp === this.hp;
         // return pk.iv === { atk: this.atk, def: this.def, hp: this.hp };
       });
   }
@@ -124,6 +122,16 @@ export class IvComponent implements OnInit {
     }
     this.max = Math.max(this.max, pokemon.statprod);
     this.pks.push(pokemon);
+  }
+
+  filterNames(val: string) {
+    if (val) {
+      const filterValue = val.toLowerCase();
+
+      return this.pokelist.filter(option => option.toLowerCase().includes(filterValue));
+      // return this.pokelist;
+    }
+    return [];
   }
 
   gaSend() {

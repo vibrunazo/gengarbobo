@@ -77,6 +77,15 @@ export class Pokemon {
   cpm = 0;
   statprod = 0;
 
+  // returns an array with the name of every pokémon
+  static getFullList(): string[] {
+    const list: string[] = [];
+    DEX.pokemon.forEach((p) => {
+      list.push(p.speciesName);
+    });
+    return list;
+  }
+
   // search a Pokémon by name, return Dex number
   static searchDexByName(name: string): number {
     const r = this.dex.find(p => p.speciesName === name);
