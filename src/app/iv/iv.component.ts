@@ -135,9 +135,9 @@ export class IvComponent implements OnInit {
   }
 
   gaSend() {
-    // if (isDevMode()) {
-    //   return;
-    // }
+    if (!environment.production) {
+      return;
+    }
 
     // Send the event to the Google Analytics property
     // with tracking ID GA_TRACKING_ID.
