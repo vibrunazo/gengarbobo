@@ -125,18 +125,15 @@ export class IvComponent implements OnInit {
   }
 
   addPkToList(pokemon: Pokemon) {
+    const miniv: number = +this.miniv;
+    if (pokemon.iv.atk < miniv || pokemon.iv.def < miniv || pokemon.iv.hp < miniv) {
+      return;
+    }
+
     if (this.league !== 'master') {
-      const ivs = `${pokemon.iv.atk}/${pokemon.iv.def}/${pokemon.iv.hp}`;
-      // if (pokemon.canFightLeague(this.league)) {
-
-      // } else {
-
-      // }
       while (!pokemon.canFightLeague(this.league)) {
-        // console.log(`${this.name} ${pokemon.cp} ${ivs} lv${pokemon.level} canNOT fight in ${this.league}.`);
         pokemon.setLevel(pokemon.level - 0.5);
       }
-      // console.log(`${this.name} ${pokemon.cp} ${ivs} lv${pokemon.level} can fight in ${this.league}.`);
     }
     this.max = Math.max(this.max, pokemon.statprod);
     this.pks.push(pokemon);

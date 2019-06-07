@@ -10,12 +10,14 @@
          #pokename="ngModel" required/>
          <mat-error >{{getErrorName()}}</mat-error>
         <!-- <mat-error *ngIf="pokename.invalid">{{getErrorName()}}</mat-error> -->
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-autocomplete #auto="matAutocomplete" class="nameauto">
           <mat-option *ngFor="let poke of allnames" [value]="poke">
             {{ poke }}
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
+
+      <br>
 
       <mat-form-field class="leagueff">
         <mat-select placeholder="League" [(ngModel)]="league" name="league">
@@ -27,9 +29,15 @@
 
       <mat-form-field class="minivff">
         <mat-select placeholder="Min IV" [(ngModel)]="miniv" name="miniv">
-          <mat-option value="0">Wild Catch</mat-option>
-          <mat-option value="10">Raid</mat-option>
-          <mat-option value="12">Lucky Trade</mat-option>
+          <mat-option value="0">0 Wild Catch</mat-option>
+          <mat-option value="12">12 Lucky Trade</mat-option>
+          <mat-option value="10">10 Hatch/Quest/Raid</mat-option>
+          <mat-option value="5">5 Best Trade</mat-option>
+          <mat-option value="4">4 Weather Boost</mat-option>
+          <mat-option value="3">3 Ultra Trade</mat-option>
+          <mat-option value="2">2 Great Trade</mat-option>
+          <mat-option value="1">1 Good Trade</mat-option>
+          <mat-option value="0">0 Wild Catch</mat-option>
         </mat-select>
       </mat-form-field>
 
