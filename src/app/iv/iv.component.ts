@@ -36,6 +36,7 @@ export class IvComponent implements OnInit {
     if (form.value.pokename === '') {
       return;
     }
+    this.validateForm();
     this.species = Pokemon.searchPkByName(form.value.pokename);
     if (this.species !== undefined) {
       this.buildList();
@@ -45,6 +46,22 @@ export class IvComponent implements OnInit {
     }
 
     this.gaSend();
+  }
+
+  // makes all form inputs valid
+  validateForm() {
+    this.atk = this.validateIV(this.atk);
+    this.def = this.validateIV(this.def);
+    this.hp = this.validateIV(this.hp);
+
+  }
+
+  // takes the value input by the user and makes sure it's a whole number between 0 and 15
+  validateIV(value: number): number {
+    value = Math.floor(value);
+    value = Math.min(value, 15);
+    value = Math.max(value, 0);
+    return value;
   }
 
   writeList() {
