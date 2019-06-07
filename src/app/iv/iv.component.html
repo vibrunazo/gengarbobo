@@ -24,6 +24,15 @@
           <mat-option value="master">Master</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-form-field class="minivff">
+        <mat-select placeholder="Min IV" [(ngModel)]="miniv" name="miniv">
+          <mat-option value="0">Wild Catch</mat-option>
+          <mat-option value="10">Raid</mat-option>
+          <mat-option value="12">Lucky Trade</mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <br />
 
       <mat-form-field class="ivff">

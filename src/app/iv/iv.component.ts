@@ -13,6 +13,7 @@ export class IvComponent implements OnInit {
   // name = '';
   species: PokemonSpecies;
   league = 'great';
+  miniv = '0';
   atk = 15;
   def = 15;
   hp = 15;
