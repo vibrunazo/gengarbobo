@@ -22,7 +22,8 @@ import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
 import { AboutComponent } from './about/about.component';
 import { IvComponent } from './iv/iv.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     NewsComponent,
     DexComponent,
     AboutComponent,
-    IvComponent
+    IvComponent,
+    MinValueValidator,
+    MaxValueValidator
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,10 +4,12 @@
 
 <mat-card class="maincard">
   <mat-card-content>
-    <form (submit)="onSearch(ivForm)" #ivForm="ngForm">
-      <mat-form-field>
-        <input matInput placeholder="Name" name="name" [(ngModel)]="name" [matAutocomplete]="auto"
-        (ngModelChange)="allnames = filterNames(name)"/>
+    <form (submit)="ivForm.form.valid && onSearch(ivForm)" #ivForm="ngForm">
+      <mat-form-field class="nameff">
+        <input type="text" matInput placeholder="Name" name="pokename" [(ngModel)]="name" [matAutocomplete]="auto" (ngModelChange)="allnames = filterNames(name)"
+         #pokename="ngModel" required/>
+         <mat-error >{{getErrorName()}}</mat-error>
+        <!-- <mat-error *ngIf="pokename.invalid">{{getErrorName()}}</mat-error> -->
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let poke of allnames" [value]="poke">
             {{ poke }}
@@ -15,7 +17,7 @@
         </mat-autocomplete>
       </mat-form-field>
 
-      <mat-form-field class="linput">
+      <mat-form-field class="leagueff">
         <mat-select placeholder="League" [(ngModel)]="league" name="league">
           <mat-option value="great">Great</mat-option>
           <mat-option value="ultra">Ultra</mat-option>
@@ -24,9 +26,18 @@
       </mat-form-field>
       <br />
 
-      <input class="ivnumber" matInput type="number" placeholder="Attack IV" [(ngModel)]="atk" name="atk" value="15" />
-      <input class="ivnumber" matInput type="number" placeholder="Defense IV" [(ngModel)]="def" name="def" value="15" />
-      <input class="ivnumber" matInput type="number" placeholder="HP IV" [(ngModel)]="hp" name="hp" value="15" />
+      <mat-form-field class="ivff">
+        <input class="ivnumber" matInput type="number" placeholder="Attack IV" [(ngModel)]="atk" name="atkiv" value="15" min="0" max="15" step="1" #atkiv="ngModel" required />
+        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="ivff">
+          <input class="ivnumber" matInput type="number" placeholder="Defense IV" [(ngModel)]="def" name="defiv" value="15" min="0" max="15" step="1" required #defiv="ngModel" />
+        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="ivff">
+          <input class="ivnumber" matInput type="number" placeholder="HP IV" [(ngModel)]="hp" name="hpiv" value="15" min="0" max="15" step="1" required #hpiv="ngModel" />
+        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
+      </mat-form-field>
       <br />
       <br />
 

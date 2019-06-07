@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  name = environment.production ? '' : 'Skarmory';
+  name = environment.production ? '' : '';
   // name = '';
   species: PokemonSpecies;
   league = 'great';
@@ -33,15 +33,15 @@ export class IvComponent implements OnInit {
   }
 
   onSearch(form: NgForm) {
-    if (form.value.name === '') {
+    if (form.value.pokename === '') {
       return;
     }
-    this.species = Pokemon.searchPkByName(form.value.name);
+    this.species = Pokemon.searchPkByName(form.value.pokename);
     if (this.species !== undefined) {
       this.buildList();
       this.writeList();
     } else {
-      this.result = `Could not find a Pokémon named '${form.value.name}'`;
+      this.result = `Could not find a Pokémon named '${form.value.pokename}'`;
     }
 
     this.gaSend();
@@ -128,10 +128,17 @@ export class IvComponent implements OnInit {
     if (val) {
       const filterValue = val.toLowerCase();
 
-      return this.pokelist.filter(option => option.toLowerCase().includes(filterValue));
+      return this.pokelist.filter(option => option.toLowerCase().startsWith(filterValue));
       // return this.pokelist;
     }
     return [];
+  }
+
+  getErrorName(): string {
+    return 'Pokémon name is required.';
+  }
+  getErrorIV(): string {
+    return 'IVs must be a whole number between 0 and 15.';
   }
 
   gaSend() {
