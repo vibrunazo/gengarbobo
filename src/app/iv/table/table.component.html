@@ -1,0 +1,73 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+    <ng-container matColumnDef="rank">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.r}}</td>
+      <td mat-cell *matCellDef="let index = index; let row">{{row.r}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>CP</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.cp}}</td>
+      <td mat-cell *matCellDef="let row">{{row.cp}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="level">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Level</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.level}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.level}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="iv">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>IV</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.iv}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.iv}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="statprod">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Stats</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.statprod}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.statprod}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="pct">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>%</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.pct}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.pct}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Breakpoint</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.bp}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.bp}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="atk">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Atk</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.atk}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.atk}}</td>
+    </ng-container>
+    <ng-container matColumnDef="def">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Def</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.def}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.def}}</td>
+    </ng-container>
+    <ng-container matColumnDef="hp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>HP</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.hp}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.hp}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="100"
+      [pageSizeOptions]="[100, 500, 1000, 4096]">
+  </mat-paginator>
+</div>

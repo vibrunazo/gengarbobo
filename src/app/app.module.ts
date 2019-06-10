@@ -16,7 +16,7 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatAutocompleteModule
+  MatAutocompleteModule, MatTableModule, MatPaginatorModule, MatSortModule
 } from '@angular/material';
 import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
@@ -24,6 +24,7 @@ import { AboutComponent } from './about/about.component';
 import { IvComponent } from './iv/iv.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive';
+import { TableComponent } from './iv/table/table.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive'
     AboutComponent,
     IvComponent,
     MinValueValidator,
-    MaxValueValidator
+    MaxValueValidator,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,11 @@ import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive'
     MatSelectModule,
     FormsModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

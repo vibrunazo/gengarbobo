@@ -1,7 +1,8 @@
-import { Component, OnInit, isDevMode } from '@angular/core';
+import { Component, OnInit, isDevMode, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Pokemon, PokemonSpecies, Move } from '../shared/shared.module';
 import { environment } from 'src/environments/environment';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-iv',
@@ -9,7 +10,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  name = environment.production ? '' : '';
+  @ViewChild(TableComponent, {static: false}) table: TableComponent;
+  name = environment.production ? '' : 'Skarmory';
   // name = '';
   species: PokemonSpecies;
   league = 'great';
@@ -26,6 +28,7 @@ export class IvComponent implements OnInit {
   pokelist: string[] = [];
   allnames: string[];
   currentName: string;
+  tableItems: any[] = [];
 
   constructor() {}
 
@@ -69,15 +72,36 @@ export class IvComponent implements OnInit {
     this.yourpk = this.pks[this.yourrank - 1];
     const yourpk = this.yourpk;
     this.yourfastmove = yourpk.getBestFastMove();
-    this.result = `Your rank is ${this.yourrank} of ${this.pks.length}.`;
-    this.result += `\nFast Move ${this.yourfastmove.name}.`;
-    this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP    Breakpoints';
-    this.result += '\n';
-    this.writePkm(yourpk, this.yourrank);
-    this.result += '\n';
+    this.result = `Your rank is ${this.yourrank} of ${this.pks.length}. `;
+    this.result += `Fast Move: ${this.yourfastmove.name}.`;
+    // this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP    Breakpoints';
+    // this.result += '\n';
+    // this.writePkm(yourpk, this.yourrank);
+    // this.result += '\n';
+    this.tableItems = [];
+    // this.writeRow(yourpk, this.yourrank);
+    // this.tableItems[0].first = 'true';
     this.pks.forEach((pk, i) => {
-      this.writePkm(pk, i + 1);
+      this.writeRow(pk, i + 1);
     });
+    this.table.updateTable(this.tableItems, this.tableItems[this.yourrank - 1], []);
+  }
+
+  writeRow(pk: Pokemon, rank: number) {
+    const row = {
+      r: rank,
+      cp: pk.cp,
+      level: pk.level,
+      iv: `${pk.iv.atk}/${pk.iv.def}/${pk.iv.hp}`,
+      statprod: Math.round(pk.statprod / 1000),
+      pct: ((100 * pk.statprod) / this.max).toFixed(2) + '%',
+      bp: `${this.yourpk.getDamageToEnemy(this.yourfastmove, pk) } - ${pk.getDamageToEnemy(this.yourfastmove, this.yourpk)}`,
+      // stats: `${pk.stats.atk.toFixed(1)} ${pk.stats.def.toFixed(1)} ${pk.stats.hp}`,
+      atk: pk.stats.atk.toFixed(1),
+      def: pk.stats.def.toFixed(1),
+      hp: pk.stats.hp,
+    };
+    this.tableItems.push(row);
   }
 
   writePkm(pk: Pokemon, rank: number) {
