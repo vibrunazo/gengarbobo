@@ -1,3 +1,10 @@
+@import '../../gengartheme.scss';
+
+$primary: map-get($gengartheme, primary);
+$accent: map-get($gengartheme, accent);
+$warn: map-get($gengartheme, warn);
+
+
 .full-width-table {
   // width: 100%;
   table-layout: fixed;
@@ -46,6 +53,11 @@ th.mat-header-cell:first-of-type {
 
 td.mat-cell:first-of-type {
   padding-left: 0px !important;
+}
+
+.mat-header-cell {
+  background-color: mat-color($primary, 700) !important;
+  border-bottom: none !important;
 }
 
 // .mat-row:first-of-type {

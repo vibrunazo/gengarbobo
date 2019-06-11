@@ -88,6 +88,14 @@ export class IvComponent implements OnInit {
   }
 
   writeRow(pk: Pokemon, rank: number) {
+    const p1dmg = this.yourpk.getDamageToEnemy(this.yourfastmove, pk);
+    const p2dmg = pk.getDamageToEnemy(this.yourfastmove, this.yourpk);
+    const p1atks = Math.floor(pk.stats.hp / p1dmg);
+    const p2atks = Math.floor(this.yourpk.stats.hp / p2dmg);
+    const atks = Math.min(p1atks, p2atks);
+    const p2hp = Math.max(pk.stats.hp - atks * p1dmg, 0);
+    const p1hp = Math.max(this.yourpk.stats.hp - atks * p2dmg);
+    const d = p1hp - p2hp;
     const row = {
       r: rank,
       cp: pk.cp,
@@ -95,8 +103,9 @@ export class IvComponent implements OnInit {
       iv: `${pk.iv.atk}/${pk.iv.def}/${pk.iv.hp}`,
       statprod: Math.round(pk.statprod / 1000),
       pct: ((100 * pk.statprod) / this.max).toFixed(2) + '%',
-      bp: `${this.yourpk.getDamageToEnemy(this.yourfastmove, pk) } - ${pk.getDamageToEnemy(this.yourfastmove, this.yourpk)}`,
+      bp: `${p1dmg}-${p2dmg}`,
       // stats: `${pk.stats.atk.toFixed(1)} ${pk.stats.def.toFixed(1)} ${pk.stats.hp}`,
+      duel: d,
       atk: pk.stats.atk.toFixed(1),
       def: pk.stats.def.toFixed(1),
       hp: pk.stats.hp,
