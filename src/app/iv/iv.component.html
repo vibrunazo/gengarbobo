@@ -17,7 +17,27 @@
         </mat-autocomplete>
       </mat-form-field>
 
+      <mat-form-field class="fastff">
+        <mat-select placeholder="Fast Attack" [(ngModel)]="yourfastmove" name="fastname">
+          <mat-option *ngFor="let move of listOfFastMoves" [value]="move">{{move.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <br>
+
+      <mat-form-field class="ivff">
+        <input class="ivnumber" matInput type="number" placeholder="Attack IV" [(ngModel)]="atk" name="atkiv" value="15" min="0" max="15" step="1" #atkiv="ngModel" required />
+        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="ivff">
+          <input class="ivnumber" matInput type="number" placeholder="Defense IV" [(ngModel)]="def" name="defiv" value="15" min="0" max="15" step="1" required #defiv="ngModel" />
+        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="ivff">
+          <input class="ivnumber" matInput type="number" placeholder="HP IV" [(ngModel)]="hp" name="hpiv" value="15" min="0" max="15" step="1" required #hpiv="ngModel" />
+        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
+      </mat-form-field>
+      <br />
 
       <mat-form-field class="leagueff">
         <mat-select placeholder="League" [(ngModel)]="league" name="league">
@@ -43,19 +63,6 @@
 
       <br />
 
-      <mat-form-field class="ivff">
-        <input class="ivnumber" matInput type="number" placeholder="Attack IV" [(ngModel)]="atk" name="atkiv" value="15" min="0" max="15" step="1" #atkiv="ngModel" required />
-        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
-      </mat-form-field>
-      <mat-form-field class="ivff">
-          <input class="ivnumber" matInput type="number" placeholder="Defense IV" [(ngModel)]="def" name="defiv" value="15" min="0" max="15" step="1" required #defiv="ngModel" />
-        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
-      </mat-form-field>
-      <mat-form-field class="ivff">
-          <input class="ivnumber" matInput type="number" placeholder="HP IV" [(ngModel)]="hp" name="hpiv" value="15" min="0" max="15" step="1" required #hpiv="ngModel" />
-        <mat-error *ngIf="true">{{getErrorIV()}}</mat-error>
-      </mat-form-field>
-      <br />
       <br />
 
       <button mat-raised-button color="primary">Search</button>

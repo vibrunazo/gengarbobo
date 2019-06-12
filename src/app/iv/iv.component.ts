@@ -10,10 +10,12 @@ import { TableComponent } from './table/table.component';
   styleUrls: ['./iv.component.scss']
 })
 export class IvComponent implements OnInit {
-  @ViewChild(TableComponent, {static: false}) table: TableComponent;
+  @ViewChild(TableComponent, { static: false }) table: TableComponent;
   name = environment.production ? '' : 'Skarmory';
   // name = '';
   species: PokemonSpecies;
+  fastname = '';
+  listOfFastMoves: Move[];
   league = 'great';
   miniv = '0';
   atk = 15;
@@ -57,7 +59,6 @@ export class IvComponent implements OnInit {
     this.atk = this.validateIV(this.atk);
     this.def = this.validateIV(this.def);
     this.hp = this.validateIV(this.hp);
-
   }
 
   // takes the value input by the user and makes sure it's a whole number between 0 and 15
@@ -71,7 +72,8 @@ export class IvComponent implements OnInit {
   writeList() {
     this.yourpk = this.pks[this.yourrank - 1];
     const yourpk = this.yourpk;
-    this.yourfastmove = yourpk.getBestFastMove();
+    // this.yourfastmove = yourpk.getBestFastMove();
+    // this.yourfastmove = this.fastname;
     this.result = `Your rank is ${this.yourrank} of ${this.pks.length}. `;
     this.result += `Fast Move: ${this.yourfastmove.name}.`;
     // this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP    Breakpoints';
@@ -108,7 +110,7 @@ export class IvComponent implements OnInit {
       duel: d,
       atk: pk.stats.atk.toFixed(1),
       def: pk.stats.def.toFixed(1),
-      hp: pk.stats.hp,
+      hp: pk.stats.hp
     };
     this.tableItems.push(row);
   }
@@ -175,6 +177,11 @@ export class IvComponent implements OnInit {
   filterNames(val: string) {
     if (val) {
       const filterValue = val.toLowerCase();
+      this.species = Pokemon.searchPkByName(val);
+      if (this.species !== undefined) {
+        this.yourfastmove = Pokemon.getBestMoveBySpecies(this.species);
+        this.listOfFastMoves = Pokemon.getFastMoves(this.species);
+      }
 
       return this.pokelist.filter(option => option.toLowerCase().startsWith(filterValue));
       // return this.pokelist;

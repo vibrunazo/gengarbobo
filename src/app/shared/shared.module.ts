@@ -80,7 +80,7 @@ export class Pokemon {
   // returns an array with the name of every pokémon
   static getFullList(): string[] {
     const list: string[] = [];
-    DEX.pokemon.forEach((p) => {
+    DEX.pokemon.forEach(p => {
       list.push(p.speciesName);
     });
     return list;
@@ -94,9 +94,7 @@ export class Pokemon {
 
   // searches a Pokémon by its name, returns a 'Pokemon' object, returns undefined if not found
   static searchPkByName(name: string): PokemonSpecies {
-    const r = this.dex.find(
-      p => p.speciesName.toLowerCase() === name.toLowerCase()
-    );
+    const r = this.dex.find(p => p.speciesName.toLowerCase() === name.toLowerCase());
     return r;
   }
 
@@ -107,13 +105,84 @@ export class Pokemon {
     return CPM[i];
   }
 
-  constructor(
-    species: PokemonSpecies,
-    level: number,
-    atkiv: number,
-    defiv: number,
-    hpiv: number
-  ) {
+  // gets the nest FAST Move for a Pokémon of this PokemonSpecies
+  // if you need to get a PokemonSpecies you can use Pokemon.searchPkByName()
+  static getBestMoveBySpecies(species: PokemonSpecies): Move {
+    const moves: Move[] = Pokemon.getFastMoves(species);
+    const charged = Pokemon.getBestChargedMove(species);
+    let best = moves[0];
+    let bestdps = 0;
+    moves.forEach(m => {
+      if (bestdps < Pokemon.getMovesetDPS(m, charged, species)) {
+        bestdps = Pokemon.getMovesetDPS(m, charged, species);
+        best = m;
+      }
+    });
+    return best;
+  }
+
+  static getMovesetDPS(fast: Move, charged: Move, species: PokemonSpecies): number {
+    return Pokemon.getFastMoveDPS(fast, species) + Pokemon.getChargedMoveDpe(charged, species) * Pokemon.getFastMoveEPS(fast);
+  }
+
+  // returns the dps of spamming this fast move, STAB considered if any
+  static getFastMoveDPS(move: Move, species: PokemonSpecies): number {
+    return (Pokemon.getSTAB(move, species) * 1000 * move.power) / move.cooldown;
+  }
+
+  // returns the energy per second of spamming this fast move
+  static getFastMoveEPS(move: Move): number {
+    return (move.energyGain * 1000) / move.cooldown;
+  }
+
+  // returns an array with all the fast moves as 'Move' objects
+  static getFastMoves(species: PokemonSpecies): Move[] {
+    const moves: Move[] = [];
+    species.fastMoves.forEach(m => {
+      moves.push(Move.findMoveById(m));
+    });
+    return moves;
+  }
+
+  // returns the charged Move that offers the best moveset dpe
+  // it's a simple damage per energy calculation,
+  // modified by STAB if it has it
+  static getBestChargedMove(species: PokemonSpecies): Move {
+    const moves: Move[] = Pokemon.getChargedMoves(species);
+    let best: Move;
+    let bestdpe = 0;
+    moves.forEach(m => {
+      if (bestdpe < Pokemon.getChargedMoveDpe(m, species)) {
+        bestdpe = Pokemon.getChargedMoveDpe(m, species);
+        best = m;
+      }
+    });
+    return best;
+  }
+
+  // returns the Damage Per Energy of a charged move for this pokémon, considers STAB
+  static getChargedMoveDpe(move: Move, species: PokemonSpecies): number {
+    return (Pokemon.getSTAB(move, species) * move.power) / move.energy;
+  }
+
+  // returns 1.2 if this move has STAB with this pokémon, 1 if it does not
+  static getSTAB(move: Move, species: PokemonSpecies): number {
+    if (species.types.includes(move.type)) {
+      return 1.2;
+    }
+    return 1;
+  }
+
+  // returns an array with all charged Moves as Move objects
+  static getChargedMoves(species: PokemonSpecies): Move[] {
+    const moves: Move[] = [];
+    species.chargedMoves.forEach(m => {
+      moves.push(Move.findMoveById(m));
+    });
+    return moves;
+  }
+
+  constructor(species: PokemonSpecies, level: number, atkiv: number, defiv: number, hpiv: number) {
     this.iv.atk = atkiv;
     this.iv.def = defiv;
     this.iv.hp = hpiv;
@@ -196,17 +265,11 @@ export class Pokemon {
   }
 
   getBestDPS(): number {
-    return this.getMovesetDPS(
-      this.getBestFastMove(),
-      this.getBestChargedMove()
-    );
+    return this.getMovesetDPS(this.getBestFastMove(), this.getBestChargedMove());
   }
 
   getMovesetDPS(fast: Move, charged: Move): number {
-    return (
-      this.getFastMoveDPS(fast) +
-      this.getChargedMoveDpe(charged) * this.getFastMoveEPS(fast)
-    );
+    return this.getFastMoveDPS(fast) + this.getChargedMoveDpe(charged) * this.getFastMoveEPS(fast);
   }
 
   // returns the dps of spamming this fast move, STAB considered if any
@@ -367,18 +430,7 @@ export class Pokemon {
 
       case 'steel':
         traits = {
-          resistances: [
-            'normal',
-            'flying',
-            'rock',
-            'bug',
-            'steel',
-            'grass',
-            'psychic',
-            'ice',
-            'dragon',
-            'fairy'
-          ],
+          resistances: ['normal', 'flying', 'rock', 'bug', 'steel', 'grass', 'psychic', 'ice', 'dragon', 'fairy'],
           weaknesses: ['fighting', 'ground', 'fire'],
           immunities: ['poison']
         };
