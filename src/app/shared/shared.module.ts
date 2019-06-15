@@ -182,6 +182,23 @@ export class Pokemon {
     return moves;
   }
 
+  // returns the end result of a duel between 2 pokémon using only fast moves
+  // returns a positive number if the first pokémon wins, negative if it loses
+  // the return value is how much health the winner has left
+  static getFmDuel(pk1: Pokemon, pk1move: Move, pk2: Pokemon, pk2move: Move): number {
+    // TODO: should not assume pk1move and pk2move have the same duration
+    const p1dmg = pk1.getDamageToEnemy(pk1move, pk2);         // how much dmg p1 does to p2 per attack
+    const p2dmg = pk2.getDamageToEnemy(pk2move, pk1);         // how much dmg p2 does to p1 per attack
+    const p1atks = Math.floor(pk2.stats.hp / p1dmg);          // how many attacks p1 needs to kill p2
+    const p2atks = Math.floor(pk1.stats.hp / p2dmg);          // how many attacks p2 needs to kill p1
+    const atks = Math.min(p1atks, p2atks);                    // how many attacks the fight will last
+    const p2hp = Math.max(pk2.stats.hp - atks * p1dmg, 0);    // how much health left p2 have when it's over
+    const p1hp = Math.max(pk1.stats.hp - atks * p2dmg, 0);    // how much health left p1 have when it's over
+    const d = p1hp - p2hp;                                    // the difference between their health
+    return d;
+
+  }
+
   constructor(species: PokemonSpecies, level: number, atkiv: number, defiv: number, hpiv: number) {
     this.iv.atk = atkiv;
     this.iv.def = defiv;

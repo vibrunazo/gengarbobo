@@ -36,6 +36,7 @@ export class IvComponent implements OnInit {
 
   ngOnInit() {
     this.pokelist = Pokemon.getFullList();
+    this.filterNames(this.name);
   }
 
   onSearch(form: NgForm) {
@@ -72,17 +73,9 @@ export class IvComponent implements OnInit {
   writeList() {
     this.yourpk = this.pks[this.yourrank - 1];
     const yourpk = this.yourpk;
-    // this.yourfastmove = yourpk.getBestFastMove();
-    // this.yourfastmove = this.fastname;
     this.result = `Your rank is ${this.yourrank} of ${this.pks.length}. `;
     this.result += `Fast Move: ${this.yourfastmove.name}.`;
-    // this.result += '\nRANK CP   LEVEL    IV        %    STATS   ATK DEF HP    Breakpoints';
-    // this.result += '\n';
-    // this.writePkm(yourpk, this.yourrank);
-    // this.result += '\n';
     this.tableItems = [];
-    // this.writeRow(yourpk, this.yourrank);
-    // this.tableItems[0].first = 'true';
     this.pks.forEach((pk, i) => {
       this.writeRow(pk, i + 1);
     });
@@ -92,12 +85,7 @@ export class IvComponent implements OnInit {
   writeRow(pk: Pokemon, rank: number) {
     const p1dmg = this.yourpk.getDamageToEnemy(this.yourfastmove, pk);
     const p2dmg = pk.getDamageToEnemy(this.yourfastmove, this.yourpk);
-    const p1atks = Math.floor(pk.stats.hp / p1dmg);
-    const p2atks = Math.floor(this.yourpk.stats.hp / p2dmg);
-    const atks = Math.min(p1atks, p2atks);
-    const p2hp = Math.max(pk.stats.hp - atks * p1dmg, 0);
-    const p1hp = Math.max(this.yourpk.stats.hp - atks * p2dmg);
-    const d = p1hp - p2hp;
+    const d = Pokemon.getFmDuel(this.yourpk, this.yourfastmove, pk, this.yourfastmove);
     const row = {
       r: rank,
       cp: pk.cp,
@@ -106,7 +94,6 @@ export class IvComponent implements OnInit {
       statprod: Math.round(pk.statprod / 1000),
       pct: ((100 * pk.statprod) / this.max).toFixed(2) + '%',
       bp: `${p1dmg}-${p2dmg}`,
-      // stats: `${pk.stats.atk.toFixed(1)} ${pk.stats.def.toFixed(1)} ${pk.stats.hp}`,
       duel: d,
       atk: pk.stats.atk.toFixed(1),
       def: pk.stats.def.toFixed(1),
@@ -127,15 +114,12 @@ export class IvComponent implements OnInit {
     this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
     this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
-    // this.result += ((pk.stats.atk) + ' ').padStart(6);
-    // this.result += ((pk.stats.def) + ' ').padStart(4);
     this.result += (Math.round(pk.stats.hp) + '  ').padStart(5);
     this.result += (this.yourpk.getDamageToEnemy(this.yourfastmove, pk) + ' - ').padStart(5);
     this.result += (pk.getDamageToEnemy(this.yourfastmove, this.yourpk) + '  ').padStart(3);
   }
 
   buildList() {
-    // let atk = 0; let def = 0; let hp = 0;
     this.pks = [];
     this.max = 0;
     for (let atk = 0; atk < 16; atk++) {
@@ -155,7 +139,6 @@ export class IvComponent implements OnInit {
       1 +
       this.pks.findIndex(pk => {
         return pk.iv.atk === this.atk && pk.iv.def === this.def && pk.iv.hp === this.hp;
-        // return pk.iv === { atk: this.atk, def: this.def, hp: this.hp };
       });
   }
 
@@ -184,7 +167,6 @@ export class IvComponent implements OnInit {
       }
 
       return this.pokelist.filter(option => option.toLowerCase().startsWith(filterValue));
-      // return this.pokelist;
     }
     return [];
   }
