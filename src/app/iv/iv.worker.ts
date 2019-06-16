@@ -6,7 +6,7 @@
 import { Pokemon, Move } from '../shared/shared.module';
 
 addEventListener('message', ({ data }) => {
-  const response = `worker response to ${data.m}`;
+  // const response = `worker response to ${data.m}`;
   const allwins = calculateAllWins(data.pks, data.fm);
   // test();
   postMessage(allwins);

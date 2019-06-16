@@ -90,7 +90,7 @@ export class IvComponent implements OnInit {
     const p1dmg = this.yourpk.getDamageToEnemy(this.yourfastmove, pk);
     const p2dmg = pk.getDamageToEnemy(this.yourfastmove, this.yourpk);
     const d = Pokemon.getFmDuel(this.yourpk, this.yourfastmove, pk, this.yourfastmove);
-    const w = this.wins[rank - 1] ? this.wins[rank - 1] : '...';
+    const w = this.wins.length > 1 ? this.wins[rank - 1] : '...';
     const row = {
       r: rank,
       cp: pk.cp,
@@ -161,6 +161,7 @@ export class IvComponent implements OnInit {
   ww() {
     if (typeof Worker !== 'undefined') {
       // Create a new
+      this.wins = [];
       const worker = new Worker('./iv.worker', { type: 'module' });
       worker.onmessage = ({ data }) => {
         // console.log(`page got message: ${data}`);
@@ -168,7 +169,6 @@ export class IvComponent implements OnInit {
         this.writeList();
       };
       const data = {
-        m: 'hellowww',
         pks: this.pks,
         // PK: Pokemon,
         fm: this.yourfastmove
