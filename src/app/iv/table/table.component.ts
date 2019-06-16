@@ -18,8 +18,8 @@ export class TableComponent implements AfterViewInit, OnInit {
   dataSource: TableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['rank', 'cp', 'level', 'iv', 'statprod', 'pct', 'bp', 'duel', 'atk', 'def', 'hp'];
-  fr = {r: 0, cp: 0, level: 0, iv: 0, statprod: 0, pct: 0, bp: 0, duel: 0, atk: 0, def: 0, hp: 0};
+  displayedColumns = ['rank', 'cp', 'level', 'iv', 'statprod', 'pct', 'bp', 'duel', 'wins', 'atk', 'def', 'hp'];
+  fr: any = {r: 0, cp: 0, level: 0, iv: 0, statprod: 0, pct: 0, bp: 0, duel: 0, atk: 0, def: 0, hp: 0};
 
   ngOnInit() {
     this.dataSource = new TableDataSource(this.data);
@@ -30,7 +30,7 @@ export class TableComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
 
-    console.log(this.tbody.nativeElement.textContent);
+    // console.log(this.tbody.nativeElement.textContent);
   }
 
   updateTable(data: any[], firstRow, columnNames: any[]) {

@@ -48,6 +48,11 @@
       <td mat-footer-cell *matFooterCellDef>{{fr.duel}}</td>
       <td mat-cell *matCellDef="let pk">{{pk.duel}}</td>
     </ng-container>
+    <ng-container matColumnDef="wins">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Wins</th>
+      <td mat-footer-cell *matFooterCellDef>{{fr.wins}}</td>
+      <td mat-cell *matCellDef="let pk">{{pk.wins}}</td>
+    </ng-container>
 
     <ng-container matColumnDef="atk">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Atk</th>

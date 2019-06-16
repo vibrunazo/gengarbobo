@@ -31,6 +31,7 @@ export class IvComponent implements OnInit {
   allnames: string[];
   currentName: string;
   tableItems: any[] = [];
+  wins: number[] = [];
 
   constructor() {}
 
@@ -70,6 +71,9 @@ export class IvComponent implements OnInit {
     return value;
   }
 
+  // takes the list this.pks that was built from buildList()
+  // and uses it to write another list this.tableItems
+  // which is what will end up being sent to the table on the UI
   writeList() {
     this.yourpk = this.pks[this.yourrank - 1];
     const yourpk = this.yourpk;
@@ -95,6 +99,7 @@ export class IvComponent implements OnInit {
       pct: ((100 * pk.statprod) / this.max).toFixed(2) + '%',
       bp: `${p1dmg}-${p2dmg}`,
       duel: d,
+      wins: this.wins[rank - 1],
       atk: pk.stats.atk.toFixed(1),
       def: pk.stats.def.toFixed(1),
       hp: pk.stats.hp
@@ -119,7 +124,8 @@ export class IvComponent implements OnInit {
     this.result += (pk.getDamageToEnemy(this.yourfastmove, this.yourpk) + '  ').padStart(3);
   }
 
-  buildList() {
+  // adds all pokémon to the list of pokémon on this.pks
+  async buildList() {
     this.pks = [];
     this.max = 0;
     for (let atk = 0; atk < 16; atk++) {
@@ -140,6 +146,41 @@ export class IvComponent implements OnInit {
       this.pks.findIndex(pk => {
         return pk.iv.atk === this.atk && pk.iv.def === this.def && pk.iv.hp === this.hp;
       });
+
+    console.log(`calculating wins...`);
+    await this.calculateAllWins();
+    // window.setTimeout(this.calculateAllWins, 1, this.pks);
+    // setTimeout(()=>{
+    //   this.calculateAllWins(this.pks);
+    // }, 2000);
+    console.log(`calculated wins.`);
+  }
+
+  calculateAllWins() {
+    this.wins = [];
+    for (let i = 0; i < this.pks.length; i++) {
+      const wins = this.calculateWins(i);
+      this.wins.push(wins);
+    }
+    console.log(`wins: `);
+    console.log(this.wins);
+  }
+
+  // calculates how many wins the pokémon with this IV combination has against all other combinations
+  calculateWins(index: number): number {
+    let wins = 0;
+    let p1 = this.pks[index];
+    // let p2 = this.pks[0];
+
+    for (const p2 of this.pks) {
+      let d = Pokemon.getFmDuel(p1, this.yourfastmove, p2, this.yourfastmove);
+      d = Math.min(d, 1);
+      d = Math.max(d, -1);
+      wins += d;
+      // console.log(p2);
+    }
+
+    return wins;
   }
 
   addPkToList(pokemon: Pokemon) {
