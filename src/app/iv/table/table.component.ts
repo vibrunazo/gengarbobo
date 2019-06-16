@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild, Input, ViewEncapsulation, ElementRef } from '@angular/core';
 import { MatPaginator, MatSort, MatTable } from '@angular/material';
 import { TableDataSource, TableItem } from './table-datasource';
-import { Pokemon } from 'src/app/shared/shared.module';
+// import { Pokemon } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-table',

@@ -90,6 +90,7 @@ export class IvComponent implements OnInit {
     const p1dmg = this.yourpk.getDamageToEnemy(this.yourfastmove, pk);
     const p2dmg = pk.getDamageToEnemy(this.yourfastmove, this.yourpk);
     const d = Pokemon.getFmDuel(this.yourpk, this.yourfastmove, pk, this.yourfastmove);
+    const w = this.wins[rank - 1] ? this.wins[rank - 1] : '...';
     const row = {
       r: rank,
       cp: pk.cp,
@@ -99,7 +100,7 @@ export class IvComponent implements OnInit {
       pct: ((100 * pk.statprod) / this.max).toFixed(2) + '%',
       bp: `${p1dmg}-${p2dmg}`,
       duel: d,
-      wins: this.wins[rank - 1],
+      wins: w,
       atk: pk.stats.atk.toFixed(1),
       def: pk.stats.def.toFixed(1),
       hp: pk.stats.hp
@@ -147,14 +148,14 @@ export class IvComponent implements OnInit {
         return pk.iv.atk === this.atk && pk.iv.def === this.def && pk.iv.hp === this.hp;
       });
 
-    console.log(`calculating wins...`);
+    // console.log(`calculating wins...`);
     // await this.calculateAllWins();
     // window.setTimeout(this.calculateAllWins, 1, this.pks);
     // setTimeout(()=>{
     //   this.calculateAllWins(this.pks);
     // }, 2000);
     this.ww();
-    console.log(`calculated wins.`);
+    // console.log(`calculated wins.`);
   }
 
   ww() {
@@ -162,9 +163,18 @@ export class IvComponent implements OnInit {
       // Create a new
       const worker = new Worker('./iv.worker', { type: 'module' });
       worker.onmessage = ({ data }) => {
-        console.log('page got message: ${data}');
+        // console.log(`page got message: ${data}`);
+        this.wins = data;
+        this.writeList();
       };
-      worker.postMessage('hello');
+      const data = {
+        m: 'hellowww',
+        pks: this.pks,
+        // PK: Pokemon,
+        fm: this.yourfastmove
+
+      };
+      worker.postMessage(data);
     } else {
       // Web Workers are not supported in this environment.
       // You should add a fallback so that your program still executes correctly.
@@ -177,8 +187,8 @@ export class IvComponent implements OnInit {
       const wins = this.calculateWins(i);
       this.wins.push(wins);
     }
-    console.log(`wins: `);
-    console.log(this.wins);
+    // console.log(`wins: `);
+    // console.log(this.wins);
   }
 
   // calculates how many wins the pokémon with this IV combination has against all other combinations
@@ -252,14 +262,3 @@ export class IvComponent implements OnInit {
   }
 }
 
-if (typeof Worker !== 'undefined') {
-  // Create a new
-  const worker = new Worker('./iv.worker', { type: 'module' });
-  worker.onmessage = ({ data }) => {
-    console.log(`page got message: ${data}`);
-  };
-  worker.postMessage('hello');
-} else {
-  // Web Workers are not supported in this environment.
-  // You should add a fallback so that your program still executes correctly.
-}
