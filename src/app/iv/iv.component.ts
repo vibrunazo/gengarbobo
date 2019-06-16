@@ -148,12 +148,27 @@ export class IvComponent implements OnInit {
       });
 
     console.log(`calculating wins...`);
-    await this.calculateAllWins();
+    // await this.calculateAllWins();
     // window.setTimeout(this.calculateAllWins, 1, this.pks);
     // setTimeout(()=>{
     //   this.calculateAllWins(this.pks);
     // }, 2000);
+    this.ww();
     console.log(`calculated wins.`);
+  }
+
+  ww() {
+    if (typeof Worker !== 'undefined') {
+      // Create a new
+      const worker = new Worker('./iv.worker', { type: 'module' });
+      worker.onmessage = ({ data }) => {
+        console.log('page got message: ${data}');
+      };
+      worker.postMessage('hello');
+    } else {
+      // Web Workers are not supported in this environment.
+      // You should add a fallback so that your program still executes correctly.
+    }
   }
 
   calculateAllWins() {
@@ -235,4 +250,16 @@ export class IvComponent implements OnInit {
       event_label: 'iv'
     });
   }
+}
+
+if (typeof Worker !== 'undefined') {
+  // Create a new
+  const worker = new Worker('./iv.worker', { type: 'module' });
+  worker.onmessage = ({ data }) => {
+    console.log(`page got message: ${data}`);
+  };
+  worker.postMessage('hello');
+} else {
+  // Web Workers are not supported in this environment.
+  // You should add a fallback so that your program still executes correctly.
 }
