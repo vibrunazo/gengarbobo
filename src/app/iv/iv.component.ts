@@ -21,7 +21,7 @@ export class IvComponent implements OnInit {
   atk = 15;
   def = 15;
   hp = 15;
-  result = 'Results will show here.';
+  summary = 'Results will show here. Calculating all possible wins might take a few seconds.';
   pks: Pokemon[] = [];
   yourrank = 0;
   max = 0;
@@ -50,7 +50,7 @@ export class IvComponent implements OnInit {
       this.buildList();
       this.writeList();
     } else {
-      this.result = `Could not find a Pokémon named '${form.value.pokename}'`;
+      this.summary = `Could not find a Pokémon named '${form.value.pokename}'`;
     }
 
     this.gaSend();
@@ -71,14 +71,51 @@ export class IvComponent implements OnInit {
     return value;
   }
 
+  // writes a human readable summary of the data table
+  writeSummary() {
+    const ivs = `${this.atk}/${this.def}/${this.hp}`;
+    this.summary = `Your ${this.name} with ${bold(ivs)} IV
+    has ${bold(this.yourpk.cp)} cp at level ${bold(this.yourpk.level)} for ${(this.league)} league.`;
+    this.summary += `<br><br>`;
+    this.summary += `It is the ${bold(this.yourrank)}${nth(this.yourrank)} best of ${bold(this.pks.length)} possible combinations,
+    when ranked by total Stats Product. `;
+    this.summary += `<br><br>`;
+    if (this.wins.length > 1) {
+      const w = this.wins[this.yourrank - 1];
+      const wl = w > 1 ? `${bold('WIN')}` : `${bold('LOSE', 'red')}`;
+      this.summary += `When using only ${bold(this.yourfastmove.name)}, your ${this.name}
+      will ${wl} against ${bold(Math.abs(w))}
+       other ${this.name}s.`;
+    } else {
+      this.summary += `I'm still calculating fast move battles. This might take a few seconds...`;
+    }
+
+    function bold(text, c='feat'): string {
+      return `<span class='${c}'>${text}</span>`;
+    }
+
+    function nth(d) {
+      if (d > 3 && d < 21) { return 'th'; }
+      switch (d % 10) {
+        case 1:  return 'st';
+        case 2:  return 'nd';
+        case 3:  return 'rd';
+        default: return 'th';
+      }
+    }
+  }
+
+
+
   // takes the list this.pks that was built from buildList()
   // and uses it to write another list this.tableItems
   // which is what will end up being sent to the table on the UI
   writeList() {
     this.yourpk = this.pks[this.yourrank - 1];
     const yourpk = this.yourpk;
-    this.result = `Your rank is ${this.yourrank} of ${this.pks.length}. `;
-    this.result += `Fast Move: ${this.yourfastmove.name}.`;
+    // this.result = `Your rank is ${this.yourrank} of ${this.pks.length}. `;
+    // this.result += `Fast Move: ${this.yourfastmove.name}.`;
+    this.writeSummary();
     this.tableItems = [];
     this.pks.forEach((pk, i) => {
       this.writeRow(pk, i + 1);
@@ -108,22 +145,22 @@ export class IvComponent implements OnInit {
     this.tableItems.push(row);
   }
 
-  writePkm(pk: Pokemon, rank: number) {
-    this.result += '\n';
-    this.result += (rank + ' ').padStart(5);
-    this.result += (pk.cp + '  ').padStart(5);
-    this.result += (pk.level + '  ').padStart(6);
-    this.result += (pk.iv.atk + '/').padStart(3);
-    this.result += (pk.iv.def + '/').padStart(3);
-    this.result += (pk.iv.hp + '  ').padStart(4);
-    this.result += (((100 * pk.statprod) / this.max).toFixed(2) + '%').padStart(7);
-    this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
-    this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
-    this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
-    this.result += (Math.round(pk.stats.hp) + '  ').padStart(5);
-    this.result += (this.yourpk.getDamageToEnemy(this.yourfastmove, pk) + ' - ').padStart(5);
-    this.result += (pk.getDamageToEnemy(this.yourfastmove, this.yourpk) + '  ').padStart(3);
-  }
+  // writePkm(pk: Pokemon, rank: number) {
+  //   this.result += '\n';
+  //   this.result += (rank + ' ').padStart(5);
+  //   this.result += (pk.cp + '  ').padStart(5);
+  //   this.result += (pk.level + '  ').padStart(6);
+  //   this.result += (pk.iv.atk + '/').padStart(3);
+  //   this.result += (pk.iv.def + '/').padStart(3);
+  //   this.result += (pk.iv.hp + '  ').padStart(4);
+  //   this.result += (((100 * pk.statprod) / this.max).toFixed(2) + '%').padStart(7);
+  //   this.result += (Math.round(pk.statprod / 1000) + ' ').padStart(6);
+  //   this.result += (Math.round(pk.stats.atk) + ' ').padStart(6);
+  //   this.result += (Math.round(pk.stats.def) + ' ').padStart(4);
+  //   this.result += (Math.round(pk.stats.hp) + '  ').padStart(5);
+  //   this.result += (this.yourpk.getDamageToEnemy(this.yourfastmove, pk) + ' - ').padStart(5);
+  //   this.result += (pk.getDamageToEnemy(this.yourfastmove, this.yourpk) + '  ').padStart(3);
+  // }
 
   // adds all pokémon to the list of pokémon on this.pks
   async buildList() {

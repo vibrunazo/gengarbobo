@@ -72,8 +72,8 @@
 </mat-card>
 
 <mat-card class="resultcard">
-  <mat-card-content>
-        {{ result }}
+  <mat-card-content [innerHtml]='summary'>
+        <!-- {{ result }} -->
   </mat-card-content>
 
   <app-table data=pks></app-table>
