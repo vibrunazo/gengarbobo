@@ -31,7 +31,7 @@ export class IvComponent implements OnInit {
   allnames: string[];
   currentName: string;
   tableItems: any[] = [];
-  wins: number[] = [];
+  results: Results[] = [];
 
   constructor() {}
 
@@ -80,8 +80,8 @@ export class IvComponent implements OnInit {
     this.summary += `It is the ${bold(this.yourrank)}${nth(this.yourrank)} best of ${bold(this.pks.length)} possible combinations,
     when ranked by total Stats Product. `;
     this.summary += `<br><br>`;
-    if (this.wins.length > 1) {
-      const w = this.wins[this.yourrank - 1];
+    if (this.results.length > 1) {
+      const w = this.results[this.yourrank - 1].wins;
       const wl = w > 1 ? `${bold('WIN')}` : `${bold('LOSE', 'red')}`;
       this.summary += `When using only ${bold(this.yourfastmove.name)}, your ${this.name}
       will ${wl} against ${bold(Math.abs(w))}
@@ -90,7 +90,7 @@ export class IvComponent implements OnInit {
       this.summary += `I'm still calculating fast move battles. This might take a few seconds...`;
     }
 
-    function bold(text, c='feat'): string {
+    function bold(text, c= 'feat'): string {
       return `<span class='${c}'>${text}</span>`;
     }
 
@@ -127,7 +127,9 @@ export class IvComponent implements OnInit {
     const p1dmg = this.yourpk.getDamageToEnemy(this.yourfastmove, pk);
     const p2dmg = pk.getDamageToEnemy(this.yourfastmove, this.yourpk);
     const d = Pokemon.getFmDuel(this.yourpk, this.yourfastmove, pk, this.yourfastmove);
-    const w = this.wins.length > 1 ? this.wins[rank - 1] : '...';
+    const w = this.results.length > 1 ? this.results[rank - 1].wins : '...';
+    const l = this.results.length > 1 ? this.results[rank - 1].losses : '...';
+    const s = this.results.length > 1 ? this.results[rank - 1].sum : '...';
     const row = {
       r: rank,
       cp: pk.cp,
@@ -138,6 +140,8 @@ export class IvComponent implements OnInit {
       bp: `${p1dmg}-${p2dmg}`,
       duel: d,
       wins: w,
+      losses: l,
+      sum: s,
       atk: pk.stats.atk.toFixed(1),
       def: pk.stats.def.toFixed(1),
       hp: pk.stats.hp
@@ -198,40 +202,41 @@ export class IvComponent implements OnInit {
   ww() {
     if (typeof Worker !== 'undefined') {
       // Create a new
-      this.wins = [];
+      this.results = [];
       const worker = new Worker('./iv.worker', { type: 'module' });
       worker.onmessage = ({ data }) => {
-        // console.log(`page got message: ${data}`);
-        this.wins = data;
+        // console.log(`page got message: `);
+        // console.log(data);
+        this.results = data;
         this.writeList();
       };
-      const data = {
+      const out = {
         pks: this.pks,
         // PK: Pokemon,
         fm: this.yourfastmove
 
       };
-      worker.postMessage(data);
+      worker.postMessage(out);
     } else {
       // Web Workers are not supported in this environment.
       // You should add a fallback so that your program still executes correctly.
     }
   }
 
-  calculateAllWins() {
-    this.wins = [];
-    for (let i = 0; i < this.pks.length; i++) {
-      const wins = this.calculateWins(i);
-      this.wins.push(wins);
-    }
-    // console.log(`wins: `);
-    // console.log(this.wins);
-  }
+  // calculateAllWins() {
+  //   this.results = [];
+  //   for (let i = 0; i < this.pks.length; i++) {
+  //     const wins = this.calculateWins(i);
+  //     this.results.push(wins);
+  //   }
+  //   // console.log(`wins: `);
+  //   // console.log(this.wins);
+  // }
 
   // calculates how many wins the pokémon with this IV combination has against all other combinations
   calculateWins(index: number): number {
     let wins = 0;
-    let p1 = this.pks[index];
+    const p1 = this.pks[index];
     // let p2 = this.pks[0];
 
     for (const p2 of this.pks) {
@@ -299,3 +304,11 @@ export class IvComponent implements OnInit {
   }
 }
 
+// Results is a group of wins, losses and their sum. For one pokémon on the table against all other pokémon on the table
+// each pokémon row has their own Results
+// the final message sent by this worker will be an array of Results, one for each row
+interface Results {
+  wins: number;
+  losses: number;
+  sum: number;
+}
