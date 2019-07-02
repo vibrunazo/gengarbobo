@@ -59,7 +59,7 @@ function calculateWins(index: number, pks: Pokemon[], fm: Move): Results {
   for (const p2 of pks) {
     let d = Pokemon.getFmDuel(p1, fm, p2, fm);
     if (d > 0) { wins++; }
-    if (d < 0) { losses++; }
+    if (d < 0) { losses--; }
     d = Math.min(d, 1);
     d = Math.max(d, -1);
     sum += d;

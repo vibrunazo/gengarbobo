@@ -74,18 +74,41 @@ export class IvComponent implements OnInit {
   // writes a human readable summary of the data table
   writeSummary() {
     const ivs = `${this.atk}/${this.def}/${this.hp}`;
+    const r1 = this.pks[0];
+    const r1ivs = `${r1.iv.atk}/${r1.iv.def}/${r1.iv.hp}`;
+    const bp = this.tableItems[0].bp;
+    const dealt = bp.split('-')[0];
+    const taken = bp.split('-')[1];
+    const duel = this.tableItems[0].duel;
+    let duelwl =  `${bold('WIN')}`;
+    if (duel === 0) { duelwl = `${bold('DRAW')}`; }
+    if (duel < 0) { duelwl = `${bold('LOSE', 'red')}`; }
+
     this.summary = `Your ${this.name} with ${bold(ivs)} IV
     has ${bold(this.yourpk.cp)} cp at level ${bold(this.yourpk.level)} for ${(this.league)} league.`;
     this.summary += `<br><br>`;
     this.summary += `It is the ${bold(this.yourrank)}${nth(this.yourrank)} best of ${bold(this.pks.length)} possible combinations,
     when ranked by total Stats Product. `;
     this.summary += `<br><br>`;
+    this.summary += `The rank 1 ${this.name} by stat product is ${r1ivs}.<br>
+    When dueling against a ${r1ivs} ${this.name},
+    your ${bold(this.yourfastmove.name)} deals ${bold(dealt)} damage, and you take ${bold(taken, 'red')} damage.<br>
+    Your ${this.name} will ${duelwl} a duel against the rank 1 ${this.name}.<br>
+    With the winner ending with ${Math.abs(duel)} health left. If using only fast attacks.`;
+    this.summary += `<br><br>`;
     if (this.results.length > 1) {
       const w = this.results[this.yourrank - 1].wins;
-      const wl = w > 1 ? `${bold('WIN')}` : `${bold('LOSE', 'red')}`;
+      const l = this.results[this.yourrank - 1].losses;
+      const s = this.results[this.yourrank - 1].sum;
+      const ss = s > 1 ? `${bold(s)}` : `${bold(s, 'red')}`;
+      // const wl = w > 1 ? `${bold('WIN')}` : `${bold('LOSE', 'red')}`;
       this.summary += `When using only ${bold(this.yourfastmove.name)}, your ${this.name}
-      will ${wl} against ${bold(Math.abs(w))}
-       other ${this.name}s.`;
+      will ${bold('WIN')} against ${bold(w)}
+       other ${this.name}s.<br>`;
+      this.summary += `It will ${bold('LOSE', 'red')} against ${bold(l, 'red')}
+       other ${this.name}s.<br>`;
+      this.summary += `With a ${bold('SUM')} of wins + losses of ${ss}.`;
+
     } else {
       this.summary += `I'm still calculating fast move battles. This might take a few seconds...`;
     }
@@ -115,11 +138,11 @@ export class IvComponent implements OnInit {
     const yourpk = this.yourpk;
     // this.result = `Your rank is ${this.yourrank} of ${this.pks.length}. `;
     // this.result += `Fast Move: ${this.yourfastmove.name}.`;
-    this.writeSummary();
     this.tableItems = [];
     this.pks.forEach((pk, i) => {
       this.writeRow(pk, i + 1);
     });
+    this.writeSummary();
     this.table.updateTable(this.tableItems, this.tableItems[this.yourrank - 1], []);
   }
 
