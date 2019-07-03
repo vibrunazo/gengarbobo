@@ -16,7 +16,7 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatAutocompleteModule, MatTableModule, MatPaginatorModule, MatSortModule
+  MatAutocompleteModule, MatTableModule, MatPaginatorModule, MatSortModule, MatTooltipModule
 } from '@angular/material';
 import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
@@ -57,7 +57,8 @@ import { TableComponent } from './iv/table/table.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

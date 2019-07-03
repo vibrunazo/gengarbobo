@@ -143,7 +143,7 @@ export class IvComponent implements OnInit {
       this.writeRow(pk, i + 1);
     });
     this.writeSummary();
-    this.table.updateTable(this.tableItems, this.tableItems[this.yourrank - 1], []);
+    this.table.updateTable(this.tableItems, this.tableItems[this.yourrank - 1], this.name, this.yourfastmove.name);
   }
 
   writeRow(pk: Pokemon, rank: number) {
