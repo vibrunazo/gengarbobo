@@ -7,7 +7,7 @@ import { TableDataSource, TableItem } from './table-datasource';
 export const myCustomTooltipDefaults: MatTooltipDefaultOptions = {
   showDelay: 500,
   hideDelay: 500,
-  touchendHideDelay: 2000
+  touchendHideDelay: 5000
 };
 
 @Component({
@@ -113,11 +113,11 @@ export class TableComponent implements AfterViewInit, OnInit {
         you will ${duelwl} the duel, and the winner ends up with ${duel} health left.`;
 
       case 'wins':
-        return `This ${this.yourName} WINS ${row.wins} times against all other possible ${this.yourName}
+        return `This ${this.yourName} WINS ${row.wins} times against all other possible ${this.yourName}s
             on duels using only ${this.yourMove}.`;
 
       case 'losses':
-        return `This ${this.yourName} LOSES ${row.losses} times against all other possible ${this.yourName}
+        return `This ${this.yourName} LOSES ${row.losses} times against all other possible ${this.yourName}s
             on duels using only ${this.yourMove}.`;
 
       case 'sum':
@@ -129,13 +129,13 @@ export class TableComponent implements AfterViewInit, OnInit {
             ${sumwl}.`;
 
       case 'atk':
-        return `This ${this.yourName} has a total of ${row.atk} Attack at level ${row.level}`;
+        return `This ${this.yourName} has a total of ${row.atk} Attack at level ${row.level}.`;
 
       case 'def':
-        return `This ${this.yourName} has a total of ${row.def} Defense at level ${row.level}`;
+        return `This ${this.yourName} has a total of ${row.def} Defense at level ${row.level}.`;
 
       case 'hp':
-        return `This ${this.yourName} has a total of ${row.hp} Hit Points at level ${row.level}`;
+        return `This ${this.yourName} has a total of ${row.hp} Hit Points at level ${row.level}.`;
 
       default:
         break;
