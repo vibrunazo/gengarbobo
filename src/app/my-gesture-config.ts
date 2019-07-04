@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { GestureConfig, HammerManager } from '@angular/material';
+import { GestureConfig } from '@angular/material';
+import { HammerManager } from './shared/gesture-annotations';
 
 @Injectable()
 export class MyGestureConfig extends GestureConfig {
