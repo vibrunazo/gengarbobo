@@ -1,25 +1,33 @@
 import { AfterViewInit, Component, OnInit, ViewChild, Input, ViewEncapsulation, ElementRef } from '@angular/core';
-import { MatPaginator, MatSort, MatTable } from '@angular/material';
+import { MatPaginator, MatSort, MatTable, MatTooltipDefaultOptions, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material';
 import { TableDataSource, TableItem } from './table-datasource';
 // import { Pokemon } from 'src/app/shared/shared.module';
+
+/** Custom options the configure the tooltip's default show/hide delays. */
+export const myCustomTooltipDefaults: MatTooltipDefaultOptions = {
+  showDelay: 500,
+  hideDelay: 500,
+  touchendHideDelay: 2000
+};
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
+  providers: [{ provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useValue: myCustomTooltipDefaults }],
   encapsulation: ViewEncapsulation.None
 })
 export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatTable, { static: false }) table: MatTable<any>;
-  @ViewChild('lefoot', { static: false, read: ElementRef}) tbody: ElementRef;
+  @ViewChild('lefoot', { static: false, read: ElementRef }) tbody: ElementRef;
   @Input() data: any[] = [];
   dataSource: TableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['rank', 'cp', 'level', 'iv', 'statprod', 'pct', 'bp', 'duel', 'wins', 'losses', 'sum', 'atk', 'def', 'hp'];
-  fr: any = {r: 0, cp: 0, level: 0, iv: 0, statprod: 0, pct: 0, bp: 0, duel: 0, atk: 0, def: 0, hp: 0};
+  fr: any = { r: 0, cp: 0, level: 0, iv: 0, statprod: 0, pct: 0, bp: 0, duel: 0, atk: 0, def: 0, hp: 0 };
   yourName: string;
   yourMove: string;
 
@@ -57,7 +65,9 @@ export class TableComponent implements AfterViewInit, OnInit {
   // }
 
   getTooltip(col: string, row): string {
-    if (!row.r) { return `Hover a table cell for more info.`; }
+    if (!row.r) {
+      return `Hover a table cell for more info.`;
+    }
 
     switch (col) {
       case 'rank':
@@ -92,11 +102,40 @@ export class TableComponent implements AfterViewInit, OnInit {
 
       case 'duel':
         const duel = row.duel;
-        let duelwl =  `WIN`;
-        if (duel === 0) { duelwl = `DRAW`; }
-        if (duel < 0) { duelwl = `LOSE`; }
+        let duelwl = `WIN`;
+        if (duel === 0) {
+          duelwl = `DRAW`;
+        }
+        if (duel < 0) {
+          duelwl = `LOSE`;
+        }
         return `When your ${this.yourName} fights this ${this.yourName} using only ${this.yourMove},
         you will ${duelwl} the duel, and the winner ends up with ${duel} health left.`;
+
+      case 'wins':
+        return `This ${this.yourName} WINS ${row.wins} times against all other possible ${this.yourName}
+            on duels using only ${this.yourMove}.`;
+
+      case 'losses':
+        return `This ${this.yourName} LOSES ${row.losses} times against all other possible ${this.yourName}
+            on duels using only ${this.yourMove}.`;
+
+      case 'sum':
+        let sumwl = row.sum > 0 ? 'So it will WIN more often than it will lose.' : 'So it will LOSE more ofthan than it will win.';
+        if (row.sum === 0) {
+          sumwl = 'So it will win the same amount of times that it will lose.';
+        }
+        return `This ${this.yourName} has a SUM of WINS + LOSSES of ${row.sum}.
+            ${sumwl}.`;
+
+      case 'atk':
+        return `This ${this.yourName} has a total of ${row.atk} Attack at level ${row.level}`;
+
+      case 'def':
+        return `This ${this.yourName} has a total of ${row.def} Defense at level ${row.level}`;
+
+      case 'hp':
+        return `This ${this.yourName} has a total of ${row.hp} Hit Points at level ${row.level}`;
 
       default:
         break;
@@ -104,12 +143,18 @@ export class TableComponent implements AfterViewInit, OnInit {
     return `Hover a table cell for more info.`;
 
     function nth(d) {
-      if (d > 3 && d < 21) { return 'th'; }
+      if (d > 3 && d < 21) {
+        return 'th';
+      }
       switch (d % 10) {
-        case 1:  return 'st';
-        case 2:  return 'nd';
-        case 3:  return 'rd';
-        default: return 'th';
+        case 1:
+          return 'st';
+        case 2:
+          return 'nd';
+        case 3:
+          return 'rd';
+        default:
+          return 'th';
       }
     }
   }
