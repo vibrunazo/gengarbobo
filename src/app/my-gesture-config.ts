@@ -7,7 +7,7 @@ export class MyGestureConfig extends GestureConfig {
   buildHammer(element: HTMLElement) {
     const mc = super.buildHammer(element) as HammerManager;
 
-    mc.set({ touchAction: 'pan-y' });
+    mc.set({ touchAction: 'pan-x pan-y' });
 
     // Your other configurations
     mc.get('swipe').set({ velocity: 0.3, threshold: 10 });
