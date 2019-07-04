@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,11 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatAutocompleteModule, MatTableModule, MatPaginatorModule, MatSortModule, MatTooltipModule
+  MatAutocompleteModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatTooltipModule
 } from '@angular/material';
 import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
@@ -25,19 +29,11 @@ import { IvComponent } from './iv/iv.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive';
 import { TableComponent } from './iv/table/table.component';
+import { MyGestureConfig } from './my-gesture-config';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainnavComponent,
-    NewsComponent,
-    DexComponent,
-    AboutComponent,
-    IvComponent,
-    MinValueValidator,
-    MaxValueValidator,
-    TableComponent
-  ],
+  declarations: [AppComponent, MainnavComponent, NewsComponent, DexComponent,
+    AboutComponent, IvComponent, MinValueValidator, MaxValueValidator, TableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -60,7 +56,12 @@ import { TableComponent } from './iv/table/table.component';
     MatTableModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyGestureConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
