@@ -29,3 +29,10 @@ $warn: map-get($gengartheme, warn);
 .handsetmenu {
   color: #222  !important;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+}

@@ -30,12 +30,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive';
 import { TableComponent } from './iv/table/table.component';
 import { MyGestureConfig } from './my-gesture-config';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, MainnavComponent, NewsComponent, DexComponent,
-    AboutComponent, IvComponent, MinValueValidator, MaxValueValidator, TableComponent],
+    AboutComponent, IvComponent, MinValueValidator, MaxValueValidator, TableComponent, FooterComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
