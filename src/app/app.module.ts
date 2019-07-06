@@ -32,10 +32,11 @@ import { TableComponent } from './iv/table/table.component';
 import { MyGestureConfig } from './my-gesture-config';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PktableComponent } from './dex/pktable/pktable.component';
 
 @NgModule({
   declarations: [AppComponent, MainnavComponent, NewsComponent, DexComponent,
-    AboutComponent, IvComponent, MinValueValidator, MaxValueValidator, TableComponent, FooterComponent],
+    AboutComponent, IvComponent, MinValueValidator, MaxValueValidator, TableComponent, FooterComponent, PktableComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
