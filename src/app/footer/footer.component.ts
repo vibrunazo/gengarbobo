@@ -7,7 +7,8 @@ import { GitserviceService } from '../shared/gitservice.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  commitString = 'loading last commit';
+  commitDate = 'loading last commit';
+  commitMessage = '...';
   commitData;
 
   constructor(private gitService: GitserviceService) {}
@@ -33,13 +34,17 @@ export class FooterComponent implements OnInit {
     const delta = now.getTime() - date.getTime();
     const diffHours = Math.floor(delta / (1000 * 60 * 60));
 
+
     if (diffHours < 24) {
-      this.commitString = `${date.toDateString()} (${hoursAgo(diffHours)})`;
+      this.commitDate = `${date.toDateString()} (${hoursAgo(diffHours)})`;
     }
     if (diffHours >= 24) {
       const diffDays = Math.floor(delta / (1000 * 60 * 60 * 24));
-      this.commitString = `${date.toDateString()} (${daysAgo(diffDays)})`;
+      this.commitDate = `${date.toDateString()} (${daysAgo(diffDays)})`;
     }
+
+    const msg = this.commitData[0].commit.message;
+    this.commitMessage = msg;
 
     function hoursAgo(hours) {
       if (hours === 0) {

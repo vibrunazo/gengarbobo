@@ -1,4 +1,17 @@
 <mat-toolbar color="accent" class="bar">
-  Last updated: <br>
-  {{commitString}}
+  <div class="container">
+    <div class="line1">
+      Last updated:
+    </div>
+    <div class="line2">
+      <a href="https://github.com/vibrunazo/gengarbobo/commits/master" target="_blank">
+        {{ commitDate }}
+      </a>
+    </div>
+    <div class="line3">
+      <a href="https://github.com/vibrunazo/gengarbobo/commits/master" target="_blank">
+        "{{ commitMessage }}"
+      </a>
+    </div>
+  </div>
 </mat-toolbar>
