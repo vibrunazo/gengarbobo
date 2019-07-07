@@ -1,43 +1,43 @@
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="dex">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
       <td mat-cell *matCellDef="let row">{{row.dex}}</td>
     </ng-container>
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.speciesName}}</td>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
     </ng-container>
 
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
-      <td mat-cell *matCellDef="let row">{{row.types}}</td>
+      <td mat-cell *matCellDef="let row">{{row.type}}</td>
     </ng-container>
 
     <ng-container matColumnDef="atk">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Atk</th>
-      <td mat-cell *matCellDef="let row">{{row.baseStats.atk}}</td>
+      <td mat-cell *matCellDef="let row">{{row.atk}}</td>
     </ng-container>
 
     <ng-container matColumnDef="def">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Def</th>
-      <td mat-cell *matCellDef="let row">{{row.baseStats.def}}</td>
+      <td mat-cell *matCellDef="let row">{{row.def}}</td>
     </ng-container>
 
     <ng-container matColumnDef="hp">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>HP</th>
-      <td mat-cell *matCellDef="let row">{{row.baseStats.hp}}</td>
+      <td mat-cell *matCellDef="let row">{{row.hp}}</td>
     </ng-container>
 
     <ng-container matColumnDef="fm">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Fast</th>
-      <td mat-cell *matCellDef="let row">{{row.fastMoves}}</td>
+      <td mat-cell *matCellDef="let row">{{row.fm}}</td>
     </ng-container>
 
     <ng-container matColumnDef="cm">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Charged</th>
-      <td mat-cell *matCellDef="let row">{{row.chargedMoves}}</td>
+      <td mat-cell *matCellDef="let row">{{row.cm}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

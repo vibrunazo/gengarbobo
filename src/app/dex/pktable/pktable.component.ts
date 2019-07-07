@@ -14,7 +14,7 @@ export class PktableComponent implements AfterViewInit, OnInit {
   dataSource: PktableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'type', 'atk', 'def', 'hp', 'fm', 'cm'];
+  displayedColumns = ['dex', 'name', 'type', 'atk', 'def', 'hp', 'fm', 'cm'];
 
   ngOnInit() {
     this.dataSource = new PktableDataSource();

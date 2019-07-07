@@ -3,12 +3,13 @@ import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { Pokemon, PokemonSpecies, Move } from '../../shared/shared.module';
+import { ROWS } from '../tableItems';
 
 // TODO: Replace this with your own data model type
 export interface PktableItem {
-  speciesName: string;
+  speciesName?: string;
   dex: number;
-  baseStats;
+  baseStats?;
   name?: string;
   id?: number;
 }
@@ -44,7 +45,8 @@ export interface PktableItem {
  */
 export class PktableDataSource extends DataSource<PktableItem> {
   // data: PktableItem[] = EXAMPLE_DATA;
-  data = Pokemon.dex;
+  // data = Pokemon.dex;
+  data = ROWS;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -97,16 +99,16 @@ export class PktableDataSource extends DataSource<PktableItem> {
 
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
-      // return compare(+a[this.sort.active], +b[this.sort.active], isAsc);
+      return compare(a[this.sort.active], b[this.sort.active], isAsc);
       // return compare(+a.atk, +b.id, isAsc);
-      switch (this.sort.active) {
-        case 'atk': return compare(+a.baseStats.atk, +b.baseStats.atk, isAsc);
-        case 'def': return compare(+a.baseStats.def, +b.baseStats.def, isAsc);
-        case 'hp': return compare(+a.baseStats.hp, +b.baseStats.hp, isAsc);
-        case 'name': return compare(a.speciesName, b.speciesName, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        default: return 0;
-      }
+      // switch (this.sort.active) {
+      //   case 'atk': return compare(+a.atk, +b.atk, isAsc);
+      //   case 'def': return compare(+a.def, +b.def, isAsc);
+      //   case 'hp': return compare(+a.hp, +b.hp, isAsc);
+      //   case 'name': return compare(a.name, b.name, isAsc);
+      //   case 'id': return compare(+a.id, +b.id, isAsc);
+      //   default: return 0;
+      // }
     });
   }
 }

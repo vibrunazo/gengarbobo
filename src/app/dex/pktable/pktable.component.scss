@@ -6,13 +6,43 @@
   max-width: 200px !important;
 }
 
+.mat-cell {
+  padding-left: 5px !important;
+}
+
+th.mat-header-cell:first-of-type {
+  padding-left: 5px;
+}
+
 .mat-column-fm {
-  max-width: 150px;
+  max-width: 120px;
   overflow-wrap: break-word;
 }
 
 .mat-column-cm {
   // flex: 0 0 100px;
-  max-width: 150px;
+  max-width: 120px;
   overflow-wrap: break-word;
+}
+
+.mat-column-dex {
+  max-width: 15px;
+}
+.mat-column-atk {
+  max-width: 15px;
+}
+.mat-column-def {
+  max-width: 15px;
+}
+.mat-column-hp {
+  max-width: 15px;
+}
+
+.mat-column-name {
+  max-width: 60px;
+  overflow-wrap: normal;
+}
+.mat-column-type {
+  max-width: 50px;
+  overflow-wrap: normal;
 }
