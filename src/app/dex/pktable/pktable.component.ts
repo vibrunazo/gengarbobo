@@ -9,13 +9,13 @@ import { Move } from 'src/app/shared/shared.module';
   styleUrls: ['./pktable.component.scss']
 })
 export class PktableComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
-  @ViewChild(MatTable, {static: false}) table: MatTable<PktableItem>;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatTable, { static: false }) table: MatTable<PktableItem>;
   dataSource: PktableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['dex', 'name', 'type', 'atk', 'def', 'hp', 'stats', 'fm', 'cm'];
+  displayedColumns = ['dex', 'name', 'type', 'fm', 'cm', 'stats', 'atk', 'def', 'hp'];
 
   ngOnInit() {
     this.dataSource = new PktableDataSource();
@@ -34,8 +34,20 @@ export class PktableComponent implements AfterViewInit, OnInit {
     moveIds.forEach((m, i) => {
       const thisMove = Move.findMoveById(m);
       moves.push(thisMove);
-      html += thisMove.name + (i + 1 < moveIds.length ? ', ' : '');
+      html += `<span class="move ${thisMove.type}">${thisMove.name}</span>${i + 1 < moveIds.length ? ', ' : ''}`;
     });
+    return html;
+  }
+
+  // returns the HTML for a cell in the 'types' column. Given an array of types
+  getTypeHTML(types: string[]): string {
+    let html = '';
+    types.forEach((t, i) => {
+      if (t !== 'none') {
+        html += `${i === 1 ? ', ' : ''}<span class="move ${t}">${t}</span>`;
+      }
+    });
+
     return html;
   }
 }
