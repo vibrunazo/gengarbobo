@@ -7,7 +7,8 @@ export const ROWS = [
     def: 111,
     hp: 128,
     fm: ['TACKLE', 'VINE_WHIP'],
-    cm: ['POWER_WHIP', 'SEED_BOMB', 'SLUDGE_BOMB']
+    cm: ['POWER_WHIP', 'SEED_BOMB', 'SLUDGE_BOMB'],
+    stats: 1677
   },
   {
     name: 'Ivysaur',
@@ -17,7 +18,8 @@ export const ROWS = [
     def: 143,
     hp: 155,
     fm: ['RAZOR_LEAF', 'VINE_WHIP'],
-    cm: ['POWER_WHIP', 'SLUDGE_BOMB', 'SOLAR_BEAM']
+    cm: ['POWER_WHIP', 'SLUDGE_BOMB', 'SOLAR_BEAM'],
+    stats: 3347
   },
   {
     name: 'Venusaur',
@@ -27,7 +29,8 @@ export const ROWS = [
     def: 189,
     hp: 190,
     fm: ['RAZOR_LEAF', 'VINE_WHIP'],
-    cm: ['FRENZY_PLANT', 'PETAL_BLIZZARD', 'SLUDGE_BOMB', 'SOLAR_BEAM']
+    cm: ['FRENZY_PLANT', 'PETAL_BLIZZARD', 'SLUDGE_BOMB', 'SOLAR_BEAM'],
+    stats: 7110
   },
   {
     name: 'Charmander',
@@ -37,7 +40,8 @@ export const ROWS = [
     def: 93,
     hp: 118,
     fm: ['EMBER', 'SCRATCH'],
-    cm: ['FLAME_BURST', 'FLAME_CHARGE', 'FLAMETHROWER']
+    cm: ['FLAME_BURST', 'FLAME_CHARGE', 'FLAMETHROWER'],
+    stats: 1273
   },
   {
     name: 'Charmeleon',
@@ -47,7 +51,8 @@ export const ROWS = [
     def: 126,
     hp: 151,
     fm: ['EMBER', 'FIRE_FANG', 'SCRATCH'],
-    cm: ['FIRE_PUNCH', 'FLAME_BURST', 'FLAMETHROWER']
+    cm: ['FIRE_PUNCH', 'FLAME_BURST', 'FLAMETHROWER'],
+    stats: 3006
   },
   {
     name: 'Charizard',
@@ -57,7 +62,8 @@ export const ROWS = [
     def: 173,
     hp: 186,
     fm: ['AIR_SLASH', 'EMBER', 'FIRE_SPIN', 'WING_ATTACK'],
-    cm: ['BLAST_BURN', 'DRAGON_CLAW', 'FIRE_BLAST', 'FLAMETHROWER', 'OVERHEAT']
+    cm: ['BLAST_BURN', 'DRAGON_CLAW', 'FIRE_BLAST', 'FLAMETHROWER', 'OVERHEAT'],
+    stats: 7176
   },
   {
     name: 'Squirtle',
@@ -67,7 +73,8 @@ export const ROWS = [
     def: 121,
     hp: 127,
     fm: ['BUBBLE', 'TACKLE'],
-    cm: ['AQUA_JET', 'AQUA_TAIL', 'WATER_PULSE']
+    cm: ['AQUA_JET', 'AQUA_TAIL', 'WATER_PULSE'],
+    stats: 1444
   },
   {
     name: 'Wartortle',
@@ -77,7 +84,8 @@ export const ROWS = [
     def: 155,
     hp: 153,
     fm: ['BITE', 'WATER_GUN'],
-    cm: ['AQUA_JET', 'HYDRO_PUMP', 'ICE_BEAM']
+    cm: ['AQUA_JET', 'HYDRO_PUMP', 'ICE_BEAM'],
+    stats: 2988
   },
   {
     name: 'Blastoise',
@@ -87,10 +95,11 @@ export const ROWS = [
     def: 207,
     hp: 188,
     fm: ['BITE', 'WATER_GUN'],
-    cm: ['FLASH_CANNON', 'HYDRO_CANNON', 'HYDRO_PUMP', 'ICE_BEAM']
+    cm: ['FLASH_CANNON', 'HYDRO_CANNON', 'HYDRO_PUMP', 'ICE_BEAM'],
+    stats: 6655
   },
-  { name: 'Caterpie', dex: 10, type: ['bug', 'none'], atk: 55, def: 55, hp: 128, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'] },
-  { name: 'Metapod', dex: 11, type: ['bug', 'none'], atk: 45, def: 80, hp: 137, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'] },
+  { name: 'Caterpie', dex: 10, type: ['bug', 'none'], atk: 55, def: 55, hp: 128, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'], stats: 387 },
+  { name: 'Metapod', dex: 11, type: ['bug', 'none'], atk: 45, def: 80, hp: 137, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'], stats: 493 },
   {
     name: 'Butterfree',
     dex: 12,
@@ -99,10 +108,31 @@ export const ROWS = [
     def: 137,
     hp: 155,
     fm: ['BUG_BITE', 'CONFUSION', 'STRUGGLE_BUG'],
-    cm: ['BUG_BUZZ', 'PSYCHIC', 'SIGNAL_BEAM']
+    cm: ['BUG_BUZZ', 'PSYCHIC', 'SIGNAL_BEAM'],
+    stats: 3546
   },
-  { name: 'Weedle', dex: 13, type: ['bug', 'poison'], atk: 63, def: 50, hp: 120, fm: ['BUG_BITE', 'POISON_STING'], cm: ['STRUGGLE'] },
-  { name: 'Kakuna', dex: 14, type: ['bug', 'poison'], atk: 46, def: 75, hp: 128, fm: ['BUG_BITE', 'POISON_STING'], cm: ['STRUGGLE'] },
+  {
+    name: 'Weedle',
+    dex: 13,
+    type: ['bug', 'poison'],
+    atk: 63,
+    def: 50,
+    hp: 120,
+    fm: ['BUG_BITE', 'POISON_STING'],
+    cm: ['STRUGGLE'],
+    stats: 378
+  },
+  {
+    name: 'Kakuna',
+    dex: 14,
+    type: ['bug', 'poison'],
+    atk: 46,
+    def: 75,
+    hp: 128,
+    fm: ['BUG_BITE', 'POISON_STING'],
+    cm: ['STRUGGLE'],
+    stats: 442
+  },
   {
     name: 'Beedrill',
     dex: 15,
@@ -111,7 +141,8 @@ export const ROWS = [
     def: 130,
     hp: 163,
     fm: ['BUG_BITE', 'INFESTATION', 'POISON_JAB'],
-    cm: ['AERIAL_ACE', 'SLUDGE_BOMB', 'X_SCISSOR']
+    cm: ['AERIAL_ACE', 'SLUDGE_BOMB', 'X_SCISSOR'],
+    stats: 3581
   },
   {
     name: 'Pidgey',
@@ -121,7 +152,8 @@ export const ROWS = [
     def: 73,
     hp: 120,
     fm: ['QUICK_ATTACK', 'TACKLE'],
-    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'TWISTER']
+    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'TWISTER'],
+    stats: 745
   },
   {
     name: 'Pidgeotto',
@@ -131,7 +163,8 @@ export const ROWS = [
     def: 105,
     hp: 160,
     fm: ['STEEL_WING', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'TWISTER']
+    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'TWISTER'],
+    stats: 1966
   },
   {
     name: 'Pidgeot',
@@ -141,7 +174,8 @@ export const ROWS = [
     def: 154,
     hp: 195,
     fm: ['AIR_SLASH', 'STEEL_WING', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'BRAVE_BIRD', 'HURRICANE']
+    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'BRAVE_BIRD', 'HURRICANE'],
+    stats: 4985
   },
   {
     name: 'Rattata',
@@ -151,7 +185,8 @@ export const ROWS = [
     def: 70,
     hp: 102,
     fm: ['QUICK_ATTACK', 'TACKLE'],
-    cm: ['BODY_SLAM', 'DIG', 'HYPER_FANG']
+    cm: ['BODY_SLAM', 'DIG', 'HYPER_FANG'],
+    stats: 735
   },
   {
     name: 'Rattata (Alolan)',
@@ -161,7 +196,8 @@ export const ROWS = [
     def: 70,
     hp: 102,
     fm: ['QUICK_ATTACK', 'TACKLE'],
-    cm: ['CRUNCH', 'HYPER_FANG', 'SHADOW_BALL']
+    cm: ['CRUNCH', 'HYPER_FANG', 'SHADOW_BALL'],
+    stats: 735
   },
   {
     name: 'Raticate',
@@ -171,7 +207,8 @@ export const ROWS = [
     def: 139,
     hp: 146,
     fm: ['BITE', 'QUICK_ATTACK'],
-    cm: ['DIG', 'HYPER_BEAM', 'HYPER_FANG']
+    cm: ['DIG', 'HYPER_BEAM', 'HYPER_FANG'],
+    stats: 3267
   },
   {
     name: 'Raticate (Alolan)',
@@ -181,7 +218,8 @@ export const ROWS = [
     def: 154,
     hp: 181,
     fm: ['BITE', 'QUICK_ATTACK'],
-    cm: ['CRUNCH', 'HYPER_BEAM', 'HYPER_FANG']
+    cm: ['CRUNCH', 'HYPER_BEAM', 'HYPER_FANG'],
+    stats: 3763
   },
   {
     name: 'Spearow',
@@ -191,7 +229,8 @@ export const ROWS = [
     def: 60,
     hp: 120,
     fm: ['PECK', 'QUICK_ATTACK'],
-    cm: ['AERIAL_ACE', 'DRILL_PECK', 'SKY_ATTACK', 'TWISTER']
+    cm: ['AERIAL_ACE', 'DRILL_PECK', 'SKY_ATTACK', 'TWISTER'],
+    stats: 806
   },
   {
     name: 'Fearow',
@@ -201,7 +240,8 @@ export const ROWS = [
     def: 133,
     hp: 163,
     fm: ['PECK', 'STEEL_WING'],
-    cm: ['AERIAL_ACE', 'DRILL_RUN', 'SKY_ATTACK', 'TWISTER']
+    cm: ['AERIAL_ACE', 'DRILL_RUN', 'SKY_ATTACK', 'TWISTER'],
+    stats: 3946
   },
   {
     name: 'Ekans',
@@ -211,7 +251,8 @@ export const ROWS = [
     def: 97,
     hp: 111,
     fm: ['ACID', 'POISON_STING'],
-    cm: ['GUNK_SHOT', 'POISON_FANG', 'SLUDGE_BOMB', 'WRAP']
+    cm: ['GUNK_SHOT', 'POISON_FANG', 'SLUDGE_BOMB', 'WRAP'],
+    stats: 1184
   },
   {
     name: 'Arbok',
@@ -221,7 +262,8 @@ export const ROWS = [
     def: 153,
     hp: 155,
     fm: ['ACID', 'BITE', 'DRAGON_TAIL'],
-    cm: ['DARK_PULSE', 'GUNK_SHOT', 'SLUDGE_WAVE', 'ACID_SPRAY']
+    cm: ['DARK_PULSE', 'GUNK_SHOT', 'SLUDGE_WAVE', 'ACID_SPRAY'],
+    stats: 3960
   },
   {
     name: 'Pikachu',
@@ -231,7 +273,8 @@ export const ROWS = [
     def: 96,
     hp: 111,
     fm: ['PRESENT', 'QUICK_ATTACK', 'THUNDER_SHOCK'],
-    cm: ['DISCHARGE', 'SURF', 'THUNDER', 'THUNDERBOLT', 'WILD_CHARGE']
+    cm: ['DISCHARGE', 'SURF', 'THUNDER', 'THUNDERBOLT', 'WILD_CHARGE'],
+    stats: 1193
   },
   {
     name: 'Raichu',
@@ -241,7 +284,8 @@ export const ROWS = [
     def: 151,
     hp: 155,
     fm: ['SPARK', 'THUNDER_SHOCK', 'VOLT_SWITCH'],
-    cm: ['BRICK_BREAK', 'THUNDER', 'THUNDER_PUNCH', 'WILD_CHARGE']
+    cm: ['BRICK_BREAK', 'THUNDER', 'THUNDER_PUNCH', 'WILD_CHARGE'],
+    stats: 4517
   },
   {
     name: 'Raichu (Alolan)',
@@ -251,7 +295,8 @@ export const ROWS = [
     def: 154,
     hp: 155,
     fm: ['SPARK', 'VOLT_SWITCH'],
-    cm: ['PSYCHIC', 'THUNDER_PUNCH', 'WILD_CHARGE']
+    cm: ['PSYCHIC', 'THUNDER_PUNCH', 'WILD_CHARGE'],
+    stats: 4798
   },
   {
     name: 'Sandshrew',
@@ -261,7 +306,8 @@ export const ROWS = [
     def: 120,
     hp: 137,
     fm: ['MUD_SHOT', 'SCRATCH'],
-    cm: ['DIG', 'ROCK_SLIDE', 'ROCK_TOMB', 'SAND_TOMB']
+    cm: ['DIG', 'ROCK_SLIDE', 'ROCK_TOMB', 'SAND_TOMB'],
+    stats: 2071
   },
   {
     name: 'Sandshrew (Alolan)',
@@ -271,7 +317,8 @@ export const ROWS = [
     def: 129,
     hp: 137,
     fm: ['METAL_CLAW', 'POWDER_SNOW'],
-    cm: ['BLIZZARD', 'GYRO_BALL', 'NIGHT_SLASH']
+    cm: ['BLIZZARD', 'GYRO_BALL', 'NIGHT_SLASH'],
+    stats: 2209
   },
   {
     name: 'Sandslash',
@@ -281,7 +328,8 @@ export const ROWS = [
     def: 175,
     hp: 181,
     fm: ['METAL_CLAW', 'MUD_SHOT'],
-    cm: ['BULLDOZE', 'EARTHQUAKE', 'ROCK_TOMB']
+    cm: ['BULLDOZE', 'EARTHQUAKE', 'ROCK_TOMB'],
+    stats: 5765
   },
   {
     name: 'Sandslash (Alolan)',
@@ -291,7 +339,8 @@ export const ROWS = [
     def: 195,
     hp: 181,
     fm: ['METAL_CLAW', 'POWDER_SNOW'],
-    cm: ['BLIZZARD', 'BULLDOZE', 'GYRO_BALL']
+    cm: ['BLIZZARD', 'BULLDOZE', 'GYRO_BALL'],
+    stats: 6247
   },
   {
     name: 'Nidoran♀',
@@ -301,7 +350,8 @@ export const ROWS = [
     def: 89,
     hp: 146,
     fm: ['BITE', 'POISON_STING'],
-    cm: ['BODY_SLAM', 'POISON_FANG', 'SLUDGE_BOMB']
+    cm: ['BODY_SLAM', 'POISON_FANG', 'SLUDGE_BOMB'],
+    stats: 1117
   },
   {
     name: 'Nidorina',
@@ -311,7 +361,8 @@ export const ROWS = [
     def: 120,
     hp: 172,
     fm: ['BITE', 'POISON_STING'],
-    cm: ['DIG', 'POISON_FANG', 'SLUDGE_BOMB']
+    cm: ['DIG', 'POISON_FANG', 'SLUDGE_BOMB'],
+    stats: 2415
   },
   {
     name: 'Nidoqueen',
@@ -321,7 +372,8 @@ export const ROWS = [
     def: 173,
     hp: 207,
     fm: ['BITE', 'POISON_JAB'],
-    cm: ['EARTHQUAKE', 'SLUDGE_WAVE', 'STONE_EDGE', 'EARTH_POWER']
+    cm: ['EARTHQUAKE', 'SLUDGE_WAVE', 'STONE_EDGE', 'EARTH_POWER'],
+    stats: 6446
   },
   {
     name: 'Nidoran♂',
@@ -331,7 +383,8 @@ export const ROWS = [
     def: 76,
     hp: 130,
     fm: ['PECK', 'POISON_STING'],
-    cm: ['BODY_SLAM', 'HORN_ATTACK', 'SLUDGE_BOMB']
+    cm: ['BODY_SLAM', 'HORN_ATTACK', 'SLUDGE_BOMB'],
+    stats: 1037
   },
   {
     name: 'Nidorino',
@@ -341,7 +394,8 @@ export const ROWS = [
     def: 111,
     hp: 156,
     fm: ['POISON_JAB', 'POISON_STING'],
-    cm: ['DIG', 'HORN_ATTACK', 'SLUDGE_BOMB']
+    cm: ['DIG', 'HORN_ATTACK', 'SLUDGE_BOMB'],
+    stats: 2372
   },
   {
     name: 'Nidoking',
@@ -351,7 +405,8 @@ export const ROWS = [
     def: 156,
     hp: 191,
     fm: ['FURY_CUTTER', 'IRON_TAIL', 'POISON_JAB'],
-    cm: ['EARTHQUAKE', 'MEGAHORN', 'SLUDGE_WAVE', 'EARTH_POWER']
+    cm: ['EARTHQUAKE', 'MEGAHORN', 'SLUDGE_WAVE', 'EARTH_POWER'],
+    stats: 6078
   },
   {
     name: 'Clefairy',
@@ -361,7 +416,8 @@ export const ROWS = [
     def: 108,
     hp: 172,
     fm: ['POUND', 'ZEN_HEADBUTT'],
-    cm: ['BODY_SLAM', 'DISARMING_VOICE', 'MOONBLAST']
+    cm: ['BODY_SLAM', 'DISARMING_VOICE', 'MOONBLAST'],
+    stats: 1988
   },
   {
     name: 'Clefable',
@@ -371,7 +427,8 @@ export const ROWS = [
     def: 162,
     hp: 216,
     fm: ['CHARGE_BEAM', 'POUND', 'ZEN_HEADBUTT'],
-    cm: ['DAZZLING_GLEAM', 'METEOR_MASH', 'MOONBLAST', 'PSYCHIC']
+    cm: ['DAZZLING_GLEAM', 'METEOR_MASH', 'MOONBLAST', 'PSYCHIC'],
+    stats: 6229
   },
   {
     name: 'Vulpix',
@@ -381,7 +438,8 @@ export const ROWS = [
     def: 109,
     hp: 116,
     fm: ['EMBER', 'QUICK_ATTACK'],
-    cm: ['BODY_SLAM', 'FLAME_CHARGE', 'FLAMETHROWER']
+    cm: ['BODY_SLAM', 'FLAME_CHARGE', 'FLAMETHROWER'],
+    stats: 1214
   },
   {
     name: 'Vulpix (Alolan)',
@@ -391,7 +449,8 @@ export const ROWS = [
     def: 109,
     hp: 116,
     fm: ['POWDER_SNOW', 'ZEN_HEADBUTT'],
-    cm: ['BLIZZARD', 'DARK_PULSE', 'ICE_BEAM']
+    cm: ['BLIZZARD', 'DARK_PULSE', 'ICE_BEAM'],
+    stats: 1214
   },
   {
     name: 'Ninetales',
@@ -401,7 +460,8 @@ export const ROWS = [
     def: 190,
     hp: 177,
     fm: ['EMBER', 'FEINT_ATTACK', 'FIRE_SPIN'],
-    cm: ['FIRE_BLAST', 'FLAMETHROWER', 'HEAT_WAVE', 'OVERHEAT', 'PSYSHOCK', 'SOLAR_BEAM']
+    cm: ['FIRE_BLAST', 'FLAMETHROWER', 'HEAT_WAVE', 'OVERHEAT', 'PSYSHOCK', 'SOLAR_BEAM'],
+    stats: 5683
   },
   {
     name: 'Ninetales (Alolan)',
@@ -411,7 +471,8 @@ export const ROWS = [
     def: 193,
     hp: 177,
     fm: ['FEINT_ATTACK', 'POWDER_SNOW'],
-    cm: ['BLIZZARD', 'DAZZLING_GLEAM', 'ICE_BEAM', 'PSYSHOCK']
+    cm: ['BLIZZARD', 'DAZZLING_GLEAM', 'ICE_BEAM', 'PSYSHOCK'],
+    stats: 5807
   },
   {
     name: 'Jigglypuff',
@@ -421,7 +482,8 @@ export const ROWS = [
     def: 41,
     hp: 251,
     fm: ['FEINT_ATTACK', 'POUND'],
-    cm: ['BODY_SLAM', 'DAZZLING_GLEAM', 'DISARMING_VOICE', 'GYRO_BALL', 'PLAY_ROUGH']
+    cm: ['BODY_SLAM', 'DAZZLING_GLEAM', 'DISARMING_VOICE', 'GYRO_BALL', 'PLAY_ROUGH'],
+    stats: 823
   },
   {
     name: 'Wigglytuff',
@@ -431,7 +493,8 @@ export const ROWS = [
     def: 90,
     hp: 295,
     fm: ['FEINT_ATTACK', 'POUND'],
-    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'ICE_BEAM', 'PLAY_ROUGH']
+    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'ICE_BEAM', 'PLAY_ROUGH'],
+    stats: 4142
   },
   {
     name: 'Zubat',
@@ -441,7 +504,8 @@ export const ROWS = [
     def: 73,
     hp: 120,
     fm: ['BITE', 'QUICK_ATTACK'],
-    cm: ['AIR_CUTTER', 'POISON_FANG', 'SLUDGE_BOMB', 'SWIFT']
+    cm: ['AIR_CUTTER', 'POISON_FANG', 'SLUDGE_BOMB', 'SWIFT'],
+    stats: 727
   },
   {
     name: 'Golbat',
@@ -451,7 +515,8 @@ export const ROWS = [
     def: 150,
     hp: 181,
     fm: ['BITE', 'WING_ATTACK'],
-    cm: ['AIR_CUTTER', 'OMINOUS_WIND', 'POISON_FANG', 'SHADOW_BALL']
+    cm: ['AIR_CUTTER', 'OMINOUS_WIND', 'POISON_FANG', 'SHADOW_BALL'],
+    stats: 4371
   },
   {
     name: 'Oddish',
@@ -461,7 +526,8 @@ export const ROWS = [
     def: 112,
     hp: 128,
     fm: ['ACID', 'RAZOR_LEAF'],
-    cm: ['MOONBLAST', 'SEED_BOMB', 'SLUDGE_BOMB']
+    cm: ['MOONBLAST', 'SEED_BOMB', 'SLUDGE_BOMB'],
+    stats: 1878
   },
   {
     name: 'Gloom',
@@ -471,7 +537,8 @@ export const ROWS = [
     def: 136,
     hp: 155,
     fm: ['ACID', 'RAZOR_LEAF'],
-    cm: ['MOONBLAST', 'PETAL_BLIZZARD', 'SLUDGE_BOMB']
+    cm: ['MOONBLAST', 'PETAL_BLIZZARD', 'SLUDGE_BOMB'],
+    stats: 3225
   },
   {
     name: 'Vileplume',
@@ -481,7 +548,8 @@ export const ROWS = [
     def: 167,
     hp: 181,
     fm: ['ACID', 'RAZOR_LEAF'],
-    cm: ['MOONBLAST', 'PETAL_BLIZZARD', 'SOLAR_BEAM']
+    cm: ['MOONBLAST', 'PETAL_BLIZZARD', 'SOLAR_BEAM'],
+    stats: 6106
   },
   {
     name: 'Paras',
@@ -491,7 +559,8 @@ export const ROWS = [
     def: 99,
     hp: 111,
     fm: ['BUG_BITE', 'SCRATCH'],
-    cm: ['CROSS_POISON', 'SEED_BOMB', 'X_SCISSOR']
+    cm: ['CROSS_POISON', 'SEED_BOMB', 'X_SCISSOR'],
+    stats: 1330
   },
   {
     name: 'Parasect',
@@ -501,7 +570,8 @@ export const ROWS = [
     def: 146,
     hp: 155,
     fm: ['BUG_BITE', 'FURY_CUTTER', 'STRUGGLE_BUG'],
-    cm: ['CROSS_POISON', 'SOLAR_BEAM', 'X_SCISSOR']
+    cm: ['CROSS_POISON', 'SOLAR_BEAM', 'X_SCISSOR'],
+    stats: 3734
   },
   {
     name: 'Venonat',
@@ -511,7 +581,8 @@ export const ROWS = [
     def: 100,
     hp: 155,
     fm: ['BUG_BITE', 'CONFUSION'],
-    cm: ['POISON_FANG', 'PSYBEAM', 'SIGNAL_BEAM']
+    cm: ['POISON_FANG', 'PSYBEAM', 'SIGNAL_BEAM'],
+    stats: 1550
   },
   {
     name: 'Venomoth',
@@ -521,7 +592,8 @@ export const ROWS = [
     def: 143,
     hp: 172,
     fm: ['BUG_BITE', 'CONFUSION', 'INFESTATION'],
-    cm: ['BUG_BUZZ', 'POISON_FANG', 'PSYCHIC', 'SILVER_WIND']
+    cm: ['BUG_BUZZ', 'POISON_FANG', 'PSYCHIC', 'SILVER_WIND'],
+    stats: 4403
   },
   {
     name: 'Diglett',
@@ -531,7 +603,8 @@ export const ROWS = [
     def: 78,
     hp: 67,
     fm: ['MUD_SHOT', 'MUD_SLAP', 'SCRATCH'],
-    cm: ['DIG', 'MUD_BOMB', 'ROCK_TOMB']
+    cm: ['DIG', 'MUD_BOMB', 'ROCK_TOMB'],
+    stats: 570
   },
   {
     name: 'Diglett (Alolan)',
@@ -541,7 +614,8 @@ export const ROWS = [
     def: 81,
     hp: 67,
     fm: ['METAL_CLAW', 'MUD_SLAP'],
-    cm: ['DIG', 'MUD_BOMB', 'ROCK_TOMB']
+    cm: ['DIG', 'MUD_BOMB', 'ROCK_TOMB'],
+    stats: 586
   },
   {
     name: 'Dugtrio',
@@ -551,7 +625,8 @@ export const ROWS = [
     def: 136,
     hp: 111,
     fm: ['MUD_SHOT', 'MUD_SLAP', 'SUCKER_PUNCH'],
-    cm: ['EARTHQUAKE', 'MUD_BOMB', 'STONE_EDGE']
+    cm: ['EARTHQUAKE', 'MUD_BOMB', 'STONE_EDGE'],
+    stats: 2521
   },
   {
     name: 'Dugtrio (Alolan)',
@@ -561,7 +636,8 @@ export const ROWS = [
     def: 142,
     hp: 111,
     fm: ['METAL_CLAW', 'MUD_SLAP'],
-    cm: ['EARTHQUAKE', 'IRON_HEAD', 'MUD_BOMB']
+    cm: ['EARTHQUAKE', 'IRON_HEAD', 'MUD_BOMB'],
+    stats: 3168
   },
   {
     name: 'Meowth',
@@ -571,7 +647,8 @@ export const ROWS = [
     def: 78,
     hp: 120,
     fm: ['BITE', 'SCRATCH'],
-    cm: ['BODY_SLAM', 'DARK_PULSE', 'FOUL_PLAY', 'NIGHT_SLASH']
+    cm: ['BODY_SLAM', 'DARK_PULSE', 'FOUL_PLAY', 'NIGHT_SLASH'],
+    stats: 861
   },
   {
     name: 'Meowth (Alolan)',
@@ -581,7 +658,8 @@ export const ROWS = [
     def: 78,
     hp: 120,
     fm: ['BITE', 'SCRATCH'],
-    cm: ['DARK_PULSE', 'FOUL_PLAY', 'NIGHT_SLASH']
+    cm: ['DARK_PULSE', 'FOUL_PLAY', 'NIGHT_SLASH'],
+    stats: 927
   },
   {
     name: 'Persian',
@@ -591,7 +669,8 @@ export const ROWS = [
     def: 136,
     hp: 163,
     fm: ['FEINT_ATTACK', 'SCRATCH'],
-    cm: ['FOUL_PLAY', 'NIGHT_SLASH', 'PLAY_ROUGH', 'POWER_GEM']
+    cm: ['FOUL_PLAY', 'NIGHT_SLASH', 'PLAY_ROUGH', 'POWER_GEM'],
+    stats: 3325
   },
   {
     name: 'Persian (Alolan)',
@@ -601,7 +680,8 @@ export const ROWS = [
     def: 136,
     hp: 163,
     fm: ['FEINT_ATTACK', 'SCRATCH'],
-    cm: ['DARK_PULSE', 'FOUL_PLAY', 'PLAY_ROUGH']
+    cm: ['DARK_PULSE', 'FOUL_PLAY', 'PLAY_ROUGH'],
+    stats: 3503
   },
   {
     name: 'Psyduck',
@@ -611,7 +691,8 @@ export const ROWS = [
     def: 95,
     hp: 137,
     fm: ['WATER_GUN', 'ZEN_HEADBUTT'],
-    cm: ['AQUA_TAIL', 'CROSS_CHOP', 'PSYBEAM']
+    cm: ['AQUA_TAIL', 'CROSS_CHOP', 'PSYBEAM'],
+    stats: 1588
   },
   {
     name: 'Golduck',
@@ -621,7 +702,8 @@ export const ROWS = [
     def: 162,
     hp: 190,
     fm: ['CONFUSION', 'WATER_GUN'],
-    cm: ['HYDRO_PUMP', 'ICE_BEAM', 'PSYCHIC']
+    cm: ['HYDRO_PUMP', 'ICE_BEAM', 'PSYCHIC'],
+    stats: 5879
   },
   {
     name: 'Mankey',
@@ -631,7 +713,8 @@ export const ROWS = [
     def: 82,
     hp: 120,
     fm: ['KARATE_CHOP', 'SCRATCH'],
-    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'LOW_SWEEP']
+    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'LOW_SWEEP'],
+    stats: 1456
   },
   {
     name: 'Primeape',
@@ -641,7 +724,8 @@ export const ROWS = [
     def: 138,
     hp: 163,
     fm: ['COUNTER', 'KARATE_CHOP', 'LOW_KICK'],
-    cm: ['CLOSE_COMBAT', 'CROSS_CHOP', 'LOW_SWEEP', 'NIGHT_SLASH']
+    cm: ['CLOSE_COMBAT', 'CROSS_CHOP', 'LOW_SWEEP', 'NIGHT_SLASH'],
+    stats: 4656
   },
   {
     name: 'Growlithe',
@@ -651,7 +735,8 @@ export const ROWS = [
     def: 93,
     hp: 146,
     fm: ['BITE', 'EMBER'],
-    cm: ['BODY_SLAM', 'FLAME_WHEEL', 'FLAMETHROWER']
+    cm: ['BODY_SLAM', 'FLAME_WHEEL', 'FLAMETHROWER'],
+    stats: 1847
   },
   {
     name: 'Arcanine',
@@ -661,7 +746,8 @@ export const ROWS = [
     def: 166,
     hp: 207,
     fm: ['BITE', 'FIRE_FANG', 'SNARL'],
-    cm: ['BULLDOZE', 'CRUNCH', 'FIRE_BLAST', 'FLAMETHROWER', 'WILD_CHARGE']
+    cm: ['BULLDOZE', 'CRUNCH', 'FIRE_BLAST', 'FLAMETHROWER', 'WILD_CHARGE'],
+    stats: 7800
   },
   {
     name: 'Poliwag',
@@ -671,7 +757,8 @@ export const ROWS = [
     def: 82,
     hp: 120,
     fm: ['BUBBLE', 'MUD_SHOT'],
-    cm: ['BODY_SLAM', 'BUBBLE_BEAM', 'MUD_BOMB']
+    cm: ['BODY_SLAM', 'BUBBLE_BEAM', 'MUD_BOMB'],
+    stats: 994
   },
   {
     name: 'Poliwhirl',
@@ -681,7 +768,8 @@ export const ROWS = [
     def: 123,
     hp: 163,
     fm: ['BUBBLE', 'MUD_SHOT'],
-    cm: ['BUBBLE_BEAM', 'MUD_BOMB', 'SCALD', 'WATER_PULSE']
+    cm: ['BUBBLE_BEAM', 'MUD_BOMB', 'SCALD', 'WATER_PULSE'],
+    stats: 2606
   },
   {
     name: 'Poliwrath',
@@ -691,7 +779,8 @@ export const ROWS = [
     def: 184,
     hp: 207,
     fm: ['BUBBLE', 'MUD_SHOT', 'ROCK_SMASH'],
-    cm: ['DYNAMIC_PUNCH', 'HYDRO_PUMP', 'ICE_PUNCH', 'SUBMISSION', 'POWER_UP_PUNCH']
+    cm: ['DYNAMIC_PUNCH', 'HYDRO_PUMP', 'ICE_PUNCH', 'SUBMISSION', 'POWER_UP_PUNCH'],
+    stats: 6932
   },
   {
     name: 'Abra',
@@ -701,7 +790,8 @@ export const ROWS = [
     def: 82,
     hp: 93,
     fm: ['CHARGE_BEAM', 'ZEN_HEADBUTT'],
-    cm: ['PSYSHOCK', 'SHADOW_BALL', 'SIGNAL_BEAM']
+    cm: ['PSYSHOCK', 'SHADOW_BALL', 'SIGNAL_BEAM'],
+    stats: 1487
   },
   {
     name: 'Kadabra',
@@ -711,7 +801,8 @@ export const ROWS = [
     def: 117,
     hp: 120,
     fm: ['CONFUSION', 'PSYCHO_CUT'],
-    cm: ['DAZZLING_GLEAM', 'PSYBEAM', 'SHADOW_BALL']
+    cm: ['DAZZLING_GLEAM', 'PSYBEAM', 'SHADOW_BALL'],
+    stats: 3257
   },
   {
     name: 'Alakazam',
@@ -721,7 +812,8 @@ export const ROWS = [
     def: 167,
     hp: 146,
     fm: ['CONFUSION', 'PSYCHO_CUT'],
-    cm: ['DAZZLING_GLEAM', 'FIRE_PUNCH', 'FOCUS_BLAST', 'FUTURE_SIGHT', 'PSYCHIC', 'SHADOW_BALL']
+    cm: ['DAZZLING_GLEAM', 'FIRE_PUNCH', 'FOCUS_BLAST', 'FUTURE_SIGHT', 'PSYCHIC', 'SHADOW_BALL'],
+    stats: 6608
   },
   {
     name: 'Machop',
@@ -731,7 +823,8 @@ export const ROWS = [
     def: 82,
     hp: 172,
     fm: ['KARATE_CHOP', 'LOW_KICK', 'ROCK_SMASH'],
-    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'LOW_SWEEP']
+    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'LOW_SWEEP'],
+    stats: 1932
   },
   {
     name: 'Machoke',
@@ -741,7 +834,8 @@ export const ROWS = [
     def: 125,
     hp: 190,
     fm: ['KARATE_CHOP', 'LOW_KICK'],
-    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'DYNAMIC_PUNCH', 'SUBMISSION']
+    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'DYNAMIC_PUNCH', 'SUBMISSION'],
+    stats: 4204
   },
   {
     name: 'Machamp',
@@ -751,7 +845,8 @@ export const ROWS = [
     def: 159,
     hp: 207,
     fm: ['BULLET_PUNCH', 'COUNTER', 'KARATE_CHOP'],
-    cm: ['CLOSE_COMBAT', 'CROSS_CHOP', 'DYNAMIC_PUNCH', 'HEAVY_SLAM', 'ROCK_SLIDE', 'STONE_EDGE', 'SUBMISSION']
+    cm: ['CLOSE_COMBAT', 'CROSS_CHOP', 'DYNAMIC_PUNCH', 'HEAVY_SLAM', 'ROCK_SLIDE', 'STONE_EDGE', 'SUBMISSION'],
+    stats: 7702
   },
   {
     name: 'Bellsprout',
@@ -761,7 +856,8 @@ export const ROWS = [
     def: 61,
     hp: 137,
     fm: ['ACID', 'VINE_WHIP'],
-    cm: ['POWER_WHIP', 'SLUDGE_BOMB', 'WRAP']
+    cm: ['POWER_WHIP', 'SLUDGE_BOMB', 'WRAP'],
+    stats: 1162
   },
   {
     name: 'Weepinbell',
@@ -771,7 +867,8 @@ export const ROWS = [
     def: 92,
     hp: 163,
     fm: ['ACID', 'BULLET_SEED', 'RAZOR_LEAF'],
-    cm: ['POWER_WHIP', 'SEED_BOMB', 'SLUDGE_BOMB']
+    cm: ['POWER_WHIP', 'SEED_BOMB', 'SLUDGE_BOMB'],
+    stats: 2579
   },
   {
     name: 'Victreebel',
@@ -781,7 +878,8 @@ export const ROWS = [
     def: 135,
     hp: 190,
     fm: ['ACID', 'RAZOR_LEAF'],
-    cm: ['LEAF_BLADE', 'SLUDGE_BOMB', 'SOLAR_BEAM', 'ACID_SPRAY', 'LEAF_TORNADO']
+    cm: ['LEAF_BLADE', 'SLUDGE_BOMB', 'SOLAR_BEAM', 'ACID_SPRAY', 'LEAF_TORNADO'],
+    stats: 5310
   },
   {
     name: 'Tentacool',
@@ -791,7 +889,8 @@ export const ROWS = [
     def: 149,
     hp: 120,
     fm: ['BUBBLE', 'POISON_STING'],
-    cm: ['BUBBLE_BEAM', 'WATER_PULSE', 'WRAP']
+    cm: ['BUBBLE_BEAM', 'WATER_PULSE', 'WRAP'],
+    stats: 1734
   },
   {
     name: 'Tentacruel',
@@ -801,7 +900,8 @@ export const ROWS = [
     def: 209,
     hp: 190,
     fm: ['ACID', 'POISON_JAB'],
-    cm: ['BLIZZARD', 'HYDRO_PUMP', 'SLUDGE_WAVE', 'ACID_SPRAY']
+    cm: ['BLIZZARD', 'HYDRO_PUMP', 'SLUDGE_WAVE', 'ACID_SPRAY'],
+    stats: 6592
   },
   {
     name: 'Geodude',
@@ -811,7 +911,8 @@ export const ROWS = [
     def: 132,
     hp: 120,
     fm: ['ROCK_THROW', 'TACKLE'],
-    cm: ['DIG', 'ROCK_SLIDE', 'ROCK_TOMB']
+    cm: ['DIG', 'ROCK_SLIDE', 'ROCK_TOMB'],
+    stats: 2091
   },
   {
     name: 'Geodude (Alolan)',
@@ -821,7 +922,8 @@ export const ROWS = [
     def: 132,
     hp: 120,
     fm: ['ROCK_THROW', 'VOLT_SWITCH'],
-    cm: ['ROCK_SLIDE', 'ROCK_TOMB', 'THUNDERBOLT']
+    cm: ['ROCK_SLIDE', 'ROCK_TOMB', 'THUNDERBOLT'],
+    stats: 2091
   },
   {
     name: 'Graveler',
@@ -831,7 +933,8 @@ export const ROWS = [
     def: 164,
     hp: 146,
     fm: ['MUD_SHOT', 'MUD_SLAP', 'ROCK_THROW'],
-    cm: ['DIG', 'ROCK_BLAST', 'ROCK_SLIDE', 'STONE_EDGE']
+    cm: ['DIG', 'ROCK_BLAST', 'ROCK_SLIDE', 'STONE_EDGE'],
+    stats: 3927
   },
   {
     name: 'Graveler (Alolan)',
@@ -841,7 +944,8 @@ export const ROWS = [
     def: 164,
     hp: 146,
     fm: ['ROCK_THROW', 'VOLT_SWITCH'],
-    cm: ['ROCK_BLAST', 'STONE_EDGE', 'THUNDERBOLT']
+    cm: ['ROCK_BLAST', 'STONE_EDGE', 'THUNDERBOLT'],
+    stats: 3927
   },
   {
     name: 'Golem',
@@ -851,7 +955,8 @@ export const ROWS = [
     def: 198,
     hp: 190,
     fm: ['MUD_SHOT', 'MUD_SLAP', 'ROCK_THROW'],
-    cm: ['ANCIENT_POWER', 'EARTHQUAKE', 'ROCK_BLAST', 'STONE_EDGE']
+    cm: ['ANCIENT_POWER', 'EARTHQUAKE', 'ROCK_BLAST', 'STONE_EDGE'],
+    stats: 7938
   },
   {
     name: 'Golem (Alolan)',
@@ -861,7 +966,8 @@ export const ROWS = [
     def: 198,
     hp: 190,
     fm: ['ROCK_THROW', 'VOLT_SWITCH'],
-    cm: ['ROCK_BLAST', 'STONE_EDGE', 'WILD_CHARGE']
+    cm: ['ROCK_BLAST', 'STONE_EDGE', 'WILD_CHARGE'],
+    stats: 7938
   },
   {
     name: 'Ponyta',
@@ -871,7 +977,8 @@ export const ROWS = [
     def: 127,
     hp: 137,
     fm: ['EMBER', 'TACKLE'],
-    cm: ['FIRE_BLAST', 'FLAME_CHARGE', 'FLAME_WHEEL', 'STOMP']
+    cm: ['FIRE_BLAST', 'FLAME_CHARGE', 'FLAME_WHEEL', 'STOMP'],
+    stats: 2958
   },
   {
     name: 'Rapidash',
@@ -881,7 +988,8 @@ export const ROWS = [
     def: 162,
     hp: 163,
     fm: ['EMBER', 'FIRE_SPIN', 'LOW_KICK'],
-    cm: ['DRILL_RUN', 'FIRE_BLAST', 'HEAT_WAVE']
+    cm: ['DRILL_RUN', 'FIRE_BLAST', 'HEAT_WAVE'],
+    stats: 5466
   },
   {
     name: 'Slowpoke',
@@ -891,7 +999,8 @@ export const ROWS = [
     def: 98,
     hp: 207,
     fm: ['CONFUSION', 'WATER_GUN'],
-    cm: ['PSYCHIC', 'PSYSHOCK', 'WATER_PULSE']
+    cm: ['PSYCHIC', 'PSYSHOCK', 'WATER_PULSE'],
+    stats: 2211
   },
   {
     name: 'Slowbro',
@@ -901,7 +1010,8 @@ export const ROWS = [
     def: 180,
     hp: 216,
     fm: ['CONFUSION', 'WATER_GUN'],
-    cm: ['ICE_BEAM', 'PSYCHIC', 'WATER_PULSE']
+    cm: ['ICE_BEAM', 'PSYCHIC', 'WATER_PULSE'],
+    stats: 6882
   },
   {
     name: 'Magnemite',
@@ -911,7 +1021,8 @@ export const ROWS = [
     def: 121,
     hp: 93,
     fm: ['SPARK', 'THUNDER_SHOCK'],
-    cm: ['DISCHARGE', 'MAGNET_BOMB', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'MAGNET_BOMB', 'THUNDERBOLT'],
+    stats: 1857
   },
   {
     name: 'Magneton',
@@ -921,7 +1032,8 @@ export const ROWS = [
     def: 169,
     hp: 137,
     fm: ['CHARGE_BEAM', 'SPARK', 'THUNDER_SHOCK'],
-    cm: ['DISCHARGE', 'FLASH_CANNON', 'MAGNET_BOMB', 'ZAP_CANNON']
+    cm: ['DISCHARGE', 'FLASH_CANNON', 'MAGNET_BOMB', 'ZAP_CANNON'],
+    stats: 5163
   },
   {
     name: 'Farfetch\'d',
@@ -931,7 +1043,8 @@ export const ROWS = [
     def: 115,
     hp: 141,
     fm: ['AIR_SLASH', 'CUT', 'FURY_CUTTER'],
-    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'LEAF_BLADE']
+    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'LEAF_BLADE'],
+    stats: 2011
   },
   {
     name: 'Doduo',
@@ -941,7 +1054,8 @@ export const ROWS = [
     def: 83,
     hp: 111,
     fm: ['PECK', 'QUICK_ATTACK'],
-    cm: ['AERIAL_ACE', 'BRAVE_BIRD', 'DRILL_PECK', 'SWIFT']
+    cm: ['AERIAL_ACE', 'BRAVE_BIRD', 'DRILL_PECK', 'SWIFT'],
+    stats: 1456
   },
   {
     name: 'Dodrio',
@@ -951,7 +1065,8 @@ export const ROWS = [
     def: 140,
     hp: 155,
     fm: ['FEINT_ATTACK', 'STEEL_WING'],
-    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'BRAVE_BIRD', 'DRILL_PECK']
+    cm: ['AERIAL_ACE', 'AIR_CUTTER', 'BRAVE_BIRD', 'DRILL_PECK'],
+    stats: 4731
   },
   {
     name: 'Seel',
@@ -961,7 +1076,8 @@ export const ROWS = [
     def: 121,
     hp: 163,
     fm: ['ICE_SHARD', 'LICK', 'WATER_GUN'],
-    cm: ['AQUA_JET', 'AQUA_TAIL', 'AURORA_BEAM', 'ICY_WIND']
+    cm: ['AQUA_JET', 'AQUA_TAIL', 'AURORA_BEAM', 'ICY_WIND'],
+    stats: 1676
   },
   {
     name: 'Dewgong',
@@ -971,7 +1087,8 @@ export const ROWS = [
     def: 177,
     hp: 207,
     fm: ['FROST_BREATH', 'ICE_SHARD', 'IRON_TAIL'],
-    cm: ['AQUA_JET', 'AURORA_BEAM', 'BLIZZARD', 'ICY_WIND', 'WATER_PULSE']
+    cm: ['AQUA_JET', 'AURORA_BEAM', 'BLIZZARD', 'ICY_WIND', 'WATER_PULSE'],
+    stats: 5093
   },
   {
     name: 'Grimer',
@@ -981,7 +1098,8 @@ export const ROWS = [
     def: 90,
     hp: 190,
     fm: ['ACID', 'MUD_SLAP', 'POISON_JAB'],
-    cm: ['MUD_BOMB', 'SLUDGE', 'SLUDGE_BOMB']
+    cm: ['MUD_BOMB', 'SLUDGE', 'SLUDGE_BOMB'],
+    stats: 2309
   },
   {
     name: 'Grimer (Alolan)',
@@ -991,7 +1109,8 @@ export const ROWS = [
     def: 90,
     hp: 190,
     fm: ['ACID', 'BITE', 'POISON_JAB'],
-    cm: ['CRUNCH', 'GUNK_SHOT', 'SLUDGE_BOMB']
+    cm: ['CRUNCH', 'GUNK_SHOT', 'SLUDGE_BOMB'],
+    stats: 2309
   },
   {
     name: 'Muk',
@@ -1001,7 +1120,8 @@ export const ROWS = [
     def: 172,
     hp: 233,
     fm: ['ACID', 'INFESTATION', 'LICK', 'POISON_JAB'],
-    cm: ['DARK_PULSE', 'GUNK_SHOT', 'SLUDGE_WAVE', 'THUNDER_PUNCH', 'ACID_SPRAY']
+    cm: ['DARK_PULSE', 'GUNK_SHOT', 'SLUDGE_WAVE', 'THUNDER_PUNCH', 'ACID_SPRAY'],
+    stats: 7614
   },
   {
     name: 'Muk (Alolan)',
@@ -1011,7 +1131,8 @@ export const ROWS = [
     def: 172,
     hp: 233,
     fm: ['BITE', 'POISON_JAB', 'SNARL'],
-    cm: ['DARK_PULSE', 'GUNK_SHOT', 'SLUDGE_WAVE', 'ACID_SPRAY']
+    cm: ['DARK_PULSE', 'GUNK_SHOT', 'SLUDGE_WAVE', 'ACID_SPRAY'],
+    stats: 7614
   },
   {
     name: 'Shellder',
@@ -1021,7 +1142,8 @@ export const ROWS = [
     def: 134,
     hp: 102,
     fm: ['ICE_SHARD', 'TACKLE'],
-    cm: ['BUBBLE_BEAM', 'ICY_WIND', 'WATER_PULSE']
+    cm: ['BUBBLE_BEAM', 'ICY_WIND', 'WATER_PULSE'],
+    stats: 1585
   },
   {
     name: 'Cloyster',
@@ -1031,7 +1153,8 @@ export const ROWS = [
     def: 256,
     hp: 137,
     fm: ['FROST_BREATH', 'ICE_SHARD'],
-    cm: ['AURORA_BEAM', 'AVALANCHE', 'BLIZZARD', 'HYDRO_PUMP', 'ICY_WIND']
+    cm: ['AURORA_BEAM', 'AVALANCHE', 'BLIZZARD', 'HYDRO_PUMP', 'ICY_WIND'],
+    stats: 6523
   },
   {
     name: 'Gastly',
@@ -1041,7 +1164,8 @@ export const ROWS = [
     def: 67,
     hp: 102,
     fm: ['ASTONISH', 'LICK', 'SUCKER_PUNCH'],
-    cm: ['DARK_PULSE', 'NIGHT_SHADE', 'OMINOUS_WIND', 'SLUDGE_BOMB']
+    cm: ['DARK_PULSE', 'NIGHT_SHADE', 'OMINOUS_WIND', 'SLUDGE_BOMB'],
+    stats: 1271
   },
   {
     name: 'Haunter',
@@ -1051,7 +1175,8 @@ export const ROWS = [
     def: 107,
     hp: 128,
     fm: ['ASTONISH', 'LICK', 'SHADOW_CLAW'],
-    cm: ['DARK_PULSE', 'SHADOW_BALL', 'SHADOW_PUNCH', 'SLUDGE_BOMB']
+    cm: ['DARK_PULSE', 'SHADOW_BALL', 'SHADOW_PUNCH', 'SLUDGE_BOMB'],
+    stats: 3054
   },
   {
     name: 'Gengar',
@@ -1061,7 +1186,8 @@ export const ROWS = [
     def: 149,
     hp: 155,
     fm: ['HEX', 'LICK', 'SHADOW_CLAW', 'SUCKER_PUNCH'],
-    cm: ['DARK_PULSE', 'FOCUS_BLAST', 'PSYCHIC', 'SHADOW_BALL', 'SLUDGE_BOMB', 'SLUDGE_WAVE']
+    cm: ['DARK_PULSE', 'FOCUS_BLAST', 'PSYCHIC', 'SHADOW_BALL', 'SLUDGE_BOMB', 'SLUDGE_WAVE'],
+    stats: 6028
   },
   {
     name: 'Onix',
@@ -1071,7 +1197,8 @@ export const ROWS = [
     def: 232,
     hp: 111,
     fm: ['ROCK_THROW', 'TACKLE'],
-    cm: ['HEAVY_SLAM', 'IRON_HEAD', 'ROCK_SLIDE', 'SAND_TOMB', 'STONE_EDGE']
+    cm: ['HEAVY_SLAM', 'IRON_HEAD', 'ROCK_SLIDE', 'SAND_TOMB', 'STONE_EDGE'],
+    stats: 2189
   },
   {
     name: 'Drowzee',
@@ -1081,7 +1208,8 @@ export const ROWS = [
     def: 136,
     hp: 155,
     fm: ['CONFUSION', 'POUND'],
-    cm: ['PSYBEAM', 'PSYCHIC', 'PSYSHOCK']
+    cm: ['PSYBEAM', 'PSYCHIC', 'PSYSHOCK'],
+    stats: 1876
   },
   {
     name: 'Hypno',
@@ -1091,7 +1219,8 @@ export const ROWS = [
     def: 193,
     hp: 198,
     fm: ['CONFUSION', 'ZEN_HEADBUTT'],
-    cm: ['FOCUS_BLAST', 'FUTURE_SIGHT', 'PSYCHIC', 'PSYSHOCK', 'SHADOW_BALL']
+    cm: ['FOCUS_BLAST', 'FUTURE_SIGHT', 'PSYCHIC', 'PSYSHOCK', 'SHADOW_BALL'],
+    stats: 5503
   },
   {
     name: 'Krabby',
@@ -1101,7 +1230,8 @@ export const ROWS = [
     def: 124,
     hp: 102,
     fm: ['BUBBLE', 'MUD_SHOT'],
-    cm: ['BUBBLE_BEAM', 'VICE_GRIP', 'WATER_PULSE']
+    cm: ['BUBBLE_BEAM', 'VICE_GRIP', 'WATER_PULSE'],
+    stats: 2289
   },
   {
     name: 'Kingler',
@@ -1111,7 +1241,8 @@ export const ROWS = [
     def: 181,
     hp: 146,
     fm: ['BUBBLE', 'METAL_CLAW', 'MUD_SHOT'],
-    cm: ['VICE_GRIP', 'WATER_PULSE', 'X_SCISSOR']
+    cm: ['VICE_GRIP', 'WATER_PULSE', 'X_SCISSOR'],
+    stats: 6342
   },
   {
     name: 'Voltorb',
@@ -1121,7 +1252,8 @@ export const ROWS = [
     def: 111,
     hp: 120,
     fm: ['SPARK', 'TACKLE'],
-    cm: ['DISCHARGE', 'GYRO_BALL', 'SIGNAL_BEAM', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'GYRO_BALL', 'SIGNAL_BEAM', 'THUNDERBOLT'],
+    stats: 1452
   },
   {
     name: 'Electrode',
@@ -1131,7 +1263,8 @@ export const ROWS = [
     def: 173,
     hp: 155,
     fm: ['SPARK', 'TACKLE', 'VOLT_SWITCH'],
-    cm: ['DISCHARGE', 'HYPER_BEAM', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'HYPER_BEAM', 'THUNDERBOLT'],
+    stats: 4639
   },
   {
     name: 'Exeggcute',
@@ -1141,7 +1274,8 @@ export const ROWS = [
     def: 125,
     hp: 155,
     fm: ['BULLET_SEED', 'CONFUSION'],
-    cm: ['ANCIENT_POWER', 'PSYCHIC', 'SEED_BOMB']
+    cm: ['ANCIENT_POWER', 'PSYCHIC', 'SEED_BOMB'],
+    stats: 2073
   },
   {
     name: 'Exeggutor',
@@ -1151,7 +1285,8 @@ export const ROWS = [
     def: 149,
     hp: 216,
     fm: ['BULLET_SEED', 'CONFUSION', 'EXTRASENSORY', 'ZEN_HEADBUTT'],
-    cm: ['PSYCHIC', 'SEED_BOMB', 'SOLAR_BEAM']
+    cm: ['PSYCHIC', 'SEED_BOMB', 'SOLAR_BEAM'],
+    stats: 7499
   },
   {
     name: 'Exeggutor (Alolan)',
@@ -1161,7 +1296,8 @@ export const ROWS = [
     def: 153,
     hp: 216,
     fm: ['BULLET_SEED', 'DRAGON_TAIL'],
-    cm: ['DRAGON_PULSE', 'SEED_BOMB', 'SOLAR_BEAM']
+    cm: ['DRAGON_PULSE', 'SEED_BOMB', 'SOLAR_BEAM'],
+    stats: 7601
   },
   {
     name: 'Cubone',
@@ -1171,7 +1307,8 @@ export const ROWS = [
     def: 144,
     hp: 137,
     fm: ['MUD_SLAP', 'ROCK_SMASH'],
-    cm: ['BONE_CLUB', 'BULLDOZE', 'DIG']
+    cm: ['BONE_CLUB', 'BULLDOZE', 'DIG'],
+    stats: 1776
   },
   {
     name: 'Marowak',
@@ -1181,7 +1318,8 @@ export const ROWS = [
     def: 186,
     hp: 155,
     fm: ['MUD_SLAP', 'ROCK_SMASH'],
-    cm: ['BONE_CLUB', 'DIG', 'EARTHQUAKE']
+    cm: ['BONE_CLUB', 'DIG', 'EARTHQUAKE'],
+    stats: 4152
   },
   {
     name: 'Marowak (Alolan)',
@@ -1191,7 +1329,8 @@ export const ROWS = [
     def: 186,
     hp: 155,
     fm: ['HEX', 'ROCK_SMASH'],
-    cm: ['BONE_CLUB', 'FIRE_BLAST', 'SHADOW_BALL']
+    cm: ['BONE_CLUB', 'FIRE_BLAST', 'SHADOW_BALL'],
+    stats: 4152
   },
   {
     name: 'Hitmonlee',
@@ -1201,7 +1340,8 @@ export const ROWS = [
     def: 181,
     hp: 137,
     fm: ['LOW_KICK', 'ROCK_SMASH'],
-    cm: ['BRICK_BREAK', 'CLOSE_COMBAT', 'LOW_SWEEP', 'STOMP', 'STONE_EDGE']
+    cm: ['BRICK_BREAK', 'CLOSE_COMBAT', 'LOW_SWEEP', 'STOMP', 'STONE_EDGE'],
+    stats: 5555
   },
   {
     name: 'Hitmonchan',
@@ -1211,7 +1351,8 @@ export const ROWS = [
     def: 197,
     hp: 137,
     fm: ['BULLET_PUNCH', 'COUNTER', 'ROCK_SMASH'],
-    cm: ['BRICK_BREAK', 'CLOSE_COMBAT', 'FIRE_PUNCH', 'ICE_PUNCH', 'THUNDER_PUNCH', 'POWER_UP_PUNCH']
+    cm: ['BRICK_BREAK', 'CLOSE_COMBAT', 'FIRE_PUNCH', 'ICE_PUNCH', 'THUNDER_PUNCH', 'POWER_UP_PUNCH'],
+    stats: 5209
   },
   {
     name: 'Lickitung',
@@ -1221,7 +1362,8 @@ export const ROWS = [
     def: 137,
     hp: 207,
     fm: ['LICK', 'ZEN_HEADBUTT'],
-    cm: ['HYPER_BEAM', 'POWER_WHIP', 'STOMP']
+    cm: ['HYPER_BEAM', 'POWER_WHIP', 'STOMP'],
+    stats: 3063
   },
   {
     name: 'Koffing',
@@ -1231,7 +1373,8 @@ export const ROWS = [
     def: 141,
     hp: 120,
     fm: ['ACID', 'INFESTATION', 'TACKLE'],
-    cm: ['DARK_PULSE', 'SLUDGE', 'SLUDGE_BOMB']
+    cm: ['DARK_PULSE', 'SLUDGE', 'SLUDGE_BOMB'],
+    stats: 2013
   },
   {
     name: 'Weezing',
@@ -1241,7 +1384,8 @@ export const ROWS = [
     def: 197,
     hp: 163,
     fm: ['ACID', 'INFESTATION', 'TACKLE'],
-    cm: ['DARK_PULSE', 'SHADOW_BALL', 'SLUDGE_BOMB', 'THUNDERBOLT']
+    cm: ['DARK_PULSE', 'SHADOW_BALL', 'SLUDGE_BOMB', 'THUNDERBOLT'],
+    stats: 5587
   },
   {
     name: 'Rhyhorn',
@@ -1251,7 +1395,8 @@ export const ROWS = [
     def: 127,
     hp: 190,
     fm: ['MUD_SLAP', 'ROCK_SMASH'],
-    cm: ['BULLDOZE', 'HORN_ATTACK', 'STOMP']
+    cm: ['BULLDOZE', 'HORN_ATTACK', 'STOMP'],
+    stats: 3378
   },
   {
     name: 'Rhydon',
@@ -1261,7 +1406,8 @@ export const ROWS = [
     def: 171,
     hp: 233,
     fm: ['MUD_SLAP', 'ROCK_SMASH'],
-    cm: ['EARTHQUAKE', 'MEGAHORN', 'STONE_EDGE', 'SURF']
+    cm: ['EARTHQUAKE', 'MEGAHORN', 'STONE_EDGE', 'SURF'],
+    stats: 8845
   },
   {
     name: 'Chansey',
@@ -1271,7 +1417,8 @@ export const ROWS = [
     def: 128,
     hp: 487,
     fm: ['POUND', 'ZEN_HEADBUTT'],
-    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'PSYBEAM', 'PSYCHIC']
+    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'PSYBEAM', 'PSYCHIC'],
+    stats: 3740
   },
   {
     name: 'Tangela',
@@ -1281,7 +1428,8 @@ export const ROWS = [
     def: 169,
     hp: 163,
     fm: ['INFESTATION', 'VINE_WHIP'],
-    cm: ['GRASS_KNOT', 'POWER_WHIP', 'SLUDGE_BOMB', 'SOLAR_BEAM']
+    cm: ['GRASS_KNOT', 'POWER_WHIP', 'SLUDGE_BOMB', 'SOLAR_BEAM'],
+    stats: 5041
   },
   {
     name: 'Kangaskhan',
@@ -1291,7 +1439,8 @@ export const ROWS = [
     def: 165,
     hp: 233,
     fm: ['LOW_KICK', 'MUD_SLAP'],
-    cm: ['BRICK_BREAK', 'CRUNCH', 'EARTHQUAKE', 'OUTRAGE', 'STOMP', 'POWER_UP_PUNCH']
+    cm: ['BRICK_BREAK', 'CRUNCH', 'EARTHQUAKE', 'OUTRAGE', 'STOMP', 'POWER_UP_PUNCH'],
+    stats: 6959
   },
   {
     name: 'Horsea',
@@ -1301,7 +1450,8 @@ export const ROWS = [
     def: 103,
     hp: 102,
     fm: ['BUBBLE', 'WATER_GUN'],
-    cm: ['BUBBLE_BEAM', 'DRAGON_PULSE', 'FLASH_CANNON']
+    cm: ['BUBBLE_BEAM', 'DRAGON_PULSE', 'FLASH_CANNON'],
+    stats: 1355
   },
   {
     name: 'Seadra',
@@ -1311,7 +1461,8 @@ export const ROWS = [
     def: 156,
     hp: 146,
     fm: ['DRAGON_BREATH', 'WATER_GUN'],
-    cm: ['AURORA_BEAM', 'BLIZZARD', 'DRAGON_PULSE', 'HYDRO_PUMP']
+    cm: ['AURORA_BEAM', 'BLIZZARD', 'DRAGON_PULSE', 'HYDRO_PUMP'],
+    stats: 4259
   },
   {
     name: 'Goldeen',
@@ -1321,7 +1472,8 @@ export const ROWS = [
     def: 110,
     hp: 128,
     fm: ['MUD_SHOT', 'PECK'],
-    cm: ['AQUA_TAIL', 'HORN_ATTACK', 'WATER_PULSE']
+    cm: ['AQUA_TAIL', 'HORN_ATTACK', 'WATER_PULSE'],
+    stats: 1732
   },
   {
     name: 'Seaking',
@@ -1331,7 +1483,8 @@ export const ROWS = [
     def: 147,
     hp: 190,
     fm: ['PECK', 'POISON_JAB', 'WATERFALL'],
-    cm: ['DRILL_RUN', 'ICE_BEAM', 'ICY_WIND', 'MEGAHORN', 'WATER_PULSE']
+    cm: ['DRILL_RUN', 'ICE_BEAM', 'ICY_WIND', 'MEGAHORN', 'WATER_PULSE'],
+    stats: 4888
   },
   {
     name: 'Staryu',
@@ -1341,7 +1494,8 @@ export const ROWS = [
     def: 112,
     hp: 102,
     fm: ['QUICK_ATTACK', 'TACKLE', 'WATER_GUN'],
-    cm: ['BUBBLE_BEAM', 'POWER_GEM', 'SWIFT']
+    cm: ['BUBBLE_BEAM', 'POWER_GEM', 'SWIFT'],
+    stats: 1565
   },
   {
     name: 'Starmie',
@@ -1371,7 +1525,8 @@ export const ROWS = [
       'TACKLE',
       'WATER_GUN'
     ],
-    cm: ['HYDRO_PUMP', 'ICE_BEAM', 'POWER_GEM', 'PSYBEAM', 'PSYCHIC', 'THUNDER']
+    cm: ['HYDRO_PUMP', 'ICE_BEAM', 'POWER_GEM', 'PSYBEAM', 'PSYCHIC', 'THUNDER'],
+    stats: 5989
   },
   {
     name: 'Mr. Mime',
@@ -1381,7 +1536,8 @@ export const ROWS = [
     def: 205,
     hp: 120,
     fm: ['CONFUSION', 'ZEN_HEADBUTT'],
-    cm: ['PSYBEAM', 'PSYCHIC', 'SHADOW_BALL']
+    cm: ['PSYBEAM', 'PSYCHIC', 'SHADOW_BALL'],
+    stats: 4723
   },
   {
     name: 'Scyther',
@@ -1391,7 +1547,8 @@ export const ROWS = [
     def: 170,
     hp: 172,
     fm: ['AIR_SLASH', 'FURY_CUTTER', 'STEEL_WING'],
-    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'NIGHT_SLASH', 'X_SCISSOR']
+    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'NIGHT_SLASH', 'X_SCISSOR'],
+    stats: 6374
   },
   {
     name: 'Jynx',
@@ -1401,7 +1558,8 @@ export const ROWS = [
     def: 151,
     hp: 163,
     fm: ['CONFUSION', 'FROST_BREATH', 'POUND'],
-    cm: ['AVALANCHE', 'DRAINING_KISS', 'FOCUS_BLAST', 'ICE_PUNCH', 'PSYSHOCK']
+    cm: ['AVALANCHE', 'DRAINING_KISS', 'FOCUS_BLAST', 'ICE_PUNCH', 'PSYSHOCK'],
+    stats: 5489
   },
   {
     name: 'Electabuzz',
@@ -1411,7 +1569,8 @@ export const ROWS = [
     def: 158,
     hp: 163,
     fm: ['LOW_KICK', 'THUNDER_SHOCK'],
-    cm: ['THUNDER', 'THUNDER_PUNCH', 'THUNDERBOLT']
+    cm: ['THUNDER', 'THUNDER_PUNCH', 'THUNDERBOLT'],
+    stats: 5099
   },
   {
     name: 'Magmar',
@@ -1421,7 +1580,8 @@ export const ROWS = [
     def: 154,
     hp: 163,
     fm: ['EMBER', 'KARATE_CHOP'],
-    cm: ['FIRE_BLAST', 'FIRE_PUNCH', 'FLAMETHROWER']
+    cm: ['FIRE_BLAST', 'FIRE_PUNCH', 'FLAMETHROWER'],
+    stats: 5171
   },
   {
     name: 'Pinsir',
@@ -1431,7 +1591,8 @@ export const ROWS = [
     def: 182,
     hp: 163,
     fm: ['BUG_BITE', 'FURY_CUTTER', 'ROCK_SMASH'],
-    cm: ['CLOSE_COMBAT', 'SUBMISSION', 'VICE_GRIP', 'X_SCISSOR']
+    cm: ['CLOSE_COMBAT', 'SUBMISSION', 'VICE_GRIP', 'X_SCISSOR'],
+    stats: 7061
   },
   {
     name: 'Tauros',
@@ -1441,9 +1602,10 @@ export const ROWS = [
     def: 183,
     hp: 181,
     fm: ['TACKLE', 'ZEN_HEADBUTT'],
-    cm: ['EARTHQUAKE', 'HORN_ATTACK', 'IRON_HEAD']
+    cm: ['EARTHQUAKE', 'HORN_ATTACK', 'IRON_HEAD'],
+    stats: 6558
   },
-  { name: 'Magikarp', dex: 129, type: ['water', 'none'], atk: 29, def: 85, hp: 85, fm: ['SPLASH'], cm: ['STRUGGLE'] },
+  { name: 'Magikarp', dex: 129, type: ['water', 'none'], atk: 29, def: 85, hp: 85, fm: ['SPLASH'], cm: ['STRUGGLE'], stats: 210 },
   {
     name: 'Gyarados',
     dex: 130,
@@ -1452,7 +1614,8 @@ export const ROWS = [
     def: 186,
     hp: 216,
     fm: ['BITE', 'DRAGON_BREATH', 'DRAGON_TAIL', 'WATERFALL'],
-    cm: ['CRUNCH', 'DRAGON_PULSE', 'HYDRO_PUMP', 'OUTRAGE', 'TWISTER']
+    cm: ['CRUNCH', 'DRAGON_PULSE', 'HYDRO_PUMP', 'OUTRAGE', 'TWISTER'],
+    stats: 9522
   },
   {
     name: 'Lapras',
@@ -1462,9 +1625,10 @@ export const ROWS = [
     def: 174,
     hp: 277,
     fm: ['FROST_BREATH', 'ICE_SHARD', 'WATER_GUN'],
-    cm: ['BLIZZARD', 'DRAGON_PULSE', 'HYDRO_PUMP', 'ICE_BEAM', 'SURF']
+    cm: ['BLIZZARD', 'DRAGON_PULSE', 'HYDRO_PUMP', 'ICE_BEAM', 'SURF'],
+    stats: 7953
   },
-  { name: 'Ditto', dex: 132, type: ['normal', 'none'], atk: 91, def: 91, hp: 134, fm: ['TRANSFORM'], cm: ['STRUGGLE'] },
+  { name: 'Ditto', dex: 132, type: ['normal', 'none'], atk: 91, def: 91, hp: 134, fm: ['TRANSFORM'], cm: ['STRUGGLE'], stats: 1110 },
   {
     name: 'Eevee',
     dex: 133,
@@ -1473,7 +1637,8 @@ export const ROWS = [
     def: 114,
     hp: 146,
     fm: ['QUICK_ATTACK', 'TACKLE'],
-    cm: ['BODY_SLAM', 'DIG', 'LAST_RESORT', 'SWIFT']
+    cm: ['BODY_SLAM', 'DIG', 'LAST_RESORT', 'SWIFT'],
+    stats: 1731
   },
   {
     name: 'Vaporeon',
@@ -1483,7 +1648,8 @@ export const ROWS = [
     def: 161,
     hp: 277,
     fm: ['WATER_GUN'],
-    cm: ['AQUA_TAIL', 'HYDRO_PUMP', 'LAST_RESORT', 'WATER_PULSE']
+    cm: ['AQUA_TAIL', 'HYDRO_PUMP', 'LAST_RESORT', 'WATER_PULSE'],
+    stats: 9142
   },
   {
     name: 'Jolteon',
@@ -1493,7 +1659,8 @@ export const ROWS = [
     def: 182,
     hp: 163,
     fm: ['THUNDER_SHOCK', 'VOLT_SWITCH'],
-    cm: ['DISCHARGE', 'LAST_RESORT', 'THUNDER', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'LAST_RESORT', 'THUNDER', 'THUNDERBOLT'],
+    stats: 6883
   },
   {
     name: 'Flareon',
@@ -1503,7 +1670,8 @@ export const ROWS = [
     def: 179,
     hp: 163,
     fm: ['EMBER', 'FIRE_SPIN'],
-    cm: ['FIRE_BLAST', 'FLAMETHROWER', 'HEAT_WAVE', 'LAST_RESORT', 'OVERHEAT']
+    cm: ['FIRE_BLAST', 'FLAMETHROWER', 'HEAT_WAVE', 'LAST_RESORT', 'OVERHEAT'],
+    stats: 7178
   },
   {
     name: 'Porygon',
@@ -1534,7 +1702,8 @@ export const ROWS = [
       'TACKLE',
       'ZEN_HEADBUTT'
     ],
-    cm: ['DISCHARGE', 'HYPER_BEAM', 'PSYBEAM', 'SIGNAL_BEAM', 'SOLAR_BEAM', 'ZAP_CANNON']
+    cm: ['DISCHARGE', 'HYPER_BEAM', 'PSYBEAM', 'SIGNAL_BEAM', 'SOLAR_BEAM', 'ZAP_CANNON'],
+    stats: 3392
   },
   {
     name: 'Omanyte',
@@ -1544,7 +1713,8 @@ export const ROWS = [
     def: 153,
     hp: 111,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['ANCIENT_POWER', 'BRINE', 'BUBBLE_BEAM', 'ROCK_BLAST', 'ROCK_TOMB']
+    cm: ['ANCIENT_POWER', 'BRINE', 'BUBBLE_BEAM', 'ROCK_BLAST', 'ROCK_TOMB'],
+    stats: 2632
   },
   {
     name: 'Omastar',
@@ -1554,7 +1724,8 @@ export const ROWS = [
     def: 201,
     hp: 172,
     fm: ['MUD_SHOT', 'ROCK_THROW', 'WATER_GUN'],
-    cm: ['ANCIENT_POWER', 'HYDRO_PUMP', 'ROCK_BLAST', 'ROCK_SLIDE']
+    cm: ['ANCIENT_POWER', 'HYDRO_PUMP', 'ROCK_BLAST', 'ROCK_SLIDE'],
+    stats: 7156
   },
   {
     name: 'Kabuto',
@@ -1564,7 +1735,8 @@ export const ROWS = [
     def: 140,
     hp: 102,
     fm: ['MUD_SHOT', 'SCRATCH'],
-    cm: ['ANCIENT_POWER', 'AQUA_JET', 'ROCK_TOMB']
+    cm: ['ANCIENT_POWER', 'AQUA_JET', 'ROCK_TOMB'],
+    stats: 2113
   },
   {
     name: 'Kabutops',
@@ -1574,7 +1746,8 @@ export const ROWS = [
     def: 186,
     hp: 155,
     fm: ['FURY_CUTTER', 'MUD_SHOT', 'ROCK_SMASH', 'WATERFALL'],
-    cm: ['ANCIENT_POWER', 'STONE_EDGE', 'WATER_PULSE']
+    cm: ['ANCIENT_POWER', 'STONE_EDGE', 'WATER_PULSE'],
+    stats: 6343
   },
   {
     name: 'Aerodactyl',
@@ -1584,7 +1757,8 @@ export const ROWS = [
     def: 159,
     hp: 190,
     fm: ['BITE', 'STEEL_WING'],
-    cm: ['ANCIENT_POWER', 'HYPER_BEAM', 'IRON_HEAD', 'ROCK_SLIDE', 'EARTH_POWER']
+    cm: ['ANCIENT_POWER', 'HYPER_BEAM', 'IRON_HEAD', 'ROCK_SLIDE', 'EARTH_POWER'],
+    stats: 6676
   },
   {
     name: 'Snorlax',
@@ -1594,7 +1768,8 @@ export const ROWS = [
     def: 169,
     hp: 330,
     fm: ['LICK', 'ZEN_HEADBUTT', 'YAWN'],
-    cm: ['BODY_SLAM', 'EARTHQUAKE', 'HEAVY_SLAM', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['BODY_SLAM', 'EARTHQUAKE', 'HEAVY_SLAM', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 10596
   },
   {
     name: 'Articuno',
@@ -1604,7 +1779,8 @@ export const ROWS = [
     def: 236,
     hp: 207,
     fm: ['FROST_BREATH'],
-    cm: ['BLIZZARD', 'HURRICANE', 'ICE_BEAM', 'ICY_WIND']
+    cm: ['BLIZZARD', 'HURRICANE', 'ICE_BEAM', 'ICY_WIND'],
+    stats: 9380
   },
   {
     name: 'Zapdos',
@@ -1614,7 +1790,8 @@ export const ROWS = [
     def: 185,
     hp: 207,
     fm: ['CHARGE_BEAM', 'THUNDER_SHOCK'],
-    cm: ['THUNDER', 'THUNDERBOLT', 'ZAP_CANNON']
+    cm: ['THUNDER', 'THUNDERBOLT', 'ZAP_CANNON'],
+    stats: 9689
   },
   {
     name: 'Moltres',
@@ -1624,7 +1801,8 @@ export const ROWS = [
     def: 181,
     hp: 207,
     fm: ['EMBER', 'FIRE_SPIN'],
-    cm: ['FIRE_BLAST', 'HEAT_WAVE', 'OVERHEAT', 'SKY_ATTACK']
+    cm: ['FIRE_BLAST', 'HEAT_WAVE', 'OVERHEAT', 'SKY_ATTACK'],
+    stats: 9404
   },
   {
     name: 'Dratini',
@@ -1634,7 +1812,8 @@ export const ROWS = [
     def: 91,
     hp: 121,
     fm: ['DRAGON_BREATH', 'IRON_TAIL'],
-    cm: ['AQUA_TAIL', 'TWISTER', 'WRAP']
+    cm: ['AQUA_TAIL', 'TWISTER', 'WRAP'],
+    stats: 1310
   },
   {
     name: 'Dragonair',
@@ -1644,7 +1823,8 @@ export const ROWS = [
     def: 135,
     hp: 156,
     fm: ['DRAGON_BREATH', 'IRON_TAIL'],
-    cm: ['AQUA_TAIL', 'DRAGON_PULSE', 'WRAP']
+    cm: ['AQUA_TAIL', 'DRAGON_PULSE', 'WRAP'],
+    stats: 3433
   },
   {
     name: 'Dragonite',
@@ -1654,7 +1834,8 @@ export const ROWS = [
     def: 198,
     hp: 209,
     fm: ['DRAGON_BREATH', 'DRAGON_TAIL', 'STEEL_WING'],
-    cm: ['DRACO_METEOR', 'DRAGON_CLAW', 'DRAGON_PULSE', 'HURRICANE', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['DRACO_METEOR', 'DRAGON_CLAW', 'DRAGON_PULSE', 'HURRICANE', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 10883
   },
   {
     name: 'Mewtwo',
@@ -1664,7 +1845,8 @@ export const ROWS = [
     def: 182,
     hp: 214,
     fm: ['CONFUSION', 'PSYCHO_CUT'],
-    cm: ['FLAMETHROWER', 'FOCUS_BLAST', 'HYPER_BEAM', 'ICE_BEAM', 'PSYCHIC', 'SHADOW_BALL', 'THUNDERBOLT']
+    cm: ['FLAMETHROWER', 'FOCUS_BLAST', 'HYPER_BEAM', 'ICE_BEAM', 'PSYCHIC', 'SHADOW_BALL', 'THUNDERBOLT'],
+    stats: 11684
   },
   {
     name: 'Mew',
@@ -1715,7 +1897,8 @@ export const ROWS = [
       'THUNDER',
       'THUNDERBOLT',
       'WILD_CHARGE'
-    ]
+    ],
+    stats: 9923
   },
   {
     name: 'Chikorita',
@@ -1725,7 +1908,8 @@ export const ROWS = [
     def: 122,
     hp: 128,
     fm: ['TACKLE', 'VINE_WHIP'],
-    cm: ['BODY_SLAM', 'ENERGY_BALL', 'GRASS_KNOT']
+    cm: ['BODY_SLAM', 'ENERGY_BALL', 'GRASS_KNOT'],
+    stats: 1437
   },
   {
     name: 'Bayleef',
@@ -1735,7 +1919,8 @@ export const ROWS = [
     def: 155,
     hp: 155,
     fm: ['RAZOR_LEAF', 'TACKLE'],
-    cm: ['ANCIENT_POWER', 'ENERGY_BALL', 'GRASS_KNOT']
+    cm: ['ANCIENT_POWER', 'ENERGY_BALL', 'GRASS_KNOT'],
+    stats: 2931
   },
   {
     name: 'Meganium',
@@ -1745,7 +1930,8 @@ export const ROWS = [
     def: 202,
     hp: 190,
     fm: ['RAZOR_LEAF', 'VINE_WHIP'],
-    cm: ['EARTHQUAKE', 'FRENZY_PLANT', 'PETAL_BLIZZARD', 'SOLAR_BEAM']
+    cm: ['EARTHQUAKE', 'FRENZY_PLANT', 'PETAL_BLIZZARD', 'SOLAR_BEAM'],
+    stats: 6448
   },
   {
     name: 'Cyndaquil',
@@ -1755,7 +1941,8 @@ export const ROWS = [
     def: 93,
     hp: 118,
     fm: ['EMBER', 'TACKLE'],
-    cm: ['FLAME_CHARGE', 'FLAMETHROWER', 'SWIFT']
+    cm: ['FLAME_CHARGE', 'FLAMETHROWER', 'SWIFT'],
+    stats: 1273
   },
   {
     name: 'Quilava',
@@ -1765,7 +1952,8 @@ export const ROWS = [
     def: 126,
     hp: 151,
     fm: ['EMBER', 'TACKLE'],
-    cm: ['DIG', 'FLAME_CHARGE', 'FLAMETHROWER']
+    cm: ['DIG', 'FLAME_CHARGE', 'FLAMETHROWER'],
+    stats: 3006
   },
   {
     name: 'Typhlosion',
@@ -1775,7 +1963,8 @@ export const ROWS = [
     def: 173,
     hp: 186,
     fm: ['EMBER', 'SHADOW_CLAW'],
-    cm: ['BLAST_BURN', 'FIRE_BLAST', 'OVERHEAT', 'SOLAR_BEAM']
+    cm: ['BLAST_BURN', 'FIRE_BLAST', 'OVERHEAT', 'SOLAR_BEAM'],
+    stats: 7176
   },
   {
     name: 'Totodile',
@@ -1785,7 +1974,8 @@ export const ROWS = [
     def: 109,
     hp: 137,
     fm: ['SCRATCH', 'WATER_GUN'],
-    cm: ['AQUA_JET', 'CRUNCH', 'WATER_PULSE']
+    cm: ['AQUA_JET', 'CRUNCH', 'WATER_PULSE'],
+    stats: 1747
   },
   {
     name: 'Croconaw',
@@ -1795,7 +1985,8 @@ export const ROWS = [
     def: 142,
     hp: 163,
     fm: ['SCRATCH', 'WATER_GUN'],
-    cm: ['CRUNCH', 'ICE_PUNCH', 'WATER_PULSE']
+    cm: ['CRUNCH', 'ICE_PUNCH', 'WATER_PULSE'],
+    stats: 3472
   },
   {
     name: 'Feraligatr',
@@ -1805,7 +1996,8 @@ export const ROWS = [
     def: 188,
     hp: 198,
     fm: ['BITE', 'WATER_GUN', 'WATERFALL'],
-    cm: ['CRUNCH', 'HYDRO_CANNON', 'HYDRO_PUMP', 'ICE_BEAM']
+    cm: ['CRUNCH', 'HYDRO_CANNON', 'HYDRO_PUMP', 'ICE_BEAM'],
+    stats: 7631
   },
   {
     name: 'Sentret',
@@ -1815,7 +2007,8 @@ export const ROWS = [
     def: 73,
     hp: 111,
     fm: ['QUICK_ATTACK', 'SCRATCH'],
-    cm: ['BRICK_BREAK', 'DIG', 'GRASS_KNOT']
+    cm: ['BRICK_BREAK', 'DIG', 'GRASS_KNOT'],
+    stats: 640
   },
   {
     name: 'Furret',
@@ -1825,7 +2018,8 @@ export const ROWS = [
     def: 125,
     hp: 198,
     fm: ['QUICK_ATTACK', 'SUCKER_PUNCH'],
-    cm: ['BRICK_BREAK', 'DIG', 'HYPER_BEAM']
+    cm: ['BRICK_BREAK', 'DIG', 'HYPER_BEAM'],
+    stats: 3663
   },
   {
     name: 'Hoothoot',
@@ -1835,7 +2029,8 @@ export const ROWS = [
     def: 88,
     hp: 155,
     fm: ['FEINT_ATTACK', 'PECK'],
-    cm: ['AERIAL_ACE', 'NIGHT_SHADE', 'SKY_ATTACK']
+    cm: ['AERIAL_ACE', 'NIGHT_SHADE', 'SKY_ATTACK'],
+    stats: 914
   },
   {
     name: 'Noctowl',
@@ -1845,7 +2040,8 @@ export const ROWS = [
     def: 156,
     hp: 225,
     fm: ['EXTRASENSORY', 'WING_ATTACK'],
-    cm: ['NIGHT_SHADE', 'PSYCHIC', 'SKY_ATTACK']
+    cm: ['NIGHT_SHADE', 'PSYCHIC', 'SKY_ATTACK'],
+    stats: 5090
   },
   {
     name: 'Ledyba',
@@ -1855,7 +2051,8 @@ export const ROWS = [
     def: 118,
     hp: 120,
     fm: ['BUG_BITE', 'TACKLE'],
-    cm: ['AERIAL_ACE', 'SILVER_WIND', 'SWIFT']
+    cm: ['AERIAL_ACE', 'SILVER_WIND', 'SWIFT'],
+    stats: 1020
   },
   {
     name: 'Ledian',
@@ -1865,7 +2062,8 @@ export const ROWS = [
     def: 179,
     hp: 146,
     fm: ['BUG_BITE', 'STRUGGLE_BUG'],
-    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'SILVER_WIND']
+    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'SILVER_WIND'],
+    stats: 2796
   },
   {
     name: 'Spinarak',
@@ -1875,7 +2073,8 @@ export const ROWS = [
     def: 73,
     hp: 120,
     fm: ['BUG_BITE', 'POISON_STING'],
-    cm: ['CROSS_POISON', 'NIGHT_SLASH', 'SIGNAL_BEAM']
+    cm: ['CROSS_POISON', 'NIGHT_SLASH', 'SIGNAL_BEAM'],
+    stats: 920
   },
   {
     name: 'Ariados',
@@ -1885,7 +2084,8 @@ export const ROWS = [
     def: 124,
     hp: 172,
     fm: ['INFESTATION', 'POISON_STING'],
-    cm: ['CROSS_POISON', 'MEGAHORN', 'SHADOW_SNEAK']
+    cm: ['CROSS_POISON', 'MEGAHORN', 'SHADOW_SNEAK'],
+    stats: 3434
   },
   {
     name: 'Crobat',
@@ -1895,7 +2095,8 @@ export const ROWS = [
     def: 178,
     hp: 198,
     fm: ['AIR_SLASH', 'BITE'],
-    cm: ['AIR_CUTTER', 'SHADOW_BALL', 'SLUDGE_BOMB']
+    cm: ['AIR_CUTTER', 'SHADOW_BALL', 'SLUDGE_BOMB'],
+    stats: 6837
   },
   {
     name: 'Chinchou',
@@ -1905,7 +2106,8 @@ export const ROWS = [
     def: 97,
     hp: 181,
     fm: ['BUBBLE', 'SPARK'],
-    cm: ['BUBBLE_BEAM', 'THUNDERBOLT', 'WATER_PULSE']
+    cm: ['BUBBLE_BEAM', 'THUNDERBOLT', 'WATER_PULSE'],
+    stats: 1861
   },
   {
     name: 'Lanturn',
@@ -1915,7 +2117,8 @@ export const ROWS = [
     def: 137,
     hp: 268,
     fm: ['CHARGE_BEAM', 'WATER_GUN'],
-    cm: ['HYDRO_PUMP', 'THUNDER', 'THUNDERBOLT']
+    cm: ['HYDRO_PUMP', 'THUNDER', 'THUNDERBOLT'],
+    stats: 5361
   },
   {
     name: 'Pichu',
@@ -1925,7 +2128,8 @@ export const ROWS = [
     def: 53,
     hp: 85,
     fm: ['QUICK_ATTACK', 'THUNDER_SHOCK'],
-    cm: ['DISARMING_VOICE', 'THUNDER_PUNCH', 'THUNDERBOLT']
+    cm: ['DISARMING_VOICE', 'THUNDER_PUNCH', 'THUNDERBOLT'],
+    stats: 347
   },
   {
     name: 'Cleffa',
@@ -1935,7 +2139,8 @@ export const ROWS = [
     def: 79,
     hp: 137,
     fm: ['POUND', 'ZEN_HEADBUTT'],
-    cm: ['BODY_SLAM', 'GRASS_KNOT', 'PSYCHIC', 'PSYSHOCK', 'SIGNAL_BEAM']
+    cm: ['BODY_SLAM', 'GRASS_KNOT', 'PSYCHIC', 'PSYSHOCK', 'SIGNAL_BEAM'],
+    stats: 812
   },
   {
     name: 'Igglybuff',
@@ -1945,7 +2150,8 @@ export const ROWS = [
     def: 32,
     hp: 207,
     fm: ['FEINT_ATTACK', 'POUND'],
-    cm: ['BODY_SLAM', 'PSYCHIC', 'SHADOW_BALL', 'WILD_CHARGE']
+    cm: ['BODY_SLAM', 'PSYCHIC', 'SHADOW_BALL', 'WILD_CHARGE'],
+    stats: 457
   },
   {
     name: 'Togepi',
@@ -1974,7 +2180,8 @@ export const ROWS = [
       'PECK',
       'ZEN_HEADBUTT'
     ],
-    cm: ['ANCIENT_POWER', 'DAZZLING_GLEAM', 'PSYSHOCK']
+    cm: ['ANCIENT_POWER', 'DAZZLING_GLEAM', 'PSYSHOCK'],
+    stats: 863
   },
   {
     name: 'Togetic',
@@ -2004,7 +2211,8 @@ export const ROWS = [
       'STEEL_WING',
       'ZEN_HEADBUTT'
     ],
-    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'DAZZLING_GLEAM']
+    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'DAZZLING_GLEAM'],
+    stats: 3673
   },
   {
     name: 'Natu',
@@ -2014,7 +2222,8 @@ export const ROWS = [
     def: 89,
     hp: 120,
     fm: ['PECK', 'QUICK_ATTACK'],
-    cm: ['DRILL_PECK', 'NIGHT_SHADE', 'PSYSHOCK']
+    cm: ['DRILL_PECK', 'NIGHT_SHADE', 'PSYSHOCK'],
+    stats: 1431
   },
   {
     name: 'Xatu',
@@ -2024,7 +2233,8 @@ export const ROWS = [
     def: 146,
     hp: 163,
     fm: ['AIR_SLASH', 'FEINT_ATTACK'],
-    cm: ['AERIAL_ACE', 'FUTURE_SIGHT', 'OMINOUS_WIND']
+    cm: ['AERIAL_ACE', 'FUTURE_SIGHT', 'OMINOUS_WIND'],
+    stats: 4569
   },
   {
     name: 'Mareep',
@@ -2034,7 +2244,8 @@ export const ROWS = [
     def: 79,
     hp: 146,
     fm: ['TACKLE', 'THUNDER_SHOCK'],
-    cm: ['BODY_SLAM', 'DISCHARGE', 'THUNDERBOLT']
+    cm: ['BODY_SLAM', 'DISCHARGE', 'THUNDERBOLT'],
+    stats: 1315
   },
   {
     name: 'Flaaffy',
@@ -2044,7 +2255,8 @@ export const ROWS = [
     def: 109,
     hp: 172,
     fm: ['CHARGE_BEAM', 'TACKLE'],
-    cm: ['DISCHARGE', 'POWER_GEM', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'POWER_GEM', 'THUNDERBOLT'],
+    stats: 2718
   },
   {
     name: 'Ampharos',
@@ -2054,7 +2266,8 @@ export const ROWS = [
     def: 169,
     hp: 207,
     fm: ['CHARGE_BEAM', 'VOLT_SWITCH'],
-    cm: ['DRAGON_PULSE', 'FOCUS_BLAST', 'POWER_GEM', 'THUNDER', 'ZAP_CANNON']
+    cm: ['DRAGON_PULSE', 'FOCUS_BLAST', 'POWER_GEM', 'THUNDER', 'ZAP_CANNON'],
+    stats: 7381
   },
   {
     name: 'Bellossom',
@@ -2064,7 +2277,8 @@ export const ROWS = [
     def: 186,
     hp: 181,
     fm: ['ACID', 'RAZOR_LEAF'],
-    cm: ['DAZZLING_GLEAM', 'LEAF_BLADE', 'PETAL_BLIZZARD']
+    cm: ['DAZZLING_GLEAM', 'LEAF_BLADE', 'PETAL_BLIZZARD'],
+    stats: 5690
   },
   {
     name: 'Marill',
@@ -2074,7 +2288,8 @@ export const ROWS = [
     def: 93,
     hp: 172,
     fm: ['BUBBLE', 'TACKLE'],
-    cm: ['AQUA_TAIL', 'BODY_SLAM', 'BUBBLE_BEAM']
+    cm: ['AQUA_TAIL', 'BODY_SLAM', 'BUBBLE_BEAM'],
+    stats: 592
   },
   {
     name: 'Azumarill',
@@ -2084,7 +2299,8 @@ export const ROWS = [
     def: 152,
     hp: 225,
     fm: ['BUBBLE', 'ROCK_SMASH'],
-    cm: ['HYDRO_PUMP', 'ICE_BEAM', 'PLAY_ROUGH']
+    cm: ['HYDRO_PUMP', 'ICE_BEAM', 'PLAY_ROUGH'],
+    stats: 3830
   },
   {
     name: 'Sudowoodo',
@@ -2094,7 +2310,8 @@ export const ROWS = [
     def: 176,
     hp: 172,
     fm: ['COUNTER', 'ROCK_THROW'],
-    cm: ['EARTHQUAKE', 'ROCK_SLIDE', 'STONE_EDGE']
+    cm: ['EARTHQUAKE', 'ROCK_SLIDE', 'STONE_EDGE'],
+    stats: 5055
   },
   {
     name: 'Politoed',
@@ -2104,7 +2321,8 @@ export const ROWS = [
     def: 179,
     hp: 207,
     fm: ['BUBBLE', 'MUD_SHOT'],
-    cm: ['BLIZZARD', 'EARTHQUAKE', 'HYDRO_PUMP', 'SURF']
+    cm: ['BLIZZARD', 'EARTHQUAKE', 'HYDRO_PUMP', 'SURF'],
+    stats: 6447
   },
   {
     name: 'Hoppip',
@@ -2114,7 +2332,8 @@ export const ROWS = [
     def: 94,
     hp: 111,
     fm: ['BULLET_SEED', 'TACKLE'],
-    cm: ['DAZZLING_GLEAM', 'GRASS_KNOT', 'SEED_BOMB']
+    cm: ['DAZZLING_GLEAM', 'GRASS_KNOT', 'SEED_BOMB'],
+    stats: 699
   },
   {
     name: 'Skiploom',
@@ -2124,7 +2343,8 @@ export const ROWS = [
     def: 120,
     hp: 146,
     fm: ['BULLET_SEED', 'TACKLE'],
-    cm: ['DAZZLING_GLEAM', 'ENERGY_BALL', 'GRASS_KNOT']
+    cm: ['DAZZLING_GLEAM', 'ENERGY_BALL', 'GRASS_KNOT'],
+    stats: 1594
   },
   {
     name: 'Jumpluff',
@@ -2134,7 +2354,8 @@ export const ROWS = [
     def: 183,
     hp: 181,
     fm: ['BULLET_SEED', 'INFESTATION'],
-    cm: ['DAZZLING_GLEAM', 'ENERGY_BALL', 'SOLAR_BEAM']
+    cm: ['DAZZLING_GLEAM', 'ENERGY_BALL', 'SOLAR_BEAM'],
+    stats: 3909
   },
   {
     name: 'Aipom',
@@ -2144,7 +2365,8 @@ export const ROWS = [
     def: 112,
     hp: 146,
     fm: ['ASTONISH', 'SCRATCH'],
-    cm: ['AERIAL_ACE', 'LOW_SWEEP', 'SWIFT']
+    cm: ['AERIAL_ACE', 'LOW_SWEEP', 'SWIFT'],
+    stats: 2224
   },
   {
     name: 'Sunkern',
@@ -2154,7 +2376,8 @@ export const ROWS = [
     def: 55,
     hp: 102,
     fm: ['CUT', 'RAZOR_LEAF'],
-    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SEED_BOMB']
+    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SEED_BOMB'],
+    stats: 309
   },
   {
     name: 'Sunflora',
@@ -2164,7 +2387,8 @@ export const ROWS = [
     def: 135,
     hp: 181,
     fm: ['BULLET_SEED', 'RAZOR_LEAF'],
-    cm: ['PETAL_BLIZZARD', 'SLUDGE_BOMB', 'SOLAR_BEAM']
+    cm: ['PETAL_BLIZZARD', 'SLUDGE_BOMB', 'SOLAR_BEAM'],
+    stats: 4520
   },
   {
     name: 'Yanma',
@@ -2174,7 +2398,8 @@ export const ROWS = [
     def: 94,
     hp: 163,
     fm: ['QUICK_ATTACK', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'SILVER_WIND']
+    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'SILVER_WIND'],
+    stats: 2360
   },
   {
     name: 'Wooper',
@@ -2184,7 +2409,8 @@ export const ROWS = [
     def: 66,
     hp: 146,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['BODY_SLAM', 'DIG', 'MUD_BOMB']
+    cm: ['BODY_SLAM', 'DIG', 'MUD_BOMB'],
+    stats: 723
   },
   {
     name: 'Quagsire',
@@ -2194,7 +2420,8 @@ export const ROWS = [
     def: 143,
     hp: 216,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['EARTHQUAKE', 'SLUDGE_BOMB', 'STONE_EDGE', 'ACID_SPRAY']
+    cm: ['EARTHQUAKE', 'SLUDGE_BOMB', 'STONE_EDGE', 'ACID_SPRAY'],
+    stats: 4695
   },
   {
     name: 'Espeon',
@@ -2204,7 +2431,8 @@ export const ROWS = [
     def: 175,
     hp: 163,
     fm: ['CONFUSION', 'ZEN_HEADBUTT'],
-    cm: ['FUTURE_SIGHT', 'LAST_RESORT', 'PSYBEAM', 'PSYCHIC']
+    cm: ['FUTURE_SIGHT', 'LAST_RESORT', 'PSYBEAM', 'PSYCHIC'],
+    stats: 7445
   },
   {
     name: 'Umbreon',
@@ -2214,7 +2442,8 @@ export const ROWS = [
     def: 240,
     hp: 216,
     fm: ['FEINT_ATTACK', 'SNARL'],
-    cm: ['DARK_PULSE', 'FOUL_PLAY', 'LAST_RESORT']
+    cm: ['DARK_PULSE', 'FOUL_PLAY', 'LAST_RESORT'],
+    stats: 6532
   },
   {
     name: 'Murkrow',
@@ -2224,7 +2453,8 @@ export const ROWS = [
     def: 87,
     hp: 155,
     fm: ['FEINT_ATTACK', 'PECK'],
-    cm: ['DARK_PULSE', 'DRILL_PECK', 'FOUL_PLAY']
+    cm: ['DARK_PULSE', 'DRILL_PECK', 'FOUL_PLAY'],
+    stats: 2360
   },
   {
     name: 'Slowking',
@@ -2234,7 +2464,8 @@ export const ROWS = [
     def: 180,
     hp: 216,
     fm: ['CONFUSION', 'WATER_GUN'],
-    cm: ['BLIZZARD', 'FIRE_BLAST', 'PSYCHIC']
+    cm: ['BLIZZARD', 'FIRE_BLAST', 'PSYCHIC'],
+    stats: 6882
   },
   {
     name: 'Misdreavus',
@@ -2244,7 +2475,8 @@ export const ROWS = [
     def: 154,
     hp: 155,
     fm: ['ASTONISH', 'HEX'],
-    cm: ['DARK_PULSE', 'OMINOUS_WIND', 'SHADOW_SNEAK']
+    cm: ['DARK_PULSE', 'OMINOUS_WIND', 'SHADOW_SNEAK'],
+    stats: 3986
   },
   {
     name: 'Unown',
@@ -2271,9 +2503,20 @@ export const ROWS = [
       'HIDDEN_POWER_STEEL',
       'HIDDEN_POWER_WATER'
     ],
-    cm: ['STRUGGLE']
+    cm: ['STRUGGLE'],
+    stats: 1658
   },
-  { name: 'Wobbuffet', dex: 202, type: ['psychic', 'none'], atk: 60, def: 106, hp: 382, fm: ['COUNTER', 'SPLASH'], cm: ['MIRROR_COAT'] },
+  {
+    name: 'Wobbuffet',
+    dex: 202,
+    type: ['psychic', 'none'],
+    atk: 60,
+    def: 106,
+    hp: 382,
+    fm: ['COUNTER', 'SPLASH'],
+    cm: ['MIRROR_COAT'],
+    stats: 2430
+  },
   {
     name: 'Girafarig',
     dex: 203,
@@ -2282,7 +2525,8 @@ export const ROWS = [
     def: 133,
     hp: 172,
     fm: ['CONFUSION', 'TACKLE'],
-    cm: ['MIRROR_COAT', 'PSYCHIC', 'THUNDERBOLT']
+    cm: ['MIRROR_COAT', 'PSYCHIC', 'THUNDERBOLT'],
+    stats: 4163
   },
   {
     name: 'Pineco',
@@ -2292,7 +2536,8 @@ export const ROWS = [
     def: 122,
     hp: 137,
     fm: ['BUG_BITE', 'TACKLE'],
-    cm: ['GYRO_BALL', 'ROCK_TOMB', 'SAND_TOMB']
+    cm: ['GYRO_BALL', 'ROCK_TOMB', 'SAND_TOMB'],
+    stats: 1805
   },
   {
     name: 'Forretress',
@@ -2302,7 +2547,8 @@ export const ROWS = [
     def: 205,
     hp: 181,
     fm: ['BUG_BITE', 'STRUGGLE_BUG'],
-    cm: ['EARTHQUAKE', 'HEAVY_SLAM', 'ROCK_TOMB']
+    cm: ['EARTHQUAKE', 'HEAVY_SLAM', 'ROCK_TOMB'],
+    stats: 5974
   },
   {
     name: 'Dunsparce',
@@ -2312,7 +2558,8 @@ export const ROWS = [
     def: 128,
     hp: 225,
     fm: ['ASTONISH', 'BITE'],
-    cm: ['DIG', 'DRILL_RUN', 'ROCK_SLIDE']
+    cm: ['DIG', 'DRILL_RUN', 'ROCK_SLIDE'],
+    stats: 3773
   },
   {
     name: 'Gligar',
@@ -2322,7 +2569,8 @@ export const ROWS = [
     def: 184,
     hp: 163,
     fm: ['FURY_CUTTER', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'DIG', 'NIGHT_SLASH']
+    cm: ['AERIAL_ACE', 'DIG', 'NIGHT_SLASH'],
+    stats: 4289
   },
   {
     name: 'Steelix',
@@ -2332,7 +2580,8 @@ export const ROWS = [
     def: 272,
     hp: 181,
     fm: ['DRAGON_TAIL', 'IRON_TAIL'],
-    cm: ['CRUNCH', 'EARTHQUAKE', 'HEAVY_SLAM']
+    cm: ['CRUNCH', 'EARTHQUAKE', 'HEAVY_SLAM'],
+    stats: 7286
   },
   {
     name: 'Snubbull',
@@ -2342,7 +2591,8 @@ export const ROWS = [
     def: 85,
     hp: 155,
     fm: ['BITE', 'TACKLE'],
-    cm: ['BRICK_BREAK', 'CRUNCH', 'DAZZLING_GLEAM']
+    cm: ['BRICK_BREAK', 'CRUNCH', 'DAZZLING_GLEAM'],
+    stats: 1805
   },
   {
     name: 'Granbull',
@@ -2352,7 +2602,8 @@ export const ROWS = [
     def: 131,
     hp: 207,
     fm: ['BITE', 'SNARL'],
-    cm: ['CLOSE_COMBAT', 'CRUNCH', 'PLAY_ROUGH']
+    cm: ['CLOSE_COMBAT', 'CRUNCH', 'PLAY_ROUGH'],
+    stats: 5749
   },
   {
     name: 'Qwilfish',
@@ -2362,7 +2613,8 @@ export const ROWS = [
     def: 138,
     hp: 163,
     fm: ['POISON_STING', 'WATER_GUN'],
-    cm: ['AQUA_TAIL', 'ICE_BEAM', 'SLUDGE_WAVE', 'ACID_SPRAY']
+    cm: ['AQUA_TAIL', 'ICE_BEAM', 'SLUDGE_WAVE', 'ACID_SPRAY'],
+    stats: 4139
   },
   {
     name: 'Scizor',
@@ -2372,7 +2624,8 @@ export const ROWS = [
     def: 181,
     hp: 172,
     fm: ['BULLET_PUNCH', 'FURY_CUTTER'],
-    cm: ['IRON_HEAD', 'NIGHT_SLASH', 'X_SCISSOR']
+    cm: ['IRON_HEAD', 'NIGHT_SLASH', 'X_SCISSOR'],
+    stats: 7347
   },
   {
     name: 'Shuckle',
@@ -2382,7 +2635,8 @@ export const ROWS = [
     def: 396,
     hp: 85,
     fm: ['ROCK_THROW', 'STRUGGLE_BUG'],
-    cm: ['GYRO_BALL', 'ROCK_BLAST', 'STONE_EDGE']
+    cm: ['GYRO_BALL', 'ROCK_BLAST', 'STONE_EDGE'],
+    stats: 572
   },
   {
     name: 'Heracross',
@@ -2392,7 +2646,8 @@ export const ROWS = [
     def: 179,
     hp: 190,
     fm: ['COUNTER', 'STRUGGLE_BUG'],
-    cm: ['CLOSE_COMBAT', 'EARTHQUAKE', 'MEGAHORN']
+    cm: ['CLOSE_COMBAT', 'EARTHQUAKE', 'MEGAHORN'],
+    stats: 7958
   },
   {
     name: 'Sneasel',
@@ -2402,7 +2657,8 @@ export const ROWS = [
     def: 146,
     hp: 146,
     fm: ['FEINT_ATTACK', 'ICE_SHARD'],
-    cm: ['AVALANCHE', 'FOUL_PLAY', 'ICE_PUNCH']
+    cm: ['AVALANCHE', 'FOUL_PLAY', 'ICE_PUNCH'],
+    stats: 4029
   },
   {
     name: 'Teddiursa',
@@ -2412,7 +2668,8 @@ export const ROWS = [
     def: 93,
     hp: 155,
     fm: ['LICK', 'SCRATCH'],
-    cm: ['CROSS_CHOP', 'CRUNCH', 'PLAY_ROUGH']
+    cm: ['CROSS_CHOP', 'CRUNCH', 'PLAY_ROUGH'],
+    stats: 2047
   },
   {
     name: 'Ursaring',
@@ -2422,7 +2679,8 @@ export const ROWS = [
     def: 144,
     hp: 207,
     fm: ['COUNTER', 'METAL_CLAW', 'SHADOW_CLAW'],
-    cm: ['CLOSE_COMBAT', 'HYPER_BEAM', 'PLAY_ROUGH']
+    cm: ['CLOSE_COMBAT', 'HYPER_BEAM', 'PLAY_ROUGH'],
+    stats: 7035
   },
   {
     name: 'Slugma',
@@ -2432,7 +2690,8 @@ export const ROWS = [
     def: 71,
     hp: 120,
     fm: ['EMBER', 'ROCK_THROW'],
-    cm: ['FLAME_BURST', 'FLAME_CHARGE', 'ROCK_SLIDE']
+    cm: ['FLAME_BURST', 'FLAME_CHARGE', 'ROCK_SLIDE'],
+    stats: 1005
   },
   {
     name: 'Magcargo',
@@ -2442,7 +2701,8 @@ export const ROWS = [
     def: 191,
     hp: 137,
     fm: ['EMBER', 'ROCK_THROW'],
-    cm: ['HEAT_WAVE', 'OVERHEAT', 'STONE_EDGE']
+    cm: ['HEAT_WAVE', 'OVERHEAT', 'STONE_EDGE'],
+    stats: 3637
   },
   {
     name: 'Swinub',
@@ -2452,7 +2712,8 @@ export const ROWS = [
     def: 69,
     hp: 137,
     fm: ['POWDER_SNOW', 'TACKLE'],
-    cm: ['BODY_SLAM', 'ICY_WIND', 'ROCK_SLIDE']
+    cm: ['BODY_SLAM', 'ICY_WIND', 'ROCK_SLIDE'],
+    stats: 851
   },
   {
     name: 'Piloswine',
@@ -2462,7 +2723,8 @@ export const ROWS = [
     def: 138,
     hp: 225,
     fm: ['ICE_SHARD', 'POWDER_SNOW'],
-    cm: ['AVALANCHE', 'BULLDOZE', 'STONE_EDGE']
+    cm: ['AVALANCHE', 'BULLDOZE', 'STONE_EDGE'],
+    stats: 5620
   },
   {
     name: 'Corsola',
@@ -2472,7 +2734,8 @@ export const ROWS = [
     def: 156,
     hp: 146,
     fm: ['BUBBLE', 'TACKLE'],
-    cm: ['BUBBLE_BEAM', 'POWER_GEM', 'ROCK_BLAST']
+    cm: ['BUBBLE_BEAM', 'POWER_GEM', 'ROCK_BLAST'],
+    stats: 2688
   },
   {
     name: 'Remoraid',
@@ -2482,7 +2745,8 @@ export const ROWS = [
     def: 69,
     hp: 111,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['AURORA_BEAM', 'ROCK_BLAST', 'WATER_PULSE']
+    cm: ['AURORA_BEAM', 'ROCK_BLAST', 'WATER_PULSE'],
+    stats: 973
   },
   {
     name: 'Octillery',
@@ -2492,7 +2756,8 @@ export const ROWS = [
     def: 141,
     hp: 181,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['AURORA_BEAM', 'GUNK_SHOT', 'WATER_PULSE', 'ACID_SPRAY']
+    cm: ['AURORA_BEAM', 'GUNK_SHOT', 'WATER_PULSE', 'ACID_SPRAY'],
+    stats: 5028
   },
   {
     name: 'Delibird',
@@ -2502,7 +2767,8 @@ export const ROWS = [
     def: 90,
     hp: 128,
     fm: ['ICE_SHARD', 'PRESENT', 'QUICK_ATTACK'],
-    cm: ['AERIAL_ACE', 'ICE_PUNCH', 'ICY_WIND']
+    cm: ['AERIAL_ACE', 'ICE_PUNCH', 'ICY_WIND'],
+    stats: 1475
   },
   {
     name: 'Mantine',
@@ -2512,7 +2778,8 @@ export const ROWS = [
     def: 226,
     hp: 163,
     fm: ['BUBBLE', 'BULLET_SEED', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'ICE_BEAM', 'WATER_PULSE']
+    cm: ['AERIAL_ACE', 'ICE_BEAM', 'WATER_PULSE'],
+    stats: 5452
   },
   {
     name: 'Skarmory',
@@ -2522,7 +2789,8 @@ export const ROWS = [
     def: 226,
     hp: 163,
     fm: ['AIR_SLASH', 'STEEL_WING'],
-    cm: ['BRAVE_BIRD', 'FLASH_CANNON', 'SKY_ATTACK']
+    cm: ['BRAVE_BIRD', 'FLASH_CANNON', 'SKY_ATTACK'],
+    stats: 5452
   },
   {
     name: 'Houndour',
@@ -2532,7 +2800,8 @@ export const ROWS = [
     def: 83,
     hp: 128,
     fm: ['EMBER', 'FEINT_ATTACK'],
-    cm: ['CRUNCH', 'DARK_PULSE', 'FLAMETHROWER']
+    cm: ['CRUNCH', 'DARK_PULSE', 'FLAMETHROWER'],
+    stats: 1615
   },
   {
     name: 'Houndoom',
@@ -2542,7 +2811,8 @@ export const ROWS = [
     def: 144,
     hp: 181,
     fm: ['FIRE_FANG', 'SNARL'],
-    cm: ['CRUNCH', 'FIRE_BLAST', 'FLAMETHROWER', 'FOUL_PLAY']
+    cm: ['CRUNCH', 'FIRE_BLAST', 'FLAMETHROWER', 'FOUL_PLAY'],
+    stats: 5838
   },
   {
     name: 'Kingdra',
@@ -2552,7 +2822,8 @@ export const ROWS = [
     def: 194,
     hp: 181,
     fm: ['DRAGON_BREATH', 'WATER_GUN', 'WATERFALL'],
-    cm: ['BLIZZARD', 'HYDRO_PUMP', 'OUTRAGE']
+    cm: ['BLIZZARD', 'HYDRO_PUMP', 'OUTRAGE'],
+    stats: 6812
   },
   {
     name: 'Phanpy',
@@ -2562,7 +2833,8 @@ export const ROWS = [
     def: 98,
     hp: 207,
     fm: ['ROCK_SMASH', 'TACKLE'],
-    cm: ['BODY_SLAM', 'BULLDOZE', 'ROCK_SLIDE']
+    cm: ['BODY_SLAM', 'BULLDOZE', 'ROCK_SLIDE'],
+    stats: 2171
   },
   {
     name: 'Donphan',
@@ -2572,7 +2844,8 @@ export const ROWS = [
     def: 185,
     hp: 207,
     fm: ['COUNTER', 'MUD_SLAP', 'TACKLE'],
-    cm: ['EARTHQUAKE', 'HEAVY_SLAM', 'PLAY_ROUGH']
+    cm: ['EARTHQUAKE', 'HEAVY_SLAM', 'PLAY_ROUGH'],
+    stats: 8195
   },
   {
     name: 'Porygon2',
@@ -2600,7 +2873,8 @@ export const ROWS = [
       'HIDDEN_POWER_STEEL',
       'HIDDEN_POWER_WATER'
     ],
-    cm: ['HYPER_BEAM', 'SOLAR_BEAM', 'ZAP_CANNON']
+    cm: ['HYPER_BEAM', 'SOLAR_BEAM', 'ZAP_CANNON'],
+    stats: 7057
   },
   {
     name: 'Stantler',
@@ -2610,7 +2884,8 @@ export const ROWS = [
     def: 131,
     hp: 177,
     fm: ['TACKLE', 'ZEN_HEADBUTT'],
-    cm: ['MEGAHORN', 'STOMP', 'WILD_CHARGE']
+    cm: ['MEGAHORN', 'STOMP', 'WILD_CHARGE'],
+    stats: 4452
   },
   {
     name: 'Smeargle',
@@ -2812,7 +3087,8 @@ export const ROWS = [
       'HYDRO_CANNON',
       'LAST_RESORT',
       'METEOR_MASH'
-    ]
+    ],
+    stats: 485
   },
   {
     name: 'Tyrogue',
@@ -2822,7 +3098,8 @@ export const ROWS = [
     def: 64,
     hp: 111,
     fm: ['ROCK_SMASH', 'TACKLE'],
-    cm: ['BRICK_BREAK', 'LOW_SWEEP', 'ROCK_SLIDE']
+    cm: ['BRICK_BREAK', 'LOW_SWEEP', 'ROCK_SLIDE'],
+    stats: 455
   },
   {
     name: 'Hitmontop',
@@ -2832,7 +3109,8 @@ export const ROWS = [
     def: 207,
     hp: 137,
     fm: ['COUNTER', 'ROCK_SMASH'],
-    cm: ['CLOSE_COMBAT', 'GYRO_BALL', 'STONE_EDGE']
+    cm: ['CLOSE_COMBAT', 'GYRO_BALL', 'STONE_EDGE'],
+    stats: 4906
   },
   {
     name: 'Smoochum',
@@ -2842,7 +3120,8 @@ export const ROWS = [
     def: 91,
     hp: 128,
     fm: ['FROST_BREATH', 'POUND', 'POWDER_SNOW'],
-    cm: ['ICE_BEAM', 'ICE_PUNCH', 'PSYSHOCK']
+    cm: ['ICE_BEAM', 'ICE_PUNCH', 'PSYSHOCK'],
+    stats: 1782
   },
   {
     name: 'Elekid',
@@ -2852,7 +3131,8 @@ export const ROWS = [
     def: 101,
     hp: 128,
     fm: ['LOW_KICK', 'THUNDER_SHOCK'],
-    cm: ['BRICK_BREAK', 'DISCHARGE', 'THUNDER_PUNCH', 'THUNDERBOLT']
+    cm: ['BRICK_BREAK', 'DISCHARGE', 'THUNDER_PUNCH', 'THUNDERBOLT'],
+    stats: 1745
   },
   {
     name: 'Magby',
@@ -2862,7 +3142,8 @@ export const ROWS = [
     def: 99,
     hp: 128,
     fm: ['EMBER', 'KARATE_CHOP'],
-    cm: ['BRICK_BREAK', 'FIRE_PUNCH', 'FLAME_BURST', 'FLAMETHROWER']
+    cm: ['BRICK_BREAK', 'FIRE_PUNCH', 'FLAME_BURST', 'FLAMETHROWER'],
+    stats: 1913
   },
   {
     name: 'Miltank',
@@ -2872,7 +3153,8 @@ export const ROWS = [
     def: 193,
     hp: 216,
     fm: ['TACKLE', 'ZEN_HEADBUTT'],
-    cm: ['BODY_SLAM', 'GYRO_BALL', 'ICE_BEAM', 'STOMP', 'THUNDERBOLT']
+    cm: ['BODY_SLAM', 'GYRO_BALL', 'ICE_BEAM', 'STOMP', 'THUNDERBOLT'],
+    stats: 6545
   },
   {
     name: 'Blissey',
@@ -2882,7 +3164,8 @@ export const ROWS = [
     def: 169,
     hp: 496,
     fm: ['POUND', 'ZEN_HEADBUTT'],
-    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'PSYCHIC']
+    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'PSYCHIC'],
+    stats: 10813
   },
   {
     name: 'Raikou',
@@ -2892,7 +3175,8 @@ export const ROWS = [
     def: 195,
     hp: 207,
     fm: ['THUNDER_SHOCK', 'VOLT_SWITCH'],
-    cm: ['SHADOW_BALL', 'THUNDER', 'THUNDERBOLT', 'WILD_CHARGE']
+    cm: ['SHADOW_BALL', 'THUNDER', 'THUNDERBOLT', 'WILD_CHARGE'],
+    stats: 9728
   },
   {
     name: 'Entei',
@@ -2902,7 +3186,8 @@ export const ROWS = [
     def: 171,
     hp: 251,
     fm: ['FIRE_FANG', 'FIRE_SPIN'],
-    cm: ['FIRE_BLAST', 'FLAMETHROWER', 'IRON_HEAD', 'OVERHEAT']
+    cm: ['FIRE_BLAST', 'FLAMETHROWER', 'IRON_HEAD', 'OVERHEAT'],
+    stats: 10086
   },
   {
     name: 'Suicune',
@@ -2931,7 +3216,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'SNARL'
     ],
-    cm: ['BUBBLE_BEAM', 'HYDRO_PUMP', 'ICE_BEAM', 'WATER_PULSE']
+    cm: ['BUBBLE_BEAM', 'HYDRO_PUMP', 'ICE_BEAM', 'WATER_PULSE'],
+    stats: 9518
   },
   {
     name: 'Larvitar',
@@ -2941,7 +3227,8 @@ export const ROWS = [
     def: 93,
     hp: 137,
     fm: ['BITE', 'ROCK_SMASH'],
-    cm: ['ANCIENT_POWER', 'CRUNCH', 'STOMP']
+    cm: ['ANCIENT_POWER', 'CRUNCH', 'STOMP'],
+    stats: 1465
   },
   {
     name: 'Pupitar',
@@ -2951,7 +3238,8 @@ export const ROWS = [
     def: 133,
     hp: 172,
     fm: ['BITE', 'ROCK_SMASH'],
-    cm: ['ANCIENT_POWER', 'CRUNCH', 'DIG']
+    cm: ['ANCIENT_POWER', 'CRUNCH', 'DIG'],
+    stats: 3546
   },
   {
     name: 'Tyranitar',
@@ -2961,7 +3249,8 @@ export const ROWS = [
     def: 207,
     hp: 225,
     fm: ['BITE', 'IRON_TAIL', 'SMACK_DOWN'],
-    cm: ['CRUNCH', 'FIRE_BLAST', 'STONE_EDGE']
+    cm: ['CRUNCH', 'FIRE_BLAST', 'STONE_EDGE'],
+    stats: 11690
   },
   {
     name: 'Lugia',
@@ -2971,7 +3260,8 @@ export const ROWS = [
     def: 310,
     hp: 235,
     fm: ['DRAGON_TAIL', 'EXTRASENSORY'],
-    cm: ['FUTURE_SIGHT', 'HYDRO_PUMP', 'SKY_ATTACK']
+    cm: ['FUTURE_SIGHT', 'HYDRO_PUMP', 'SKY_ATTACK'],
+    stats: 14060
   },
   {
     name: 'Ho-Oh',
@@ -3000,7 +3290,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'STEEL_WING'
     ],
-    cm: ['BRAVE_BIRD', 'FIRE_BLAST', 'SOLAR_BEAM']
+    cm: ['BRAVE_BIRD', 'FIRE_BLAST', 'SOLAR_BEAM'],
+    stats: 12480
   },
   {
     name: 'Celebi',
@@ -3010,7 +3301,8 @@ export const ROWS = [
     def: 210,
     hp: 225,
     fm: ['CHARGE_BEAM', 'CONFUSION'],
-    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'PSYCHIC']
+    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'PSYCHIC'],
+    stats: 9923
   },
   {
     name: 'Treecko',
@@ -3020,7 +3312,8 @@ export const ROWS = [
     def: 94,
     hp: 120,
     fm: ['BULLET_SEED', 'POUND'],
-    cm: ['AERIAL_ACE', 'ENERGY_BALL', 'GRASS_KNOT']
+    cm: ['AERIAL_ACE', 'ENERGY_BALL', 'GRASS_KNOT'],
+    stats: 1399
   },
   {
     name: 'Grovyle',
@@ -3030,7 +3323,8 @@ export const ROWS = [
     def: 120,
     hp: 137,
     fm: ['BULLET_SEED', 'QUICK_ATTACK'],
-    cm: ['AERIAL_ACE', 'GRASS_KNOT', 'LEAF_BLADE']
+    cm: ['AERIAL_ACE', 'GRASS_KNOT', 'LEAF_BLADE'],
+    stats: 2828
   },
   {
     name: 'Sceptile',
@@ -3040,7 +3334,8 @@ export const ROWS = [
     def: 169,
     hp: 172,
     fm: ['BULLET_SEED', 'FURY_CUTTER'],
-    cm: ['AERIAL_ACE', 'EARTHQUAKE', 'LEAF_BLADE', 'FRENZY_PLANT']
+    cm: ['AERIAL_ACE', 'EARTHQUAKE', 'LEAF_BLADE', 'FRENZY_PLANT'],
+    stats: 6482
   },
   {
     name: 'Torchic',
@@ -3050,7 +3345,8 @@ export const ROWS = [
     def: 87,
     hp: 128,
     fm: ['EMBER', 'SCRATCH'],
-    cm: ['FLAME_CHARGE', 'FLAMETHROWER', 'ROCK_TOMB']
+    cm: ['FLAME_CHARGE', 'FLAMETHROWER', 'ROCK_TOMB'],
+    stats: 1448
   },
   {
     name: 'Combusken',
@@ -3060,7 +3356,8 @@ export const ROWS = [
     def: 115,
     hp: 155,
     fm: ['EMBER', 'PECK'],
-    cm: ['FLAME_CHARGE', 'FLAMETHROWER', 'ROCK_SLIDE']
+    cm: ['FLAME_CHARGE', 'FLAMETHROWER', 'ROCK_SLIDE'],
+    stats: 2905
   },
   {
     name: 'Blaziken',
@@ -3070,7 +3367,8 @@ export const ROWS = [
     def: 141,
     hp: 190,
     fm: ['COUNTER', 'FIRE_SPIN'],
-    cm: ['BRAVE_BIRD', 'FOCUS_BLAST', 'OVERHEAT', 'STONE_EDGE', 'BLAST_BURN', 'BLAZE_KICK']
+    cm: ['BRAVE_BIRD', 'FOCUS_BLAST', 'OVERHEAT', 'STONE_EDGE', 'BLAST_BURN', 'BLAZE_KICK'],
+    stats: 6430
   },
   {
     name: 'Mudkip',
@@ -3080,7 +3378,8 @@ export const ROWS = [
     def: 93,
     hp: 137,
     fm: ['TACKLE', 'WATER_GUN'],
-    cm: ['DIG', 'SLUDGE', 'STOMP']
+    cm: ['DIG', 'SLUDGE', 'STOMP'],
+    stats: 1605
   },
   {
     name: 'Marshtomp',
@@ -3090,7 +3389,8 @@ export const ROWS = [
     def: 133,
     hp: 172,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['MUD_BOMB', 'SLUDGE', 'SURF']
+    cm: ['MUD_BOMB', 'SLUDGE', 'SURF'],
+    stats: 3569
   },
   {
     name: 'Swampert',
@@ -3100,7 +3400,8 @@ export const ROWS = [
     def: 175,
     hp: 225,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['EARTHQUAKE', 'SLUDGE_WAVE', 'SURF']
+    cm: ['EARTHQUAKE', 'SLUDGE_WAVE', 'SURF'],
+    stats: 8190
   },
   {
     name: 'Poochyena',
@@ -3110,7 +3411,8 @@ export const ROWS = [
     def: 61,
     hp: 111,
     fm: ['SNARL', 'TACKLE'],
-    cm: ['CRUNCH', 'DIG', 'POISON_FANG']
+    cm: ['CRUNCH', 'DIG', 'POISON_FANG'],
+    stats: 650
   },
   {
     name: 'Mightyena',
@@ -3120,7 +3422,8 @@ export const ROWS = [
     def: 132,
     hp: 172,
     fm: ['BITE', 'FIRE_FANG'],
-    cm: ['CRUNCH', 'PLAY_ROUGH', 'POISON_FANG']
+    cm: ['CRUNCH', 'PLAY_ROUGH', 'POISON_FANG'],
+    stats: 3882
   },
   {
     name: 'Zigzagoon',
@@ -3130,7 +3433,8 @@ export const ROWS = [
     def: 80,
     hp: 116,
     fm: ['ROCK_SMASH', 'TACKLE'],
-    cm: ['DIG', 'GRASS_KNOT', 'THUNDERBOLT']
+    cm: ['DIG', 'GRASS_KNOT', 'THUNDERBOLT'],
+    stats: 538
   },
   {
     name: 'Linoone',
@@ -3140,10 +3444,21 @@ export const ROWS = [
     def: 128,
     hp: 186,
     fm: ['SHADOW_CLAW', 'TACKLE'],
-    cm: ['DIG', 'GRASS_KNOT', 'THUNDER']
+    cm: ['DIG', 'GRASS_KNOT', 'THUNDER'],
+    stats: 3381
   },
-  { name: 'Wurmple', dex: 265, type: ['bug', 'none'], atk: 75, def: 59, hp: 128, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'] },
-  { name: 'Silcoon', dex: 266, type: ['bug', 'none'], atk: 60, def: 77, hp: 137, fm: ['BUG_BITE', 'POISON_STING'], cm: ['STRUGGLE'] },
+  { name: 'Wurmple', dex: 265, type: ['bug', 'none'], atk: 75, def: 59, hp: 128, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'], stats: 566 },
+  {
+    name: 'Silcoon',
+    dex: 266,
+    type: ['bug', 'none'],
+    atk: 60,
+    def: 77,
+    hp: 137,
+    fm: ['BUG_BITE', 'POISON_STING'],
+    cm: ['STRUGGLE'],
+    stats: 633
+  },
   {
     name: 'Beautifly',
     dex: 267,
@@ -3152,9 +3467,20 @@ export const ROWS = [
     def: 98,
     hp: 155,
     fm: ['INFESTATION', 'STRUGGLE_BUG'],
-    cm: ['AIR_CUTTER', 'BUG_BUZZ', 'SILVER_WIND']
+    cm: ['AIR_CUTTER', 'BUG_BUZZ', 'SILVER_WIND'],
+    stats: 2871
   },
-  { name: 'Cascoon', dex: 268, type: ['bug', 'none'], atk: 60, def: 77, hp: 137, fm: ['BUG_BITE', 'POISON_STING'], cm: ['STRUGGLE'] },
+  {
+    name: 'Cascoon',
+    dex: 268,
+    type: ['bug', 'none'],
+    atk: 60,
+    def: 77,
+    hp: 137,
+    fm: ['BUG_BITE', 'POISON_STING'],
+    cm: ['STRUGGLE'],
+    stats: 633
+  },
   {
     name: 'Dustox',
     dex: 269,
@@ -3163,7 +3489,8 @@ export const ROWS = [
     def: 162,
     hp: 155,
     fm: ['CONFUSION', 'STRUGGLE_BUG'],
-    cm: ['BUG_BUZZ', 'SILVER_WIND', 'SLUDGE_BOMB']
+    cm: ['BUG_BUZZ', 'SILVER_WIND', 'SLUDGE_BOMB'],
+    stats: 2461
   },
   {
     name: 'Lotad',
@@ -3173,7 +3500,8 @@ export const ROWS = [
     def: 77,
     hp: 120,
     fm: ['RAZOR_LEAF', 'WATER_GUN'],
-    cm: ['BUBBLE_BEAM', 'ENERGY_BALL']
+    cm: ['BUBBLE_BEAM', 'ENERGY_BALL'],
+    stats: 656
   },
   {
     name: 'Lombre',
@@ -3183,7 +3511,8 @@ export const ROWS = [
     def: 119,
     hp: 155,
     fm: ['BUBBLE', 'RAZOR_LEAF'],
-    cm: ['BUBBLE_BEAM', 'GRASS_KNOT', 'ICE_BEAM']
+    cm: ['BUBBLE_BEAM', 'GRASS_KNOT', 'ICE_BEAM'],
+    stats: 2066
   },
   {
     name: 'Ludicolo',
@@ -3193,7 +3522,8 @@ export const ROWS = [
     def: 176,
     hp: 190,
     fm: ['BUBBLE', 'RAZOR_LEAF'],
-    cm: ['BLIZZARD', 'HYDRO_PUMP', 'ICE_BEAM', 'SOLAR_BEAM']
+    cm: ['BLIZZARD', 'HYDRO_PUMP', 'ICE_BEAM', 'SOLAR_BEAM'],
+    stats: 5785
   },
   {
     name: 'Seedot',
@@ -3203,7 +3533,8 @@ export const ROWS = [
     def: 77,
     hp: 120,
     fm: ['BULLET_SEED', 'QUICK_ATTACK'],
-    cm: ['ENERGY_BALL', 'FOUL_PLAY', 'GRASS_KNOT']
+    cm: ['ENERGY_BALL', 'FOUL_PLAY', 'GRASS_KNOT'],
+    stats: 656
   },
   {
     name: 'Nuzleaf',
@@ -3213,7 +3544,8 @@ export const ROWS = [
     def: 78,
     hp: 172,
     fm: ['FEINT_ATTACK', 'RAZOR_LEAF'],
-    cm: ['FOUL_PLAY', 'GRASS_KNOT', 'LEAF_BLADE']
+    cm: ['FOUL_PLAY', 'GRASS_KNOT', 'LEAF_BLADE'],
+    stats: 1798
   },
   {
     name: 'Shiftry',
@@ -3223,9 +3555,20 @@ export const ROWS = [
     def: 121,
     hp: 207,
     fm: ['FEINT_ATTACK', 'RAZOR_LEAF'],
-    cm: ['FOUL_PLAY', 'HURRICANE', 'LEAF_BLADE', 'LEAF_TORNADO']
+    cm: ['FOUL_PLAY', 'HURRICANE', 'LEAF_BLADE', 'LEAF_TORNADO'],
+    stats: 5009
   },
-  { name: 'Taillow', dex: 276, type: ['normal', 'flying'], atk: 106, def: 61, hp: 120, fm: ['PECK', 'QUICK_ATTACK'], cm: ['AERIAL_ACE'] },
+  {
+    name: 'Taillow',
+    dex: 276,
+    type: ['normal', 'flying'],
+    atk: 106,
+    def: 61,
+    hp: 120,
+    fm: ['PECK', 'QUICK_ATTACK'],
+    cm: ['AERIAL_ACE'],
+    stats: 776
+  },
   {
     name: 'Swellow',
     dex: 277,
@@ -3234,7 +3577,8 @@ export const ROWS = [
     def: 124,
     hp: 155,
     fm: ['STEEL_WING', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'BRAVE_BIRD', 'SKY_ATTACK']
+    cm: ['AERIAL_ACE', 'BRAVE_BIRD', 'SKY_ATTACK'],
+    stats: 3556
   },
   {
     name: 'Wingull',
@@ -3244,7 +3588,8 @@ export const ROWS = [
     def: 61,
     hp: 120,
     fm: ['QUICK_ATTACK', 'WATER_GUN'],
-    cm: ['AIR_CUTTER', 'ICE_BEAM', 'WATER_PULSE']
+    cm: ['AIR_CUTTER', 'ICE_BEAM', 'WATER_PULSE'],
+    stats: 776
   },
   {
     name: 'Pelipper',
@@ -3254,7 +3599,8 @@ export const ROWS = [
     def: 174,
     hp: 155,
     fm: ['WATER_GUN', 'WING_ATTACK'],
-    cm: ['BLIZZARD', 'HURRICANE', 'HYDRO_PUMP']
+    cm: ['BLIZZARD', 'HURRICANE', 'HYDRO_PUMP'],
+    stats: 4720
   },
   {
     name: 'Ralts',
@@ -3264,7 +3610,8 @@ export const ROWS = [
     def: 59,
     hp: 99,
     fm: ['CHARGE_BEAM', 'CONFUSION'],
-    cm: ['DISARMING_VOICE', 'PSYSHOCK', 'SHADOW_SNEAK']
+    cm: ['DISARMING_VOICE', 'PSYSHOCK', 'SHADOW_SNEAK'],
+    stats: 461
   },
   {
     name: 'Kirlia',
@@ -3274,7 +3621,8 @@ export const ROWS = [
     def: 90,
     hp: 116,
     fm: ['CHARGE_BEAM', 'CONFUSION'],
-    cm: ['DISARMING_VOICE', 'PSYCHIC', 'SHADOW_SNEAK']
+    cm: ['DISARMING_VOICE', 'PSYCHIC', 'SHADOW_SNEAK'],
+    stats: 1221
   },
   {
     name: 'Gardevoir',
@@ -3284,7 +3632,8 @@ export const ROWS = [
     def: 195,
     hp: 169,
     fm: ['CHARGE_BEAM', 'CONFUSION'],
-    cm: ['DAZZLING_GLEAM', 'PSYCHIC', 'SHADOW_BALL']
+    cm: ['DAZZLING_GLEAM', 'PSYCHIC', 'SHADOW_BALL'],
+    stats: 7810
   },
   {
     name: 'Surskit',
@@ -3294,7 +3643,8 @@ export const ROWS = [
     def: 87,
     hp: 120,
     fm: ['BUBBLE', 'BUG_BITE'],
-    cm: ['AQUA_JET', 'BUBBLE_BEAM', 'SIGNAL_BEAM']
+    cm: ['AQUA_JET', 'BUBBLE_BEAM', 'SIGNAL_BEAM'],
+    stats: 971
   },
   {
     name: 'Masquerain',
@@ -3304,7 +3654,8 @@ export const ROWS = [
     def: 150,
     hp: 172,
     fm: ['AIR_SLASH', 'INFESTATION'],
-    cm: ['AIR_CUTTER', 'OMINOUS_WIND', 'SILVER_WIND']
+    cm: ['AIR_CUTTER', 'OMINOUS_WIND', 'SILVER_WIND'],
+    stats: 4954
   },
   {
     name: 'Shroomish',
@@ -3314,7 +3665,8 @@ export const ROWS = [
     def: 110,
     hp: 155,
     fm: ['BULLET_SEED', 'TACKLE'],
-    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SEED_BOMB']
+    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SEED_BOMB'],
+    stats: 1262
   },
   {
     name: 'Breloom',
@@ -3324,7 +3676,8 @@ export const ROWS = [
     def: 144,
     hp: 155,
     fm: ['BULLET_SEED', 'COUNTER'],
-    cm: ['DYNAMIC_PUNCH', 'GRASS_KNOT', 'SEED_BOMB', 'SLUDGE_BOMB']
+    cm: ['DYNAMIC_PUNCH', 'GRASS_KNOT', 'SEED_BOMB', 'SLUDGE_BOMB'],
+    stats: 5379
   },
   {
     name: 'Slakoth',
@@ -3334,7 +3687,8 @@ export const ROWS = [
     def: 92,
     hp: 155,
     fm: ['YAWN'],
-    cm: ['BODY_SLAM', 'BRICK_BREAK', 'NIGHT_SLASH']
+    cm: ['BODY_SLAM', 'BRICK_BREAK', 'NIGHT_SLASH'],
+    stats: 1483
   },
   {
     name: 'Vigoroth',
@@ -3344,7 +3698,8 @@ export const ROWS = [
     def: 145,
     hp: 190,
     fm: ['COUNTER', 'SCRATCH'],
-    cm: ['BODY_SLAM', 'BRICK_BREAK', 'BULLDOZE']
+    cm: ['BODY_SLAM', 'BRICK_BREAK', 'BULLDOZE'],
+    stats: 4380
   },
   {
     name: 'Slaking',
@@ -3354,7 +3709,8 @@ export const ROWS = [
     def: 166,
     hp: 284,
     fm: ['YAWN'],
-    cm: ['EARTHQUAKE', 'HYPER_BEAM', 'PLAY_ROUGH', 'BODY_SLAM']
+    cm: ['EARTHQUAKE', 'HYPER_BEAM', 'PLAY_ROUGH', 'BODY_SLAM'],
+    stats: 13672
   },
   {
     name: 'Nincada',
@@ -3364,7 +3720,8 @@ export const ROWS = [
     def: 126,
     hp: 104,
     fm: ['BUG_BITE', 'SCRATCH'],
-    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'NIGHT_SLASH']
+    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'NIGHT_SLASH'],
+    stats: 1048
   },
   {
     name: 'Ninjask',
@@ -3374,7 +3731,8 @@ export const ROWS = [
     def: 112,
     hp: 156,
     fm: ['FURY_CUTTER', 'METAL_CLAW'],
-    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'SHADOW_BALL']
+    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'SHADOW_BALL'],
+    stats: 3477
   },
   {
     name: 'Shedinja',
@@ -3384,7 +3742,8 @@ export const ROWS = [
     def: 73,
     hp: 1,
     fm: ['BUG_BITE', 'SHADOW_CLAW'],
-    cm: ['AERIAL_ACE', 'DIG', 'SHADOW_SNEAK']
+    cm: ['AERIAL_ACE', 'DIG', 'SHADOW_SNEAK'],
+    stats: 11
   },
   {
     name: 'Whismur',
@@ -3394,7 +3753,8 @@ export const ROWS = [
     def: 42,
     hp: 162,
     fm: ['ASTONISH', 'POUND'],
-    cm: ['DISARMING_VOICE', 'FLAMETHROWER', 'STOMP']
+    cm: ['DISARMING_VOICE', 'FLAMETHROWER', 'STOMP'],
+    stats: 626
   },
   {
     name: 'Loudred',
@@ -3404,7 +3764,8 @@ export const ROWS = [
     def: 81,
     hp: 197,
     fm: ['BITE', 'ROCK_SMASH'],
-    cm: ['CRUNCH', 'DISARMING_VOICE', 'FLAMETHROWER', 'STOMP']
+    cm: ['CRUNCH', 'DISARMING_VOICE', 'FLAMETHROWER', 'STOMP'],
+    stats: 2138
   },
   {
     name: 'Exploud',
@@ -3414,7 +3775,8 @@ export const ROWS = [
     def: 137,
     hp: 232,
     fm: ['ASTONISH', 'BITE'],
-    cm: ['CRUNCH', 'DISARMING_VOICE', 'FIRE_BLAST']
+    cm: ['CRUNCH', 'DISARMING_VOICE', 'FIRE_BLAST'],
+    stats: 5689
   },
   {
     name: 'Makuhita',
@@ -3424,7 +3786,8 @@ export const ROWS = [
     def: 54,
     hp: 176,
     fm: ['ROCK_SMASH', 'TACKLE'],
-    cm: ['CROSS_CHOP', 'HEAVY_SLAM', 'LOW_SWEEP']
+    cm: ['CROSS_CHOP', 'HEAVY_SLAM', 'LOW_SWEEP'],
+    stats: 941
   },
   {
     name: 'Hariyama',
@@ -3434,7 +3797,8 @@ export const ROWS = [
     def: 114,
     hp: 302,
     fm: ['BULLET_PUNCH', 'COUNTER'],
-    cm: ['CLOSE_COMBAT', 'DYNAMIC_PUNCH', 'HEAVY_SLAM']
+    cm: ['CLOSE_COMBAT', 'DYNAMIC_PUNCH', 'HEAVY_SLAM'],
+    stats: 7195
   },
   {
     name: 'Azurill',
@@ -3444,7 +3808,8 @@ export const ROWS = [
     def: 71,
     hp: 137,
     fm: ['BUBBLE', 'SPLASH'],
-    cm: ['BODY_SLAM', 'BUBBLE_BEAM', 'ICE_BEAM']
+    cm: ['BODY_SLAM', 'BUBBLE_BEAM', 'ICE_BEAM'],
+    stats: 350
   },
   {
     name: 'Nosepass',
@@ -3454,7 +3819,8 @@ export const ROWS = [
     def: 215,
     hp: 102,
     fm: ['ROCK_THROW', 'SPARK'],
-    cm: ['ROCK_BLAST', 'ROCK_SLIDE', 'THUNDERBOLT']
+    cm: ['ROCK_BLAST', 'ROCK_SLIDE', 'THUNDERBOLT'],
+    stats: 1798
   },
   {
     name: 'Skitty',
@@ -3464,7 +3830,8 @@ export const ROWS = [
     def: 79,
     hp: 137,
     fm: ['FEINT_ATTACK', 'TACKLE'],
-    cm: ['DIG', 'DISARMING_VOICE', 'WILD_CHARGE']
+    cm: ['DIG', 'DISARMING_VOICE', 'WILD_CHARGE'],
+    stats: 909
   },
   {
     name: 'Delcatty',
@@ -3474,7 +3841,8 @@ export const ROWS = [
     def: 127,
     hp: 172,
     fm: ['FEINT_ATTACK', 'ZEN_HEADBUTT'],
-    cm: ['DISARMING_VOICE', 'PLAY_ROUGH', 'WILD_CHARGE']
+    cm: ['DISARMING_VOICE', 'PLAY_ROUGH', 'WILD_CHARGE'],
+    stats: 2883
   },
   {
     name: 'Sableye',
@@ -3484,7 +3852,8 @@ export const ROWS = [
     def: 136,
     hp: 137,
     fm: ['FEINT_ATTACK', 'SHADOW_CLAW'],
-    cm: ['FOUL_PLAY', 'POWER_GEM', 'SHADOW_SNEAK']
+    cm: ['FOUL_PLAY', 'POWER_GEM', 'SHADOW_SNEAK'],
+    stats: 2627
   },
   {
     name: 'Mawile',
@@ -3494,7 +3863,8 @@ export const ROWS = [
     def: 141,
     hp: 137,
     fm: ['ASTONISH', 'BITE'],
-    cm: ['IRON_HEAD', 'PLAY_ROUGH', 'VICE_GRIP']
+    cm: ['IRON_HEAD', 'PLAY_ROUGH', 'VICE_GRIP'],
+    stats: 2994
   },
   {
     name: 'Aron',
@@ -3504,7 +3874,8 @@ export const ROWS = [
     def: 141,
     hp: 137,
     fm: ['METAL_CLAW', 'TACKLE'],
-    cm: ['BODY_SLAM', 'IRON_HEAD', 'ROCK_TOMB']
+    cm: ['BODY_SLAM', 'IRON_HEAD', 'ROCK_TOMB'],
+    stats: 2337
   },
   {
     name: 'Lairon',
@@ -3514,7 +3885,8 @@ export const ROWS = [
     def: 198,
     hp: 155,
     fm: ['IRON_TAIL', 'METAL_CLAW'],
-    cm: ['BODY_SLAM', 'HEAVY_SLAM', 'ROCK_SLIDE']
+    cm: ['BODY_SLAM', 'HEAVY_SLAM', 'ROCK_SLIDE'],
+    stats: 4849
   },
   {
     name: 'Aggron',
@@ -3524,7 +3896,8 @@ export const ROWS = [
     def: 257,
     hp: 172,
     fm: ['DRAGON_TAIL', 'IRON_TAIL'],
-    cm: ['HEAVY_SLAM', 'STONE_EDGE', 'THUNDER']
+    cm: ['HEAVY_SLAM', 'STONE_EDGE', 'THUNDER'],
+    stats: 8752
   },
   {
     name: 'Meditite',
@@ -3534,7 +3907,8 @@ export const ROWS = [
     def: 107,
     hp: 102,
     fm: ['CONFUSION', 'ROCK_SMASH'],
-    cm: ['ICE_PUNCH', 'LOW_SWEEP', 'PSYSHOCK']
+    cm: ['ICE_PUNCH', 'LOW_SWEEP', 'PSYSHOCK'],
+    stats: 851
   },
   {
     name: 'Medicham',
@@ -3544,7 +3918,8 @@ export const ROWS = [
     def: 152,
     hp: 155,
     fm: ['COUNTER', 'PSYCHO_CUT'],
-    cm: ['DYNAMIC_PUNCH', 'ICE_PUNCH', 'PSYCHIC', 'POWER_UP_PUNCH']
+    cm: ['DYNAMIC_PUNCH', 'ICE_PUNCH', 'PSYCHIC', 'POWER_UP_PUNCH'],
+    stats: 2851
   },
   {
     name: 'Electrike',
@@ -3554,7 +3929,8 @@ export const ROWS = [
     def: 78,
     hp: 120,
     fm: ['QUICK_ATTACK', 'SPARK'],
-    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT'],
+    stats: 1151
   },
   {
     name: 'Manectric',
@@ -3564,7 +3940,8 @@ export const ROWS = [
     def: 127,
     hp: 172,
     fm: ['CHARGE_BEAM', 'SNARL'],
-    cm: ['FLAME_BURST', 'THUNDER', 'WILD_CHARGE']
+    cm: ['FLAME_BURST', 'THUNDER', 'WILD_CHARGE'],
+    stats: 4696
   },
   {
     name: 'Plusle',
@@ -3574,7 +3951,8 @@ export const ROWS = [
     def: 129,
     hp: 155,
     fm: ['QUICK_ATTACK', 'SPARK'],
-    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT'],
+    stats: 3339
   },
   {
     name: 'Minun',
@@ -3584,7 +3962,8 @@ export const ROWS = [
     def: 150,
     hp: 155,
     fm: ['QUICK_ATTACK', 'SPARK'],
-    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT'],
+    stats: 3418
   },
   {
     name: 'Volbeat',
@@ -3594,7 +3973,8 @@ export const ROWS = [
     def: 166,
     hp: 163,
     fm: ['STRUGGLE_BUG', 'TACKLE'],
-    cm: ['BUG_BUZZ', 'SIGNAL_BEAM', 'THUNDERBOLT']
+    cm: ['BUG_BUZZ', 'SIGNAL_BEAM', 'THUNDERBOLT'],
+    stats: 3869
   },
   {
     name: 'Illumise',
@@ -3604,7 +3984,8 @@ export const ROWS = [
     def: 166,
     hp: 163,
     fm: ['STRUGGLE_BUG', 'TACKLE'],
-    cm: ['BUG_BUZZ', 'DAZZLING_GLEAM', 'SILVER_WIND']
+    cm: ['BUG_BUZZ', 'DAZZLING_GLEAM', 'SILVER_WIND'],
+    stats: 3869
   },
   {
     name: 'Roselia',
@@ -3614,7 +3995,8 @@ export const ROWS = [
     def: 131,
     hp: 137,
     fm: ['POISON_JAB', 'RAZOR_LEAF'],
-    cm: ['DAZZLING_GLEAM', 'PETAL_BLIZZARD', 'SLUDGE_BOMB']
+    cm: ['DAZZLING_GLEAM', 'PETAL_BLIZZARD', 'SLUDGE_BOMB'],
+    stats: 3338
   },
   {
     name: 'Gulpin',
@@ -3624,7 +4006,8 @@ export const ROWS = [
     def: 99,
     hp: 172,
     fm: ['POUND', 'ROCK_SMASH'],
-    cm: ['GUNK_SHOT', 'ICE_BEAM', 'SLUDGE']
+    cm: ['GUNK_SHOT', 'ICE_BEAM', 'SLUDGE'],
+    stats: 1362
   },
   {
     name: 'Swalot',
@@ -3634,7 +4017,8 @@ export const ROWS = [
     def: 159,
     hp: 225,
     fm: ['INFESTATION', 'ROCK_SMASH'],
-    cm: ['GUNK_SHOT', 'ICE_BEAM', 'SLUDGE_BOMB', 'ACID_SPRAY']
+    cm: ['GUNK_SHOT', 'ICE_BEAM', 'SLUDGE_BOMB', 'ACID_SPRAY'],
+    stats: 5009
   },
   {
     name: 'Carvanha',
@@ -3644,7 +4028,8 @@ export const ROWS = [
     def: 39,
     hp: 128,
     fm: ['BITE', 'SNARL'],
-    cm: ['AQUA_JET', 'CRUNCH', 'POISON_FANG']
+    cm: ['AQUA_JET', 'CRUNCH', 'POISON_FANG'],
+    stats: 854
   },
   {
     name: 'Sharpedo',
@@ -3654,7 +4039,8 @@ export const ROWS = [
     def: 83,
     hp: 172,
     fm: ['BITE', 'WATERFALL'],
-    cm: ['CRUNCH', 'HYDRO_PUMP', 'POISON_FANG']
+    cm: ['CRUNCH', 'HYDRO_PUMP', 'POISON_FANG'],
+    stats: 3469
   },
   {
     name: 'Wailmer',
@@ -3664,7 +4050,8 @@ export const ROWS = [
     def: 68,
     hp: 277,
     fm: ['SPLASH', 'WATER_GUN'],
-    cm: ['BODY_SLAM', 'HEAVY_SLAM', 'WATER_PULSE']
+    cm: ['BODY_SLAM', 'HEAVY_SLAM', 'WATER_PULSE'],
+    stats: 2562
   },
   {
     name: 'Wailord',
@@ -3674,7 +4061,8 @@ export const ROWS = [
     def: 87,
     hp: 347,
     fm: ['WATER_GUN', 'ZEN_HEADBUTT'],
-    cm: ['BLIZZARD', 'HYPER_BEAM', 'SURF']
+    cm: ['BLIZZARD', 'HYPER_BEAM', 'SURF'],
+    stats: 5283
   },
   {
     name: 'Numel',
@@ -3684,7 +4072,8 @@ export const ROWS = [
     def: 79,
     hp: 155,
     fm: ['EMBER', 'TACKLE'],
-    cm: ['BULLDOZE', 'HEAT_WAVE', 'STOMP']
+    cm: ['BULLDOZE', 'HEAT_WAVE', 'STOMP'],
+    stats: 1457
   },
   {
     name: 'Camerupt',
@@ -3694,7 +4083,8 @@ export const ROWS = [
     def: 136,
     hp: 172,
     fm: ['EMBER', 'ROCK_SMASH'],
-    cm: ['EARTHQUAKE', 'OVERHEAT', 'SOLAR_BEAM', 'EARTH_POWER']
+    cm: ['EARTHQUAKE', 'OVERHEAT', 'SOLAR_BEAM', 'EARTH_POWER'],
+    stats: 4538
   },
   {
     name: 'Torkoal',
@@ -3704,7 +4094,8 @@ export const ROWS = [
     def: 203,
     hp: 172,
     fm: ['EMBER', 'FIRE_SPIN'],
-    cm: ['EARTHQUAKE', 'OVERHEAT', 'SOLAR_BEAM']
+    cm: ['EARTHQUAKE', 'OVERHEAT', 'SOLAR_BEAM'],
+    stats: 5272
   },
   {
     name: 'Spoink',
@@ -3714,7 +4105,8 @@ export const ROWS = [
     def: 122,
     hp: 155,
     fm: ['SPLASH', 'ZEN_HEADBUTT'],
-    cm: ['MIRROR_COAT', 'PSYBEAM', 'SHADOW_BALL']
+    cm: ['MIRROR_COAT', 'PSYBEAM', 'SHADOW_BALL'],
+    stats: 2364
   },
   {
     name: 'Grumpig',
@@ -3724,7 +4116,8 @@ export const ROWS = [
     def: 188,
     hp: 190,
     fm: ['CHARGE_BEAM', 'EXTRASENSORY'],
-    cm: ['MIRROR_COAT', 'PSYCHIC', 'SHADOW_BALL']
+    cm: ['MIRROR_COAT', 'PSYCHIC', 'SHADOW_BALL'],
+    stats: 6108
   },
   {
     name: 'Spinda',
@@ -3734,7 +4127,8 @@ export const ROWS = [
     def: 116,
     hp: 155,
     fm: ['PSYCHO_CUT', 'SUCKER_PUNCH'],
-    cm: ['DIG', 'ICY_WIND', 'ROCK_TOMB']
+    cm: ['DIG', 'ICY_WIND', 'ROCK_TOMB'],
+    stats: 2086
   },
   {
     name: 'Trapinch',
@@ -3744,7 +4138,8 @@ export const ROWS = [
     def: 78,
     hp: 128,
     fm: ['MUD_SHOT', 'STRUGGLE_BUG'],
-    cm: ['CRUNCH', 'DIG', 'SAND_TOMB']
+    cm: ['CRUNCH', 'DIG', 'SAND_TOMB'],
+    stats: 1617
   },
   {
     name: 'Vibrava',
@@ -3754,7 +4149,8 @@ export const ROWS = [
     def: 99,
     hp: 137,
     fm: ['DRAGON_BREATH', 'MUD_SHOT'],
-    cm: ['BUG_BUZZ', 'BULLDOZE', 'SAND_TOMB']
+    cm: ['BUG_BUZZ', 'BULLDOZE', 'SAND_TOMB'],
+    stats: 1817
   },
   {
     name: 'Flygon',
@@ -3764,7 +4160,8 @@ export const ROWS = [
     def: 168,
     hp: 190,
     fm: ['DRAGON_TAIL', 'MUD_SHOT'],
-    cm: ['DRAGON_CLAW', 'EARTHQUAKE', 'STONE_EDGE']
+    cm: ['DRAGON_CLAW', 'EARTHQUAKE', 'STONE_EDGE'],
+    stats: 6544
   },
   {
     name: 'Cacnea',
@@ -3774,7 +4171,8 @@ export const ROWS = [
     def: 74,
     hp: 137,
     fm: ['POISON_STING', 'SUCKER_PUNCH'],
-    cm: ['BRICK_BREAK', 'GRASS_KNOT', 'SEED_BOMB']
+    cm: ['BRICK_BREAK', 'GRASS_KNOT', 'SEED_BOMB'],
+    stats: 1582
   },
   {
     name: 'Cacturne',
@@ -3784,7 +4182,8 @@ export const ROWS = [
     def: 115,
     hp: 172,
     fm: ['POISON_JAB', 'SUCKER_PUNCH'],
-    cm: ['DARK_PULSE', 'DYNAMIC_PUNCH', 'GRASS_KNOT']
+    cm: ['DARK_PULSE', 'DYNAMIC_PUNCH', 'GRASS_KNOT'],
+    stats: 4371
   },
   {
     name: 'Swablu',
@@ -3794,7 +4193,8 @@ export const ROWS = [
     def: 132,
     hp: 128,
     fm: ['ASTONISH', 'PECK'],
-    cm: ['AERIAL_ACE', 'DISARMING_VOICE', 'ICE_BEAM']
+    cm: ['AERIAL_ACE', 'DISARMING_VOICE', 'ICE_BEAM'],
+    stats: 1284
   },
   {
     name: 'Altaria',
@@ -3804,7 +4204,8 @@ export const ROWS = [
     def: 201,
     hp: 181,
     fm: ['DRAGON_BREATH', 'PECK'],
-    cm: ['DAZZLING_GLEAM', 'DRAGON_PULSE', 'SKY_ATTACK']
+    cm: ['DAZZLING_GLEAM', 'DRAGON_PULSE', 'SKY_ATTACK'],
+    stats: 5130
   },
   {
     name: 'Zangoose',
@@ -3814,7 +4215,8 @@ export const ROWS = [
     def: 124,
     hp: 177,
     fm: ['FURY_CUTTER', 'SHADOW_CLAW'],
-    cm: ['CLOSE_COMBAT', 'DIG', 'NIGHT_SLASH']
+    cm: ['CLOSE_COMBAT', 'DIG', 'NIGHT_SLASH'],
+    stats: 4872
   },
   {
     name: 'Seviper',
@@ -3824,7 +4226,8 @@ export const ROWS = [
     def: 118,
     hp: 177,
     fm: ['IRON_TAIL', 'POISON_JAB'],
-    cm: ['CRUNCH', 'POISON_FANG', 'WRAP']
+    cm: ['CRUNCH', 'POISON_FANG', 'WRAP'],
+    stats: 4094
   },
   {
     name: 'Lunatone',
@@ -3834,7 +4237,8 @@ export const ROWS = [
     def: 153,
     hp: 207,
     fm: ['CONFUSION', 'ROCK_THROW'],
-    cm: ['MOONBLAST', 'PSYCHIC', 'ROCK_SLIDE']
+    cm: ['MOONBLAST', 'PSYCHIC', 'ROCK_SLIDE'],
+    stats: 5637
   },
   {
     name: 'Solrock',
@@ -3844,7 +4248,8 @@ export const ROWS = [
     def: 153,
     hp: 207,
     fm: ['CONFUSION', 'ROCK_THROW'],
-    cm: ['PSYCHIC', 'ROCK_SLIDE', 'SOLAR_BEAM']
+    cm: ['PSYCHIC', 'ROCK_SLIDE', 'SOLAR_BEAM'],
+    stats: 5637
   },
   {
     name: 'Barboach',
@@ -3854,7 +4259,8 @@ export const ROWS = [
     def: 82,
     hp: 137,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['AQUA_TAIL', 'ICE_BEAM', 'MUD_BOMB']
+    cm: ['AQUA_TAIL', 'ICE_BEAM', 'MUD_BOMB'],
+    stats: 1045
   },
   {
     name: 'Whiscash',
@@ -3864,7 +4270,8 @@ export const ROWS = [
     def: 141,
     hp: 242,
     fm: ['MUD_SHOT', 'WATER_GUN'],
-    cm: ['BLIZZARD', 'MUD_BOMB', 'WATER_PULSE']
+    cm: ['BLIZZARD', 'MUD_BOMB', 'WATER_PULSE'],
+    stats: 5152
   },
   {
     name: 'Corphish',
@@ -3874,7 +4281,8 @@ export const ROWS = [
     def: 99,
     hp: 125,
     fm: ['BUBBLE', 'ROCK_SMASH'],
-    cm: ['AQUA_JET', 'BUBBLE_BEAM', 'VICE_GRIP']
+    cm: ['AQUA_JET', 'BUBBLE_BEAM', 'VICE_GRIP'],
+    stats: 1745
   },
   {
     name: 'Crawdaunt',
@@ -3884,7 +4292,8 @@ export const ROWS = [
     def: 142,
     hp: 160,
     fm: ['SNARL', 'WATERFALL'],
-    cm: ['BUBBLE_BEAM', 'NIGHT_SLASH', 'VICE_GRIP']
+    cm: ['BUBBLE_BEAM', 'NIGHT_SLASH', 'VICE_GRIP'],
+    stats: 5089
   },
   {
     name: 'Baltoy',
@@ -3894,7 +4303,8 @@ export const ROWS = [
     def: 124,
     hp: 120,
     fm: ['CONFUSION', 'EXTRASENSORY'],
-    cm: ['DIG', 'GYRO_BALL', 'PSYBEAM']
+    cm: ['DIG', 'GYRO_BALL', 'PSYBEAM'],
+    stats: 1146
   },
   {
     name: 'Claydol',
@@ -3904,7 +4314,8 @@ export const ROWS = [
     def: 229,
     hp: 155,
     fm: ['CONFUSION', 'EXTRASENSORY'],
-    cm: ['EARTHQUAKE', 'GYRO_BALL', 'PSYCHIC', 'EARTH_POWER']
+    cm: ['EARTHQUAKE', 'GYRO_BALL', 'PSYCHIC', 'EARTH_POWER'],
+    stats: 4969
   },
   {
     name: 'Lileep',
@@ -3914,7 +4325,8 @@ export const ROWS = [
     def: 150,
     hp: 165,
     fm: ['ACID', 'INFESTATION'],
-    cm: ['ANCIENT_POWER', 'GRASS_KNOT', 'MIRROR_COAT']
+    cm: ['ANCIENT_POWER', 'GRASS_KNOT', 'MIRROR_COAT'],
+    stats: 2599
   },
   {
     name: 'Cradily',
@@ -3924,7 +4336,8 @@ export const ROWS = [
     def: 194,
     hp: 200,
     fm: ['ACID', 'INFESTATION'],
-    cm: ['BULLDOZE', 'GRASS_KNOT', 'STONE_EDGE']
+    cm: ['BULLDOZE', 'GRASS_KNOT', 'STONE_EDGE'],
+    stats: 5898
   },
   {
     name: 'Anorith',
@@ -3934,7 +4347,8 @@ export const ROWS = [
     def: 100,
     hp: 128,
     fm: ['SCRATCH', 'STRUGGLE_BUG'],
-    cm: ['ANCIENT_POWER', 'AQUA_JET', 'CROSS_POISON']
+    cm: ['ANCIENT_POWER', 'AQUA_JET', 'CROSS_POISON'],
+    stats: 2253
   },
   {
     name: 'Armaldo',
@@ -3944,9 +4358,20 @@ export const ROWS = [
     def: 174,
     hp: 181,
     fm: ['FURY_CUTTER', 'STRUGGLE_BUG'],
-    cm: ['CROSS_POISON', 'ROCK_BLAST', 'WATER_PULSE']
+    cm: ['CROSS_POISON', 'ROCK_BLAST', 'WATER_PULSE'],
+    stats: 6992
   },
-  { name: 'Feebas', dex: 349, type: ['water', 'none'], atk: 29, def: 85, hp: 85, fm: ['SPLASH', 'TACKLE'], cm: ['MIRROR_COAT'] },
+  {
+    name: 'Feebas',
+    dex: 349,
+    type: ['water', 'none'],
+    atk: 29,
+    def: 85,
+    hp: 85,
+    fm: ['SPLASH', 'TACKLE'],
+    cm: ['MIRROR_COAT'],
+    stats: 210
+  },
   {
     name: 'Milotic',
     dex: 350,
@@ -3955,7 +4380,8 @@ export const ROWS = [
     def: 219,
     hp: 216,
     fm: ['DRAGON_TAIL', 'WATERFALL'],
-    cm: ['BLIZZARD', 'HYPER_BEAM', 'SURF']
+    cm: ['BLIZZARD', 'HYPER_BEAM', 'SURF'],
+    stats: 9082
   },
   {
     name: 'Castform',
@@ -3965,7 +4391,8 @@ export const ROWS = [
     def: 139,
     hp: 172,
     fm: ['HEX', 'TACKLE'],
-    cm: ['ENERGY_BALL', 'HURRICANE', 'WEATHER_BALL_ROCK']
+    cm: ['ENERGY_BALL', 'HURRICANE', 'WEATHER_BALL_ROCK'],
+    stats: 3323
   },
   {
     name: 'Castform (Rainy)',
@@ -3975,7 +4402,8 @@ export const ROWS = [
     def: 139,
     hp: 172,
     fm: ['TACKLE', 'WATER_GUN'],
-    cm: ['HYDRO_PUMP', 'THUNDER', 'WEATHER_BALL_WATER']
+    cm: ['HYDRO_PUMP', 'THUNDER', 'WEATHER_BALL_WATER'],
+    stats: 3323
   },
   {
     name: 'Castform (Snowy)',
@@ -3985,7 +4413,8 @@ export const ROWS = [
     def: 139,
     hp: 172,
     fm: ['POWDER_SNOW', 'TACKLE'],
-    cm: ['BLIZZARD', 'ICE_BEAM', 'WEATHER_BALL_ICE']
+    cm: ['BLIZZARD', 'ICE_BEAM', 'WEATHER_BALL_ICE'],
+    stats: 3323
   },
   {
     name: 'Castform (Sunny)',
@@ -3995,7 +4424,8 @@ export const ROWS = [
     def: 139,
     hp: 172,
     fm: ['EMBER', 'TACKLE'],
-    cm: ['FIRE_BLAST', 'SOLAR_BEAM', 'WEATHER_BALL_FIRE']
+    cm: ['FIRE_BLAST', 'SOLAR_BEAM', 'WEATHER_BALL_FIRE'],
+    stats: 3323
   },
   {
     name: 'Kecleon',
@@ -4005,7 +4435,8 @@ export const ROWS = [
     def: 189,
     hp: 155,
     fm: ['LICK', 'SUCKER_PUNCH'],
-    cm: ['AERIAL_ACE', 'FLAMETHROWER', 'FOUL_PLAY', 'ICE_BEAM', 'SHADOW_SNEAK', 'THUNDER']
+    cm: ['AERIAL_ACE', 'FLAMETHROWER', 'FOUL_PLAY', 'ICE_BEAM', 'SHADOW_SNEAK', 'THUNDER'],
+    stats: 4716
   },
   {
     name: 'Shuppet',
@@ -4015,7 +4446,8 @@ export const ROWS = [
     def: 65,
     hp: 127,
     fm: ['ASTONISH', 'FEINT_ATTACK'],
-    cm: ['NIGHT_SHADE', 'OMINOUS_WIND', 'SHADOW_SNEAK']
+    cm: ['NIGHT_SHADE', 'OMINOUS_WIND', 'SHADOW_SNEAK'],
+    stats: 1139
   },
   {
     name: 'Banette',
@@ -4025,7 +4457,8 @@ export const ROWS = [
     def: 126,
     hp: 162,
     fm: ['HEX', 'SHADOW_CLAW'],
-    cm: ['DAZZLING_GLEAM', 'SHADOW_BALL', 'THUNDER']
+    cm: ['DAZZLING_GLEAM', 'SHADOW_BALL', 'THUNDER'],
+    stats: 4450
   },
   {
     name: 'Duskull',
@@ -4035,7 +4468,8 @@ export const ROWS = [
     def: 162,
     hp: 85,
     fm: ['ASTONISH', 'HEX'],
-    cm: ['NIGHT_SHADE', 'OMINOUS_WIND', 'SHADOW_SNEAK']
+    cm: ['NIGHT_SHADE', 'OMINOUS_WIND', 'SHADOW_SNEAK'],
+    stats: 964
   },
   {
     name: 'Dusclops',
@@ -4045,7 +4479,8 @@ export const ROWS = [
     def: 234,
     hp: 120,
     fm: ['FEINT_ATTACK', 'HEX'],
-    cm: ['FIRE_PUNCH', 'ICE_PUNCH', 'SHADOW_PUNCH']
+    cm: ['FIRE_PUNCH', 'ICE_PUNCH', 'SHADOW_PUNCH'],
+    stats: 3482
   },
   {
     name: 'Tropius',
@@ -4055,7 +4490,8 @@ export const ROWS = [
     def: 163,
     hp: 223,
     fm: ['AIR_SLASH', 'RAZOR_LEAF'],
-    cm: ['AERIAL_ACE', 'LEAF_BLADE', 'STOMP']
+    cm: ['AERIAL_ACE', 'LEAF_BLADE', 'STOMP'],
+    stats: 4943
   },
   {
     name: 'Chimecho',
@@ -4065,7 +4501,8 @@ export const ROWS = [
     def: 170,
     hp: 181,
     fm: ['ASTONISH', 'EXTRASENSORY'],
-    cm: ['ENERGY_BALL', 'PSYSHOCK', 'SHADOW_BALL']
+    cm: ['ENERGY_BALL', 'PSYSHOCK', 'SHADOW_BALL'],
+    stats: 5385
   },
   {
     name: 'Absol',
@@ -4075,9 +4512,20 @@ export const ROWS = [
     def: 120,
     hp: 163,
     fm: ['PSYCHO_CUT', 'SNARL'],
-    cm: ['DARK_PULSE', 'MEGAHORN', 'THUNDER']
+    cm: ['DARK_PULSE', 'MEGAHORN', 'THUNDER'],
+    stats: 4812
   },
-  { name: 'Wynaut', dex: 360, type: ['psychic', 'none'], atk: 41, def: 86, hp: 216, fm: ['COUNTER', 'SPLASH'], cm: ['MIRROR_COAT'] },
+  {
+    name: 'Wynaut',
+    dex: 360,
+    type: ['psychic', 'none'],
+    atk: 41,
+    def: 86,
+    hp: 216,
+    fm: ['COUNTER', 'SPLASH'],
+    cm: ['MIRROR_COAT'],
+    stats: 762
+  },
   {
     name: 'Snorunt',
     dex: 361,
@@ -4086,7 +4534,8 @@ export const ROWS = [
     def: 95,
     hp: 137,
     fm: ['HEX', 'POWDER_SNOW'],
-    cm: ['AVALANCHE', 'ICY_WIND', 'SHADOW_BALL']
+    cm: ['AVALANCHE', 'ICY_WIND', 'SHADOW_BALL'],
+    stats: 1236
   },
   {
     name: 'Glalie',
@@ -4096,7 +4545,8 @@ export const ROWS = [
     def: 162,
     hp: 190,
     fm: ['FROST_BREATH', 'ICE_SHARD'],
-    cm: ['AVALANCHE', 'GYRO_BALL', 'SHADOW_BALL']
+    cm: ['AVALANCHE', 'GYRO_BALL', 'SHADOW_BALL'],
+    stats: 4986
   },
   {
     name: 'Spheal',
@@ -4106,7 +4556,8 @@ export const ROWS = [
     def: 90,
     hp: 172,
     fm: ['ROCK_SMASH', 'WATER_GUN'],
-    cm: ['AURORA_BEAM', 'BODY_SLAM', 'WATER_PULSE']
+    cm: ['AURORA_BEAM', 'BODY_SLAM', 'WATER_PULSE'],
+    stats: 1471
   },
   {
     name: 'Sealeo',
@@ -4116,7 +4567,8 @@ export const ROWS = [
     def: 132,
     hp: 207,
     fm: ['POWDER_SNOW', 'WATER_GUN'],
-    cm: ['AURORA_BEAM', 'BODY_SLAM', 'WATER_PULSE']
+    cm: ['AURORA_BEAM', 'BODY_SLAM', 'WATER_PULSE'],
+    stats: 3743
   },
   {
     name: 'Walrein',
@@ -4126,7 +4578,8 @@ export const ROWS = [
     def: 176,
     hp: 242,
     fm: ['FROST_BREATH', 'WATERFALL'],
-    cm: ['BLIZZARD', 'EARTHQUAKE', 'WATER_PULSE']
+    cm: ['BLIZZARD', 'EARTHQUAKE', 'WATER_PULSE'],
+    stats: 7752
   },
   {
     name: 'Clamperl',
@@ -4136,7 +4589,8 @@ export const ROWS = [
     def: 135,
     hp: 111,
     fm: ['WATER_GUN'],
-    cm: ['BODY_SLAM', 'ICE_BEAM', 'WATER_PULSE']
+    cm: ['BODY_SLAM', 'ICE_BEAM', 'WATER_PULSE'],
+    stats: 1993
   },
   {
     name: 'Huntail',
@@ -4146,7 +4600,8 @@ export const ROWS = [
     def: 179,
     hp: 146,
     fm: ['BITE', 'WATER_GUN'],
-    cm: ['AQUA_TAIL', 'CRUNCH', 'ICE_BEAM']
+    cm: ['AQUA_TAIL', 'CRUNCH', 'ICE_BEAM'],
+    stats: 5148
   },
   {
     name: 'Gorebyss',
@@ -4156,7 +4611,8 @@ export const ROWS = [
     def: 179,
     hp: 146,
     fm: ['CONFUSION', 'WATER_GUN'],
-    cm: ['DRAINING_KISS', 'PSYCHIC', 'WATER_PULSE']
+    cm: ['DRAINING_KISS', 'PSYCHIC', 'WATER_PULSE'],
+    stats: 5514
   },
   {
     name: 'Relicanth',
@@ -4166,7 +4622,8 @@ export const ROWS = [
     def: 203,
     hp: 225,
     fm: ['WATER_GUN', 'ZEN_HEADBUTT'],
-    cm: ['ANCIENT_POWER', 'AQUA_TAIL', 'HYDRO_PUMP']
+    cm: ['ANCIENT_POWER', 'AQUA_TAIL', 'HYDRO_PUMP'],
+    stats: 7399
   },
   {
     name: 'Luvdisc',
@@ -4176,7 +4633,8 @@ export const ROWS = [
     def: 128,
     hp: 125,
     fm: ['SPLASH', 'WATER_GUN'],
-    cm: ['AQUA_JET', 'DRAINING_KISS', 'WATER_PULSE']
+    cm: ['AQUA_JET', 'DRAINING_KISS', 'WATER_PULSE'],
+    stats: 1296
   },
   {
     name: 'Bagon',
@@ -4186,7 +4644,8 @@ export const ROWS = [
     def: 93,
     hp: 128,
     fm: ['BITE', 'EMBER'],
-    cm: ['CRUNCH', 'FLAMETHROWER', 'TWISTER']
+    cm: ['CRUNCH', 'FLAMETHROWER', 'TWISTER'],
+    stats: 1595
   },
   {
     name: 'Shelgon',
@@ -4196,7 +4655,8 @@ export const ROWS = [
     def: 155,
     hp: 163,
     fm: ['DRAGON_BREATH', 'EMBER'],
-    cm: ['DRAGON_PULSE', 'FLAMETHROWER', 'TWISTER']
+    cm: ['DRAGON_PULSE', 'FLAMETHROWER', 'TWISTER'],
+    stats: 4346
   },
   {
     name: 'Salamence',
@@ -4206,9 +4666,10 @@ export const ROWS = [
     def: 168,
     hp: 216,
     fm: ['BITE', 'DRAGON_TAIL', 'FIRE_FANG'],
-    cm: ['DRACO_METEOR', 'FIRE_BLAST', 'HYDRO_PUMP', 'OUTRAGE']
+    cm: ['DRACO_METEOR', 'FIRE_BLAST', 'HYDRO_PUMP', 'OUTRAGE'],
+    stats: 10052
   },
-  { name: 'Beldum', dex: 374, type: ['steel', 'psychic'], atk: 96, def: 132, hp: 120, fm: ['TAKE_DOWN'], cm: ['STRUGGLE'] },
+  { name: 'Beldum', dex: 374, type: ['steel', 'psychic'], atk: 96, def: 132, hp: 120, fm: ['TAKE_DOWN'], cm: ['STRUGGLE'], stats: 1521 },
   {
     name: 'Metang',
     dex: 375,
@@ -4217,7 +4678,8 @@ export const ROWS = [
     def: 176,
     hp: 155,
     fm: ['METAL_CLAW', 'ZEN_HEADBUTT'],
-    cm: ['GYRO_BALL', 'PSYCHIC', 'PSYSHOCK']
+    cm: ['GYRO_BALL', 'PSYCHIC', 'PSYSHOCK'],
+    stats: 3765
   },
   {
     name: 'Metagross',
@@ -4227,7 +4689,8 @@ export const ROWS = [
     def: 228,
     hp: 190,
     fm: ['BULLET_PUNCH', 'ZEN_HEADBUTT'],
-    cm: ['EARTHQUAKE', 'FLASH_CANNON', 'METEOR_MASH', 'PSYCHIC']
+    cm: ['EARTHQUAKE', 'FLASH_CANNON', 'METEOR_MASH', 'PSYCHIC'],
+    stats: 11133
   },
   {
     name: 'Regirock',
@@ -4237,7 +4700,8 @@ export const ROWS = [
     def: 309,
     hp: 190,
     fm: ['ROCK_SMASH', 'ROCK_THROW'],
-    cm: ['FOCUS_BLAST', 'STONE_EDGE', 'ZAP_CANNON']
+    cm: ['FOCUS_BLAST', 'STONE_EDGE', 'ZAP_CANNON'],
+    stats: 10509
   },
   {
     name: 'Regice',
@@ -4247,7 +4711,8 @@ export const ROWS = [
     def: 309,
     hp: 190,
     fm: ['FROST_BREATH', 'ROCK_SMASH'],
-    cm: ['BLIZZARD', 'EARTHQUAKE', 'FOCUS_BLAST']
+    cm: ['BLIZZARD', 'EARTHQUAKE', 'FOCUS_BLAST'],
+    stats: 10509
   },
   {
     name: 'Registeel',
@@ -4257,7 +4722,8 @@ export const ROWS = [
     def: 285,
     hp: 190,
     fm: ['METAL_CLAW', 'ROCK_SMASH'],
-    cm: ['FLASH_CANNON', 'FOCUS_BLAST', 'HYPER_BEAM']
+    cm: ['FLASH_CANNON', 'FOCUS_BLAST', 'HYPER_BEAM'],
+    stats: 7743
   },
   {
     name: 'Latias',
@@ -4267,7 +4733,8 @@ export const ROWS = [
     def: 246,
     hp: 190,
     fm: ['DRAGON_BREATH', 'ZEN_HEADBUTT'],
-    cm: ['OUTRAGE', 'PSYCHIC', 'THUNDER']
+    cm: ['OUTRAGE', 'PSYCHIC', 'THUNDER'],
+    stats: 10657
   },
   {
     name: 'Latios',
@@ -4277,7 +4744,8 @@ export const ROWS = [
     def: 212,
     hp: 190,
     fm: ['DRAGON_BREATH', 'ZEN_HEADBUTT'],
-    cm: ['DRAGON_CLAW', 'PSYCHIC', 'SOLAR_BEAM']
+    cm: ['DRAGON_CLAW', 'PSYCHIC', 'SOLAR_BEAM'],
+    stats: 10795
   },
   {
     name: 'Kyogre',
@@ -4287,7 +4755,8 @@ export const ROWS = [
     def: 228,
     hp: 205,
     fm: ['WATERFALL'],
-    cm: ['BLIZZARD', 'HYDRO_PUMP', 'THUNDER']
+    cm: ['BLIZZARD', 'HYDRO_PUMP', 'THUNDER'],
+    stats: 12620
   },
   {
     name: 'Groudon',
@@ -4297,7 +4766,8 @@ export const ROWS = [
     def: 228,
     hp: 205,
     fm: ['DRAGON_TAIL', 'MUD_SHOT'],
-    cm: ['EARTHQUAKE', 'FIRE_BLAST', 'SOLAR_BEAM']
+    cm: ['EARTHQUAKE', 'FIRE_BLAST', 'SOLAR_BEAM'],
+    stats: 12620
   },
   {
     name: 'Rayquaza',
@@ -4307,7 +4777,8 @@ export const ROWS = [
     def: 170,
     hp: 213,
     fm: ['AIR_SLASH', 'DRAGON_TAIL'],
-    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'OUTRAGE']
+    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'OUTRAGE'],
+    stats: 10284
   },
   {
     name: 'Jirachi',
@@ -4317,7 +4788,8 @@ export const ROWS = [
     def: 210,
     hp: 225,
     fm: ['CHARGE_BEAM', 'CONFUSION'],
-    cm: ['DAZZLING_GLEAM', 'DOOM_DESIRE', 'PSYCHIC']
+    cm: ['DAZZLING_GLEAM', 'DOOM_DESIRE', 'PSYCHIC'],
+    stats: 9923
   },
   {
     name: 'Deoxys',
@@ -4327,7 +4799,8 @@ export const ROWS = [
     def: 115,
     hp: 137,
     fm: ['CHARGE_BEAM', 'ZEN_HEADBUTT'],
-    cm: ['HYPER_BEAM', 'PSYCHO_BOOST', 'THUNDERBOLT']
+    cm: ['HYPER_BEAM', 'PSYCHO_BOOST', 'THUNDERBOLT'],
+    stats: 5435
   },
   {
     name: 'Deoxys (Attack)',
@@ -4337,7 +4810,8 @@ export const ROWS = [
     def: 46,
     hp: 137,
     fm: ['POISON_JAB', 'ZEN_HEADBUTT'],
-    cm: ['DARK_PULSE', 'PSYCHO_BOOST', 'ZAP_CANNON']
+    cm: ['DARK_PULSE', 'PSYCHO_BOOST', 'ZAP_CANNON'],
+    stats: 2609
   },
   {
     name: 'Deoxys (Defense)',
@@ -4347,7 +4821,8 @@ export const ROWS = [
     def: 330,
     hp: 137,
     fm: ['COUNTER', 'ZEN_HEADBUTT'],
-    cm: ['PSYCHO_BOOST', 'ROCK_SLIDE', 'THUNDERBOLT']
+    cm: ['PSYCHO_BOOST', 'ROCK_SLIDE', 'THUNDERBOLT'],
+    stats: 6510
   },
   {
     name: 'Deoxys (Speed)',
@@ -4357,7 +4832,8 @@ export const ROWS = [
     def: 218,
     hp: 137,
     fm: ['CHARGE_BEAM', 'ZEN_HEADBUTT'],
-    cm: ['PSYCHO_BOOST', 'SWIFT', 'THUNDERBOLT']
+    cm: ['PSYCHO_BOOST', 'SWIFT', 'THUNDERBOLT'],
+    stats: 6869
   },
   {
     name: 'Turtwig',
@@ -4367,7 +4843,8 @@ export const ROWS = [
     def: 110,
     hp: 146,
     fm: ['RAZOR_LEAF', 'TACKLE'],
-    cm: ['BODY_SLAM', 'ENERGY_BALL', 'SEED_BOMB']
+    cm: ['BODY_SLAM', 'ENERGY_BALL', 'SEED_BOMB'],
+    stats: 1911
   },
   {
     name: 'Grotle',
@@ -4377,7 +4854,8 @@ export const ROWS = [
     def: 143,
     hp: 181,
     fm: ['BITE', 'RAZOR_LEAF'],
-    cm: ['BODY_SLAM', 'ENERGY_BALL', 'SOLAR_BEAM']
+    cm: ['BODY_SLAM', 'ENERGY_BALL', 'SOLAR_BEAM'],
+    stats: 4064
   },
   {
     name: 'Torterra',
@@ -4387,7 +4865,8 @@ export const ROWS = [
     def: 188,
     hp: 216,
     fm: ['BITE', 'RAZOR_LEAF'],
-    cm: ['EARTHQUAKE', 'SOLAR_BEAM', 'STONE_EDGE']
+    cm: ['EARTHQUAKE', 'SOLAR_BEAM', 'STONE_EDGE'],
+    stats: 8203
   },
   {
     name: 'Chimchar',
@@ -4397,7 +4876,8 @@ export const ROWS = [
     def: 86,
     hp: 127,
     fm: ['EMBER', 'SCRATCH'],
-    cm: ['FLAME_CHARGE', 'FLAME_WHEEL', 'FLAMETHROWER']
+    cm: ['FLAME_CHARGE', 'FLAME_WHEEL', 'FLAMETHROWER'],
+    stats: 1234
   },
   {
     name: 'Monferno',
@@ -4407,7 +4887,8 @@ export const ROWS = [
     def: 105,
     hp: 162,
     fm: ['EMBER', 'ROCK_SMASH'],
-    cm: ['FLAME_WHEEL', 'FLAMETHROWER', 'LOW_SWEEP']
+    cm: ['FLAME_WHEEL', 'FLAMETHROWER', 'LOW_SWEEP'],
+    stats: 2688
   },
   {
     name: 'Infernape',
@@ -4417,7 +4898,8 @@ export const ROWS = [
     def: 151,
     hp: 183,
     fm: ['FIRE_SPIN', 'ROCK_SMASH'],
-    cm: ['CLOSE_COMBAT', 'FLAMETHROWER', 'SOLAR_BEAM']
+    cm: ['CLOSE_COMBAT', 'FLAMETHROWER', 'SOLAR_BEAM'],
+    stats: 6135
   },
   {
     name: 'Piplup',
@@ -4427,7 +4909,8 @@ export const ROWS = [
     def: 102,
     hp: 142,
     fm: ['BUBBLE', 'POUND'],
-    cm: ['BUBBLE_BEAM', 'DRILL_PECK', 'ICY_WIND']
+    cm: ['BUBBLE_BEAM', 'DRILL_PECK', 'ICY_WIND'],
+    stats: 1622
   },
   {
     name: 'Prinplup',
@@ -4437,7 +4920,8 @@ export const ROWS = [
     def: 139,
     hp: 162,
     fm: ['BUBBLE', 'METAL_CLAW'],
-    cm: ['BUBBLE_BEAM', 'HYDRO_PUMP', 'ICY_WIND']
+    cm: ['BUBBLE_BEAM', 'HYDRO_PUMP', 'ICY_WIND'],
+    stats: 3378
   },
   {
     name: 'Empoleon',
@@ -4447,7 +4931,8 @@ export const ROWS = [
     def: 186,
     hp: 197,
     fm: ['METAL_CLAW', 'WATERFALL'],
-    cm: ['BLIZZARD', 'FLASH_CANNON', 'HYDRO_PUMP']
+    cm: ['BLIZZARD', 'FLASH_CANNON', 'HYDRO_PUMP'],
+    stats: 7695
   },
   {
     name: 'Starly',
@@ -4457,7 +4942,8 @@ export const ROWS = [
     def: 58,
     hp: 120,
     fm: ['QUICK_ATTACK', 'TACKLE'],
-    cm: ['AERIAL_ACE', 'BRAVE_BIRD']
+    cm: ['AERIAL_ACE', 'BRAVE_BIRD'],
+    stats: 703
   },
   {
     name: 'Staravia',
@@ -4467,7 +4953,8 @@ export const ROWS = [
     def: 94,
     hp: 146,
     fm: ['QUICK_ATTACK', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'BRAVE_BIRD', 'HEAT_WAVE']
+    cm: ['AERIAL_ACE', 'BRAVE_BIRD', 'HEAT_WAVE'],
+    stats: 1949
   },
   {
     name: 'Staraptor',
@@ -4477,7 +4964,8 @@ export const ROWS = [
     def: 140,
     hp: 198,
     fm: ['QUICK_ATTACK', 'WING_ATTACK'],
-    cm: ['BRAVE_BIRD', 'CLOSE_COMBAT', 'HEAT_WAVE']
+    cm: ['BRAVE_BIRD', 'CLOSE_COMBAT', 'HEAT_WAVE'],
+    stats: 6486
   },
   {
     name: 'Bidoof',
@@ -4487,7 +4975,8 @@ export const ROWS = [
     def: 73,
     hp: 153,
     fm: ['TACKLE', 'TAKE_DOWN'],
-    cm: ['CRUNCH', 'GRASS_KNOT', 'HYPER_FANG']
+    cm: ['CRUNCH', 'GRASS_KNOT', 'HYPER_FANG'],
+    stats: 894
   },
   {
     name: 'Bibarel',
@@ -4497,9 +4986,20 @@ export const ROWS = [
     def: 119,
     hp: 188,
     fm: ['TAKE_DOWN', 'WATER_GUN'],
-    cm: ['HYPER_BEAM', 'HYPER_FANG', 'SURF']
+    cm: ['HYPER_BEAM', 'HYPER_FANG', 'SURF'],
+    stats: 3624
   },
-  { name: 'Kricketot', dex: 401, type: ['bug', 'none'], atk: 45, def: 74, hp: 114, fm: ['BUG_BITE', 'STRUGGLE_BUG'], cm: ['STRUGGLE'] },
+  {
+    name: 'Kricketot',
+    dex: 401,
+    type: ['bug', 'none'],
+    atk: 45,
+    def: 74,
+    hp: 114,
+    fm: ['BUG_BITE', 'STRUGGLE_BUG'],
+    cm: ['STRUGGLE'],
+    stats: 380
+  },
   {
     name: 'Kricketune',
     dex: 402,
@@ -4508,7 +5008,8 @@ export const ROWS = [
     def: 100,
     hp: 184,
     fm: ['FURY_CUTTER', 'STRUGGLE_BUG'],
-    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'X_SCISSOR']
+    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'X_SCISSOR'],
+    stats: 2944
   },
   {
     name: 'Shinx',
@@ -4518,7 +5019,8 @@ export const ROWS = [
     def: 64,
     hp: 128,
     fm: ['SPARK', 'TACKLE'],
-    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT']
+    cm: ['DISCHARGE', 'SWIFT', 'THUNDERBOLT'],
+    stats: 958
   },
   {
     name: 'Luxio',
@@ -4528,7 +5030,8 @@ export const ROWS = [
     def: 95,
     hp: 155,
     fm: ['BITE', 'SPARK'],
-    cm: ['CRUNCH', 'THUNDERBOLT', 'WILD_CHARGE']
+    cm: ['CRUNCH', 'THUNDERBOLT', 'WILD_CHARGE'],
+    stats: 2341
   },
   {
     name: 'Luxray',
@@ -4557,7 +5060,8 @@ export const ROWS = [
       'SNARL',
       'SPARK'
     ],
-    cm: ['CRUNCH', 'HYPER_BEAM', 'WILD_CHARGE']
+    cm: ['CRUNCH', 'HYPER_BEAM', 'WILD_CHARGE'],
+    stats: 6876
   },
   {
     name: 'Budew',
@@ -4585,7 +5089,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'RAZOR_LEAF'
     ],
-    cm: ['ENERGY_BALL', 'GRASS_KNOT']
+    cm: ['ENERGY_BALL', 'GRASS_KNOT'],
+    stats: 1190
   },
   {
     name: 'Roserade',
@@ -4595,7 +5100,8 @@ export const ROWS = [
     def: 185,
     hp: 155,
     fm: ['POISON_JAB', 'RAZOR_LEAF'],
-    cm: ['DAZZLING_GLEAM', 'GRASS_KNOT', 'SLUDGE_BOMB', 'SOLAR_BEAM']
+    cm: ['DAZZLING_GLEAM', 'GRASS_KNOT', 'SLUDGE_BOMB', 'SOLAR_BEAM'],
+    stats: 6968
   },
   {
     name: 'Cranidos',
@@ -4605,7 +5111,8 @@ export const ROWS = [
     def: 71,
     hp: 167,
     fm: ['TAKE_DOWN', 'ZEN_HEADBUTT'],
-    cm: ['ANCIENT_POWER', 'BULLDOZE', 'ROCK_TOMB']
+    cm: ['ANCIENT_POWER', 'BULLDOZE', 'ROCK_TOMB'],
+    stats: 2585
   },
   {
     name: 'Rampardos',
@@ -4615,7 +5122,8 @@ export const ROWS = [
     def: 109,
     hp: 219,
     fm: ['SMACK_DOWN', 'ZEN_HEADBUTT'],
-    cm: ['FLAMETHROWER', 'OUTRAGE', 'ROCK_SLIDE']
+    cm: ['FLAMETHROWER', 'OUTRAGE', 'ROCK_SLIDE'],
+    stats: 7042
   },
   {
     name: 'Shieldon',
@@ -4625,7 +5133,8 @@ export const ROWS = [
     def: 195,
     hp: 102,
     fm: ['IRON_TAIL', 'TACKLE'],
-    cm: ['ANCIENT_POWER', 'HEAVY_SLAM', 'ROCK_TOMB']
+    cm: ['ANCIENT_POWER', 'HEAVY_SLAM', 'ROCK_TOMB'],
+    stats: 1512
   },
   {
     name: 'Bastiodon',
@@ -4635,11 +5144,42 @@ export const ROWS = [
     def: 286,
     hp: 155,
     fm: ['IRON_TAIL', 'SMACK_DOWN'],
-    cm: ['FLAMETHROWER', 'FLASH_CANNON', 'STONE_EDGE']
+    cm: ['FLAMETHROWER', 'FLASH_CANNON', 'STONE_EDGE'],
+    stats: 4167
   },
-  { name: 'Burmy (Plant)', dex: 412, type: ['bug', 'none'], atk: 53, def: 83, hp: 120, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'] },
-  { name: 'Burmy (Sandy)', dex: 412, type: ['bug', 'none'], atk: 53, def: 83, hp: 120, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'] },
-  { name: 'Burmy (Trash)', dex: 412, type: ['bug', 'none'], atk: 53, def: 83, hp: 120, fm: ['BUG_BITE', 'TACKLE'], cm: ['STRUGGLE'] },
+  {
+    name: 'Burmy (Plant)',
+    dex: 412,
+    type: ['bug', 'none'],
+    atk: 53,
+    def: 83,
+    hp: 120,
+    fm: ['BUG_BITE', 'TACKLE'],
+    cm: ['STRUGGLE'],
+    stats: 528
+  },
+  {
+    name: 'Burmy (Sandy)',
+    dex: 412,
+    type: ['bug', 'none'],
+    atk: 53,
+    def: 83,
+    hp: 120,
+    fm: ['BUG_BITE', 'TACKLE'],
+    cm: ['STRUGGLE'],
+    stats: 528
+  },
+  {
+    name: 'Burmy (Trash)',
+    dex: 412,
+    type: ['bug', 'none'],
+    atk: 53,
+    def: 83,
+    hp: 120,
+    fm: ['BUG_BITE', 'TACKLE'],
+    cm: ['STRUGGLE'],
+    stats: 528
+  },
   {
     name: 'Wormadam (Plant)',
     dex: 413,
@@ -4648,7 +5188,8 @@ export const ROWS = [
     def: 180,
     hp: 155,
     fm: ['BUG_BITE', 'CONFUSION'],
-    cm: ['BUG_BUZZ', 'ENERGY_BALL', 'PSYBEAM']
+    cm: ['BUG_BUZZ', 'ENERGY_BALL', 'PSYBEAM'],
+    stats: 3934
   },
   {
     name: 'Wormadam (Sandy)',
@@ -4658,7 +5199,8 @@ export const ROWS = [
     def: 180,
     hp: 155,
     fm: ['BUG_BITE', 'CONFUSION'],
-    cm: ['BUG_BUZZ', 'BULLDOZE', 'PSYBEAM']
+    cm: ['BUG_BUZZ', 'BULLDOZE', 'PSYBEAM'],
+    stats: 3934
   },
   {
     name: 'Wormadam (Trash)',
@@ -4668,7 +5210,8 @@ export const ROWS = [
     def: 175,
     hp: 155,
     fm: ['BUG_BITE', 'CONFUSION'],
-    cm: ['BUG_BUZZ', 'IRON_HEAD', 'PSYBEAM']
+    cm: ['BUG_BUZZ', 'IRON_HEAD', 'PSYBEAM'],
+    stats: 3445
   },
   {
     name: 'Mothim',
@@ -4678,9 +5221,10 @@ export const ROWS = [
     def: 98,
     hp: 172,
     fm: ['AIR_SLASH', 'BUG_BITE'],
-    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'PSYBEAM']
+    cm: ['AERIAL_ACE', 'BUG_BUZZ', 'PSYBEAM'],
+    stats: 3118
   },
-  { name: 'Combee', dex: 415, type: ['bug', 'flying'], atk: 59, def: 83, hp: 102, fm: ['BUG_BITE'], cm: ['BUG_BUZZ'] },
+  { name: 'Combee', dex: 415, type: ['bug', 'flying'], atk: 59, def: 83, hp: 102, fm: ['BUG_BITE'], cm: ['BUG_BUZZ'], stats: 499 },
   {
     name: 'Vespiquen',
     dex: 416,
@@ -4689,7 +5233,8 @@ export const ROWS = [
     def: 190,
     hp: 172,
     fm: ['BUG_BITE', 'POISON_STING'],
-    cm: ['BUG_BUZZ', 'POWER_GEM', 'X_SCISSOR']
+    cm: ['BUG_BUZZ', 'POWER_GEM', 'X_SCISSOR'],
+    stats: 4869
   },
   {
     name: 'Pachirisu',
@@ -4699,7 +5244,8 @@ export const ROWS = [
     def: 172,
     hp: 155,
     fm: ['SPARK', 'VOLT_SWITCH'],
-    cm: ['THUNDER', 'THUNDER_PUNCH', 'THUNDERBOLT']
+    cm: ['THUNDER', 'THUNDER_PUNCH', 'THUNDERBOLT'],
+    stats: 2506
   },
   {
     name: 'Buizel',
@@ -4709,7 +5255,8 @@ export const ROWS = [
     def: 67,
     hp: 146,
     fm: ['QUICK_ATTACK', 'WATER_GUN'],
-    cm: ['AQUA_JET', 'SWIFT', 'WATER_PULSE']
+    cm: ['AQUA_JET', 'SWIFT', 'WATER_PULSE'],
+    stats: 1291
   },
   {
     name: 'Floatzel',
@@ -4719,7 +5266,8 @@ export const ROWS = [
     def: 114,
     hp: 198,
     fm: ['WATER_GUN', 'WATERFALL'],
-    cm: ['AQUA_JET', 'HYDRO_PUMP', 'SWIFT']
+    cm: ['AQUA_JET', 'HYDRO_PUMP', 'SWIFT'],
+    stats: 4988
   },
   {
     name: 'Cherubi',
@@ -4729,7 +5277,8 @@ export const ROWS = [
     def: 92,
     hp: 128,
     fm: ['BULLET_SEED', 'TACKLE'],
-    cm: ['DAZZLING_GLEAM', 'PETAL_BLIZZARD', 'SEED_BOMB']
+    cm: ['DAZZLING_GLEAM', 'PETAL_BLIZZARD', 'SEED_BOMB'],
+    stats: 1272
   },
   {
     name: 'Cherrim (Overcast)',
@@ -4739,7 +5288,8 @@ export const ROWS = [
     def: 153,
     hp: 172,
     fm: ['BULLET_SEED', 'RAZOR_LEAF'],
-    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'SOLAR_BEAM']
+    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'SOLAR_BEAM'],
+    stats: 4474
   },
   {
     name: 'Cherrim (Sunny)',
@@ -4749,7 +5299,8 @@ export const ROWS = [
     def: 153,
     hp: 172,
     fm: ['BULLET_SEED', 'RAZOR_LEAF'],
-    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'SOLAR_BEAM']
+    cm: ['DAZZLING_GLEAM', 'HYPER_BEAM', 'SOLAR_BEAM'],
+    stats: 4474
   },
   {
     name: 'Shellos (East)',
@@ -4777,7 +5328,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'MUD_SLAP'
     ],
-    cm: ['BODY_SLAM', 'MUD_BOMB', 'WATER_PULSE']
+    cm: ['BODY_SLAM', 'MUD_BOMB', 'WATER_PULSE'],
+    stats: 1979
   },
   {
     name: 'Shellos (West)',
@@ -4805,7 +5357,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'MUD_SLAP'
     ],
-    cm: ['BODY_SLAM', 'MUD_BOMB', 'WATER_PULSE']
+    cm: ['BODY_SLAM', 'MUD_BOMB', 'WATER_PULSE'],
+    stats: 1979
   },
   {
     name: 'Gastrodon (East)',
@@ -4833,7 +5386,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'MUD_SLAP'
     ],
-    cm: ['BODY_SLAM', 'WATER_PULSE', 'EARTH_POWER']
+    cm: ['BODY_SLAM', 'WATER_PULSE', 'EARTH_POWER'],
+    stats: 5897
   },
   {
     name: 'Gastrodon (West)',
@@ -4861,7 +5415,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'MUD_SLAP'
     ],
-    cm: ['BODY_SLAM', 'WATER_PULSE', 'EARTH_POWER']
+    cm: ['BODY_SLAM', 'WATER_PULSE', 'EARTH_POWER'],
+    stats: 5897
   },
   {
     name: 'Ambipom',
@@ -4871,7 +5426,8 @@ export const ROWS = [
     def: 143,
     hp: 181,
     fm: ['ASTONISH', 'SCRATCH'],
-    cm: ['AERIAL_ACE', 'HYPER_BEAM', 'LOW_SWEEP']
+    cm: ['AERIAL_ACE', 'HYPER_BEAM', 'LOW_SWEEP'],
+    stats: 5306
   },
   {
     name: 'Drifloon',
@@ -4881,7 +5437,8 @@ export const ROWS = [
     def: 80,
     hp: 207,
     fm: ['ASTONISH', 'HEX'],
-    cm: ['ICY_WIND', 'OMINOUS_WIND', 'SHADOW_BALL']
+    cm: ['ICY_WIND', 'OMINOUS_WIND', 'SHADOW_BALL'],
+    stats: 1938
   },
   {
     name: 'Drifblim',
@@ -4891,7 +5448,8 @@ export const ROWS = [
     def: 102,
     hp: 312,
     fm: ['ASTONISH', 'HEX'],
-    cm: ['ICY_WIND', 'OMINOUS_WIND', 'SHADOW_BALL']
+    cm: ['ICY_WIND', 'OMINOUS_WIND', 'SHADOW_BALL'],
+    stats: 5728
   },
   {
     name: 'Buneary',
@@ -4901,7 +5459,8 @@ export const ROWS = [
     def: 105,
     hp: 146,
     fm: ['POUND', 'QUICK_ATTACK'],
-    cm: ['FIRE_PUNCH', 'SWIFT']
+    cm: ['FIRE_PUNCH', 'SWIFT'],
+    stats: 1993
   },
   {
     name: 'Lopunny',
@@ -4911,7 +5470,8 @@ export const ROWS = [
     def: 194,
     hp: 163,
     fm: ['LOW_KICK', 'POUND'],
-    cm: ['FIRE_PUNCH', 'FOCUS_BLAST', 'HYPER_BEAM']
+    cm: ['FIRE_PUNCH', 'FOCUS_BLAST', 'HYPER_BEAM'],
+    stats: 4933
   },
   {
     name: 'Mismagius',
@@ -4921,7 +5481,8 @@ export const ROWS = [
     def: 187,
     hp: 155,
     fm: ['HEX', 'SUCKER_PUNCH'],
-    cm: ['DARK_PULSE', 'DAZZLING_GLEAM', 'SHADOW_BALL']
+    cm: ['DARK_PULSE', 'DAZZLING_GLEAM', 'SHADOW_BALL'],
+    stats: 6116
   },
   {
     name: 'Honchkrow',
@@ -4931,7 +5492,8 @@ export const ROWS = [
     def: 103,
     hp: 225,
     fm: ['PECK', 'SNARL'],
-    cm: ['BRAVE_BIRD', 'DARK_PULSE', 'PSYCHIC', 'SKY_ATTACK']
+    cm: ['BRAVE_BIRD', 'DARK_PULSE', 'PSYCHIC', 'SKY_ATTACK'],
+    stats: 5632
   },
   {
     name: 'Glameow',
@@ -4941,7 +5503,8 @@ export const ROWS = [
     def: 82,
     hp: 135,
     fm: ['QUICK_ATTACK', 'SCRATCH'],
-    cm: ['AERIAL_ACE', 'PLAY_ROUGH', 'THUNDERBOLT']
+    cm: ['AERIAL_ACE', 'PLAY_ROUGH', 'THUNDERBOLT'],
+    stats: 1207
   },
   {
     name: 'Purugly',
@@ -4951,7 +5514,8 @@ export const ROWS = [
     def: 133,
     hp: 174,
     fm: ['SCRATCH', 'SHADOW_CLAW'],
-    cm: ['AERIAL_ACE', 'PLAY_ROUGH', 'THUNDER']
+    cm: ['AERIAL_ACE', 'PLAY_ROUGH', 'THUNDER'],
+    stats: 3980
   },
   {
     name: 'Chingling',
@@ -4961,7 +5525,8 @@ export const ROWS = [
     def: 94,
     hp: 128,
     fm: ['ASTONISH', 'ZEN_HEADBUTT'],
-    cm: ['PSYSHOCK', 'SHADOW_BALL', 'WRAP']
+    cm: ['PSYSHOCK', 'SHADOW_BALL', 'WRAP'],
+    stats: 1372
   },
   {
     name: 'Stunky',
@@ -4971,7 +5536,8 @@ export const ROWS = [
     def: 90,
     hp: 160,
     fm: ['BITE', 'SCRATCH'],
-    cm: ['CRUNCH', 'FLAMETHROWER', 'SLUDGE_BOMB']
+    cm: ['CRUNCH', 'FLAMETHROWER', 'SLUDGE_BOMB'],
+    stats: 1742
   },
   {
     name: 'Skuntank',
@@ -4981,7 +5547,8 @@ export const ROWS = [
     def: 132,
     hp: 230,
     fm: ['BITE', 'POISON_JAB'],
-    cm: ['CRUNCH', 'FLAMETHROWER', 'SLUDGE_BOMB']
+    cm: ['CRUNCH', 'FLAMETHROWER', 'SLUDGE_BOMB'],
+    stats: 5586
   },
   {
     name: 'Bronzor',
@@ -4991,7 +5558,8 @@ export const ROWS = [
     def: 154,
     hp: 149,
     fm: ['CONFUSION', 'TACKLE'],
-    cm: ['GYRO_BALL', 'HEAVY_SLAM', 'PSYSHOCK']
+    cm: ['GYRO_BALL', 'HEAVY_SLAM', 'PSYSHOCK'],
+    stats: 987
   },
   {
     name: 'Bronzong',
@@ -5001,7 +5569,8 @@ export const ROWS = [
     def: 213,
     hp: 167,
     fm: ['CONFUSION', 'FEINT_ATTACK'],
-    cm: ['FLASH_CANNON', 'HEAVY_SLAM', 'PSYCHIC']
+    cm: ['FLASH_CANNON', 'HEAVY_SLAM', 'PSYCHIC'],
+    stats: 5727
   },
   {
     name: 'Bonsly',
@@ -5011,7 +5580,8 @@ export const ROWS = [
     def: 133,
     hp: 137,
     fm: ['COUNTER', 'ROCK_THROW'],
-    cm: ['EARTHQUAKE', 'ROCK_SLIDE', 'ROCK_TOMB']
+    cm: ['EARTHQUAKE', 'ROCK_SLIDE', 'ROCK_TOMB'],
+    stats: 2259
   },
   {
     name: 'Mime (Jr)',
@@ -5021,9 +5591,20 @@ export const ROWS = [
     def: 142,
     hp: 85,
     fm: ['CONFUSION', 'POUND'],
-    cm: ['PSYBEAM', 'PSYCHIC', 'PSYSHOCK']
+    cm: ['PSYBEAM', 'PSYCHIC', 'PSYSHOCK'],
+    stats: 1509
   },
-  { name: 'Happiny', dex: 440, type: ['normal', 'none'], atk: 25, def: 77, hp: 225, fm: ['POUND', 'ZEN_HEADBUTT'], cm: ['PSYCHIC'] },
+  {
+    name: 'Happiny',
+    dex: 440,
+    type: ['normal', 'none'],
+    atk: 25,
+    def: 77,
+    hp: 225,
+    fm: ['POUND', 'ZEN_HEADBUTT'],
+    cm: ['PSYCHIC'],
+    stats: 433
+  },
   {
     name: 'Chatot',
     dex: 441,
@@ -5032,7 +5613,8 @@ export const ROWS = [
     def: 91,
     hp: 183,
     fm: ['PECK', 'STEEL_WING'],
-    cm: ['HEAT_WAVE', 'NIGHT_SHADE', 'SKY_ATTACK']
+    cm: ['HEAT_WAVE', 'NIGHT_SHADE', 'SKY_ATTACK'],
+    stats: 3047
   },
   {
     name: 'Spiritomb',
@@ -5042,7 +5624,8 @@ export const ROWS = [
     def: 199,
     hp: 137,
     fm: ['FEINT_ATTACK', 'SUCKER_PUNCH'],
-    cm: ['OMINOUS_WIND', 'SHADOW_BALL', 'SHADOW_SNEAK']
+    cm: ['OMINOUS_WIND', 'SHADOW_BALL', 'SHADOW_SNEAK'],
+    stats: 4607
   },
   {
     name: 'Gible',
@@ -5052,7 +5635,8 @@ export const ROWS = [
     def: 84,
     hp: 151,
     fm: ['MUD_SHOT', 'TAKE_DOWN'],
-    cm: ['BODY_SLAM', 'DIG', 'TWISTER']
+    cm: ['BODY_SLAM', 'DIG', 'TWISTER'],
+    stats: 1573
   },
   {
     name: 'Gabite',
@@ -5062,7 +5646,8 @@ export const ROWS = [
     def: 125,
     hp: 169,
     fm: ['MUD_SHOT', 'TAKE_DOWN'],
-    cm: ['DIG', 'FLAMETHROWER', 'TWISTER']
+    cm: ['DIG', 'FLAMETHROWER', 'TWISTER'],
+    stats: 3634
   },
   {
     name: 'Garchomp',
@@ -5072,7 +5657,8 @@ export const ROWS = [
     def: 193,
     hp: 239,
     fm: ['DRAGON_TAIL', 'MUD_SHOT'],
-    cm: ['EARTHQUAKE', 'FIRE_BLAST', 'OUTRAGE']
+    cm: ['EARTHQUAKE', 'FIRE_BLAST', 'OUTRAGE'],
+    stats: 12039
   },
   {
     name: 'Munchlax',
@@ -5082,7 +5668,8 @@ export const ROWS = [
     def: 117,
     hp: 286,
     fm: ['LICK', 'TACKLE'],
-    cm: ['BODY_SLAM', 'BULLDOZE', 'GUNK_SHOT']
+    cm: ['BODY_SLAM', 'BULLDOZE', 'GUNK_SHOT'],
+    stats: 4584
   },
   {
     name: 'Riolu',
@@ -5092,7 +5679,8 @@ export const ROWS = [
     def: 78,
     hp: 120,
     fm: ['COUNTER', 'QUICK_ATTACK'],
-    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'LOW_SWEEP']
+    cm: ['BRICK_BREAK', 'CROSS_CHOP', 'LOW_SWEEP'],
+    stats: 1189
   },
   {
     name: 'Lucario',
@@ -5102,7 +5690,8 @@ export const ROWS = [
     def: 144,
     hp: 172,
     fm: ['BULLET_PUNCH', 'COUNTER'],
-    cm: ['CLOSE_COMBAT', 'FLASH_CANNON', 'SHADOW_BALL', 'POWER_UP_PUNCH']
+    cm: ['CLOSE_COMBAT', 'FLASH_CANNON', 'SHADOW_BALL', 'POWER_UP_PUNCH'],
+    stats: 5845
   },
   {
     name: 'Hippopotas',
@@ -5112,7 +5701,8 @@ export const ROWS = [
     def: 118,
     hp: 169,
     fm: ['BITE', 'TACKLE'],
-    cm: ['BODY_SLAM', 'DIG', 'ROCK_TOMB']
+    cm: ['BODY_SLAM', 'DIG', 'ROCK_TOMB'],
+    stats: 2473
   },
   {
     name: 'Hippowdon',
@@ -5122,7 +5712,8 @@ export const ROWS = [
     def: 191,
     hp: 239,
     fm: ['BITE', 'FIRE_FANG'],
-    cm: ['BODY_SLAM', 'EARTHQUAKE', 'STONE_EDGE', 'EARTH_POWER']
+    cm: ['BODY_SLAM', 'EARTHQUAKE', 'STONE_EDGE', 'EARTH_POWER'],
+    stats: 9175
   },
   {
     name: 'Skorupi',
@@ -5132,7 +5723,8 @@ export const ROWS = [
     def: 151,
     hp: 120,
     fm: ['INFESTATION', 'POISON_STING'],
-    cm: ['AQUA_TAIL', 'CROSS_POISON', 'SLUDGE_BOMB']
+    cm: ['AQUA_TAIL', 'CROSS_POISON', 'SLUDGE_BOMB'],
+    stats: 1685
   },
   {
     name: 'Drapion',
@@ -5142,7 +5734,8 @@ export const ROWS = [
     def: 202,
     hp: 172,
     fm: ['BITE', 'INFESTATION', 'POISON_STING'],
-    cm: ['AQUA_TAIL', 'CRUNCH', 'SLUDGE_BOMB']
+    cm: ['AQUA_TAIL', 'CRUNCH', 'SLUDGE_BOMB'],
+    stats: 6254
   },
   {
     name: 'Croagunk',
@@ -5152,7 +5745,8 @@ export const ROWS = [
     def: 76,
     hp: 134,
     fm: ['POISON_JAB', 'POISON_STING'],
-    cm: ['BRICK_BREAK', 'LOW_SWEEP', 'SLUDGE_BOMB']
+    cm: ['BRICK_BREAK', 'LOW_SWEEP', 'SLUDGE_BOMB'],
+    stats: 1181
   },
   {
     name: 'Toxicroak',
@@ -5162,7 +5756,8 @@ export const ROWS = [
     def: 133,
     hp: 195,
     fm: ['COUNTER', 'POISON_JAB'],
-    cm: ['DYNAMIC_PUNCH', 'MUD_BOMB', 'SLUDGE_BOMB']
+    cm: ['DYNAMIC_PUNCH', 'MUD_BOMB', 'SLUDGE_BOMB'],
+    stats: 5472
   },
   {
     name: 'Carnivine',
@@ -5172,7 +5767,8 @@ export const ROWS = [
     def: 136,
     hp: 179,
     fm: ['BITE', 'VINE_WHIP'],
-    cm: ['CRUNCH', 'ENERGY_BALL', 'POWER_WHIP']
+    cm: ['CRUNCH', 'ENERGY_BALL', 'POWER_WHIP'],
+    stats: 4552
   },
   {
     name: 'Finneon',
@@ -5182,7 +5778,8 @@ export const ROWS = [
     def: 116,
     hp: 135,
     fm: ['POUND', 'WATER_GUN'],
-    cm: ['ICE_BEAM', 'SILVER_WIND', 'WATER_PULSE']
+    cm: ['ICE_BEAM', 'SILVER_WIND', 'WATER_PULSE'],
+    stats: 1503
   },
   {
     name: 'Lumineon',
@@ -5192,7 +5789,8 @@ export const ROWS = [
     def: 170,
     hp: 170,
     fm: ['WATER_GUN', 'WATERFALL'],
-    cm: ['BLIZZARD', 'SILVER_WIND', 'WATER_PULSE']
+    cm: ['BLIZZARD', 'SILVER_WIND', 'WATER_PULSE'],
+    stats: 4104
   },
   {
     name: 'Mantyke',
@@ -5202,7 +5800,8 @@ export const ROWS = [
     def: 179,
     hp: 128,
     fm: ['BUBBLE', 'TACKLE'],
-    cm: ['AERIAL_ACE', 'ICE_BEAM', 'WATER_PULSE']
+    cm: ['AERIAL_ACE', 'ICE_BEAM', 'WATER_PULSE'],
+    stats: 2406
   },
   {
     name: 'Snover',
@@ -5212,7 +5811,8 @@ export const ROWS = [
     def: 105,
     hp: 155,
     fm: ['ICE_SHARD', 'POWDER_SNOW'],
-    cm: ['ENERGY_BALL', 'ICE_BEAM', 'STOMP']
+    cm: ['ENERGY_BALL', 'ICE_BEAM', 'STOMP'],
+    stats: 1872
   },
   {
     name: 'Abomasnow',
@@ -5222,7 +5822,8 @@ export const ROWS = [
     def: 158,
     hp: 207,
     fm: ['POWDER_SNOW', 'RAZOR_LEAF'],
-    cm: ['BLIZZARD', 'ENERGY_BALL', 'OUTRAGE']
+    cm: ['BLIZZARD', 'ENERGY_BALL', 'OUTRAGE'],
+    stats: 5822
   },
   {
     name: 'Weavile',
@@ -5232,7 +5833,8 @@ export const ROWS = [
     def: 171,
     hp: 172,
     fm: ['FEINT_ATTACK', 'ICE_SHARD'],
-    cm: ['AVALANCHE', 'FOCUS_BLAST', 'FOUL_PLAY']
+    cm: ['AVALANCHE', 'FOCUS_BLAST', 'FOUL_PLAY'],
+    stats: 7147
   },
   {
     name: 'Magnezone',
@@ -5242,7 +5844,8 @@ export const ROWS = [
     def: 205,
     hp: 172,
     fm: ['CHARGE_BEAM', 'SPARK'],
-    cm: ['FLASH_CANNON', 'WILD_CHARGE', 'ZAP_CANNON']
+    cm: ['FLASH_CANNON', 'WILD_CHARGE', 'ZAP_CANNON'],
+    stats: 8392
   },
   {
     name: 'Lickilicky',
@@ -5252,7 +5855,8 @@ export const ROWS = [
     def: 181,
     hp: 242,
     fm: ['LICK', 'ZEN_HEADBUTT'],
-    cm: ['EARTHQUAKE', 'HYPER_BEAM', 'SOLAR_BEAM']
+    cm: ['EARTHQUAKE', 'HYPER_BEAM', 'SOLAR_BEAM'],
+    stats: 7052
   },
   {
     name: 'Rhyperior',
@@ -5262,7 +5866,8 @@ export const ROWS = [
     def: 190,
     hp: 251,
     fm: ['MUD_SLAP', 'SMACK_DOWN'],
-    cm: ['EARTHQUAKE', 'STONE_EDGE', 'SURF']
+    cm: ['EARTHQUAKE', 'STONE_EDGE', 'SURF'],
+    stats: 11493
   },
   {
     name: 'Tangrowth',
@@ -5272,7 +5877,8 @@ export const ROWS = [
     def: 184,
     hp: 225,
     fm: ['INFESTATION', 'VINE_WHIP'],
-    cm: ['ANCIENT_POWER', 'SLUDGE_BOMB', 'SOLAR_BEAM']
+    cm: ['ANCIENT_POWER', 'SLUDGE_BOMB', 'SOLAR_BEAM'],
+    stats: 8570
   },
   {
     name: 'Electivire',
@@ -5282,7 +5888,8 @@ export const ROWS = [
     def: 163,
     hp: 181,
     fm: ['LOW_KICK', 'THUNDER_SHOCK'],
-    cm: ['THUNDER', 'THUNDER_PUNCH', 'WILD_CHARGE']
+    cm: ['THUNDER', 'THUNDER_PUNCH', 'WILD_CHARGE'],
+    stats: 7346
   },
   {
     name: 'Magmortar',
@@ -5292,7 +5899,8 @@ export const ROWS = [
     def: 172,
     hp: 181,
     fm: ['FIRE_SPIN', 'KARATE_CHOP'],
-    cm: ['BRICK_BREAK', 'FIRE_BLAST', 'FIRE_PUNCH', 'PSYCHIC']
+    cm: ['BRICK_BREAK', 'FIRE_BLAST', 'FIRE_PUNCH', 'PSYCHIC'],
+    stats: 7690
   },
   {
     name: 'Togekiss',
@@ -5320,7 +5928,8 @@ export const ROWS = [
       'HIDDEN_POWER_STEEL',
       'HIDDEN_POWER_WATER'
     ],
-    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'DAZZLING_GLEAM', 'FLAMETHROWER']
+    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'DAZZLING_GLEAM', 'FLAMETHROWER'],
+    stats: 9667
   },
   {
     name: 'Yanmega',
@@ -5330,7 +5939,8 @@ export const ROWS = [
     def: 156,
     hp: 200,
     fm: ['BUG_BITE', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'BUG_BUZZ']
+    cm: ['AERIAL_ACE', 'ANCIENT_POWER', 'BUG_BUZZ'],
+    stats: 7207
   },
   {
     name: 'Leafeon',
@@ -5340,7 +5950,8 @@ export const ROWS = [
     def: 219,
     hp: 163,
     fm: ['QUICK_ATTACK', 'RAZOR_LEAF'],
-    cm: ['ENERGY_BALL', 'LEAF_BLADE', 'SOLAR_BEAM']
+    cm: ['ENERGY_BALL', 'LEAF_BLADE', 'SOLAR_BEAM'],
+    stats: 7711
   },
   {
     name: 'Glaceon',
@@ -5350,7 +5961,8 @@ export const ROWS = [
     def: 205,
     hp: 163,
     fm: ['FROST_BREATH', 'ICE_SHARD'],
-    cm: ['AVALANCHE', 'ICE_BEAM', 'ICY_WIND']
+    cm: ['AVALANCHE', 'ICE_BEAM', 'ICY_WIND'],
+    stats: 7953
   },
   {
     name: 'Gliscor',
@@ -5360,7 +5972,8 @@ export const ROWS = [
     def: 222,
     hp: 181,
     fm: ['FURY_CUTTER', 'WING_ATTACK'],
-    cm: ['AERIAL_ACE', 'EARTHQUAKE', 'NIGHT_SLASH']
+    cm: ['AERIAL_ACE', 'EARTHQUAKE', 'NIGHT_SLASH'],
+    stats: 7434
   },
   {
     name: 'Mamoswine',
@@ -5370,7 +5983,8 @@ export const ROWS = [
     def: 146,
     hp: 242,
     fm: ['MUD_SLAP', 'POWDER_SNOW'],
-    cm: ['AVALANCHE', 'BULLDOZE', 'STONE_EDGE', 'ANCIENT_POWER']
+    cm: ['AVALANCHE', 'BULLDOZE', 'STONE_EDGE', 'ANCIENT_POWER'],
+    stats: 8727
   },
   {
     name: 'Porygon-Z',
@@ -5398,7 +6012,8 @@ export const ROWS = [
       'HIDDEN_POWER_STEEL',
       'HIDDEN_POWER_WATER'
     ],
-    cm: ['BLIZZARD', 'HYPER_BEAM', 'SOLAR_BEAM', 'ZAP_CANNON']
+    cm: ['BLIZZARD', 'HYPER_BEAM', 'SOLAR_BEAM', 'ZAP_CANNON'],
+    stats: 7841
   },
   {
     name: 'Gallade',
@@ -5408,7 +6023,8 @@ export const ROWS = [
     def: 195,
     hp: 169,
     fm: ['CONFUSION', 'LOW_KICK'],
-    cm: ['CLOSE_COMBAT', 'LEAF_BLADE', 'PSYCHIC']
+    cm: ['CLOSE_COMBAT', 'LEAF_BLADE', 'PSYCHIC'],
+    stats: 7810
   },
   {
     name: 'Probopass',
@@ -5418,7 +6034,8 @@ export const ROWS = [
     def: 275,
     hp: 155,
     fm: ['ROCK_THROW', 'SPARK'],
-    cm: ['MAGNET_BOMB', 'ROCK_SLIDE', 'THUNDERBOLT']
+    cm: ['MAGNET_BOMB', 'ROCK_SLIDE', 'THUNDERBOLT'],
+    stats: 5754
   },
   {
     name: 'Dusknoir',
@@ -5428,7 +6045,8 @@ export const ROWS = [
     def: 254,
     hp: 128,
     fm: ['ASTONISH', 'HEX'],
-    cm: ['DARK_PULSE', 'OMINOUS_WIND', 'PSYCHIC']
+    cm: ['DARK_PULSE', 'OMINOUS_WIND', 'PSYCHIC'],
+    stats: 5852
   },
   {
     name: 'Froslass',
@@ -5438,7 +6056,8 @@ export const ROWS = [
     def: 150,
     hp: 172,
     fm: ['HEX', 'POWDER_SNOW'],
-    cm: ['AVALANCHE', 'CRUNCH', 'SHADOW_BALL']
+    cm: ['AVALANCHE', 'CRUNCH', 'SHADOW_BALL'],
+    stats: 4412
   },
   {
     name: 'Rotom',
@@ -5448,7 +6067,8 @@ export const ROWS = [
     def: 159,
     hp: 137,
     fm: ['ASTONISH', 'THUNDER_SHOCK'],
-    cm: ['OMINOUS_WIND', 'THUNDER', 'THUNDERBOLT']
+    cm: ['OMINOUS_WIND', 'THUNDER', 'THUNDERBOLT'],
+    stats: 4030
   },
   {
     name: 'Rotom (Fan)',
@@ -5458,7 +6078,8 @@ export const ROWS = [
     def: 219,
     hp: 137,
     fm: ['AIR_SLASH', 'ASTONISH'],
-    cm: ['OMINOUS_WIND', 'THUNDER', 'THUNDERBOLT']
+    cm: ['OMINOUS_WIND', 'THUNDER', 'THUNDERBOLT'],
+    stats: 6121
   },
   {
     name: 'Rotom (Frost)',
@@ -5468,7 +6089,8 @@ export const ROWS = [
     def: 219,
     hp: 137,
     fm: ['ASTONISH', 'THUNDER_SHOCK'],
-    cm: ['BLIZZARD', 'THUNDER', 'THUNDERBOLT']
+    cm: ['BLIZZARD', 'THUNDER', 'THUNDERBOLT'],
+    stats: 6121
   },
   {
     name: 'Rotom (Heat)',
@@ -5478,7 +6100,8 @@ export const ROWS = [
     def: 219,
     hp: 137,
     fm: ['ASTONISH', 'THUNDER_SHOCK'],
-    cm: ['OVERHEAT', 'THUNDER', 'THUNDERBOLT']
+    cm: ['OVERHEAT', 'THUNDER', 'THUNDERBOLT'],
+    stats: 6121
   },
   {
     name: 'Rotom (Mow)',
@@ -5488,7 +6111,8 @@ export const ROWS = [
     def: 219,
     hp: 137,
     fm: ['ASTONISH', 'THUNDER_SHOCK'],
-    cm: ['OMINOUS_WIND', 'THUNDER', 'THUNDERBOLT']
+    cm: ['OMINOUS_WIND', 'THUNDER', 'THUNDERBOLT'],
+    stats: 6121
   },
   {
     name: 'Rotom (Wash)',
@@ -5498,7 +6122,8 @@ export const ROWS = [
     def: 219,
     hp: 137,
     fm: ['ASTONISH', 'THUNDER_SHOCK'],
-    cm: ['HYDRO_PUMP', 'THUNDER', 'THUNDERBOLT']
+    cm: ['HYDRO_PUMP', 'THUNDER', 'THUNDERBOLT'],
+    stats: 6121
   },
   {
     name: 'Uxie',
@@ -5508,7 +6133,8 @@ export const ROWS = [
     def: 270,
     hp: 181,
     fm: ['CONFUSION', 'EXTRASENSORY'],
-    cm: ['FUTURE_SIGHT', 'SWIFT', 'THUNDER']
+    cm: ['FUTURE_SIGHT', 'SWIFT', 'THUNDER'],
+    stats: 7624
   },
   {
     name: 'Mesprit',
@@ -5518,7 +6144,8 @@ export const ROWS = [
     def: 212,
     hp: 190,
     fm: ['CONFUSION', 'EXTRASENSORY'],
-    cm: ['BLIZZARD', 'FUTURE_SIGHT', 'SWIFT']
+    cm: ['BLIZZARD', 'FUTURE_SIGHT', 'SWIFT'],
+    stats: 8539
   },
   {
     name: 'Azelf',
@@ -5528,7 +6155,8 @@ export const ROWS = [
     def: 151,
     hp: 181,
     fm: ['CONFUSION', 'EXTRASENSORY'],
-    cm: ['FIRE_BLAST', 'FUTURE_SIGHT', 'SWIFT']
+    cm: ['FIRE_BLAST', 'FUTURE_SIGHT', 'SWIFT'],
+    stats: 7379
   },
   {
     name: 'Dialga',
@@ -5538,7 +6166,8 @@ export const ROWS = [
     def: 211,
     hp: 205,
     fm: ['DRAGON_BREATH', 'METAL_CLAW'],
-    cm: ['DRACO_METEOR', 'IRON_HEAD', 'THUNDER']
+    cm: ['DRACO_METEOR', 'IRON_HEAD', 'THUNDER'],
+    stats: 11895
   },
   {
     name: 'Palkia',
@@ -5548,7 +6177,8 @@ export const ROWS = [
     def: 215,
     hp: 189,
     fm: ['DRAGON_BREATH', 'DRAGON_TAIL'],
-    cm: ['DRACO_METEOR', 'FIRE_BLAST', 'HYDRO_PUMP']
+    cm: ['DRACO_METEOR', 'FIRE_BLAST', 'HYDRO_PUMP'],
+    stats: 11378
   },
   {
     name: 'Heatran',
@@ -5558,7 +6188,8 @@ export const ROWS = [
     def: 213,
     hp: 209,
     fm: ['BUG_BITE', 'FIRE_SPIN'],
-    cm: ['FIRE_BLAST', 'IRON_HEAD', 'STONE_EDGE']
+    cm: ['FIRE_BLAST', 'IRON_HEAD', 'STONE_EDGE'],
+    stats: 11174
   },
   {
     name: 'Regigigas',
@@ -5568,7 +6199,8 @@ export const ROWS = [
     def: 210,
     hp: 221,
     fm: ['ROCK_SMASH', 'ZEN_HEADBUTT'],
-    cm: ['AVALANCHE', 'HEAVY_SLAM', 'STONE_EDGE']
+    cm: ['AVALANCHE', 'HEAVY_SLAM', 'STONE_EDGE'],
+    stats: 13320
   },
   {
     name: 'Giratina (Altered)',
@@ -5578,7 +6210,8 @@ export const ROWS = [
     def: 225,
     hp: 284,
     fm: ['DRAGON_BREATH', 'SHADOW_CLAW'],
-    cm: ['ANCIENT_POWER', 'DRAGON_CLAW', 'SHADOW_SNEAK']
+    cm: ['ANCIENT_POWER', 'DRAGON_CLAW', 'SHADOW_SNEAK'],
+    stats: 11949
   },
   {
     name: 'Giratina (Origin)',
@@ -5588,7 +6221,8 @@ export const ROWS = [
     def: 187,
     hp: 284,
     fm: ['DRAGON_TAIL', 'SHADOW_CLAW'],
-    cm: ['OMINOUS_WIND', 'DRAGON_PULSE', 'SHADOW_BALL']
+    cm: ['OMINOUS_WIND', 'DRAGON_PULSE', 'SHADOW_BALL'],
+    stats: 11949
   },
   {
     name: 'Cresselia',
@@ -5598,7 +6232,8 @@ export const ROWS = [
     def: 258,
     hp: 260,
     fm: ['CONFUSION', 'PSYCHO_CUT'],
-    cm: ['AURORA_BEAM', 'FUTURE_SIGHT', 'MOONBLAST']
+    cm: ['AURORA_BEAM', 'FUTURE_SIGHT', 'MOONBLAST'],
+    stats: 10196
   },
   {
     name: 'Phione',
@@ -5608,7 +6243,8 @@ export const ROWS = [
     def: 162,
     hp: 190,
     fm: ['BUBBLE', 'WATERFALL'],
-    cm: ['BUBBLE_BEAM', 'SURF', 'WATER_PULSE']
+    cm: ['BUBBLE_BEAM', 'SURF', 'WATER_PULSE'],
+    stats: 4986
   },
   {
     name: 'Manaphy',
@@ -5618,7 +6254,8 @@ export const ROWS = [
     def: 210,
     hp: 225,
     fm: ['BUBBLE', 'WATERFALL'],
-    cm: ['BUBBLE_BEAM', 'PSYCHIC', 'SURF']
+    cm: ['BUBBLE_BEAM', 'PSYCHIC', 'SURF'],
+    stats: 9923
   },
   {
     name: 'Darkrai',
@@ -5628,7 +6265,8 @@ export const ROWS = [
     def: 198,
     hp: 172,
     fm: ['FEINT_ATTACK', 'SNARL'],
-    cm: ['DARK_PULSE', 'FOCUS_BLAST', 'SHADOW_BALL']
+    cm: ['DARK_PULSE', 'FOCUS_BLAST', 'SHADOW_BALL'],
+    stats: 9706
   },
   {
     name: 'Shaymin (Land)',
@@ -5656,7 +6294,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'ZEN_HEADBUTT'
     ],
-    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SOLAR_BEAM']
+    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SOLAR_BEAM'],
+    stats: 9923
   },
   {
     name: 'Shaymin (Sky)',
@@ -5684,7 +6323,8 @@ export const ROWS = [
       'HIDDEN_POWER_WATER',
       'ZEN_HEADBUTT'
     ],
-    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SOLAR_BEAM']
+    cm: ['ENERGY_BALL', 'GRASS_KNOT', 'SOLAR_BEAM'],
+    stats: 9748
   },
   {
     name: 'Arceus',
@@ -5694,7 +6334,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Bug)',
@@ -5704,7 +6345,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Dark)',
@@ -5714,7 +6356,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Dragon)',
@@ -5724,7 +6367,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Electric)',
@@ -5734,7 +6378,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Fairy)',
@@ -5744,7 +6389,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Fighting)',
@@ -5754,7 +6400,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Fire)',
@@ -5764,7 +6411,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Flying)',
@@ -5774,7 +6422,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Ghost)',
@@ -5784,7 +6433,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Grass)',
@@ -5794,7 +6444,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Ground)',
@@ -5804,7 +6455,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Ice)',
@@ -5814,7 +6466,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Poison)',
@@ -5824,7 +6477,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Psychic)',
@@ -5834,7 +6488,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Rock)',
@@ -5844,7 +6499,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Steel)',
@@ -5854,7 +6510,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Arceus (Water)',
@@ -5864,7 +6521,8 @@ export const ROWS = [
     def: 238,
     hp: 237,
     fm: ['IRON_TAIL', 'SHADOW_CLAW'],
-    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE']
+    cm: ['FUTURE_SIGHT', 'HYPER_BEAM', 'OUTRAGE'],
+    stats: 13425
   },
   {
     name: 'Meltan',
@@ -5874,7 +6532,8 @@ export const ROWS = [
     def: 99,
     hp: 130,
     fm: ['THUNDER_SHOCK'],
-    cm: ['FLASH_CANNON', 'THUNDERBOLT']
+    cm: ['FLASH_CANNON', 'THUNDERBOLT'],
+    stats: 1519
   },
   {
     name: 'Melmetal',
@@ -5884,6 +6543,7 @@ export const ROWS = [
     def: 190,
     hp: 264,
     fm: ['THUNDER_SHOCK'],
-    cm: ['FLASH_CANNON', 'HYPER_BEAM', 'ROCK_SLIDE', 'THUNDERBOLT']
+    cm: ['FLASH_CANNON', 'HYPER_BEAM', 'ROCK_SLIDE', 'THUNDERBOLT'],
+    stats: 11336
   }
 ];
