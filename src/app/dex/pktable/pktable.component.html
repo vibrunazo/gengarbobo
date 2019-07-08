@@ -37,12 +37,12 @@
 
     <ng-container matColumnDef="fm">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Fast</th>
-      <td mat-cell *matCellDef="let row">{{row.fm}}</td>
+      <td mat-cell *matCellDef="let row" [innerHtml]="getMoveHTML(row.fm)"></td>
     </ng-container>
 
     <ng-container matColumnDef="cm">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Charged</th>
-      <td mat-cell *matCellDef="let row">{{row.cm}}</td>
+      <td mat-cell *matCellDef="let row" [innerHtml]="getMoveHTML(row.cm)"></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

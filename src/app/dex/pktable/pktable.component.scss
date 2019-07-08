@@ -10,8 +10,13 @@
   padding-left: 5px !important;
 }
 
-th.mat-header-cell:first-of-type {
-  padding-left: 5px;
+// th.mat-header-cell:first-of-type {
+//   padding-left: 10px;
+// }
+
+
+th.mat-header-cell {
+  padding-left: 10px;
 }
 
 .mat-column-fm {
@@ -29,13 +34,17 @@ th.mat-header-cell:first-of-type {
   max-width: 15px;
 }
 .mat-column-atk {
-  max-width: 15px;
+  max-width: 20px;
+  // min-width: 15px;
+  // width: 5px;
 }
 .mat-column-def {
-  max-width: 15px;
+  max-width: 20px;
+  // width: 5px;
 }
 .mat-column-hp {
-  max-width: 15px;
+  max-width: 20px;
+  // width: 5px;
 }
 .mat-column-stats {
   max-width: 30px;
@@ -47,5 +56,5 @@ th.mat-header-cell:first-of-type {
 }
 .mat-column-type {
   max-width: 50px;
-  overflow-wrap: normal;
+  overflow-wrap: break-word;
 }
