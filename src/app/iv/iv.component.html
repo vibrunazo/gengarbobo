@@ -6,19 +6,19 @@
   <mat-card class="maincard">
     <mat-card-content>
       <form (submit)="ivForm.form.valid && onSearch(ivForm)" #ivForm="ngForm">
-        <mat-form-field class="nameff notranslate">
+        <mat-form-field class="nameff ">
           <input type="text" matInput placeholder="Name" name="pokename" [(ngModel)]="name" [matAutocomplete]="auto" (ngModelChange)="allnames = filterNames(name)" #pokename="ngModel" required />
           <mat-error>{{ getErrorName() }}</mat-error>
           <!-- <mat-error *ngIf="pokename.invalid">{{getErrorName()}}</mat-error> -->
           <mat-autocomplete #auto="matAutocomplete" class="nameauto">
-            <mat-option *ngFor="let poke of allnames" [value]="poke">
+            <mat-option *ngFor="let poke of allnames" [value]="poke" class="notranslate">
               {{ poke }}
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
 
-        <mat-form-field class="fastff notranslate">
-          <mat-select placeholder="Fast Attack" [(ngModel)]="yourfastmove" name="fastname">
+        <mat-form-field class="fastff">
+          <mat-select placeholder="Fast Attack" [(ngModel)]="yourfastmove" name="fastname" class="notranslate">
             <mat-option *ngFor="let move of listOfFastMoves" [value]="move">{{ move.name }}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -39,8 +39,8 @@
         </mat-form-field>
         <br />
 
-        <mat-form-field class="leagueff notranslate">
-          <mat-select placeholder="League" [(ngModel)]="league" name="league">
+        <mat-form-field class="leagueff">
+          <mat-select placeholder="League" [(ngModel)]="league" name="league" class="notranslate">
             <mat-option value="1500">Great</mat-option>
             <mat-option value="2500">Ultra</mat-option>
             <mat-option value="0">Master</mat-option>
@@ -49,15 +49,15 @@
 
         <mat-form-field class="minivff notranslate">
           <mat-select placeholder="Min IV" [(ngModel)]="miniv" name="miniv">
-            <mat-option value="0">0 Wild Catch</mat-option>
-            <mat-option value="12">12 Lucky Trade</mat-option>
-            <mat-option value="10">10 Hatch/Quest/Raid</mat-option>
-            <mat-option value="5">5 Best Trade</mat-option>
-            <mat-option value="4">4 Weather Boost</mat-option>
-            <mat-option value="3">3 Ultra Trade</mat-option>
-            <mat-option value="2">2 Great Trade</mat-option>
-            <mat-option value="1">1 Good Trade</mat-option>
-            <mat-option value="0">0 Wild Catch</mat-option>
+            <mat-option value="0" i18n>0 Wild Catch</mat-option>
+            <mat-option value="12" i18n>12 Lucky Trade</mat-option>
+            <mat-option value="10" i18n>10 Hatch/Quest/Raid</mat-option>
+            <mat-option value="5" i18n>5 Best Trade</mat-option>
+            <mat-option value="4" i18n>4 Weather Boost</mat-option>
+            <mat-option value="3" i18n>3 Ultra Trade</mat-option>
+            <mat-option value="2" i18n>2 Great Trade</mat-option>
+            <mat-option value="1" i18n>1 Good Trade</mat-option>
+            <mat-option value="0" i18n>0 Wild Catch</mat-option>
           </mat-select>
         </mat-form-field>
 

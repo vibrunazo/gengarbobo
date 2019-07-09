@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="27e32b22d993c130ffa65657689fb553f50adc66" datatype="html">
+        <source>0 Wild Catch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7dcc392d4a0a8d90c19d32b487178448a02932e3" datatype="html">
+        <source>12 Lucky Trade</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="49a7fc41ca64cb1ce376346a85ba72c8b76298f4" datatype="html">
+        <source>10 Hatch/Quest/Raid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3db3226c0987c79c06f46e2d8b2dde29c67487d" datatype="html">
+        <source>5 Best Trade</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8065aa71e6202739617fd2a00f0cbf322a7977a" datatype="html">
+        <source>4 Weather Boost</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="604be2dffad6a70409b5e4e5415044aaf97c1cd5" datatype="html">
+        <source>3 Ultra Trade</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="09a53084f26ee6065fede19efd642194c5bd49cf" datatype="html">
+        <source>2 Great Trade</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="319032c283e19912d4bd4a9370b475a064eba9e4" datatype="html">
+        <source>1 Good Trade</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -59,6 +59,12 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "pt": {
+              "aot": true,
+              "outputPath": "dist/pt/",
+              "i18nFile": "src/locale/messages.pt.xlf",
+              "i18nLocale": "pt"
             }
           }
         },
@@ -70,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "gengarbobo:build:production"
+            },
+            "pt": {
+              "browserTarget": "gengarbobo:build:pt"
             }
           }
         },
