@@ -6,7 +6,7 @@
   <mat-card class="maincard">
     <mat-card-content>
       <form (submit)="ivForm.form.valid && onSearch(ivForm)" #ivForm="ngForm">
-        <mat-form-field class="nameff">
+        <mat-form-field class="nameff notranslate">
           <input type="text" matInput placeholder="Name" name="pokename" [(ngModel)]="name" [matAutocomplete]="auto" (ngModelChange)="allnames = filterNames(name)" #pokename="ngModel" required />
           <mat-error>{{ getErrorName() }}</mat-error>
           <!-- <mat-error *ngIf="pokename.invalid">{{getErrorName()}}</mat-error> -->
@@ -17,7 +17,7 @@
           </mat-autocomplete>
         </mat-form-field>
 
-        <mat-form-field class="fastff">
+        <mat-form-field class="fastff notranslate">
           <mat-select placeholder="Fast Attack" [(ngModel)]="yourfastmove" name="fastname">
             <mat-option *ngFor="let move of listOfFastMoves" [value]="move">{{ move.name }}</mat-option>
           </mat-select>
@@ -39,15 +39,15 @@
         </mat-form-field>
         <br />
 
-        <mat-form-field class="leagueff">
+        <mat-form-field class="leagueff notranslate">
           <mat-select placeholder="League" [(ngModel)]="league" name="league">
-            <mat-option value="great">Great</mat-option>
-            <mat-option value="ultra">Ultra</mat-option>
-            <mat-option value="master">Master</mat-option>
+            <mat-option value="1500">Great</mat-option>
+            <mat-option value="2500">Ultra</mat-option>
+            <mat-option value="0">Master</mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field class="minivff">
+        <mat-form-field class="minivff notranslate">
           <mat-select placeholder="Min IV" [(ngModel)]="miniv" name="miniv">
             <mat-option value="0">0 Wild Catch</mat-option>
             <mat-option value="12">12 Lucky Trade</mat-option>

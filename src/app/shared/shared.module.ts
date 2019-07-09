@@ -606,3 +606,9 @@ export class Pokemon {
 //       ]
 
 export default Pokemon;
+
+export const LEAGUES = {
+  1500:  'great',
+  2500:  'ultra',
+  0:  'master',
+};

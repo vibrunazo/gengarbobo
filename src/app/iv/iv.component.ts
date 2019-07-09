@@ -1,6 +1,6 @@
 import { Component, OnInit, isDevMode, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Pokemon, PokemonSpecies, Move } from '../shared/shared.module';
+import { Pokemon, PokemonSpecies, Move, LEAGUES } from '../shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { TableComponent } from './table/table.component';
 
@@ -16,7 +16,7 @@ export class IvComponent implements OnInit {
   species: PokemonSpecies;
   fastname = '';
   listOfFastMoves: Move[];
-  league = 'great';
+  league = '1500';
   miniv = '0';
   atk = 15;
   def = 15;
@@ -85,7 +85,7 @@ export class IvComponent implements OnInit {
     if (duel < 0) { duelwl = `${bold('LOSE', 'red')}`; }
 
     this.summary = `Your ${this.name} with ${bold(ivs)} IV
-    has ${bold(this.yourpk.cp)} cp at level ${bold(this.yourpk.level)} for ${(this.league)} league.`;
+    has ${bold(this.yourpk.cp)} cp at level ${bold(this.yourpk.level)} for ${(LEAGUES[this.league])} league.`;
     this.summary += `<br><br>`;
     this.summary += `It is the ${bold(this.yourrank)}${nth(this.yourrank)} best of ${bold(this.pks.length)} possible combinations,
     when ranked by total Stats Product. `;
@@ -279,8 +279,8 @@ export class IvComponent implements OnInit {
       return;
     }
 
-    if (this.league !== 'master') {
-      while (!pokemon.canFightLeague(this.league)) {
+    if (LEAGUES[this.league] !== 'master') {
+      while (!pokemon.canFightLeague(LEAGUES[this.league])) {
         pokemon.setLevel(pokemon.level - 0.5);
       }
     }
@@ -320,7 +320,7 @@ export class IvComponent implements OnInit {
     (window as any).gtag('event', 'search', {
       send_to: 'UA-122077579-2',
       event_category: 'Iv',
-      event_action: `Pk: ${this.name} l: ${this.league} iv: ${this.atk}/${this.def}/${this.hp}`,
+      event_action: `Pk: ${this.name} l: ${LEAGUES[this.league]} iv: ${this.atk}/${this.def}/${this.hp}`,
       event_value: 'iv',
       event_label: 'iv'
     });
