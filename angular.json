@@ -63,9 +63,9 @@
             "pt": {
               "aot": true,
               "outputPath": "dist/pt/",
-              "i18nFile": "src/locale/messages.pt.xlf",
               "i18nLocale": "pt",
-              "index": "src/index.pt.html"
+              "i18nFile": "src/locale/pt/messages.xlf",
+              "index": "src/locale/pt/index.html"
             }
           }
         },
