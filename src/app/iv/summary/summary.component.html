@@ -17,9 +17,38 @@
 
   <div i18n="@@summ02">
     It's the
-    <span class="feat">{{ dad.yourrank }}</span>{{ nth(dad.yourrank) }}
+    <span class="feat">{{ dad.yourrank }}</span
+    >{{ nth(dad.yourrank) }}
     best of
     <span class="feat">{{ dad.pks.length }}</span>
     possible combinatinons.
   </div>
+
+  <div i18n="@@summ03">
+    The rank 1 {{ dad.name }} by stats product is {{ r1ivs }}.<br />
+    When dueling against a {{ r1ivs }} {{ dad.name }}, your {{ dad.name }} deals
+    <span class="feat">{{ dealt }}</span>
+    damage, and you take
+    <span class="red">{{ taken }}</span>
+    damage.<br />
+    Your {{ dad.name }} will
+    <ng-container *ngTemplateOutlet="wl"></ng-container>
+    a duel against a rank 1 {{ dad.name }}.<br />
+    With the winner ending with {{ Math.abs(duel) }} health left. If using only
+    fast attacks.
+  </div>
 </div>
+
+<ng-template #wl>
+  <ng-container [ngSwitch]="duelwl">
+    <ng-container *ngSwitchCase="'WIN'">
+      <span class="feat"><ng-container i18n="@@WIN">WIN</ng-container></span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'LOSE'">
+      <span class="red"><ng-container i18n="@@LOSE">LOSE</ng-container></span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'DRAW'">
+      <span class="red"><ng-container i18n="@@DRAW">DRAW</ng-container></span>
+    </ng-container>
+  </ng-container>
+</ng-template>

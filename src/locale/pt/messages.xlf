@@ -69,6 +69,62 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="summ03" datatype="html">
+        <source>
+    The rank 1 <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> by stats product is <x id="INTERPOLATION_1" equiv-text="{{ r1ivs }}"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    When dueling against a <x id="INTERPOLATION_1" equiv-text="{{ r1ivs }}"/> <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/>, your <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> deals
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{ dealt }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    damage, and you take
+    <x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_3" equiv-text="{{ taken }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    damage.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    Your <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> will
+    <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/>
+    a duel against a rank 1 <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    With the winner ending with <x id="INTERPOLATION_4" equiv-text="{{ Math.abs(duel) }}"/> health left. If using only
+    fast attacks.
+  </source>
+        <target>
+    O <x id="INTERPOLATION" equiv-text="{{dad.name}}"/> rank 1 por produto de stats é <x id="INTERPOLATION_1" equiv-text="{{r1ivs}}"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    Quando duelando um <x id="INTERPOLATION" equiv-text="{{dad.name}}"/> <x id="INTERPOLATION_1" equiv-text="{{r1ivs}}"/>,
+    seu <x id="INTERPOLATION" equiv-text="{{dad.name}}"/> causa
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{ dealt }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    de dano, e toma
+    <x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_3" equiv-text="{{ taken }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    de dano.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    Seu <x id="INTERPOLATION" equiv-text="{{dad.name}}"/> irá
+    <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/>
+     um duelo contra o <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> rank 1.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    Com o vencedor terminando com <x id="INTERPOLATION_4" equiv-text="{{Math.abs(duel)}}"/> de vida sobrando. Se usar apenas ataques rápidos.
+  </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="WIN" datatype="html">
+        <source>WIN</source>
+        <target>VENCER</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LOSE" datatype="html">
+        <source>LOSE</source>
+        <target>PERDER</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="DRAW" datatype="html">
+        <source>DRAW</source>
+        <target>EMPATAR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
 
       <trans-unit id="descIV" datatype="html">
         <source>

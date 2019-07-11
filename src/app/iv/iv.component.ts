@@ -92,18 +92,19 @@ export class IvComponent implements OnInit, AfterViewInit {
     if (duel === 0) { duelwl = `${bold('DRAW')}`; }
     if (duel < 0) { duelwl = `${bold('LOSE', 'red')}`; }
 
-    this.summary = `Your ${this.name} with ${bold(ivs)} IV
-    has ${bold(this.yourpk.cp)} cp at level ${bold(this.yourpk.level)} for ${(LEAGUES[this.league])} league.`;
-    this.summary += `<br><br>`;
-    this.summary += `It is the ${bold(this.yourrank)}${nth(this.yourrank)} best of ${bold(this.pks.length)} possible combinations,
-    when ranked by total Stats Product. `;
-    this.summary += `<br><br>`;
-    this.summary += `The rank 1 ${this.name} by stat product is ${r1ivs}.<br>
-    When dueling against a ${r1ivs} ${this.name},
-    your ${bold(this.yourfastmove.name)} deals ${bold(dealt)} damage, and you take ${bold(taken, 'red')} damage.<br>
-    Your ${this.name} will ${duelwl} a duel against the rank 1 ${this.name}.<br>
-    With the winner ending with ${Math.abs(duel)} health left. If using only fast attacks.`;
-    this.summary += `<br><br>`;
+    this.summary = '';
+    // this.summary = `Your ${this.name} with ${bold(ivs)} IV
+    // has ${bold(this.yourpk.cp)} cp at level ${bold(this.yourpk.level)} for ${(LEAGUES[this.league])} league.`;
+    // this.summary += `<br><br>`;
+    // this.summary += `It is the ${bold(this.yourrank)}${nth(this.yourrank)} best of ${bold(this.pks.length)} possible combinations,
+    // when ranked by total Stats Product. `;
+    // this.summary += `<br><br>`;
+    // this.summary += `The rank 1 ${this.name} by stat product is ${r1ivs}.<br>
+    // When dueling against a ${r1ivs} ${this.name},
+    // your ${bold(this.yourfastmove.name)} deals ${bold(dealt)} damage, and you take ${bold(taken, 'red')} damage.<br>
+    // Your ${this.name} will ${duelwl} a duel against the rank 1 ${this.name}.<br>
+    // With the winner ending with ${Math.abs(duel)} health left. If using only fast attacks.`;
+    // this.summary += `<br><br>`;
     if (this.results.length > 1) {
       const w = this.results[this.yourrank - 1].wins;
       const l = this.results[this.yourrank - 1].losses;

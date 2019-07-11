@@ -46,6 +46,46 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="summ03" datatype="html">
+        <source>
+    The rank 1 <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> by stats product is <x id="INTERPOLATION_1" equiv-text="{{ r1ivs }}"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    When dueling against a <x id="INTERPOLATION_1" equiv-text="{{ r1ivs }}"/> <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/>, your <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> deals
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{ dealt }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    damage, and you take
+    <x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_3" equiv-text="{{ taken }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    damage.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    Your <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> will
+    <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/>
+    a duel against a rank 1 <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    With the winner ending with <x id="INTERPOLATION_4" equiv-text="{{ Math.abs(duel) }}"/> health left. If using only
+    fast attacks.
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="WIN" datatype="html">
+        <source>WIN</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LOSE" datatype="html">
+        <source>LOSE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="DRAW" datatype="html">
+        <source>DRAW</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="descIV" datatype="html">
         <source>
   Choose a Pokémon, a league and input its IVs. The app will tell you how good those IVs are for PvP.

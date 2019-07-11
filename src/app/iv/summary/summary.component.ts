@@ -16,7 +16,13 @@ export class SummaryComponent implements OnInit {
   public State = State;
 
   ivs = '';
+  r1ivs = '';
+  dealt = '';
+  taken = '';
+  duel = '';
+  duelwl = '';
   LEAGUES = LEAGUES;
+  Math = Math;
 
   constructor() { }
 
@@ -26,11 +32,15 @@ export class SummaryComponent implements OnInit {
     const dad = this.dad;
     const ivs = `${dad.atk}/${dad.def}/${dad.hp}`; this.ivs = ivs;
     const r1 = dad.pks[0];
-    const r1ivs = `${r1.iv.atk}/${r1.iv.def}/${r1.iv.hp}`;
+    const r1ivs = `${r1.iv.atk}/${r1.iv.def}/${r1.iv.hp}`; this.r1ivs = r1ivs;
     const bp = dad.tableItems[0].bp;
-    const dealt = bp.split('-')[0];
-    const taken = bp.split('-')[1];
-    const duel = dad.tableItems[0].duel;
+    const dealt = bp.split('-')[0]; this.dealt = dealt;
+    const taken = bp.split('-')[1]; this.taken = taken;
+    const duel = dad.tableItems[0].duel; this.duel = duel;
+    let duelwl =  `WIN`;
+    if (duel === 0) { duelwl = `DRAW`; }
+    if (duel < 0) { duelwl = `LOSE`; }
+    this.duelwl = duelwl;
 
     // let duelwl =  `${bold('WIN')}`;
     // if (duel === 0) { duelwl = `${bold('DRAW')}`; }
@@ -50,10 +60,6 @@ export class SummaryComponent implements OnInit {
     this.state = newState;
   }
 
-
-  bold(text, c= 'feat'): string {
-    return `<span class='${c}'>${text}</span>`;
-  }
 
   nth(d) {
     if (d > 3 && d < 21) { return 'th'; }
