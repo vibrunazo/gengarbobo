@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card i18n="@@descIV">
   Choose a Pokémon, a league and input its IVs. The app will tell you how good those IVs are for PvP.
 </mat-card>
 
@@ -72,6 +72,7 @@
   </mat-card>
 
   <mat-card class="resultcard">
+    <app-summary></app-summary>
     <mat-card-content [innerHtml]="summary">
       <!-- {{ result }} -->
     </mat-card-content>

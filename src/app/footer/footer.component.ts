@@ -26,8 +26,8 @@ export class FooterComponent implements OnInit {
   }
 
   updateCommit() {
-    console.log('logging commit');
-    console.log(this.commitData);
+    // console.log('logging commit');
+    // console.log(this.commitData);
     const date = new Date(this.commitData[0].commit.committer.date );
     // date.setDate(date.getDate() - 7);
     const now = new Date();

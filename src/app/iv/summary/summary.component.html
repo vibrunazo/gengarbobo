@@ -1,0 +1,25 @@
+<p *ngIf="state === State.none" i18n="@@summNone">Summary will show here</p>
+
+<p *ngIf="state === State.notFound" i18n="@@summNotFound">
+  Could not find a Pokémon named "{{ message }}"
+</p>
+
+<div *ngIf="state === State.found">
+  <p i18n="@@summ01">
+    Your {{ dad.name }} with
+    <span class="feat">{{ ivs }}</span>
+    IV has
+    <span class="feat">{{ dad.yourpk.cp }}</span>
+    cp at level
+    <span class="feat">{{ dad.yourpk.level }}</span>
+    for {{ LEAGUES[dad.league] }} league.
+  </p>
+
+  <div i18n="@@summ02">
+    It's the
+    <span class="feat">{{ dad.yourrank }}</span>{{ nth(dad.yourrank) }}
+    best of
+    <span class="feat">{{ dad.pks.length }}</span>
+    possible combinatinons.
+  </div>
+</div>

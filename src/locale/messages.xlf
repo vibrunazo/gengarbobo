@@ -2,6 +2,59 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="summNone" datatype="html">
+        <source>Summary will show here</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="summNotFound" datatype="html">
+        <source>
+  Could not find a Pokémon named &quot;<x id="INTERPOLATION" equiv-text="{{ message }}"/>&quot;
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="summ01" datatype="html">
+        <source>
+    Your <x id="INTERPOLATION" equiv-text="{{ dad.name }}"/> with
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_1" equiv-text="{{ ivs }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    IV has
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{ dad.yourpk.cp }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    cp at level
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_3" equiv-text="{{ dad.yourpk.level }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    for <x id="INTERPOLATION_4" equiv-text="{{ LEAGUES[dad.league] }}"/> league.
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="summ02" datatype="html">
+        <source>
+    It&apos;s the
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{ dad.yourrank }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="INTERPOLATION_1" equiv-text="{{ nth(dad.yourrank) }}"/>
+    best of
+    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{ dad.pks.length }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+    possible combinatinons.
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/summary/summary.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="descIV" datatype="html">
+        <source>
+  Choose a Pokémon, a league and input its IVs. The app will tell you how good those IVs are for PvP.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/iv/iv.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="27e32b22d993c130ffa65657689fb553f50adc66" datatype="html">
         <source>0 Wild Catch</source>
         <context-group purpose="location">

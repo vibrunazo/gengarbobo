@@ -1,16 +1,18 @@
-import { Component, OnInit, isDevMode, ViewChild } from '@angular/core';
+import { Component, OnInit, isDevMode, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Pokemon, PokemonSpecies, Move, LEAGUES } from '../shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { TableComponent } from './table/table.component';
+import { SummaryComponent, State } from './summary/summary.component';
 
 @Component({
   selector: 'app-iv',
   templateUrl: './iv.component.html',
   styleUrls: ['./iv.component.scss']
 })
-export class IvComponent implements OnInit {
+export class IvComponent implements OnInit, AfterViewInit {
   @ViewChild(TableComponent, { static: false }) table: TableComponent;
+  @ViewChild(SummaryComponent, { static: false }) summaryComponent: SummaryComponent;
   name = environment.production ? '' : 'Skarmory';
   // name = '';
   species: PokemonSpecies;
@@ -40,6 +42,11 @@ export class IvComponent implements OnInit {
     this.filterNames(this.name);
   }
 
+  ngAfterViewInit() {
+    this.summaryComponent.setParent(this);
+
+  }
+
   onSearch(form: NgForm) {
     if (form.value.pokename === '') {
       return;
@@ -50,6 +57,7 @@ export class IvComponent implements OnInit {
       this.buildList();
       this.writeList();
     } else {
+      this.summaryComponent.update(State.notFound, form.value.pokename);
       this.summary = `Could not find a Pokémon named '${form.value.pokename}'`;
     }
 
@@ -142,6 +150,7 @@ export class IvComponent implements OnInit {
     this.pks.forEach((pk, i) => {
       this.writeRow(pk, i + 1);
     });
+    this.summaryComponent.update(State.found);
     this.writeSummary();
     this.table.updateTable(this.tableItems, this.tableItems[this.yourrank - 1], this.name, this.yourfastmove.name);
   }
