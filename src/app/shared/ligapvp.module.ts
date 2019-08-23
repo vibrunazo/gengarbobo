@@ -51,10 +51,27 @@ export class Match {
   }
 }
 
+// a summary of the matches for a player on a tournament
+// for each player this will record how many total games it has on the tournament,
+// how many games against each tier of enemies
+// this will later be used to check if this CupTable is breaking any CupRules
+class PlayerSummary {
+  matches = 0;
+  matchesAgainst: Map<Nivel, number> = new Map<Nivel, number>();
+
+  constructor() {
+    this.matches = 0;
+    this.matchesAgainst.set(Nivel.Safira, 0);
+    this.matchesAgainst.set(Nivel.Rubi, 0);
+    this.matchesAgainst.set(Nivel.Diamante, 0);
+  }
+}
+
 // the list of matches on a tournament
 export class CupTable {
   matches: Match[] = [];
   rules: CupRules;
+  summ: Map<Player, PlayerSummary> = new Map<Player, PlayerSummary>();
   cupLog: string[] = [];
 
   constructor(players?: Player[]) {
@@ -82,6 +99,34 @@ export class CupTable {
     return result;
   }
 
+  checkSummaries() {
+    this.summ.forEach((s, p) => {
+      const dia = s.matchesAgainst.get(Nivel.Diamante);
+      const rub = s.matchesAgainst.get(Nivel.Rubi);
+      const saf = s.matchesAgainst.get(Nivel.Safira);
+      this.log(`${p.getName()} tem ${s.matches} total de lutas. ${dia} contra Diamantes, ${rub} contra Rubis e ${saf} contra Safiras.`);
+    });
+  }
+
+  setSummaries() {
+    this.matches.forEach(m => {
+      this.setSummForPlayer(m.p1, m.p2);
+      this.setSummForPlayer(m.p2, m.p1);
+    });
+  }
+
+  setSummForPlayer(player: Player, enemy: Player) {
+    let s: PlayerSummary = this.summ.get(player);
+    if (s === undefined) {
+      s = new PlayerSummary();
+      this.summ.set(player, s);
+    }
+
+    this.summ.get(player).matches++;
+    const ma = this.summ.get(player).matchesAgainst.get(enemy.getNivel());
+    this.summ.get(player).matchesAgainst.set(enemy.getNivel(), ma + 1);
+  }
+
   buildMatches() {
     let players =  this.rules.players;
     // players = players.sort((a, b) => -1);
@@ -90,6 +135,9 @@ export class CupTable {
 
     players.forEach( p => this.findMatchesForPlayer(p) );
     // matches.forEach((m) => console.log(m.toString()));
+
+    this.setSummaries();
+    this.checkSummaries();
   }
 
   findMatchesForPlayer(player: Player) {
