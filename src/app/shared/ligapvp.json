@@ -1,0 +1,566 @@
+[
+  {
+    "name": "123CatBond",
+    "team": "plasma",
+    "winrate": "26%",
+    "rank": "bronze"
+  },
+  {
+    "name": "13JCruel13",
+    "team": "galactic",
+    "winrate": "88%",
+    "rank": "gold"
+  },
+  {
+    "name": "AleeSafadao",
+    "team": "plasma",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "AlekaSabbag",
+    "team": "skull",
+    "winrate": "74%",
+    "rank": "gold"
+  },
+  {
+    "name": "Allanlima04",
+    "team": "aqua",
+    "winrate": "56%",
+    "rank": "gold"
+  },
+  {
+    "name": "Allma68",
+    "team": "rocket",
+    "winrate": "32%",
+    "rank": "bronze"
+  },
+  {
+    "name": "Andyneves29",
+    "team": "flare",
+    "winrate": "39%",
+    "rank": "silver"
+  },
+  {
+    "name": "Atilajg",
+    "team": "rocket",
+    "winrate": "72%",
+    "rank": "gold"
+  },
+  {
+    "name": "BarbaKetchum",
+    "team": "plasma",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "BinhoZica01",
+    "team": "skull",
+    "winrate": "54%",
+    "rank": "gold"
+  },
+  {
+    "name": "Brabrinha",
+    "team": "magma",
+    "winrate": "42%",
+    "rank": "silver"
+  },
+  {
+    "name": "Cecmartins",
+    "team": "skull",
+    "winrate": "19%",
+    "rank": ""
+  },
+  {
+    "name": "chernandes10",
+    "team": "magma",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "c4i00",
+    "team": "skull",
+    "winrate": "96%",
+    "rank": "silver"
+  },
+  {
+    "name": "DavidFirmin0",
+    "team": "rocket",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "DGKetchum1",
+    "team": "plasma",
+    "winrate": "7%",
+    "rank": "bronze"
+  },
+  {
+    "name": "Didideluca",
+    "team": "galactic",
+    "winrate": "52%",
+    "rank": "bronze"
+  },
+  {
+    "name": "didisantista",
+    "team": "galactic",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "Diogenest",
+    "team": "aqua",
+    "winrate": "41%",
+    "rank": "silver"
+  },
+  {
+    "name": "Douglete011",
+    "team": "aqua",
+    "winrate": "48%",
+    "rank": "silver"
+  },
+  {
+    "name": "eanassu",
+    "team": "aqua",
+    "winrate": "20%",
+    "rank": "bronze"
+  },
+  {
+    "name": "EidyTomita",
+    "team": "galactic",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "FabianoCoelho",
+    "team": "rocket",
+    "winrate": "52%",
+    "rank": "silver"
+  },
+  {
+    "name": "Fgsanfre",
+    "team": "flare",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "GassanBr",
+    "team": "galactic",
+    "winrate": "92%",
+    "rank": "gold"
+  },
+  {
+    "name": "genosfull",
+    "team": "plasma",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "GinoLucca",
+    "team": "plasma",
+    "winrate": "63%",
+    "rank": "gold"
+  },
+  {
+    "name": "Gsaito87",
+    "team": "flare",
+    "winrate": "78%",
+    "rank": "gold"
+  },
+  {
+    "name": "guiblima",
+    "team": "skull",
+    "winrate": "65%",
+    "rank": "gold"
+  },
+  {
+    "name": "Guilram91",
+    "team": "aqua",
+    "winrate": "33%",
+    "rank": "silver"
+  },
+  {
+    "name": "GuiMi19",
+    "team": "flare",
+    "winrate": "37%",
+    "rank": "bronze"
+  },
+  {
+    "name": "haakaishin",
+    "team": "flare",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "Helior44",
+    "team": "plasma",
+    "winrate": "73%",
+    "rank": "gold"
+  },
+  {
+    "name": "HenryRattlehead",
+    "team": "rocket",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "HHazuka",
+    "team": "flare",
+    "winrate": "83%",
+    "rank": ""
+  },
+  {
+    "name": "HigashiRicardo",
+    "team": "rocket",
+    "winrate": "21%",
+    "rank": "bronze"
+  },
+  {
+    "name": "JimbobAzul",
+    "team": "flare",
+    "winrate": "48%",
+    "rank": "silver"
+  },
+  {
+    "name": "JoasGarciaA",
+    "team": "skull",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "josenkio",
+    "team": "flare",
+    "winrate": "66%",
+    "rank": "gold"
+  },
+  {
+    "name": "junioaline",
+    "team": "magma",
+    "winrate": "29%",
+    "rank": ""
+  },
+  {
+    "name": "Juracrav",
+    "team": "skull",
+    "winrate": "17%",
+    "rank": "bronze"
+  },
+  {
+    "name": "lahkehl",
+    "team": "flare",
+    "winrate": "53%",
+    "rank": "silver"
+  },
+  {
+    "name": "LetMKS",
+    "team": "skull",
+    "winrate": "66%",
+    "rank": ""
+  },
+  {
+    "name": "LeoJesus55",
+    "team": "rocket",
+    "winrate": "14%",
+    "rank": "silver"
+  },
+  {
+    "name": "llTk87ll",
+    "team": "magma",
+    "winrate": "77%",
+    "rank": "silver"
+  },
+  {
+    "name": "LuksBertolli",
+    "team": "magma",
+    "winrate": "41%",
+    "rank": "silver"
+  },
+  {
+    "name": "MaikTheOne",
+    "team": "plasma",
+    "winrate": "33%",
+    "rank": ""
+  },
+  {
+    "name": "Mamazzaro",
+    "team": "rocket",
+    "winrate": "56%",
+    "rank": "silver"
+  },
+  {
+    "name": "Manfrim11",
+    "team": "galactic",
+    "winrate": "66%",
+    "rank": "gold"
+  },
+  {
+    "name": "Marcelo69",
+    "team": "skull",
+    "winrate": "72%",
+    "rank": "gold"
+  },
+  {
+    "name": "marcioljunior",
+    "team": "galactic",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "MareFrz",
+    "team": "skull",
+    "winrate": "0%",
+    "rank": ""
+  },
+  {
+    "name": "MasterLineYr",
+    "team": "plasma",
+    "winrate": "62%",
+    "rank": "gold"
+  },
+  {
+    "name": "Matabanguela",
+    "team": "magma",
+    "winrate": "70%",
+    "rank": "gold"
+  },
+  {
+    "name": "MauColella",
+    "team": "aqua",
+    "winrate": "28%",
+    "rank": ""
+  },
+  {
+    "name": "mestreDohko",
+    "team": "rocket",
+    "winrate": "49%",
+    "rank": "gold"
+  },
+  {
+    "name": "mi88akz",
+    "team": "rocket",
+    "winrate": "0%",
+    "rank": "bronze"
+  },
+  {
+    "name": "mcbrublue",
+    "team": "aqua",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "MuraKamiGu",
+    "team": "magma",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "Nietzsche968",
+    "team": "galactic",
+    "winrate": "72%",
+    "rank": "silver"
+  },
+  {
+    "name": "Nyrskh",
+    "team": "magma",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "Oftentimes7",
+    "team": "rocket",
+    "winrate": "64%",
+    "rank": "gold"
+  },
+  {
+    "name": "Pamps2805",
+    "team": "skull",
+    "winrate": "63%",
+    "rank": "silver"
+  },
+  {
+    "name": "Patyeiko",
+    "team": "rocket",
+    "winrate": "15%",
+    "rank": "bronze"
+  },
+  {
+    "name": "PedrinhoGamarra",
+    "team": "plasma",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "qdeza",
+    "team": "galactic",
+    "winrate": "9%",
+    "rank": "bronze"
+  },
+  {
+    "name": "QueenBelinha",
+    "team": "aqua",
+    "winrate": "51%",
+    "rank": "gold"
+  },
+  {
+    "name": "RaulAV1",
+    "team": "galactic",
+    "winrate": "47%",
+    "rank": "gold"
+  },
+  {
+    "name": "Ravenaut",
+    "team": "magma",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "RedZoom",
+    "team": "magma",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "RegininhaKa",
+    "team": "flare",
+    "winrate": "38%",
+    "rank": ""
+  },
+  {
+    "name": "reidoidao",
+    "team": "magma",
+    "winrate": "59%",
+    "rank": ""
+  },
+  {
+    "name": "renansuz",
+    "team": "aqua",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "rikardolima",
+    "team": "galactic",
+    "winrate": "31%",
+    "rank": "silver"
+  },
+  {
+    "name": "Rodrigorav4",
+    "team": "skull",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "Rsscoach",
+    "team": "aqua",
+    "winrate": "86%",
+    "rank": "gold"
+  },
+  {
+    "name": "SinGoLfaiRe",
+    "team": "galactic",
+    "winrate": "37%",
+    "rank": "silver"
+  },
+  {
+    "name": "Sralador",
+    "team": "aqua",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "Tatinick82",
+    "team": "plasma",
+    "winrate": "11%",
+    "rank": "silver"
+  },
+  {
+    "name": "Teresak1",
+    "team": "magma",
+    "winrate": "22%",
+    "rank": "silver"
+  },
+  {
+    "name": "TgoSorelli",
+    "team": "flare",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "Thacod",
+    "team": "aqua",
+    "winrate": "5%",
+    "rank": "bronze"
+  },
+  {
+    "name": "TioSan2108",
+    "team": "rocket",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "Tiringstorm34",
+    "team": "plasma",
+    "winrate": "28%",
+    "rank": "silver"
+  },
+  {
+    "name": "TomDSantos",
+    "team": "aqua",
+    "winrate": "69%",
+    "rank": "silver"
+  },
+  {
+    "name": "TsuSetoguchi",
+    "team": "skull",
+    "winrate": "",
+    "rank": ""
+  },
+  {
+    "name": "VanEdipo",
+    "team": "plasma",
+    "winrate": "70%",
+    "rank": "gold"
+  },
+  {
+    "name": "vib",
+    "team": "skull",
+    "winrate": "83%",
+    "rank": "gold"
+  },
+  {
+    "name": "VicTavares",
+    "team": "flare",
+    "winrate": "71%",
+    "rank": "gold"
+  },
+  {
+    "name": "WallanLima16",
+    "team": "galactic",
+    "winrate": "25%",
+    "rank": "silver"
+  },
+  {
+    "name": "wapinh",
+    "team": "rocket",
+    "winrate": "54%",
+    "rank": "silver"
+  },
+  {
+    "name": "Weltson",
+    "team": "plasma",
+    "winrate": "",
+    "rank": "bronze"
+  },
+  {
+    "name": "Yeyas81",
+    "team": "magma",
+    "winrate": "53%",
+    "rank": "bronze"
+  },
+  {
+    "name": "ZuziaMao",
+    "team": "flare",
+    "winrate": "74%",
+    "rank": ""
+  }
+ ]
