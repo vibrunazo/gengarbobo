@@ -78,6 +78,9 @@ export class CupTable {
     if (!players) {
       players = Liga.getAllPlayers();
       players = players.filter(p => p.getRank() !== Rank.None);
+      // console.log(players);
+      this.log(players.toString());
+
     }
     this.rules = new CupRules(players);
   }
@@ -170,6 +173,7 @@ export class CupTable {
     if (!nivel) { nivelName = 'qualquer nível'; }
     this.log(`Procurando ${max} inimigos ${nivelName} para ${player.getName()}`);
     let enemies = player.getEnemies();
+
     enemies = this.whichPlayersCanStillBattle(player, enemies);
     if (nivel !== undefined) { enemies = enemies.filter(e => e.getNivel() === nivel); }
     // this.log(enemies.length.toString());
@@ -200,8 +204,11 @@ export class CupTable {
   // containing only the input Players who still has less than the max amount of matches
   // and who have not yet battled 'player'
   whichPlayersCanStillBattle(player: Player, enemies: Player[]): Player[] {
+    // remove enemies not in this tournament
+    enemies = enemies.filter( p => this.rules.players.includes(p) );
+    // remove enemies who played more than 9 battles (or whatever is the max for this tournament)
     enemies = enemies.filter( p => !this.playerHasMaxBattles(p) );
-    enemies = enemies.filter( p => !this.playerHasMaxBattles(p) );
+    // remove enemies that this player already has a battle against
     enemies = enemies.filter( p => !this.doesBattleExist(player, p));
 
     return enemies;
