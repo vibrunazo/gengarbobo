@@ -72,6 +72,8 @@ export class CupTable {
   matches: Match[] = [];
   rules: CupRules;
   summ: Map<Player, PlayerSummary> = new Map<Player, PlayerSummary>();
+  diagPlayersWithMaxBattles = 0;
+  diagPlayersWithoutMaxBattles = 0;
   cupLog: string[] = [];
 
   constructor(players?: Player[]) {
@@ -109,12 +111,18 @@ export class CupTable {
       const saf = s.matchesAgainst.get(Nivel.Safira);
       this.log(`${p.getName()} tem ${s.matches} total de lutas. ${dia} contra Diamantes, ${rub} contra Rubis e ${saf} contra Safiras.`);
     });
+    this.log(`Jogadores com ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithMaxBattles}`);
+    this.log(`Jogadores sem ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithoutMaxBattles}`);
   }
 
   setSummaries() {
     this.matches.forEach(m => {
       this.setSummForPlayer(m.p1, m.p2);
       this.setSummForPlayer(m.p2, m.p1);
+    });
+
+    this.summ.forEach((s, p) => {
+      if (this.playerHasMaxBattles(p)) { this.diagPlayersWithMaxBattles++; } else { this.diagPlayersWithoutMaxBattles++; }
     });
   }
 
@@ -129,6 +137,7 @@ export class CupTable {
     const ma = this.summ.get(player).matchesAgainst.get(enemy.getNivel());
     this.summ.get(player).matchesAgainst.set(enemy.getNivel(), ma + 1);
   }
+
 
   buildMatches() {
     let players =  this.rules.players;

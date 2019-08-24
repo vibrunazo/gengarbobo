@@ -1094,3 +1094,5 @@ VanEdipo tem 8 total de lutas. 4 contra Diamantes, 4 contra Rubis e 0 contra Saf
 VicTavares tem 9 total de lutas. 5 contra Diamantes, 4 contra Rubis e 0 contra Safiras.
 Rsscoach tem 4 total de lutas. 3 contra Diamantes, 1 contra Rubis e 0 contra Safiras.
 vib tem 5 total de lutas. 3 contra Diamantes, 2 contra Rubis e 0 contra Safiras.
+Jogadores com 9 batalhas: 67
+Jogadores sem 9 batalhas: 4
