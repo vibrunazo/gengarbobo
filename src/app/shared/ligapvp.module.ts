@@ -67,14 +67,60 @@ class PlayerSummary {
   }
 }
 
-// the list of matches on a tournament
+// will generate multiple CupTables to find the best one
+export class CupTableGenerator {
+  tables: CupTable[] = [];
+  best: CupTable;
+
+  constructor() {
+    this.buildCups();
+    this.findBestCup();
+  }
+
+  buildCups() {
+    const n = 1000;
+
+    for (let i = 0; i < n; i++) {
+      const cup = new CupTable();
+      cup.buildMatches();
+      this.tables.push(cup);
+    }
+  }
+
+  findBestCup() {
+    let low = this.tables[0].rules.players.length;
+    let low2 = 500;
+    this.tables.forEach(c => {
+      const thisCup = c.diagPlayersWithoutMaxBattles;
+      const thisBadTier = c.diagMatchesBadTier;
+      // console.log(`this: ${thisCup}`);
+
+      if (thisCup < low) {
+        low = thisCup;
+        this.best = c;
+        // console.log(`best: ${this.best}`);
+      } else if (thisCup === low) {
+        if (thisBadTier < low2) {
+          low2 = thisBadTier;
+          this.best = c;
+        }
+      }
+
+    });
+  }
+
+}
+
+// the list of matches on a tournament, or tournament schedule
 export class CupTable {
   matches: Match[] = [];
   rules: CupRules;
   summ: Map<Player, PlayerSummary> = new Map<Player, PlayerSummary>();
   diagPlayersWithMaxBattles = 0;
   diagPlayersWithoutMaxBattles = 0;
+  diagMatchesBadTier = 0;
   cupLog: string[] = [];
+  seed = 0;
 
   constructor(players?: Player[]) {
     if (!players) {
@@ -104,15 +150,34 @@ export class CupTable {
     return result;
   }
 
+  // check if this player has the right number of matches against each tier of enemies
+  checkMatcherPerTier(s: PlayerSummary, p: Player) {
+    const ruleDia = this.rules.matchesPerNivel[p.getNivel()][Nivel.Diamante];
+    const ruleRub = this.rules.matchesPerNivel[p.getNivel()][Nivel.Rubi];
+    const ruleSaf = this.rules.matchesPerNivel[p.getNivel()][Nivel.Safira];
+    const myDia = s.matchesAgainst.get(Nivel.Diamante);
+    const myRub = s.matchesAgainst.get(Nivel.Rubi);
+    const mySaf = s.matchesAgainst.get(Nivel.Safira);
+    const issDia = Math.abs(ruleDia - myDia);
+    const issRub = Math.abs(ruleRub - myRub);
+    const issSaf = Math.abs(ruleSaf - mySaf);
+    const dia = `${myDia}/${ruleDia}`;
+    const rub = `${myRub}/${ruleRub}`;
+    const saf = `${mySaf}/${ruleSaf}`;
+    const issues = issDia + issRub + issSaf;
+    this.diagMatchesBadTier += issues;
+    this.log(`${p.getName()} tem ${s.matches} total de lutas. ${dia} contra Diamantes, ${rub} contra Rubis e ${saf} contra Safiras.
+    ${issues} problemas.`);
+
+  }
+
   checkSummaries() {
     this.summ.forEach((s, p) => {
-      const dia = s.matchesAgainst.get(Nivel.Diamante);
-      const rub = s.matchesAgainst.get(Nivel.Rubi);
-      const saf = s.matchesAgainst.get(Nivel.Safira);
-      this.log(`${p.getName()} tem ${s.matches} total de lutas. ${dia} contra Diamantes, ${rub} contra Rubis e ${saf} contra Safiras.`);
+      this.checkMatcherPerTier(s, p);
     });
     this.log(`Jogadores com ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithMaxBattles}`);
     this.log(`Jogadores sem ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithoutMaxBattles}`);
+    this.log(`Batalhas de tier errado: ${this.diagMatchesBadTier}`);
   }
 
   setSummaries() {
@@ -154,6 +219,7 @@ export class CupTable {
 
   findMatchesForPlayer(player: Player) {
     this.log(`Procurando lutas para ${player.getName()}`);
+    // this.matches = this.matches.concat(this.findMatchesPerNivel(player, undefined, 9));
     this.matches = this.matches.concat(this.findMatchesPerNivel(player, Nivel.Safira));
     this.matches = this.matches.concat(this.findMatchesPerNivel(player, Nivel.Rubi));
     this.matches = this.matches.concat(this.findMatchesPerNivel(player, Nivel.Diamante));
@@ -182,6 +248,8 @@ export class CupTable {
     if (!nivel) { nivelName = 'qualquer nível'; }
     this.log(`Procurando ${max} inimigos ${nivelName} para ${player.getName()}`);
     let enemies = player.getEnemies();
+    // let enemies = this.rules.players;
+    enemies = enemies.filter(e => e !== player);
 
     enemies = this.whichPlayersCanStillBattle(player, enemies);
     if (nivel !== undefined) { enemies = enemies.filter(e => e.getNivel() === nivel); }
@@ -200,13 +268,28 @@ export class CupTable {
       }
     }
     for (let i = 1; i <= max; i++) {
-      this.log(`Inimigo ${i} será ${enemies[i - 1].getName()}`);
-      result.push(new Match(player, enemies[i - 1]));
+      const nextEnemy = this.rngPickOne(enemies);
+      this.log(`Inimigo ${i} será ${nextEnemy.getName()}`);
+      result.push(new Match(player, nextEnemy));
     }
 
     // console.log(result);
 
     return result;
+  }
+
+  // pick one enemy for this player
+  rngPickOne(enemies: Player[]) {
+    const i = getRandomInt(0, enemies.length);
+    const result = enemies[i];
+    enemies.splice(i, 1);
+    return result;
+
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
   }
 
   // given an array 'enemies' of Players, return another array of Players

@@ -5,7 +5,7 @@
 // then generate matches for a cup
 
 import * as fs from 'fs';
-import {Player, Liga, Nivel, Rank, CupTable} from '../src/app/shared/ligapvp.module';
+import {Player, Liga, Nivel, Rank, CupTable, CupTableGenerator} from '../src/app/shared/ligapvp.module';
 
 
 console.log('liga pvp script running');
@@ -31,8 +31,9 @@ function getMatches() {
   // const names = enemies.map((e) => e.getName());
   // console.log(names);
 
-  const cup = new CupTable();
-  cup.buildMatches();
+  const cups = new CupTableGenerator();
+  const cup = cups.best;
+  // cup.buildMatches();
   saveToFile(cup);
 }
 
