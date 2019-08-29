@@ -1,4 +1,7 @@
-import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  HAMMER_GESTURE_CONFIG
+} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,17 +30,34 @@ import { DexComponent } from './dex/dex.component';
 import { AboutComponent } from './about/about.component';
 import { IvComponent } from './iv/iv.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MinValueValidator, MaxValueValidator } from './shared/minmax.directive';
+import {
+  MinValueValidator,
+  MaxValueValidator
+} from './shared/minmax.directive';
 import { TableComponent } from './iv/table/table.component';
 import { MyGestureConfig } from './my-gesture-config';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PktableComponent } from './dex/pktable/pktable.component';
 import { SummaryComponent } from './iv/summary/summary.component';
+import { LigapvpComponent } from './ligapvp/ligapvp.component';
 
 @NgModule({
-  declarations: [AppComponent, MainnavComponent, NewsComponent, DexComponent,
-    AboutComponent, IvComponent, MinValueValidator, MaxValueValidator, TableComponent, FooterComponent, PktableComponent, SummaryComponent],
+  declarations: [
+    AppComponent,
+    MainnavComponent,
+    NewsComponent,
+    DexComponent,
+    AboutComponent,
+    IvComponent,
+    MinValueValidator,
+    MaxValueValidator,
+    TableComponent,
+    FooterComponent,
+    PktableComponent,
+    SummaryComponent,
+    LigapvpComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
