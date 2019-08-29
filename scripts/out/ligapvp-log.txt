@@ -2,18 +2,26 @@
 Procurando lutas para BarbaKetchum
 Procurando 5 inimigos Safira para BarbaKetchum
 Sobraram apenas 4 inimigos Safira para BarbaKetchum
-Inimigo 1 será JimbobAzul
+Inimigo 1 será TgoSorelli
+Nova batalha: BarbaKetchum x TgoSorelli
 Inimigo 2 será Brabrinha
+Nova batalha: BarbaKetchum x Brabrinha
 Inimigo 3 será RaulAV1
-Inimigo 4 será TgoSorelli
+Nova batalha: BarbaKetchum x RaulAV1
+Inimigo 4 será JimbobAzul
+Nova batalha: BarbaKetchum x JimbobAzul
 Procurando 2 inimigos Rubi para BarbaKetchum
 BarbaKetchum já tem 4 batalhas.
-Inimigo 1 será Yeyas81
-Inimigo 2 será Manfrim11
+Inimigo 1 será QueenBelinha
+Nova batalha: BarbaKetchum x QueenBelinha
+Inimigo 2 será Yeyas81
+Nova batalha: BarbaKetchum x Yeyas81
 Procurando 2 inimigos Diamante para BarbaKetchum
 BarbaKetchum já tem 6 batalhas.
 Inimigo 1 será Atilajg
+Nova batalha: BarbaKetchum x Atilajg
 Inimigo 2 será llTk87ll
+Nova batalha: BarbaKetchum x llTk87ll
 BarbaKetchum tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos Safira para BarbaKetchum
 Sobraram apenas 0 inimigos Safira para BarbaKetchum
@@ -22,35 +30,52 @@ BarbaKetchum tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos qualquer nível para BarbaKetchum
 BarbaKetchum já tem 8 batalhas.
 Inimigo 1 será guiblima
+Nova batalha: BarbaKetchum x guiblima
 Procurando lutas para haakaishin
 Procurando 5 inimigos Safira para haakaishin
 Inimigo 1 será DavidFirmin0
-Inimigo 2 será Brabrinha
-Inimigo 3 será mestreDohko
-Inimigo 4 será MuraKamiGu
-Inimigo 5 será eanassu
+Nova batalha: haakaishin x DavidFirmin0
+Inimigo 2 será mestreDohko
+Nova batalha: haakaishin x mestreDohko
+Inimigo 3 será MuraKamiGu
+Nova batalha: haakaishin x MuraKamiGu
+Inimigo 4 será eanassu
+Nova batalha: haakaishin x eanassu
+Inimigo 5 será Brabrinha
+Nova batalha: haakaishin x Brabrinha
 Procurando 2 inimigos Rubi para haakaishin
 haakaishin já tem 5 batalhas.
-Inimigo 1 será guiblima
-Inimigo 2 será GinoLucca
+Inimigo 1 será GinoLucca
+Nova batalha: haakaishin x GinoLucca
+Inimigo 2 será guiblima
+Nova batalha: haakaishin x guiblima
 Procurando 2 inimigos Diamante para haakaishin
 haakaishin já tem 7 batalhas.
-Inimigo 1 será llTk87ll
-Inimigo 2 será Atilajg
+Inimigo 1 será Atilajg
+Nova batalha: haakaishin x Atilajg
+Inimigo 2 será Marcelo69
+Nova batalha: haakaishin x Marcelo69
 Procurando lutas para Weltson
 Procurando 5 inimigos Safira para Weltson
 Sobraram apenas 3 inimigos Safira para Weltson
-Inimigo 1 será mestreDohko
-Inimigo 2 será Patyeiko
-Inimigo 3 será Brabrinha
+Inimigo 1 será Brabrinha
+Nova batalha: Weltson x Brabrinha
+Inimigo 2 será mestreDohko
+Nova batalha: Weltson x mestreDohko
+Inimigo 3 será Patyeiko
+Nova batalha: Weltson x Patyeiko
 Procurando 2 inimigos Rubi para Weltson
 Weltson já tem 3 batalhas.
-Inimigo 1 será Allanlima04
-Inimigo 2 será QueenBelinha
+Inimigo 1 será QueenBelinha
+Nova batalha: Weltson x QueenBelinha
+Inimigo 2 será Manfrim11
+Nova batalha: Weltson x Manfrim11
 Procurando 2 inimigos Diamante para Weltson
 Weltson já tem 5 batalhas.
-Inimigo 1 será GassanBr
+Inimigo 1 será vib
+Nova batalha: Weltson x vib
 Inimigo 2 será llTk87ll
+Nova batalha: Weltson x llTk87ll
 Weltson tem 7 batalhas e ainda precisa de 2 batalhas pra completar 9
 Procurando 2 inimigos Safira para Weltson
 Sobraram apenas 0 inimigos Safira para Weltson
@@ -58,21 +83,29 @@ Weltson já tem 7 batalhas.
 Weltson tem 7 batalhas e ainda precisa de 2 batalhas pra completar 9
 Procurando 2 inimigos qualquer nível para Weltson
 Weltson já tem 7 batalhas.
-Inimigo 1 será c4i00
-Inimigo 2 será 13JCruel13
+Inimigo 1 será 13JCruel13
+Nova batalha: Weltson x 13JCruel13
+Inimigo 2 será Marcelo69
+Nova batalha: Weltson x Marcelo69
 Procurando lutas para chernandes10
 Procurando 5 inimigos Safira para chernandes10
 Sobraram apenas 2 inimigos Safira para chernandes10
 Inimigo 1 será WallanLima16
+Nova batalha: chernandes10 x WallanLima16
 Inimigo 2 será mi88akz
+Nova batalha: chernandes10 x mi88akz
 Procurando 2 inimigos Rubi para chernandes10
 chernandes10 já tem 2 batalhas.
-Inimigo 1 será GinoLucca
-Inimigo 2 será Manfrim11
+Inimigo 1 será Manfrim11
+Nova batalha: chernandes10 x Manfrim11
+Inimigo 2 será Pamps2805
+Nova batalha: chernandes10 x Pamps2805
 Procurando 2 inimigos Diamante para chernandes10
 chernandes10 já tem 4 batalhas.
-Inimigo 1 será 13JCruel13
-Inimigo 2 será vib
+Inimigo 1 será Marcelo69
+Nova batalha: chernandes10 x Marcelo69
+Inimigo 2 será 13JCruel13
+Nova batalha: chernandes10 x 13JCruel13
 chernandes10 tem 6 batalhas e ainda precisa de 3 batalhas pra completar 9
 Procurando 3 inimigos Safira para chernandes10
 Sobraram apenas 0 inimigos Safira para chernandes10
@@ -81,23 +114,34 @@ chernandes10 tem 6 batalhas e ainda precisa de 3 batalhas pra completar 9
 Procurando 3 inimigos qualquer nível para chernandes10
 chernandes10 já tem 6 batalhas.
 Inimigo 1 será VanEdipo
-Inimigo 2 será Rsscoach
-Inimigo 3 será GassanBr
+Nova batalha: chernandes10 x VanEdipo
+Inimigo 2 será VicTavares
+Nova batalha: chernandes10 x VicTavares
+Inimigo 3 será Mamazzaro
+Nova batalha: chernandes10 x Mamazzaro
 Procurando lutas para HenryRattlehead
 Procurando 5 inimigos Safira para HenryRattlehead
 Sobraram apenas 4 inimigos Safira para HenryRattlehead
-Inimigo 1 será RaulAV1
+Inimigo 1 será PedrinhoGamarra
+Nova batalha: HenryRattlehead x PedrinhoGamarra
 Inimigo 2 será TgoSorelli
-Inimigo 3 será JimbobAzul
-Inimigo 4 será PedrinhoGamarra
+Nova batalha: HenryRattlehead x TgoSorelli
+Inimigo 3 será RaulAV1
+Nova batalha: HenryRattlehead x RaulAV1
+Inimigo 4 será JimbobAzul
+Nova batalha: HenryRattlehead x JimbobAzul
 Procurando 2 inimigos Rubi para HenryRattlehead
 HenryRattlehead já tem 4 batalhas.
-Inimigo 1 será GinoLucca
-Inimigo 2 será Manfrim11
+Inimigo 1 será Manfrim11
+Nova batalha: HenryRattlehead x Manfrim11
+Inimigo 2 será BinhoZica01
+Nova batalha: HenryRattlehead x BinhoZica01
 Procurando 2 inimigos Diamante para HenryRattlehead
 HenryRattlehead já tem 6 batalhas.
-Inimigo 1 será vib
-Inimigo 2 será VicTavares
+Inimigo 1 será Rsscoach
+Nova batalha: HenryRattlehead x Rsscoach
+Inimigo 2 será Helior44
+Nova batalha: HenryRattlehead x Helior44
 HenryRattlehead tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos Safira para HenryRattlehead
 Sobraram apenas 0 inimigos Safira para HenryRattlehead
@@ -105,22 +149,31 @@ HenryRattlehead já tem 8 batalhas.
 HenryRattlehead tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos qualquer nível para HenryRattlehead
 HenryRattlehead já tem 8 batalhas.
-Inimigo 1 será BinhoZica01
+Inimigo 1 será VicTavares
+Nova batalha: HenryRattlehead x VicTavares
 Procurando lutas para didisantista
 Procurando 5 inimigos Safira para didisantista
 Sobraram apenas 4 inimigos Safira para didisantista
-Inimigo 1 será LeoJesus55
+Inimigo 1 será Douglete011
+Nova batalha: didisantista x Douglete011
 Inimigo 2 será Patyeiko
+Nova batalha: didisantista x Patyeiko
 Inimigo 3 será Diogenest
-Inimigo 4 será Douglete011
+Nova batalha: didisantista x Diogenest
+Inimigo 4 será LeoJesus55
+Nova batalha: didisantista x LeoJesus55
 Procurando 2 inimigos Rubi para didisantista
 didisantista já tem 4 batalhas.
-Inimigo 1 será TomDSantos
+Inimigo 1 será MasterLineYr
+Nova batalha: didisantista x MasterLineYr
 Inimigo 2 será Matabanguela
+Nova batalha: didisantista x Matabanguela
 Procurando 2 inimigos Diamante para didisantista
 didisantista já tem 6 batalhas.
-Inimigo 1 será Rsscoach
-Inimigo 2 será Marcelo69
+Inimigo 1 será Helior44
+Nova batalha: didisantista x Helior44
+Inimigo 2 será vib
+Nova batalha: didisantista x vib
 didisantista tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos Safira para didisantista
 Sobraram apenas 0 inimigos Safira para didisantista
@@ -128,35 +181,51 @@ didisantista já tem 8 batalhas.
 didisantista tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos qualquer nível para didisantista
 didisantista já tem 8 batalhas.
-Inimigo 1 será MasterLineYr
+Inimigo 1 será c4i00
+Nova batalha: didisantista x c4i00
 Procurando lutas para MuraKamiGu
 Procurando 5 inimigos Safira para MuraKamiGu
 Sobraram apenas 4 inimigos Safira para MuraKamiGu
 MuraKamiGu já tem 1 batalhas.
-Inimigo 1 será PedrinhoGamarra
-Inimigo 2 será 123CatBond
-Inimigo 3 será marcioljunior
-Inimigo 4 será Douglete011
+Inimigo 1 será 123CatBond
+Nova batalha: MuraKamiGu x 123CatBond
+Inimigo 2 será Douglete011
+Nova batalha: MuraKamiGu x Douglete011
+Inimigo 3 será PedrinhoGamarra
+Nova batalha: MuraKamiGu x PedrinhoGamarra
+Inimigo 4 será marcioljunior
+Nova batalha: MuraKamiGu x marcioljunior
 Procurando 2 inimigos Rubi para MuraKamiGu
 MuraKamiGu já tem 5 batalhas.
-Inimigo 1 será wapinh
-Inimigo 2 será Manfrim11
+Inimigo 1 será MasterLineYr
+Nova batalha: MuraKamiGu x MasterLineYr
+Inimigo 2 será Pamps2805
+Nova batalha: MuraKamiGu x Pamps2805
 Procurando 2 inimigos Diamante para MuraKamiGu
 MuraKamiGu já tem 7 batalhas.
-Inimigo 1 será Helior44
+Inimigo 1 será 13JCruel13
+Nova batalha: MuraKamiGu x 13JCruel13
 Inimigo 2 será Marcelo69
+Nova batalha: MuraKamiGu x Marcelo69
 Procurando lutas para PedrinhoGamarra
 Procurando 5 inimigos Safira para PedrinhoGamarra
 PedrinhoGamarra já tem 2 batalhas.
-Inimigo 1 será DavidFirmin0
-Inimigo 2 será RaulAV1
-Inimigo 3 será TgoSorelli
-Inimigo 4 será Guilram91
-Inimigo 5 será Douglete011
+Inimigo 1 será Guilram91
+Nova batalha: PedrinhoGamarra x Guilram91
+Inimigo 2 será Douglete011
+Nova batalha: PedrinhoGamarra x Douglete011
+Inimigo 3 será DavidFirmin0
+Nova batalha: PedrinhoGamarra x DavidFirmin0
+Inimigo 4 será Patyeiko
+Nova batalha: PedrinhoGamarra x Patyeiko
+Inimigo 5 será RaulAV1
+Nova batalha: PedrinhoGamarra x RaulAV1
 Procurando 2 inimigos Rubi para PedrinhoGamarra
 PedrinhoGamarra já tem 7 batalhas.
-Inimigo 1 será Manfrim11
-Inimigo 2 será Mamazzaro
+Inimigo 1 será Mamazzaro
+Nova batalha: PedrinhoGamarra x Mamazzaro
+Inimigo 2 será Manfrim11
+Nova batalha: PedrinhoGamarra x Manfrim11
 Procurando 2 inimigos Diamante para PedrinhoGamarra
 PedrinhoGamarra já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
@@ -165,77 +234,119 @@ Procurando 5 inimigos Safira para LeoJesus55
 Sobraram apenas 4 inimigos Safira para LeoJesus55
 LeoJesus55 já tem 1 batalhas.
 Inimigo 1 será Tatinick82
+Nova batalha: LeoJesus55 x Tatinick82
 Inimigo 2 será Brabrinha
-Inimigo 3 será Douglete011
-Inimigo 4 será marcioljunior
+Nova batalha: LeoJesus55 x Brabrinha
+Inimigo 3 será marcioljunior
+Nova batalha: LeoJesus55 x marcioljunior
+Inimigo 4 será Douglete011
+Nova batalha: LeoJesus55 x Douglete011
 Procurando 2 inimigos Rubi para LeoJesus55
 LeoJesus55 já tem 5 batalhas.
-Inimigo 1 será GinoLucca
+Inimigo 1 será MasterLineYr
+Nova batalha: LeoJesus55 x MasterLineYr
 Inimigo 2 será Didideluca
+Nova batalha: LeoJesus55 x Didideluca
 Procurando 2 inimigos Diamante para LeoJesus55
 LeoJesus55 já tem 7 batalhas.
-Inimigo 1 será GassanBr
-Inimigo 2 será Marcelo69
+Inimigo 1 será llTk87ll
+Nova batalha: LeoJesus55 x llTk87ll
+Inimigo 2 será AlekaSabbag
+Nova batalha: LeoJesus55 x AlekaSabbag
 Procurando lutas para Juracrav
 Procurando 5 inimigos Safira para Juracrav
-Inimigo 1 será RaulAV1
-Inimigo 2 será LuksBertolli
-Inimigo 3 será Brabrinha
+Inimigo 1 será LuksBertolli
+Nova batalha: Juracrav x LuksBertolli
+Inimigo 2 será RaulAV1
+Nova batalha: Juracrav x RaulAV1
+Inimigo 3 será Thacod
+Nova batalha: Juracrav x Thacod
 Inimigo 4 será DGKetchum1
-Inimigo 5 será rikardolima
+Nova batalha: Juracrav x DGKetchum1
+Inimigo 5 será Brabrinha
+Nova batalha: Juracrav x Brabrinha
 Procurando 2 inimigos Rubi para Juracrav
 Juracrav já tem 5 batalhas.
-Inimigo 1 será MasterLineYr
-Inimigo 2 será TomDSantos
+Inimigo 1 será VanEdipo
+Nova batalha: Juracrav x VanEdipo
+Inimigo 2 será josenkio
+Nova batalha: Juracrav x josenkio
 Procurando 2 inimigos Diamante para Juracrav
 Juracrav já tem 7 batalhas.
-Inimigo 1 será GassanBr
-Inimigo 2 será Helior44
+Inimigo 1 será Helior44
+Nova batalha: Juracrav x Helior44
+Inimigo 2 será Rsscoach
+Nova batalha: Juracrav x Rsscoach
 Procurando lutas para qdeza
 Procurando 5 inimigos Safira para qdeza
 Inimigo 1 será GuiMi19
-Inimigo 2 será mestreDohko
-Inimigo 3 será Allma68
-Inimigo 4 será Diogenest
+Nova batalha: qdeza x GuiMi19
+Inimigo 2 será Allma68
+Nova batalha: qdeza x Allma68
+Inimigo 3 será Brabrinha
+Nova batalha: qdeza x Brabrinha
+Inimigo 4 será JimbobAzul
+Nova batalha: qdeza x JimbobAzul
 Inimigo 5 será 123CatBond
+Nova batalha: qdeza x 123CatBond
 Procurando 2 inimigos Rubi para qdeza
 qdeza já tem 5 batalhas.
-Inimigo 1 será guiblima
-Inimigo 2 será QueenBelinha
+Inimigo 1 será FabianoCoelho
+Nova batalha: qdeza x FabianoCoelho
+Inimigo 2 será Mamazzaro
+Nova batalha: qdeza x Mamazzaro
 Procurando 2 inimigos Diamante para qdeza
 qdeza já tem 7 batalhas.
 Inimigo 1 será Helior44
-Inimigo 2 será Rsscoach
+Nova batalha: qdeza x Helior44
+Inimigo 2 será llTk87ll
+Nova batalha: qdeza x llTk87ll
 Procurando lutas para Thacod
 Procurando 5 inimigos Safira para Thacod
-Inimigo 1 será 123CatBond
-Inimigo 2 será JimbobAzul
-Inimigo 3 será RaulAV1
+Thacod já tem 1 batalhas.
+Inimigo 1 será Brabrinha
+Nova batalha: Thacod x Brabrinha
+Inimigo 2 será RaulAV1
+Nova batalha: Thacod x RaulAV1
+Inimigo 3 será GuiMi19
+Nova batalha: Thacod x GuiMi19
 Inimigo 4 será Tiringstorm34
-Inimigo 5 será GuiMi19
+Nova batalha: Thacod x Tiringstorm34
+Inimigo 5 será 123CatBond
+Nova batalha: Thacod x 123CatBond
 Procurando 2 inimigos Rubi para Thacod
-Thacod já tem 5 batalhas.
-Inimigo 1 será Didideluca
+Thacod já tem 6 batalhas.
+Inimigo 1 será Mamazzaro
+Nova batalha: Thacod x Mamazzaro
 Inimigo 2 será MasterLineYr
+Nova batalha: Thacod x MasterLineYr
 Procurando 2 inimigos Diamante para Thacod
-Thacod já tem 7 batalhas.
-Inimigo 1 será Gsaito87
-Inimigo 2 será Helior44
+Thacod já tem 8 batalhas.
+Reduzindo busca para 1 inimigos.
+Inimigo 1 será Marcelo69
+Nova batalha: Thacod x Marcelo69
 Procurando lutas para WallanLima16
 Procurando 5 inimigos Safira para WallanLima16
 Sobraram apenas 3 inimigos Safira para WallanLima16
 WallanLima16 já tem 1 batalhas.
-Inimigo 1 será Douglete011
-Inimigo 2 será Patyeiko
-Inimigo 3 será Tatinick82
+Inimigo 1 será Tatinick82
+Nova batalha: WallanLima16 x Tatinick82
+Inimigo 2 será Douglete011
+Nova batalha: WallanLima16 x Douglete011
+Inimigo 3 será Patyeiko
+Nova batalha: WallanLima16 x Patyeiko
 Procurando 2 inimigos Rubi para WallanLima16
 WallanLima16 já tem 4 batalhas.
 Inimigo 1 será QueenBelinha
-Inimigo 2 será MasterLineYr
+Nova batalha: WallanLima16 x QueenBelinha
+Inimigo 2 será Oftentimes7
+Nova batalha: WallanLima16 x Oftentimes7
 Procurando 2 inimigos Diamante para WallanLima16
 WallanLima16 já tem 6 batalhas.
-Inimigo 1 será Rsscoach
-Inimigo 2 será Atilajg
+Inimigo 1 será llTk87ll
+Nova batalha: WallanLima16 x llTk87ll
+Inimigo 2 será Rsscoach
+Nova batalha: WallanLima16 x Rsscoach
 WallanLima16 tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos Safira para WallanLima16
 Sobraram apenas 0 inimigos Safira para WallanLima16
@@ -243,157 +354,232 @@ WallanLima16 já tem 8 batalhas.
 WallanLima16 tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
 Procurando 1 inimigos qualquer nível para WallanLima16
 WallanLima16 já tem 8 batalhas.
-Inimigo 1 será Gsaito87
+Inimigo 1 será VanEdipo
+Nova batalha: WallanLima16 x VanEdipo
 Procurando lutas para HigashiRicardo
 Procurando 5 inimigos Safira para HigashiRicardo
 Inimigo 1 será RaulAV1
-Inimigo 2 será 123CatBond
-Inimigo 3 será Douglete011
-Inimigo 4 será SinGoLfaiRe
-Inimigo 5 será rikardolima
+Nova batalha: HigashiRicardo x RaulAV1
+Inimigo 2 será Diogenest
+Nova batalha: HigashiRicardo x Diogenest
+Inimigo 3 será SinGoLfaiRe
+Nova batalha: HigashiRicardo x SinGoLfaiRe
+Inimigo 4 será rikardolima
+Nova batalha: HigashiRicardo x rikardolima
+Inimigo 5 será Douglete011
+Nova batalha: HigashiRicardo x Douglete011
 Procurando 2 inimigos Rubi para HigashiRicardo
 HigashiRicardo já tem 5 batalhas.
-Inimigo 1 será QueenBelinha
-Inimigo 2 será TomDSantos
+Inimigo 1 será Manfrim11
+Nova batalha: HigashiRicardo x Manfrim11
+Inimigo 2 será QueenBelinha
+Nova batalha: HigashiRicardo x QueenBelinha
 Procurando 2 inimigos Diamante para HigashiRicardo
 HigashiRicardo já tem 7 batalhas.
-Inimigo 1 será c4i00
-Inimigo 2 será GassanBr
+Inimigo 1 será AlekaSabbag
+Nova batalha: HigashiRicardo x AlekaSabbag
+Inimigo 2 será c4i00
+Nova batalha: HigashiRicardo x c4i00
 Procurando lutas para TgoSorelli
 Procurando 5 inimigos Safira para TgoSorelli
-TgoSorelli já tem 3 batalhas.
-Inimigo 1 será DavidFirmin0
-Inimigo 2 será Brabrinha
+TgoSorelli já tem 2 batalhas.
+Inimigo 1 será Teresak1
+Nova batalha: TgoSorelli x Teresak1
+Inimigo 2 será DavidFirmin0
+Nova batalha: TgoSorelli x DavidFirmin0
 Inimigo 3 será Douglete011
-Inimigo 4 será Teresak1
+Nova batalha: TgoSorelli x Douglete011
+Inimigo 4 será Brabrinha
+Nova batalha: TgoSorelli x Brabrinha
 Inimigo 5 será RaulAV1
+Nova batalha: TgoSorelli x RaulAV1
 Procurando 2 inimigos Rubi para TgoSorelli
-TgoSorelli já tem 8 batalhas.
-Reduzindo busca para 1 inimigos.
-Inimigo 1 será VanEdipo
+TgoSorelli já tem 7 batalhas.
+Inimigo 1 será Oftentimes7
+Nova batalha: TgoSorelli x Oftentimes7
+Inimigo 2 será Yeyas81
+Nova batalha: TgoSorelli x Yeyas81
 Procurando 2 inimigos Diamante para TgoSorelli
 TgoSorelli já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para eanassu
 Procurando 5 inimigos Safira para eanassu
 eanassu já tem 1 batalhas.
-Inimigo 1 será 123CatBond
-Inimigo 2 será Tatinick82
+Inimigo 1 será RaulAV1
+Nova batalha: eanassu x RaulAV1
+Inimigo 2 será Brabrinha
+Nova batalha: eanassu x Brabrinha
 Inimigo 3 será JimbobAzul
-Inimigo 4 será Brabrinha
-Inimigo 5 será RaulAV1
+Nova batalha: eanassu x JimbobAzul
+Inimigo 4 será 123CatBond
+Nova batalha: eanassu x 123CatBond
+Inimigo 5 será Tatinick82
+Nova batalha: eanassu x Tatinick82
 Procurando 2 inimigos Rubi para eanassu
 eanassu já tem 6 batalhas.
-Inimigo 1 será Manfrim11
-Inimigo 2 será MasterLineYr
+Inimigo 1 será VanEdipo
+Nova batalha: eanassu x VanEdipo
+Inimigo 2 será guiblima
+Nova batalha: eanassu x guiblima
 Procurando 2 inimigos Diamante para eanassu
 eanassu já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será Marcelo69
+Inimigo 1 será Helior44
+Nova batalha: eanassu x Helior44
 Procurando lutas para Tiringstorm34
 Procurando 5 inimigos Safira para Tiringstorm34
 Tiringstorm34 já tem 1 batalhas.
-Inimigo 1 será JimbobAzul
-Inimigo 2 será Patyeiko
-Inimigo 3 será Douglete011
-Inimigo 4 será mi88akz
-Inimigo 5 será rikardolima
+Inimigo 1 será rikardolima
+Nova batalha: Tiringstorm34 x rikardolima
+Inimigo 2 será marcioljunior
+Nova batalha: Tiringstorm34 x marcioljunior
+Inimigo 3 será Patyeiko
+Nova batalha: Tiringstorm34 x Patyeiko
+Inimigo 4 será Douglete011
+Nova batalha: Tiringstorm34 x Douglete011
+Inimigo 5 será mi88akz
+Nova batalha: Tiringstorm34 x mi88akz
 Procurando 2 inimigos Rubi para Tiringstorm34
 Tiringstorm34 já tem 6 batalhas.
-Inimigo 1 será Pamps2805
+Inimigo 1 será Yeyas81
+Nova batalha: Tiringstorm34 x Yeyas81
 Inimigo 2 será Mamazzaro
+Nova batalha: Tiringstorm34 x Mamazzaro
 Procurando 2 inimigos Diamante para Tiringstorm34
 Tiringstorm34 já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será GassanBr
+Inimigo 1 será c4i00
+Nova batalha: Tiringstorm34 x c4i00
 Procurando lutas para DGKetchum1
 Procurando 5 inimigos Safira para DGKetchum1
 DGKetchum1 já tem 1 batalhas.
 Inimigo 1 será mestreDohko
-Inimigo 2 será Brabrinha
-Inimigo 3 será GuiMi19
-Inimigo 4 será LuksBertolli
-Inimigo 5 será marcioljunior
+Nova batalha: DGKetchum1 x mestreDohko
+Inimigo 2 será marcioljunior
+Nova batalha: DGKetchum1 x marcioljunior
+Inimigo 3 será Teresak1
+Nova batalha: DGKetchum1 x Teresak1
+Inimigo 4 será RaulAV1
+Nova batalha: DGKetchum1 x RaulAV1
+Inimigo 5 será Allma68
+Nova batalha: DGKetchum1 x Allma68
 Procurando 2 inimigos Rubi para DGKetchum1
 DGKetchum1 já tem 6 batalhas.
-Inimigo 1 será TomDSantos
-Inimigo 2 será Allanlima04
+Inimigo 1 será Matabanguela
+Nova batalha: DGKetchum1 x Matabanguela
+Inimigo 2 será lahkehl
+Nova batalha: DGKetchum1 x lahkehl
 Procurando 2 inimigos Diamante para DGKetchum1
 DGKetchum1 já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será GassanBr
+Inimigo 1 será Rsscoach
+Nova batalha: DGKetchum1 x Rsscoach
 Procurando lutas para rikardolima
 Procurando 5 inimigos Safira para rikardolima
-rikardolima já tem 3 batalhas.
-Inimigo 1 será GuiMi19
-Inimigo 2 será Guilram91
+rikardolima já tem 2 batalhas.
+Inimigo 1 será JimbobAzul
+Nova batalha: rikardolima x JimbobAzul
+Inimigo 2 será GuiMi19
+Nova batalha: rikardolima x GuiMi19
 Inimigo 3 será LuksBertolli
+Nova batalha: rikardolima x LuksBertolli
 Inimigo 4 será Douglete011
-Inimigo 5 será Brabrinha
+Nova batalha: rikardolima x Douglete011
+Inimigo 5 será Allma68
+Nova batalha: rikardolima x Allma68
 Procurando 2 inimigos Rubi para rikardolima
-rikardolima já tem 8 batalhas.
-Reduzindo busca para 1 inimigos.
-Inimigo 1 será Matabanguela
+rikardolima já tem 7 batalhas.
+Inimigo 1 será Mamazzaro
+Nova batalha: rikardolima x Mamazzaro
+Inimigo 2 será Matabanguela
+Nova batalha: rikardolima x Matabanguela
 Procurando 2 inimigos Diamante para rikardolima
 rikardolima já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Teresak1
 Procurando 5 inimigos Safira para Teresak1
-Teresak1 já tem 1 batalhas.
-Inimigo 1 será mestreDohko
-Inimigo 2 será Andyneves29
-Inimigo 3 será mi88akz
-Inimigo 4 será marcioljunior
-Inimigo 5 será RaulAV1
+Teresak1 já tem 2 batalhas.
+Inimigo 1 será Allma68
+Nova batalha: Teresak1 x Allma68
+Inimigo 2 será mi88akz
+Nova batalha: Teresak1 x mi88akz
+Inimigo 3 será Andyneves29
+Nova batalha: Teresak1 x Andyneves29
+Inimigo 4 será JimbobAzul
+Nova batalha: Teresak1 x JimbobAzul
+Inimigo 5 será marcioljunior
+Nova batalha: Teresak1 x marcioljunior
 Procurando 2 inimigos Rubi para Teresak1
-Teresak1 já tem 6 batalhas.
-Inimigo 1 será Mamazzaro
-Inimigo 2 será Didideluca
+Teresak1 já tem 7 batalhas.
+Inimigo 1 será MasterLineYr
+Nova batalha: Teresak1 x MasterLineYr
+Inimigo 2 será Oftentimes7
+Nova batalha: Teresak1 x Oftentimes7
 Procurando 2 inimigos Diamante para Teresak1
-Teresak1 já tem 8 batalhas.
-Reduzindo busca para 1 inimigos.
-Inimigo 1 será Rsscoach
+Teresak1 já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para DavidFirmin0
 Procurando 5 inimigos Safira para DavidFirmin0
 DavidFirmin0 já tem 3 batalhas.
-Inimigo 1 será JimbobAzul
-Inimigo 2 será Diogenest
+Inimigo 1 será Tatinick82
+Nova batalha: DavidFirmin0 x Tatinick82
+Inimigo 2 será JimbobAzul
+Nova batalha: DavidFirmin0 x JimbobAzul
 Inimigo 3 será Andyneves29
-Inimigo 4 será Tatinick82
+Nova batalha: DavidFirmin0 x Andyneves29
+Inimigo 4 será SinGoLfaiRe
+Nova batalha: DavidFirmin0 x SinGoLfaiRe
 Inimigo 5 será Guilram91
+Nova batalha: DavidFirmin0 x Guilram91
 Procurando 2 inimigos Rubi para DavidFirmin0
 DavidFirmin0 já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será Matabanguela
+Inimigo 1 será Allanlima04
+Nova batalha: DavidFirmin0 x Allanlima04
 Procurando 2 inimigos Diamante para DavidFirmin0
 DavidFirmin0 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para FabianoCoelho
 Procurando 2 inimigos Safira para FabianoCoelho
-Inimigo 1 será LuksBertolli
-Inimigo 2 será marcioljunior
+FabianoCoelho já tem 1 batalhas.
+Inimigo 1 será Andyneves29
+Nova batalha: FabianoCoelho x Andyneves29
+Inimigo 2 será JimbobAzul
+Nova batalha: FabianoCoelho x JimbobAzul
 Procurando 4 inimigos Rubi para FabianoCoelho
-FabianoCoelho já tem 2 batalhas.
-Inimigo 1 será lahkehl
-Inimigo 2 será QueenBelinha
-Inimigo 3 será GinoLucca
-Inimigo 4 será MasterLineYr
+FabianoCoelho já tem 3 batalhas.
+Inimigo 1 será MasterLineYr
+Nova batalha: FabianoCoelho x MasterLineYr
+Inimigo 2 será GinoLucca
+Nova batalha: FabianoCoelho x GinoLucca
+Inimigo 3 será lahkehl
+Nova batalha: FabianoCoelho x lahkehl
+Inimigo 4 será Pamps2805
+Nova batalha: FabianoCoelho x Pamps2805
 Procurando 3 inimigos Diamante para FabianoCoelho
-FabianoCoelho já tem 6 batalhas.
-Inimigo 1 será Rsscoach
-Inimigo 2 será Marcelo69
-Inimigo 3 será 13JCruel13
+FabianoCoelho já tem 7 batalhas.
+Reduzindo busca para 2 inimigos.
+Inimigo 1 será GassanBr
+Nova batalha: FabianoCoelho x GassanBr
+Inimigo 2 será 13JCruel13
+Nova batalha: FabianoCoelho x 13JCruel13
 Procurando lutas para guiblima
 Procurando 2 inimigos Safira para guiblima
 guiblima já tem 3 batalhas.
 Inimigo 1 será GuiMi19
-Inimigo 2 será SinGoLfaiRe
+Nova batalha: guiblima x GuiMi19
+Inimigo 2 será JimbobAzul
+Nova batalha: guiblima x JimbobAzul
 Procurando 4 inimigos Rubi para guiblima
 guiblima já tem 5 batalhas.
-Inimigo 1 será VanEdipo
-Inimigo 2 será lahkehl
-Inimigo 3 será GinoLucca
-Inimigo 4 será Didideluca
+Inimigo 1 será GinoLucca
+Nova batalha: guiblima x GinoLucca
+Inimigo 2 será Didideluca
+Nova batalha: guiblima x Didideluca
+Inimigo 3 será Manfrim11
+Nova batalha: guiblima x Manfrim11
+Inimigo 4 será VanEdipo
+Nova batalha: guiblima x VanEdipo
 Procurando 3 inimigos Diamante para guiblima
 guiblima já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
@@ -401,69 +587,99 @@ Procurando lutas para lahkehl
 Procurando 2 inimigos Safira para lahkehl
 lahkehl já tem 2 batalhas.
 Inimigo 1 será LuksBertolli
-Inimigo 2 será Diogenest
+Nova batalha: lahkehl x LuksBertolli
+Inimigo 2 será 123CatBond
+Nova batalha: lahkehl x 123CatBond
 Procurando 4 inimigos Rubi para lahkehl
 lahkehl já tem 4 batalhas.
-Inimigo 1 será MasterLineYr
-Inimigo 2 será Manfrim11
-Inimigo 3 será Mamazzaro
-Inimigo 4 será Didideluca
+Inimigo 1 será Matabanguela
+Nova batalha: lahkehl x Matabanguela
+Inimigo 2 será VanEdipo
+Nova batalha: lahkehl x VanEdipo
+Inimigo 3 será TomDSantos
+Nova batalha: lahkehl x TomDSantos
+Inimigo 4 será wapinh
+Nova batalha: lahkehl x wapinh
 Procurando 3 inimigos Diamante para lahkehl
 lahkehl já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será vib
+Inimigo 1 será Marcelo69
+Nova batalha: lahkehl x Marcelo69
 Procurando lutas para LuksBertolli
 Procurando 5 inimigos Safira para LuksBertolli
-LuksBertolli já tem 5 batalhas.
-Reduzindo busca para 4 inimigos.
-Inimigo 1 será mestreDohko
-Inimigo 2 será GuiMi19
-Inimigo 3 será Guilram91
-Inimigo 4 será Diogenest
+LuksBertolli já tem 3 batalhas.
+Inimigo 1 será 123CatBond
+Nova batalha: LuksBertolli x 123CatBond
+Inimigo 2 será Diogenest
+Nova batalha: LuksBertolli x Diogenest
+Inimigo 3 será mestreDohko
+Nova batalha: LuksBertolli x mestreDohko
+Inimigo 4 será Guilram91
+Nova batalha: LuksBertolli x Guilram91
+Inimigo 5 será GuiMi19
+Nova batalha: LuksBertolli x GuiMi19
 Procurando 2 inimigos Rubi para LuksBertolli
-LuksBertolli já tem 9 batalhas.
-Reduzindo busca para 0 inimigos.
+LuksBertolli já tem 8 batalhas.
+Reduzindo busca para 1 inimigos.
+Inimigo 1 será Mamazzaro
+Nova batalha: LuksBertolli x Mamazzaro
 Procurando 2 inimigos Diamante para LuksBertolli
 LuksBertolli já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Allma68
 Procurando 5 inimigos Safira para Allma68
-Allma68 já tem 1 batalhas.
+Sobraram apenas 4 inimigos Safira para Allma68
+Allma68 já tem 4 batalhas.
 Inimigo 1 será Andyneves29
-Inimigo 2 será marcioljunior
-Inimigo 3 será JimbobAzul
-Inimigo 4 será 123CatBond
-Inimigo 5 será Diogenest
+Nova batalha: Allma68 x Andyneves29
+Inimigo 2 será Diogenest
+Nova batalha: Allma68 x Diogenest
+Inimigo 3 será 123CatBond
+Nova batalha: Allma68 x 123CatBond
+Inimigo 4 será marcioljunior
+Nova batalha: Allma68 x marcioljunior
 Procurando 2 inimigos Rubi para Allma68
-Allma68 já tem 6 batalhas.
-Inimigo 1 será Matabanguela
-Inimigo 2 será QueenBelinha
-Procurando 2 inimigos Diamante para Allma68
 Allma68 já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será Helior44
+Inimigo 1 será Matabanguela
+Nova batalha: Allma68 x Matabanguela
+Procurando 2 inimigos Diamante para Allma68
+Allma68 já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para AlekaSabbag
 Procurando 2 inimigos Safira para AlekaSabbag
-Inimigo 1 será JimbobAzul
-Inimigo 2 será mi88akz
-Procurando 3 inimigos Rubi para AlekaSabbag
 AlekaSabbag já tem 2 batalhas.
-Inimigo 1 será QueenBelinha
-Inimigo 2 será Mamazzaro
-Inimigo 3 será Didideluca
+Inimigo 1 será Tatinick82
+Nova batalha: AlekaSabbag x Tatinick82
+Inimigo 2 será marcioljunior
+Nova batalha: AlekaSabbag x marcioljunior
+Procurando 3 inimigos Rubi para AlekaSabbag
+AlekaSabbag já tem 4 batalhas.
+Inimigo 1 será Didideluca
+Nova batalha: AlekaSabbag x Didideluca
+Inimigo 2 será Oftentimes7
+Nova batalha: AlekaSabbag x Oftentimes7
+Inimigo 3 será GinoLucca
+Nova batalha: AlekaSabbag x GinoLucca
 Procurando 4 inimigos Diamante para AlekaSabbag
-AlekaSabbag já tem 5 batalhas.
+AlekaSabbag já tem 7 batalhas.
+Reduzindo busca para 2 inimigos.
 Inimigo 1 será llTk87ll
+Nova batalha: AlekaSabbag x llTk87ll
 Inimigo 2 será GassanBr
-Inimigo 3 será Helior44
-Inimigo 4 será Rsscoach
+Nova batalha: AlekaSabbag x GassanBr
 Procurando lutas para GuiMi19
 Procurando 5 inimigos Safira para GuiMi19
-GuiMi19 já tem 6 batalhas.
-Reduzindo busca para 3 inimigos.
-Inimigo 1 será Tatinick82
+GuiMi19 já tem 5 batalhas.
+Reduzindo busca para 4 inimigos.
+Inimigo 1 será Diogenest
+Nova batalha: GuiMi19 x Diogenest
 Inimigo 2 será mi88akz
+Nova batalha: GuiMi19 x mi88akz
 Inimigo 3 será mestreDohko
+Nova batalha: GuiMi19 x mestreDohko
+Inimigo 4 será 123CatBond
+Nova batalha: GuiMi19 x 123CatBond
 Procurando 2 inimigos Rubi para GuiMi19
 GuiMi19 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
@@ -472,12 +688,16 @@ GuiMi19 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Patyeiko
 Procurando 5 inimigos Safira para Patyeiko
-Patyeiko já tem 4 batalhas.
-Inimigo 1 será SinGoLfaiRe
-Inimigo 2 será marcioljunior
-Inimigo 3 será Andyneves29
-Inimigo 4 será 123CatBond
-Inimigo 5 será Tatinick82
+Patyeiko já tem 5 batalhas.
+Reduzindo busca para 4 inimigos.
+Inimigo 1 será marcioljunior
+Nova batalha: Patyeiko x marcioljunior
+Inimigo 2 será SinGoLfaiRe
+Nova batalha: Patyeiko x SinGoLfaiRe
+Inimigo 3 será 123CatBond
+Nova batalha: Patyeiko x 123CatBond
+Inimigo 4 será Andyneves29
+Nova batalha: Patyeiko x Andyneves29
 Procurando 2 inimigos Rubi para Patyeiko
 Patyeiko já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
@@ -486,42 +706,56 @@ Patyeiko já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para mi88akz
 Procurando 5 inimigos Safira para mi88akz
-mi88akz já tem 5 batalhas.
-Reduzindo busca para 4 inimigos.
+Sobraram apenas 4 inimigos Safira para mi88akz
+mi88akz já tem 4 batalhas.
 Inimigo 1 será Guilram91
-Inimigo 2 será marcioljunior
-Inimigo 3 será SinGoLfaiRe
-Inimigo 4 será Tatinick82
+Nova batalha: mi88akz x Guilram91
+Inimigo 2 será SinGoLfaiRe
+Nova batalha: mi88akz x SinGoLfaiRe
+Inimigo 3 será Tatinick82
+Nova batalha: mi88akz x Tatinick82
+Inimigo 4 será marcioljunior
+Nova batalha: mi88akz x marcioljunior
 Procurando 2 inimigos Rubi para mi88akz
-mi88akz já tem 9 batalhas.
-Reduzindo busca para 0 inimigos.
+mi88akz já tem 8 batalhas.
+Reduzindo busca para 1 inimigos.
+Inimigo 1 será josenkio
+Nova batalha: mi88akz x josenkio
 Procurando 2 inimigos Diamante para mi88akz
 mi88akz já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Yeyas81
 Procurando 2 inimigos Safira para Yeyas81
-Yeyas81 já tem 1 batalhas.
-Inimigo 1 será Tatinick82
-Inimigo 2 será Guilram91
-Procurando 4 inimigos Rubi para Yeyas81
 Yeyas81 já tem 3 batalhas.
-Inimigo 1 será MasterLineYr
-Inimigo 2 será Mamazzaro
-Inimigo 3 será VanEdipo
-Inimigo 4 será Oftentimes7
+Inimigo 1 será Tatinick82
+Nova batalha: Yeyas81 x Tatinick82
+Inimigo 2 será Guilram91
+Nova batalha: Yeyas81 x Guilram91
+Procurando 4 inimigos Rubi para Yeyas81
+Yeyas81 já tem 5 batalhas.
+Inimigo 1 será VanEdipo
+Nova batalha: Yeyas81 x VanEdipo
+Inimigo 2 será wapinh
+Nova batalha: Yeyas81 x wapinh
+Inimigo 3 será QueenBelinha
+Nova batalha: Yeyas81 x QueenBelinha
+Inimigo 4 será GinoLucca
+Nova batalha: Yeyas81 x GinoLucca
 Procurando 3 inimigos Diamante para Yeyas81
-Yeyas81 já tem 7 batalhas.
-Reduzindo busca para 2 inimigos.
-Inimigo 1 será c4i00
-Inimigo 2 será Gsaito87
+Yeyas81 já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para Andyneves29
 Procurando 5 inimigos Safira para Andyneves29
-Andyneves29 já tem 4 batalhas.
-Inimigo 1 será Tatinick82
-Inimigo 2 será SinGoLfaiRe
+Andyneves29 já tem 5 batalhas.
+Reduzindo busca para 4 inimigos.
+Inimigo 1 será Diogenest
+Nova batalha: Andyneves29 x Diogenest
+Inimigo 2 será mestreDohko
+Nova batalha: Andyneves29 x mestreDohko
 Inimigo 3 será Guilram91
-Inimigo 4 será Diogenest
-Inimigo 5 será 123CatBond
+Nova batalha: Andyneves29 x Guilram91
+Inimigo 4 será Tatinick82
+Nova batalha: Andyneves29 x Tatinick82
 Procurando 2 inimigos Rubi para Andyneves29
 Andyneves29 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
@@ -530,65 +764,87 @@ Andyneves29 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para josenkio
 Procurando 2 inimigos Safira para josenkio
-Inimigo 1 será Guilram91
-Inimigo 2 será 123CatBond
-Procurando 4 inimigos Rubi para josenkio
 josenkio já tem 2 batalhas.
-Inimigo 1 será MasterLineYr
-Inimigo 2 será Oftentimes7
-Inimigo 3 será Didideluca
-Inimigo 4 será QueenBelinha
+Inimigo 1 será Guilram91
+Nova batalha: josenkio x Guilram91
+Inimigo 2 será SinGoLfaiRe
+Nova batalha: josenkio x SinGoLfaiRe
+Procurando 4 inimigos Rubi para josenkio
+josenkio já tem 4 batalhas.
+Inimigo 1 será GinoLucca
+Nova batalha: josenkio x GinoLucca
+Inimigo 2 será BinhoZica01
+Nova batalha: josenkio x BinhoZica01
+Inimigo 3 será QueenBelinha
+Nova batalha: josenkio x QueenBelinha
+Inimigo 4 será Matabanguela
+Nova batalha: josenkio x Matabanguela
 Procurando 3 inimigos Diamante para josenkio
-josenkio já tem 6 batalhas.
-Inimigo 1 será vib
-Inimigo 2 será 13JCruel13
-Inimigo 3 será Nietzsche968
+josenkio já tem 8 batalhas.
+Reduzindo busca para 1 inimigos.
+Inimigo 1 será 13JCruel13
+Nova batalha: josenkio x 13JCruel13
 Procurando lutas para SinGoLfaiRe
 Procurando 5 inimigos Safira para SinGoLfaiRe
 Sobraram apenas 3 inimigos Safira para SinGoLfaiRe
 SinGoLfaiRe já tem 5 batalhas.
-Inimigo 1 será mestreDohko
-Inimigo 2 será JimbobAzul
-Inimigo 3 será Diogenest
+Inimigo 1 será Diogenest
+Nova batalha: SinGoLfaiRe x Diogenest
+Inimigo 2 será mestreDohko
+Nova batalha: SinGoLfaiRe x mestreDohko
+Inimigo 3 será Tatinick82
+Nova batalha: SinGoLfaiRe x Tatinick82
 Procurando 2 inimigos Rubi para SinGoLfaiRe
 SinGoLfaiRe já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será Pamps2805
+Inimigo 1 será GinoLucca
+Nova batalha: SinGoLfaiRe x GinoLucca
 Procurando 2 inimigos Diamante para SinGoLfaiRe
 SinGoLfaiRe já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Guilram91
 Procurando 5 inimigos Safira para Guilram91
-Sobraram apenas 2 inimigos Safira para Guilram91
+Sobraram apenas 1 inimigos Safira para Guilram91
+Guilram91 já tem 7 batalhas.
+Inimigo 1 será mestreDohko
+Nova batalha: Guilram91 x mestreDohko
+Procurando 2 inimigos Rubi para Guilram91
 Guilram91 já tem 8 batalhas.
 Reduzindo busca para 1 inimigos.
-Inimigo 1 será marcioljunior
-Procurando 2 inimigos Rubi para Guilram91
-Guilram91 já tem 9 batalhas.
-Reduzindo busca para 0 inimigos.
+Inimigo 1 será Didideluca
+Nova batalha: Guilram91 x Didideluca
 Procurando 2 inimigos Diamante para Guilram91
 Guilram91 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Nietzsche968
 Procurando 2 inimigos Safira para Nietzsche968
-Nietzsche968 já tem 1 batalhas.
-Inimigo 1 será mestreDohko
-Inimigo 2 será Diogenest
+Inimigo 1 será Diogenest
+Nova batalha: Nietzsche968 x Diogenest
+Inimigo 2 será mestreDohko
+Nova batalha: Nietzsche968 x mestreDohko
 Procurando 3 inimigos Rubi para Nietzsche968
-Nietzsche968 já tem 3 batalhas.
-Inimigo 1 será GinoLucca
-Inimigo 2 será Allanlima04
-Inimigo 3 será VanEdipo
+Nietzsche968 já tem 2 batalhas.
+Inimigo 1 será Matabanguela
+Nova batalha: Nietzsche968 x Matabanguela
+Inimigo 2 será MasterLineYr
+Nova batalha: Nietzsche968 x MasterLineYr
+Inimigo 3 será QueenBelinha
+Nova batalha: Nietzsche968 x QueenBelinha
 Procurando 4 inimigos Diamante para Nietzsche968
-Nietzsche968 já tem 6 batalhas.
-Reduzindo busca para 3 inimigos.
-Inimigo 1 será llTk87ll
-Inimigo 2 será VicTavares
-Inimigo 3 será vib
+Nietzsche968 já tem 5 batalhas.
+Inimigo 1 será c4i00
+Nova batalha: Nietzsche968 x c4i00
+Inimigo 2 será Helior44
+Nova batalha: Nietzsche968 x Helior44
+Inimigo 3 será VicTavares
+Nova batalha: Nietzsche968 x VicTavares
+Inimigo 4 será vib
+Nova batalha: Nietzsche968 x vib
 Procurando lutas para marcioljunior
 Procurando 5 inimigos Safira para marcioljunior
-Sobraram apenas 0 inimigos Safira para marcioljunior
+Sobraram apenas 1 inimigos Safira para marcioljunior
 marcioljunior já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando 2 inimigos Rubi para marcioljunior
 marcioljunior já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
@@ -598,32 +854,49 @@ Reduzindo busca para 0 inimigos.
 Procurando lutas para Allanlima04
 Procurando 2 inimigos Safira para Allanlima04
 Sobraram apenas 0 inimigos Safira para Allanlima04
-Allanlima04 já tem 3 batalhas.
+Allanlima04 já tem 1 batalhas.
 Procurando 4 inimigos Rubi para Allanlima04
-Allanlima04 já tem 3 batalhas.
-Inimigo 1 será GinoLucca
+Allanlima04 já tem 1 batalhas.
+Inimigo 1 será Pamps2805
+Nova batalha: Allanlima04 x Pamps2805
 Inimigo 2 será Matabanguela
-Inimigo 3 será Mamazzaro
-Inimigo 4 será BinhoZica01
+Nova batalha: Allanlima04 x Matabanguela
+Inimigo 3 será Manfrim11
+Nova batalha: Allanlima04 x Manfrim11
+Inimigo 4 será Didideluca
+Nova batalha: Allanlima04 x Didideluca
 Procurando 3 inimigos Diamante para Allanlima04
-Allanlima04 já tem 7 batalhas.
-Reduzindo busca para 2 inimigos.
-Inimigo 1 será c4i00
-Inimigo 2 será VicTavares
+Allanlima04 já tem 5 batalhas.
+Inimigo 1 será Atilajg
+Nova batalha: Allanlima04 x Atilajg
+Inimigo 2 será llTk87ll
+Nova batalha: Allanlima04 x llTk87ll
+Inimigo 3 será VicTavares
+Nova batalha: Allanlima04 x VicTavares
+Allanlima04 tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
+Procurando 1 inimigos Rubi para Allanlima04
+Allanlima04 já tem 8 batalhas.
+Inimigo 1 será wapinh
+Nova batalha: Allanlima04 x wapinh
 Procurando lutas para c4i00
 Procurando 2 inimigos Safira para c4i00
-Sobraram apenas 0 inimigos Safira para c4i00
+Sobraram apenas 1 inimigos Safira para c4i00
 c4i00 já tem 4 batalhas.
+Inimigo 1 será Diogenest
+Nova batalha: c4i00 x Diogenest
 Procurando 3 inimigos Rubi para c4i00
-c4i00 já tem 4 batalhas.
-Inimigo 1 será GinoLucca
-Inimigo 2 será Didideluca
-Inimigo 3 será wapinh
+c4i00 já tem 5 batalhas.
+Inimigo 1 será Didideluca
+Nova batalha: c4i00 x Didideluca
+Inimigo 2 será VanEdipo
+Nova batalha: c4i00 x VanEdipo
+Inimigo 3 será Manfrim11
+Nova batalha: c4i00 x Manfrim11
 Procurando 4 inimigos Diamante para c4i00
-c4i00 já tem 7 batalhas.
-Reduzindo busca para 2 inimigos.
-Inimigo 1 será VicTavares
-Inimigo 2 será Rsscoach
+c4i00 já tem 8 batalhas.
+Reduzindo busca para 1 inimigos.
+Inimigo 1 será Rsscoach
+Nova batalha: c4i00 x Rsscoach
 Procurando lutas para 123CatBond
 Procurando 5 inimigos Safira para 123CatBond
 Sobraram apenas 0 inimigos Safira para 123CatBond
@@ -637,18 +910,24 @@ Reduzindo busca para 0 inimigos.
 Procurando lutas para wapinh
 Procurando 2 inimigos Safira para wapinh
 Sobraram apenas 0 inimigos Safira para wapinh
-wapinh já tem 2 batalhas.
+wapinh já tem 3 batalhas.
 Procurando 4 inimigos Rubi para wapinh
-wapinh já tem 2 batalhas.
-Inimigo 1 será TomDSantos
+wapinh já tem 3 batalhas.
+Inimigo 1 será Pamps2805
+Nova batalha: wapinh x Pamps2805
 Inimigo 2 será Manfrim11
-Inimigo 3 será Pamps2805
-Inimigo 4 será QueenBelinha
+Nova batalha: wapinh x Manfrim11
+Inimigo 3 será GinoLucca
+Nova batalha: wapinh x GinoLucca
+Inimigo 4 será BinhoZica01
+Nova batalha: wapinh x BinhoZica01
 Procurando 3 inimigos Diamante para wapinh
-wapinh já tem 6 batalhas.
-Inimigo 1 será Marcelo69
-Inimigo 2 será llTk87ll
-Inimigo 3 será 13JCruel13
+wapinh já tem 7 batalhas.
+Reduzindo busca para 2 inimigos.
+Inimigo 1 será Gsaito87
+Nova batalha: wapinh x Gsaito87
+Inimigo 2 será 13JCruel13
+Nova batalha: wapinh x 13JCruel13
 Procurando lutas para mestreDohko
 Procurando 5 inimigos Safira para mestreDohko
 Sobraram apenas 0 inimigos Safira para mestreDohko
@@ -672,43 +951,57 @@ Reduzindo busca para 0 inimigos.
 Procurando lutas para BinhoZica01
 Procurando 2 inimigos Safira para BinhoZica01
 Sobraram apenas 0 inimigos Safira para BinhoZica01
-BinhoZica01 já tem 2 batalhas.
+BinhoZica01 já tem 3 batalhas.
 Procurando 4 inimigos Rubi para BinhoZica01
-BinhoZica01 já tem 2 batalhas.
-Inimigo 1 será Matabanguela
-Inimigo 2 será Didideluca
-Inimigo 3 será VanEdipo
-Inimigo 4 será TomDSantos
+BinhoZica01 já tem 3 batalhas.
+Inimigo 1 será GinoLucca
+Nova batalha: BinhoZica01 x GinoLucca
+Inimigo 2 será TomDSantos
+Nova batalha: BinhoZica01 x TomDSantos
+Inimigo 3 será QueenBelinha
+Nova batalha: BinhoZica01 x QueenBelinha
+Inimigo 4 será Matabanguela
+Nova batalha: BinhoZica01 x Matabanguela
 Procurando 3 inimigos Diamante para BinhoZica01
-BinhoZica01 já tem 6 batalhas.
-Inimigo 1 será 13JCruel13
-Inimigo 2 será GassanBr
-Inimigo 3 será llTk87ll
+BinhoZica01 já tem 7 batalhas.
+Reduzindo busca para 2 inimigos.
+Inimigo 1 será Helior44
+Nova batalha: BinhoZica01 x Helior44
+Inimigo 2 será llTk87ll
+Nova batalha: BinhoZica01 x llTk87ll
 Procurando lutas para Didideluca
 Procurando 2 inimigos Safira para Didideluca
 Sobraram apenas 0 inimigos Safira para Didideluca
-Didideluca já tem 9 batalhas.
+Didideluca já tem 6 batalhas.
 Procurando 4 inimigos Rubi para Didideluca
-Didideluca já tem 9 batalhas.
-Reduzindo busca para 0 inimigos.
+Didideluca já tem 6 batalhas.
+Reduzindo busca para 3 inimigos.
+Inimigo 1 será TomDSantos
+Nova batalha: Didideluca x TomDSantos
+Inimigo 2 será Oftentimes7
+Nova batalha: Didideluca x Oftentimes7
+Inimigo 3 será QueenBelinha
+Nova batalha: Didideluca x QueenBelinha
 Procurando 3 inimigos Diamante para Didideluca
 Didideluca já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Oftentimes7
 Procurando 2 inimigos Safira para Oftentimes7
 Sobraram apenas 0 inimigos Safira para Oftentimes7
-Oftentimes7 já tem 2 batalhas.
+Oftentimes7 já tem 5 batalhas.
 Procurando 4 inimigos Rubi para Oftentimes7
-Oftentimes7 já tem 2 batalhas.
-Inimigo 1 será Manfrim11
-Inimigo 2 será Pamps2805
-Inimigo 3 será VanEdipo
-Inimigo 4 será TomDSantos
+Oftentimes7 já tem 5 batalhas.
+Inimigo 1 será TomDSantos
+Nova batalha: Oftentimes7 x TomDSantos
+Inimigo 2 será VanEdipo
+Nova batalha: Oftentimes7 x VanEdipo
+Inimigo 3 será MasterLineYr
+Nova batalha: Oftentimes7 x MasterLineYr
+Inimigo 4 será Pamps2805
+Nova batalha: Oftentimes7 x Pamps2805
 Procurando 3 inimigos Diamante para Oftentimes7
-Oftentimes7 já tem 6 batalhas.
-Inimigo 1 será Rsscoach
-Inimigo 2 será VicTavares
-Inimigo 3 será Gsaito87
+Oftentimes7 já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para Diogenest
 Procurando 5 inimigos Safira para Diogenest
 Sobraram apenas 0 inimigos Safira para Diogenest
@@ -732,33 +1025,47 @@ Reduzindo busca para 0 inimigos.
 Procurando lutas para TomDSantos
 Procurando 2 inimigos Safira para TomDSantos
 Sobraram apenas 0 inimigos Safira para TomDSantos
-TomDSantos já tem 7 batalhas.
+TomDSantos já tem 4 batalhas.
 Procurando 4 inimigos Rubi para TomDSantos
+Sobraram apenas 3 inimigos Rubi para TomDSantos
+TomDSantos já tem 4 batalhas.
+Inimigo 1 será Mamazzaro
+Nova batalha: TomDSantos x Mamazzaro
+Inimigo 2 será MasterLineYr
+Nova batalha: TomDSantos x MasterLineYr
+Inimigo 3 será Pamps2805
+Nova batalha: TomDSantos x Pamps2805
+Procurando 3 inimigos Diamante para TomDSantos
 TomDSantos já tem 7 batalhas.
 Reduzindo busca para 2 inimigos.
-Inimigo 1 será Pamps2805
-Inimigo 2 será VanEdipo
-Procurando 3 inimigos Diamante para TomDSantos
-TomDSantos já tem 9 batalhas.
-Reduzindo busca para 0 inimigos.
+Inimigo 1 será GassanBr
+Nova batalha: TomDSantos x GassanBr
+Inimigo 2 será VicTavares
+Nova batalha: TomDSantos x VicTavares
 Procurando lutas para VicTavares
 Procurando 2 inimigos Safira para VicTavares
 Sobraram apenas 0 inimigos Safira para VicTavares
 VicTavares já tem 5 batalhas.
 Procurando 3 inimigos Rubi para VicTavares
+Sobraram apenas 2 inimigos Rubi para VicTavares
 VicTavares já tem 5 batalhas.
 Inimigo 1 será Mamazzaro
+Nova batalha: VicTavares x Mamazzaro
 Inimigo 2 será Pamps2805
-Inimigo 3 será Matabanguela
+Nova batalha: VicTavares x Pamps2805
 Procurando 4 inimigos Diamante para VicTavares
-VicTavares já tem 8 batalhas.
-Reduzindo busca para 1 inimigos.
-Inimigo 1 será vib
+VicTavares já tem 7 batalhas.
+Reduzindo busca para 2 inimigos.
+Inimigo 1 será Helior44
+Nova batalha: VicTavares x Helior44
+Inimigo 2 será GassanBr
+Nova batalha: VicTavares x GassanBr
 Procurando lutas para Douglete011
 Procurando 5 inimigos Safira para Douglete011
 Sobraram apenas 0 inimigos Safira para Douglete011
 Douglete011 já tem 9 batalhas.
 Procurando 2 inimigos Rubi para Douglete011
+Sobraram apenas 1 inimigos Rubi para Douglete011
 Douglete011 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando 2 inimigos Diamante para Douglete011
@@ -767,43 +1074,63 @@ Reduzindo busca para 0 inimigos.
 Procurando lutas para Gsaito87
 Procurando 2 inimigos Safira para Gsaito87
 Sobraram apenas 0 inimigos Safira para Gsaito87
-Gsaito87 já tem 4 batalhas.
+Gsaito87 já tem 1 batalhas.
 Procurando 3 inimigos Rubi para Gsaito87
-Gsaito87 já tem 4 batalhas.
+Sobraram apenas 1 inimigos Rubi para Gsaito87
+Gsaito87 já tem 1 batalhas.
 Inimigo 1 será Pamps2805
-Inimigo 2 será Matabanguela
-Inimigo 3 será Mamazzaro
+Nova batalha: Gsaito87 x Pamps2805
 Procurando 4 inimigos Diamante para Gsaito87
-Gsaito87 já tem 7 batalhas.
-Reduzindo busca para 2 inimigos.
-Inimigo 1 será vib
-Inimigo 2 será llTk87ll
+Gsaito87 já tem 2 batalhas.
+Inimigo 1 será Rsscoach
+Nova batalha: Gsaito87 x Rsscoach
+Inimigo 2 será Marcelo69
+Nova batalha: Gsaito87 x Marcelo69
+Inimigo 3 será llTk87ll
+Nova batalha: Gsaito87 x llTk87ll
+Inimigo 4 será 13JCruel13
+Nova batalha: Gsaito87 x 13JCruel13
+Gsaito87 tem 6 batalhas e ainda precisa de 3 batalhas pra completar 9
+Procurando 3 inimigos Diamante para Gsaito87
+Gsaito87 já tem 6 batalhas.
+Inimigo 1 será Atilajg
+Nova batalha: Gsaito87 x Atilajg
+Inimigo 2 será Helior44
+Nova batalha: Gsaito87 x Helior44
+Inimigo 3 será vib
+Nova batalha: Gsaito87 x vib
 Procurando lutas para Atilajg
 Procurando 2 inimigos Safira para Atilajg
 Sobraram apenas 0 inimigos Safira para Atilajg
-Atilajg já tem 3 batalhas.
+Atilajg já tem 4 batalhas.
 Procurando 3 inimigos Rubi para Atilajg
-Atilajg já tem 3 batalhas.
-Inimigo 1 será Pamps2805
-Inimigo 2 será Matabanguela
-Inimigo 3 será VanEdipo
+Sobraram apenas 0 inimigos Rubi para Atilajg
+Atilajg já tem 4 batalhas.
 Procurando 4 inimigos Diamante para Atilajg
-Atilajg já tem 6 batalhas.
-Reduzindo busca para 3 inimigos.
+Atilajg já tem 4 batalhas.
 Inimigo 1 será 13JCruel13
-Inimigo 2 será Marcelo69
+Nova batalha: Atilajg x 13JCruel13
+Inimigo 2 será GassanBr
+Nova batalha: Atilajg x GassanBr
 Inimigo 3 será vib
+Nova batalha: Atilajg x vib
+Inimigo 4 será Marcelo69
+Nova batalha: Atilajg x Marcelo69
+Atilajg tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
+Procurando 1 inimigos Diamante para Atilajg
+Atilajg já tem 8 batalhas.
+Inimigo 1 será Rsscoach
+Nova batalha: Atilajg x Rsscoach
 Procurando lutas para Pamps2805
 Procurando 2 inimigos Safira para Pamps2805
 Sobraram apenas 0 inimigos Safira para Pamps2805
-Pamps2805 já tem 8 batalhas.
+Pamps2805 já tem 9 batalhas.
 Procurando 4 inimigos Rubi para Pamps2805
 Sobraram apenas 0 inimigos Rubi para Pamps2805
-Pamps2805 já tem 8 batalhas.
+Pamps2805 já tem 9 batalhas.
 Procurando 3 inimigos Diamante para Pamps2805
-Pamps2805 já tem 8 batalhas.
-Reduzindo busca para 1 inimigos.
-Inimigo 1 será Helior44
+Pamps2805 já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para Matabanguela
 Procurando 2 inimigos Safira para Matabanguela
 Sobraram apenas 0 inimigos Safira para Matabanguela
@@ -847,13 +1174,27 @@ Reduzindo busca para 0 inimigos.
 Procurando lutas para GassanBr
 Procurando 2 inimigos Safira para GassanBr
 Sobraram apenas 0 inimigos Safira para GassanBr
-GassanBr já tem 9 batalhas.
+GassanBr já tem 5 batalhas.
 Procurando 3 inimigos Rubi para GassanBr
 Sobraram apenas 0 inimigos Rubi para GassanBr
-GassanBr já tem 9 batalhas.
+GassanBr já tem 5 batalhas.
 Procurando 4 inimigos Diamante para GassanBr
-GassanBr já tem 9 batalhas.
-Reduzindo busca para 0 inimigos.
+Sobraram apenas 3 inimigos Diamante para GassanBr
+GassanBr já tem 5 batalhas.
+Inimigo 1 será Rsscoach
+Nova batalha: GassanBr x Rsscoach
+Inimigo 2 será vib
+Nova batalha: GassanBr x vib
+Inimigo 3 será Marcelo69
+Nova batalha: GassanBr x Marcelo69
+GassanBr tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
+Procurando 1 inimigos Diamante para GassanBr
+Sobraram apenas 0 inimigos Diamante para GassanBr
+GassanBr já tem 8 batalhas.
+GassanBr tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
+Procurando 1 inimigos qualquer nível para GassanBr
+Sobraram apenas 0 inimigos qualquer nível para GassanBr
+GassanBr já tem 8 batalhas.
 Procurando lutas para Manfrim11
 Procurando 2 inimigos Safira para Manfrim11
 Sobraram apenas 0 inimigos Safira para Manfrim11
@@ -862,33 +1203,41 @@ Procurando 4 inimigos Rubi para Manfrim11
 Sobraram apenas 0 inimigos Rubi para Manfrim11
 Manfrim11 já tem 9 batalhas.
 Procurando 3 inimigos Diamante para Manfrim11
+Sobraram apenas 2 inimigos Diamante para Manfrim11
 Manfrim11 já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para vib
 Procurando 2 inimigos Safira para vib
 Sobraram apenas 0 inimigos Safira para vib
-vib já tem 8 batalhas.
+vib já tem 6 batalhas.
 Procurando 3 inimigos Rubi para vib
 Sobraram apenas 0 inimigos Rubi para vib
-vib já tem 8 batalhas.
+vib já tem 6 batalhas.
 Procurando 4 inimigos Diamante para vib
-Sobraram apenas 3 inimigos Diamante para vib
-vib já tem 8 batalhas.
-Reduzindo busca para 1 inimigos.
+Sobraram apenas 2 inimigos Diamante para vib
+vib já tem 6 batalhas.
 Inimigo 1 será 13JCruel13
+Nova batalha: vib x 13JCruel13
+Inimigo 2 será Rsscoach
+Nova batalha: vib x Rsscoach
+vib tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
+Procurando 1 inimigos Diamante para vib
+Sobraram apenas 0 inimigos Diamante para vib
+vib já tem 8 batalhas.
+vib tem 8 batalhas e ainda precisa de 1 batalhas pra completar 9
+Procurando 1 inimigos qualquer nível para vib
+Sobraram apenas 0 inimigos qualquer nível para vib
+vib já tem 8 batalhas.
 Procurando lutas para Marcelo69
 Procurando 2 inimigos Safira para Marcelo69
 Sobraram apenas 0 inimigos Safira para Marcelo69
-Marcelo69 já tem 7 batalhas.
+Marcelo69 já tem 9 batalhas.
 Procurando 3 inimigos Rubi para Marcelo69
 Sobraram apenas 0 inimigos Rubi para Marcelo69
-Marcelo69 já tem 7 batalhas.
+Marcelo69 já tem 9 batalhas.
 Procurando 4 inimigos Diamante para Marcelo69
-Sobraram apenas 3 inimigos Diamante para Marcelo69
-Marcelo69 já tem 7 batalhas.
-Reduzindo busca para 2 inimigos.
-Inimigo 1 será Helior44
-Inimigo 2 será 13JCruel13
+Sobraram apenas 0 inimigos Diamante para Marcelo69
+Marcelo69 já tem 9 batalhas.
 Procurando lutas para MasterLineYr
 Procurando 2 inimigos Safira para MasterLineYr
 Sobraram apenas 0 inimigos Safira para MasterLineYr
@@ -897,20 +1246,20 @@ Procurando 4 inimigos Rubi para MasterLineYr
 Sobraram apenas 0 inimigos Rubi para MasterLineYr
 MasterLineYr já tem 9 batalhas.
 Procurando 3 inimigos Diamante para MasterLineYr
-Sobraram apenas 1 inimigos Diamante para MasterLineYr
+Sobraram apenas 2 inimigos Diamante para MasterLineYr
 MasterLineYr já tem 9 batalhas.
 Reduzindo busca para 0 inimigos.
 Procurando lutas para Helior44
 Procurando 2 inimigos Safira para Helior44
 Sobraram apenas 0 inimigos Safira para Helior44
-Helior44 já tem 8 batalhas.
+Helior44 já tem 9 batalhas.
 Procurando 3 inimigos Rubi para Helior44
 Sobraram apenas 0 inimigos Rubi para Helior44
-Helior44 já tem 8 batalhas.
+Helior44 já tem 9 batalhas.
 Procurando 4 inimigos Diamante para Helior44
-Sobraram apenas 1 inimigos Diamante para Helior44
-Helior44 já tem 8 batalhas.
-Inimigo 1 será llTk87ll
+Sobraram apenas 2 inimigos Diamante para Helior44
+Helior44 já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para Mamazzaro
 Procurando 2 inimigos Safira para Mamazzaro
 Sobraram apenas 0 inimigos Safira para Mamazzaro
@@ -919,8 +1268,9 @@ Procurando 4 inimigos Rubi para Mamazzaro
 Sobraram apenas 0 inimigos Rubi para Mamazzaro
 Mamazzaro já tem 9 batalhas.
 Procurando 3 inimigos Diamante para Mamazzaro
-Sobraram apenas 0 inimigos Diamante para Mamazzaro
+Sobraram apenas 2 inimigos Diamante para Mamazzaro
 Mamazzaro já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para 13JCruel13
 Procurando 2 inimigos Safira para 13JCruel13
 Sobraram apenas 0 inimigos Safira para 13JCruel13
@@ -939,8 +1289,9 @@ Procurando 3 inimigos Rubi para llTk87ll
 Sobraram apenas 0 inimigos Rubi para llTk87ll
 llTk87ll já tem 9 batalhas.
 Procurando 4 inimigos Diamante para llTk87ll
-Sobraram apenas 0 inimigos Diamante para llTk87ll
+Sobraram apenas 2 inimigos Diamante para llTk87ll
 llTk87ll já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para VanEdipo
 Procurando 2 inimigos Safira para VanEdipo
 Sobraram apenas 0 inimigos Safira para VanEdipo
@@ -949,8 +1300,9 @@ Procurando 4 inimigos Rubi para VanEdipo
 Sobraram apenas 0 inimigos Rubi para VanEdipo
 VanEdipo já tem 9 batalhas.
 Procurando 3 inimigos Diamante para VanEdipo
-Sobraram apenas 0 inimigos Diamante para VanEdipo
+Sobraram apenas 2 inimigos Diamante para VanEdipo
 VanEdipo já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 Procurando lutas para Rsscoach
 Procurando 2 inimigos Safira para Rsscoach
 Sobraram apenas 0 inimigos Safira para Rsscoach
@@ -969,26 +1321,27 @@ Procurando 4 inimigos Rubi para GinoLucca
 Sobraram apenas 0 inimigos Rubi para GinoLucca
 GinoLucca já tem 9 batalhas.
 Procurando 3 inimigos Diamante para GinoLucca
-Sobraram apenas 0 inimigos Diamante para GinoLucca
+Sobraram apenas 2 inimigos Diamante para GinoLucca
 GinoLucca já tem 9 batalhas.
+Reduzindo busca para 0 inimigos.
 BarbaKetchum tem 9 total de lutas. 2/2 contra Diamantes, 3/2 contra Rubis e 4/5 contra Safiras.
     2 problemas.
-JimbobAzul tem 9 total de lutas. 1/2 contra Diamantes, 0/2 contra Rubis e 8/5 contra Safiras.
-    6 problemas.
+TgoSorelli tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
+    4 problemas.
 Brabrinha tem 9 total de lutas. 0/2 contra Diamantes, 0/2 contra Rubis e 9/5 contra Safiras.
     8 problemas.
 RaulAV1 tem 9 total de lutas. 0/2 contra Diamantes, 0/2 contra Rubis e 9/5 contra Safiras.
     8 problemas.
-TgoSorelli tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
+JimbobAzul tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
+    4 problemas.
+QueenBelinha tem 9 total de lutas. 1/3 contra Diamantes, 4/4 contra Rubis e 4/2 contra Safiras.
+    4 problemas.
+Yeyas81 tem 9 total de lutas. 0/3 contra Diamantes, 4/4 contra Rubis e 5/2 contra Safiras.
     6 problemas.
-Yeyas81 tem 9 total de lutas. 2/3 contra Diamantes, 4/4 contra Rubis e 3/2 contra Safiras.
-    2 problemas.
-Manfrim11 tem 9 total de lutas. 0/3 contra Diamantes, 3/4 contra Rubis e 6/2 contra Safiras.
-    8 problemas.
-Atilajg tem 9 total de lutas. 3/4 contra Diamantes, 3/3 contra Rubis e 3/2 contra Safiras.
-    2 problemas.
-llTk87ll tem 9 total de lutas. 4/4 contra Diamantes, 2/3 contra Rubis e 3/2 contra Safiras.
-    2 problemas.
+Atilajg tem 9 total de lutas. 6/4 contra Diamantes, 1/3 contra Rubis e 2/2 contra Safiras.
+    4 problemas.
+llTk87ll tem 9 total de lutas. 2/4 contra Diamantes, 2/3 contra Rubis e 5/2 contra Safiras.
+    6 problemas.
 guiblima tem 9 total de lutas. 0/3 contra Diamantes, 4/4 contra Rubis e 5/2 contra Safiras.
     6 problemas.
 haakaishin tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
@@ -1001,116 +1354,122 @@ MuraKamiGu tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 co
     0 problemas.
 eanassu tem 9 total de lutas. 1/2 contra Diamantes, 2/2 contra Rubis e 6/5 contra Safiras.
     2 problemas.
-GinoLucca tem 9 total de lutas. 2/3 contra Diamantes, 3/4 contra Rubis e 4/2 contra Safiras.
+GinoLucca tem 9 total de lutas. 1/3 contra Diamantes, 6/4 contra Rubis e 2/2 contra Safiras.
     4 problemas.
+Marcelo69 tem 9 total de lutas. 3/4 contra Diamantes, 1/3 contra Rubis e 5/2 contra Safiras.
+    6 problemas.
 Weltson tem 9 total de lutas. 4/2 contra Diamantes, 2/2 contra Rubis e 3/5 contra Safiras.
     4 problemas.
 Patyeiko tem 9 total de lutas. 0/2 contra Diamantes, 0/2 contra Rubis e 9/5 contra Safiras.
     8 problemas.
-Allanlima04 tem 9 total de lutas. 3/3 contra Diamantes, 4/4 contra Rubis e 2/2 contra Safiras.
-    0 problemas.
-QueenBelinha tem 9 total de lutas. 1/3 contra Diamantes, 3/4 contra Rubis e 5/2 contra Safiras.
+Manfrim11 tem 9 total de lutas. 1/3 contra Diamantes, 3/4 contra Rubis e 5/2 contra Safiras.
     6 problemas.
-GassanBr tem 9 total de lutas. 1/4 contra Diamantes, 1/3 contra Rubis e 7/2 contra Safiras.
-    10 problemas.
-c4i00 tem 9 total de lutas. 2/4 contra Diamantes, 5/3 contra Rubis e 2/2 contra Safiras.
+vib tem 8 total de lutas. 6/4 contra Diamantes, 0/3 contra Rubis e 2/2 contra Safiras.
+    5 problemas.
+13JCruel13 tem 9 total de lutas. 3/4 contra Diamantes, 3/3 contra Rubis e 3/2 contra Safiras.
+    2 problemas.
+chernandes10 tem 9 total de lutas. 3/2 contra Diamantes, 4/2 contra Rubis e 2/5 contra Safiras.
+    6 problemas.
+WallanLima16 tem 9 total de lutas. 2/2 contra Diamantes, 3/2 contra Rubis e 4/5 contra Safiras.
+    2 problemas.
+mi88akz tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
+    6 problemas.
+Pamps2805 tem 9 total de lutas. 2/3 contra Diamantes, 5/4 contra Rubis e 2/2 contra Safiras.
+    2 problemas.
+VanEdipo tem 9 total de lutas. 1/3 contra Diamantes, 4/4 contra Rubis e 4/2 contra Safiras.
     4 problemas.
-13JCruel13 tem 9 total de lutas. 3/4 contra Diamantes, 4/3 contra Rubis e 2/2 contra Safiras.
+VicTavares tem 9 total de lutas. 3/4 contra Diamantes, 4/3 contra Rubis e 2/2 contra Safiras.
     2 problemas.
-chernandes10 tem 9 total de lutas. 4/2 contra Diamantes, 3/2 contra Rubis e 2/5 contra Safiras.
-    6 problemas.
-WallanLima16 tem 9 total de lutas. 3/2 contra Diamantes, 2/2 contra Rubis e 4/5 contra Safiras.
-    2 problemas.
-mi88akz tem 9 total de lutas. 1/2 contra Diamantes, 0/2 contra Rubis e 8/5 contra Safiras.
-    6 problemas.
-vib tem 9 total de lutas. 5/4 contra Diamantes, 2/3 contra Rubis e 2/2 contra Safiras.
-    2 problemas.
-VanEdipo tem 9 total de lutas. 2/3 contra Diamantes, 5/4 contra Rubis e 2/2 contra Safiras.
-    2 problemas.
-Rsscoach tem 9 total de lutas. 2/4 contra Diamantes, 2/3 contra Rubis e 5/2 contra Safiras.
-    6 problemas.
-HenryRattlehead tem 9 total de lutas. 2/2 contra Diamantes, 3/2 contra Rubis e 4/5 contra Safiras.
+Mamazzaro tem 9 total de lutas. 1/3 contra Diamantes, 1/4 contra Rubis e 7/2 contra Safiras.
+    10 problemas.
+HenryRattlehead tem 9 total de lutas. 3/2 contra Diamantes, 2/2 contra Rubis e 4/5 contra Safiras.
     2 problemas.
 PedrinhoGamarra tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
     4 problemas.
-VicTavares tem 9 total de lutas. 3/4 contra Diamantes, 5/3 contra Rubis e 1/2 contra Safiras.
+BinhoZica01 tem 9 total de lutas. 2/3 contra Diamantes, 6/4 contra Rubis e 1/2 contra Safiras.
     4 problemas.
-BinhoZica01 tem 9 total de lutas. 3/3 contra Diamantes, 5/4 contra Rubis e 1/2 contra Safiras.
-    2 problemas.
-didisantista tem 9 total de lutas. 2/2 contra Diamantes, 3/2 contra Rubis e 4/5 contra Safiras.
-    2 problemas.
-LeoJesus55 tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
-    0 problemas.
-Diogenest tem 9 total de lutas. 1/2 contra Diamantes, 1/2 contra Rubis e 7/5 contra Safiras.
-    4 problemas.
-Douglete011 tem 9 total de lutas. 0/2 contra Diamantes, 0/2 contra Rubis e 9/5 contra Safiras.
-    8 problemas.
-TomDSantos tem 9 total de lutas. 0/3 contra Diamantes, 5/4 contra Rubis e 4/2 contra Safiras.
+Rsscoach tem 9 total de lutas. 5/4 contra Diamantes, 0/3 contra Rubis e 4/2 contra Safiras.
     6 problemas.
-Matabanguela tem 9 total de lutas. 3/3 contra Diamantes, 2/4 contra Rubis e 4/2 contra Safiras.
-    4 problemas.
-Marcelo69 tem 9 total de lutas. 3/4 contra Diamantes, 2/3 contra Rubis e 4/2 contra Safiras.
-    4 problemas.
-MasterLineYr tem 9 total de lutas. 0/3 contra Diamantes, 4/4 contra Rubis e 5/2 contra Safiras.
-    6 problemas.
-123CatBond tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
-    6 problemas.
-marcioljunior tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
-    6 problemas.
-wapinh tem 9 total de lutas. 4/3 contra Diamantes, 4/4 contra Rubis e 1/2 contra Safiras.
-    2 problemas.
 Helior44 tem 9 total de lutas. 3/4 contra Diamantes, 1/3 contra Rubis e 5/2 contra Safiras.
     6 problemas.
-Guilram91 tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
+didisantista tem 9 total de lutas. 3/2 contra Diamantes, 2/2 contra Rubis e 4/5 contra Safiras.
+    2 problemas.
+Douglete011 tem 9 total de lutas. 0/2 contra Diamantes, 0/2 contra Rubis e 9/5 contra Safiras.
+    8 problemas.
+Diogenest tem 9 total de lutas. 2/2 contra Diamantes, 0/2 contra Rubis e 7/5 contra Safiras.
     4 problemas.
-Mamazzaro tem 9 total de lutas. 3/3 contra Diamantes, 3/4 contra Rubis e 3/2 contra Safiras.
-    2 problemas.
-Tatinick82 tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
+LeoJesus55 tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
+    0 problemas.
+MasterLineYr tem 9 total de lutas. 1/3 contra Diamantes, 3/4 contra Rubis e 5/2 contra Safiras.
     6 problemas.
-Didideluca tem 9 total de lutas. 2/3 contra Diamantes, 4/4 contra Rubis e 3/2 contra Safiras.
+Matabanguela tem 9 total de lutas. 1/3 contra Diamantes, 4/4 contra Rubis e 4/2 contra Safiras.
+    4 problemas.
+c4i00 tem 9 total de lutas. 2/4 contra Diamantes, 3/3 contra Rubis e 4/2 contra Safiras.
+    4 problemas.
+123CatBond tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
+    6 problemas.
+marcioljunior tem 9 total de lutas. 1/2 contra Diamantes, 0/2 contra Rubis e 8/5 contra Safiras.
+    6 problemas.
+Guilram91 tem 9 total de lutas. 0/2 contra Diamantes, 3/2 contra Rubis e 6/5 contra Safiras.
+    4 problemas.
+Tatinick82 tem 9 total de lutas. 1/2 contra Diamantes, 1/2 contra Rubis e 7/5 contra Safiras.
+    4 problemas.
+Didideluca tem 9 total de lutas. 2/3 contra Diamantes, 5/4 contra Rubis e 2/2 contra Safiras.
     2 problemas.
+AlekaSabbag tem 9 total de lutas. 2/4 contra Diamantes, 3/3 contra Rubis e 4/2 contra Safiras.
+    4 problemas.
 Juracrav tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
     0 problemas.
 LuksBertolli tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
     4 problemas.
+Thacod tem 9 total de lutas. 1/2 contra Diamantes, 2/2 contra Rubis e 6/5 contra Safiras.
+    2 problemas.
 DGKetchum1 tem 9 total de lutas. 1/2 contra Diamantes, 2/2 contra Rubis e 6/5 contra Safiras.
     2 problemas.
-rikardolima tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
-    6 problemas.
+josenkio tem 9 total de lutas. 1/3 contra Diamantes, 4/4 contra Rubis e 4/2 contra Safiras.
+    4 problemas.
 qdeza tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
     0 problemas.
 GuiMi19 tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
     6 problemas.
-Allma68 tem 9 total de lutas. 1/2 contra Diamantes, 2/2 contra Rubis e 6/5 contra Safiras.
+Allma68 tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
+    6 problemas.
+FabianoCoelho tem 9 total de lutas. 2/3 contra Diamantes, 4/4 contra Rubis e 3/2 contra Safiras.
     2 problemas.
-Thacod tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
-    0 problemas.
 Tiringstorm34 tem 9 total de lutas. 1/2 contra Diamantes, 2/2 contra Rubis e 6/5 contra Safiras.
     2 problemas.
-Gsaito87 tem 9 total de lutas. 2/4 contra Diamantes, 5/3 contra Rubis e 2/2 contra Safiras.
+Oftentimes7 tem 9 total de lutas. 1/3 contra Diamantes, 5/4 contra Rubis e 3/2 contra Safiras.
     4 problemas.
 HigashiRicardo tem 9 total de lutas. 2/2 contra Diamantes, 2/2 contra Rubis e 5/5 contra Safiras.
     0 problemas.
 SinGoLfaiRe tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
     4 problemas.
-Teresak1 tem 9 total de lutas. 1/2 contra Diamantes, 2/2 contra Rubis e 6/5 contra Safiras.
-    2 problemas.
-Pamps2805 tem 9 total de lutas. 4/3 contra Diamantes, 3/4 contra Rubis e 2/2 contra Safiras.
-    2 problemas.
-Andyneves29 tem 9 total de lutas. 0/2 contra Diamantes, 0/2 contra Rubis e 9/5 contra Safiras.
-    8 problemas.
-FabianoCoelho tem 9 total de lutas. 3/3 contra Diamantes, 4/4 contra Rubis e 2/2 contra Safiras.
-    0 problemas.
-lahkehl tem 9 total de lutas. 1/3 contra Diamantes, 6/4 contra Rubis e 2/2 contra Safiras.
+rikardolima tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
     4 problemas.
-AlekaSabbag tem 9 total de lutas. 4/4 contra Diamantes, 3/3 contra Rubis e 2/2 contra Safiras.
-    0 problemas.
-Oftentimes7 tem 9 total de lutas. 3/3 contra Diamantes, 6/4 contra Rubis e 0/2 contra Safiras.
+Teresak1 tem 9 total de lutas. 0/2 contra Diamantes, 2/2 contra Rubis e 7/5 contra Safiras.
     4 problemas.
-josenkio tem 9 total de lutas. 3/3 contra Diamantes, 4/4 contra Rubis e 2/2 contra Safiras.
-    0 problemas.
-Nietzsche968 tem 9 total de lutas. 3/4 contra Diamantes, 4/3 contra Rubis e 2/2 contra Safiras.
+lahkehl tem 9 total de lutas. 1/3 contra Diamantes, 5/4 contra Rubis e 3/2 contra Safiras.
+    4 problemas.
+Andyneves29 tem 9 total de lutas. 0/2 contra Diamantes, 1/2 contra Rubis e 8/5 contra Safiras.
+    6 problemas.
+Allanlima04 tem 9 total de lutas. 3/3 contra Diamantes, 5/4 contra Rubis e 1/2 contra Safiras.
     2 problemas.
-Jogadores com 9 batalhas: 70
-Jogadores sem 9 batalhas: 0
-Batalhas de tier errado: 258
+GassanBr tem 8 total de lutas. 6/4 contra Diamantes, 2/3 contra Rubis e 0/2 contra Safiras.
+    5 problemas.
+TomDSantos tem 9 total de lutas. 2/3 contra Diamantes, 7/4 contra Rubis e 0/2 contra Safiras.
+    6 problemas.
+wapinh tem 9 total de lutas. 2/3 contra Diamantes, 7/4 contra Rubis e 0/2 contra Safiras.
+    6 problemas.
+Nietzsche968 tem 9 total de lutas. 4/4 contra Diamantes, 3/3 contra Rubis e 2/2 contra Safiras.
+    0 problemas.
+Gsaito87 tem 9 total de lutas. 7/4 contra Diamantes, 2/3 contra Rubis e 0/2 contra Safiras.
+    6 problemas.
+Jogadores com 9 batalhas: 68
+Jogadores sem 9 batalhas: 2
+Batalhas de tier errado: 288
+Há jogadores com menos de 9 batalhas. Tentarei consertar.
+São eles: vib,GassanBr.
+vib e GassanBr são inimigos
+vib e GassanBr já tem uma batalha entre si
+GassanBr e vib são inimigos
+GassanBr e vib já tem uma batalha entre si

@@ -15,29 +15,41 @@ export class Match {
   p1score = 0;
   p2score = 0;
 
-
   // returns whether this Player is in this match
   hasPlayer(player: Player): boolean {
-    if (this.p1 === player || this.p2 === player) { return true; }
+    if (this.p1 === player || this.p2 === player) {
+      return true;
+    }
     return false;
   }
 
   // returns whether this match is between this 2 players
   hasPlayers(p1: Player, p2: Player): boolean {
-    if (this.hasPlayer(p1) && this.hasPlayer(p2)) { return true; }
+    if (this.hasPlayer(p1) && this.hasPlayer(p2)) {
+      return true;
+    }
     return false;
   }
 
   // returns true if this match has this player and his enemy has enemyNivel
   enemyHasNivel(player: Player, enemyNivel: Nivel): boolean {
-    if (this.hasPlayer(player) && this.getEnemyOfPlayer(player).getNivel() === enemyNivel) { return true; }
+    if (
+      this.hasPlayer(player) &&
+      this.getEnemyOfPlayer(player).getNivel() === enemyNivel
+    ) {
+      return true;
+    }
     return false;
   }
 
   // returns the enemy of this player
   getEnemyOfPlayer(player: Player): Player {
-    if (this.p1 === player) { return this.p2; }
-    if (this.p2 === player) { return this.p1; }
+    if (this.p1 === player) {
+      return this.p2;
+    }
+    if (this.p2 === player) {
+      return this.p1;
+    }
     return undefined;
   }
 
@@ -78,7 +90,7 @@ export class CupTableGenerator {
   }
 
   buildCups() {
-    const n = 1000;
+    const n = 1;
 
     for (let i = 0; i < n; i++) {
       const cup = new CupTable();
@@ -93,7 +105,7 @@ export class CupTableGenerator {
     this.tables.forEach(c => {
       const thisCup = c.diagPlayersWithoutMaxBattles;
       const thisBadTier = c.diagMatchesBadTier;
-      // console.log(`this: ${thisCup}`);
+      console.log(`this: ${thisCup}, ${thisBadTier}`);
 
       if (thisCup < low) {
         low = thisCup;
@@ -105,10 +117,8 @@ export class CupTableGenerator {
           this.best = c;
         }
       }
-
     });
   }
-
 }
 
 // the list of matches on a tournament, or tournament schedule
@@ -128,7 +138,6 @@ export class CupTable {
       players = players.filter(p => p.getRank() !== Rank.None);
       // console.log(players);
       this.log(players.toString());
-
     }
     this.rules = new CupRules(players);
   }
@@ -140,13 +149,13 @@ export class CupTable {
 
   printLog(): string {
     let result = '';
-    this.cupLog.forEach(l => result += `${l}\n`);
+    this.cupLog.forEach(l => (result += `${l}\n`));
     return result;
   }
 
   printMatches(): string {
     let result = '';
-    this.matches.forEach(m => result += m.toString() + '\n');
+    this.matches.forEach(m => (result += m.toString() + '\n'));
     return result;
   }
 
@@ -166,17 +175,26 @@ export class CupTable {
     const saf = `${mySaf}/${ruleSaf}`;
     const issues = issDia + issRub + issSaf;
     this.diagMatchesBadTier += issues;
-    this.log(`${p.getName()} tem ${s.matches} total de lutas. ${dia} contra Diamantes, ${rub} contra Rubis e ${saf} contra Safiras.
+    this.log(`${p.getName()} tem ${
+      s.matches
+    } total de lutas. ${dia} contra Diamantes, ${rub} contra Rubis e ${saf} contra Safiras.
     ${issues} problemas.`);
-
   }
 
   checkSummaries() {
     this.summ.forEach((s, p) => {
       this.checkMatcherPerTier(s, p);
     });
-    this.log(`Jogadores com ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithMaxBattles}`);
-    this.log(`Jogadores sem ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithoutMaxBattles}`);
+    this.log(
+      `Jogadores com ${this.rules.maxmatches} batalhas: ${
+        this.diagPlayersWithMaxBattles
+      }`
+    );
+    this.log(
+      `Jogadores sem ${this.rules.maxmatches} batalhas: ${
+        this.diagPlayersWithoutMaxBattles
+      }`
+    );
     this.log(`Batalhas de tier errado: ${this.diagMatchesBadTier}`);
   }
 
@@ -187,7 +205,11 @@ export class CupTable {
     });
 
     this.summ.forEach((s, p) => {
-      if (this.playerHasMaxBattles(p)) { this.diagPlayersWithMaxBattles++; } else { this.diagPlayersWithoutMaxBattles++; }
+      if (this.playerHasMaxBattles(p)) {
+        this.diagPlayersWithMaxBattles++;
+      } else {
+        this.diagPlayersWithoutMaxBattles++;
+      }
     });
   }
 
@@ -203,61 +225,125 @@ export class CupTable {
     this.summ.get(player).matchesAgainst.set(enemy.getNivel(), ma + 1);
   }
 
+  // take the number of players with incomplete matches and try to fix it
+  fixProblems() {
+    if (this.diagPlayersWithoutMaxBattles === 0) { return; }
+    this.log(`Há jogadores com menos de ${this.rules.maxmatches} batalhas. Tentarei consertar.`);
+    const playersMissingMatches: Player[] = [];
+
+    findPlayersMissingMatches.bind(this)();
+    fixPlayersMissingMatches.bind(this)();
+
+    // finds all players missing matches and put them on an array
+    function findPlayersMissingMatches() {
+      this.summ.forEach((s, p) => {
+        if (s.matches < this.rules.maxmatches) {
+          playersMissingMatches.push(p);
+        }
+      });
+      this.log(`São eles: ${playersMissingMatches}.`);
+    }
+
+    // for each player in the array of players missing matches, try to fix them
+    function fixPlayersMissingMatches() {
+      playersMissingMatches.forEach(p => {
+        fixPlayer.bind(this)(p);
+      });
+    }
+
+    // this player is missing matches, try to fix it
+    function fixPlayer(p: Player) {
+      // is there someone else missing games?
+      if (playersMissingMatches.length > 1) {
+        // if so, can I play the other one?
+        const others = playersMissingMatches.filter(p2 => p2 !== p);
+        const enemy = others[0];
+        if (p.getEnemies().includes(enemy)) {
+          this.log(`${p} e ${enemy} são inimigos`);
+          // if so, add a match against him
+          if (!this.doesBattleExist(p, enemy)) { this.addMatch(p, enemy);
+          } else { this.log(`${p} e ${enemy} já tem uma batalha entre si`); }
+        } else {
+          this.log(`${p} e ${enemy} não são inimigos`);
+
+        }
+      }
+    }
+  }
 
   buildMatches() {
-    let players =  this.rules.players;
+    let players = this.rules.players;
     // players = players.sort((a, b) => -1);
     players = players.sort((a, b) => a.countEnemies() - b.countEnemies());
     // console.log('players: ' + players);
 
-    players.forEach( p => this.findMatchesForPlayer(p) );
+    players.forEach(p => this.findMatchesForPlayer(p));
     // matches.forEach((m) => console.log(m.toString()));
 
     this.setSummaries();
     this.checkSummaries();
+    this.fixProblems();
   }
 
   findMatchesForPlayer(player: Player) {
     this.log(`Procurando lutas para ${player.getName()}`);
     // this.matches = this.matches.concat(this.findMatchesPerNivel(player, undefined, 9));
-    this.matches = this.matches.concat(this.findMatchesPerNivel(player, Nivel.Safira));
-    this.matches = this.matches.concat(this.findMatchesPerNivel(player, Nivel.Rubi));
-    this.matches = this.matches.concat(this.findMatchesPerNivel(player, Nivel.Diamante));
+    this.findMatchesPerNivel(player, Nivel.Safira);
+    this.findMatchesPerNivel(player, Nivel.Rubi);
+    this.findMatchesPerNivel(player, Nivel.Diamante);
 
     let has = this.countMatchesForPlayer(player);
     let left = this.rules.maxmatches - has;
     if (left > 0) {
-      this.log(`${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${this.rules.maxmatches}`);
-      this.matches = this.matches.concat(this.findMatchesPerNivel(player, player.getNivel(), left));
+      this.log(
+        `${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${
+          this.rules.maxmatches
+        }`
+      );
+      this.findMatchesPerNivel(player, player.getNivel(), left);
     }
     has = this.countMatchesForPlayer(player);
     left = this.rules.maxmatches - has;
     if (left > 0) {
-      this.log(`${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${this.rules.maxmatches}`);
-      this.matches = this.matches.concat(this.findMatchesPerNivel(player, undefined, left));
+      this.log(
+        `${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${
+          this.rules.maxmatches
+        }`
+      );
+      this.findMatchesPerNivel(player, undefined, left);
     }
   }
 
-  findMatchesPerNivel(player: Player, nivel: Nivel, ammount = 0): Match[] {
-    const result: Match[] = [];
+  findMatchesPerNivel(player: Player, nivel: Nivel, ammount = 0) {
+    // const result: Match[] = [];
 
     let max = ammount;
-    if (max === 0) { max = this.rules.matchesPerNivel[player.getNivel()][nivel]; }
+    if (max === 0) {
+      max = this.rules.matchesPerNivel[player.getNivel()][nivel];
+    }
     const has = this.countMatchesForPlayer(player);
     let nivelName: string = nivel;
-    if (!nivel) { nivelName = 'qualquer nível'; }
-    this.log(`Procurando ${max} inimigos ${nivelName} para ${player.getName()}`);
+    if (!nivel) {
+      nivelName = 'qualquer nível';
+    }
+    this.log(
+      `Procurando ${max} inimigos ${nivelName} para ${player.getName()}`
+    );
     let enemies = player.getEnemies();
     // let enemies = this.rules.players;
     enemies = enemies.filter(e => e !== player);
 
     enemies = this.whichPlayersCanStillBattle(player, enemies);
-    if (nivel !== undefined) { enemies = enemies.filter(e => e.getNivel() === nivel); }
+    if (nivel !== undefined) {
+      enemies = enemies.filter(e => e.getNivel() === nivel);
+    }
     // this.log(enemies.length.toString());
     // this.log(enemies.toString());
     if (enemies.length < max) {
       max = enemies.length;
-      this.log(`Sobraram apenas ${max} inimigos ${nivelName} para ${player.getName()}`);
+      this.log(
+        `Sobraram apenas ${max} inimigos ${nivelName} para ${player.getName()}`
+      );
     }
     if (has > 0) {
       this.log(`${player} já tem ${has} batalhas.`);
@@ -270,12 +356,20 @@ export class CupTable {
     for (let i = 1; i <= max; i++) {
       const nextEnemy = this.rngPickOne(enemies);
       this.log(`Inimigo ${i} será ${nextEnemy.getName()}`);
-      result.push(new Match(player, nextEnemy));
+      this.addMatch(player, nextEnemy);
+      // result.push(new Match(player, nextEnemy));
     }
 
     // console.log(result);
+    // result.forEach(m => this.addMatch(m.p1, m.p2));
+    // return result;
+  }
 
-    return result;
+  // adds a match between this 2 players to the match list
+  addMatch(p1: Player, p2: Player) {
+    const match = new Match(p1, p2);
+    this.log(`Nova batalha: ${p1} x ${p2}`);
+    this.matches.push(match);
   }
 
   // pick one enemy for this player
@@ -297,11 +391,11 @@ export class CupTable {
   // and who have not yet battled 'player'
   whichPlayersCanStillBattle(player: Player, enemies: Player[]): Player[] {
     // remove enemies not in this tournament
-    enemies = enemies.filter( p => this.rules.players.includes(p) );
+    enemies = enemies.filter(p => this.rules.players.includes(p));
     // remove enemies who played more than 9 battles (or whatever is the max for this tournament)
-    enemies = enemies.filter( p => !this.playerHasMaxBattles(p) );
+    enemies = enemies.filter(p => !this.playerHasMaxBattles(p));
     // remove enemies that this player already has a battle against
-    enemies = enemies.filter( p => !this.doesBattleExist(player, p));
+    enemies = enemies.filter(p => !this.doesBattleExist(player, p));
 
     return enemies;
   }
@@ -311,7 +405,12 @@ export class CupTable {
   countMatchesForPlayer(player: Player, enemyNivel?: Nivel): number {
     let count = 0;
     this.matches.forEach(m => {
-      if (m.hasPlayer(player) && (!enemyNivel || m.enemyHasNivel(player, enemyNivel)) ) { count++; }
+      if (
+        m.hasPlayer(player) &&
+        (!enemyNivel || m.enemyHasNivel(player, enemyNivel))
+      ) {
+        count++;
+      }
     });
     return count;
   }
@@ -324,12 +423,16 @@ export class CupTable {
   // returns true if this Player already has all their max required battles
   playerHasMaxBattles(player: Player): boolean {
     // this.log(`${player.getName()} has ${this.countMatchesForPlayer(player)} of ${this.rules.maxmatches} battles`);
-    return this.countMatchesForPlayer(player) >= this.rules.maxmatches ? true : false;
-
+    return this.countMatchesForPlayer(player) >= this.rules.maxmatches
+      ? true
+      : false;
   }
   // returns true if this Player already has all their max required battles against players of this nivel
   playerHasMaxBattlesAgainstThisNivel(player: Player, nivel: Nivel): boolean {
-    return this.countMatchesForPlayer(player, nivel) >= this.rules.matchesPerNivel[player.getNivel()][nivel] ? true : false;
+    return this.countMatchesForPlayer(player, nivel) >=
+      this.rules.matchesPerNivel[player.getNivel()][nivel]
+      ? true
+      : false;
   }
 }
 
@@ -344,7 +447,7 @@ class CupRules {
     [Nivel.Diamante]: {
       [Nivel.Diamante]: 4,
       [Nivel.Rubi]: 3,
-      [Nivel.Safira]: 2,
+      [Nivel.Safira]: 2
     },
     // Treinador Rubi enfrentará:
     // - 3 diamante
@@ -353,7 +456,7 @@ class CupRules {
     [Nivel.Rubi]: {
       [Nivel.Diamante]: 3,
       [Nivel.Rubi]: 4,
-      [Nivel.Safira]: 2,
+      [Nivel.Safira]: 2
     },
     // Treinador Safira enfrentará:
     // - 2 diamante
@@ -362,14 +465,13 @@ class CupRules {
     [Nivel.Safira]: {
       [Nivel.Diamante]: 2,
       [Nivel.Rubi]: 2,
-      [Nivel.Safira]: 5,
-    },
+      [Nivel.Safira]: 5
+    }
   };
 
   constructor(players: Player[]) {
     this.players = players;
   }
-
 }
 
 export class Player {
@@ -456,14 +558,14 @@ export class Player {
   getEnemies(nivel?: Nivel, rank?: string): Player[] {
     const result: Player[] = [];
     const friends = this.getFriends();
-    friends.forEach((f) => {
-      const t = (f.team !== this.team);
+    friends.forEach(f => {
+      const t = f.team !== this.team;
       // console.log(nivel);
       // console.log(f);
       // console.log(f.getNivel());
-      const n = (nivel === undefined  || nivel === f.getNivel());
+      const n = nivel === undefined || nivel === f.getNivel();
 
-      const r = (!rank || rank === f.getRank());
+      const r = !rank || rank === f.getRank();
       if (t && n && r) {
         result.push(f);
       }
@@ -499,7 +601,7 @@ export class Liga {
 
   // returns the Player object that has this name
   static getPlayerByName(name: string): Player {
-    return this.allPlayers.find((p) => p.getName() === name);
+    return this.allPlayers.find(p => p.getName() === name);
   }
 
   // returns an array of all players whose winrate matches this Nivel
