@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player, Liga } from '../shared/ligapvp.module';
 
 @Component({
   selector: 'app-ligapvp',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LigapvpComponent implements OnInit {
 
+  members: Player[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.members = Liga.getAllPlayers();
   }
 
 }

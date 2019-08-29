@@ -1,1 +1,7 @@
 <p>ligapvp works!</p>
+
+<ul>
+  <li *ngFor="let member of members">
+    {{ member.getName() }} {{ member.getTeam() }} {{ member.getNivel() }}
+  </li>
+</ul>

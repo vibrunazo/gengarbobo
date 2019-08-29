@@ -41,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PktableComponent } from './dex/pktable/pktable.component';
 import { SummaryComponent } from './iv/summary/summary.component';
 import { LigapvpComponent } from './ligapvp/ligapvp.component';
+import { MemberComponent } from './ligapvp/member/member.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { LigapvpComponent } from './ligapvp/ligapvp.component';
     FooterComponent,
     PktableComponent,
     SummaryComponent,
-    LigapvpComponent
+    LigapvpComponent,
+    MemberComponent
   ],
   imports: [
     BrowserModule,

@@ -486,6 +486,8 @@ export class Player {
 
   getTeam(): Team {
     switch (this.team) {
+      case 'rocket':
+        return Team.Rocket;
       case 'aqua':
         return Team.Aqua;
       case 'flare':
@@ -652,12 +654,13 @@ export enum Rank {
 
 // teams in the league
 export enum Team {
-  Skull,
-  Aqua,
-  Magma,
-  Galactic,
-  Plasma,
-  Flare
+  Skull = 'Skull',
+  Aqua = 'Aqua',
+  Rocket = 'Rocket',
+  Magma = 'Magma',
+  Galactic = 'Galactic',
+  Plasma = 'Plasma',
+  Flare = 'Flare'
 }
 
 // export default Liga;
