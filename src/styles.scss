@@ -26,6 +26,15 @@ mat-card {
   margin: 0px;
 }
 
+.warning {
+  background-color: mat-color($warn);
+}
+
+a {
+    color: mat-color($accent);
+    text-decoration: none;
+  }
+
 .move {
   // background-color: red !important;
   // color: red !important;

@@ -1,1 +1,9 @@
-<p>member works!</p>
+<mat-card *ngIf="!player" class="warning">
+  Não pude encontrar um membro chamado {{ name }}!
+</mat-card>
+
+<mat-card *ngIf="player">
+  <p>Membro {{ player.getName() }} ({{ player.getTeam() }}) é um jogador {{ player.getNivel() }} com {{ player.getWinrate()}}% de aproveitamento. </p>
+</mat-card>
+
+
