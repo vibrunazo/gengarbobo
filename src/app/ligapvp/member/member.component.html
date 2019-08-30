@@ -4,6 +4,35 @@
 
 <mat-card *ngIf="player">
   <p>Membro {{ player.getName() }} ({{ player.getTeam() }}) é um jogador {{ player.getNivel() }} com {{ player.getWinrate()}}% de aproveitamento. </p>
-</mat-card>
 
+  <div class="friendcontainer">
+
+    <mat-card class="friends">
+      Amigos ({{ friends.length }}):
+        <ul>
+            <li *ngFor="let friend of friends">
+                <a [routerLink]="['/liga/m', friend.getName()]">
+                  {{ friend.getName() }} | {{ friend.getTeam() }} | {{ friend.getNivel() }}
+                </a>
+            </li>
+          </ul>
+    </mat-card>
+
+
+
+    <mat-card class="friends">
+      Falta amizade com ({{ nonfriends.length}}):
+        <ul>
+            <li *ngFor="let friend of nonfriends">
+                <a [routerLink]="['/liga/m', friend.getName()]">
+                  {{ friend.getName() }} | {{ friend.getTeam() }} | {{ friend.getNivel() }}
+                </a>
+            </li>
+          </ul>
+    </mat-card>
+  </div>
+
+
+
+</mat-card>
 

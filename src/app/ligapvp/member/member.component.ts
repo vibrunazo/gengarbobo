@@ -11,6 +11,8 @@ import { switchMap } from 'rxjs/operators';
 export class MemberComponent implements OnInit {
   player: Player;
   name = '';
+  friends: Player[] = [];
+  nonfriends: Player[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router) {
 
@@ -28,5 +30,7 @@ export class MemberComponent implements OnInit {
   setMember(member) {
     this.name = member;
     this.player = Liga.getPlayerByName(member);
+    this.friends = this.player.getFriends();
+    this.nonfriends = this.player.getNonFriends();
   }
 }

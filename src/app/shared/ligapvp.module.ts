@@ -557,6 +557,16 @@ export class Player {
     return result;
   }
 
+  getNonFriends(): Player[] {
+    let result: Player[] = [];
+    const friends = this.getFriends();
+    const all = Liga.getAllPlayers();
+
+    result = all.filter(p => !friends.includes(p));
+
+    return result;
+  }
+
   getEnemies(nivel?: Nivel, rank?: string): Player[] {
     const result: Player[] = [];
     const friends = this.getFriends();

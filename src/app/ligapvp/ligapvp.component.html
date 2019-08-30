@@ -6,7 +6,7 @@
   <ul>
     <li *ngFor="let member of members">
         <a [routerLink]="['/liga/m', member.getName()]">
-          {{ member.getName() }} {{ member.getTeam() }} {{ member.getNivel() }}
+          {{ member.getName() }} | {{ member.getTeam() }} | {{ member.getNivel() }}
         </a>
     </li>
   </ul>

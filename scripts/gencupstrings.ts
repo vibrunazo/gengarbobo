@@ -81,7 +81,7 @@ function saveToFile() {
     if (e) {
       console.log('' + e);
     } else {
-      console.log('sucess');
+      console.log('success');
     }
   });
 }

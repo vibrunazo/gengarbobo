@@ -1,7 +1,5 @@
 export const LIGHUINHA3 = [
-  11,
   12,
-  14,
   15,
   24,
   30,
@@ -10,6 +8,7 @@ export const LIGHUINHA3 = [
   48,
   49,
   53,
+  88,
   89,
   110,
   123,
