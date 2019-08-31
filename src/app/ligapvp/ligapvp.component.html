@@ -2,12 +2,4 @@
   Membros da Liga PvP.
 </mat-card>
 
-<mat-card class="members">
-  <ul>
-    <li *ngFor="let member of members">
-        <a [routerLink]="['/liga/m', member.getName()]">
-          {{ member.getName() }} | {{ member.getTeam() }} | {{ member.getNivel() }}
-        </a>
-    </li>
-  </ul>
-</mat-card>
+<app-membertable></app-membertable>

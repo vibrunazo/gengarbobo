@@ -1,0 +1,37 @@
+@import '../../gengartheme.scss';
+
+$primary: map-get($gengartheme, primary);
+$accent: map-get($gengartheme, accent);
+$warn: map-get($gengartheme, warn);
+
+.tablecontainer {
+  width: 400px;
+}
+
+.full-width-table {
+  width: 100%;
+}
+
+a {
+  color: mat-color(mat-palette($mat-amber, 500, 400, 600));
+}
+
+tr.mat-footer-row, tr.mat-row {
+  height: 30px;
+}
+
+.mat-column-name {
+  width: 120px;
+}
+.mat-column-team {
+  width: 60px;
+}
+.mat-column-winrate {
+  width: 60px;
+}
+.mat-column-tier {
+  width: 80px;
+}
+.mat-column-friends {
+  width: 40px;
+}

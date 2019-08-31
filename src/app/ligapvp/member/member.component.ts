@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player, Liga } from 'src/app/shared/ligapvp.module';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-member',
@@ -14,7 +13,7 @@ export class MemberComponent implements OnInit {
   friends: Player[] = [];
   nonfriends: Player[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute) {
 
   }
 

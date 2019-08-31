@@ -42,6 +42,7 @@ import { PktableComponent } from './dex/pktable/pktable.component';
 import { SummaryComponent } from './iv/summary/summary.component';
 import { LigapvpComponent } from './ligapvp/ligapvp.component';
 import { MemberComponent } from './ligapvp/member/member.component';
+import { MembertableComponent } from './ligapvp/membertable/membertable.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { MemberComponent } from './ligapvp/member/member.component';
     PktableComponent,
     SummaryComponent,
     LigapvpComponent,
-    MemberComponent
+    MemberComponent,
+    MembertableComponent
   ],
   imports: [
     BrowserModule,
