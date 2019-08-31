@@ -5,25 +5,48 @@
 <mat-card *ngIf="player">
   <p>
     Membro
-    <img [src]="player.getTeamIcon()" class="teamIcon">
     {{ player.getName() }} é um jogador
     {{ player.getTierIcon() }}
-    {{ player.getNivel() }} com {{ player.getWinrate() }}% de aproveitamento.
+    {{ player.getNivel() }} com {{ player.getWinrate() }}% de aproveitamento
+    da equipe
+    <img [src]="player.getTeamIcon()" class="teamIcon">
+    {{ player.getTeam() }}.
   </p>
 
   <div class="friendcontainer">
     <mat-card class="friends">
       <mat-list>
         <h3 mat-subheader>Amigos ({{ friends.length }})</h3>
+
         <mat-divider></mat-divider>
         <h3 mat-subheader>Inimigos ({{ enemies.length }}):</h3>
-        <mat-list-item *ngFor="let friend of enemies">
+        <h3 mat-subheader>Diamantes ({{ dia.length }}):</h3>
+        <mat-list-item *ngFor="let friend of dia">
           {{ friend.getTierIcon() }}
           <img [src]="friend.getTeamIcon()" class="teamIcon">
           <a [routerLink]="['/liga/m', friend.getName()]">
             {{ friend.getName() }}
           </a>
         </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Rubi ({{ rub.length }}):</h3>
+        <mat-list-item *ngFor="let friend of rub">
+          {{ friend.getTierIcon() }}
+          <img [src]="friend.getTeamIcon()" class="teamIcon">
+          <a [routerLink]="['/liga/m', friend.getName()]">
+            {{ friend.getName() }}
+          </a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Safira ({{ saf.length }}):</h3>
+        <mat-list-item *ngFor="let friend of saf">
+          {{ friend.getTierIcon() }}
+          <img [src]="friend.getTeamIcon()" class="teamIcon">
+          <a [routerLink]="['/liga/m', friend.getName()]">
+            {{ friend.getName() }}
+          </a>
+        </mat-list-item>
+
         <mat-divider></mat-divider>
         <h3 mat-subheader>Colegas ({{ colleagues.length }})</h3>
         <mat-list-item *ngFor="let friend of colleagues">
@@ -37,10 +60,11 @@
       </mat-list>
     </mat-card>
 
-    <mat-card class="friends">
+    <mat-card class="friends nonfriends">
       <mat-list>
         <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
         <mat-divider></mat-divider>
+        <br>
         <mat-list-item *ngFor="let friend of nonfriends">
             {{ friend.getTierIcon() }}
             <img [src]="friend.getTeamIcon()" class="teamIcon">

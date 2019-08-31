@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Player, Liga } from 'src/app/shared/ligapvp.module';
+import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,9 @@ export class MemberComponent implements OnInit {
   name = '';
   friends: Player[] = [];
   enemies: Player[] = [];
+  dia: Player[] = [];
+  rub: Player[] = [];
+  saf: Player[] = [];
   colleagues: Player[] = [];
   nonfriends: Player[] = [];
 
@@ -34,6 +37,12 @@ export class MemberComponent implements OnInit {
     this.friends = this.player.getFriends();
     this.enemies = this.player.getEnemies();
     this.enemies = this.enemies.sort((a, b) => b.getWinrate() - a.getWinrate());
+    this.dia = this.player.getEnemies(Nivel.Diamante);
+    this.dia = this.dia.sort((a, b) => b.getWinrate() - a.getWinrate());
+    this.rub = this.player.getEnemies(Nivel.Rubi);
+    this.rub = this.rub.sort((a, b) => b.getWinrate() - a.getWinrate());
+    this.saf = this.player.getEnemies(Nivel.Safira);
+    this.saf = this.saf.sort((a, b) => b.getWinrate() - a.getWinrate());
     this.colleagues = this.player.getColleagues();
     this.colleagues = this.colleagues.sort((a, b) => b.getWinrate() - a.getWinrate());
     this.nonfriends = this.player.getNonFriends();
