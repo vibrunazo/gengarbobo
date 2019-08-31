@@ -562,7 +562,7 @@ export class Player {
     const friends = this.getFriends();
     const all = Liga.getAllPlayers();
 
-    result = all.filter(p => !friends.includes(p));
+    result = all.filter(p => (!friends.includes(p) && p !== this));
 
     return result;
   }
