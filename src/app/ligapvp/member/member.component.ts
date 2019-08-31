@@ -11,6 +11,8 @@ export class MemberComponent implements OnInit {
   player: Player;
   name = '';
   friends: Player[] = [];
+  enemies: Player[] = [];
+  colleagues: Player[] = [];
   nonfriends: Player[] = [];
 
   constructor(private route: ActivatedRoute) {
@@ -30,6 +32,11 @@ export class MemberComponent implements OnInit {
     this.name = member;
     this.player = Liga.getPlayerByName(member);
     this.friends = this.player.getFriends();
+    this.enemies = this.player.getEnemies();
+    this.enemies = this.enemies.sort((a, b) => b.getWinrate() - a.getWinrate());
+    this.colleagues = this.player.getColleagues();
+    this.colleagues = this.colleagues.sort((a, b) => b.getWinrate() - a.getWinrate());
     this.nonfriends = this.player.getNonFriends();
+    this.nonfriends = this.nonfriends.sort((a, b) => b.getWinrate() - a.getWinrate());
   }
 }

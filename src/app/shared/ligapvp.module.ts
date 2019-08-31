@@ -186,14 +186,10 @@ export class CupTable {
       this.checkMatcherPerTier(s, p);
     });
     this.log(
-      `Jogadores com ${this.rules.maxmatches} batalhas: ${
-        this.diagPlayersWithMaxBattles
-      }`
+      `Jogadores com ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithMaxBattles}`
     );
     this.log(
-      `Jogadores sem ${this.rules.maxmatches} batalhas: ${
-        this.diagPlayersWithoutMaxBattles
-      }`
+      `Jogadores sem ${this.rules.maxmatches} batalhas: ${this.diagPlayersWithoutMaxBattles}`
     );
     this.log(`Batalhas de tier errado: ${this.diagMatchesBadTier}`);
   }
@@ -227,8 +223,12 @@ export class CupTable {
 
   // take the number of players with incomplete matches and try to fix it
   fixProblems() {
-    if (this.diagPlayersWithoutMaxBattles === 0) { return; }
-    this.log(`Há jogadores com menos de ${this.rules.maxmatches} batalhas. Tentarei consertar.`);
+    if (this.diagPlayersWithoutMaxBattles === 0) {
+      return;
+    }
+    this.log(
+      `Há jogadores com menos de ${this.rules.maxmatches} batalhas. Tentarei consertar.`
+    );
     const playersMissingMatches: Player[] = [];
 
     findPlayersMissingMatches.bind(this)();
@@ -261,11 +261,13 @@ export class CupTable {
         if (p.getEnemies().includes(enemy)) {
           this.log(`${p} e ${enemy} são inimigos`);
           // if so, add a match against him
-          if (!this.doesBattleExist(p, enemy)) { this.addMatch(p, enemy);
-          } else { this.log(`${p} e ${enemy} já tem uma batalha entre si`); }
+          if (!this.doesBattleExist(p, enemy)) {
+            this.addMatch(p, enemy);
+          } else {
+            this.log(`${p} e ${enemy} já tem uma batalha entre si`);
+          }
         } else {
           this.log(`${p} e ${enemy} não são inimigos`);
-
         }
       }
     }
@@ -296,9 +298,7 @@ export class CupTable {
     let left = this.rules.maxmatches - has;
     if (left > 0) {
       this.log(
-        `${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${
-          this.rules.maxmatches
-        }`
+        `${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${this.rules.maxmatches}`
       );
       this.findMatchesPerNivel(player, player.getNivel(), left);
     }
@@ -306,9 +306,7 @@ export class CupTable {
     left = this.rules.maxmatches - has;
     if (left > 0) {
       this.log(
-        `${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${
-          this.rules.maxmatches
-        }`
+        `${player} tem ${has} batalhas e ainda precisa de ${left} batalhas pra completar ${this.rules.maxmatches}`
       );
       this.findMatchesPerNivel(player, undefined, left);
     }
@@ -506,6 +504,33 @@ export class Player {
     }
   }
 
+  getTeamIcon(): string {
+    switch (this.team) {
+      case 'rocket':
+        // tslint:disable-next-line: max-line-length
+        return 'https://trello-attachments.s3.amazonaws.com/5cbe0df2f822f229f94a08f4/480x480/3a8c095912db2251be36d8e4994570a6/ROCKET_TRAN.png';
+      case 'aqua':
+        // tslint:disable-next-line: max-line-length
+        return 'https://trello-attachments.s3.amazonaws.com/5cbe0df71794ed0dd9755c23/400x480/9d1a620a285ad19260bcba6bcd5d4ae5/Time_Aqua.png';
+      case 'flare':
+        // tslint:disable-next-line: max-line-length
+        return 'https://trello-attachments.s3.amazonaws.com/5cbe0e107219957d7c384852/312x350/0026864dec63955ddf1d66558a74457a/Time_Flare.png';
+      case 'galactic':
+        // tslint:disable-next-line: max-line-length
+        return 'https://trello-attachments.s3.amazonaws.com/5cbe0e072e186d03b2eb465b/283x393/70994ee1082b4eccbc70b1f5d6ec7555/Team_Galactic_Logo.png';
+      case 'magma':
+        return 'https://trello-attachments.s3.amazonaws.com/5cbe0dff88d576199a43a6ed/400x337/0b9e8e08cfa486e3eea39465f7269c85/MAGMA_T.png';
+      case 'plasma':
+        return 'https://trello-attachments.s3.amazonaws.com/5cbe0e0b04de6443017552c3/894x894/fc2758f6b98ab9a62d8d2c35c6ad4bd9/plasma.png';
+      case 'skull':
+        // tslint:disable-next-line: max-line-length
+        return 'https://lh4.googleusercontent.com/Fya2LhBvPchu4xCtz2I7FlpBB4nzrTtXZ-sC9es6wFYWvLPSCaqbKAThtPM5SHvtLsWTWnOYvqTLHu4X3y2oSjVdKhE3Fqu32ePp17W6ASV30saRNMOb2SE2IA_HnE5pGjXnxYTfpQ=w109-h88';
+
+      default:
+        return null;
+    }
+  }
+
   getRank(): Rank {
     switch (this.rank) {
       case 'bronze':
@@ -519,6 +544,22 @@ export class Player {
         return Rank.None;
     }
   }
+
+  getTierIcon(): string {
+    const tier = this.getNivel();
+    switch (tier) {
+      case Nivel.Diamante:
+        return '💎';
+      case Nivel.Rubi:
+        return '🔴';
+      case Nivel.Safira:
+        return '🔷';
+
+      default:
+        return '';
+    }
+  }
+
 
   getWinrate(): number {
     const str = this.winrate;
@@ -562,7 +603,16 @@ export class Player {
     const friends = this.getFriends();
     const all = Liga.getAllPlayers();
 
-    result = all.filter(p => (!friends.includes(p) && p !== this));
+    result = all.filter(p => !friends.includes(p) && p !== this);
+
+    return result;
+  }
+
+  getColleagues(): Player[] {
+    let result: Player[] = [];
+    const friends = this.getFriends();
+
+    result = friends.filter(p => p.getTeam() === this.getTeam() && p !== this);
 
     return result;
   }
@@ -585,10 +635,10 @@ export class Player {
     return result;
   }
 
-  countEnemies(): number {
+  countEnemies(nivel?: Nivel): number {
     // console.log(`${this} has ${this.getEnemies().length} enemies`);
 
-    return this.getEnemies().length;
+    return this.getEnemies(nivel).length;
   }
 
   constructor(data: PlayerData) {
