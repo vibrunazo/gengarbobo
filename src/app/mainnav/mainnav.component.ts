@@ -28,6 +28,11 @@ export class MainnavComponent {
     this.netlifyService.get().open();
   }
 
+  logOut(): void {
+    console.log('logout');
+    this.netlifyService.get().logout();
+  }
+
   closeSidenav() {
     // only closes sidenav if in handset mode
     // we're sure we're in handset mode if the handset menu button was found

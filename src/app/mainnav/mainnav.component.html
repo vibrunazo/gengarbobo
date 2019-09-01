@@ -35,6 +35,7 @@
       <a class="nav-link" [routerLink]="" *ngIf="netlifyService.get().currentUser() === null" (click)="openModal()">Login</a>
       <a class="nav-link" *ngIf="netlifyService.get().currentUser()">Welcome {{netlifyService.get().currentUser().email}}</a>
       <a class="nav-link" >test {{netlifyService.get().currentUser()}}</a>
+      <a class="nav-link" (click)="openModal()">Logout</a>
 
     </mat-toolbar>
 
