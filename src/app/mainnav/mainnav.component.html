@@ -31,6 +31,11 @@
       <a routerLink="/" class="logo">
         <h1 class="heading">Gengar Bobo</h1>
       </a>
+
+      <a class="nav-link" [routerLink]="" *ngIf="netlifyService.get().currentUser() === null" (click)="openModal()">Login</a>
+      <a class="nav-link" *ngIf="netlifyService.get().currentUser()">Welcome {{netlifyService.get().currentUser().email}}</a>
+      <a class="nav-link" >test {{netlifyService.get().currentUser()}}</a>
+
     </mat-toolbar>
 
     <ng-content></ng-content>

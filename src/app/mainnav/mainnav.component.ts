@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatSidenav, MatButton } from '@angular/material';
+import { NetlifyIdentityService } from '../shared/netlify-identity.service';
 
 @Component({
   selector: 'app-mainnav',
@@ -17,7 +18,15 @@ export class MainnavComponent {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  netlifyService: NetlifyIdentityService;
+  constructor(private breakpointObserver: BreakpointObserver, ns: NetlifyIdentityService) {
+    this.netlifyService = ns;
+  }
+
+  openModal(): void {
+    console.log('open modal');
+    this.netlifyService.get().open();
+  }
 
   closeSidenav() {
     // only closes sidenav if in handset mode
