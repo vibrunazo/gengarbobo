@@ -664,7 +664,7 @@ export class Liga {
 
   // returns the Player object that has this name
   static getPlayerByName(name: string): Player {
-    return this.allPlayers.find(p => p.getName() === name);
+    return this.allPlayers.find(p => p.getName().toLocaleLowerCase() === name.toLocaleLowerCase());
   }
 
   // returns an array of all players whose winrate matches this Nivel
@@ -698,10 +698,9 @@ export class Liga {
 
   // returns all players signed up for this tourney
   static getInscritos(tourney: string): Player[] {
-    let result: Player[] = [];
-    const inscritos = Inscritos[tourney];
-    const all = this.getAllPlayers();
-    result = all.filter(p => inscritos.includes(p.getName()));
+    const result: Player[] = [];
+    const inscritos: string[] = Inscritos[tourney];
+    inscritos.forEach(p => result.push(this.getPlayerByName(p)));
 
     return result;
   }
