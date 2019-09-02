@@ -8,7 +8,7 @@
 }
 
 
-.mat-list-item {
+.friendcontainer .mat-list-item {
   height: 26px !important;
 }
 
@@ -21,7 +21,13 @@
 .friendNameplate {
   width: 100%;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
+}
+
+.wr {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
 }
 
 .teamIcon {
