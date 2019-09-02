@@ -32,12 +32,15 @@ export class NetlifyIdentityService {
 
       netlifyIdentity.on('open', function() {
         console.log('Widget opened');
-        const f = frames['netlify-identity-widget'][1];
         // frames['netlify-identity-widget'][1].contentWindow.document.getElementsByClassName('modalContent').style.backgroundColor = 'red';
-        const e = f.contentWindow.document.getElementsByClassName('modalContent')[0];
-        e.children[2].style.display = 'none';
-        e.children[3].children[0].style.display = 'none';
-        console.log(e);
+        setTimeout(function(){
+
+          const f = frames['netlify-identity-widget'][1];
+          const e = f.contentWindow.document.getElementsByClassName('modalContent')[0];
+          console.log(e);
+          e.children[2].style.display = 'none';
+          e.children[3].children[0].style.display = 'none';
+        }, 1000);
 
       });
 
