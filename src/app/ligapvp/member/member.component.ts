@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-member',
   templateUrl: './member.component.html',
-  styleUrls: ['./member.component.scss']
+  styleUrls: ['./member.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MemberComponent implements OnInit {
   player: Player;

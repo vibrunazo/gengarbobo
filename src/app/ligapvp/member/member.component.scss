@@ -3,13 +3,25 @@
 }
 
 .friends {
-  width: 250px;
+  width: 200px;
   margin-right: 10px;
 }
 
 
 .mat-list-item {
-  height: 26px;
+  height: 26px !important;
+}
+
+.mat-list-item-content{
+  width: 100%;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+.friendNameplate {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .teamIcon {

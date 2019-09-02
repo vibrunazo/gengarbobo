@@ -7,12 +7,11 @@
     Membro
     {{ player.getName() }} é um jogador
     {{ player.getTierIcon() }}
-    {{ player.getNivel() }} com {{ player.getWinrate() }}% de aproveitamento
-    da equipe
-    <img [src]="player.getTeamIcon()" class="teamIcon">
+    {{ player.getNivel() }} com {{ player.getWinrate() }}% de aproveitamento da
+    equipe
+    <img [src]="player.getTeamIcon()" class="teamIcon" />
     {{ player.getTeam() }}.
   </p>
-
 
   <div class="friendcontainer">
     <mat-card class="friends">
@@ -20,53 +19,66 @@
         <div class="friendsHeader">
           <h3 mat-subheader>Amigos ({{ friends.length }})</h3>
           <mat-form-field class="filterff">
-            <mat-select placeholder="" [(ngModel)]="filter" (selectionChange)="changeFilter($event)" name="filter" class="notranslate">
+            <mat-select
+              placeholder=""
+              [(ngModel)]="filter"
+              (selectionChange)="changeFilter($event)"
+              name="filter"
+              class="notranslate"
+            >
               <mat-option value="all">Todos</mat-option>
               <mat-option value="superliga4">Superliga IV</mat-option>
               <mat-option value="liguinha3">Liguinha III</mat-option>
             </mat-select>
           </mat-form-field>
-
         </div>
         <mat-divider></mat-divider>
         <h3 mat-subheader>Inimigos ({{ enemies.length }}):</h3>
         <h3 mat-subheader>Diamantes ({{ dia.length }}):</h3>
-        <mat-list-item *ngFor="let friend of dia">
+        <mat-list-item *ngFor="let friend of dia" class="friendItem">
           {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon">
-          <a [routerLink]="['/liga/m', friend.getName()]">
-            {{ friend.getName() }}
-          </a>
+          <img [src]="friend.getTeamIcon()" class="teamIcon" />
+          <div class="friendNameplate">
+            <a [routerLink]="['/liga/m', friend.getName()]">
+              {{ friend.getName() }}
+            </a>
+            {{ friend.getWinrate() }}%
+          </div>
         </mat-list-item>
         <mat-divider></mat-divider>
         <h3 mat-subheader>Rubi ({{ rub.length }}):</h3>
         <mat-list-item *ngFor="let friend of rub">
           {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon">
-          <a [routerLink]="['/liga/m', friend.getName()]">
-            {{ friend.getName() }}
-          </a>
+          <img [src]="friend.getTeamIcon()" class="teamIcon" />
+          <div class="friendNameplate">
+            <a [routerLink]="['/liga/m', friend.getName()]">
+              {{ friend.getName() }}
+            </a>
+            {{ friend.getWinrate() }}%
+          </div>
         </mat-list-item>
         <mat-divider></mat-divider>
         <h3 mat-subheader>Safira ({{ saf.length }}):</h3>
         <mat-list-item *ngFor="let friend of saf">
           {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon">
-          <a [routerLink]="['/liga/m', friend.getName()]">
-            {{ friend.getName() }}
-          </a>
+          <img [src]="friend.getTeamIcon()" class="teamIcon" />
+          <div class="friendNameplate">
+            <a [routerLink]="['/liga/m', friend.getName()]">
+              {{ friend.getName() }}
+            </a>
+            {{ friend.getWinrate() }}%
+          </div>
         </mat-list-item>
 
         <mat-divider></mat-divider>
         <h3 mat-subheader>Colegas ({{ colleagues.length }})</h3>
         <mat-list-item *ngFor="let friend of colleagues">
           {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon">
+          <img [src]="friend.getTeamIcon()" class="teamIcon" />
           <a [routerLink]="['/liga/m', friend.getName()]">
             {{ friend.getName() }}
           </a>
         </mat-list-item>
-
       </mat-list>
     </mat-card>
 
@@ -74,15 +86,14 @@
       <mat-list>
         <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
         <mat-divider></mat-divider>
-        <br>
+        <br />
         <mat-list-item *ngFor="let friend of nonfriends">
-            {{ friend.getTierIcon() }}
-            <img [src]="friend.getTeamIcon()" class="teamIcon">
-            <a [routerLink]="['/liga/m', friend.getName()]">
-              {{ friend.getName() }}
-            </a>
-          </mat-list-item>
-
+          {{ friend.getTierIcon() }}
+          <img [src]="friend.getTeamIcon()" class="teamIcon" />
+          <a [routerLink]="['/liga/m', friend.getName()]">
+            {{ friend.getName() }}
+          </a>
+        </mat-list-item>
       </mat-list>
     </mat-card>
   </div>
