@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:pt": "ng serve --configuration=pt",
-    "build": "ng build",
+    "build": "ng build && netlify-lambda build functions",
     "build:pt": "ng build --configuration=pt",
     "test": "ng test",
     "lint": "ng lint",
