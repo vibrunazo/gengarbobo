@@ -13,18 +13,21 @@
     {{ player.getTeam() }}.
   </p>
 
-  <mat-form-field class="filterff">
-    <mat-select placeholder="Filtro" [(ngModel)]="filter" (selectionChange)="changeFilter($event)" name="filter" class="notranslate">
-      <mat-option value="all">Todos</mat-option>
-      <mat-option value="superliga4">Superliga IV</mat-option>
-      <mat-option value="liguinha3">Liguniha III</mat-option>
-    </mat-select>
-  </mat-form-field>
 
   <div class="friendcontainer">
     <mat-card class="friends">
       <mat-list>
-        <h3 mat-subheader>Amigos ({{ friends.length }})</h3>
+        <div class="friendsHeader">
+          <h3 mat-subheader>Amigos ({{ friends.length }})</h3>
+          <mat-form-field class="filterff">
+            <mat-select placeholder="" [(ngModel)]="filter" (selectionChange)="changeFilter($event)" name="filter" class="notranslate">
+              <mat-option value="all">Todos</mat-option>
+              <mat-option value="superliga4">Superliga IV</mat-option>
+              <mat-option value="liguinha3">Liguinha III</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
         <mat-divider></mat-divider>
         <h3 mat-subheader>Inimigos ({{ enemies.length }}):</h3>
         <h3 mat-subheader>Diamantes ({{ dia.length }}):</h3>
