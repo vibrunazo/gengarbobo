@@ -1,5 +1,6 @@
 import Players from './ligapvp.json';
 import Amizades from './amizades.json';
+import Inscritos from './inscritos.json';
 
 class PlayerData {
   name: string;
@@ -691,6 +692,35 @@ export class Liga {
   static findEnemiesForPlayer(player: Player): Player[] {
     const result: Player[] = [];
     const myNivel = player.getNivel();
+
+    return result;
+  }
+
+  // returns all players signed up for this tourney
+  static getInscritos(tourney: string): Player[] {
+    let result: Player[] = [];
+    const inscritos = Inscritos[tourney];
+    const all = this.getAllPlayers();
+    result = all.filter(p => inscritos.includes(p.getName()));
+
+    return result;
+  }
+
+  // from this set of players, return only those that are signed up for this tourney
+  static filterInscritos(players: Player[], tourney): Player[] {
+    if (tourney === 'all') { return players; }
+    let result: Player[] = [];
+    const inscritos = this.getInscritos(tourney);
+
+    result = players.filter(p => inscritos.includes(p));
+
+    return result;
+  }
+
+  // from this set of players, return only those that are of this tier
+  static filterPlayersByTier(players: Player[], tier: Nivel): Player[] {
+    let result: Player[] = [];
+    result = players.filter(p => p.getNivel() === tier);
 
     return result;
   }

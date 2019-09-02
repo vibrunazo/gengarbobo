@@ -14,9 +14,10 @@ export class NetlifyIdentityService {
     init() {
       const opts = {
         container: '#topBar', // container to attach to
-        namePlaceholder: 'some-placeholder-for-Name', // custom placeholder for name input form
+        // namePlaceholder: 'some-placeholder-for-Name', // custom placeholder for name input form
       };
-      netlifyIdentity.init(opts);
+      netlifyIdentity.init();
+      // netlifyIdentity.init(opts);
       // Bind to events
       netlifyIdentity.on('init', (user) => {
         console.log('init', user);
