@@ -12,7 +12,7 @@ export class NetlifyIdentityService {
       netlifyIdentity.init();
       // Bind to events
       netlifyIdentity.on('init', function(user) {
-        console.log('init', user)
+        console.log('init', user);
       });
 
       netlifyIdentity.on('login', function(user) {
@@ -27,11 +27,18 @@ export class NetlifyIdentityService {
       });
 
       netlifyIdentity.on('error', function(err) {
-        console.error('Error', err)
+        console.error('Error', err);
       });
 
       netlifyIdentity.on('open', function() {
-        console.log('Widget opened')
+        console.log('Widget opened');
+        const f = frames['netlify-identity-widget'][1];
+        // frames['netlify-identity-widget'][1].contentWindow.document.getElementsByClassName('modalContent').style.backgroundColor = 'red';
+        const e = f.contentWindow.document.getElementsByClassName('modalContent')[0];
+        e.children[2].style.display = 'none';
+        e.children[3].children[0].style.display = 'none';
+        console.log(e);
+
       });
 
       netlifyIdentity.on('close', function() {
