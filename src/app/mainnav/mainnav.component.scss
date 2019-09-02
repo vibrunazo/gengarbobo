@@ -36,3 +36,14 @@ $warn: map-get($gengartheme, warn);
   bottom: 0;
   width: 200px;
 }
+
+.topFlexContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.login a {
+  // color: mat-color(mat-palette($mat-amber, 500)) !important;
+  font-size: 14px !important;
+}

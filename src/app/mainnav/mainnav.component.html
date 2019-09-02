@@ -28,14 +28,18 @@
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async" class="handsetmenu" #handsetmenu>
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <a routerLink="/" class="logo">
-        <h1 class="heading">Gengar Bobo</h1>
-      </a>
+      <div class="topFlexContainer">
 
-      <a class="nav-link" [routerLink]="" *ngIf="netlifyService.get().currentUser() === null" (click)="openModal()">Login</a>
-      <a class="nav-link" *ngIf="netlifyService.get().currentUser()">Welcome {{netlifyService.get().currentUser().email}}</a>
-      <a class="nav-link" >test {{netlifyService.get().currentUser()}}</a>
-      <a class="nav-link" (click)="logOut()">Logout</a>
+        <a routerLink="/" class="logo">
+          <h1 class="heading">Gengar Bobo</h1>
+        </a>
+
+        <div class="login">
+          <a class="nav-link" [routerLink]="" *ngIf="netlifyService.get().currentUser() === null" (click)="openModal()">Login</a>
+          <a class="nav-link" *ngIf="netlifyService.get().currentUser()">Welcome {{netlifyService.get().currentUser().email}}</a>
+          <a class="nav-link" [routerLink]="" (click)="logOut()" *ngIf="netlifyService.get().currentUser()">Logout</a>
+        </div>
+      </div>
 
     </mat-toolbar>
 
