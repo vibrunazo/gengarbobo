@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "int": "ng xi18n --output-path locale"
+    "int": "ng xi18n --output-path locale",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,7 @@
     "@angular/router": "^8.0.3",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
+    "netlify-lambda": "^1.6.3",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
