@@ -8,43 +8,55 @@ declare var netlifyIdentity: any;
   })
 
 export class NetlifyIdentityService {
-    constructor(router: Router) {
-      netlifyIdentity.init();
+    constructor(private router: Router) {
+    }
+
+    init() {
+      const opts = {
+        container: '#topBar', // container to attach to
+        namePlaceholder: 'some-placeholder-for-Name', // custom placeholder for name input form
+      };
+      netlifyIdentity.init(opts);
       // Bind to events
-      netlifyIdentity.on('init', function(user) {
+      netlifyIdentity.on('init', (user) => {
         console.log('init', user);
       });
 
-      netlifyIdentity.on('login', function(user) {
+      netlifyIdentity.on('login', (user) => {
         console.log('current user', netlifyIdentity.currentUser());
         netlifyIdentity.close();
       });
 
-      netlifyIdentity.on('logout', function() {
+      netlifyIdentity.on('logout', () => {
         console.log('Logged out');
         netlifyIdentity.close();
-        router.navigateByUrl('/');
+        this.router.navigateByUrl('/');
       });
 
-      netlifyIdentity.on('error', function(err) {
+      netlifyIdentity.on('error', (err) => {
         console.error('Error', err);
       });
 
-      netlifyIdentity.on('open', function() {
+      netlifyIdentity.on('open', () => {
         console.log('Widget opened');
         // frames['netlify-identity-widget'][1].contentWindow.document.getElementsByClassName('modalContent').style.backgroundColor = 'red';
-        setTimeout(function(){
+        setTimeout(removeCss, 1);
 
-          const f = frames['netlify-identity-widget'][1];
-          const e = f.contentWindow.document.getElementsByClassName('modalContent')[0];
-          console.log(e);
-          e.children[2].style.display = 'none';
-          e.children[3].children[0].style.display = 'none';
-        }, 1000);
+        function removeCss() {
+          try {
+            const f = frames['netlify-identity-widget'][1];
+            const e = f.contentWindow.document.getElementsByClassName('modalContent')[0];
+            console.log(e);
+            e.children[2].style.display = 'none';
+            e.children[3].children[0].style.display = 'none';
+          } catch (error) {
+            setTimeout(removeCss, 100);
+          }
+        }
 
       });
 
-      netlifyIdentity.on('close', function() {
+      netlifyIdentity.on('close', () => {
         console.log('Widget closed');
       });
     }

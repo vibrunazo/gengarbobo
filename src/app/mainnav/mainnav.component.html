@@ -24,7 +24,7 @@
     <app-footer class="footer"></app-footer>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="accent">
+    <mat-toolbar color="accent" id="topBar">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async" class="handsetmenu" #handsetmenu>
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>

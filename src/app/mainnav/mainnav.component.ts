@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { NetlifyIdentityService } from '../shared/netlify-identity.service';
   templateUrl: './mainnav.component.html',
   styleUrls: ['./mainnav.component.scss']
 })
-export class MainnavComponent {
+export class MainnavComponent implements OnInit {
   @ViewChild(MatSidenav, { static: false }) sidenav: MatSidenav;
   @ViewChild('handsetmenu', { static: false }) handsetmenu: MatButton;
 
@@ -40,4 +40,10 @@ export class MainnavComponent {
       this.sidenav.close();
     }
   }
+
+  ngOnInit() {
+    this.netlifyService.init();
+
+  }
+
 }
