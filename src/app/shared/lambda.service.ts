@@ -23,6 +23,7 @@ export class LambdaService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.post(this.url, body, httpOptions);
+    return this.http.get(this.url);
+    // return this.http.post(this.url, body, httpOptions);
   }
 }
