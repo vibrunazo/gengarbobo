@@ -30,7 +30,7 @@ export class FooterComponent implements OnInit {
 
     });
     console.log('lresult');
-    console.log(lresult);
+    // console.log(lresult);
 
   }
 
