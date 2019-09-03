@@ -5,7 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LambdaService {
-  url = 'https://gengarbobo.ca/.netlify/functions/testfunc2';
+  url = '/.netlify/lambda/testfunc2';
+  // url = 'https://gengarbobo.ca/.netlify/functions/testfunc2';
+  // this.http.get("/.netlify/functions/jokeTypescript");
   // url = 'https://api.github.com/repos/vibrunazo/gengarbobo/commits';
 
   constructor(private http: HttpClient) {
