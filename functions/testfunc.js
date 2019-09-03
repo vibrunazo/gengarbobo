@@ -3,10 +3,10 @@ exports.handler = function(event, context, callback) {
   const { name } = JSON.parse(event.body);
 
   callback(null, {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
+    "statusCode": 200,
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
     },
-    body: JSON.stringify({msg: 'Hello ' + name}),
+    "body": JSON.stringify({msg: 'Hello ' + name}),
   });
 }
