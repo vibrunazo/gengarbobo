@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.json",
     "start:pt": "ng serve --configuration=pt",
     "build": "ng build --prod && npm run lambda-build",
     "build:pt": "ng build --configuration=pt",
@@ -11,8 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "int": "ng xi18n --output-path locale",
-    "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions"
+    "lambda-serve": "netlify-lambda serve src_functions",
+    "lambda-build": "netlify-lambda build src_functions"
   },
   "private": true,
   "dependencies": {
