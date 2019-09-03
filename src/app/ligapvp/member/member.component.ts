@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NetlifyIdentityService } from 'src/app/shared/netlify-identity.service';
+import { LambdaService } from 'src/app/shared/lambda.service';
 
 @Component({
   selector: 'app-member',
@@ -20,7 +22,7 @@ export class MemberComponent implements OnInit {
   nonfriends: Player[] = [];
   filter = 'all';
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private netlifyIdentity: NetlifyIdentityService, private lambdaService: LambdaService) {
 
   }
 
@@ -31,6 +33,15 @@ export class MemberComponent implements OnInit {
       }
     });
 
+    this.getLambida();
+  }
+
+  getLambida() {
+    const lresult = this.lambdaService.runTest1().subscribe(data => {
+      console.log('data');
+      console.log(data);
+
+    });
   }
 
   changeFilter() {

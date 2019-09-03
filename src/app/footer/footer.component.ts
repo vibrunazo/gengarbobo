@@ -24,12 +24,12 @@ export class FooterComponent implements OnInit {
       this.commitData = data;
       this.updateCommit();
     });
-    const lresult = this.lambdaService.runTest1().subscribe(data => {
-      console.log('data');
-      console.log(data);
+    // const lresult = this.lambdaService.runTest1().subscribe(data => {
+    //   console.log('data');
+    //   console.log(data);
 
-    });
-    console.log('lresult');
+    // });
+    // console.log('lresult');
     // console.log(lresult);
 
   }
