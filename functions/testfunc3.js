@@ -3,7 +3,9 @@ exports.handler = function(event, context, callback) {
 
   callback(null, {
     statusCode: 200,
-    'Access-Control-Allow-Origin': '*',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     body: 'Hello test func 3'
   });
 }
