@@ -23,6 +23,8 @@ export class LambdaService {
     const token = this.identity.get().currentUser().token.access_token;
     console.log('id:');
     console.log(id);
+    console.log('token:');
+    console.log(token);
 
     const body = {
       name: id
