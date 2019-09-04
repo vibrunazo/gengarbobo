@@ -37,9 +37,9 @@ export class MemberComponent implements OnInit {
   }
 
   getLambida() {
-    const lresult = this.lambdaService.runTest1().subscribe(data => {
-      console.log('data');
-      console.log(data);
+    const lresult = this.lambdaService.runTest2().subscribe(data => {
+      // console.log('data');
+      // console.log(data);
 
     });
   }

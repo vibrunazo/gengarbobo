@@ -2,22 +2,35 @@ const { MONGO_USER, MONGO_PSW, MONGO_URL } = process.env;
 
 exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
+  const {identity, user} = context.clientContext;
   const MongoClient = require('mongodb').MongoClient;
   const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PSW}@${MONGO_URL}`;
-  const client = new MongoClient(uri, { useNewUrlParser: true });
-  let collection;
-  await client.connect(err => {
-    collection = client.db("ligapvp").collection("members");
-    // perform actions on the collection object
-    client.close();
+  const client = await MongoClient.connect(uri, {
+    useNewUrlParser: true
+  }).catch(err => {
+    console.log(err);
   });
-  console.log('collection');
-  console.log(collection);
+  let collection;
+  let res = 'not found';
+  if (!client) {
+    return;
+  }
+  try {
+    const db = client.db("ligapvp");
+    let collection = db.collection("members");
+    let query = { email: user.email };
+    res = await collection.findOne(query);
 
+  } catch (err) {
+    console.log(err);
+  } finally {
+    client.close();
+  }
+  console.log(res);
 
   return {
     statusCode: 200,
-    body: "Hello, " + collection
+    body: "code, " + res
   };
 
 
