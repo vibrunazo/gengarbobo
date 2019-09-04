@@ -20,6 +20,7 @@ export class LambdaService {
       console.log('not logged int');
     }
     const id = this.identity.get().currentUser().email;
+    const token = this.identity.get().currentUser().token.access_token;
     console.log('id:');
     console.log(id);
 
@@ -31,7 +32,7 @@ export class LambdaService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        Authorization: this.identity.get().currentUser().token
+        Authorization: token
       })
     };
     // return this.http.get(this.url);
