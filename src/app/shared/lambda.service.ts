@@ -34,7 +34,8 @@ export class LambdaService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        Authorization: token
+        Authorization: 'Bearer ' + token,
+        'random-header': 'yess'
       })
     };
     // return this.http.get(this.url);
