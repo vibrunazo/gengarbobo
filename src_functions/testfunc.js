@@ -8,8 +8,8 @@ exports.handler = function(event, context, callback) {
   console.log(user);
   console.log('event:');
   console.log(event);
-  console.log('context:');
-  console.log(context);
+  // console.log('context:');
+  // console.log(context);
 
 
   callback(null, {
