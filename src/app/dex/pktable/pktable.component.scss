@@ -21,12 +21,16 @@ th.mat-header-cell {
 
 .mat-column-fm {
   max-width: 120px;
+  min-width: 90px;
+  font-size: 0.8em;
   overflow-wrap: break-word;
 }
 
 .mat-column-cm {
   // flex: 0 0 100px;
   max-width: 120px;
+  min-width: 90px;
+  font-size: 0.8em;
   overflow-wrap: break-word;
 }
 

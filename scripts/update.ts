@@ -11,9 +11,10 @@ import * as fs from 'fs';
 import Pokemon from '../src/app/shared/shared.module';
 
 console.log('update script running');
-const tableItems = [];
+let tableItems = [];
 
 genTableItems();
+sortTable();
 saveToFile();
 
 
@@ -40,6 +41,10 @@ function genTableItems() {
 
 }
 
+function sortTable() {
+  tableItems = tableItems.sort((a, b) => a.dex - b.dex);
+}
+
 function saveToFile() {
   const path = './src/app/dex/tableItems.ts';
   const json = JSON.stringify(tableItems);
@@ -47,6 +52,6 @@ function saveToFile() {
   fs.writeFile(path, filetext, 'utf8', (e) => {
     console.log('creating json: ' + path);
     if (e) { console.log('' + e);
-    } else { console.log('sucess'); }
+    } else { console.log('success'); }
   });
 }

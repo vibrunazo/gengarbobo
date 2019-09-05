@@ -38,89 +38,97 @@ a {
 .move {
   // background-color: red !important;
   // color: red !important;
-  text-shadow: -0px 0px 2px #fff,
-  -1px -1px 1px #fff,
-  1px 1px 2px #000,
-  1px 1px 1px #000;
+  // text-shadow: -0px 0px 2px #fff,
+  // -1px -1px 1px #fff,
+  // 1px 1px 2px #000,
+  // 1px 1px 1px #000;
   // 1px 1px 2px #000;
-  // text-shadow: 2px 2px #222;
+  text-shadow: 1px 1px #0002;
+  border-radius: 4px;
+  color: #fffa;
+  padding: 1px;
 }
 
 // type colors from:
 // https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates
 
 .bug {
-  color: #A8B820;
+  background-color: #A8B820;
 }
 
 .dark {
-  color: #705848;
+  background-color: #705848;
   // color: #A29288;
 }
 
 .dragon {
-  color: #7038F8;
+  background-color: #7038F8;
   // color: #A27DFA;
 }
 
 .electric {
-  color: #F8D030;
+  background-color: #F8D030;
+  // background-color: #A1871F; // dark
+  color: #0008;
 }
 
 .fairy {
-  color: #EE99AC;
+  background-color: #EE99AC;
+  color: #0006;
 }
 
 .fighting {
-  color: #C03028;
+  background-color: #C03028;
 }
 
 .fire {
-  color: #F08030;
+  background-color: #F08030;
 }
 
 .flying {
-  color: #A890F0;
+  background-color: #A890F0;
 }
 
 .ghost {
-  color: #705898;
+  background-color: #705898;
   // color: #A292BC;
 }
 
 .grass {
-  color: #78C850;
+  background-color: #78C850;
 }
 
 .ground {
-  color: #E0C068;
+  background-color: #E0C068;
 }
 
 .normal {
-  color: #A8A878;
+  background-color: #A8A878;
 }
 
 .ice {
-  color: #98D8D8;
+  background-color: #98D8D8;
+  color: #0006;
 }
 
 .poison {
   // color: #A040A0;
-  color: #C183C1;
+  background-color: #C183C1;
 }
 
 .psychic {
-  color: #F85888;
+  background-color: #F85888;
 }
 
 .rock {
-  color: #B8A038;
+  background-color: #B8A038;
 }
 
 .steel {
-  color: #B8B8D0;
+  background-color: #B8B8D0;
+  color: #0006;
 }
 
 .water {
-  color: #6890F0;
+  background-color: #6890F0;
 }

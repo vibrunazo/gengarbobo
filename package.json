@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "int": "ng xi18n --output-path locale"
+    "int": "ng xi18n --output-path locale",
+    "host": "ng build --prod && firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
