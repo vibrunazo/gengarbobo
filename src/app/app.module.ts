@@ -43,6 +43,21 @@ import { SummaryComponent } from './iv/summary/summary.component';
 import { LigapvpComponent } from './ligapvp/ligapvp.component';
 import { MemberComponent } from './ligapvp/member/member.component';
 import { MembertableComponent } from './ligapvp/membertable/membertable.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
+  authDomain: 'gengarbobo.firebaseapp.com',
+  databaseURL: 'https://gengarbobo.firebaseio.com',
+  projectId: 'gengarbobo',
+  storageBucket: 'gengarbobo.appspot.com',
+  messagingSenderId: '353076960359',
+  appId: '1:353076960359:web:523fe08921d5087927c8c2'
+};
 
 @NgModule({
   declarations: [
@@ -67,6 +82,10 @@ import { MembertableComponent } from './ligapvp/membertable/membertable.componen
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(firebaseConfig), // Initialize
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule, // storage
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

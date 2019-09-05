@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/services/user.model';
 
 @Component({
   selector: 'app-member',
@@ -19,9 +21,11 @@ export class MemberComponent implements OnInit {
   colleagues: Player[] = [];
   nonfriends: Player[] = [];
   filter = 'all';
+  authsub;
+  user: User;
 
-  constructor(private route: ActivatedRoute) {
-
+  constructor(private route: ActivatedRoute, private auth: AuthService) {
+    this.authsub = auth.user$.subscribe(user => this.updateUser(user));
   }
 
   ngOnInit() {
@@ -32,6 +36,19 @@ export class MemberComponent implements OnInit {
     });
   }
 
+  updateUser(user: User) {
+    this.user = user;
+    this.checkOwner();
+  }
+
+  checkOwner() {
+    if (this.user && this.user.member === this.name) {
+      console.log('YES! Logged in User is the owner of this account!');
+    } else {
+      console.log('NO! Owner is not logged in!');
+    }
+  }
+
   changeFilter() {
     this.setMember(this.name);
   }
@@ -39,6 +56,7 @@ export class MemberComponent implements OnInit {
   setMember(member) {
     this.name = member;
     this.player = Liga.getPlayerByName(member);
+    this.checkOwner();
     this.friends = this.player.getFriends();
     this.enemies = this.player.getEnemies();
     this.enemies = Liga.filterInscritos(this.enemies, this.filter);

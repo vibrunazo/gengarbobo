@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatSidenav, MatButton } from '@angular/material';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-mainnav',
@@ -17,7 +18,7 @@ export class MainnavComponent implements OnInit {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService) {
   }
 
   openModal(): void {

@@ -33,14 +33,20 @@
         <a routerLink="/" class="logo">
           <h1 class="heading">Gengar Bobo</h1>
         </a>
+        <!-- <a class="nav-link" [routerLink]="" *ngIf="netlifyService.get().currentUser() === null" (click)="openModal()">Login</a>
+        <a class="nav-link" *ngIf="netlifyService.get().currentUser()">Welcome {{netlifyService.get().currentUser().email}} |</a>
+        <a class="nav-link" [routerLink]="" (click)="logOut()" *ngIf="netlifyService.get().currentUser()">Logout</a> -->
 
-        <div class="login">
-          Login
-          <!-- <a class="nav-link" [routerLink]="" *ngIf="netlifyService.get().currentUser() === null" (click)="openModal()">Login</a>
-          <a class="nav-link" *ngIf="netlifyService.get().currentUser()">Welcome {{netlifyService.get().currentUser().email}} |</a>
-          <a class="nav-link" [routerLink]="" (click)="logOut()" *ngIf="netlifyService.get().currentUser()">Logout</a> -->
-        </div>
+        <span *ngIf="auth.user$ | async as user; else login" class="login">
+          <span class="username">
+            {{ user.displayName }}
+          </span>
+          <a [routerLink]="" (click)="auth.signOut()">Logout</a>
+        </span>
       </div>
+      <ng-template #login>
+          <a class="nav-link" [routerLink]="" (click)="auth.googleSignin()">Login</a>
+      </ng-template>
 
     </mat-toolbar>
 
