@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GitserviceService } from '../shared/gitservice.service';
-import { LambdaService } from '../shared/lambda.service';
 
 @Component({
   selector: 'app-footer',
@@ -12,7 +11,7 @@ export class FooterComponent implements OnInit {
   commitMessage = '...';
   commitData;
 
-  constructor(private gitService: GitserviceService, private lambdaService: LambdaService) {}
+  constructor(private gitService: GitserviceService) {}
 
   ngOnInit() {
     // https://api.github.com/repos/vibrunazo/gengarbobo/commits

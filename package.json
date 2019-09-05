@@ -3,16 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.config.json",
+    "start": "ng serve",
     "start:pt": "ng serve --configuration=pt",
-    "build": "ng build --prod && npm run lambda-build",
+    "build": "ng build --prod",
     "build:pt": "ng build --configuration=pt",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "int": "ng xi18n --output-path locale",
-    "lambda-serve": "netlify-lambda serve src_functions",
-    "lambda-build": "netlify-lambda build src_functions"
+    "int": "ng xi18n --output-path locale"
   },
   "private": true,
   "dependencies": {
@@ -28,8 +26,6 @@
     "@angular/router": "^8.0.3",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
-    "mongodb": "^3.3.2",
-    "netlify-lambda": "^1.6.3",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

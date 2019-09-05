@@ -3,7 +3,6 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatSidenav, MatButton } from '@angular/material';
-import { NetlifyIdentityService } from '../shared/netlify-identity.service';
 
 @Component({
   selector: 'app-mainnav',
@@ -18,19 +17,15 @@ export class MainnavComponent implements OnInit {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  netlifyService: NetlifyIdentityService;
-  constructor(private breakpointObserver: BreakpointObserver, ns: NetlifyIdentityService) {
-    this.netlifyService = ns;
+  constructor(private breakpointObserver: BreakpointObserver) {
   }
 
   openModal(): void {
     console.log('open modal');
-    this.netlifyService.get().open();
   }
 
   logOut(): void {
     console.log('logout');
-    this.netlifyService.get().logout();
   }
 
   closeSidenav() {
@@ -42,7 +37,6 @@ export class MainnavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.netlifyService.init();
 
   }
 
