@@ -3,6 +3,7 @@ import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/services/user.model';
+import { LambidaService } from 'src/app/services/lambida.service';
 
 @Component({
   selector: 'app-member',
@@ -24,7 +25,7 @@ export class MemberComponent implements OnInit {
   authsub;
   user: User;
 
-  constructor(private route: ActivatedRoute, private auth: AuthService) {
+  constructor(private route: ActivatedRoute, private auth: AuthService, private lambida: LambidaService) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
   }
 
@@ -34,6 +35,21 @@ export class MemberComponent implements OnInit {
         this.setMember(params.id);
       }
     });
+    this.getLambida();
+  }
+
+  getLambida() {
+    // const test1sub = this.lambida.testFunc1().subscribe(r => {
+    //   console.log('lambida:');
+    //   console.log(r);
+    // });
+
+    const t2 = this.lambida.testFunc2();
+
+    // console.log('t2');
+    // console.log(t2);
+
+
   }
 
   updateUser(user: User) {
