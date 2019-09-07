@@ -8,8 +8,8 @@ import * as firebase from 'firebase/app';
 export class LambidaService {
 
   // url = 'https://us-central1-gengarbobo.cloudfunctions.net/helloWorld';
-  // url = 'http://localhost:5000/gengarbobo/us-central1/api/testFunc4';
-  url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/testFunc4';
+  url = 'http://localhost:5000/gengarbobo/us-central1/api/testFunc4';
+  // url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/testFunc4';
 
   constructor(private http: HttpClient) { }
 

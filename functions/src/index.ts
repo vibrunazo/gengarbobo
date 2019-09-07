@@ -3,10 +3,39 @@ import * as functions from 'firebase-functions';
   //   origin: true,
   // });
 const admin = require('firebase-admin');
-admin.initializeApp();
+// admin.initializeApp();
+const CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS!;
+const serviceAccount = require(CREDENTIALS);
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://gengarbobo.firebaseio.com"
+});
+const db = admin.firestore();
+// const doc = db.collection('some/otherdoc')
 const express = require('express');
 const cors = require('cors');
 const app = express();
+
+const members = [] as any;
+function getMembers() {
+  const membersRef = db.collection('members');
+
+  membersRef.get()
+    .then(snapshot => {
+      snapshot.forEach(doc => {
+        console.log(doc.id, '=>', doc.data());
+        members.push(doc.data());
+      });
+      console.log('members[0]');
+      console.log(members[0].code);
+
+    })
+    .catch(err => {
+      console.log('Error getting documents', err);
+    });
+}
+
 
 app.use(cors({ origin: true }));
 
@@ -38,10 +67,14 @@ app.use(authenticate);
 // Automatically allow cross-origin requests
 
 app.post('/testFunc4', async (req, res) => {
-  const message = req.body.message;
+  // const message = req.body.message;
+  // const user = req.user;
 
-  console.log(`ANALYZING MESSAGE: "${message}"`);
-  res.status(200).send("Hello from Firebase4!");
+  // console.log(`ANALYZING USER: `);
+  // console.log(user);
+
+  getMembers();
+  // res.status(200).send("Hello from Firebase4!");
 
 });
 

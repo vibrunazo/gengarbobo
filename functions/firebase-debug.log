@@ -1,0 +1,108 @@
+[debug] [2019-09-07T05:12:19.048Z] ----------------------------------------------------------------------
+[debug] [2019-09-07T05:12:19.054Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Samsung\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2019-09-07T05:12:19.055Z] CLI Version:   7.3.1
+[debug] [2019-09-07T05:12:19.055Z] Platform:      win32
+[debug] [2019-09-07T05:12:19.055Z] Node Version:  v12.6.0
+[debug] [2019-09-07T05:12:19.056Z] Time:          Sat Sep 07 2019 02:12:19 GMT-0300 (GMT-03:00)
+[debug] [2019-09-07T05:12:19.056Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-07T05:12:19.081Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-07T05:12:19.082Z] > authorizing via signed-in user
+[debug] [2019-09-07T05:12:19.083Z] [iam] checking project gengarbobo for permissions ["firebase.projects.get"]
+[debug] [2019-09-07T05:12:19.087Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gengarbobo:testIamPermissions  
+
+[debug] [2019-09-07T05:12:20.129Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-07T05:12:20.136Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/gengarbobo  
+ 
+[debug] [2019-09-07T05:12:21.291Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "D:\node\gengarbobo\functions" for Cloud Functions...
+[debug] [2019-09-07T05:12:22.553Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\node\\gengarbobo\\functions","node_version":"12.6.0"}
+[debug] [2019-09-07T05:12:22.554Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-07T05:12:22.564Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.4.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-07T05:12:22.571Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to D:\gengarbobo-firebase-adminsdk-5dyuj-d59d4f9c19.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-09-07T05:12:22.575Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[api]: http function initialized (http://localhost:5000/gengarbobo/us-central1/api).
+[info] +  functions[anotherFunction]: http function initialized (http://localhost:5000/gengarbobo/us-central1/anotherFunction).
+[debug] [2019-09-07T05:12:38.791Z] Accepted request OPTIONS /gengarbobo/us-central1/api/testFunc4 --> api
+[debug] [2019-09-07T05:12:39.838Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\node\\gengarbobo\\functions","node_version":"12.6.0"}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-09-07T05:12:39.840Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-07T05:12:39.846Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.4.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-07T05:12:39.851Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to D:\gengarbobo-firebase-adminsdk-5dyuj-d59d4f9c19.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-09-07T05:12:39.867Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-07T05:12:40.842Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[debug] [2019-09-07T05:12:40.842Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-09-07T05:12:40.842Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-09-07T05:12:40.855Z] {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\35616"}
+[debug] [2019-09-07T05:12:40.860Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\35616"}
+[debug] [2019-09-07T05:12:40.873Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-09-07T05:12:40.883Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "api" in ~1s
+[debug] [2019-09-07T05:12:40.891Z] Accepted request POST /gengarbobo/us-central1/api/testFunc4 --> api
+[debug] [2019-09-07T05:12:41.535Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\node\\gengarbobo\\functions","node_version":"12.6.0"}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-09-07T05:12:41.537Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-07T05:12:41.540Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.4.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-07T05:12:41.543Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to D:\gengarbobo-firebase-adminsdk-5dyuj-d59d4f9c19.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-09-07T05:12:41.555Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-07T05:12:42.428Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[debug] [2019-09-07T05:12:42.428Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-09-07T05:12:42.428Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-09-07T05:12:42.440Z] {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\29108"}
+[debug] [2019-09-07T05:12:42.442Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\29108"}
+[debug] [2019-09-07T05:12:42.469Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-09-07T05:12:42.597Z] [runtime-status] Ephemeral server survived. {}
+[info] >  9oqeOtoGs89nn8BKFVUE => {
+[info] >    email: 'vibrunazo@gmail.com',
+[info] >    name: 'vib',
+[info] >    team: 'skull',
+[info] >    code: 1234
+[info] >  }
+[info] >  sHup9hIRE1lAJ2IylL7S => { name: 'GassanBr', team: 'galactic' }
+[info] >  members[0]
+[info] >  1234
+[debug] [2019-09-07T13:04:26.968Z] Accepted request OPTIONS /gengarbobo/us-central1/api/testFunc4 --> api
+[debug] [2019-09-07T13:04:27.313Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\node\\gengarbobo\\functions","node_version":"12.6.0"}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-09-07T13:04:27.314Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-07T13:04:27.316Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.4.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-07T13:04:27.319Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to D:\gengarbobo-firebase-adminsdk-5dyuj-d59d4f9c19.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-09-07T13:04:27.333Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-07T13:04:27.722Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[debug] [2019-09-07T13:04:27.723Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-09-07T13:04:27.723Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-09-07T13:04:27.728Z] {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\21096"}
+[debug] [2019-09-07T13:04:27.729Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\21096"}
+[debug] [2019-09-07T13:04:27.734Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-09-07T13:04:27.738Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "api" in ~1s
+[debug] [2019-09-07T13:04:27.742Z] Accepted request POST /gengarbobo/us-central1/api/testFunc4 --> api
+[debug] [2019-09-07T13:04:28.084Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\node\\gengarbobo\\functions","node_version":"12.6.0"}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-09-07T13:04:28.085Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-07T13:04:28.087Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.4.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-07T13:04:28.089Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to D:\gengarbobo-firebase-adminsdk-5dyuj-d59d4f9c19.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-09-07T13:04:28.097Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\node\\gengarbobo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-07T13:04:28.484Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[debug] [2019-09-07T13:04:28.484Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-09-07T13:04:28.484Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-09-07T13:04:28.489Z] {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\36932"}
+[debug] [2019-09-07T13:04:28.490Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\D:\\node\\gengarbobo\\functions\\36932"}
+[debug] [2019-09-07T13:04:28.506Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-09-07T13:04:28.602Z] [runtime-status] Ephemeral server survived. {}
+[info] >  9oqeOtoGs89nn8BKFVUE => {
+[info] >    code: 1234,
+[info] >    email: 'vibrunazo@gmail.com',
+[info] >    name: 'vib',
+[info] >    team: 'skull'
+[info] >  }
+[info] >  sHup9hIRE1lAJ2IylL7S => { name: 'GassanBr', team: 'galactic' }
+[info] >  members[0]
+[info] >  1234
