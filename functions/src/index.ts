@@ -3,14 +3,13 @@ import * as functions from 'firebase-functions';
   //   origin: true,
   // });
 const admin = require('firebase-admin');
-// admin.initializeApp();
-const CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS!;
-const serviceAccount = require(CREDENTIALS);
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://gengarbobo.firebaseio.com"
-});
+admin.initializeApp();
+// const CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS!;
+// const serviceAccount = require(CREDENTIALS);
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://gengarbobo.firebaseio.com"
+// });
 const db = admin.firestore();
 // const doc = db.collection('some/otherdoc')
 const express = require('express');
@@ -18,23 +17,29 @@ const cors = require('cors');
 const app = express();
 
 const members = [] as any;
-function getMembers() {
-  const membersRef = db.collection('members');
-
-  membersRef.get()
+async function getMembers() {
+  const p = new Promise((resolve, reject) => {
+    const membersRef = db.collection('members');
+    membersRef.get()
     .then(snapshot => {
       snapshot.forEach(doc => {
-        console.log(doc.id, '=>', doc.data());
+        // console.log(doc.id, '=>', doc.data());
         members.push(doc.data());
       });
-      console.log('members[0]');
-      console.log(members[0].code);
-
+      resolve(members);
+      // console.log('members[0]');
+      // console.log(members[0].code);
     })
     .catch(err => {
-      console.log('Error getting documents', err);
+      reject(err);
+      // console.log('Error getting documents', err);
     });
+  });
+  return p;
 }
+getMembers()
+.then(r => console.log('setted members'))
+.catch(e => console.log('could not set members'));
 
 
 app.use(cors({ origin: true }));
@@ -48,7 +53,7 @@ app.use(cors({ origin: true }));
 // when decoded successfully, the ID Token content will be added as `req.user`.
 const authenticate = async (req, res, next) => {
   if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
-    res.status(403).send('Unauthorized');
+    // res.status(403).send('Unauthorized');
     return;
   }
   const idToken = req.headers.authorization.split('Bearer ')[1];
@@ -58,7 +63,7 @@ const authenticate = async (req, res, next) => {
     next();
     return;
   } catch(e) {
-    res.status(403).send('Unauthorized');
+    // res.status(403).send('Unauthorized');
     return;
   }
 };
@@ -73,9 +78,17 @@ app.post('/testFunc4', async (req, res) => {
   // console.log(`ANALYZING USER: `);
   // console.log(user);
 
-  getMembers();
-  // res.status(200).send("Hello from Firebase4!");
+  // await getMembers();
+  // const code = members[0].code;
+  // const out = {
+  //   code,
+  //   msg: 'hello'
+  // }
+  console.log('reading members');
+  console.log(members);
 
+
+  res.status(200).send(members);
 });
 
 // Expose the API as a function

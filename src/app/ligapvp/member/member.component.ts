@@ -44,7 +44,15 @@ export class MemberComponent implements OnInit {
     //   console.log(r);
     // });
 
-    const t2 = this.lambida.testFunc2();
+    const t2 = this.lambida.testFunc3()
+      .then(r => {
+        console.log('server success: ');
+        console.log(r);
+      })
+      .catch(r => {
+        console.log('server error: ');
+        console.log(r);
+      });
 
     // console.log('t2');
     // console.log(t2);
@@ -55,6 +63,7 @@ export class MemberComponent implements OnInit {
   updateUser(user: User) {
     this.user = user;
     this.checkOwner();
+    this.getLambida();
   }
 
   checkOwner() {
