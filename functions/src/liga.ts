@@ -1,4 +1,5 @@
-
+// import { Player } from '../../src/app/shared/ligapvp.module';
+//'../src/app/shared/ligapvp.module';
 
 const members: Array<any> = [];
 async function getMembers(db) {
@@ -27,7 +28,7 @@ async function getMembers(db) {
 export async function readMembers(db, user) {
   // console.log('was asked to read members:');
   // console.log(members);
-
+  let result: any[] = [];
 
   if (members.length === 0) {
     console.log('first time reading members, building data');
@@ -37,11 +38,24 @@ export async function readMembers(db, user) {
   }
   if (isMember(user)) {
     console.log("I think he's a member");
+    result = members;
   } else {
     console.log('nope, not a member');
+    result = censorSecrets();
   }
 
-  return members;
+  return result;
+}
+
+function censorSecrets(): any[] {
+  let result: any[] = members;
+  result = members.map(p => { return {
+    name: p.name,
+    team: p.team,
+    winrate: p.winrate,
+    rank: p.rank
+  }});
+  return result;
 }
 
 function isMember(user): boolean {
