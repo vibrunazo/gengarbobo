@@ -1,7 +1,5 @@
 import * as functions from 'firebase-functions';
-// const cors = require('cors')({
-  //   origin: true,
-  // });
+import * as liga from './liga';
 const admin = require('firebase-admin');
 admin.initializeApp();
 // const CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS!;
@@ -11,35 +9,12 @@ admin.initializeApp();
 //   databaseURL: "https://gengarbobo.firebaseio.com"
 // });
 const db = admin.firestore();
-// const doc = db.collection('some/otherdoc')
 const express = require('express');
 const cors = require('cors');
+// const cors = require('cors')({
+//   origin: true,
+// });
 const app = express();
-
-const members = [] as any;
-async function getMembers() {
-  const p = new Promise((resolve, reject) => {
-    const membersRef = db.collection('members');
-    membersRef.get()
-    .then(snapshot => {
-      snapshot.forEach(doc => {
-        // console.log(doc.id, '=>', doc.data());
-        members.push(doc.data());
-      });
-      resolve(members);
-      // console.log('members[0]');
-      // console.log(members[0].code);
-    })
-    .catch(err => {
-      reject(err);
-      // console.log('Error getting documents', err);
-    });
-  });
-  return p;
-}
-getMembers()
-.then(r => console.log('setted members'))
-.catch(e => console.log('could not set members'));
 
 
 app.use(cors({ origin: true }));
@@ -54,6 +29,7 @@ app.use(cors({ origin: true }));
 const authenticate = async (req, res, next) => {
   if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
     // res.status(403).send('Unauthorized');
+    next();
     return;
   }
   const idToken = req.headers.authorization.split('Bearer ')[1];
@@ -64,12 +40,11 @@ const authenticate = async (req, res, next) => {
     return;
   } catch(e) {
     // res.status(403).send('Unauthorized');
+    next();
     return;
   }
 };
-
 app.use(authenticate);
-// Automatically allow cross-origin requests
 
 app.post('/testFunc4', async (req, res) => {
   // const message = req.body.message;
@@ -80,15 +55,16 @@ app.post('/testFunc4', async (req, res) => {
 
   // await getMembers();
   // const code = members[0].code;
-  // const out = {
-  //   code,
-  //   msg: 'hello'
-  // }
-  console.log('reading members');
-  console.log(members);
+  const members = await liga.readMembers(db, req.user);
+  const out = {
+    msg: 'hello, thesse are all members',
+    members
+  }
 
+  console.log('reading members 4 ');
+  console.log(out);
 
-  res.status(200).send(members);
+  res.status(200).send(out);
 });
 
 // Expose the API as a function
@@ -106,7 +82,9 @@ exports.api = functions.https.onRequest(app);
 // });
 
 export const anotherFunction = functions.https.onRequest((request, response) => {
-  cors(request, response, () => {
+  console.log('notherfunc2');
+
+  // cors(request, response, () => {
     response.status(200).send("Another function response!!");
-  })
+  // })
 });

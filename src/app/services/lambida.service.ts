@@ -10,6 +10,7 @@ import { AuthService } from './auth.service';
 export class LambidaService {
 
   // url = 'https://us-central1-gengarbobo.cloudfunctions.net/helloWorld';
+  // url = 'https://us-central1-gengarbobo.cloudfunctions.net/anotherFunction';
   // url = 'http://localhost:5000/gengarbobo/us-central1/api/testFunc4';
   url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/testFunc4';
 
