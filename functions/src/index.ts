@@ -1,5 +1,7 @@
 import * as functions from 'firebase-functions';
 import * as liga from './liga';
+import * as sheetsReader from './sheets';
+import { Member } from './member.model';
 const admin = require('firebase-admin');
 admin.initializeApp();
 // const CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS!;
@@ -8,6 +10,12 @@ admin.initializeApp();
 //   credential: admin.credential.cert(serviceAccount),
 //   databaseURL: "https://gengarbobo.firebaseio.com"
 // });
+const {OAuth2Client} = require('google-auth-library');
+const {google} = require('googleapis');
+
+const CONFIG_CLIENT_ID = functions.config().googleapi.client_id;
+const CONFIG_CLIENT_SECRET = functions.config().googleapi.client_secret;
+const CONFIG_SHEET_ID = functions.config().googleapi.sheet_id;
 const db = admin.firestore();
 const express = require('express');
 const cors = require('cors');
@@ -67,6 +75,48 @@ app.post('/testFunc4', async (req, res) => {
   res.status(200).send(out);
 });
 
+app.post('/driveUpdate', async (req, res) => {
+  const sheetid = CONFIG_SHEET_ID;
+
+  const sheets = google.sheets('v4');
+  let rows;
+  const requestWithoutAuth: any = {
+    spreadsheetId: sheetid,
+    range: 'MEMBROS!A1:D150',
+    // spreadsheetId: '1kAvrE-Lo-foNSmKv2Gn_tdL_VivQ1yqek7p2NUO-vsc',
+    // range: 'stats!A1:O',
+  };
+  getAuthorizedClient().then(async (client) => {
+    // const sheets = google.sheets('v4');
+    const request = requestWithoutAuth;
+    request.auth = client;
+    sheets.spreadsheets.values.get(request, (gerr, gres) => {
+      if (gerr) {
+        bad(gerr);
+        return;
+      }
+      rows = gres.data.values;
+      // console.log('rows');
+      // console.log(rows);
+      good(rows);
+    });
+  }).catch(e => bad(e));
+
+
+  function bad(e) {
+    res.status(400).send(e);
+  }
+  function good(data) {
+    const newMembers: Member[] = sheetsReader.getMembersFromSheets(data);
+    const out = {
+      msg: 'Drive update 2',
+      sheetid,
+      newMembers,
+    }
+    res.status(200).send(out)
+  }
+});
+
 // Expose the API as a function
 exports.api = functions.https.onRequest(app);
 
@@ -88,3 +138,72 @@ export const anotherFunction = functions.https.onRequest((request, response) => 
     response.status(200).send("Another function response!!");
   // })
 });
+
+// The OAuth Callback Redirect.
+// const FUNCTIONS_REDIRECT = `https://gengarbobo.firebaseapp.com/oauthcallback`;
+const FUNCTIONS_REDIRECT = `https://us-central1-gengarbobo.cloudfunctions.net/oauthcallback`;
+
+// setup for authGoogleAPI
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+const functionsOauthClient = new OAuth2Client(CONFIG_CLIENT_ID, CONFIG_CLIENT_SECRET,
+  FUNCTIONS_REDIRECT);
+
+// OAuth token cached locally.
+let oauthTokens = null;
+
+// visit the URL for this Function to request tokens
+exports.authgoogleapi = functions.https.onRequest((req, res) => {
+  res.set('Cache-Control', 'private, max-age=0, s-maxage=0');
+  // console.log(functionsOauthClient);
+  const url = functionsOauthClient.generateAuthUrl({
+    access_type: 'offline',
+    scope: SCOPES,
+    prompt: 'consent',
+  });
+  console.log('url');
+  console.log(url);
+
+  // res.redirect(functionsOauthClient.generateAuthUrl({
+  //   access_type: 'offline',
+  //   scope: SCOPES,
+  //   prompt: 'consent',
+  // }));
+  res.redirect(url);
+  // res.status(200).send('redirect url: ' + url);
+})
+
+// setup for OauthCallback
+const DB_TOKEN_PATH = '/api_tokens';
+
+// after you grant access, you will be redirected to the URL for this Function
+// this Function stores the tokens to your Firebase database
+exports.oauthcallback = functions.https.onRequest(async (req, res) => {
+  res.set('Cache-Control', 'private, max-age=0, s-maxage=0');
+  const code = req.query.code;
+  try {
+    const {tokens} = await functionsOauthClient.getToken(code);
+    // Now tokens contains an access_token and an optional refresh_token. Save them.
+    console.log('tokens:');
+    console.log(tokens);
+
+    await admin.database().ref(DB_TOKEN_PATH).set(tokens);
+    return res.status(200).send('App successfully configured with new Credentials. '
+        + 'You can now close this page.');
+  } catch (error) {
+    return res.status(400).send(error);
+  }
+});
+
+// checks if oauthTokens have been loaded into memory, and if not, retrieves them
+async function getAuthorizedClient() {
+  if (oauthTokens) {
+    return functionsOauthClient;
+  }
+  const snapshot = await admin.database().ref(DB_TOKEN_PATH).once('value');
+  oauthTokens = snapshot.val();
+  console.log('token:');
+  console.log(oauthTokens);
+
+  functionsOauthClient.setCredentials(oauthTokens);
+  return functionsOauthClient;
+}
