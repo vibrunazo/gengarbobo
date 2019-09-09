@@ -11,11 +11,11 @@ admin.initializeApp();
 //   databaseURL: "https://gengarbobo.firebaseio.com"
 // });
 const {OAuth2Client} = require('google-auth-library');
-const {google} = require('googleapis');
+// const {google} = require('googleapis');
 
 const CONFIG_CLIENT_ID = functions.config().googleapi.client_id;
 const CONFIG_CLIENT_SECRET = functions.config().googleapi.client_secret;
-const CONFIG_SHEET_ID = functions.config().googleapi.sheet_id;
+// const CONFIG_SHEET_ID = functions.config().googleapi.sheet_id;
 const db = admin.firestore();
 const express = require('express');
 const cors = require('cors');
@@ -76,42 +76,29 @@ app.post('/testFunc4', async (req, res) => {
 });
 
 app.post('/driveUpdate', async (req, res) => {
-  const sheetid = CONFIG_SHEET_ID;
-
-  const sheets = google.sheets('v4');
-  let rows;
-  const requestWithoutAuth: any = {
-    spreadsheetId: sheetid,
-    range: 'MEMBROS!A1:D150',
-    // spreadsheetId: '1kAvrE-Lo-foNSmKv2Gn_tdL_VivQ1yqek7p2NUO-vsc',
-    // range: 'stats!A1:O',
-  };
-  getAuthorizedClient().then(async (client) => {
-    // const sheets = google.sheets('v4');
-    const request = requestWithoutAuth;
-    request.auth = client;
-    sheets.spreadsheets.values.get(request, (gerr, gres) => {
-      if (gerr) {
-        bad(gerr);
-        return;
-      }
-      rows = gres.data.values;
-      // console.log('rows');
-      // console.log(rows);
-      good(rows);
-    });
-  }).catch(e => bad(e));
-
+  let rowsMembros;
+  let rowsEquipes;
+  let newMembers: Member[] = [];
+  const client = await sheetsReader.getClient(getAuthorizedClient);
+  try {
+    rowsMembros = await sheetsReader.readMembrosRows(client);
+    rowsEquipes = await sheetsReader.readEquipesRows(client);
+    newMembers = sheetsReader.getMembersFromRows(rowsMembros);
+    sheetsReader.setMemberParamsFromEquipesRows(rowsEquipes, newMembers);
+    good();
+  } catch (e) {
+    bad(e);
+  }
 
   function bad(e) {
+    console.log(e);
     res.status(400).send(e);
   }
-  function good(data) {
-    const newMembers: Member[] = sheetsReader.getMembersFromSheets(data);
+  function good() {
     const out = {
-      msg: 'Drive update 2',
-      sheetid,
+      msg: 'Drive update 9',
       newMembers,
+      // rowsEquipes
     }
     res.status(200).send(out)
   }
@@ -119,17 +106,6 @@ app.post('/driveUpdate', async (req, res) => {
 
 // Expose the API as a function
 exports.api = functions.https.onRequest(app);
-
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   cors(request, response, () => {
-//     // const idToken = request.headers.authorization.split('Bearer ')[1];
-//     const idToken = request.headers.authorization;
-//     console.log('called hello world3');
-//     console.log(idToken);
-
-//     response.status(200).send("Hello from Firebase3!");
-//   })
-// });
 
 export const anotherFunction = functions.https.onRequest((request, response) => {
   console.log('notherfunc2');
@@ -162,14 +138,7 @@ exports.authgoogleapi = functions.https.onRequest((req, res) => {
   });
   console.log('url');
   console.log(url);
-
-  // res.redirect(functionsOauthClient.generateAuthUrl({
-  //   access_type: 'offline',
-  //   scope: SCOPES,
-  //   prompt: 'consent',
-  // }));
   res.redirect(url);
-  // res.status(200).send('redirect url: ' + url);
 })
 
 // setup for OauthCallback
@@ -201,8 +170,8 @@ async function getAuthorizedClient() {
   }
   const snapshot = await admin.database().ref(DB_TOKEN_PATH).once('value');
   oauthTokens = snapshot.val();
-  console.log('token:');
-  console.log(oauthTokens);
+  // console.log('token:');
+  // console.log(oauthTokens);
 
   functionsOauthClient.setCredentials(oauthTokens);
   return functionsOauthClient;
