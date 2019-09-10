@@ -590,6 +590,14 @@ export class Player {
     }
   }
 
+  getCode(): number {
+    return this.code;
+  }
+
+  setCode(newCode: number) {
+    this.code = newCode;
+  }
+
   getFriends(): Player[] {
     const result: Player[] = [];
     let a;
@@ -655,6 +663,10 @@ export class Player {
     return this.getEnemies(nivel).length;
   }
 
+  updatePlayerData(newData: PlayerData) {
+    Object.assign(this, newData);
+  }
+
   constructor(data: PlayerData) {
     Object.assign(this, data);
   }
@@ -676,12 +688,19 @@ export class Liga {
   }
 
   /**
-   * Sets all the players in the list from an array.
-   * @param players Array of players to set
+   * Sets all the players in the list from an array. Updates existing ones, create new ones.
+   * @param playerDatas Array of players to set
    */
-  static setAllPlayers(players: Player[]) {
-    const allPlayers: Player[] = players.map(p => new Player(p));
-    this.allPlayers = allPlayers;
+  static setAllPlayers(playerDatas: PlayerData[]) {
+    // const allPlayers: Player[] = players.map(p => new Player(p));
+    // this.allPlayers = allPlayers;
+    for (const playerData of playerDatas) {
+      const p = Liga.getPlayerByName(playerData.name);
+      if (p) { p.updatePlayerData(playerData); } else {
+        const newPlayer = new Player(playerData);
+        this.allPlayers.push(newPlayer);
+      }
+    }
   }
 
   // returns the Player object that has this name

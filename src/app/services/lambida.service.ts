@@ -108,6 +108,9 @@ export class LambidaService {
       .then(r => {
         console.log('server success: ');
         console.log(r);
+        // const newMember = r.members.find(m => m.name === 'vib');
+        // Liga.getPlayerByName('vib').updatePlayerData(newMember);
+        // Liga.getPlayerByName('vib').setCode(m.code);
         Liga.setAllPlayers(r.members);
       })
       .catch(r => {
