@@ -39,20 +39,17 @@ export class MemberComponent implements OnInit {
   }
 
   getLambida() {
-    // const test1sub = this.lambida.testFunc1().subscribe(r => {
-    //   console.log('lambida:');
-    //   console.log(r);
-    // });
-
-    const t2 = this.lambida.testFunc3()
-      .then(r => {
-        console.log('server success: ');
-        console.log(r);
-      })
-      .catch(r => {
-        console.log('server error: ');
-        console.log(r);
-      });
+    this.lambida.updateLigaMembers();
+    // const t2 = this.lambida.getAllMembers()
+    //   .then(r => {
+    //     console.log('server success: ');
+    //     console.log(r);
+    //     Liga.setAllPlayers(r.members);
+    //   })
+    //   .catch(r => {
+    //     console.log('server error: ');
+    //     console.log(r);
+    //   });
 
     // console.log('t2');
     // console.log(t2);

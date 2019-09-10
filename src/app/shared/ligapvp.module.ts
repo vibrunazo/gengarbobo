@@ -7,6 +7,7 @@ class PlayerData {
   team: string;
   winrate: string;
   rank: string;
+  code?: number;
 }
 
 // a match between 2 players, contain info on the competing players and the eventual result of the match
@@ -591,8 +592,17 @@ export class Player {
 
   getFriends(): Player[] {
     const result: Player[] = [];
-    const a = Amizades[this.name];
-    const keys = Object.keys(a);
+    let a;
+    let keys;
+    try {
+      a = Amizades[this.name];
+      keys = Object.keys(a);
+    } catch (e) {
+      console.log(e);
+      console.log('Error finding friends of:');
+      console.log(this.name);
+      return [];
+    }
 
     for (const friend of keys) {
       if (a[friend] === 1) {
@@ -663,6 +673,15 @@ export class Liga {
   // returns an array with all Players competing
   static getAllPlayers(): Player[] {
     return this.allPlayers;
+  }
+
+  /**
+   * Sets all the players in the list from an array.
+   * @param players Array of players to set
+   */
+  static setAllPlayers(players: Player[]) {
+    const allPlayers: Player[] = players.map(p => new Player(p));
+    this.allPlayers = allPlayers;
   }
 
   // returns the Player object that has this name

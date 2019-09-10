@@ -74,6 +74,33 @@ app.post('/testFunc4', async (req, res) => {
 
   res.status(200).send(out);
 });
+app.post('/testFunc5', async (req, res) => {
+  // const members = await liga.readMembers(db, req.user);
+
+  const writeResult = await liga.updateDatabase(db);
+  // const writeResult = await liga.rewriteAllMembers(db);
+  const out = {
+    msg: 'hello, writing to db 6',
+    writeResult
+  }
+  console.log('writing members 6');
+  console.log(out);
+
+  res.status(200).send(out);
+});
+
+app.get('/getAllMembers', async (req, res) => {
+  const members = await liga.readMembers(db, req.user);
+  const out = {
+    msg: 'hello, thesse are all members',
+    members
+  }
+
+  console.log('reading all members:');
+  console.log(out);
+
+  res.status(200).send(out);
+});
 
 app.post('/driveUpdate', async (req, res) => {
   let rowsMembros;
@@ -85,6 +112,7 @@ app.post('/driveUpdate', async (req, res) => {
     rowsEquipes = await sheetsReader.readEquipesRows(client);
     newMembers = sheetsReader.getMembersFromRows(rowsMembros);
     sheetsReader.setMemberParamsFromEquipesRows(rowsEquipes, newMembers);
+    await liga.writeMembers(newMembers, db);
     good();
   } catch (e) {
     bad(e);

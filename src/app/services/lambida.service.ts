@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as firebase from 'firebase/app';
 import { fromEvent, of, from, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { Liga } from '../shared/ligapvp.module';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class LambidaService {
   // url = 'https://us-central1-gengarbobo.cloudfunctions.net/anotherFunction';
   // url = 'https://us-central1-gengarbobo.cloudfunctions.net/authgoogleapi';
   // url = 'http://localhost:5000/gengarbobo/us-central1/api/testFunc4';
-  // url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/testFunc4';
-  url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/driveUpdate';
+  url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/testFunc4';
+  // url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/driveUpdate';
 
   constructor(private http: HttpClient, private auth: AuthService) { }
 
@@ -87,5 +88,31 @@ export class LambidaService {
     const myUID = { uid: 'current-user-uid' };
     return this.http.post(this.url, myUID, { headers }).toPromise();
 
+  }
+
+  async getAllMembers(): Promise<any> {
+    const user = this.auth.user;
+    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/getAllMembers';
+    let token: string;
+    try {
+      token = await user.getIdToken();
+    } catch (error) {
+      token = '';
+    }
+    const headers = new HttpHeaders({Authorization: 'Bearer ' + token });
+    return this.http.get(url, { headers }).toPromise();
+  }
+
+  async updateLigaMembers(): Promise<any> {
+    return this.getAllMembers()
+      .then(r => {
+        console.log('server success: ');
+        console.log(r);
+        Liga.setAllPlayers(r.members);
+      })
+      .catch(r => {
+        console.log('server error: ');
+        console.log(r);
+      });
   }
 }

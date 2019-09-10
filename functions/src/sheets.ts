@@ -48,13 +48,13 @@ export function setMemberParamsFromEquipesRows(rows: Array<any>, members: Member
         if (name && name.length > 1) {
           const badges = rows[row][column + 1];
           const medals = rows[row][column + 2];
-          addParamsToMember(name.toLocaleLowerCase(), teamName, badges, medals);
+          addParamsToMember(name.toLowerCase(), teamName, badges, medals);
         }
       }
     }
     // once a member is found, adds their parameters to their object
     function addParamsToMember(memberName, teamName, badges, medals) {
-      const member = members.find(m => m.name.toLocaleLowerCase() === memberName);
+      const member = members.find(m => m.name.toLowerCase() === memberName);
       if (!member) { console.error('addParamsToMember: Could not find member: ' + memberName); return; }
       member.team = teamName;
       if (badges > 0) { member.badges = badges; }
