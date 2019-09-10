@@ -12,9 +12,11 @@
     <img [src]="player.getTeamIcon()" class="teamIcon" />
     {{ player.getTeam() }}.
   </p>
-  <p *ngIf="player.code">
-    Código de amizade:<br>
-    {{ player.code }}
+  <p *ngIf="player.code" class="">
+    <span class="codeLabel mat-body-1">Código de amizade:<br></span>
+    <span class="codes mat-body-2">
+      <span class="code1">{{ player.getCode(1) }}</span><span class="code2">{{ player.getCode(2) }}</span><span class="code3">{{ player.getCode(3) }}</span>
+    </span>
   </p>
 
   <div class="friendcontainer">

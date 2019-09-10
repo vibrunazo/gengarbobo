@@ -21,17 +21,41 @@ tr.mat-footer-row, tr.mat-row {
 }
 
 .mat-column-name {
-  width: 120px;
+  width: 100px;
 }
 .mat-column-team {
-  width: 60px;
+  width: 30px;
+  max-width: 30px;
 }
 .mat-column-winrate {
-  width: 60px;
+  width: 40px;
+}
+.mat-column-badges {
+  width: 40px;
 }
 .mat-column-tier {
-  width: 80px;
+  width: 40px;
 }
 .mat-column-friends {
-  width: 40px;
+  width: 60px;
+}
+
+.teamIcon {
+  height: 18px;
+  width: 18px;
+}
+
+.svgicon {
+  height: 14px;
+  width: 14px;
+}
+
+mat-icon {
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+}
+
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+  padding-left: 8px;
 }

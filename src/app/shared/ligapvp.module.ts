@@ -8,6 +8,8 @@ class PlayerData {
   winrate: string;
   rank: string;
   code?: number;
+  badges?: number;
+  medals?: number;
 }
 
 // a match between 2 players, contain info on the competing players and the eventual result of the match
@@ -482,6 +484,8 @@ export class Player {
   email?: string;
   code?: number;
   roles?: Role[];
+  badges?: number;
+  medals?: number;
 
   getName(): string {
     return this.name;
@@ -590,13 +594,53 @@ export class Player {
     }
   }
 
-  getCode(): number {
+  /**
+   * Returns the Player code. Optionally ask for which part of the code. If part is not set, or zero, returns the full code.
+   * @param part If part is 1, 2 or 3. Then return only that part of the full number when split in 3 parts.
+   * For example, if the code is '1234 5678 4321' and part = 2, then it will return '5678'.
+   */
+  getCode(part?: number): number {
+    if (part > 0 && part < 4) {
+      let str = this.code.toString();
+      str = str.substr(part * 4 - 4, 4);
+      return +str;
+    }
     return this.code;
   }
 
   setCode(newCode: number) {
-    this.code = newCode;
+    if (!newCode) { return; }
+    this.code = +newCode;
   }
+
+  getBadges(): number {
+    return this.badges;
+  }
+
+  setBadges(newBadges: number) {
+    this.badges = newBadges;
+    if (!newBadges) { this.badges = 0; }
+  }
+
+  getMedals(): number {
+    return this.medals;
+  }
+  setMedals(newMedals: number) {
+    this.medals = newMedals;
+    if (!newMedals) { this.medals = 0; }
+  }
+
+  setName(name: string) {
+    this.name = name;
+  }
+  setTeam(team: string) {
+    this.team = team;
+  }
+  setWinrate(winrate: string) {
+    this.winrate = winrate;
+    if (!winrate) { this.winrate = '0'; }
+  }
+
 
   getFriends(): Player[] {
     const result: Player[] = [];
@@ -665,6 +709,28 @@ export class Player {
 
   updatePlayerData(newData: PlayerData) {
     Object.assign(this, newData);
+    // this.setCode(newData.code);
+    let str: string = '' + newData.code;
+    str = str.replace(/\s/g, '');
+    this.setCode(+str);
+    this.setBadges(newData.badges);
+    this.setMedals(newData.medals);
+    // if (newData.name === 'vib') {
+    //   console.log('updated player ' + newData.name);
+    //   console.log('newData');
+    //   console.log(newData);
+    //   console.log('this');
+    //   console.log(this);
+    // }
+
+  //   name: string;
+  // team: string;
+  // winrate: string;
+  // rank: string;
+  // code?: number;
+  // badges?: number;
+  // medals?: number;
+
   }
 
   constructor(data: PlayerData) {
@@ -701,6 +767,10 @@ export class Liga {
         this.allPlayers.push(newPlayer);
       }
     }
+    // console.log('updated all players');
+    // console.log(Liga.getPlayerByName('vib'));
+
+
   }
 
   // returns the Player object that has this name

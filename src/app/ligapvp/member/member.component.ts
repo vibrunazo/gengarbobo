@@ -35,11 +35,11 @@ export class MemberComponent implements OnInit {
         this.setMember(params.id);
       }
     });
-    this.getLambida();
+    // this.getLambida();
   }
 
   getLambida() {
-    this.lambida.updateLigaMembers();
+    // this.lambida.updateLigaMembers();
     // const t2 = this.lambida.getAllMembers()
     //   .then(r => {
     //     console.log('server success: ');
@@ -60,7 +60,7 @@ export class MemberComponent implements OnInit {
   updateUser(user: User) {
     this.user = user;
     this.checkOwner();
-    this.getLambida();
+    // this.getLambida();
   }
 
   checkOwner() {

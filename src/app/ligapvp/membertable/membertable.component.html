@@ -12,10 +12,14 @@
     </ng-container>
     <ng-container matColumnDef="team">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Time</th>
-      <td mat-cell *matCellDef="let row">{{row.team}}</td>
+      <td mat-cell *matCellDef="let row"><img [src]="row.team" class="teamIcon" /></td>
+    </ng-container>
+    <ng-container matColumnDef="badges">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header><img src="assets/award-solid.svg" class="svgicon"></th>
+      <td mat-cell *matCellDef="let row">{{row.badges}}</td>
     </ng-container>
     <ng-container matColumnDef="winrate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ap%</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>V%</th>
       <td mat-cell *matCellDef="let row">{{row.winrate}}%</td>
     </ng-container>
     <ng-container matColumnDef="tier">
@@ -23,7 +27,7 @@
       <td mat-cell *matCellDef="let row">{{row.tier}}</td>
     </ng-container>
     <ng-container matColumnDef="friends">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Amigos</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header><mat-icon aria-hidden="false" aria-label="Amigos">people</mat-icon></th>
       <td mat-cell *matCellDef="let row">{{row.friends}}</td>
     </ng-container>
 

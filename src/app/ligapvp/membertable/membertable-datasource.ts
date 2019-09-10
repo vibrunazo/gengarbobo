@@ -1,7 +1,7 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
-import { Observable, of as observableOf, merge } from 'rxjs';
+import { Observable, of as observableOf, merge, BehaviorSubject } from 'rxjs';
 import { Liga } from 'src/app/shared/ligapvp.module';
 
 // TODO: Replace this with your own data model type
@@ -11,6 +11,8 @@ export interface MembertableItem {
   winrate: number;
   tier: string;
   friends: number;
+  badges: number;
+  medals: number;
 }
 
 /**
@@ -19,7 +21,10 @@ export interface MembertableItem {
  * (including sorting, pagination, and filtering).
  */
 export class MembertableDataSource extends DataSource<MembertableItem> {
-  data: MembertableItem[] = [];
+  // data: MembertableItem[] = [];
+  dataStream = new BehaviorSubject<MembertableItem[]>(null);
+  set data(v: MembertableItem[]) { this.dataStream.next(v); }
+  get data(): MembertableItem[] { return this.dataStream.value; }
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -34,15 +39,21 @@ export class MembertableDataSource extends DataSource<MembertableItem> {
     all.forEach(p => {
       const row: MembertableItem = {
         name: p.getName(),
-        team: p.getTeam(),
+        team: p.getTeamIcon(),
         winrate: p.getWinrate(),
-        tier: p.getNivel(),
-        friends: p.getFriends().length
+        tier: p.getTierIcon(),
+        friends: p.getFriends().length,
+        badges: p.getBadges(),
+        medals: p.getMedals(),
       };
       newData.push(row);
     });
-    newData = newData.sort((a, b) => b.winrate - a.winrate);
+    newData = newData.sort((a, b) => (b.winrate + b.badges * 100) - (a.winrate + a.badges * 100));
     this.data = newData;
+    // console.log('updated table');
+    // console.log(Liga.getPlayerByName('vib'));
+    // console.log(Liga.getAllPlayers());
+
   }
 
 
@@ -55,7 +66,8 @@ export class MembertableDataSource extends DataSource<MembertableItem> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
-      observableOf(this.data),
+      // observableOf(this.data),
+      this.dataStream,
       this.paginator.page,
       this.sort.sortChange
     ];
