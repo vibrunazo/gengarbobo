@@ -42,11 +42,13 @@ export class LambidaService {
       token = '';
     }
     const headers = new HttpHeaders({Authorization: 'Bearer ' + token });
-    return this.http.get(url, { headers }).toPromise();
+    return await this.http.get(url, { headers }).toPromise();
   }
 
   async updateLigaMembers(): Promise<any> {
-    return this.getAllMembers()
+    let resolve; let reject;
+    const p = new Promise((res, rej) => { resolve = res; reject = rej; });
+    await this.getAllMembers()
       .then(r => {
         console.log('server success: ');
         console.log(r);
@@ -57,5 +59,6 @@ export class LambidaService {
         console.log('server error: ');
         console.log(r);
       });
+    return p;
   }
 }

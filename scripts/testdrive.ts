@@ -5,12 +5,112 @@
 
 import * as fs from 'fs';
 import testData from './testdata.json';
+import friendsData from './vfriends.json';
+import serverFriends from './vsfriends.json';
 import { Member } from 'functions/src/member.model.js';
+import { Friendship } from 'functions/src/friends.model.js';
+import { readMembers } from 'functions/src/liga.js';
 
 console.log('test script running');
 
-buildMembers();
-// saveToFile();
+// buildMembers();
+// const friendsMap = buildFriends();
+// const friendsJson = mapToJson(friendsMap);
+// saveToFile(friendsJson);
+
+serverFriendsToArray(serverFriends);
+
+function serverFriendsToArray(friends) {
+  const a = [];
+  console.log(friends);
+  for (const [key, value] of Object.entries(friends)) {
+    console.log(key + ' = ' + value['s']);
+  }
+}
+
+function mapToJson(map: Map<string, any>) {
+  const result = {};
+  // const n = 'a';
+  // result[n] = [];
+  for (const i of map) {
+    // console.log(i);
+
+    const k = i[0]; const v = i[1];
+    result[k] = v;
+    // result[n].push(k);
+  }
+  return result;
+}
+function buildFriends() {
+  const rows = friendsData.rowsFriends;
+  // const friends: Friendship[] = [];
+  const friends: Map<string, Friendship> = new Map();
+  const members: Member[] = testData.newMembers;
+  const names: string[] = members.map(m => m.name.toLowerCase());
+  const verMembers: string[] = [];
+  const VERT_ROW = 7;
+  const VERT_COL = 2;
+  const HORZ_ROW = 5;
+  const HORZ_COL = 8;
+
+  console.log('building friends');
+  console.log(rows[7][2]);
+
+  // read members on the vertical list
+  readVert();
+  console.log(friends.get('ravenaut13jcruel13'));
+  console.log(friends.get('13jcruel13ravenaut'));
+  return(friends);
+  // get vertical length
+  // read members on the horizontal list
+  // get horizontal length
+  // do both match?
+  // for each member on vertical list
+    // for each horizontal member of each vertical member
+    // check friendship
+    // add to friends list
+
+  function readVert() {
+    for (let row = VERT_ROW; row < rows.length; row++) {
+      let m = rows[row][VERT_COL];
+      if (isMember(m)) {
+        m = m.toLowerCase();
+        // verMembers.push(m);
+        // console.log('vert row: ' + row + ' cell: ' + m);
+
+        readHorz(row, m);
+      }
+    }
+  }
+  function readHorz(row: number, vertMember: string) {
+    for (let col = HORZ_COL; col < rows[HORZ_ROW].length; col++) {
+      let m = rows[HORZ_ROW][col];
+      if (isMember(m)) {
+        m = m.toLowerCase();
+        const statusCell = rows[row][col];
+        const status = statusCell === '' ? false : true;
+        // console.log('horz col: ' + col + ' cell: ' + m);
+        saveFriends(vertMember, m, status);
+        // verMembers.push(m);
+      }
+   }
+  }
+  function isMember(cell: string): boolean {
+    if (cell && names.includes(cell.toLowerCase())) {
+      return true;
+    }
+    return false;
+  }
+  function saveFriends(friend1: string, friend2: string, status: boolean, comment?: string) {
+    if (friend1 === friend2 || !status) { return; }
+    const newFriendship: Friendship = {
+      s: status,
+    };
+    const ids = [friend1, friend2].sort((a, b) => a.localeCompare(b));
+    const id = ids[0] + ids[1];
+    friends.set(id, newFriendship);
+  }
+}
 
 
 function buildMembers() {
@@ -64,11 +164,13 @@ function buildMembers() {
 
 }
 
-function saveToFile() {
-  const path = './src/app/dex/tableItems.ts';
-  const json = JSON.stringify(null);
-  const filetext = 'export const ROWS = ' + json + ';';
-  fs.writeFile(path, filetext, 'utf8', (e) => {
+function saveToFile(dataToSave) {
+  // console.log(dataToSave);
+  const path = './scripts/out/testdrive.json';
+  const json = JSON.stringify(dataToSave);
+  // console.log(json);
+  // const filetext = 'export const ROWS = ' + json + ';';
+  fs.writeFile(path, json, 'utf8', (e) => {
     console.log('creating json: ' + path);
     if (e) { console.log('' + e);
     } else { console.log('success'); }

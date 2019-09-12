@@ -715,14 +715,6 @@ export class Player {
     this.setCode(+str);
     this.setBadges(newData.badges);
     this.setMedals(newData.medals);
-    // if (newData.name === 'vib') {
-    //   console.log('updated player ' + newData.name);
-    //   console.log('newData');
-    //   console.log(newData);
-    //   console.log('this');
-    //   console.log(this);
-    // }
-
   //   name: string;
   // team: string;
   // winrate: string;

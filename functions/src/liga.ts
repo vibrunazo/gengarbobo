@@ -1,4 +1,5 @@
 import { Member } from "./member.model";
+import { Friendship } from "./friends.model";
 
 // import { Player } from '../../src/app/shared/ligapvp.module';
 //'../src/app/shared/ligapvp.module';
@@ -8,6 +9,155 @@ import { Member } from "./member.model";
  * Call updateMembersCache() to update it.
  */
 const membersCache: Array<any> = [];
+
+// let friendsCache: Map<string, Friendship> = new Map<string, Friendship>();
+let friendsCache = {};
+let friendsCount = 0;
+
+async function updateFriendsCache(db) {
+  console.log('Fetching FRIENDS from database to write local cache.3');
+  let resolve; let reject;
+  const p = new Promise((res, rej) => {resolve = res; reject = rej;} );
+  // const docRef = db.collection('friends').doc('agg');
+  const docRef = db.ref('/friends');
+  docRef.once('value')
+  .then(doc => {
+    // fieldsToMap(doc.val());
+    friendsCache = doc.val();
+    resolve(friendsCache);
+  })
+  .catch(err => {
+    reject(err);
+  });
+
+  return p;
+
+  // function fieldsToMap(fields) {
+  //   // console.log(fields);
+  //   for (const [key, value] of Object.entries(fields)) {
+  //     const fs: any = value;
+  //     friendsCache.set(key, fs);
+  //   }
+  // }
+
+}
+
+/**
+ * Returns all friends. Tries to read it from the local cache if it exists.
+ * If not, reads it from the Firestore Database and saves to local cache before returning.
+ * @param db Reference to the Firestore Database from admin.firestore()
+ */
+export async function readFriends(db): Promise<any> {
+  console.log('was asked to read friends:');
+  // console.log(members);
+  let result: any;
+
+  if (Object.entries(friendsCache).length  === 0) {
+    console.log('first time reading FRIENDS, building data');
+    await updateFriendsCache(db);
+  } else {
+    // console.log('members already set when asked to read them');
+  }
+  result = friendsCache;
+
+  return result;
+}
+
+export async function writeFriendsRT(newFriends, db) {
+  console.log('writin friends to RTdb');
+
+  const dbref = db.ref('/friends')
+  let resolve; let reject;
+  const p = new Promise((res, rej) => {resolve = res; reject = rej;});
+  dbref.update(newFriends, e => {
+    if (e) { reject(e); }
+    console.log('Finished writing');
+    resolve();
+  });
+  return p;
+}
+
+export async function writeFriends(newFriends: Map<string, Friendship>, db) {
+  console.log('Writing friends to db');
+  friendsCount = 0;
+  let resolve; let reject;
+  const p = new Promise((res, rej) => {resolve = res; reject = rej;});
+  const friendData = {};
+  try {
+    newFriends.forEach((value, key, map) => addFriendship(key, value));
+    // friendsCache = newFriends;
+    console.log('Finished writing all friends, total: ' + friendsCount);
+    await writeFriendsOnce();
+    await updateFriendsCache(db);
+    resolve();
+  } catch (e) {
+    reject(e);
+  }
+  return p;
+
+  function addFriendship(id, friend) {
+    const key = `${id}.s`;   // ex: rsscoachvib.s   meaning, the field 's' of Map called 'rsscoachvib';
+    friendData[key] = friend.s;
+    friendsCount++;
+  }
+
+  async function writeFriendsOnce() {
+    const friendsRef = db.collection('friends');
+    const docRef = friendsRef.doc('agg');
+    console.log('Ill write friends here');
+    let resolve2; let reject2;
+    const p2 = new Promise((res, rej) => {resolve2 = res; reject2 = rej;});
+    try {
+      await docRef.update(friendData);
+      resolve2();
+    } catch (e) {
+      reject2(e);
+    }
+    return p2;
+  }
+}
+
+export async function clearFriends(db) {
+  const collectionRef = db.collection('friends');
+  const results: any[] = [];
+  const p = new Promise(async (resolve, reject) => {
+    await collectionRef.get()
+    .then(async snap => {
+      snap.docs.forEach(async doc => {
+        const oldId = doc.id;
+        if (oldId !== 'agg') {
+          console.log('deleting: ' + doc.id);
+          await doc.ref.delete();
+        }
+      });
+    });
+    resolve(results);
+  });
+
+  return p;
+}
+
+// async function writeFriend(id, friend: Friendship, db) {
+//   const friendsRef = db.collection('friends');
+//   const newDocRef = friendsRef.doc('agg');
+//   let resolve; let reject;
+//   const p = new Promise((res, rej) => {resolve = res; reject = rej;});
+//   const key = `${id}.s`;   // ex: rsscoachvib.s   meaning, the field 's' of Map called 'rsscoachvib';
+//   const friendData = {};
+//   friendData[key] = friend.s;
+//   try {
+//     await newDocRef.update(friendData);
+//     // let updateNested = db.collection('users').doc('Frank').update({
+//     //   age: 13,
+//     //   'favorites.color': 'Red'
+//     // });
+//     friendsCount++;
+//     resolve();
+//   } catch (e) {
+//     reject(e);
+//   }
+//   return p;
+// }
 
 /**
  * Fetches members from the server and caches it locally on the 'membersCache' variable
@@ -36,14 +186,15 @@ async function updateMembersCache(db) {
 }
 
 /**
- * Tries to read the members from the database 'db' returns only what this 'user' has permission to view
+ * Returns all members with only the fields that this 'user' has permission to view.
+ * Tries to read it from local cache if it exists. Else will read it from the Firestore Database then save it to local cache.
  * @param db Reference to the Firestore Database from admin.firestore()
  * @param user Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export async function readMembers(db, user) {
+export async function readMembers(db, user): Promise<Member[]> {
   // console.log('was asked to read members:');
   // console.log(members);
-  let result: any[] = [];
+  let result: Member[] = [];
 
   if (membersCache.length === 0) {
     console.log('first time reading members, building data');
@@ -138,8 +289,9 @@ export async function writeMembers(memberList: Member[], db) {
         results.push(result);
       }
       await updateMembersCache(db);
+      resolve(results)
     } catch (e) {
-      resolve(e);
+      reject(e);
     }
   });
   return p;

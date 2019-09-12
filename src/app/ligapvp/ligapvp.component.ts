@@ -14,8 +14,14 @@ export class LigapvpComponent implements OnInit {
   constructor(private lambida: LambidaService) { }
 
   ngOnInit() {
+    this.updateData();
+  }
+
+  async updateData() {
+    console.log('before');
+    await this.lambida.updateLigaMembers();
     this.members = Liga.getAllPlayers();
-    this.lambida.updateLigaMembers();
+    console.log('after');
   }
 
 }

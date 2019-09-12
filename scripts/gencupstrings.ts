@@ -15,21 +15,26 @@ import { log } from 'util';
 console.log('update script running');
 const cups = {
   kanto: {
-    allowedList: []
+    allowedList: [],
+    leagues: [1500, 2500, 10000]
   },
   johto: {
-    allowedList: []
+    allowedList: [],
+    leagues: [1500, 2500, 10000]
   },
   hoenn: {
     allowedList: [],
-    bannedList: []
+    bannedList: [],
+    leagues: [1500, 2500, 10000]
   },
   sinnoh: {
-    allowedList: []
+    allowedList: [],
+    leagues: [1500, 2500, 10000]
   },
   uc: {
     allowedList: [],
-    bannedList: LEGENDARIES
+    bannedList: LEGENDARIES,
+    leagues: [2500]
   },
   liguinha3: {
     allowedList: []
@@ -49,7 +54,7 @@ function genTableItems() {
     if (p.dex >= 152 && p.dex <= 251) {
       cups.johto.allowedList.push(p.speciesId);
     }
-    if (p.dex >= 252 && p.dex <= 386 && p.speciesId !== 'jirachi') {
+    if (p.dex >= 252 && p.dex <= 386) {
       cups.hoenn.allowedList.push(p.speciesId);
     }
     if (p.dex >= 387 && p.dex <= 493) {

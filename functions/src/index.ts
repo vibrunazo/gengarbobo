@@ -2,6 +2,7 @@ import * as functions from 'firebase-functions';
 import * as liga from './liga';
 import * as sheetsReader from './sheets';
 import { Member } from './member.model';
+// import { Friendship } from './friends.model';
 const admin = require('firebase-admin');
 admin.initializeApp();
 // const CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS!;
@@ -63,14 +64,11 @@ app.post('/testFunc4', async (req, res) => {
 
   // await getMembers();
   // const code = members[0].code;
-  const members = await liga.readMembers(db, req.user);
+  // const members = await liga.readMembers(db, req.user);
+  await liga.clearFriends(db);
   const out = {
-    msg: 'hello, thesse are all members',
-    members
+    msg: 'hello, cleared all friends',
   }
-
-  console.log('reading members 4 ');
-  console.log(out);
 
   res.status(200).send(out);
 });
@@ -95,10 +93,15 @@ app.get('/getAllMembers', async (req, res) => {
     msg: 'hello, thesse are all members',
     members
   }
+  res.status(200).send(out);
+});
 
-  console.log('reading all members:');
-  console.log(out);
-
+app.get('/getAllFriends', async (req, res) => {
+  const friends = await liga.readFriends(admin.database());
+  const out = {
+    msg: 'hello, thesse are all Friends',
+    friends,
+  }
   res.status(200).send(out);
 });
 
@@ -113,6 +116,7 @@ app.post('/driveUpdate', async (req, res) => {
     newMembers = sheetsReader.getMembersFromRows(rowsMembros);
     sheetsReader.setMemberParamsFromEquipesRows(rowsEquipes, newMembers);
     await liga.writeMembers(newMembers, db);
+
     good();
   } catch (e) {
     bad(e);
@@ -127,6 +131,39 @@ app.post('/driveUpdate', async (req, res) => {
       msg: 'Drive update 9',
       newMembers,
       // rowsEquipes
+    }
+    res.status(200).send(out)
+  }
+});
+
+app.post('/driveUpdateFriends', async (req, res) => {
+  let rowsFriends: string[][] = [];
+  let newFriendsMap;
+  let newFriendsJSON;
+  let size;
+  const client = await sheetsReader.getClient(getAuthorizedClient);
+  try {
+    const members = await liga.readMembers(db, null);
+    rowsFriends = await sheetsReader.readAmizadesRows(client);
+    newFriendsMap = sheetsReader.getFriendsFromRows(rowsFriends, members);
+    size = newFriendsMap.size;
+    newFriendsJSON = mapToJson(newFriendsMap);
+    // await liga.writeFriends(newFriendsMap, db);
+    await liga.writeFriendsRT(newFriendsJSON, admin.database())
+    good();
+  } catch (e) {
+    bad(e);
+  }
+
+  function bad(e) {
+    console.log(e);
+    res.status(400).send(e);
+  }
+  function good() {
+    const out = {
+      msg: 'Drive Friends update 3',
+      size,
+      newFriends: newFriendsJSON,
     }
     res.status(200).send(out)
   }
@@ -203,4 +240,18 @@ async function getAuthorizedClient() {
 
   functionsOauthClient.setCredentials(oauthTokens);
   return functionsOauthClient;
+}
+
+/**
+ * Converts a Map to Json object that can be put on the server response to the client
+ * @param map A map to convert to Json
+ */
+function mapToJson(map: Map<string, any>) {
+  const result = {};
+  for (const i of map) {
+    const k = i[0]; const v = i[1];
+    result[k] = v;
+    // result[n].push(k);
+  }
+  return result;
 }
