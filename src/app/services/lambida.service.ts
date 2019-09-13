@@ -54,11 +54,20 @@ export class LambidaService {
         console.log(r);
         Liga.setAllPlayers(r.members);
         this.emitter.next();
+        this.emmitToSubs();
       })
       .catch(r => {
         console.log('server error: ');
         console.log(r);
       });
     return p;
+  }
+
+  emmitToSubs() {
+    try {
+      this.emitter.next();
+    } catch (e) {
+      console.log(e);
+    }
   }
 }

@@ -59,7 +59,7 @@ export class MemberComponent implements OnInit {
 
   updateUser(user: User) {
     this.user = user;
-    this.checkOwner();
+    // this.checkOwner();
     // this.getLambida();
   }
 
@@ -78,7 +78,7 @@ export class MemberComponent implements OnInit {
   setMember(member) {
     this.name = member;
     this.player = Liga.getPlayerByName(member);
-    this.checkOwner();
+    // this.checkOwner();
     this.friends = this.player.getFriends();
     this.enemies = this.player.getEnemies();
     this.enemies = Liga.filterInscritos(this.enemies, this.filter);

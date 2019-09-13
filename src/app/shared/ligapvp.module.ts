@@ -1,12 +1,13 @@
 import Players from './ligapvp.json';
-import Amizades from './amizades.json';
+import Friends from './friends.json';
 import Inscritos from './inscritos.json';
+import { Friendship } from 'functions/src/friends.model.js';
 
 class PlayerData {
   name: string;
   team: string;
   winrate: string;
-  rank: string;
+  rank?: string;
   code?: number;
   badges?: number;
   medals?: number;
@@ -481,7 +482,7 @@ export class Player {
   name: string;
   team: string;
   winrate: string;
-  rank: string;
+  rank?: string;
   email?: string;
   code?: number;
   roles?: Role[];
@@ -674,23 +675,13 @@ export class Player {
 
   getFriends(): Player[] {
     const result: Player[] = [];
-    let a;
-    let keys;
-    try {
-      a = Amizades[this.name];
-      keys = Object.keys(a);
-    } catch (e) {
-      console.log(e);
-      console.log('Error finding friends of:');
-      console.log(this.name);
-      return [];
-    }
-
-    for (const friend of keys) {
-      if (a[friend] === 1) {
-        result.push(Liga.getPlayerByName(friend));
+    const friendships = Friends.friends;
+    const allPlayers = Liga.getAllPlayers();
+    allPlayers.forEach(p => {
+      if (Liga.areWeFriends(this, p)) {
+        result.push(p);
       }
-    }
+    });
     return result;
   }
 
@@ -794,6 +785,7 @@ export class Player {
 
 export class Liga {
   static allPlayers: Player[] = Players.map(p => new Player(p));
+  static allFriends = Friends.friends;
 
   // returns an array with all Players competing
   static getAllPlayers(): Player[] {
@@ -880,6 +872,44 @@ export class Liga {
     result = players.filter(p => p.getNivel() === tier);
 
     return result;
+  }
+
+  /**
+   * Returns true if this 2 players are friends
+   * @param p1 player to check friendship with
+   * @param p2 another player to check friendship with
+   */
+  static areWeFriends(p1: Player, p2: Player): boolean {
+    const id = this.getFriendshipID(p1, p2);
+    const f = this.getFriendship(id);
+    if (!f) { return false; }
+    return f.s;
+  }
+
+  static getFriendship(id: string): Friendship {
+    return this.allFriends[id];
+  }
+
+  /**
+   * Returns the ID of the friendship between this 2 players.
+   * As recorded by the server.
+   * @param p1 Player 1
+   * @param p2 Player 2
+   */
+  static getFriendshipID(p1: Player, p2: Player): string {
+    const n1 = p1.getName().split('.').join('').toLowerCase();  // remove dots from name
+    const n2 = p2.getName().split('.').join('').toLowerCase();  // and force lowercase
+    const ids = [n1, n2].sort((a, b) => a.localeCompare(b));
+    const id = ids[0] + ids[1];
+    return id;
+  }
+
+  static setAllFriends(newFriends) {
+    this.allFriends = newFriends;
+  }
+
+  static getFriendships() {
+    return this.allFriends;
   }
 }
 
