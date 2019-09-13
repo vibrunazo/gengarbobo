@@ -1,6 +1,16 @@
+$card-padding: 6;
+$card-margin: 6;
+
+.allCardsContainer {
+  min-width: 320px;
+  max-width: 480px;
+}
+
 .playercard {
-  width: 382px;
-  margin: 6px;
+  min-width: #{320-$card-padding*2-$card-margin*2}px;
+  max-width: 480px;
+  margin: #{$card-margin}px;
+  padding: #{$card-padding}px !important;
 }
 
 .teamAvatar {
@@ -27,14 +37,20 @@
 }
 
 .friendcontainer {
+  width: 100%;
   display: flex;
 }
 
 .friends {
-  width: 200px;
+  width: 100%;
+  min-width: 140px;
   margin-right: 0px;
   margin-left: 6px;
   padding: 10px 2px !important;
+}
+
+.nonfriends {
+  margin-right: 6px;
 }
 
 
@@ -46,6 +62,7 @@
   width: 100%;
   padding-left: 4px !important;
   padding-right: 4px !important;
+  overflow: hidden;
 }
 
 .friendNameplate {
@@ -53,6 +70,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  overflow: hidden;
+}
+.friendNameplate a {
+  overflow: hidden !important;
 }
 
 .wr {
@@ -70,8 +91,11 @@
 }
 
 .filterff {
-  width: 100px;
+  width: 70px;
   height: 0px;
   top: -12px;
-  font-size: 0.9em;
+  font-size: 0.6em;
 }
+// mat-select {
+//   font-size: 0.7em;
+// }

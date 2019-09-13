@@ -189,8 +189,10 @@ export function getUserRoles(db, user): Array<string> {
   let results: Array<string> = [];
   if (!user) { return results; }
   membersCache.forEach(m => {
-    if (m.email === user.email && m.roles) {
-      results = m.roles;
+    if (m.email === user.email) {
+      if (m.roles) { results = [...m.roles]; }
+      results.push('name:' + m.name)
+      results.push('team:' + m.team)
     }
   });
   return results;
