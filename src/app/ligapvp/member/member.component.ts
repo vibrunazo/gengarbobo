@@ -25,6 +25,7 @@ export class MemberComponent implements OnInit {
   authsub;
   user: User;
   canIedit = false;
+  fieldEditMode = false;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private lambida: LambidaService) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
@@ -46,6 +47,14 @@ export class MemberComponent implements OnInit {
    */
   updateData() {
     this.setMember(this.name);
+  }
+
+  onEdit() {
+    this.fieldEditMode = !this.fieldEditMode;
+  }
+  onEditField(field: string) {
+
+    console.log('I clicked a ' + field + ' and I liked it.');
   }
 
   getLambida() {

@@ -20,17 +20,25 @@ $card-margin: 6;
 
 .edit {
   margin-left: auto;
-  font-size: 16px;
+  // font-size: 10px;
+  // height: 10px;
+  // width: 10px;
 }
 
-.edit mat-icon {
-  font-size: 25px;
-  height: 25px;
-  width: 25px;
-  padding: 2px;
-  margin-bottom: 10px;
-  vertical-align: middle !important;
+.editButtonLabel {
+  font-size: 12px;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.7);
 }
+
+// .edit button {
+//   height: 24px;
+//   width: 24px;
+// }
+// .edit mat-icon {
+//   font-size: 16px;
+//   margin-top: -8px;
+// }
 
 .playerParam {
   display: flex;
@@ -44,10 +52,23 @@ $card-margin: 6;
 .codes {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.2em;
+  margin-left: auto;
 }
 .code2 {
   // color: rgba(200, 255, 200, 0.7);
   margin: 0 0.3em;
+}
+
+$paramEditSize: 18px;
+.playerParam .mat-icon-button {
+  height: $paramEditSize; width: $paramEditSize;
+  line-height: 20px;
+  margin: 0 6px;
+}
+.playerParam mat-icon {
+  font-size: $paramEditSize;
+  height: $paramEditSize; width: $paramEditSize;
+  line-height: $paramEditSize !important;
 }
 
 .friendcontainer {
