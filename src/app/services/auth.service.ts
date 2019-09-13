@@ -66,12 +66,22 @@ export class AuthService {
     this.myRoles = newRoles;
   }
 
-  canIeditPlayer(player: Player): boolean {
-    if (this.myRoles.length === 0) { return false; }
-    if (this.myRoles.includes('name:' + player.getName().split('.').join('').toLowerCase())) { return true; }
-    if (this.myRoles.includes('admin')) { return true; }
-    if (this.myRoles.includes('site')) { return true; }
-    if (this.myRoles.includes('friends') && this.myRoles.includes('team:' + player.getTeam().toLowerCase())) { return true; }
-    return false;
+  canIeditPlayer(player: Player): Right[] {
+    if (this.myRoles.length === 0) { return []; }
+    if (this.myRoles.includes('admin')) { return [Right.All]; }
+    if (this.myRoles.includes('site')) { return [Right.All]; }
+    if (this.myRoles.includes('friends') && this.myRoles.includes('team:' + player.getTeam().toLowerCase())) {
+      return [Right.Friends]; }
+    if (this.myRoles.includes('name:' + player.getName().split('.').join('').toLowerCase())) { return [ Right.Personal, Right.Friends]; }
+    return [];
   }
+}
+
+/**
+ * The rights an user has to edit someone's profile
+ */
+export enum Right {
+  All,
+  Friends,
+  Personal,
 }

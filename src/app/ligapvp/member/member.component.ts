@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService, Right } from 'src/app/services/auth.service';
 import { User } from 'src/app/services/user.model';
 import { LambidaService } from 'src/app/services/lambida.service';
 
@@ -24,6 +24,7 @@ export class MemberComponent implements OnInit {
   filter = 'all';
   authsub;
   user: User;
+  rights: Right[] = [];
   canIedit = false;
   fieldEditMode = false;
 
@@ -83,12 +84,18 @@ export class MemberComponent implements OnInit {
   }
 
   checkOwner() {
-    this.canIedit = this.auth.canIeditPlayer(this.player);
+    this.rights = this.auth.canIeditPlayer(this.player);
+    this.canIedit = this.rights.includes(Right.All) || this.rights.includes(Right.Personal);
     // if (this.user && this.user.member === this.name) {
     //   console.log('YES! Logged in User is the owner of this account!');
     // } else {
     //   console.log('NO! Owner is not logged in!');
     // }
+  }
+
+  hasRight(right: string): boolean {
+    return this.rights.includes(Right[right]);
+
   }
 
   changeFilter() {
