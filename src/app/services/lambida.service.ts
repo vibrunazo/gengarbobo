@@ -58,6 +58,8 @@ export class LambidaService {
       const newFriends = await this.getAllFriends(token);
       // console.log('server success: ');
       // console.log(newMembers);
+      // newMembers.roles.push('friends');
+      this.auth.setRoles(newMembers.roles);
       Liga.setAllPlayers(newMembers.members);
       Liga.setAllFriends(newFriends.friends);
       this.emmitToSubs();

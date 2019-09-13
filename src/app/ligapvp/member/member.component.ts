@@ -24,6 +24,7 @@ export class MemberComponent implements OnInit {
   filter = 'all';
   authsub;
   user: User;
+  canIedit = false;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private lambida: LambidaService) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
@@ -68,16 +69,17 @@ export class MemberComponent implements OnInit {
 
   updateUser(user: User) {
     this.user = user;
-    // this.checkOwner();
+    this.checkOwner();
     // this.getLambida();
   }
 
   checkOwner() {
-    if (this.user && this.user.member === this.name) {
-      console.log('YES! Logged in User is the owner of this account!');
-    } else {
-      console.log('NO! Owner is not logged in!');
-    }
+    this.canIedit = this.auth.canIeditPlayer(this.player);
+    // if (this.user && this.user.member === this.name) {
+    //   console.log('YES! Logged in User is the owner of this account!');
+    // } else {
+    //   console.log('NO! Owner is not logged in!');
+    // }
   }
 
   changeFilter() {
@@ -87,7 +89,7 @@ export class MemberComponent implements OnInit {
   setMember(member) {
     this.name = member;
     this.player = Liga.getPlayerByName(member);
-    // this.checkOwner();
+    this.checkOwner();
     this.friends = this.player.getFriends();
     this.enemies = this.player.getEnemies();
     this.enemies = Liga.filterInscritos(this.enemies, this.filter);

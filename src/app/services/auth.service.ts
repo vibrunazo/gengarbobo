@@ -10,6 +10,7 @@ import {
 import { User } from './user.model';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Player } from '../shared/ligapvp.module';
 
 
 @Injectable({
@@ -18,6 +19,7 @@ import { switchMap } from 'rxjs/operators';
 export class AuthService {
   user$: Observable<User>;
   user: firebase.User;
+  myRoles: string[] = [];
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -58,5 +60,18 @@ export class AuthService {
     };
 
     return userRef.set(data, { merge: true });
+  }
+
+  setRoles(newRoles: string[]) {
+    this.myRoles = newRoles;
+  }
+
+  canIeditPlayer(player: Player): boolean {
+    if (this.myRoles.length === 0) { return false; }
+    if (this.myRoles.includes('name:' + player.getName().split('.').join('').toLowerCase())) { return true; }
+    if (this.myRoles.includes('admin')) { return true; }
+    if (this.myRoles.includes('site')) { return true; }
+    if (this.myRoles.includes('friends') && this.myRoles.includes('team:' + player.getTeam().toLowerCase())) { return true; }
+    return false;
   }
 }

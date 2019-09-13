@@ -8,6 +8,7 @@
         <div mat-card-avatar class="example-header-image"><img [src]="player.getTeamIcon()" class="teamAvatar" /></div>
         <mat-card-title>{{ player.getName() }}</mat-card-title>
         <mat-card-subtitle>{{ player.getTeam() }}</mat-card-subtitle>
+        <div class="edit" *ngIf="canIedit">Editar<mat-icon aria-hidden="false" aria-label="Edit icon">edit</mat-icon></div>
       </mat-card-header>
       <mat-card-content>
           <p>

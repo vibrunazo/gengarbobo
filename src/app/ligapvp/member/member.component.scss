@@ -18,6 +18,20 @@ $card-margin: 6;
   width: 40px;
 }
 
+.edit {
+  margin-left: auto;
+  font-size: 16px;
+}
+
+.edit mat-icon {
+  font-size: 25px;
+  height: 25px;
+  width: 25px;
+  padding: 2px;
+  margin-bottom: 10px;
+  vertical-align: middle !important;
+}
+
 .playerParam {
   display: flex;
   justify-content: space-between;
