@@ -26,6 +26,7 @@ export class MembertableComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
     this.lambida.dataState$.subscribe(this.updateDataSourceFromLambida.bind(this));
+    // this.dataSource.buildTableItems();
   }
 
   constructor(private lambida: LambidaService) {

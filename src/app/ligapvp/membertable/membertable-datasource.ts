@@ -33,6 +33,10 @@ export class MembertableDataSource extends DataSource<MembertableItem> {
     this.buildTableItems();
   }
 
+  /**
+   * Builds the actual data in the table.
+   * Called by the parent component: membertable.component
+   */
   buildTableItems() {
     const all = Liga.getAllPlayers();
     let newData: MembertableItem[] = [];
@@ -43,8 +47,8 @@ export class MembertableDataSource extends DataSource<MembertableItem> {
         winrate: p.getWinrate(),
         tier: p.getTierIcon(),
         friends: p.getFriends().length,
-        badges: p.getBadges(),
-        medals: p.getMedals(),
+        badges: p.getBadges() || 0,
+        medals: p.getMedals() || 0,
       };
       newData.push(row);
     });
