@@ -675,7 +675,6 @@ export class Player {
 
   getFriends(): Player[] {
     const result: Player[] = [];
-    const friendships = Friends.friends;
     const allPlayers = Liga.getAllPlayers();
     allPlayers.forEach(p => {
       if (Liga.areWeFriends(this, p)) {
@@ -785,7 +784,7 @@ export class Player {
 
 export class Liga {
   static allPlayers: Player[] = Players.map(p => new Player(p));
-  static allFriends = Friends.friends;
+  static allFriends = Friends;
 
   // returns an array with all Players competing
   static getAllPlayers(): Player[] {

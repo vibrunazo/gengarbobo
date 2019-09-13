@@ -27,6 +27,7 @@ export class MemberComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private lambida: LambidaService) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
+    this.lambida.dataState$.subscribe(this.updateData.bind(this));
   }
 
   ngOnInit() {
@@ -36,6 +37,14 @@ export class MemberComponent implements OnInit {
       }
     });
     // this.getLambida();
+  }
+
+  /**
+   * called when new data was just loaded from the server by the lambida function.
+   * So now I need to update the data I'm displaying.
+   */
+  updateData() {
+    this.setMember(this.name);
   }
 
   getLambida() {

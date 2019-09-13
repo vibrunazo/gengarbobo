@@ -14,7 +14,7 @@ export class LigapvpComponent implements OnInit {
   constructor(private lambida: LambidaService) { }
 
   ngOnInit() {
-    this.updateData();
+    // this.updateData();
   }
 
   async updateData() {
