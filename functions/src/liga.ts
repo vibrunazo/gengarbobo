@@ -8,7 +8,7 @@ import { Friendship } from "./friends.model";
  * Local cache of the members collection in the Firestore Database.
  * Call updateMembersCache() to update it.
  */
-const membersCache: Array<any> = [];
+const membersCache: Array<Member> = [];
 
 // let friendsCache: Map<string, Friendship> = new Map<string, Friendship>();
 let friendsCache = {};
@@ -183,6 +183,17 @@ async function updateMembersCache(db) {
     });
   });
   return p;
+}
+
+export function getUserRoles(db, user): Array<string> {
+  let results: Array<string> = [];
+  if (!user) { return results; }
+  membersCache.forEach(m => {
+    if (m.email === user.email && m.roles) {
+      results = m.roles;
+    }
+  });
+  return results;
 }
 
 /**

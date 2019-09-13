@@ -89,9 +89,11 @@ app.post('/testFunc5', async (req, res) => {
 
 app.get('/getAllMembers', async (req, res) => {
   const members = await liga.readMembers(db, req.user);
+  const roles = liga.getUserRoles(db, req.user);
   const out = {
     msg: 'hello, thesse are all members',
-    members
+    roles,
+    members,
   }
   res.status(200).send(out);
 });

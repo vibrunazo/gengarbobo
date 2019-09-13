@@ -10,6 +10,7 @@ class PlayerData {
   code?: number;
   badges?: number;
   medals?: number;
+  roles?: string[];
 }
 
 // a match between 2 players, contain info on the competing players and the eventual result of the match
@@ -491,6 +492,35 @@ export class Player {
     return this.name;
   }
 
+  getRoles(): Role[] {
+    return this.roles;
+  }
+
+  getRolesDesc(): string {
+    if (!this.roles || this.roles.length === 0) { return '--'; }
+    let result = '';
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < this.roles.length; i++) {
+      result += this.getRoleText(this.roles[i]);
+      if (i + 1 < this.roles.length) { result += ', '; }
+    }
+    return result;
+  }
+
+  getRoleText(role: Role): string {
+    switch (role) {
+      case Role.Admin:
+        return 'Admin';
+      case Role.TeamFriends:
+        return 'Admin de amizades';
+      case Role.TeamLeader:
+        return 'Líder de equipe';
+
+      default:
+        return '';
+    }
+  }
+
   getTeam(): Team {
     switch (this.team) {
       case 'rocket':
@@ -715,6 +745,7 @@ export class Player {
     this.setCode(+str);
     this.setBadges(newData.badges);
     this.setMedals(newData.medals);
+    this.setRoles(newData.roles);
   //   name: string;
   // team: string;
   // winrate: string;
@@ -723,6 +754,30 @@ export class Player {
   // badges?: number;
   // medals?: number;
 
+  }
+
+  setRoles(roles: string[]) {
+    if (!roles || roles.length === 0) { return; }
+    const result = [];
+    roles.forEach(r => {
+      const role = this.getRoleFromString(r);
+      if (role !== null) { result.push(role); }
+    });
+    this.roles = result;
+  }
+
+  getRoleFromString(roleText: string): Role {
+    switch (roleText.toLowerCase()) {
+      case 'admin':
+        return Role.Admin;
+      case 'leader':
+        return Role.TeamLeader;
+      case 'friends':
+        return Role.TeamFriends;
+
+      default:
+        return null;
+    }
   }
 
   constructor(data: PlayerData) {

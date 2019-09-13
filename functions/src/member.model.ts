@@ -7,4 +7,5 @@ export interface Member {
   code?: string;
   badges?: number;
   medals?: number;
+  roles?: Array<string>;
 }

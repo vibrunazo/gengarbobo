@@ -1,11 +1,26 @@
+.playercard {
+  width: 382px;
+  margin: 6px;
+}
+
+.teamAvatar {
+  height: 40px;
+  width: 40px;
+}
+
+.playerParam {
+  display: flex;
+  justify-content: space-between;
+}
+
 .codeLabel {
   color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2em;
 }
-
-.code1, .code2, .code3 {
+.codes {
   color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2em;
 }
-
 .code2 {
   // color: rgba(200, 255, 200, 0.7);
   margin: 0 0.3em;
@@ -17,7 +32,9 @@
 
 .friends {
   width: 200px;
-  margin-right: 10px;
+  margin-right: 0px;
+  margin-left: 6px;
+  padding: 10px 2px !important;
 }
 
 
