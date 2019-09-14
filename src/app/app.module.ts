@@ -24,6 +24,7 @@ import {
   MatPaginatorModule,
   MatSortModule,
   MatTooltipModule,
+  MatCheckboxModule,
 } from '@angular/material';
 import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
@@ -105,7 +106,8 @@ const firebaseConfig = {
     MatSortModule,
     MatTableModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
   ],
   entryComponents: [
     EditDialogComponent
@@ -115,7 +117,6 @@ const firebaseConfig = {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyGestureConfig
     },
-    // EditDialogComponent, {provide: MatDialogRef, useValue: {}},
   ],
   bootstrap: [AppComponent]
 })

@@ -26,6 +26,13 @@
     <mat-form-field id="medals">
       <input matInput [(ngModel)]="data.medals" placeholder="Awards" #medals name="medals" type="number"  min="0" max="100" step="1" >
     </mat-form-field>
+    <p id="rolesLabel">Encargos</p>
+    <div id="roles">
+      <mat-checkbox [(ngModel)]="roles.admin" name="rolesAdmin">Admin</mat-checkbox>
+      <mat-checkbox [(ngModel)]="roles.leader" name="rolesAdmin">Líder de equipe</mat-checkbox>
+      <mat-checkbox [(ngModel)]="roles.friends" name="rolesAdmin">Amizades da equipe</mat-checkbox>
+    </div>
+    <br>
   </div>
   <div mat-dialog-actions>
     <button mat-button type="submit" (click)="onSubmit()" [mat-dialog-close]="data" cdkFocusInitial>Salva</button>

@@ -15,6 +15,11 @@ export class EditDialogComponent implements OnInit {
   ]);
   matcher = new MyErrorStateMatcher();
   allTeams = ['Aqua', 'Flare', 'Magma', 'Rocket', 'Galactic', 'Plasma', 'Skull'];
+  roles = {
+    admin: false,
+    leader: false,
+    friends: false,
+  };
 
   constructor(public dialogRef: MatDialogRef<EditDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) { }

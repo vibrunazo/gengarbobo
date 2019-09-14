@@ -13,6 +13,7 @@ mat-hint {
 
 #wr {
   width: 80px;
+  // text-align: right;
 }
 #badges, #medals {
   width: 50px;
@@ -20,6 +21,17 @@ mat-hint {
 #wrpct {
   margin-left: -55px;
   margin-right: 20px;
+}
+
+#rolesLabel {
+  line-height: 0;
+  font-size: 0.8em;
+  color: rgba($color: #fff, $alpha: 0.7)
+}
+#roles {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 mat-form-field {
