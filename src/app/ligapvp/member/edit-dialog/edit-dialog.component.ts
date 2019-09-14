@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, ErrorStateMatcher } from '@angular/material';
+import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -7,26 +8,47 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./edit-dialog.component.scss']
 })
 export class EditDialogComponent implements OnInit {
+  emailFormControl = new FormControl('', [
+    // Validators.required,
+    Validators.email,
+  ]);
+
+  matcher = new MyErrorStateMatcher();
 
   constructor(public dialogRef: MatDialogRef<EditDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit() {
+    this.emailFormControl.setValue(this.data.email);
+    // this.emailFormControl
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
+  onSubmit() {
+    // console.log('submitted form ' + this.emailFormControl.value);
+    this.data.email = this.emailFormControl.value;
+    this.dialogRef.close(this.data);
+  }
+
 }
 
 export interface DialogData {
-  nome: string;
-  email: string;
-  time: string;
-  winrate: number;
-  badges: number;
-  medals: number;
-  roles: string[];
+  name: string;
+  team: string;
+  email?: string;
+  winrate?: number;
+  badges?: number;
+  medals?: number;
+  roles?: string[];
 }
 
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}

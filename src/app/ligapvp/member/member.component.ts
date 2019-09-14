@@ -5,7 +5,7 @@ import { AuthService, Right } from 'src/app/services/auth.service';
 import { User } from 'src/app/services/user.model';
 import { LambidaService } from 'src/app/services/lambida.service';
 import { MatDialog } from '@angular/material';
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { EditDialogComponent, DialogData } from './edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-member',
@@ -63,23 +63,24 @@ export class MemberComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(EditDialogComponent, {
-      // height: '500px',
-      // width: '300px',
-      data: {
-        nome: this.name, time: this.player.getTeam(), winrate: this.player.getWinrate(),
+    const data: DialogData = {
+      name: this.name, team: this.player.getTeam(), winrate: this.player.getWinrate(),
         badges: this.player.getBadges(), medals: this.player.getMedals(), email: this.player.getEmail(),
         // roles: this.player.getRoles(),
-      }
+    };
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      // height: 'fit-content',
+      // width: '300px',
+      data,
     });
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result: DialogData) => {
       // console.log('The dialog was closed');
       // console.log(result);
       if (result) {
         this.player.setWinrate(result.winrate + '%');
         this.player.setBadges(result.badges);
         this.player.setMedals(result.medals);
-        this.player.setTeam(result.time);
+        this.player.setTeam(result.team);
         this.player.setEmail(result.email);
 
       }

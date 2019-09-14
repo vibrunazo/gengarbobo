@@ -1,26 +1,29 @@
-<h1 mat-dialog-title>Dados de {{data.nome}}</h1>
+<h1 mat-dialog-title>Edite dados de {{data.name}}</h1>
+<form (submit)="onSubmit()">
 <div mat-dialog-content>
-  <p>Edite os campos</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.email" placeholder="Email">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.time" placeholder="Time">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.winrate" placeholder="Desempenho"  type="number"  min="0" max="100" step="1" >
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.badges" placeholder="Insígnias"  type="number"  min="0" max="100" step="1" >
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.medals" placeholder="Awards"  type="number"  min="0" max="100" step="1" >
-  </mat-form-field>
-  <!-- <mat-form-field>
-    <input matInput [(ngModel)]="data.roles" placeholder="Awards" >
-  </mat-form-field> -->
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancela</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salva</button>
-</div>
+    <mat-form-field id="email">
+      <input matInput placeholder="Email" #email name="email" type="email"
+      [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+      <mat-hint>Conta com acesso a {{data.name}}</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Email inválido.
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field id="team">
+      <input matInput [(ngModel)]="data.team" placeholder="Time" #team name="team">
+    </mat-form-field>
+    <mat-form-field id="wr">
+      <input matInput [(ngModel)]="data.winrate" placeholder="Desempenho" #wr name="wr" type="number"  min="0" max="100" step="1" >
+    </mat-form-field>
+    <mat-form-field id="badges">
+      <input matInput [(ngModel)]="data.badges" placeholder="Insígnias" #badges name="badges" type="number"  min="0" max="100" step="1" >
+    </mat-form-field>
+    <mat-form-field id="medals">
+      <input matInput [(ngModel)]="data.medals" placeholder="Awards" #medals name="medals" type="number"  min="0" max="100" step="1" >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button type="submit" (click)="onSubmit()" [mat-dialog-close]="data" cdkFocusInitial>Salva</button>
+    <button mat-button (click)="onNoClick()">Cancela</button>
+  </div>
+</form>
