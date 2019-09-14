@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, ErrorStateMatcher } from '@angular/material';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { Player } from 'src/app/shared/ligapvp.module';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -12,8 +13,8 @@ export class EditDialogComponent implements OnInit {
     // Validators.required,
     Validators.email,
   ]);
-
   matcher = new MyErrorStateMatcher();
+  allTeams = ['Aqua', 'Flare', 'Magma', 'Rocket', 'Galactic', 'Plasma', 'Skull'];
 
   constructor(public dialogRef: MatDialogRef<EditDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
@@ -31,6 +32,10 @@ export class EditDialogComponent implements OnInit {
     // console.log('submitted form ' + this.emailFormControl.value);
     this.data.email = this.emailFormControl.value;
     this.dialogRef.close(this.data);
+  }
+
+  getTierIcon(wr: number): string {
+    return Player.getTierIconFromWinrate(wr);
   }
 
 }

@@ -479,6 +479,10 @@ class CupRules {
 }
 
 export class Player {
+
+  constructor(data: PlayerData) {
+    Object.assign(this, data);
+  }
   name: string;
   team: string;
   winrate: string;
@@ -488,6 +492,41 @@ export class Player {
   roles?: Role[];
   badges?: number;
   medals?: number;
+
+  static getTierIconFromWinrate(winrate: number): string {
+    const tier = this.getTierFromWinrate(winrate);
+    return this.getTierIconFromTier(tier);
+  }
+
+  static getTierFromWinrate(winrate: number): Nivel {
+    const d = winrate;
+    if (d >= 71) {
+      return Nivel.Diamante;
+    }
+    if (d >= 51 && d < 71) {
+      return Nivel.Rubi;
+    }
+    if (d >= 0 && d < 51) {
+      return Nivel.Safira;
+    }
+    if (d < 0) {
+      return Nivel.Safira;
+    }
+  }
+
+  static getTierIconFromTier(tier: Nivel): string {
+    switch (tier) {
+      case Nivel.Diamante:
+        return '💎';
+      case Nivel.Rubi:
+        return '🔴';
+      case Nivel.Safira:
+        return '🔷';
+
+      default:
+        return '';
+    }
+  }
 
   getName(): string {
     return this.name;
@@ -594,17 +633,7 @@ export class Player {
 
   getTierIcon(): string {
     const tier = this.getNivel();
-    switch (tier) {
-      case Nivel.Diamante:
-        return '💎';
-      case Nivel.Rubi:
-        return '🔴';
-      case Nivel.Safira:
-        return '🔷';
-
-      default:
-        return '';
-    }
+    return Player.getTierIconFromTier(tier);
   }
 
 
@@ -618,18 +647,7 @@ export class Player {
 
   getNivel(): Nivel {
     const d = this.getWinrate();
-    if (d >= 71) {
-      return Nivel.Diamante;
-    }
-    if (d >= 51 && d < 71) {
-      return Nivel.Rubi;
-    }
-    if (d >= 0 && d < 51) {
-      return Nivel.Safira;
-    }
-    if (d < 0) {
-      return Nivel.Safira;
-    }
+    return Player.getTierFromWinrate(d);
   }
 
   /**
@@ -775,10 +793,6 @@ export class Player {
       default:
         return null;
     }
-  }
-
-  constructor(data: PlayerData) {
-    Object.assign(this, data);
   }
 
   toString(): string {

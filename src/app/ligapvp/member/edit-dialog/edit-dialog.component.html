@@ -10,11 +10,16 @@
     </mat-error>
     </mat-form-field>
     <mat-form-field id="team">
-      <input matInput [(ngModel)]="data.team" placeholder="Time" #team name="team">
+      <input matInput [(ngModel)]="data.team" placeholder="Time"  [matAutocomplete]="auto" #team name="team">
+      <mat-autocomplete #auto="matAutocomplete" class="nameauto">
+          <mat-option *ngFor="let team of allTeams" [value]="team" class="notranslate">
+            {{ team }}
+          </mat-option>
+        </mat-autocomplete>
     </mat-form-field>
     <mat-form-field id="wr">
       <input matInput [(ngModel)]="data.winrate" placeholder="Desempenho" #wr name="wr" type="number"  min="0" max="100" step="1" >
-    </mat-form-field>
+    </mat-form-field><span id="wrpct">% {{getTierIcon(data.winrate)}}</span>
     <mat-form-field id="badges">
       <input matInput [(ngModel)]="data.badges" placeholder="Insígnias" #badges name="badges" type="number"  min="0" max="100" step="1" >
     </mat-form-field>
