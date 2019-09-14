@@ -87,11 +87,45 @@ app.post('/testFunc5', async (req, res) => {
   res.status(200).send(out);
 });
 
+app.post('/updateMember', async (req, res) => {
+  let result;
+  const member = req.body.member;
+  const user = req.user;
+  console.log('updating member');
+  console.log(req.body);
+
+  try {
+    result = await liga.userUpdatesMember(member, db, user);
+  } catch (e) {
+    console.log(e);
+    res.status(400).send(e);
+  }
+  const out = {
+    msg: 'Wrote member',
+    result,
+  }
+  res.status(200).send(out);
+});
+
+
+app.post('/forceCacheUpdate', async (req, res) => {
+  console.log('Forcing Cache update 2');
+  if (req.body.psw === functions.config().debug.psw) {
+    await liga.updateMembersCache(db);
+    const out = {
+      msg: 'updated members cache',
+    }
+    res.status(200).send(out);
+  } else {
+    res.status(400).send('Forbidden');
+  }
+});
+
 app.get('/getAllMembers', async (req, res) => {
   const members = await liga.readMembers(db, req.user);
   const roles = liga.getUserRoles(db, req.user);
   const out = {
-    msg: 'hello, thesse are all members',
+    msg: 'hello, these are all members',
     roles,
     members,
   }

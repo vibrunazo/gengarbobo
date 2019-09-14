@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, ErrorStateMatcher } from '@angular/material';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { Player } from 'src/app/shared/ligapvp.module';
+import { Player, PlayerData } from 'src/app/shared/ligapvp.module';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -22,7 +22,7 @@ export class EditDialogComponent implements OnInit {
   };
 
   constructor(public dialogRef: MatDialogRef<EditDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+              @Inject(MAT_DIALOG_DATA) public data: PlayerData) { }
 
   ngOnInit() {
     this.emailFormControl.setValue(this.data.email);
@@ -43,6 +43,7 @@ export class EditDialogComponent implements OnInit {
     // console.log('submitted form ' + this.emailFormControl.value);
     this.data.email = this.emailFormControl.value;
     this.data.roles = [];
+    this.data.team = this.data.team.toLowerCase();
     if (this.roles.admin) { this.data.roles.push('admin'); }
     if (this.roles.leader) { this.data.roles.push('leader'); }
     if (this.roles.friends) { this.data.roles.push('friends'); }

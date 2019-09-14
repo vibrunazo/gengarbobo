@@ -63,7 +63,7 @@ export class MemberComponent implements OnInit {
   }
 
   openDialog() {
-    const data: PlayerData = {
+    const oldData: PlayerData = {
       name: this.name, team: this.player.getTeam(), winrate: this.player.getWinrate(),
         badges: this.player.getBadges(), medals: this.player.getMedals(), email: this.player.getEmail(),
         roles: this.player.getRoles(), code: this.player.getCode()
@@ -73,20 +73,20 @@ export class MemberComponent implements OnInit {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       // height: 'fit-content',
       // width: '300px',
-      data,
+      data: oldData,
     });
-    dialogRef.afterClosed().subscribe((result: PlayerData) => {
+    dialogRef.afterClosed().subscribe((newData: PlayerData) => {
       console.log('The dialog was closed');
-      console.log(result);
-      if (result) {
-        this.player.setWinrate(result.winrate);
-        this.player.setBadges(result.badges);
-        this.player.setMedals(result.medals);
-        this.player.setTeam(result.team);
-        this.player.setEmail(result.email);
-        this.player.setRoles(result.roles);
-        this.player.setCode(result.code);
-
+      console.log(newData);
+      if (newData) {
+        this.player.setWinrate(newData.winrate);
+        this.player.setBadges(newData.badges);
+        this.player.setMedals(newData.medals);
+        this.player.setTeam(newData.team);
+        this.player.setEmail(newData.email);
+        this.player.setRoles(newData.roles);
+        this.player.setCode(newData.code);
+        this.lambida.sendMemberUpdate(newData);
       }
 
       // this.animal = result;

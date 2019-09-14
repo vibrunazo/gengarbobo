@@ -5,8 +5,8 @@ import { Friendship } from 'functions/src/friends.model.js';
 
 export interface PlayerData {
   name: string;
-  team: string;
-  winrate: number;
+  team?: string;
+  winrate?: number;
   rank?: string;
   code?: string;
   badges?: number;
@@ -654,6 +654,13 @@ export class Player {
    * For example, if the code is '1234 5678 4321' and part = 2, then it will return '5678'.
    */
   getCode(part?: number): string {
+    if (!this.code || isNaN(+this.code)) { return null; }
+    if (this.name === 'vib') {
+
+    }
+    console.log('code');
+    console.log(this.code);
+
     if (part > 0 && part < 4) {
       let str = this.code.toString();
       str = str.substr(part * 4 - 4, 4);
@@ -663,8 +670,11 @@ export class Player {
   }
 
   setCode(newCode: string) {
-    if (!newCode) { return; }
-    this.code = newCode;
+    if (!newCode) {
+      this.code = null;
+    } else {
+      this.code = newCode;
+    }
   }
 
   getBadges(): number {
@@ -755,6 +765,7 @@ export class Player {
     // this.setCode(newData.code);
     let str: string = '' + newData.code;
     str = str.replace(/\s/g, '');
+    this.setTeam(newData.team);
     this.setCode(str);
     this.setBadges(newData.badges);
     this.setMedals(newData.medals);

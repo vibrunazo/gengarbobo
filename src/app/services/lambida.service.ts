@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as firebase from 'firebase/app';
 import { fromEvent, of, from, Observable, Subscriber } from 'rxjs';
 import { AuthService } from './auth.service';
-import { Liga } from '../shared/ligapvp.module';
+import { Liga, PlayerData } from '../shared/ligapvp.module';
 import { User } from './user.model';
 
 @Injectable({
@@ -30,6 +30,26 @@ export class LambidaService {
 
   updateUser(user: User) {
     this.updateLigaMembers();
+  }
+
+  async sendMemberUpdate(newData: PlayerData): Promise<any> {
+    const user = this.auth.user;
+    const body = {
+      member: newData,
+    };
+    let token: string;
+    try {
+      token = await user.getIdToken();
+    } catch (error) {
+      token = '';
+    }
+    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/updateMember';
+    const headers = new HttpHeaders({Authorization: 'Bearer ' + token });
+    try {
+      return await this.http.post(url, body, { headers }).toPromise();
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   async getAllMembers(token): Promise<any> {

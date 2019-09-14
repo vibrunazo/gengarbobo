@@ -8,7 +8,7 @@ import { Friendship } from "./friends.model";
  * Local cache of the members collection in the Firestore Database.
  * Call updateMembersCache() to update it.
  */
-const membersCache: Array<Member> = [];
+let membersCache: Array<Member> = [];
 
 // let friendsCache: Map<string, Friendship> = new Map<string, Friendship>();
 let friendsCache = {};
@@ -159,16 +159,37 @@ export async function clearFriends(db) {
 //   return p;
 // }
 
+async function updateOneMemberToCache(member: Member, db): Promise<Member> {
+  console.log('Fetching member ' + member.name + ' from database to local cache.');
+  let resolve; let reject;
+  const p: Promise<Member> = new Promise((res, rej) => {resolve = res; reject = rej;} );
+  try {
+    const collectionRef = db.collection('members');
+    const docRef = collectionRef.doc(member.name.toLowerCase());
+    docRef.get()
+    .then(snap => {
+      membersCache = membersCache.filter(m => m.name.toLowerCase() !== member.name.toLowerCase());
+      membersCache.push(snap.data());
+      console.log('Updated ' + member.name + ' on cache');
+      resolve(snap);
+    })
+  } catch (e) {
+    console.log(e);
+    reject(e);
+  }
+  return p;
+}
+
 /**
  * Fetches members from the server and caches it locally on the 'membersCache' variable
  * @param db Reference to the Firestore Database from admin.firestore()
  */
-async function updateMembersCache(db) {
-  console.log('Fetching members from database to write local cache.');
+export async function updateMembersCache(db) {
   const p = new Promise((resolve, reject) => {
     const membersRef = db.collection('members');
     membersRef.get()
     .then(snapshot => {
+      membersCache = [];
       snapshot.forEach(doc => {
         // console.log(doc.id, '=>', doc.data());
         membersCache.push(doc.data());
@@ -197,6 +218,35 @@ export function getUserRoles(db, user): Array<string> {
   });
   return results;
 }
+
+/**
+ * Will try to write this member to the Firestore Database, if this User has permission to do so.
+ * Returns the same member after being written and after being read again from the database. So you can
+ * check if the write succeeded.
+ * @param newMember Member to write to Firestore
+ * @param db Reference to the Firestore Database from admin.firestore()
+ * @param user Reference to the Firebase Auth User that was recorded on req.user by the middleware
+ */
+export async function userUpdatesMember(newMember, db, user): Promise<Member> {
+  let resolve; let reject;
+  const p: Promise<Member> = new Promise((res, rej) => {resolve = res; reject = rej;} );
+  let result: Member;
+  if (!isMember(user)) {
+    console.log('nope, not a member');
+    reject('not a member');
+    return p;
+  }
+  console.log("I think he's a member");
+  try {
+    await writeMember(newMember, db);
+    result = await updateOneMemberToCache(newMember, db);
+    resolve(result);
+  } catch (e) {
+    reject(e);
+  }
+  return p;
+}
+
 
 /**
  * Returns all members with only the fields that this 'user' has permission to view.
@@ -235,7 +285,9 @@ function censorSecrets(): any[] {
     name: p.name,
     team: p.team,
     winrate: p.winrate,
-    rank: p.rank
+    rank: p.rank,
+    badges: p.badges,
+    medals: p.medals
   }});
   return result;
 }
