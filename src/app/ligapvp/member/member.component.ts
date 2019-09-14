@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService, Right } from 'src/app/services/auth.service';
 import { User } from 'src/app/services/user.model';
 import { LambidaService } from 'src/app/services/lambida.service';
+import { MatDialog } from '@angular/material';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-member',
@@ -28,7 +30,8 @@ export class MemberComponent implements OnInit {
   canIedit = false;
   fieldEditMode = false;
 
-  constructor(private route: ActivatedRoute, private auth: AuthService, private lambida: LambidaService) {
+  constructor(private route: ActivatedRoute, private auth: AuthService,
+              private lambida: LambidaService, public dialog: MatDialog) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
     this.lambida.dataState$.subscribe(this.updateData.bind(this));
   }
@@ -52,10 +55,37 @@ export class MemberComponent implements OnInit {
 
   onEdit() {
     this.fieldEditMode = !this.fieldEditMode;
+    this.openDialog();
   }
   onEditField(field: string) {
 
     console.log('I clicked a ' + field + ' and I liked it.');
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      // height: '500px',
+      // width: '300px',
+      data: {
+        nome: this.name, time: this.player.getTeam(), winrate: this.player.getWinrate(),
+        badges: this.player.getBadges(), medals: this.player.getMedals(), email: this.player.getEmail(),
+        // roles: this.player.getRoles(),
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log('The dialog was closed');
+      // console.log(result);
+      if (result) {
+        this.player.setWinrate(result.winrate + '%');
+        this.player.setBadges(result.badges);
+        this.player.setMedals(result.medals);
+        this.player.setTeam(result.time);
+        this.player.setEmail(result.email);
+
+      }
+
+      // this.animal = result;
+    });
   }
 
   getLambida() {

@@ -1,68 +1,61 @@
 <mat-card *ngIf="!player" class="warning">
   Não pude encontrar um membro chamado {{ name }}!
 </mat-card>
-
 <div *ngIf="player" class="allCardsContainer">
   <mat-card class="playercard">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"><img [src]="player.getTeamIcon()" class="teamAvatar" /></div>
-        <mat-card-title>{{ player.getName() }}</mat-card-title>
-        <mat-card-subtitle>{{ player.getTeam() }}</mat-card-subtitle>
-        <div class="edit" *ngIf="canIedit">
-            <button mat-mini-fab aria-label="Edit" (click)="onEdit()">
-                <mat-icon>edit</mat-icon>
-                <br><div class="editButtonLabel">editar</div>
-              </button>
-        </div>
-      </mat-card-header>
-      <mat-card-content>
-          <p>
-              Membro
-              {{ player.getName() }} é um jogador
-              {{ player.getTierIcon() }}
-              {{ player.getNivel() }} com {{ player.getWinrate() }}% de aproveitamento
-              <span *ngIf="player.getBadges()">e {player.getBadges(), plural, =1 {1 insígnia} other {{{player.getBadges()}} insígnias}}</span>
-              da equipe
-              {{ player.getTeam() }}.
-            </p>
-            <div class="playerParam">
-              <span class="codeLabel">Time</span>
-              <span class="codes">{{ player.getTeam() }}</span>
-              <button mat-icon-button aria-label="fieldEdit" (click)="onEditField('team')" *ngIf="fieldEditMode">
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
-            <div class="playerParam">
-              <span class="codeLabel">Desempenho</span>
-              <span class="codes">{{ player.getWinrate() }}%</span>
-              <button mat-icon-button aria-label="fieldEdit" (click)="onEditField('winrate')" *ngIf="fieldEditMode">
-                  <mat-icon>edit</mat-icon>
-                </button>
-            </div>
-            <div class="playerParam">
-              <span class="codeLabel">Nível</span>
-              <span class="codes">{{ player.getTierIcon() }}{{ player.getNivel() }}</span>
-            </div>
-            <div class="playerParam">
-              <span class="codeLabel">Insígnias</span>
-              <span class="codes">{{ player.getBadges() || 0 }}</span>
-            </div>
-            <div class="playerParam">
-              <span class="codeLabel">Awards</span>
-              <span class="codes">{{ player.getMedals() || 0 }}</span>
-            </div>
-            <div *ngIf="player.code" class="playerParam">
-              <span class="codeLabel">Funções</span>
-              <span class="codes">{{ player.getRolesDesc() }}</span>
-            </div>
-            <span *ngIf="player.code"><br><mat-divider></mat-divider><br></span>
-            <div *ngIf="player.code" class="playerParam">
-              <span class="codeLabel">Código de amizade </span>
-              <span class="codes">
-                <span class="code1">{{ player.getCode(1) }}</span><span class="code2">{{ player.getCode(2) }}</span><span class="code3">{{ player.getCode(3) }}</span>
-              </span>
-            </div>
-        </mat-card-content>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"><img [src]="player.getTeamIcon()" class="teamAvatar" /></div>
+      <mat-card-title>{{ player.getName() }}</mat-card-title>
+      <mat-card-subtitle>{{ player.getTeam() }}</mat-card-subtitle>
+      <div class="edit" *ngIf="canIedit">
+        <button mat-mini-fab aria-label="Edit" (click)="onEdit()">
+          <mat-icon>edit</mat-icon>
+          <br><div class="editButtonLabel">editar</div>
+        </button>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Membro
+        {{ player.getName() }} é um jogador
+        {{ player.getTierIcon() }}
+        {{ player.getNivel() }} com {{ player.getWinrate() }}% de aproveitamento
+        <span *ngIf="player.getBadges()">e {player.getBadges(), plural, =1 {1 insígnia} other {{{player.getBadges()}} insígnias}}</span>
+        da equipe
+        {{ player.getTeam() }}.
+      </p>
+      <div class="playerParam">
+        <span class="codeLabel">Time</span>
+        <span class="codes">{{ player.getTeam() }}</span>
+      </div>
+      <div class="playerParam">
+        <span class="codeLabel">Desempenho</span>
+        <span class="codes">{{ player.getWinrate() }}%</span>
+      </div>
+      <div class="playerParam">
+        <span class="codeLabel">Nível</span>
+        <span class="codes">{{ player.getTierIcon() }}{{ player.getNivel() }}</span>
+      </div>
+      <div class="playerParam">
+        <span class="codeLabel">Insígnias</span>
+        <span class="codes">{{ player.getBadges() || 0 }}</span>
+      </div>
+      <div class="playerParam">
+        <span class="codeLabel">Awards</span>
+        <span class="codes">{{ player.getMedals() || 0 }}</span>
+      </div>
+      <div *ngIf="player.code" class="playerParam">
+        <span class="codeLabel">Funções</span>
+        <span class="codes">{{ player.getRolesDesc() }}</span>
+      </div>
+      <span *ngIf="player.code"><br><mat-divider></mat-divider><br></span>
+      <div *ngIf="player.code" class="playerParam">
+        <span class="codeLabel">Código de amizade </span>
+        <span class="codes">
+          <span class="code1">{{ player.getCode(1) }}</span><span class="code2">{{ player.getCode(2) }}</span><span class="code3">{{ player.getCode(3) }}</span>
+        </span>
+      </div>
+    </mat-card-content>
   </mat-card>
 
   <div class="friendcontainer" *ngIf="player">

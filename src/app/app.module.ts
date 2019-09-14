@@ -23,7 +23,7 @@ import {
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatTooltipModule
+  MatTooltipModule,
 } from '@angular/material';
 import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
@@ -47,7 +47,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { EditDialogComponent } from './ligapvp/member/edit-dialog/edit-dialog.component';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
@@ -75,7 +76,8 @@ const firebaseConfig = {
     SummaryComponent,
     LigapvpComponent,
     MemberComponent,
-    MembertableComponent
+    MembertableComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -102,13 +104,18 @@ const firebaseConfig = {
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    EditDialogComponent
   ],
   providers: [
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyGestureConfig
-    }
+    },
+    // EditDialogComponent, {provide: MatDialogRef, useValue: {}},
   ],
   bootstrap: [AppComponent]
 })

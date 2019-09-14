@@ -493,6 +493,13 @@ export class Player {
     return this.name;
   }
 
+  getEmail(): string {
+    return this.email;
+  }
+  setEmail(newEmail: string) {
+    this.email = newEmail;
+  }
+
   getRoles(): Role[] {
     return this.roles;
   }
@@ -645,7 +652,7 @@ export class Player {
   }
 
   getBadges(): number {
-    return this.badges;
+    return this.badges || 0;
   }
 
   setBadges(newBadges: number) {
@@ -654,7 +661,7 @@ export class Player {
   }
 
   getMedals(): number {
-    return this.medals;
+    return this.medals || 0;
   }
   setMedals(newMedals: number) {
     this.medals = newMedals;
@@ -665,7 +672,7 @@ export class Player {
     this.name = name;
   }
   setTeam(team: string) {
-    this.team = team;
+    this.team = team.toLowerCase();
   }
   setWinrate(winrate: string) {
     this.winrate = winrate;
