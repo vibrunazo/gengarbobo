@@ -3,15 +3,16 @@ import Friends from './friends.json';
 import Inscritos from './inscritos.json';
 import { Friendship } from 'functions/src/friends.model.js';
 
-class PlayerData {
+export interface PlayerData {
   name: string;
   team: string;
-  winrate: string;
+  winrate: number;
   rank?: string;
-  code?: number;
+  code?: string;
   badges?: number;
   medals?: number;
   roles?: string[];
+  email?: string;
 }
 
 // a match between 2 players, contain info on the competing players and the eventual result of the match
@@ -485,10 +486,10 @@ export class Player {
   }
   name: string;
   team: string;
-  winrate: string;
+  winrate: number;
   rank?: string;
   email?: string;
-  code?: number;
+  code?: string;
   roles?: Role[];
   badges?: number;
   medals?: number;
@@ -638,11 +639,8 @@ export class Player {
 
 
   getWinrate(): number {
-    const str = this.winrate;
-    if (str.length > 0) {
-      return +str.slice(0, -1);
-    }
-    return -1;
+    if (!this.winrate) { return 0; }
+    return this.winrate;
   }
 
   getNivel(): Nivel {
@@ -655,18 +653,18 @@ export class Player {
    * @param part If part is 1, 2 or 3. Then return only that part of the full number when split in 3 parts.
    * For example, if the code is '1234 5678 4321' and part = 2, then it will return '5678'.
    */
-  getCode(part?: number): number {
+  getCode(part?: number): string {
     if (part > 0 && part < 4) {
       let str = this.code.toString();
       str = str.substr(part * 4 - 4, 4);
-      return +str;
+      return str;
     }
     return this.code;
   }
 
-  setCode(newCode: number) {
+  setCode(newCode: string) {
     if (!newCode) { return; }
-    this.code = +newCode;
+    this.code = newCode;
   }
 
   getBadges(): number {
@@ -692,9 +690,9 @@ export class Player {
   setTeam(team: string) {
     this.team = team.toLowerCase();
   }
-  setWinrate(winrate: string) {
+  setWinrate(winrate: number) {
     this.winrate = winrate;
-    if (!winrate) { this.winrate = '0'; }
+    if (!winrate) { this.winrate = 0; }
   }
 
 
@@ -757,7 +755,7 @@ export class Player {
     // this.setCode(newData.code);
     let str: string = '' + newData.code;
     str = str.replace(/\s/g, '');
-    this.setCode(+str);
+    this.setCode(str);
     this.setBadges(newData.badges);
     this.setMedals(newData.medals);
     this.setRoles(newData.roles);

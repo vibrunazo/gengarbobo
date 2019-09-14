@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Player, Liga, Nivel } from 'src/app/shared/ligapvp.module';
+import { Player, Liga, Nivel, PlayerData } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService, Right } from 'src/app/services/auth.service';
 import { User } from 'src/app/services/user.model';
 import { LambidaService } from 'src/app/services/lambida.service';
 import { MatDialog } from '@angular/material';
-import { EditDialogComponent, DialogData } from './edit-dialog/edit-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-member',
@@ -63,7 +63,7 @@ export class MemberComponent implements OnInit {
   }
 
   openDialog() {
-    const data: DialogData = {
+    const data: PlayerData = {
       name: this.name, team: this.player.getTeam(), winrate: this.player.getWinrate(),
         badges: this.player.getBadges(), medals: this.player.getMedals(), email: this.player.getEmail(),
         roles: this.player.getRoles(), code: this.player.getCode()
@@ -75,16 +75,17 @@ export class MemberComponent implements OnInit {
       // width: '300px',
       data,
     });
-    dialogRef.afterClosed().subscribe((result: DialogData) => {
+    dialogRef.afterClosed().subscribe((result: PlayerData) => {
       console.log('The dialog was closed');
       console.log(result);
       if (result) {
-        this.player.setWinrate(result.winrate + '%');
+        this.player.setWinrate(result.winrate);
         this.player.setBadges(result.badges);
         this.player.setMedals(result.medals);
         this.player.setTeam(result.team);
         this.player.setEmail(result.email);
         this.player.setRoles(result.roles);
+        this.player.setCode(result.code);
 
       }
 

@@ -55,17 +55,6 @@ export class EditDialogComponent implements OnInit {
 
 }
 
-export interface DialogData {
-  name: string;
-  team: string;
-  email?: string;
-  winrate?: number;
-  badges?: number;
-  medals?: number;
-  roles?: string[];
-  code?: number;
-}
-
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

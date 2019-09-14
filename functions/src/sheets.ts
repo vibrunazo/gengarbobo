@@ -15,7 +15,7 @@ export function getMembersFromRows(rows: Array<any>): Member[] {
       const newMember: Member = {
         name: r[0],
         team: '',
-        winrate: r[6],
+        winrate: +r[6].replace('%', ''),
         code: r[1],
       }
       result.push(newMember);

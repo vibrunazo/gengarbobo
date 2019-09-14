@@ -264,7 +264,7 @@ export function updateDatabase(db) {
   const newMember1 = {
     name: 'haakaishin',
     team: 'flare',
-    winrate: '78'
+    winrate: 78
   }
   const newMember2 = {
     name: 'VanEdipo',
