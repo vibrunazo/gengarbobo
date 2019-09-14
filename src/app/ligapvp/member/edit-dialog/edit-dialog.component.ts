@@ -26,6 +26,12 @@ export class EditDialogComponent implements OnInit {
 
   ngOnInit() {
     this.emailFormControl.setValue(this.data.email);
+
+    if (this.data.roles) {
+      this.roles.admin = this.data.roles.includes('admin');
+      this.roles.leader = this.data.roles.includes('leader');
+      this.roles.friends = this.data.roles.includes('friends');
+    }
     // this.emailFormControl
   }
 
@@ -36,6 +42,10 @@ export class EditDialogComponent implements OnInit {
   onSubmit() {
     // console.log('submitted form ' + this.emailFormControl.value);
     this.data.email = this.emailFormControl.value;
+    this.data.roles = [];
+    if (this.roles.admin) { this.data.roles.push('admin'); }
+    if (this.roles.leader) { this.data.roles.push('leader'); }
+    if (this.roles.friends) { this.data.roles.push('friends'); }
     this.dialogRef.close(this.data);
   }
 
@@ -53,6 +63,7 @@ export interface DialogData {
   badges?: number;
   medals?: number;
   roles?: string[];
+  code?: number;
 }
 
 /** Error when invalid control is dirty, touched, or submitted. */

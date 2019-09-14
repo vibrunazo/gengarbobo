@@ -66,22 +66,25 @@ export class MemberComponent implements OnInit {
     const data: DialogData = {
       name: this.name, team: this.player.getTeam(), winrate: this.player.getWinrate(),
         badges: this.player.getBadges(), medals: this.player.getMedals(), email: this.player.getEmail(),
-        // roles: this.player.getRoles(),
+        roles: this.player.getRoles(), code: this.player.getCode()
     };
+    // console.log(data);
+
     const dialogRef = this.dialog.open(EditDialogComponent, {
       // height: 'fit-content',
       // width: '300px',
       data,
     });
     dialogRef.afterClosed().subscribe((result: DialogData) => {
-      // console.log('The dialog was closed');
-      // console.log(result);
+      console.log('The dialog was closed');
+      console.log(result);
       if (result) {
         this.player.setWinrate(result.winrate + '%');
         this.player.setBadges(result.badges);
         this.player.setMedals(result.medals);
         this.player.setTeam(result.team);
         this.player.setEmail(result.email);
+        this.player.setRoles(result.roles);
 
       }
 

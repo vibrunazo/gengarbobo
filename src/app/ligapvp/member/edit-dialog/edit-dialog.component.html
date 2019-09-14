@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Edite dados de {{data.name}}</h1>
+<h1 mat-dialog-title>Editar {{data.name}}</h1>
 <form (submit)="onSubmit()">
 <div mat-dialog-content>
     <mat-form-field id="email">
@@ -26,11 +26,15 @@
     <mat-form-field id="medals">
       <input matInput [(ngModel)]="data.medals" placeholder="Awards" #medals name="medals" type="number"  min="0" max="100" step="1" >
     </mat-form-field>
-    <p id="rolesLabel">Encargos</p>
+    <mat-form-field id="code">
+      <input matInput [(ngModel)]="data.code" placeholder="Código de Amizade" name="code" type="number"
+      pattern="[0-9]" min="0" max="999999999999" step="1">
+    </mat-form-field>
+    <p id="rolesLabel">Acesso</p>
     <div id="roles">
       <mat-checkbox [(ngModel)]="roles.admin" name="rolesAdmin">Admin</mat-checkbox>
-      <mat-checkbox [(ngModel)]="roles.leader" name="rolesAdmin">Líder de equipe</mat-checkbox>
-      <mat-checkbox [(ngModel)]="roles.friends" name="rolesAdmin">Amizades da equipe</mat-checkbox>
+      <mat-checkbox [(ngModel)]="roles.leader" name="rolesLeader">Líder de equipe</mat-checkbox>
+      <mat-checkbox [(ngModel)]="roles.friends" name="rolesFriends">Amizades da equipe</mat-checkbox>
     </div>
     <br>
   </div>

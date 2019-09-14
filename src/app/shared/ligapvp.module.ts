@@ -962,9 +962,9 @@ export enum Team {
 
 // roles each player can have on the website, to determine who has permission to do what
 export enum Role {
-  Admin,        // can do anything on the website
-  TeamLeader,   // can read/write to any member of his team
-  TeamFriends   // can write friendships relative to his team
+  Admin = 'admin',        // can do anything on the website
+  TeamLeader = 'leader',   // can read/write to any member of his team
+  TeamFriends = 'friends'   // can write friendships relative to his team
 }
 
 // export default Liga;
