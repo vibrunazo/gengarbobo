@@ -18,7 +18,45 @@ console.log('test script running');
 // const friendsJson = mapToJson(friendsMap);
 // saveToFile(friendsJson);
 
-serverFriendsToArray(serverFriends);
+// serverFriendsToArray(serverFriends);
+const allIds = [];
+seeIDs();
+
+function seeIDs() {
+  const members = testData.members;
+  members.forEach(m => {
+    const id = genNewID(m);
+    allIds.push(id);
+  });
+  console.log('allIds');
+  console.log(allIds);
+
+}
+
+
+function genNewID(member: Member): string {
+  const newId = genIdFromName(member.name);
+
+  return newId;
+
+  function genIdFromName(name: string, i = 1): string {
+    let id = name.padEnd(5, '0').slice(0, 5).toLowerCase();
+    if (i > 1) {
+      const end = i.toString();
+      const len = end.length;
+      const start = id.slice(0, 5 - len);
+      id = start + end;
+      console.log('id now');
+      console.log(id);
+
+    }
+    if (allIds.includes(id)) {
+      console.log('id exists ' + id + ' i:' + i);
+      id = genIdFromName(name, i + 1);
+    }
+    return id;
+  }
+}
 
 function serverFriendsToArray(friends) {
   const a = [];
@@ -45,7 +83,7 @@ function buildFriends() {
   const rows = friendsData.rowsFriends;
   // const friends: Friendship[] = [];
   const friends: Map<string, Friendship> = new Map();
-  const members: Member[] = testData.newMembers;
+  const members: Member[] = testData.members;
   const names: string[] = members.map(m => m.name.toLowerCase());
   const verMembers: string[] = [];
   const VERT_ROW = 7;
@@ -114,8 +152,8 @@ function buildFriends() {
 
 
 function buildMembers() {
-  const rows = testData.rowsEquipes;
-  const members: Member[] = testData.newMembers;
+  const rows = [];
+  const members: Member[] = testData.members;
 
   members.forEach(m => {
 

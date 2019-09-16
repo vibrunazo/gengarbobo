@@ -91,6 +91,26 @@ app.post('/testFunc5', async (req, res) => {
   res.status(200).send(out);
 });
 
+app.post('/updateFriend', async (req, res) => {
+  let result;
+  const newFriend = req.body.friend;
+  const user = req.user;
+  console.log('updating friend');
+  console.log(req.body);
+
+  try {
+    result = await liga.userWriteFriends(newFriend, user);
+  } catch (e) {
+    console.log(e);
+    res.status(400).send(e);
+  }
+  const out = {
+    msg: 'Wrote friend',
+    result,
+  }
+  res.status(200).send(out);
+});
+
 app.post('/updateMember', async (req, res) => {
   let result;
   const member = req.body.member;
@@ -210,7 +230,7 @@ app.post('/driveUpdateFriends', async (req, res) => {
     size = newFriendsMap.size;
     newFriendsJSON = mapToJson(newFriendsMap);
     // await liga.writeFriends(newFriendsMap, db);
-    log = await liga.userWriteFriends(newFriendsJSON, 'drivesheets');
+    log = await liga.writeFriendsRT(newFriendsJSON, 'drivesheets');
     good();
   } catch (e) {
     bad(e);

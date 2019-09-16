@@ -1,6 +1,7 @@
 export interface Member {
   name: string;
   team: string;
+  id?: string;
   winrate?: number;
   rank?: string;
   email?: string;

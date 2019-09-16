@@ -91,8 +91,10 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
     }
     function saveFriends(friend1: string, friend2: string, status: boolean, comment?: string) {
       if (friend1 === friend2 || !status) { return; }
-      const n1 = friend1.split('.').join("");
-      const n2 = friend2.split('.').join("");
+      // const n1 = friend1.split('.').join("");
+      // const n2 = friend2.split('.').join("");
+      const n1 = getIdFromName(friend1);
+      const n2 = getIdFromName(friend2);
       const newFriendship: Friendship = {
         s: status,
       };
@@ -100,6 +102,11 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
       const id = ids[0] + ids[1];
       friendCount++;
       friends.set(id, newFriendship);
+    }
+
+    function getIdFromName(memberName: string): string {
+      const member = members.find(m => m.name.toLowerCase() === memberName.toLowerCase());
+      return member.id;
     }
   }
   return result;

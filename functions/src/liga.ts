@@ -16,6 +16,7 @@ let friendsCache = {};
 let friendsCount = 0;
 let db;
 let rtdb;
+const allIds: string[] = [];
 
 export function setDb(dbRef) {
   db = dbRef;
@@ -72,11 +73,9 @@ export async function readFriends(): Promise<any> {
   return result;
 }
 
-export async function userWriteFriends(newFriends, userName: string) {
-
+export async function userWriteFriends(newFriends, user) {
   try {
-    await updateFriendsCache();
-    const result = await writeFriendsRT(newFriends, userName);
+    const result = await writeFriendsRT(newFriends, user);
     return result;
   } catch (e) {
     console.log(e);
@@ -87,6 +86,7 @@ export async function userWriteFriends(newFriends, userName: string) {
 export async function writeFriendsRT(newFriends, userName: string): Promise<ServerLog> {
   console.log('writing friends to RTdb');
 
+  await updateFriendsCache();
   const dbref = rtdb.ref('/friends')
   let resolve; let reject;
   const p:Promise<ServerLog> = new Promise((res, rej) => {resolve = res; reject = rej;});
@@ -370,7 +370,8 @@ function censorSecrets(): Member[] {
     winrate: p.winrate,
     rank: p.rank,
     badges: (+p.badges!! || 0),
-    medals: (+p.medals!! || 0)
+    medals: (+p.medals!! || 0),
+    id: p.id
   }});
   return result;
 }
@@ -469,6 +470,11 @@ export async function writeMember(member: Member, userName: string) {
   const p = new Promise(async (resolve, reject) => {
     try {
       const old = await readOneMember(member.name);
+      if (old && old.id) {
+        allIds.push(old.id);
+      } else {
+        member.id = genNewID(member);
+      }
       const result = await newDocRef.set(member, {merge: true});
       const diff = diffObjs(old, member);
       const newLog: ServerLog = {
@@ -486,6 +492,31 @@ export async function writeMember(member: Member, userName: string) {
     }
   });
   return p;
+}
+
+
+function genNewID(member: Member): string {
+  const newId = genIdFromName(member.name);
+
+  return newId;
+
+  function genIdFromName(name: string, i = 1): string {
+    let id = name.padEnd(5, '0').slice(0, 5).toLowerCase();
+    if (i > 1) {
+      const end = i.toString();
+      const len = end.length;
+      const start = id.slice(0, 5 - len);
+      id = start + end;
+      console.log('id now');
+      console.log(id);
+
+    }
+    if (allIds.includes(id)) {
+      console.log('id exists ' + id + ' i:' + i);
+      id = genIdFromName(name, i + 1);
+    }
+    return id;
+  }
 }
 
 /**
