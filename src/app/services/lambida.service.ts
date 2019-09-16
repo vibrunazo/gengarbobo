@@ -32,6 +32,26 @@ export class LambidaService {
     this.updateLigaMembers();
   }
 
+  async sendFriendUpdate(newFriend) {
+    const user = this.auth.user;
+    const body = {
+      friend: newFriend,
+    };
+    let token: string;
+    try {
+      token = await user.getIdToken();
+    } catch (error) {
+      token = '';
+    }
+    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/updateFriend';
+    const headers = new HttpHeaders({Authorization: 'Bearer ' + token });
+    try {
+      return await this.http.post(url, body, { headers }).toPromise();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   async sendMemberUpdate(newData: PlayerData): Promise<any> {
     const user = this.auth.user;
     const body = {

@@ -19,9 +19,27 @@ console.log('test script running');
 // saveToFile(friendsJson);
 
 // serverFriendsToArray(serverFriends);
-const allIds = [];
-seeIDs();
+// seeIDs();
+userFromFriends();
 
+function userFromFriends() {
+  const allFriends = serverFriends;
+
+  let friend1, friend2;
+  const friendsId = Object.entries(allFriends)[1][0];
+
+  getMembersFromFriendsId();
+  console.log(friend1);
+  console.log(friend2);
+
+  function getMembersFromFriendsId() {
+    friend1 = friendsId.slice(0, 5);
+    friend2 = friendsId.slice(5, 10);
+  }
+
+}
+
+const allIds = [];
 function seeIDs() {
   const members = testData.members;
   members.forEach(m => {
@@ -32,8 +50,6 @@ function seeIDs() {
   console.log(allIds);
 
 }
-
-
 function genNewID(member: Member): string {
   const newId = genIdFromName(member.name);
 
@@ -62,6 +78,7 @@ function serverFriendsToArray(friends) {
   const a = [];
   console.log(friends);
   for (const [key, value] of Object.entries(friends)) {
+    // tslint:disable-next-line: no-string-literal
     console.log(key + ' = ' + value['s']);
   }
 }

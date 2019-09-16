@@ -73,14 +73,41 @@ export async function readFriends(): Promise<any> {
   return result;
 }
 
-export async function userWriteFriends(newFriends, user) {
+export async function userWriteFriend(newFriends, user) {
+  const friendsId = Object.entries(newFriends)[0][0];
+  let friend1: Member, friend2: Member;
   try {
-    const result = await writeFriendsRT(newFriends, user);
+    getMembersFromFriendsId();
+    const member = getMember(user);
+    if (!canIwriteFriend(friend1, member) || !canIwriteFriend(friend2, member)) {
+      throw(new Error('cannot write to friends ' + friendsId));
+    }
+    const result = await writeFriendsRT(newFriends, member.name);
     return result;
   } catch (e) {
     console.log(e);
     throw(e);
   }
+
+  function getMembersFromFriendsId() {
+    friend1 = findMemberById( friendsId.slice(0, 5) );
+    friend2 = findMemberById( friendsId.slice(5, 10) );
+  }
+}
+
+function canIwriteFriend(friend: Member, member: Member): boolean {
+  if (!member) { return false; }
+  // if I am admin
+  if (member.roles.includes('admin') || member.roles.includes('site')) { return true; }
+  // if it's me
+  if (member.name.toLowerCase() === friend.name.toLowerCase()) { return true; }
+  // if I am friends admin and he is from my team
+  if (member.roles.includes('friends') && (member.team.toLowerCase() === friend.team.toLowerCase())) { return true; }
+  return false;
+}
+
+function findMemberById(id: string): Member {
+  return membersCache.find(m => m.id === id);
 }
 
 export async function writeFriendsRT(newFriends, userName: string): Promise<ServerLog> {
@@ -93,7 +120,7 @@ export async function writeFriendsRT(newFriends, userName: string): Promise<Serv
 
   dbref.update(newFriends, async e => {
     if (e) { reject(e); }
-    console.log('Finished writing');
+    console.log('Finished writing friends to RTdb');
     const old = await readFriends();
     const diff = diffObjs(old, newFriends);
     const logMsg: ServerLog = {
@@ -104,7 +131,7 @@ export async function writeFriendsRT(newFriends, userName: string): Promise<Serv
       event: 'write',
       target: 'rtdb/friends'
     }
-    await writeLog(logMsg);
+    await writeLog(logMsg, {new: newFriends, old});
     resolve(logMsg);
   });
   return p;
@@ -223,12 +250,14 @@ export async function writeTestLog(message: string) {
   return await writeLog(newLog);
 }
 
-export async function writeLog(logMsg: ServerLog) {
+export async function writeLog(logMsg: ServerLog, debug?) {
   // let resolve; let reject;
   // const p: Promise<any> = new Promise((res, rej) => {resolve = res; reject = rej;} );
   if (Object.entries(logMsg.body_new).length === 0 && logMsg.body_new.constructor === Object) {
     console.log('no difference writing to ' + logMsg.target);
     console.log(logMsg);
+    console.log(debug);
+
 
     return 'failed to write log because there was no difference in the alledged update';
   }
@@ -237,7 +266,7 @@ export async function writeLog(logMsg: ServerLog) {
     const newChildRef = logRef.push();
     newChildRef.set(logMsg, e => {
       if (e) { throw(e); }
-      console.log('Finished writing');
+      console.log('Finished writing log');
     });
     return 'success';
   } catch (e) {

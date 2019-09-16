@@ -99,10 +99,11 @@ app.post('/updateFriend', async (req, res) => {
   console.log(req.body);
 
   try {
-    result = await liga.userWriteFriends(newFriend, user);
+    result = await liga.userWriteFriend(newFriend, user);
   } catch (e) {
     console.log(e);
     res.status(400).send(e);
+    return;
   }
   const out = {
     msg: 'Wrote friend',
@@ -123,6 +124,7 @@ app.post('/updateMember', async (req, res) => {
   } catch (e) {
     console.log(e);
     res.status(400).send(e);
+    return;
   }
   const out = {
     msg: 'Wrote member',

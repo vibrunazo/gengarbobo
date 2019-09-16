@@ -13,6 +13,7 @@ export interface PlayerData {
   medals?: number;
   roles?: string[];
   email?: string;
+  id?: string;
 }
 
 // a match between 2 players, contain info on the competing players and the eventual result of the match
@@ -493,6 +494,7 @@ export class Player {
   roles?: string[];
   badges?: number;
   medals?: number;
+  id?: string;
 
   static getTierIconFromWinrate(winrate: number): string {
     const tier = this.getTierFromWinrate(winrate);
@@ -531,6 +533,10 @@ export class Player {
 
   getName(): string {
     return this.name;
+  }
+
+  getId(): string {
+    return this.id;
   }
 
   getEmail(): string {
@@ -838,7 +844,7 @@ export class Liga {
 
   // returns the Player object that has this name
   static getPlayerByName(name: string): Player {
-    return this.allPlayers.find(p => p.getName().toLocaleLowerCase() === name.toLocaleLowerCase());
+    return this.allPlayers.find(p => p.getName().toLowerCase() === name.toLowerCase());
   }
 
   // returns an array of all players whose winrate matches this Nivel
@@ -921,11 +927,18 @@ export class Liga {
    * @param p2 Player 2
    */
   static getFriendshipID(p1: Player, p2: Player): string {
-    const n1 = p1.getName().split('.').join('').toLowerCase();  // remove dots from name
-    const n2 = p2.getName().split('.').join('').toLowerCase();  // and force lowercase
+    const n1 = p1.getId();
+    const n2 = p2.getId();
     const ids = [n1, n2].sort((a, b) => a.localeCompare(b));
     const id = ids[0] + ids[1];
     return id;
+  }
+
+  static newFriendship(p1: Player, p2: Player) {
+    const id = this.getFriendshipID(p1, p2);
+    const result = {};
+    result[id] = { s: true };
+    return result;
   }
 
   static setAllFriends(newFriends) {
