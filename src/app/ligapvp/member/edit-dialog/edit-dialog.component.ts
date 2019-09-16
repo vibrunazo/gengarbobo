@@ -40,10 +40,6 @@ export class EditDialogComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log('submitted form ' + this.emailFormControl.value);
-    console.log('this.data.roles before');
-    console.log(this.data.roles);
-
     this.data.email = this.emailFormControl.value;
     this.data.team = this.data.team.toLowerCase();
     const rolesSet = new Set(this.data.roles);
@@ -52,8 +48,6 @@ export class EditDialogComponent implements OnInit {
     if (this.roles.friends) { rolesSet.add('friends'); } else { rolesSet.delete('friends'); }
     this.data.roles = [...rolesSet];
     this.dialogRef.close(this.data);
-    console.log('this.data.roles after');
-    console.log(this.data.roles);
   }
 
   getTierIcon(wr: number): string {

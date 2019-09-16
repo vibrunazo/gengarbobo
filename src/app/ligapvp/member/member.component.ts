@@ -28,7 +28,8 @@ export class MemberComponent implements OnInit {
   user: User;
   rights: Right[] = [];
   canIedit = false;
-  fieldEditMode = false;
+  canIeditFriends = false;
+  editModeFriends = true;
 
   constructor(private route: ActivatedRoute, private auth: AuthService,
               private lambida: LambidaService, public dialog: MatDialog) {
@@ -53,15 +54,17 @@ export class MemberComponent implements OnInit {
     this.setMember(this.name);
   }
 
+  onEditFriends() {
+    console.log('edit friends');
+    this.editModeFriends = !this.editModeFriends;
+  }
+  onAddFriend(friend) {
+    console.log('adding friend: ' + friend);
+  }
+
   onEdit() {
-    this.fieldEditMode = !this.fieldEditMode;
     this.openDialog();
   }
-  onEditField(field: string) {
-
-    console.log('I clicked a ' + field + ' and I liked it.');
-  }
-
   openDialog() {
     const oldData: PlayerData = {
       name: this.name, team: this.player.getTeam(), winrate: this.player.getWinrate(),
@@ -121,6 +124,7 @@ export class MemberComponent implements OnInit {
   checkOwner() {
     this.rights = this.auth.canIeditPlayer(this.player);
     this.canIedit = this.rights.includes(Right.All) || this.rights.includes(Right.Personal);
+    this.canIeditFriends = this.rights.includes(Right.All) || this.rights.includes(Right.Friends);
     // if (this.user && this.user.member === this.name) {
     //   console.log('YES! Logged in User is the owner of this account!');
     // } else {
