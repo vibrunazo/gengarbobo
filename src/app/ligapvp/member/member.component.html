@@ -135,7 +135,15 @@
 
     <mat-card class="friends nonfriends">
       <mat-list>
-        <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
+        <div class="nonfriendsHeader">
+          <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
+          <div class="edit" *ngIf="canIedit">
+            <button mat-mini-fab aria-label="Edit" (click)="onEdit()">
+              <mat-icon>edit</mat-icon>
+              <br><div class="editButtonLabel">editar<br>amizades</div>
+            </button>
+          </div>
+        </div>
         <mat-divider></mat-divider>
         <br />
         <mat-list-item *ngFor="let friend of nonfriends">

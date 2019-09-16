@@ -490,7 +490,7 @@ export class Player {
   rank?: string;
   email?: string;
   code?: string;
-  roles?: Role[];
+  roles?: string[];
   badges?: number;
   medals?: number;
 
@@ -540,7 +540,7 @@ export class Player {
     this.email = newEmail;
   }
 
-  getRoles(): Role[] {
+  getRoles(): string[] {
     return this.roles;
   }
 
@@ -549,13 +549,16 @@ export class Player {
     let result = '';
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.roles.length; i++) {
-      result += this.getRoleText(this.roles[i]);
-      if (i + 1 < this.roles.length) { result += ', '; }
+      const desc = this.getRoleText(this.roles[i]);
+      if (desc) {
+        if (i > 0) { result += ', '; }
+        result += this.getRoleText(this.roles[i]);
+      }
     }
     return result;
   }
 
-  getRoleText(role: Role): string {
+  getRoleText(role: string): string {
     switch (role) {
       case Role.Admin:
         return 'Admin';
@@ -658,9 +661,6 @@ export class Player {
     if (this.name === 'vib') {
 
     }
-    console.log('code');
-    console.log(this.code);
-
     if (part > 0 && part < 4) {
       let str = this.code.toString();
       str = str.substr(part * 4 - 4, 4);
@@ -782,12 +782,7 @@ export class Player {
 
   setRoles(roles: string[]) {
     if (!roles || roles.length === 0) { return; }
-    const result = [];
-    roles.forEach(r => {
-      const role = this.getRoleFromString(r);
-      if (role !== null) { result.push(role); }
-    });
-    this.roles = result;
+    this.roles = roles;
   }
 
   getRoleFromString(roleText: string): Role {

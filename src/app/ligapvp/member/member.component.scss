@@ -20,6 +20,7 @@ $card-margin: 6;
 
 .edit {
   margin-left: auto;
+  display: flex;
   // font-size: 10px;
   // height: 10px;
   // width: 10px;
@@ -29,6 +30,16 @@ $card-margin: 6;
   font-size: 12px;
   margin-top: 4px;
   color: rgba(255, 255, 255, 0.7);
+}
+.nonfriendsHeader .editButtonLabel {
+  position: absolute;
+  line-height: 01em;
+  left: -7px;
+  top: 40px;
+}
+.nonfriendsHeader .edit {
+  margin-right: 6px;
+  margin-top: -2px;
 }
 
 // .edit button {
@@ -81,7 +92,7 @@ $paramEditSize: 18px;
   min-width: 140px;
   margin-right: 0px;
   margin-left: 6px;
-  padding: 10px 2px !important;
+  padding: 0px 2px !important;
 }
 
 .nonfriends {
@@ -122,6 +133,9 @@ $paramEditSize: 18px;
 }
 
 .friendsHeader {
+  display: flex;
+}
+.nonfriendsHeader {
   display: flex;
 }
 

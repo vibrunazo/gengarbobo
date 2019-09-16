@@ -41,13 +41,19 @@ export class EditDialogComponent implements OnInit {
 
   onSubmit() {
     // console.log('submitted form ' + this.emailFormControl.value);
+    console.log('this.data.roles before');
+    console.log(this.data.roles);
+
     this.data.email = this.emailFormControl.value;
-    this.data.roles = [];
     this.data.team = this.data.team.toLowerCase();
-    if (this.roles.admin) { this.data.roles.push('admin'); }
-    if (this.roles.leader) { this.data.roles.push('leader'); }
-    if (this.roles.friends) { this.data.roles.push('friends'); }
+    const rolesSet = new Set(this.data.roles);
+    if (this.roles.admin) { rolesSet.add('admin'); } else { rolesSet.delete('admin'); }
+    if (this.roles.leader) { rolesSet.add('leader'); } else { rolesSet.delete('leader'); }
+    if (this.roles.friends) { rolesSet.add('friends'); } else { rolesSet.delete('friends'); }
+    this.data.roles = [...rolesSet];
     this.dialogRef.close(this.data);
+    console.log('this.data.roles after');
+    console.log(this.data.roles);
   }
 
   getTierIcon(wr: number): string {

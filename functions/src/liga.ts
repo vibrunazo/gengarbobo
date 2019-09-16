@@ -1,5 +1,6 @@
 import { Member } from "./member.model";
 import { Friendship } from "./friends.model";
+import { ServerLog } from './serverLog.model';
 
 // import { Player } from '../../src/app/shared/ligapvp.module';
 //'../src/app/shared/ligapvp.module';
@@ -13,13 +14,22 @@ let membersCache: Array<Member> = [];
 // let friendsCache: Map<string, Friendship> = new Map<string, Friendship>();
 let friendsCache = {};
 let friendsCount = 0;
+let db;
+let rtdb;
 
-async function updateFriendsCache(db) {
+export function setDb(dbRef) {
+  db = dbRef;
+}
+export function setRtDb(rtdbRef) {
+  rtdb = rtdbRef;
+}
+
+export async function updateFriendsCache() {
   console.log('Fetching FRIENDS from database to write local cache.3');
   let resolve; let reject;
   const p = new Promise((res, rej) => {resolve = res; reject = rej;} );
   // const docRef = db.collection('friends').doc('agg');
-  const docRef = db.ref('/friends');
+  const docRef = rtdb.ref('/friends');
   docRef.once('value')
   .then(doc => {
     // fieldsToMap(doc.val());
@@ -45,16 +55,15 @@ async function updateFriendsCache(db) {
 /**
  * Returns all friends. Tries to read it from the local cache if it exists.
  * If not, reads it from the Firestore Database and saves to local cache before returning.
- * @param db Reference to the Firestore Database from admin.firestore()
  */
-export async function readFriends(db): Promise<any> {
+export async function readFriends(): Promise<any> {
   console.log('was asked to read friends:');
   // console.log(members);
   let result: any;
 
   if (Object.entries(friendsCache).length  === 0) {
     console.log('first time reading FRIENDS, building data');
-    await updateFriendsCache(db);
+    await updateFriendsCache();
   } else {
     // console.log('members already set when asked to read them');
   }
@@ -63,21 +72,45 @@ export async function readFriends(db): Promise<any> {
   return result;
 }
 
-export async function writeFriendsRT(newFriends, db) {
-  console.log('writin friends to RTdb');
+export async function userWriteFriends(newFriends, userName: string) {
 
-  const dbref = db.ref('/friends')
+  try {
+    await updateFriendsCache();
+    const result = await writeFriendsRT(newFriends, userName);
+    return result;
+  } catch (e) {
+    console.log(e);
+    throw(e);
+  }
+}
+
+export async function writeFriendsRT(newFriends, userName: string): Promise<ServerLog> {
+  console.log('writing friends to RTdb');
+
+  const dbref = rtdb.ref('/friends')
   let resolve; let reject;
-  const p = new Promise((res, rej) => {resolve = res; reject = rej;});
-  dbref.update(newFriends, e => {
+  const p:Promise<ServerLog> = new Promise((res, rej) => {resolve = res; reject = rej;});
+
+  dbref.update(newFriends, async e => {
     if (e) { reject(e); }
     console.log('Finished writing');
-    resolve();
+    const old = await readFriends();
+    const diff = diffObjs(old, newFriends);
+    const logMsg: ServerLog = {
+      author: userName,
+      body_new: diff.diff,
+      body_old: diff.original,
+      date: Date.now(),
+      event: 'write',
+      target: 'rtdb/friends'
+    }
+    await writeLog(logMsg);
+    resolve(logMsg);
   });
   return p;
 }
 
-export async function writeFriends(newFriends: Map<string, Friendship>, db) {
+export async function writeFriends(newFriends: Map<string, Friendship>) {
   console.log('Writing friends to db');
   friendsCount = 0;
   let resolve; let reject;
@@ -88,7 +121,7 @@ export async function writeFriends(newFriends: Map<string, Friendship>, db) {
     // friendsCache = newFriends;
     console.log('Finished writing all friends, total: ' + friendsCount);
     await writeFriendsOnce();
-    await updateFriendsCache(db);
+    await updateFriendsCache();
     resolve();
   } catch (e) {
     reject(e);
@@ -117,7 +150,7 @@ export async function writeFriends(newFriends: Map<string, Friendship>, db) {
   }
 }
 
-export async function clearFriends(db) {
+export async function clearFriends() {
   const collectionRef = db.collection('friends');
   const results: any[] = [];
   const p = new Promise(async (resolve, reject) => {
@@ -159,7 +192,7 @@ export async function clearFriends(db) {
 //   return p;
 // }
 
-async function updateOneMemberToCache(member: Member, db): Promise<Member> {
+async function updateOneMemberToCache(member: Member): Promise<Member> {
   console.log('Fetching member ' + member.name + ' from database to local cache.');
   let resolve; let reject;
   const p: Promise<Member> = new Promise((res, rej) => {resolve = res; reject = rej;} );
@@ -180,11 +213,46 @@ async function updateOneMemberToCache(member: Member, db): Promise<Member> {
   return p;
 }
 
+export async function writeTestLog(message: string) {
+  const newLog: ServerLog = {
+    author: 'vib',
+    body_new: message,
+    date: Date.now(),
+    event: 'test',
+  }
+  return await writeLog(newLog);
+}
+
+export async function writeLog(logMsg: ServerLog) {
+  // let resolve; let reject;
+  // const p: Promise<any> = new Promise((res, rej) => {resolve = res; reject = rej;} );
+  if (Object.entries(logMsg.body_new).length === 0 && logMsg.body_new.constructor === Object) {
+    console.log('no difference writing to ' + logMsg.target);
+    console.log(logMsg);
+
+    return 'failed to write log because there was no difference in the alledged update';
+  }
+  try {
+    const logRef = rtdb.ref('/log/logs');
+    const newChildRef = logRef.push();
+    newChildRef.set(logMsg, e => {
+      if (e) { throw(e); }
+      console.log('Finished writing');
+    });
+    return 'success';
+  } catch (e) {
+    console.log('error writing log:');
+    console.log(logMsg);
+    console.log(e);
+    return 'failed writing log: ' + e;
+  }
+}
+
 /**
  * Fetches members from the server and caches it locally on the 'membersCache' variable
  * @param db Reference to the Firestore Database from admin.firestore()
  */
-export async function updateMembersCache(db) {
+export async function updateMembersCache() {
   const p = new Promise((resolve, reject) => {
     const membersRef = db.collection('members');
     membersRef.get()
@@ -206,7 +274,7 @@ export async function updateMembersCache(db) {
   return p;
 }
 
-export function getUserRoles(db, user): Array<string> {
+export function getUserRoles(user): Array<string> {
   let results: Array<string> = [];
   if (!user) { return results; }
   membersCache.forEach(m => {
@@ -227,24 +295,39 @@ export function getUserRoles(db, user): Array<string> {
  * @param db Reference to the Firestore Database from admin.firestore()
  * @param user Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export async function userUpdatesMember(newMember, db, user): Promise<Member> {
+export async function userUpdatesMember(newMember, user): Promise<Member> {
   let resolve; let reject;
   const p: Promise<Member> = new Promise((res, rej) => {resolve = res; reject = rej;} );
   let result: Member;
-  if (!isMember(user)) {
+  const reqMember = getMember(user);
+  if (!reqMember) {
     console.log('nope, not a member');
     reject('not a member');
     return p;
   }
   console.log("I think he's a member");
   try {
-    await writeMember(newMember, db);
-    result = await updateOneMemberToCache(newMember, db);
+    await writeMember(newMember, reqMember.name.toLowerCase());
+    result = await updateOneMemberToCache(newMember);
     resolve(result);
   } catch (e) {
     reject(e);
   }
   return p;
+}
+
+export async function readLog() {
+  return null;
+}
+
+export async function readOneMember(memberName: string): Promise<Member | undefined> {
+  try {
+    if (membersCache.length === 0) {
+      console.log('ReadOneMember: first time reading members, building data');
+      await updateMembersCache();
+    }
+    return membersCache.find(m => m.name === memberName);
+  } catch (e) {throw(e);}
 }
 
 
@@ -254,14 +337,14 @@ export async function userUpdatesMember(newMember, db, user): Promise<Member> {
  * @param db Reference to the Firestore Database from admin.firestore()
  * @param user Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export async function readMembers(db, user): Promise<Member[]> {
+export async function readMembers(user): Promise<Member[]> {
   // console.log('was asked to read members:');
   // console.log(members);
   let result: Member[] = [];
 
   if (membersCache.length === 0) {
     console.log('first time reading members, building data');
-    await updateMembersCache(db);
+    await updateMembersCache();
   } else {
     // console.log('members already set when asked to read them');
   }
@@ -279,15 +362,15 @@ export async function readMembers(db, user): Promise<Member[]> {
 /**
  * Reads the global variable 'members' and returns a copy that has only the fields that are public
  */
-function censorSecrets(): any[] {
-  let result: any[] = membersCache;
+function censorSecrets(): Member[] {
+  let result: Member[] = membersCache;
   result = membersCache.map(p => { return {
     name: p.name,
     team: p.team,
     winrate: p.winrate,
     rank: p.rank,
-    badges: p.badges,
-    medals: p.medals
+    badges: (+p.badges!! || 0),
+    medals: (+p.medals!! || 0)
   }});
   return result;
 }
@@ -309,10 +392,22 @@ function isMember(user): boolean {
 }
 
 /**
+ * Returns the Member associated with this Firebase User.
+ * Check is done by comparing the user.email to the email of all members in the database
+ * Returns undefined if not a member
+ * @param user Reference to the Firebase Auth User that was recorded on req.user by the middleware
+ */
+function getMember(user): Member | undefined {
+  if (!user || !user.email) { return undefined; }
+  const member = membersCache.find(m => m.email === user.email);
+  return member;
+}
+
+/**
  *
  * @param db Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export function updateDatabase(db) {
+export function updateDatabase() {
   const newMember1 = {
     name: 'haakaishin',
     team: 'flare',
@@ -326,9 +421,9 @@ export function updateDatabase(db) {
   const p = new Promise(async (resolve, reject) => {
     try {
       let result;
-      result = await writeMember(newMember1, db);
+      result = await writeMember(newMember1, 'dbtest');
       results.push(result);
-      result = await writeMember(newMember2, db);
+      result = await writeMember(newMember2, 'dbtest');
       results.push(result);
       resolve(results);
     } catch (e) {
@@ -343,17 +438,17 @@ export function updateDatabase(db) {
  * @param memberList Array of members to write to the database
  * @param db Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export async function writeMembers(memberList: Member[], db) {
+export async function writeMembers(memberList: Member[], userName: string) {
   console.log('Writing list of members to database.');
   const results: any[] = [];
   let result;
   const p = new Promise(async (resolve, reject) => {
     try {
       for (const member of memberList) {
-        result = await writeMember(member, db);
+        result = await writeMember(member, userName);
         results.push(result);
       }
-      await updateMembersCache(db);
+      await updateMembersCache();
       resolve(results)
     } catch (e) {
       reject(e);
@@ -367,13 +462,24 @@ export async function writeMembers(memberList: Member[], db) {
  * @param member Member to write to the database
  * @param db Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export async function writeMember(member: Member, db) {
+export async function writeMember(member: Member, userName: string) {
   const membersRef = db.collection('members');
   const id = member.name.toLowerCase().trim();
   const newDocRef = membersRef.doc(id);
   const p = new Promise(async (resolve, reject) => {
     try {
+      const old = await readOneMember(member.name);
       const result = await newDocRef.set(member, {merge: true});
+      const diff = diffObjs(old, member);
+      const newLog: ServerLog = {
+        author: userName,
+        body_new: diff.diff,
+        body_old: diff.original,
+        date: Date.now(),
+        event: 'write',
+        target: 'fsdb/members/' + id,
+      }
+      await writeLog(newLog);
       resolve(result);
     } catch (e) {
       reject(e);
@@ -387,7 +493,7 @@ export async function writeMember(member: Member, db) {
  * Deletes all documents whose ids is not their names
  * @param db Reference to the Firebase Auth User that was recorded on req.user by the middleware
  */
-export async function rewriteAllMembers(db) {
+export async function rewriteAllMembers() {
   const membersRef = db.collection('members');
   const results: any[] = [];
   const p = new Promise(async (resolve, reject) => {
@@ -411,4 +517,43 @@ export async function rewriteAllMembers(db) {
 
   return p;
 
+}
+
+/**
+ * Compares 2 objects and returns the diff between them.
+ * Return object has 'diff' field containing only the values that changed.
+ * And a 'original' field containing only the fields that changed with their original values
+ * @param before object before change
+ * @param after object after change
+ */
+function diffObjs(before: object| undefined, after: object | undefined): {diff: any, original: any} {
+  const result = {
+    diff: {},
+    original: {}
+  };
+  if (!before && after) { result.diff = after; return result; }
+  if (!after || !before) { return result; }
+  const fields: Array<any> = Object.entries(after!);
+  fields.forEach(f => {      // for each field on 'after'
+    const a = after[f[0]]!;   // value of that field on 'after'
+    const b = before[f[0]]!;  // value of that field on 'before'
+    const c = JSON.stringify(a) === JSON.stringify(b); // are they equal? stringified so I can compare arrays
+    if (!c) {                                       // if not
+      result.diff[f[0]] = f[1];                     // then add the value changed to the return 'diff'
+      result.original[f[0]] = before[f[0]] || null; // and add the value before change to return 'original'
+    }
+  });
+    // console.log('on cat');
+    // console.log(result);
+    // console.log('before: ');
+    // console.log(before['123catbond13jcruel13']);
+    // console.log('after ');
+    // console.log(after['123catbond13jcruel13']);
+    // console.log('before: ');
+    // console.log(before['123catbondc4i00']);
+    // console.log('after ');
+    // console.log(after['123catbondc4i00']);
+
+
+  return result;
 }

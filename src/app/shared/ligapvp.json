@@ -2,506 +2,708 @@
   {
     "name": "123CatBond",
     "team": "plasma",
-    "winrate": 22
+    "winrate": 22,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "13JCruel13",
     "team": "galactic",
-    "winrate": 84
+    "winrate": 84,
+    "badges": 12,
+    "medals": 1
   },
   {
     "name": "AleeSafadao",
     "team": "plasma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "AlekaSabbag",
     "team": "skull",
-    "winrate": 73
+    "winrate": 73,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "AllanFToledo",
     "team": "aqua",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Allanlima04",
     "team": "aqua",
-    "winrate": 49
+    "winrate": 49,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Alleessandru",
     "team": "skull",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Allma68",
     "team": "rocket",
-    "winrate": 29
+    "winrate": 29,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Andyneves29",
     "team": "flare",
-    "winrate": 47
+    "winrate": 47,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Atilajg",
     "team": "rocket",
-    "winrate": 66
+    "winrate": 66,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "BarbaKetchum",
     "team": "plasma",
-    "winrate": 30
+    "winrate": 30,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "BinhoZica01",
     "team": "skull",
-    "winrate": 57
+    "winrate": 57,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "Brabrinha",
     "team": "magma",
-    "winrate": 39
+    "winrate": 39,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "brankinho40",
     "team": "aqua",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "c4i00",
     "team": "skull",
-    "winrate": 85
+    "winrate": 85,
+    "badges": 7,
+    "medals": 0
   },
   {
     "name": "Cecmartins",
     "team": "skull",
-    "winrate": 21
+    "winrate": 21,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "chernandes10",
     "team": "magma",
-    "winrate": 26
+    "winrate": 26,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "CopperKid",
     "team": "rocket",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Danlannes",
     "team": "galactic",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "DavidFirmin0",
     "team": "rocket",
-    "winrate": 56
+    "winrate": 56,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "DGKetchum1",
     "team": "plasma",
-    "winrate": 10
+    "winrate": 10,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Didideluca",
     "team": "galactic",
-    "winrate": 52
+    "winrate": 52,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "didisantista",
     "team": "galactic",
-    "winrate": 48
+    "winrate": 48,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Diogenest",
     "team": "aqua",
-    "winrate": 52
+    "winrate": 52,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "dodo1234...",
     "team": "magma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Douglete011",
     "team": "aqua",
-    "winrate": 65
+    "winrate": 65,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "eanassu",
     "team": "aqua",
-    "winrate": 22
+    "winrate": 22,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "FabianoCoelho",
     "team": "rocket",
-    "winrate": 44
+    "winrate": 44,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Fgsanfre",
     "team": "flare",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "GassanBr",
     "team": "galactic",
-    "winrate": 76
+    "winrate": 76,
+    "badges": 11,
+    "medals": 1
   },
   {
     "name": "genosfull",
     "team": "plasma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "GinoLucca",
     "team": "plasma",
-    "winrate": 61
+    "winrate": 61,
+    "badges": 2,
+    "medals": 1
   },
   {
     "name": "Gsaito87",
     "team": "flare",
-    "winrate": 69
+    "winrate": 69,
+    "badges": 4,
+    "medals": 0
   },
   {
     "name": "guiblima",
     "team": "skull",
-    "winrate": 61
+    "winrate": 61,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Guilram91",
     "team": "aqua",
-    "winrate": 37
+    "winrate": 37,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "GuiMi19",
     "team": "flare",
-    "winrate": 39
+    "winrate": 39,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "haakaishin",
     "team": "flare",
-    "winrate": 78
+    "winrate": 78,
+    "badges": 0,
+    "medals": 1
   },
   {
     "name": "Helior44",
     "team": "plasma",
-    "winrate": 70
+    "winrate": 70,
+    "badges": 4,
+    "medals": 0
   },
   {
     "name": "HenryRattlehead",
     "team": "rocket",
-    "winrate": 44
+    "winrate": 44,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "HHazuka",
     "team": "flare",
-    "winrate": 83
+    "winrate": 83,
+    "badges": 5,
+    "medals": 2
   },
   {
     "name": "HigashiRicardo",
     "team": "rocket",
-    "winrate": 24
+    "winrate": 24,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "JimbobAzul",
     "team": "flare",
-    "winrate": 53
+    "winrate": 53,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "JoasGarciaA",
     "team": "skull",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "josenkio",
     "team": "flare",
-    "winrate": 66
+    "winrate": 66,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "Juracrav",
     "team": "skull",
-    "winrate": 23
+    "winrate": 23,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "LagoaSeca12",
     "team": "magma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "lahkehl",
     "team": "flare",
-    "winrate": 44
+    "winrate": 44,
+    "badges": 2,
+    "medals": 0
   },
   {
     "name": "LeoJesus55",
     "team": "rocket",
-    "winrate": 14
+    "winrate": 14,
+    "badges": 0,
+    "medals": 1
   },
   {
     "name": "LetMKS",
     "team": "skull",
-    "winrate": 66
+    "winrate": 66,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "llTk87ll",
     "team": "magma",
-    "winrate": 79
+    "winrate": 79,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "LuksBertolli",
     "team": "magma",
-    "winrate": 33
+    "winrate": 33,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "MaikTheOne",
     "team": "plasma",
-    "winrate": 43
+    "winrate": 43,
+    "badges": 0,
+    "medals": 1
   },
   {
     "name": "Mamazzaro",
     "team": "rocket",
-    "winrate": 54
+    "winrate": 54,
+    "badges": 1,
+    "medals": 1
   },
   {
     "name": "Manfrim11",
     "team": "galactic",
-    "winrate": 62
+    "winrate": 62,
+    "badges": 6,
+    "medals": 1
   },
   {
     "name": "Marcelo69",
     "team": "skull",
-    "winrate": 69
+    "winrate": 69,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "marcioljunior",
     "team": "galactic",
-    "winrate": 67
+    "winrate": 67,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "MareFrz",
     "team": "skull",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "MasterLineYr",
     "team": "plasma",
-    "winrate": 60
+    "winrate": 60,
+    "badges": 1,
+    "medals": 1
   },
   {
     "name": "Matabanguela",
     "team": "magma",
-    "winrate": 62
+    "winrate": 62,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "MauColella",
     "team": "aqua",
-    "winrate": 43
+    "winrate": 43,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "mcbrublue",
     "team": "aqua",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "mestreDohko",
     "team": "rocket",
-    "winrate": 54
+    "winrate": 54,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "mi88akz",
     "team": "rocket",
-    "winrate": 37
+    "winrate": 37,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "MuraKamiGu",
     "team": "magma",
-    "winrate": 70
+    "winrate": 70,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Nietzsche968",
     "team": "galactic",
-    "winrate": 58
+    "winrate": 58,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "Nyrskh",
     "team": "magma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Oftentimes7",
     "team": "rocket",
-    "winrate": 61
+    "winrate": 61,
+    "badges": 2,
+    "medals": 0
   },
   {
     "name": "Pamps2805",
     "team": "skull",
-    "winrate": 65
+    "winrate": 65,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "Patyeiko",
     "team": "rocket",
-    "winrate": 26
+    "winrate": 26,
+    "badges": 0,
+    "medals": 1
   },
   {
     "name": "PedrinhoGamarra",
     "team": "plasma",
-    "winrate": 41
+    "winrate": 41,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "qdeza",
     "team": "galactic",
-    "winrate": 24
+    "winrate": 24,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "QueenBelinha",
     "team": "aqua",
-    "winrate": 46
+    "winrate": 46,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "Rafa25Albertin",
     "team": "galactic",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Rafaetti2",
     "team": "flare",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "RaulAV1",
     "team": "galactic",
-    "winrate": 53
+    "winrate": 53,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "Ravenaut",
     "team": "magma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "RedZoom",
     "team": "magma",
-    "winrate": 67
+    "winrate": 67,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "RegininhaKawaii",
     "team": "flare",
-    "winrate": 45
+    "winrate": 45,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "reidoidao",
     "team": "magma",
-    "winrate": 59
+    "winrate": 59,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "renansuz",
     "team": "aqua",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "rikardolima",
     "team": "galactic",
-    "winrate": 37
+    "winrate": 37,
+    "badges": 2,
+    "medals": 0
   },
   {
     "name": "Rodrigorav4",
     "team": "skull",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "Rsscoach",
     "team": "aqua",
-    "winrate": 81
+    "winrate": 81,
+    "badges": 6,
+    "medals": 0
   },
   {
     "name": "SinGoLfaiRe",
     "team": "galactic",
-    "winrate": 50
+    "winrate": 50,
+    "badges": 2,
+    "medals": 0
   },
   {
     "name": "Sralador",
     "team": "aqua",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Tatinick82",
     "team": "plasma",
-    "winrate": 35
+    "winrate": 35,
+    "badges": 0,
+    "medals": 1
   },
   {
     "name": "Teresak1",
     "team": "magma",
-    "winrate": 52
+    "winrate": 52,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "TgoSorelli",
     "team": "flare",
-    "winrate": 96
+    "winrate": 96,
+    "badges": 3,
+    "medals": 1
   },
   {
     "name": "Thacod",
     "team": "aqua",
-    "winrate": 8
+    "winrate": 8,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "TioSan2108",
     "team": "rocket",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Tiringstorm34",
     "team": "plasma",
-    "winrate": 35
+    "winrate": 35,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "TomDSantos",
     "team": "aqua",
-    "winrate": 72
+    "winrate": 72,
+    "badges": 4,
+    "medals": 0
   },
   {
     "name": "TsuSetoguchi",
     "team": "skull",
-    "winrate": 67
+    "winrate": 67,
+    "badges": 1,
+    "medals": 0
   },
   {
     "name": "VanEdipo",
     "team": "plasma",
-    "winrate": 66
+    "winrate": 66,
+    "badges": 3,
+    "medals": 1
   },
   {
     "name": "vib",
     "team": "skull",
-    "winrate": 80
+    "winrate": 80,
+    "badges": 5,
+    "medals": 2
   },
   {
     "name": "VicTavares",
     "team": "flare",
-    "winrate": 58
+    "winrate": 58,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "WallanLima16",
     "team": "galactic",
-    "winrate": 37
+    "winrate": 37,
+    "badges": 3,
+    "medals": 0
   },
   {
     "name": "Weltson",
     "team": "plasma",
-    "winrate": 7
+    "winrate": 7,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Winiciuslb1810",
     "team": "plasma",
-    "winrate": 0
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "Yeyas81",
     "team": "magma",
-    "winrate": 54
+    "winrate": 54,
+    "badges": 0,
+    "medals": 0
   },
   {
     "name": "ZuziaMao",
     "team": "flare",
-    "winrate": 74
+    "winrate": 74,
+    "badges": 0,
+    "medals": 0
   }
 ]

@@ -16,7 +16,7 @@ export function getMembersFromRows(rows: Array<any>): Member[] {
         name: r[0],
         team: '',
         winrate: +r[6].replace('%', ''),
-        code: r[1],
+        code: r[1].replace(/\s/g, ''),
       }
       result.push(newMember);
     }

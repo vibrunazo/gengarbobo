@@ -2,6 +2,7 @@ import * as functions from 'firebase-functions';
 import * as liga from './liga';
 import * as sheetsReader from './sheets';
 import { Member } from './member.model';
+import { ServerLog } from './serverLog.model';
 // import { Friendship } from './friends.model';
 const admin = require('firebase-admin');
 admin.initializeApp();
@@ -18,6 +19,9 @@ const CONFIG_CLIENT_ID = functions.config().googleapi.client_id;
 const CONFIG_CLIENT_SECRET = functions.config().googleapi.client_secret;
 // const CONFIG_SHEET_ID = functions.config().googleapi.sheet_id;
 const db = admin.firestore();
+liga.setDb(db);
+const rtdb = admin.database();
+liga.setRtDb(rtdb);
 const express = require('express');
 const cors = require('cors');
 // const cors = require('cors')({
@@ -65,7 +69,7 @@ app.post('/testFunc4', async (req, res) => {
   // await getMembers();
   // const code = members[0].code;
   // const members = await liga.readMembers(db, req.user);
-  await liga.clearFriends(db);
+  await liga.clearFriends();
   const out = {
     msg: 'hello, cleared all friends',
   }
@@ -75,7 +79,7 @@ app.post('/testFunc4', async (req, res) => {
 app.post('/testFunc5', async (req, res) => {
   // const members = await liga.readMembers(db, req.user);
 
-  const writeResult = await liga.updateDatabase(db);
+  const writeResult = await liga.updateDatabase();
   // const writeResult = await liga.rewriteAllMembers(db);
   const out = {
     msg: 'hello, writing to db 6',
@@ -95,7 +99,7 @@ app.post('/updateMember', async (req, res) => {
   console.log(req.body);
 
   try {
-    result = await liga.userUpdatesMember(member, db, user);
+    result = await liga.userUpdatesMember(member, user);
   } catch (e) {
     console.log(e);
     res.status(400).send(e);
@@ -110,10 +114,11 @@ app.post('/updateMember', async (req, res) => {
 
 app.post('/forceCacheUpdate', async (req, res) => {
   console.log('Forcing Cache update 2');
-  if (req.body.psw === functions.config().debug.psw) {
-    await liga.updateMembersCache(db);
+  if (isDebug(req)) {
+    await liga.updateMembersCache();
+    await liga.updateFriendsCache();
     const out = {
-      msg: 'updated members cache',
+      msg: 'updated members and friends cache',
     }
     res.status(200).send(out);
   } else {
@@ -121,9 +126,28 @@ app.post('/forceCacheUpdate', async (req, res) => {
   }
 });
 
+app.post('/writeLog', async (req, res) => {
+  console.log('Writing to log');
+  if (!isDebug(req)) {
+    res.status(400).send('Forbidden');
+    return;
+  }
+  try {
+    await liga.writeLog(req.body.msg);
+    const out = {
+      msg: 'updated log',
+    }
+    res.status(200).send(out);
+  } catch (e) {
+    console.log('error writing to log');
+    console.log(e);
+    res.status(400).send({e});
+  }
+});
+
 app.get('/getAllMembers', async (req, res) => {
-  const members = await liga.readMembers(db, req.user);
-  const roles = liga.getUserRoles(db, req.user);
+  const members = await liga.readMembers(req.user);
+  const roles = liga.getUserRoles(req.user);
   const out = {
     msg: 'hello, these are all members',
     roles,
@@ -133,7 +157,7 @@ app.get('/getAllMembers', async (req, res) => {
 });
 
 app.get('/getAllFriends', async (req, res) => {
-  const friends = await liga.readFriends(admin.database());
+  const friends = await liga.readFriends();
   const out = {
     msg: 'hello, thesse are all Friends',
     friends,
@@ -151,7 +175,7 @@ app.post('/driveUpdate', async (req, res) => {
     rowsEquipes = await sheetsReader.readEquipesRows(client);
     newMembers = sheetsReader.getMembersFromRows(rowsMembros);
     sheetsReader.setMemberParamsFromEquipesRows(rowsEquipes, newMembers);
-    await liga.writeMembers(newMembers, db);
+    await liga.writeMembers(newMembers, 'drivesheet');
 
     good();
   } catch (e) {
@@ -177,15 +201,16 @@ app.post('/driveUpdateFriends', async (req, res) => {
   let newFriendsMap;
   let newFriendsJSON;
   let size;
+  let log: ServerLog;
   const client = await sheetsReader.getClient(getAuthorizedClient);
   try {
-    const members = await liga.readMembers(db, null);
+    const members = await liga.readMembers(null);
     rowsFriends = await sheetsReader.readAmizadesRows(client);
     newFriendsMap = sheetsReader.getFriendsFromRows(rowsFriends, members);
     size = newFriendsMap.size;
     newFriendsJSON = mapToJson(newFriendsMap);
     // await liga.writeFriends(newFriendsMap, db);
-    await liga.writeFriendsRT(newFriendsJSON, admin.database())
+    log = await liga.userWriteFriends(newFriendsJSON, 'drivesheets');
     good();
   } catch (e) {
     bad(e);
@@ -199,6 +224,7 @@ app.post('/driveUpdateFriends', async (req, res) => {
     const out = {
       msg: 'Drive Friends update 3',
       size,
+      log,
       newFriends: newFriendsJSON,
     }
     res.status(200).send(out)
@@ -290,4 +316,7 @@ function mapToJson(map: Map<string, any>) {
     // result[n].push(k);
   }
   return result;
+}
+function isDebug(req) {
+  return (req.body.psw === functions.config().debug.psw);
 }
