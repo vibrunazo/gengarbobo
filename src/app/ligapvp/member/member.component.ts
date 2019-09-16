@@ -29,7 +29,7 @@ export class MemberComponent implements OnInit {
   rights: Right[] = [];
   canIedit = false;
   canIeditFriends = false;
-  editModeFriends = true;
+  editModeFriends = false;
 
   constructor(private route: ActivatedRoute, private auth: AuthService,
               private lambida: LambidaService, public dialog: MatDialog) {
@@ -43,7 +43,8 @@ export class MemberComponent implements OnInit {
         this.setMember(params.id);
       }
     });
-    // this.getLambida();
+    // console.log(Liga.allFriends);
+
   }
 
   /**
@@ -56,7 +57,7 @@ export class MemberComponent implements OnInit {
 
   onEditFriends() {
     console.log('edit friends');
-    this.editModeFriends = !this.editModeFriends;
+    // this.editModeFriends = !this.editModeFriends;
   }
   async onAddFriend(friend: Player) {
     console.log('adding friend: ' + friend);

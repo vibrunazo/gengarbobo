@@ -138,10 +138,13 @@
         <div class="nonfriendsHeader">
           <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
           <div class="edit" *ngIf="canIedit">
-            <button mat-mini-fab aria-label="Edit" (click)="onEditFriends()">
+            <!-- <button mat-mini-fab aria-label="Edit" (click)="onEditFriends()" [ngClass]="editModeFriends ? 'fabButt' : 'fabButtOn'">
               <mat-icon>edit</mat-icon>
-              <br><div class="editButtonLabel">editar<br>amizades</div>
-            </button>
+              <br><div class="editButtonLabel" *ngIf="!editModeFriends">editar<br>amizades</div>
+            </button> -->
+            <mat-slide-toggle (change)="onEditFriends($event)"
+            [(ngModel)]="editModeFriends"></mat-slide-toggle>
+            <div class="editButtonLabel">editar</div>
           </div>
         </div>
         <mat-divider></mat-divider>

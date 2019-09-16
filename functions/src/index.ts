@@ -233,6 +233,7 @@ app.post('/driveUpdateFriends', async (req, res) => {
     newFriendsJSON = mapToJson(newFriendsMap);
     // await liga.writeFriends(newFriendsMap, db);
     log = await liga.writeFriendsRT(newFriendsJSON, 'drivesheets');
+    await liga.updateFriendsCache();
     good();
   } catch (e) {
     bad(e);

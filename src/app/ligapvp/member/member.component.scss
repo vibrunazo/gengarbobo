@@ -26,20 +26,28 @@ $card-margin: 6;
   // width: 10px;
 }
 
+.fabButt {
+  background-color: #855595 !important;
+  color: #424242 !important;
+}
+
 .editButtonLabel {
   font-size: 12px;
   margin-top: 4px;
   color: rgba(255, 255, 255, 0.7);
 }
 .nonfriendsHeader .editButtonLabel {
-  position: absolute;
-  line-height: 01em;
-  left: -7px;
-  top: 40px;
+  // position: absolute;
+  // left: -7px;
+  margin-right: 5px;
+  margin-left: 2px;
+  margin-top: -1px !important;
+  // top: 40px;
 }
 .nonfriendsHeader .edit {
-  margin-right: 6px;
+  // margin-right: 6px;
   margin-top: -2px;
+  flex-direction: column;
 }
 
 .editFriendButton .mat-raised-button {
@@ -47,6 +55,7 @@ $card-margin: 6;
   padding-left: 5px;
   width: 120px;
   display: flex;
+  overflow: hidden;
 }
 
 .editFriendButton .mat-icon {

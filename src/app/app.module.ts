@@ -25,6 +25,7 @@ import {
   MatSortModule,
   MatTooltipModule,
   MatCheckboxModule,
+  MatSlideToggleModule,
 } from '@angular/material';
 import { NewsComponent } from './news/news.component';
 import { DexComponent } from './dex/dex.component';
@@ -107,7 +108,8 @@ const firebaseConfig = {
     MatTableModule,
     MatTooltipModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSlideToggleModule
   ],
   entryComponents: [
     EditDialogComponent

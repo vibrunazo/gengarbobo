@@ -62,7 +62,7 @@ export async function readFriends(): Promise<any> {
   // console.log(members);
   let result: any;
 
-  if (Object.entries(friendsCache).length  === 0) {
+  if (!friendsCache || Object.entries(friendsCache).length  === 0) {
     console.log('first time reading FRIENDS, building data');
     await updateFriendsCache();
   } else {
@@ -75,38 +75,36 @@ export async function readFriends(): Promise<any> {
 
 export async function userWriteFriend(newFriends, user) {
   const friendsId = Object.entries(newFriends)[0][0];
-  let friend1: Member, friend2: Member;
+  const friend1: Member | undefined = findMemberById( friendsId.slice(0, 5) );
+  const friend2: Member | undefined = findMemberById( friendsId.slice(5, 10) );
+  if (!friend1 || !friend2) { throw(new Error('could not find members by id ' + friendsId)); }
   try {
-    getMembersFromFriendsId();
     const member = getMember(user);
-    if (!canIwriteFriend(friend1, member) || !canIwriteFriend(friend2, member)) {
+    if (!member || !canIwriteFriend(friend1, member) || !canIwriteFriend(friend2, member)) {
       throw(new Error('cannot write to friends ' + friendsId));
     }
     const result = await writeFriendsRT(newFriends, member.name);
+    await updateFriendsCache();
     return result;
   } catch (e) {
     console.log(e);
     throw(e);
   }
-
-  function getMembersFromFriendsId() {
-    friend1 = findMemberById( friendsId.slice(0, 5) );
-    friend2 = findMemberById( friendsId.slice(5, 10) );
-  }
 }
 
 function canIwriteFriend(friend: Member, member: Member): boolean {
   if (!member) { return false; }
-  // if I am admin
-  if (member.roles.includes('admin') || member.roles.includes('site')) { return true; }
   // if it's me
   if (member.name.toLowerCase() === friend.name.toLowerCase()) { return true; }
+  if (!member.roles) { return false; }
+  // if I am admin
+  if (member.roles.includes('admin') || member.roles.includes('site')) { return true; }
   // if I am friends admin and he is from my team
   if (member.roles.includes('friends') && (member.team.toLowerCase() === friend.team.toLowerCase())) { return true; }
   return false;
 }
 
-function findMemberById(id: string): Member {
+function findMemberById(id: string): Member | undefined {
   return membersCache.find(m => m.id === id);
 }
 
@@ -131,7 +129,8 @@ export async function writeFriendsRT(newFriends, userName: string): Promise<Serv
       event: 'write',
       target: 'rtdb/friends'
     }
-    await writeLog(logMsg, {new: newFriends, old});
+    // await writeLog(logMsg, {new: newFriends, old});
+    await writeLog(logMsg);
     resolve(logMsg);
   });
   return p;

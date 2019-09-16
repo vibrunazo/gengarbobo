@@ -32,18 +32,17 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
     // const friends: Friendship[] = [];
     const friends: Map<string, Friendship> = new Map();
     const names: string[] = members.map(m => m.name.toLowerCase());
-    const VERT_ROW = 7;
-    const VERT_COL = 2;
-    const HORZ_ROW = 5;
-    const HORZ_COL = 8;
-    let friendCount = 0;
+    const VERT_ROW = 4;
+    const VERT_COL = 2; // start at C5
+    const HORZ_ROW = 2;
+    const HORZ_COL = 8; // start at I3
 
-    console.log('building friends');
+    console.log('Building friends from sheets rows');
     // console.log(rows[7][2]);
 
     // read members on the vertical list
     readVert();
-    console.log('saved a total of ' + friendCount + ' from sheets.');
+    console.log('saved a total of ' + friends.size + ' from sheets.');
 
     // console.log(friends);
     // console.log(friends.get('ravenaut13jcruel13'));
@@ -76,8 +75,12 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
         if (isMember(m)) {
           m = m.toLowerCase();
           const statusCell = rows[row][col];
-          const status = statusCell === '' ? false : true;
-          // console.log('horz col: ' + col + ' cell: ' + m);
+          const status = (!statusCell || statusCell.trim().length === 0) ? false : true;
+          if ((vertMember === 'vib' || m === 'vib') && (vertMember === 'danlannes' || m === 'danlannes') ) {
+            console.log('row: ' + row + ' col: ' + col);
+            console.log('vertMember: ' + vertMember + ' m: ' + m);
+            console.log('statuscell: ' + statusCell + 'status: ' + status);
+          }
           saveFriends(vertMember, m, status);
           // verMembers.push(m);
         }
@@ -95,18 +98,19 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
       // const n2 = friend2.split('.').join("");
       const n1 = getIdFromName(friend1);
       const n2 = getIdFromName(friend2);
+      if (!n1 || !n2) { throw(new Error('could not find members by id ' + n1 + n2)) };
       const newFriendship: Friendship = {
         s: status,
       };
       const ids = [n1, n2].sort((a, b) => a.localeCompare(b));
       const id = ids[0] + ids[1];
-      friendCount++;
       friends.set(id, newFriendship);
     }
 
-    function getIdFromName(memberName: string): string {
+    function getIdFromName(memberName: string): string|undefined {
       const member = members.find(m => m.name.toLowerCase() === memberName.toLowerCase());
-      return member.id;
+      if (member) { return member.id; }
+      else { return undefined; }
     }
   }
   return result;
