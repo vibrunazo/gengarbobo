@@ -162,7 +162,7 @@
       <mat-list>
         <div class="nonfriendsHeader">
           <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
-          <div class="edit" *ngIf="canIedit">
+          <div class="edit" *ngIf="canIeditFriends">
             <mat-slide-toggle (change)="onEditFriends($event)"
             [(ngModel)]="editModeFriends"></mat-slide-toggle>
             <div class="editButtonLabel">editar</div>

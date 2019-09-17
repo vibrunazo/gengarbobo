@@ -62,6 +62,7 @@ export class MemberComponent implements OnInit {
   async onUpdateFriend(friend: Player, status: boolean) {
     console.log('upadting friend: ' + friend);
     const newFriend = Liga.newFriendship(this.player, friend, status);
+    this.updateData();
     await this.lambida.sendFriendUpdate(newFriend)
     .then(res => {
       console.log('sucessfully added new friendship: ');
@@ -136,13 +137,8 @@ export class MemberComponent implements OnInit {
 
   checkOwner() {
     this.rights = this.auth.canIeditPlayer(this.player);
-    this.canIedit = this.rights.includes(Right.All) || this.rights.includes(Right.Personal);
-    this.canIeditFriends = this.rights.includes(Right.All) || this.rights.includes(Right.Friends);
-    // if (this.user && this.user.member === this.name) {
-    //   console.log('YES! Logged in User is the owner of this account!');
-    // } else {
-    //   console.log('NO! Owner is not logged in!');
-    // }
+    this.canIedit = this.rights.includes(Right.All);
+    this.canIeditFriends = (this.rights.includes(Right.All) || this.rights.includes(Right.Friends));
   }
 
   hasRight(right: string): boolean {

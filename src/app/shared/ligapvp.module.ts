@@ -938,7 +938,15 @@ export class Liga {
     const id = this.getFriendshipID(p1, p2);
     const result = {};
     result[id] = { s: status };
+    this.updateFriendship(result);
     return result;
+  }
+
+  static updateFriendship(newFriends) {
+    const entries: Array<Array<any>> = Object.entries(newFriends);
+    const id = entries[0][0];
+    const value = entries[0][1];
+    this.allFriends[id] = value;
   }
 
   static setAllFriends(newFriends) {

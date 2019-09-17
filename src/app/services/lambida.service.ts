@@ -100,6 +100,7 @@ export class LambidaService {
       console.log(newMembers);
       // newMembers.roles.push('friends');
       this.auth.setRoles(newMembers.roles);
+      // this.auth.setRoles([ "name:vib", "team:skull"]);
       Liga.setAllPlayers(newMembers.members);
       Liga.setAllFriends(newFriends.friends);
       this.emmitToSubs();

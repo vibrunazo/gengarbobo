@@ -46,7 +46,8 @@ export class EditDialogComponent implements OnInit {
     if (this.roles.admin) { rolesSet.add('admin'); } else { rolesSet.delete('admin'); }
     if (this.roles.leader) { rolesSet.add('leader'); } else { rolesSet.delete('leader'); }
     if (this.roles.friends) { rolesSet.add('friends'); } else { rolesSet.delete('friends'); }
-    this.data.roles = [...rolesSet];
+    // this.data.roles = [...rolesSet];
+    this.data.roles = Array.from(rolesSet) ;
     this.dialogRef.close(this.data);
   }
 
