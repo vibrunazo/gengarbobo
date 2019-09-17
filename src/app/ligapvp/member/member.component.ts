@@ -59,9 +59,9 @@ export class MemberComponent implements OnInit {
     console.log('edit friends');
     // this.editModeFriends = !this.editModeFriends;
   }
-  async onAddFriend(friend: Player) {
-    console.log('adding friend: ' + friend);
-    const newFriend = Liga.newFriendship(this.player, friend);
+  async onUpdateFriend(friend: Player, status: boolean) {
+    console.log('upadting friend: ' + friend);
+    const newFriend = Liga.newFriendship(this.player, friend, status);
     await this.lambida.sendFriendUpdate(newFriend)
     .then(res => {
       console.log('sucessfully added new friendship: ');

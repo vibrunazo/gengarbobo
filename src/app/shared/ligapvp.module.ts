@@ -934,10 +934,10 @@ export class Liga {
     return id;
   }
 
-  static newFriendship(p1: Player, p2: Player) {
+  static newFriendship(p1: Player, p2: Player, status = true) {
     const id = this.getFriendshipID(p1, p2);
     const result = {};
-    result[id] = { s: true };
+    result[id] = { s: status };
     return result;
   }
 

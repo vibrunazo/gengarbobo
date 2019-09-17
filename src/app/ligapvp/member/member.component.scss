@@ -132,11 +132,16 @@ $card-margin: 6;
   overflow: hidden;
 }
 
+.friendItem {
+  width: 100%;
+  height: 26px;
+}
+
 .friendNameplate {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  // justify-content: space-between;
   overflow: hidden;
 }
 .friendNameplate a {
@@ -146,6 +151,7 @@ $card-margin: 6;
 .wr {
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
+  margin-left: auto;
 }
 
 .teamIcon {

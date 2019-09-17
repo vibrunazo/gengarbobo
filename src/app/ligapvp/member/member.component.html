@@ -80,10 +80,12 @@
         <mat-divider></mat-divider>
         <h3 mat-subheader>Inimigos ({{ enemies.length }}):</h3>
         <h3 mat-subheader>Diamantes ({{ dia.length }}):</h3>
-        <mat-list-item *ngFor="let friend of dia" class="friendItem">
-          {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon" />
-          <div class="friendNameplate">
+        <mat-list-item *ngFor="let friend of dia">
+          <div class="friendNameplate" *ngIf="!editModeFriends">
+            <span>
+              {{ friend.getTierIcon() }}
+            </span>
+            <img [src]="friend.getTeamIcon()" class="teamIcon" />
             <a [routerLink]="['/liga/m', friend.getName()]">
               {{ friend.getName() }}
             </a>
@@ -91,44 +93,67 @@
               {{ friend.getWinrate() }}%
             </span>
           </div>
+          <span *ngIf="editModeFriends" class="editFriendButton">
+            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+          </span>
         </mat-list-item>
         <mat-divider></mat-divider>
         <h3 mat-subheader>Rubi ({{ rub.length }}):</h3>
         <mat-list-item *ngFor="let friend of rub">
-          {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon" />
-          <div class="friendNameplate">
+          <div class="friendNameplate" *ngIf="!editModeFriends">
+            <span>
+              {{ friend.getTierIcon() }}
+            </span>
+            <img [src]="friend.getTeamIcon()" class="teamIcon" />
             <a [routerLink]="['/liga/m', friend.getName()]">
               {{ friend.getName() }}
             </a>
             <span class="wr">
-                {{ friend.getWinrate() }}%
+              {{ friend.getWinrate() }}%
             </span>
           </div>
+          <span *ngIf="editModeFriends" class="editFriendButton">
+            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+          </span>
         </mat-list-item>
         <mat-divider></mat-divider>
         <h3 mat-subheader>Safira ({{ saf.length }}):</h3>
         <mat-list-item *ngFor="let friend of saf">
-          {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon" />
-          <div class="friendNameplate">
+          <div class="friendNameplate" *ngIf="!editModeFriends">
+            <span>
+              {{ friend.getTierIcon() }}
+            </span>
+            <img [src]="friend.getTeamIcon()" class="teamIcon" />
             <a [routerLink]="['/liga/m', friend.getName()]">
               {{ friend.getName() }}
             </a>
             <span class="wr">
-                {{ friend.getWinrate() }}%
+              {{ friend.getWinrate() }}%
             </span>
           </div>
+          <span *ngIf="editModeFriends" class="editFriendButton">
+            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+          </span>
         </mat-list-item>
 
         <mat-divider></mat-divider>
         <h3 mat-subheader>Colegas ({{ colleagues.length }})</h3>
         <mat-list-item *ngFor="let friend of colleagues">
-          {{ friend.getTierIcon() }}
-          <img [src]="friend.getTeamIcon()" class="teamIcon" />
-          <a [routerLink]="['/liga/m', friend.getName()]">
-            {{ friend.getName() }}
-          </a>
+          <div class="friendNameplate" *ngIf="!editModeFriends">
+            <span>
+              {{ friend.getTierIcon() }}
+            </span>
+            <img [src]="friend.getTeamIcon()" class="teamIcon" />
+            <a [routerLink]="['/liga/m', friend.getName()]">
+              {{ friend.getName() }}
+            </a>
+            <span class="wr">
+              {{ friend.getWinrate() }}%
+            </span>
+          </div>
+          <span *ngIf="editModeFriends" class="editFriendButton">
+            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+          </span>
         </mat-list-item>
       </mat-list>
     </mat-card>
@@ -138,10 +163,6 @@
         <div class="nonfriendsHeader">
           <h3 mat-subheader>Falta amizade ({{ nonfriends.length }})</h3>
           <div class="edit" *ngIf="canIedit">
-            <!-- <button mat-mini-fab aria-label="Edit" (click)="onEditFriends()" [ngClass]="editModeFriends ? 'fabButt' : 'fabButtOn'">
-              <mat-icon>edit</mat-icon>
-              <br><div class="editButtonLabel" *ngIf="!editModeFriends">editar<br>amizades</div>
-            </button> -->
             <mat-slide-toggle (change)="onEditFriends($event)"
             [(ngModel)]="editModeFriends"></mat-slide-toggle>
             <div class="editButtonLabel">editar</div>
@@ -162,18 +183,8 @@
             </div>
           </span>
           <span *ngIf="editModeFriends" class="editFriendButton">
-              <button mat-raised-button color="accent" (click)="onAddFriend(friend)"><mat-icon>add_circle_outline</mat-icon>{{ friend.getName() }}</button>
+            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, true)"><mat-icon>add_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>
-              <!-- <span>
-                <span class="wr" *ngIf="!editModeFriends">
-                  {{ friend.getWinrate() }}%
-                </span>
-                <span class="editFriendButton" *ngIf="editModeFriends">
-                  <button mat-icon-button color="warn" aria-label="Add friend"  (click)="onAddFriend(friend)">
-                    <mat-icon>favorite</mat-icon>
-                  </button>
-                </span>
-              </span> -->
         </mat-list-item>
       </mat-list>
     </mat-card>
