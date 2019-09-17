@@ -12,6 +12,7 @@ import { ServerLog } from './serverLog.model';
 let membersCache: Array<Member> = [];
 
 // let friendsCache: Map<string, Friendship> = new Map<string, Friendship>();
+let logsCache = {};
 let friendsCache = {};
 let friendsCount = 0;
 let db;
@@ -344,8 +345,46 @@ export async function userUpdatesMember(newMember, user): Promise<Member> {
   return p;
 }
 
-export async function readLog() {
-  return null;
+export async function readLog(user) {
+  await getLogsFromDb(user);
+  const allLogs: ServerLog[] = Object.values(logsCache);
+  return allLogs;
+  // const result: string[] = [];
+  // allLogs.forEach(l => {
+  //   result.push(readLogLine(l));
+  // });
+  // return result;
+}
+
+// function readLogLine(log: ServerLog): string {
+//   let result = '';
+//   const date: Date = new Date(log.date);
+//   const dateStr = date.toLocaleString();
+//   let msg = '';
+//   if  (log.target === 'rtdb/friends') {
+//     const allFriends: string[] = Object.keys(log.body_new);
+//     const slice = allFriends.slice(0, 3);
+//     msg = `${slice.toString()} e ${allFriends.length - slice.length} outros`
+//   }
+//   result = `${dateStr}: ${log.author} wrote to ${log.target}: ${msg}`;
+//   return result;
+// }
+
+export async function getLogsFromDb(user) {
+  console.log('Fetching LOGS from RT database to write local cache.');
+  let resolve; let reject;
+  const p = new Promise((res, rej) => {resolve = res; reject = rej;} );
+  const docRef = rtdb.ref('/log/logs');
+  docRef.once('value')
+  .then(doc => {
+    logsCache = doc.val();
+    resolve(logsCache);
+  })
+  .catch(err => {
+    reject(err);
+  });
+
+  return p;
 }
 
 export async function readOneMember(memberName: string): Promise<Member | undefined> {

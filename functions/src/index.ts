@@ -167,6 +167,15 @@ app.post('/writeLog', async (req, res) => {
   }
 });
 
+app.get('/getLog', async (req, res) => {
+  const logs = await liga.readLog(req.user);
+  const out = {
+    msg: 'hello, these are all logs',
+    logs,
+  }
+  res.status(200).send(out);
+});
+
 app.get('/getAllMembers', async (req, res) => {
   const members = await liga.readMembers(req.user);
   const roles = liga.getUserRoles(req.user);
