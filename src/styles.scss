@@ -33,7 +33,14 @@ mat-card {
 a {
     color: mat-color($accent);
     text-decoration: none;
-  }
+}
+
+.bgGreen {
+  background-color: #66bb6a !important;
+}
+.bgRed {
+  background-color: #ef5350 !important;
+}
 
 .move {
   // background-color: red !important;

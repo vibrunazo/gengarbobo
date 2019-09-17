@@ -94,7 +94,7 @@
             </span>
           </div>
           <span *ngIf="editModeFriends" class="editFriendButton">
-            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+            <button mat-raised-button (click)="onUpdateFriend(friend, false)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -113,7 +113,7 @@
             </span>
           </div>
           <span *ngIf="editModeFriends" class="editFriendButton">
-            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+            <button mat-raised-button (click)="onUpdateFriend(friend, false)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -132,7 +132,7 @@
             </span>
           </div>
           <span *ngIf="editModeFriends" class="editFriendButton">
-            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+            <button mat-raised-button (click)="onUpdateFriend(friend, false)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>
         </mat-list-item>
 
@@ -152,7 +152,7 @@
             </span>
           </div>
           <span *ngIf="editModeFriends" class="editFriendButton">
-            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, false)"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
+            <button mat-raised-button (click)="onUpdateFriend(friend, false)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>
         </mat-list-item>
       </mat-list>
@@ -181,7 +181,7 @@
               </a>
             </div>
           <span *ngIf="editModeFriends" class="editFriendButton">
-            <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, true)"><mat-icon>add_circle_outline</mat-icon>{{ friend.getName() }}</button>
+            <button mat-raised-button (click)="onUpdateFriend(friend, true)" class="bgGreen"><mat-icon>add_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>
         </mat-list-item>
       </mat-list>
