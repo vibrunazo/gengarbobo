@@ -80,7 +80,7 @@ export async function userWriteFriend(newFriends, user) {
   if (!friend1 || !friend2) { throw(new Error('could not find members by id ' + friendsId)); }
   try {
     const member = getMember(user);
-    if (!member || !canIwriteFriend(friend1, member) || !canIwriteFriend(friend2, member)) {
+    if (!member || (!canIwriteFriend(friend1, member) && !canIwriteFriend(friend2, member))) {
       throw(new Error('cannot write to friends ' + friendsId));
     }
     const result = await writeFriendsRT(newFriends, member.name);

@@ -58,7 +58,7 @@
     </mat-card-content>
   </mat-card>
 
-  <div class="friendcontainer" *ngIf="player">
+  <div class="friendcontainer" *ngIf="player" [ngClass]="editModeFriends?'canEdit':'cannotEdit'" >
     <mat-card class="friends">
       <mat-list>
         <div class="friendsHeader">
@@ -171,8 +171,7 @@
         <mat-divider></mat-divider>
         <br />
         <mat-list-item *ngFor="let friend of nonfriends">
-          <span *ngIf="!editModeFriends">
-            <div class="friendNameplate">
+            <div class="friendNameplate" *ngIf="!editModeFriends">
               <span>
                 {{ friend.getTierIcon() }}
               </span>
@@ -181,7 +180,6 @@
                 {{ friend.getName() }}
               </a>
             </div>
-          </span>
           <span *ngIf="editModeFriends" class="editFriendButton">
             <button mat-raised-button color="accent" (click)="onUpdateFriend(friend, true)"><mat-icon>add_circle_outline</mat-icon>{{ friend.getName() }}</button>
           </span>

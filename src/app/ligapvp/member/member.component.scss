@@ -26,11 +26,6 @@ $card-margin: 6;
   // width: 10px;
 }
 
-.fabButt {
-  background-color: #855595 !important;
-  color: #424242 !important;
-}
-
 .editButtonLabel {
   font-size: 12px;
   margin-top: 4px;
@@ -51,7 +46,7 @@ $card-margin: 6;
 }
 
 .editFriendButton .mat-raised-button {
-  line-height: 24px !important;
+  line-height: 28px !important;
   padding-left: 5px;
   width: 120px;
   display: flex;
@@ -120,9 +115,11 @@ $card-margin: 6;
   margin-right: 6px;
 }
 
-
-.friendcontainer .mat-list-item {
+.cannotEdit .mat-list-item {
   height: 26px !important;
+}
+.canEdit .mat-list-item {
+  height: 32px !important;
 }
 
 .mat-list-item-content{
@@ -130,6 +127,7 @@ $card-margin: 6;
   padding-left: 4px !important;
   padding-right: 4px !important;
   overflow: hidden;
+  justify-content: center;
 }
 
 .friendItem {
