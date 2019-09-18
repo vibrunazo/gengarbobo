@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { LambidaService } from 'src/app/services/lambida.service';
 import { ServerLog } from 'functions/src/serverLog.model';
-import { Liga } from 'src/app/shared/ligapvp.module';
+import { Liga, PlayerData } from 'src/app/shared/ligapvp.module';
+import { Friendship } from 'functions/src/friends.model';
 
 @Component({
   selector: 'app-logs',
@@ -52,13 +53,17 @@ export class LogsComponent implements OnInit {
 
   readLogLine(log: ServerLog): LogItem {
     const date: Date = new Date(log.date);
-    const dateStr = date.toLocaleString();
+    let dateStr = date.toLocaleString();
+    let day = dateStr.split(' ')[0].split('/').slice(0, 2).join('/');
+    let time = dateStr.split(' ')[1].split(':').slice(0, 2).join(':');
+    dateStr = `${day} ${time}`;
     let action = '';
 
     let msg = '';
     if (log.target === 'rtdb/friends') {
-      action = 'editou amizade';
       const allFriends: string[] = Object.keys(log.body_new);
+      const values: Friendship[] = Object.values(log.body_new);
+      if (values[0].s) { action = 'ADD amizade'; } else { action = 'DEL amizade'; }
       const slice = allFriends.slice(0, 1);
       const leftCount = allFriends.length - slice.length;
       const left = leftCount ? `e ${leftCount} outros` : '';
@@ -66,8 +71,18 @@ export class LogsComponent implements OnInit {
     }
     if (log.target && log.target.slice(0, 12) === 'fsdb/members') {
       const pName = log.target.slice(13);
+      let m1;
+      if (log.body_new) {
+        const keys: string[] = Object.keys(log.body_new);
+        const values: PlayerData[] = Object.values(log.body_new);
+        const entries = Object.entries(log.body_new).toString().split(',').join(' ');
+        m1 = `ADD ${entries}`;
+      } else {
+        const entries = Object.entries(log.body_old).toString().split(',').join(' ');
+        m1 = `DEL ${entries}`;
+      }
       action = `editou membro`;
-      msg = `${pName}`;
+      msg = `${pName} ${m1}`;
 
     }
     msg = `${action}: ${msg}`;
