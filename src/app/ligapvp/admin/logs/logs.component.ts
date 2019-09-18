@@ -14,7 +14,7 @@ export class LogsComponent implements OnInit {
   user;
   myRoles: string[] = [];
   logs: ServerLog[] = [];
-  logStrings: string[] = [];
+  logItems: LogItem[] = [];
 
   constructor(private auth: AuthService, private lambida: LambidaService) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
@@ -36,41 +36,48 @@ export class LogsComponent implements OnInit {
   async checkLogs() {
     const response = await this.lambida.getLogs();
     this.logs = Object.values(response.logs);
-    this.logStrings = this.getStrings(this.logs);
+    // this.logStrings = this.getStrings(this.logs);
+    this.logItems = this.logs.map(l => this.readLogLine(l));
     console.log('logs');
     console.log(this.logs);
   }
 
-  getStrings(logs: ServerLog[]): string[] {
-    const results: string[] = [];
-    logs.forEach(l => {
-      results.push(readLogLine(l));
-    });
-    return results;
+  // getStrings(logs: ServerLog[]): string[] {
+  //   const results: string[] = [];
+  //   logs.forEach(l => {
+  //     results.push(this.readLogLine(l));
+  //   });
+  //   return results;
+  // }
 
-    function readLogLine(log: ServerLog): string {
-      let result = '';
-      const date: Date = new Date(log.date);
-      const dateStr = date.toLocaleString();
-      let action = '';
-      let msg = '';
-      if (log.target === 'rtdb/friends') {
-        action = 'editou amizade';
-        const allFriends: string[] = Object.keys(log.body_new);
-        const slice = allFriends.slice(0, 1);
-        const leftCount = allFriends.length - slice.length;
-        const left = leftCount ? `e ${leftCount} outros` : '';
-        msg = `${Liga.getFriendsNames(slice[0])} ${left}`;
-      }
-      if (log.target && log.target.slice(0, 12) === 'fsdb/members') {
-        const pName = log.target.slice(13);
-        action = `editou membro`;
-        msg = `${pName}`;
+  readLogLine(log: ServerLog): LogItem {
+    const date: Date = new Date(log.date);
+    const dateStr = date.toLocaleString();
+    let action = '';
 
-      }
-      result = `${dateStr}: ${log.author} ${action}: ${msg}`;
-      return result;
+    let msg = '';
+    if (log.target === 'rtdb/friends') {
+      action = 'editou amizade';
+      const allFriends: string[] = Object.keys(log.body_new);
+      const slice = allFriends.slice(0, 1);
+      const leftCount = allFriends.length - slice.length;
+      const left = leftCount ? `e ${leftCount} outros` : '';
+      msg = `${Liga.getFriendsNames(slice[0])} ${left}`;
     }
+    if (log.target && log.target.slice(0, 12) === 'fsdb/members') {
+      const pName = log.target.slice(13);
+      action = `editou membro`;
+      msg = `${pName}`;
+
+    }
+    msg = `${action}: ${msg}`;
+    const result: LogItem = {
+      date: dateStr,
+      author: log.author,
+      msg,
+    };
+    // result = `${dateStr}: ${log.author} ${action}: ${msg}`;
+    return result;
   }
 
   isAdmin(): boolean {
@@ -79,4 +86,10 @@ export class LogsComponent implements OnInit {
     }
     return false;
   }
+}
+
+interface LogItem {
+  date: string;
+  author: string;
+  msg: string;
 }

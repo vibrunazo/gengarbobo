@@ -1,0 +1,24 @@
+.mainCard {
+  min-width: 350px;
+  max-width: 600px;
+  height: 400px;
+  padding: 10px 2px;
+}
+
+.allLogs {
+  height: 380px;
+  overflow: auto;
+  font-family: monospace !important;
+}
+
+.logLine {
+  min-width: 400px;
+}
+
+.logDate {
+  color: #ffca28;
+}
+
+.logAuthor {
+  color: #bbb;
+}
