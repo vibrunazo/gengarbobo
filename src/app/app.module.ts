@@ -51,6 +51,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { EditDialogComponent } from './ligapvp/member/edit-dialog/edit-dialog.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { AdminComponent } from './ligapvp/admin/admin.component';
+import { LogsComponent } from './ligapvp/admin/logs/logs.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
@@ -79,7 +81,9 @@ const firebaseConfig = {
     LigapvpComponent,
     MemberComponent,
     MembertableComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    AdminComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,

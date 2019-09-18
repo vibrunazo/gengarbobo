@@ -847,6 +847,10 @@ export class Liga {
     return this.allPlayers.find(p => p.getName().toLowerCase() === name.toLowerCase());
   }
 
+  static getPLayerById(id: string): Player {
+    return this.allPlayers.find(p => p.getId().toLowerCase() === id.toLowerCase());
+  }
+
   // returns an array of all players whose winrate matches this Nivel
   // optionally, pass a list of allowed players, if ommited, all players are used
   static getPlayersOfNivel(nivel: Nivel, players?: Player[]): Player[] {
@@ -955,6 +959,14 @@ export class Liga {
 
   static getFriendships() {
     return this.allFriends;
+  }
+
+  static getFriendsNames(friendshipId: string): string {
+    const id1 = friendshipId.slice(0, 5);
+    const id2 = friendshipId.slice(5, 10);
+    const p1 = this.getPLayerById(id1);
+    const p2 = this.getPLayerById(id2);
+    return `${p1.getName()}❤️${p2.getName()}`;
   }
 }
 

@@ -6,6 +6,7 @@ import { DexComponent } from './dex/dex.component';
 import { IvComponent } from './iv/iv.component';
 import { LigapvpComponent } from './ligapvp/ligapvp.component';
 import { MemberComponent } from './ligapvp/member/member.component';
+import { AdminComponent } from './ligapvp/admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: NewsComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'liga', component: LigapvpComponent },
   { path: 'liga/m/:id', component: MemberComponent },
+  { path: 'liga/admin', component: AdminComponent },
 ];
 
 @NgModule({

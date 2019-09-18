@@ -32,40 +32,50 @@ export class LambidaService {
     this.updateLigaMembers();
   }
 
+  async getLogs(): Promise<any>  {
+    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/getLog';
+    try {
+      return await this.sendMessage(url);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   async sendFriendUpdate(newFriend) {
-    const user = this.auth.user;
+    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/updateFriend';
     const body = {
       friend: newFriend,
     };
-    let token: string;
     try {
-      token = await user.getIdToken();
-    } catch (error) {
-      token = '';
-    }
-    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/updateFriend';
-    const headers = new HttpHeaders({Authorization: 'Bearer ' + token });
-    try {
-      return await this.http.post(url, body, { headers }).toPromise();
+      return await this.sendMessage(url, body);
     } catch (e) {
       console.log(e);
     }
   }
 
   async sendMemberUpdate(newData: PlayerData): Promise<any> {
-    const user = this.auth.user;
+    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/updateMember';
     const body = {
       member: newData,
     };
+    try {
+      return await this.sendMessage(url, body);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async sendMessage(url, body?): Promise<any>  {
+    const user = this.auth.user;
     let token: string;
     try {
       token = await user.getIdToken();
     } catch (error) {
       token = '';
     }
-    const url = 'https://us-central1-gengarbobo.cloudfunctions.net/api/updateMember';
     const headers = new HttpHeaders({Authorization: 'Bearer ' + token });
     try {
+      if (!body) { return await this.http.get(url, { headers }).toPromise(); }
       return await this.http.post(url, body, { headers }).toPromise();
     } catch (e) {
       console.log(e);

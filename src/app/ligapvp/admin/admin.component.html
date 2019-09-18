@@ -1,0 +1,10 @@
+<div *ngIf="!isAdmin()">
+  No admin
+</div>
+
+<div *ngIf="isAdmin()">
+  <mat-card>
+      Painel de Admin
+  </mat-card>
+  <app-logs></app-logs>
+</div>

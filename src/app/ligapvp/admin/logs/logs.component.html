@@ -1,0 +1,14 @@
+<div *ngIf="!isAdmin()">
+  no logs
+</div>
+
+
+<mat-card *ngIf="isAdmin()">
+    logs
+    <mat-divider></mat-divider>
+    <div *ngIf="logs.length > 0">
+      <div *ngFor="let log of logStrings" class="mat-body">
+        {{ log }}
+      </div>
+    </div>
+</mat-card>
