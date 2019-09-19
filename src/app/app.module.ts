@@ -53,6 +53,7 @@ import { EditDialogComponent } from './ligapvp/member/edit-dialog/edit-dialog.co
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { AdminComponent } from './ligapvp/admin/admin.component';
 import { LogsComponent } from './ligapvp/admin/logs/logs.component';
+import { TourneyComponent } from './ligapvp/tourney/tourney.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
@@ -83,7 +84,8 @@ const firebaseConfig = {
     MembertableComponent,
     EditDialogComponent,
     AdminComponent,
-    LogsComponent
+    LogsComponent,
+    TourneyComponent
   ],
   imports: [
     BrowserModule,
