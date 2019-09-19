@@ -41,4 +41,8 @@ export class MainnavComponent implements OnInit {
 
   }
 
+  isAdmin(): boolean {
+    return this.auth.isAdmin();
+  }
+
 }

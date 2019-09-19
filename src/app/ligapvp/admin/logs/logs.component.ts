@@ -62,10 +62,10 @@ export class LogsComponent implements OnInit {
       const allFriends: string[] = Object.keys(log.body_new);
       const values: Friendship[] = Object.values(log.body_new);
       if (values[0].s) { action = 'ADD amizade'; } else { action = 'DEL amizade'; }
-      const slice = allFriends.slice(0, 1);
+      const slice = allFriends.slice(0, 5);
       const leftCount = allFriends.length - slice.length;
       const left = leftCount ? `e ${leftCount} outros` : '';
-      msg = `${Liga.getFriendsNames(slice[0])} ${left}`;
+      msg = `${Liga.getManyFriendsNames(slice)} ${left}`;
     }
     if (log.target && log.target.slice(0, 12) === 'fsdb/members') {
       const pName = log.target.slice(13);
@@ -94,10 +94,7 @@ export class LogsComponent implements OnInit {
   }
 
   isAdmin(): boolean {
-    if (this.myRoles.includes('admin') || this.myRoles.includes('site')) {
-      return true;
-    }
-    return false;
+    return this.auth.isAdmin();
   }
 }
 

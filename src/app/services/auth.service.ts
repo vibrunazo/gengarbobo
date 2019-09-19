@@ -79,6 +79,13 @@ export class AuthService {
     if (this.myRoles.includes('name:' + player.getName().split('.').join('').toLowerCase())) { return [ Right.Personal, Right.Friends]; }
     return [];
   }
+
+  isAdmin(): boolean {
+    if (this.myRoles.includes('admin') || this.myRoles.includes('site')) {
+      return true;
+    }
+    return false;
+  }
 }
 
 /**

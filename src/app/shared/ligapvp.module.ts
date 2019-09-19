@@ -982,6 +982,13 @@ export class Liga {
     return this.allFriends;
   }
 
+
+  static getManyFriendsNames(ids: string[]): string {
+    const resultArray = ids.map(id => this.getFriendsNames(id));
+    const result = resultArray.join(', ');
+    return result;
+  }
+
   static getFriendsNames(friendshipId: string): string {
     const id1 = friendshipId.slice(0, 5);
     const id2 = friendshipId.slice(5, 10);

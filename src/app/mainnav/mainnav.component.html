@@ -41,7 +41,10 @@
           <span class="username">
             {{ user.displayName }}
           </span>
-          <a [routerLink]="" (click)="auth.signOut()">Logout</a>
+          <div>
+            <a routerLink="liga/admin" *ngIf="isAdmin()">Painel de Admin - </a>
+            <a [routerLink]="" (click)="auth.signOut()">Logout</a>
+          </div>
         </span>
       </div>
       <ng-template #login>
