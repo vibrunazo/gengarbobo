@@ -6,16 +6,20 @@
   margin-left: 5px;
 }
 
+.options .rButt {
+  margin-left: 5px;
+}
+
 .tiersAndGroups {
   display: flex;
   flex-direction: row;
   height: 100%;
   width: 100%;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 
 .tiers {
-  width: 50%;
+  max-width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,7 +32,8 @@
 }
 
 .groups {
-  width: 50%;
+  // max-width: 30%;
+  // width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -65,7 +70,7 @@
   width: 20px;
 }
 
-.rButt {
+.tier .rButt {
   margin-left: auto;
   line-height: 26px !important;
 }

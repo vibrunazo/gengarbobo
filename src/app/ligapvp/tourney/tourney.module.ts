@@ -70,6 +70,12 @@ export class SuperLiga extends Tourney {
     this.groups[group].delPlayer(player);
   }
 
+  clear() {
+    this.groups.forEach(g => {
+      g.clear();
+    });
+  }
+
   canAddPlayerToGroup(player: Player, group: number, teamCheck = true) {
     if (teamCheck && this.groups[group].hasTeam(player.getTeam())) { return false; }
     if (this.groups[group].hasPlayer(player)) { return false; }
@@ -142,6 +148,10 @@ class SLGroup {
   delPlayer(player: Player) {
     // if (!this.players.includes(player)) { return; }
     this.players = this.players.filter(p => !p.is(player));
+  }
+
+  clear() {
+    this.players = [];
   }
 
   hasPlayer(player: Player) {

@@ -50,7 +50,44 @@ export class TourneyComponent implements OnInit {
     return i === this.selectedGroup;
   }
 
-  onClickRandom(tier) {
+  onClearAll() {
+    this.sl.clear();
+  }
+
+  onRandomAll() {
+    this.sl.clear();
+    this.teamCheck = true;
+    const inter = setInterval(randomNext.bind(this), 100);
+    setTimeout(() => clearInterval(inter), 5000);
+    this.selectedGroup = 0;
+    let currentTier = 0;
+    function randomNext() {
+      let tier = this.tiers[currentTier];
+      if (this.teamCheck) {
+        const left = tier.filter(p => this.canAddPlayer(p));
+        const length = left.length;
+        if (length === 0) { this.teamCheck = false; }
+      }
+      this.onClickRandom(tier);
+      this.selectedGroup++;
+      if (this.selectedGroup > 7) {
+        this.selectedGroup = 0;
+        currentTier++;
+        if (currentTier > 4) {
+          // console.log('done? +1 no H');
+          clearInterval(inter);
+          tier = this.tiers[4];
+          this.selectedGroup = 7;
+          this.onClickRandom(tier);
+          this.teamCheck = true;
+        }
+      }
+
+    }
+
+  }
+
+  onClickRandom(tier: Player[]) {
     const left = tier.filter(p => this.canAddPlayer(p));
     const length = left.length;
     if (length === 0) { return; }

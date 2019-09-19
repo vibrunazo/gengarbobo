@@ -7,6 +7,8 @@ Torneio não encontrado
       <span class="options">
         <mat-slide-toggle [(ngModel)]="teamCheck">Evitar Mesmo time</mat-slide-toggle>
         <mat-slide-toggle [(ngModel)]="showWinrate">Mostrar %vitórias</mat-slide-toggle>
+        <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>refresh</mat-icon>random all</button>
+        <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Clear all</button>
       </span>
   </mat-card>
   <br>
@@ -25,7 +27,7 @@ Torneio não encontrado
                   {{ p.getTierIcon() }}
                 </span>
                 <img [src]="p.getTeamIcon()" class="teamIcon" />
-                <a [routerLink]="" queryParamsHandling="merge">
+                <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
                   {{ p.getName() }}
                 </a>
                 <span class="wr" *ngIf="showWinrate">
@@ -53,7 +55,7 @@ Torneio não encontrado
                 {{ p.getTierIcon() }}
               </span>
               <img [src]="p.getTeamIcon()" class="teamIcon" />
-              <a [routerLink]="" queryParamsHandling="merge">
+              <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
                 {{ p.getName() }}
               </a>
               <span class="wr" *ngIf="showWinrate">
