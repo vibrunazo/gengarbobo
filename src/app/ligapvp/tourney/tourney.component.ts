@@ -74,6 +74,7 @@ export class TourneyComponent implements OnInit {
         if (length === 0) { this.teamCheck = false; }
       }
       this.onClickRandom(tier);
+      this.teamCheck = true;
       this.selectedGroup++;
       if (this.selectedGroup > 7) {
         this.selectedGroup = 0;

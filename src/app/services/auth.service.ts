@@ -76,7 +76,7 @@ export class AuthService {
     if (this.myRoles.includes('site')) { return [Right.All]; }
     if (this.myRoles.includes('friends') && this.myRoles.includes('team:' + player.getTeam().toLowerCase())) {
       return [Right.Friends]; }
-    if (this.myRoles.includes('name:' + player.getName().split('.').join('').toLowerCase())) { return [ Right.Personal, Right.Friends]; }
+    if (this.myRoles.includes('name:' + player.getName().split('.').join('').toLowerCase())) { return [ Right.Personal]; }
     return [];
   }
 
