@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { MainnavComponent } from './mainnav/mainnav.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent {
   @ViewChild(MainnavComponent, {static: false}) navcomponent: MainnavComponent;
 
   constructor(private router: Router) {
+    if (!environment.production) { return; }
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         // (<any>window).ga("set", "page", event.urlAfterRedirects);
