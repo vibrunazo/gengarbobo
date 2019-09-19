@@ -1,7 +1,9 @@
 import Players from './ligapvp.json';
 import Friends from './friends.json';
 import Inscritos from './inscritos.json';
+import Tourneys from '../ligapvp/tourney/tourneys.json';
 import { Friendship } from 'functions/src/friends.model.js';
+import { Tourney, TourneyData } from '../ligapvp/tourney/tourney.module.js';
 
 export interface PlayerData {
   name: string;
@@ -531,6 +533,12 @@ export class Player {
     }
   }
 
+  is(p: Player): boolean {
+    return p.name.toLowerCase() === this.name.toLowerCase();
+  }
+  isTeam(team: string): boolean {
+    return team.toLowerCase() === this.team.toLowerCase();
+  }
   getName(): string {
     return this.name;
   }
@@ -824,6 +832,13 @@ export class Player {
 export class Liga {
   static allPlayers: Player[] = Players.map(p => new Player(p));
   static allFriends = Friends;
+  static allTourneys: TourneyData[] = Tourneys;
+
+
+  static getTourneyById(id: string): TourneyData {
+    const tourney = this.allTourneys.find(t => t.id === id);
+    return tourney;
+  }
 
   // returns an array with all Players competing
   static getAllPlayers(): Player[] {

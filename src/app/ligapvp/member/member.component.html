@@ -186,6 +186,11 @@
               <a [routerLink]="['/liga/m', friend.getName()]" queryParamsHandling="merge">
                 {{ friend.getName() }}
               </a>
+              <div *ngIf="player.getCode()" class="wr">
+                  <span class="">
+                    <span class="code1">{{ friend.getCode(1) }}</span><span class="code2">{{ friend.getCode(2) }}</span><span class="code3">{{ friend.getCode(3) }}</span>
+                  </span>
+                </div>
             </div>
           <span *ngIf="editModeFriends" class="editFriendButton">
             <button mat-raised-button (click)="onUpdateFriend(friend, true)" class="bgGreen"><mat-icon>add_circle_outline</mat-icon>{{ friend.getName() }}</button>

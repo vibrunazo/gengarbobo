@@ -3,7 +3,7 @@ $card-margin: 6;
 
 .allCardsContainer {
   min-width: 320px;
-  max-width: 480px;
+  max-width: 580px;
 }
 
 .playercard {
@@ -40,7 +40,7 @@ $card-margin: 6;
   // top: 40px;
 }
 .nonfriendsHeader .edit {
-  // margin-right: 6px;
+  margin-right: 12px;
   margin-top: -2px;
   flex-direction: column;
 }
@@ -110,6 +110,7 @@ $card-margin: 6;
 
 .nonfriends {
   margin-right: 6px;
+  min-width: 220px;
 }
 
 .cannotEdit .mat-list-item {

@@ -1,1 +1,61 @@
-<p>tourney works!</p>
+<span *ngIf='!tourneyData'>
+Torneio não encontrado
+</span>
+<div *ngIf='tourneyData'>
+  <mat-card>
+      {{ sl.name }}
+  </mat-card>
+  <br>
+
+  <div class="tiersAndGroups">
+    <div class="tiers">
+      <div class="" *ngFor="let t of tiers;let i = index">
+        <mat-card class="tier">
+          Tier {{ i + 1 }}
+          <div *ngFor="let p of t">
+            <div class="nameplate" >
+                <span>
+                  {{ p.getTierIcon() }}
+                </span>
+                <img [src]="p.getTeamIcon()" class="teamIcon" />
+                <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
+                  {{ p.getName() }}
+                </a>
+                <span class="wr">
+                  {{ p.getWinrate() }}%
+                </span>
+                <div class="addButton">
+                  <button mat-raised-button (click)="onAddPlayer(p)" class="bgGreen" [ngClass]="canAddPlayer(p)?'':'cannot'"><mat-icon>add_circle_outline</mat-icon>add</button>
+                </div>
+              </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="groups">
+      <div class="" *ngFor="let g of sl.groups;let i = index">
+        <mat-card class="group" (click)="onClickGroup(i)" [ngClass]="isSelected(i)?'selected':''">
+          Grupo {{ g.name }}
+          <div *ngFor="let p of sl.groups[i].players">
+              <div class="nameplate" >
+                  <span>
+                    {{ p.getTierIcon() }}
+                  </span>
+                  <img [src]="p.getTeamIcon()" class="teamIcon" />
+                  <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
+                    {{ p.getName() }}
+                  </a>
+                  <span class="wr">
+                    {{ p.getWinrate() }}%
+                  </span>
+                  <div class="addButton">
+                    <button mat-raised-button (click)="onDelPlayer(p)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
+                  </div>
+                </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
