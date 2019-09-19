@@ -85,18 +85,15 @@ $card-margin: 6;
   // color: rgba(200, 255, 200, 0.7);
   margin: 0 0.3em;
 }
-
-// $paramEditSize: 18px;
-// .playerParam .mat-icon-button {
-//   height: $paramEditSize; width: $paramEditSize;
-//   line-height: 20px;
-//   margin: 0 6px;
-// }
-// .playerParam mat-icon {
-//   font-size: $paramEditSize;
-//   height: $paramEditSize; width: $paramEditSize;
-//   line-height: $paramEditSize !important;
-// }
+.Gold {
+  color: #ffca28;
+}
+.Silver {
+  color: lightgray;
+}
+.Bronze {
+  color: #be7f42;
+}
 
 .friendcontainer {
   width: 100%;

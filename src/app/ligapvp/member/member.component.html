@@ -44,6 +44,10 @@
         <span class="codeLabel">Awards</span>
         <span class="codes">{{ player.getMedals() || 0 }}</span>
       </div>
+      <div class="playerParam">
+        <span class="codeLabel">Rank Liga VII</span>
+        <span class="codes" [ngClass]="player.getRankByTourney('liga7')">{{ player.getRankByTourney('liga7') }}</span>
+      </div>
       <div *ngIf="player.getCode()" class="playerParam">
         <span class="codeLabel">Acesso</span>
         <span class="codes">{{ player.getRolesDesc() }}</span>
@@ -74,6 +78,9 @@
               <mat-option value="all">Todos</mat-option>
               <mat-option value="superliga4">Superliga IV</mat-option>
               <mat-option value="liguinha3">Liguinha III</mat-option>
+              <mat-option value="liga7-gold">Gold VII Liga</mat-option>
+              <mat-option value="liga7-silver">Silver VII Liga</mat-option>
+              <mat-option value="liga7-bronze">Bronze VII Liga</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -86,7 +93,7 @@
               {{ friend.getTierIcon() }}
             </span>
             <img [src]="friend.getTeamIcon()" class="teamIcon" />
-            <a [routerLink]="['/liga/m', friend.getName()]">
+            <a [routerLink]="['/liga/m', friend.getName()]" queryParamsHandling="merge">
               {{ friend.getName() }}
             </a>
             <span class="wr">
@@ -105,7 +112,7 @@
               {{ friend.getTierIcon() }}
             </span>
             <img [src]="friend.getTeamIcon()" class="teamIcon" />
-            <a [routerLink]="['/liga/m', friend.getName()]">
+            <a [routerLink]="['/liga/m', friend.getName()]" queryParamsHandling="merge">
               {{ friend.getName() }}
             </a>
             <span class="wr">
@@ -124,7 +131,7 @@
               {{ friend.getTierIcon() }}
             </span>
             <img [src]="friend.getTeamIcon()" class="teamIcon" />
-            <a [routerLink]="['/liga/m', friend.getName()]">
+            <a [routerLink]="['/liga/m', friend.getName()]" queryParamsHandling="merge">
               {{ friend.getName() }}
             </a>
             <span class="wr">
@@ -144,7 +151,7 @@
               {{ friend.getTierIcon() }}
             </span>
             <img [src]="friend.getTeamIcon()" class="teamIcon" />
-            <a [routerLink]="['/liga/m', friend.getName()]">
+            <a [routerLink]="['/liga/m', friend.getName()]" queryParamsHandling="merge">
               {{ friend.getName() }}
             </a>
             <span class="wr">
@@ -176,7 +183,7 @@
                 {{ friend.getTierIcon() }}
               </span>
               <img [src]="friend.getTeamIcon()" class="teamIcon" />
-              <a [routerLink]="['/liga/m', friend.getName()]">
+              <a [routerLink]="['/liga/m', friend.getName()]" queryParamsHandling="merge">
                 {{ friend.getName() }}
               </a>
             </div>

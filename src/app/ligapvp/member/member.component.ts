@@ -30,8 +30,9 @@ export class MemberComponent implements OnInit {
   canIedit = false;
   canIeditFriends = false;
   editModeFriends = false;
+  queryFilter = '';
 
-  constructor(private route: ActivatedRoute, private auth: AuthService,
+  constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router,
               private lambida: LambidaService, public dialog: MatDialog) {
     this.authsub = auth.user$.subscribe(user => this.updateUser(user));
     this.lambida.dataState$.subscribe(this.updateData.bind(this));
@@ -43,7 +44,13 @@ export class MemberComponent implements OnInit {
         this.setMember(params.id);
       }
     });
-    // console.log(Liga.allFriends);
+    this.route.queryParamMap.subscribe(queryParamMap => {
+      this.queryFilter = queryParamMap.get('filter');
+      if (this.queryFilter) {
+        this.filter = this.queryFilter;
+      }
+
+    });
 
   }
 
@@ -53,6 +60,21 @@ export class MemberComponent implements OnInit {
    */
   updateData() {
     this.setMember(this.name);
+  }
+
+  updateUrlParams() {
+    const filterParam = this.filter === 'all' ? null : this.filter;
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        filter: filterParam
+      },
+      queryParamsHandling: 'merge',
+      // preserve the existing query params in the route
+      skipLocationChange: false
+      // do not trigger navigation
+    });
   }
 
   onEditFriends() {
@@ -148,6 +170,7 @@ export class MemberComponent implements OnInit {
 
   changeFilter() {
     this.setMember(this.name);
+    this.updateUrlParams();
   }
 
   setMember(member) {

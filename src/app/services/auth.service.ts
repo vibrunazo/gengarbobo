@@ -64,8 +64,6 @@ export class AuthService {
 
   setRoles(newRoles: string[]) {
     this.myRoles = newRoles;
-    console.log('setting roles on auth');
-    console.log(this.myRoles);
   }
 
   getRoles(): string[] {

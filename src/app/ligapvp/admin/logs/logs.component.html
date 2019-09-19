@@ -4,14 +4,16 @@
 
 
 <mat-card *ngIf="isAdmin()" class="mainCard">
-    logs
-    <mat-divider></mat-divider>
-    <div *ngIf="logs.length > 0" class="allLogs">
-      <div *ngFor="let log of logItems.slice().reverse()" class="logLine">
-        <span class="logDate">{{ log.date }} </span>
-        <span class="logAuthor">{{ log.author }} </span>
-        <span class="logMsg">{{ log.msg }}</span>
-        <br>
-      </div>
+  <mat-card-header>
+    Logs
+  </mat-card-header>
+  <br><mat-divider></mat-divider>
+  <div *ngIf="logs.length > 0" class="allLogs">
+    <div *ngFor="let log of logItems.slice().reverse()" class="logLine">
+      <span class="logDate">{{ log.date }} </span>
+      <span class="logAuthor">{{ log.author }} </span>
+      <span class="logMsg">{{ log.msg }}</span>
+      <br>
     </div>
+  </div>
 </mat-card>

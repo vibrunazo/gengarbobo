@@ -39,8 +39,6 @@ export class LogsComponent implements OnInit {
     this.logs = Object.values(response.logs);
     // this.logStrings = this.getStrings(this.logs);
     this.logItems = this.logs.map(l => this.readLogLine(l));
-    console.log('logs');
-    console.log(this.logs);
   }
 
   // getStrings(logs: ServerLog[]): string[] {
@@ -54,8 +52,8 @@ export class LogsComponent implements OnInit {
   readLogLine(log: ServerLog): LogItem {
     const date: Date = new Date(log.date);
     let dateStr = date.toLocaleString();
-    let day = dateStr.split(' ')[0].split('/').slice(0, 2).join('/');
-    let time = dateStr.split(' ')[1].split(':').slice(0, 2).join(':');
+    const day = dateStr.split(' ')[0].split('/').slice(0, 2).join('/');
+    const time = dateStr.split(' ')[1].split(':').slice(0, 2).join(':');
     dateStr = `${day} ${time}`;
     let action = '';
 

@@ -711,6 +711,14 @@ export class Player {
     if (!winrate) { this.winrate = 0; }
   }
 
+  getRankByTourney(tourney: string): string {
+    const goldName = `${tourney}-gold`;
+    if (Inscritos[goldName].includes(this.getName().toLowerCase())) { return 'Gold'; }
+    const silverName = `${tourney}-silver`;
+    if (Inscritos[silverName].includes(this.getName().toLowerCase())) { return 'Silver'; }
+    return 'Bronze';
+  }
+
 
   getFriends(): Player[] {
     const result: Player[] = [];
@@ -881,11 +889,24 @@ export class Liga {
   }
 
   // returns all players signed up for this tourney
-  static getInscritos(tourney: string): Player[] {
-    const result: Player[] = [];
-    const inscritos: string[] = Inscritos[tourney];
-    inscritos.forEach(p => result.push(this.getPlayerByName(p)));
-
+  static getInscritos(tourney = 'all'): Player[] {
+    let result: Player[] = [];
+    if (!tourney) { tourney = 'all'; }
+    if (tourney.slice(-7) === '-bronze') {
+      const tourneyName = tourney.split('-')[0];
+      const goldName =  `${tourneyName}-gold`;
+      const silverName =  `${tourneyName}-silver`;
+      const allPlayers = this.allPlayers;
+      const goldPlayers = Inscritos[goldName];
+      const silverPlayers = Inscritos[silverName];
+      const bronzePlayers = allPlayers.filter(p => {
+        return (!goldPlayers.includes(p.getName().toLowerCase()) &&  !silverPlayers.includes(p.getName().toLowerCase()));
+      });
+      result = bronzePlayers;
+    } else {
+      const inscritos: string[] = Inscritos[tourney];
+      inscritos.forEach(p => result.push(this.getPlayerByName(p)));
+    }
     return result;
   }
 
