@@ -41,6 +41,7 @@
 
 .groups {
   // max-width: 30%;
+  // min-width: 100px;
   // width: 100%;
   display: flex;
   flex-direction: row;
@@ -48,7 +49,7 @@
 }
 .group {
   max-width: 180px;
-  // min-width: 180px;
+  // min-width: 100px;
   // max-width: 200px;
   // min-width: 150px;
   width: 100%;

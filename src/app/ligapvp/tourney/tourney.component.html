@@ -8,7 +8,7 @@ Torneio não encontrado
         <mat-slide-toggle [(ngModel)]="editMode">Editar</mat-slide-toggle>
         <mat-slide-toggle [(ngModel)]="teamCheck" *ngIf="editMode">Evitar Mesmo time</mat-slide-toggle>
         <mat-slide-toggle [(ngModel)]="showWinrate" *ngIf="editMode">Mostrar %vitórias</mat-slide-toggle>
-        <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>refresh</mat-icon>random all</button>
+        <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>shuffle</mat-icon>random all</button>
         <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Apaga tudo</button>
       </span>
   </mat-card>
@@ -20,7 +20,7 @@ Torneio não encontrado
         <mat-card class="tier">
           <mat-card-header>
             Tier {{ i + 1 }}
-            <button mat-raised-button (click)="onClickRandom(t)" color="accent" class="rButt" [ngClass]="true?'':'cannot'" [disabled]="false"><mat-icon>refresh</mat-icon>random</button>
+            <button mat-raised-button (click)="onClickRandom(t)" color="accent" class="rButt" [ngClass]="true?'':'cannot'" [disabled]="false"><mat-icon>shuffle</mat-icon>random</button>
           </mat-card-header>
           <div *ngFor="let p of t">
             <div class="nameplate" >
