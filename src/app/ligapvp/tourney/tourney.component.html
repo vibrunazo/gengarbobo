@@ -5,10 +5,11 @@ Torneio não encontrado
   <mat-card>
       {{ sl.name }}
       <span class="options">
-        <mat-slide-toggle [(ngModel)]="teamCheck">Evitar Mesmo time</mat-slide-toggle>
-        <mat-slide-toggle [(ngModel)]="showWinrate">Mostrar %vitórias</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="editMode">Editar</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="teamCheck" *ngIf="editMode">Evitar Mesmo time</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="showWinrate" *ngIf="editMode">Mostrar %vitórias</mat-slide-toggle>
         <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>refresh</mat-icon>random all</button>
-        <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Clear all</button>
+        <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Apaga tudo</button>
       </span>
   </mat-card>
   <br>
@@ -30,11 +31,13 @@ Torneio não encontrado
                 <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
                   {{ p.getName() }}
                 </a>
-                <span class="wr" *ngIf="showWinrate">
-                  {{ p.getWinrate() }}%
-                </span>
-                <div class="addButton">
-                  <button mat-raised-button (click)="onAddPlayer(p)" class="bgGreen" [ngClass]="canAddPlayer(p)?'':'cannot'" [disabled]="!canAddPlayer(p)"><mat-icon>add_circle_outline</mat-icon>add</button>
+                <div class="nameTail">
+                  <span class="wr" *ngIf="showWinrate">
+                    {{ p.getWinrate() }}%
+                  </span>
+                  <div class="addButton">
+                    <button mat-raised-button (click)="onAddPlayer(p)" class="bgGreen" [ngClass]="canAddPlayer(p)?'':'cannot'" [disabled]="!canAddPlayer(p)" *ngIf="editMode"><mat-icon>add_circle_outline</mat-icon>add</button>
+                  </div>
                 </div>
               </div>
           </div>
@@ -48,9 +51,9 @@ Torneio não encontrado
           Grupo {{ g.name }}
           <div *ngFor="let p of sl.groups[i].players">
             <div class="nameplate" >
-              <span>
+              <div>
                 {{ p.getTourneyRank('sl4') }}
-              </span>
+              </div>
               <span>
                 {{ p.getTierIcon() }}
               </span>
@@ -58,11 +61,13 @@ Torneio não encontrado
               <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
                 {{ p.getName() }}
               </a>
-              <span class="wr" *ngIf="showWinrate">
-                {{ p.getWinrate() }}%
-              </span>
-              <div class="addButton">
-                <button mat-raised-button (click)="onDelPlayer(p)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
+              <div class="nameTail">
+                <span class="wr" *ngIf="showWinrate">
+                  {{ p.getWinrate() }}%
+                </span>
+                <div class="addButton">
+                  <button mat-raised-button (click)="onDelPlayer(p)" class="bgRed" *ngIf="editMode"><mat-icon>remove_circle_outline</mat-icon>del</button>
+                </div>
               </div>
             </div>
           </div>

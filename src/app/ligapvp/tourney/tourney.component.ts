@@ -17,6 +17,7 @@ export class TourneyComponent implements OnInit {
   sl: SuperLiga;
   tiers: Player[][] = [];
   selectedGroup = 0;
+  editMode = false;
   teamCheck = true;
   showWinrate = false;
   ls;
@@ -91,14 +92,14 @@ export class TourneyComponent implements OnInit {
 
   }
 
-  onClickRandom(tier: Player[]) {
+  onClickRandom(tier: Player[], teamCheck = this.teamCheck) {
     const left = tier.filter(p => this.canAddPlayer(p));
     const length = left.length;
     if (length === 0) { return; }
     const rngPick = getRandomInt(0, length - 1);
     const rngPlayer = left[rngPick];
     // console.log(rngPlayer);
-    this.sl.addPlayer(rngPlayer, this.selectedGroup, this.teamCheck);
+    this.sl.addPlayer(rngPlayer, this.selectedGroup, teamCheck);
     this.saveLs();
 
     /**

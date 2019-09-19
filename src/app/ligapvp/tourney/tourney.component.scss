@@ -56,13 +56,19 @@
 }
 .nameplate a {
   overflow: hidden !important;
-  width: 100%;
+}
+.nameplate .nameTail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: flex-end;
 }
 
 .wr {
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  margin-left: auto;
+  // margin-left: auto;
 }
 
 .teamIcon {
