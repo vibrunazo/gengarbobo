@@ -15,20 +15,28 @@
   flex-direction: row;
   height: 100%;
   width: 100%;
+  min-width: 400px;
+  justify-content: space-around;
   // flex-wrap: wrap;
 }
 
 .tiers {
   max-width: 50%;
+  widows: 100%;
+  // width: 100px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .tier {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
+  min-width: 100px;
   margin: 3px;
   padding: 4px;
+  // overflow: hidden;
 }
 
 .groups {
@@ -39,11 +47,15 @@
   flex-wrap: wrap;
 }
 .group {
-  // max-width: 200px;
+  max-width: 180px;
   // min-width: 180px;
-  width: 200px;
+  // max-width: 200px;
+  // min-width: 150px;
+  width: 100%;
   margin: 3px;
   padding: 4px;
+  height: fit-content;
+  min-height: 100px;
 }
 
 .nameplate {
@@ -55,7 +67,8 @@
   overflow: hidden;
 }
 .nameplate a {
-  overflow: hidden !important;
+  // overflow: hidden !important;
+  width: 10px;
 }
 .nameplate .nameTail {
   display: flex;
@@ -68,6 +81,7 @@
 .wr {
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
+  background-color: #424242;
   // margin-left: auto;
 }
 
@@ -79,6 +93,7 @@
 .tier .rButt {
   margin-left: auto;
   line-height: 26px !important;
+  padding: 3px;
 }
 
 .addButton .mat-raised-button {

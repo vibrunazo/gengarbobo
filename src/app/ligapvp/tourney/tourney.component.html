@@ -16,7 +16,7 @@ Torneio não encontrado
 
   <div class="tiersAndGroups">
     <div class="tiers">
-      <div class="" *ngFor="let t of tiers;let i = index">
+      <ng-container class="" *ngFor="let t of tiers;let i = index">
         <mat-card class="tier">
           <mat-card-header>
             Tier {{ i + 1 }}
@@ -42,11 +42,11 @@ Torneio não encontrado
               </div>
           </div>
         </mat-card>
-      </div>
+      </ng-container>
     </div>
 
     <div class="groups">
-      <div class="" *ngFor="let g of sl.groups;let i = index">
+      <ng-container class="" *ngFor="let g of sl.groups;let i = index">
         <mat-card class="group" (click)="onClickGroup(i)" [ngClass]="isSelected(i)?'selected':''">
           Grupo {{ g.name }}
           <div *ngFor="let p of sl.groups[i].players">
@@ -72,7 +72,7 @@ Torneio não encontrado
             </div>
           </div>
         </mat-card>
-      </div>
+      </ng-container>
     </div>
   </div>
 </div>
