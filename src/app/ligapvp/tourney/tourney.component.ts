@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tourney, SuperLiga } from './tourney.module';
 import { Liga, Player } from 'src/app/shared/ligapvp.module';
+import { AuthService } from 'src/app/services/auth.service';
+import { LambidaService } from 'src/app/services/lambida.service';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-tourney',
@@ -18,7 +21,8 @@ export class TourneyComponent implements OnInit {
   showWinrate = false;
   ls;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router,
+              private lambida: LambidaService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
