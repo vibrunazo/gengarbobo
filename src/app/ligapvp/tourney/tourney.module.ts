@@ -56,8 +56,13 @@ export class SuperLiga extends Tourney {
     return result;
   }
 
-  addPlayer(player: Player, group: number) {
-    if (this.canAddPlayerToGroup(player, group)) {
+  addPlayerByName(name: string, group: number) {
+    const p = Liga.getPlayerByName(name);
+    this.addPlayer(p, group, false);
+  }
+
+  addPlayer(player: Player, group: number, teamCheck = true) {
+    if (this.canAddPlayerToGroup(player, group, teamCheck)) {
       this.groups[group].addPlayer(player);
     }
   }
@@ -65,8 +70,8 @@ export class SuperLiga extends Tourney {
     this.groups[group].delPlayer(player);
   }
 
-  canAddPlayerToGroup(player: Player, group: number) {
-    if (this.groups[group].hasTeam(player.getTeam())) { return false; }
+  canAddPlayerToGroup(player: Player, group: number, teamCheck = true) {
+    if (teamCheck && this.groups[group].hasTeam(player.getTeam())) { return false; }
     if (this.groups[group].hasPlayer(player)) { return false; }
     if (this.hasPlayer(player)) { return false; }
     return true;

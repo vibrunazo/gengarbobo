@@ -1,3 +1,11 @@
+.options {
+  margin-left: 40px;
+}
+
+.options .mat-slide-toggle {
+  margin-left: 5px;
+}
+
 .tiersAndGroups {
   display: flex;
   flex-direction: row;
@@ -35,6 +43,7 @@
 
 .nameplate {
   width: 100%;
+  // max-width: 150px;
   display: flex;
   align-items: flex-end;
   // justify-content: space-between;
@@ -42,6 +51,7 @@
 }
 .nameplate a {
   overflow: hidden !important;
+  width: 100%;
 }
 
 .wr {
@@ -55,15 +65,21 @@
   width: 20px;
 }
 
+.rButt {
+  margin-left: auto;
+  line-height: 26px !important;
+}
 
 .addButton .mat-raised-button {
   line-height: 26px !important;
-  width: 30px !important;
   padding-left: 4px;
-  display: flex;
   overflow: hidden;
   margin-top: 3px;
   margin-left: 3px;
+}
+
+.addButton {
+  margin-left: auto;
 }
 
 .addButton .mat-icon {
@@ -73,7 +89,8 @@
 }
 
 .cannot {
-  display: none !important;
+  // display: none !important;
+  background-color: grey !important;
 }
 
 .selected {

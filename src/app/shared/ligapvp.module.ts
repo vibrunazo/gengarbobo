@@ -3,7 +3,7 @@ import Friends from './friends.json';
 import Inscritos from './inscritos.json';
 import Tourneys from '../ligapvp/tourney/tourneys.json';
 import { Friendship } from 'functions/src/friends.model.js';
-import { Tourney, TourneyData } from '../ligapvp/tourney/tourney.module.js';
+import { Tourney, TourneyData, SuperLiga } from '../ligapvp/tourney/tourney.module.js';
 
 export interface PlayerData {
   name: string;
@@ -539,6 +539,18 @@ export class Player {
   isTeam(team: string): boolean {
     return team.toLowerCase() === this.team.toLowerCase();
   }
+
+  getTourneyRank(tourneyId: string) {
+    const t = Liga.getTourneyById(tourneyId);
+    const sl = new SuperLiga(t);
+    if (sl.t1Players.includes(this)) { return 1; }
+    if (sl.t2Players.includes(this)) { return 2; }
+    if (sl.t3Players.includes(this)) { return 3; }
+    if (sl.t4Players.includes(this)) { return 4; }
+    if (sl.t5Players.includes(this)) { return 5; }
+    return 0;
+  }
+
   getName(): string {
     return this.name;
   }
