@@ -196,6 +196,39 @@ app.get('/getAllFriends', async (req, res) => {
   res.status(200).send(out);
 });
 
+app.post('/checkDriveUpdate', async (req, res) => {
+  let rowsMembros;
+  let rowsEquipes;
+  let newMembers: Member[] = [];
+  let logs: ServerLog[] = [];
+  const client = await sheetsReader.getClient(getAuthorizedClient);
+  try {
+    rowsMembros = await sheetsReader.readMembrosRows(client);
+    rowsEquipes = await sheetsReader.readEquipesRows(client);
+    newMembers = sheetsReader.getMembersFromRows(rowsMembros);
+    sheetsReader.setMemberParamsFromEquipesRows(rowsEquipes, newMembers);
+    logs = await liga.checkWriteMembers(newMembers, 'drivesheet');
+
+    good();
+  } catch (e) {
+    bad(e);
+  }
+
+  function bad(e) {
+    console.log(e);
+    res.status(400).send(e);
+  }
+  function good() {
+    const out = {
+      msg: 'Check Drive update 1',
+      logs,
+      newMembers,
+      // rowsEquipes
+    }
+    res.status(200).send(out)
+  }
+});
+
 app.post('/driveUpdate', async (req, res) => {
   let rowsMembros;
   let rowsEquipes;
@@ -222,6 +255,42 @@ app.post('/driveUpdate', async (req, res) => {
       msg: 'Drive update 9',
       newMembers,
       // rowsEquipes
+    }
+    res.status(200).send(out)
+  }
+});
+
+app.post('/CheckDriveUpdateFriends', async (req, res) => {
+  let rowsFriends: string[][] = [];
+  let newFriendsMap;
+  let newFriendsJSON;
+  let size;
+  let log: ServerLog;
+  const client = await sheetsReader.getClient(getAuthorizedClient);
+  try {
+    const members = await liga.readMembers(null);
+    rowsFriends = await sheetsReader.readAmizadesRows(client);
+    newFriendsMap = sheetsReader.getFriendsFromRows(rowsFriends, members);
+    size = newFriendsMap.size;
+    newFriendsJSON = mapToJson(newFriendsMap);
+    // await liga.writeFriends(newFriendsMap, db);
+    log = await liga.checkWriteFriendsRT(newFriendsJSON, 'drivesheets');
+    await liga.updateFriendsCache();
+    good();
+  } catch (e) {
+    bad(e);
+  }
+
+  function bad(e) {
+    console.log(e);
+    res.status(400).send(e);
+  }
+  function good() {
+    const out = {
+      msg: 'Drive Friends update 3',
+      size,
+      log,
+      newFriends: newFriendsJSON,
     }
     res.status(200).send(out)
   }

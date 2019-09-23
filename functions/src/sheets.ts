@@ -12,11 +12,14 @@ export function getMembersFromRows(rows: Array<any>): Member[] {
   const result: Member[] = [];
   rows.forEach(r => {
     if (r[0] && r[0].length > 1) {
+      // console.log('r');
+      // console.log(r);
+
       const newMember: Member = {
         name: r[0],
         team: '',
-        winrate: +r[6].replace('%', ''),
-        code: r[1].replace(/\s/g, ''),
+        winrate: +r[7].replace('%', ''),
+        code: r[2].replace(/\s/g, ''),
       }
       result.push(newMember);
     }
@@ -160,7 +163,7 @@ export async function readAmizadesRows(client): Promise<string[][]>  {
   return readRangeRows(client, 'AMIZADES!A1:DH150');
 }
 export async function readMembrosRows(client) {
-  return readRangeRows(client, 'MEMBROS!A1:G150');
+  return readRangeRows(client, 'MEMBROS!A1:H150');
 }
 export async function readEquipesRows(client) {
   return readRangeRows(client, 'EQUIPES!!A1:BZ23');

@@ -109,6 +109,22 @@ function findMemberById(id: string): Member | undefined {
   return membersCache.find(m => m.id === id);
 }
 
+export async function checkWriteFriendsRT(newFriends, userName: string): Promise<ServerLog> {
+  console.log('Checking writing friends to RTdb');
+  await updateFriendsCache();
+  const old = await readFriends();
+  const diff = diffObjs(old, newFriends);
+  const logMsg: ServerLog = {
+    author: userName,
+    body_new: diff.diff,
+    body_old: diff.original,
+    date: Date.now(),
+    event: 'write',
+    target: 'rtdb/friends'
+  }
+  return logMsg;
+}
+
 export async function writeFriendsRT(newFriends, userName: string): Promise<ServerLog> {
   console.log('writing friends to RTdb');
 
@@ -257,8 +273,6 @@ export async function writeLog(logMsg: ServerLog, debug?) {
     console.log('no difference writing to ' + logMsg.target);
     console.log(logMsg);
     console.log(debug);
-
-
     return 'failed to write log because there was no difference in the alledged update';
   }
   try {
@@ -524,6 +538,60 @@ export async function writeMembers(memberList: Member[], userName: string) {
   });
   return p;
 }
+/**
+ * Checking what would happen if I were to write all members from the array to the database.
+ * @param memberList Array of members to write to the database
+ */
+export async function checkWriteMembers(memberList: Member[], userName: string): Promise<ServerLog[]> {
+  console.log('Checking writing list of members to database.');
+  const results: ServerLog[] = [];
+  let result: ServerLog;
+  const p: Promise<ServerLog[]> = new Promise(async (resolve, reject) => {
+    try {
+      for (const member of memberList) {
+        result = await checkWriteMember(member, userName);
+        if (result.body_new && Object.keys(result.body_new).length > 0) {
+          results.push(result);
+        }
+      }
+      resolve(results)
+    } catch (e) {
+      reject(e);
+    }
+  });
+  return p;
+}
+
+/**
+ * Checks what would happen if I were to write this one member to the Firestore Database. Uses its lowerCased name as the ID.
+ * @param member Member to write to the database
+ */
+export async function checkWriteMember(member: Member, userName: string): Promise<ServerLog> {
+  const id = member.name.toLowerCase().trim();
+  const p: Promise<ServerLog> = new Promise(async (resolve, reject) => {
+    try {
+      const old = await readOneMember(member.name);
+      if (old && old.id) {
+        if (!allIds.includes(old.id)) { allIds.push(old.id); }
+      } else {
+        member.id = genNewID(member);
+      }
+      const diff = diffObjs(old, member);
+      const newLog: ServerLog = {
+        author: userName,
+        body_new: diff.diff,
+        body_old: diff.original,
+        date: Date.now(),
+        event: 'write',
+        target: 'fsdb/members/' + id,
+      }
+      resolve(newLog);
+    } catch (e) {
+      reject(e);
+    }
+  });
+  return p;
+}
 
 /**
  * Writes one member to the Firestore Database. Uses its lowerCased name as the ID.
@@ -538,7 +606,7 @@ export async function writeMember(member: Member, userName: string) {
     try {
       const old = await readOneMember(member.name);
       if (old && old.id) {
-        allIds.push(old.id);
+        if (!allIds.includes(old.id)) { allIds.push(old.id); }
       } else {
         member.id = genNewID(member);
       }
