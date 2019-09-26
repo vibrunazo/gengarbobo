@@ -260,7 +260,7 @@ app.post('/driveUpdate', async (req, res) => {
   }
 });
 
-app.post('/CheckDriveUpdateFriends', async (req, res) => {
+app.post('/checkDriveUpdateFriends', async (req, res) => {
   let rowsFriends: string[][] = [];
   let newFriendsMap;
   let newFriendsJSON;
@@ -275,7 +275,7 @@ app.post('/CheckDriveUpdateFriends', async (req, res) => {
     newFriendsJSON = mapToJson(newFriendsMap);
     // await liga.writeFriends(newFriendsMap, db);
     log = await liga.checkWriteFriendsRT(newFriendsJSON, 'drivesheets');
-    await liga.updateFriendsCache();
+    // await liga.updateFriendsCache();
     good();
   } catch (e) {
     bad(e);
@@ -291,6 +291,7 @@ app.post('/CheckDriveUpdateFriends', async (req, res) => {
       size,
       log,
       newFriends: newFriendsJSON,
+      rowsFriends,
     }
     res.status(200).send(out)
   }

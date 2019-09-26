@@ -35,10 +35,10 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
     // const friends: Friendship[] = [];
     const friends: Map<string, Friendship> = new Map();
     const names: string[] = members.map(m => m.name.toLowerCase());
-    const VERT_ROW = 4;
-    const VERT_COL = 2; // start at C5
-    const HORZ_ROW = 2;
-    const HORZ_COL = 8; // start at I3
+    const VERT_ROW = 3;
+    const VERT_COL = 1; // start at B4
+    const HORZ_ROW = 1;
+    const HORZ_COL = 4; // start at E2
 
     console.log('Building friends from sheets rows');
     // console.log(rows[7][2]);
@@ -51,15 +51,7 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
     // console.log(friends.get('ravenaut13jcruel13'));
     // console.log(friends.get('13jcruel13ravenaut'));
     return friends;
-    // get vertical length
-    // read members on the horizontal list
-    // get horizontal length
-    // do both match?
     // for each member on vertical list
-      // for each horizontal member of each vertical member
-      // check friendship
-      // add to friends list
-
     function readVert() {
       for (let row = VERT_ROW; row < rows.length; row++) {
         let m = rows[row][VERT_COL];
@@ -72,23 +64,28 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
         }
       }
     }
+    // for each horizontal member of each vertical member
     function readHorz(row: number, vertMember: string) {
+      // if ((vertMember === 'vib')) {
+      //   console.log('row: ' + row + ' vertMember: ' + vertMember);
+      //   console.log('HORZ_COL: ' + HORZ_COL + ' < rows[HORZ_ROW].length: ' + rows[HORZ_ROW].length);
+      //   console.log('rows[HORZ_ROW]: ' + rows[HORZ_ROW]);
+      //   // console.log('row: ' + row + ' col: ' + col);
+      //   // console.log('vertMember: ' + vertMember + ' m: ' + m);
+      //   // console.log('statuscell: ' + statusCell + 'status: ' + status);
+      // }
       for (let col = HORZ_COL; col < rows[HORZ_ROW].length; col++) {
         let m = rows[HORZ_ROW][col];
         if (isMember(m)) {
           m = m.toLowerCase();
           const statusCell = rows[row][col];
           const status = (!statusCell || statusCell.trim().length === 0) ? false : true;
-          if ((vertMember === 'vib' || m === 'vib') && (vertMember === 'danlannes' || m === 'danlannes') ) {
-            console.log('row: ' + row + ' col: ' + col);
-            console.log('vertMember: ' + vertMember + ' m: ' + m);
-            console.log('statuscell: ' + statusCell + 'status: ' + status);
-          }
           saveFriends(vertMember, m, status);
           // verMembers.push(m);
         }
      }
     }
+    // check if each vertical and horz is a member
     function isMember(cell: string): boolean {
       if (cell && names.includes(cell.toLowerCase())) {
         return true;
@@ -129,13 +126,13 @@ export function setMemberParamsFromEquipesRows(rows: Array<any>, members: Member
   // when a team members is found, call the addParamsToMember function on this member
   function buildTeams() {
     // the column each team member can be found on the spreadsheet
-    buildTeam('rocket', 2 + 11 * 0);
-    buildTeam('aqua', 2 + 11 * 1);
-    buildTeam('magma', 2 + 11 * 2);
-    buildTeam('galactic', 2 + 11 * 3);
-    buildTeam('plasma', 2 + 11 * 4);
-    buildTeam('flare', 2 + 11 * 5);
-    buildTeam('skull', 2 + 11 * 6);
+    buildTeam('rocket', 2 + 8 * 0);
+    buildTeam('aqua', 2 + 8 * 1);
+    buildTeam('magma', 2 + 8 * 2);
+    buildTeam('galactic', 2 + 8 * 3);
+    buildTeam('plasma', 2 + 8 * 4);
+    buildTeam('flare', 2 + 8 * 5);
+    buildTeam('skull', 2 + 8 * 6);
     // builds one team
     function buildTeam(teamName, column) {
       // tslint:disable-next-line: prefer-for-of
