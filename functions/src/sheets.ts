@@ -163,7 +163,7 @@ export async function readMembrosRows(client) {
   return readRangeRows(client, 'MEMBROS!A1:H150');
 }
 export async function readEquipesRows(client) {
-  return readRangeRows(client, 'EQUIPES!!A1:BZ23');
+  return readRangeRows(client, 'EQUIPES!!A1:BZ30');
 }
 
 export async function readRangeRows(client: any, range: string): Promise<string[][]> {
