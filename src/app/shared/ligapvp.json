@@ -64,6 +64,14 @@
     "id": "allma"
   },
   {
+    "name": "Amaterasu013",
+    "team": "galactic",
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0,
+    "id": "amate"
+  },
+  {
     "name": "Andyneves29",
     "team": "flare",
     "winrate": 47,
@@ -232,6 +240,14 @@
     "id": "fgsan"
   },
   {
+    "name": "gaaaary20",
+    "team": "plasma",
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0,
+    "id": "gaaaa"
+  },
+  {
     "name": "GassanBr",
     "team": "galactic",
     "winrate": 76,
@@ -299,7 +315,7 @@
     "name": "Helior44",
     "team": "plasma",
     "winrate": 70,
-    "badges": 4,
+    "badges": 5,
     "medals": 0,
     "id": "helio"
   },
@@ -507,7 +523,7 @@
     "name": "MuraKamiGu",
     "team": "magma",
     "winrate": 70,
-    "badges": 0,
+    "badges": 1,
     "medals": 0,
     "id": "murak"
   },
@@ -534,6 +550,14 @@
     "badges": 2,
     "medals": 0,
     "id": "often"
+  },
+  {
+    "name": "P0keFer4",
+    "team": "magma",
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0,
+    "id": "p0kef"
   },
   {
     "name": "Pamps2805",
@@ -582,6 +606,14 @@
     "badges": 0,
     "medals": 0,
     "id": "rafa2"
+  },
+  {
+    "name": "Rafael31Ca",
+    "team": "rocket",
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0,
+    "id": "rafa3"
   },
   {
     "name": "Rafaetti2",
@@ -699,7 +731,7 @@
     "name": "TgoSorelli",
     "team": "flare",
     "winrate": 96,
-    "badges": 3,
+    "badges": 4,
     "medals": 1,
     "id": "tgoso"
   },
@@ -747,7 +779,7 @@
     "name": "VanEdipo",
     "team": "plasma",
     "winrate": 66,
-    "badges": 3,
+    "badges": 4,
     "medals": 1,
     "id": "vaned"
   },
@@ -782,6 +814,14 @@
     "badges": 0,
     "medals": 0,
     "id": "welts"
+  },
+  {
+    "name": "Willbviana",
+    "team": "flare",
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0,
+    "id": "willb"
   },
   {
     "name": "Winiciuslb1810",
