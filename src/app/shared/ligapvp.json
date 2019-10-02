@@ -3,848 +3,689 @@
     "name": "123CatBond",
     "team": "plasma",
     "winrate": 22,
-    "badges": 0,
-    "medals": 0,
-    "id": "123ca"
+    "code": "536771886635"
   },
   {
     "name": "13JCruel13",
     "team": "galactic",
     "winrate": 84,
-    "badges": 12,
-    "medals": 1,
-    "id": "13jcr"
+    "code": "575298116890",
+    "badges": "12",
+    "medals": "1"
   },
   {
     "name": "AleeSafadao",
     "team": "plasma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "alees"
+    "code": "035130659455"
   },
   {
     "name": "AlekaSabbag",
     "team": "skull",
     "winrate": 73,
-    "badges": 3,
-    "medals": 0,
-    "id": "aleka"
-  },
-  {
-    "name": "AllanFToledo",
-    "team": "aqua",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "allan"
+    "code": "146680635445",
+    "badges": "3"
   },
   {
     "name": "Allanlima04",
     "team": "aqua",
     "winrate": 49,
-    "badges": 0,
-    "medals": 0,
-    "id": "allan"
+    "code": "376203715954"
+  },
+  {
+    "name": "AllanFToledo",
+    "team": "aqua",
+    "winrate": 0,
+    "code": "968055717906"
   },
   {
     "name": "Alleessandru",
     "team": "skull",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "allee"
+    "code": "266323827456"
   },
   {
     "name": "Allma68",
     "team": "rocket",
     "winrate": 29,
-    "badges": 0,
-    "medals": 0,
-    "id": "allma"
+    "code": "447861035118"
   },
   {
     "name": "Amaterasu013",
     "team": "galactic",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "amate"
+    "code": "598358676106"
   },
   {
     "name": "Andyneves29",
     "team": "flare",
     "winrate": 47,
-    "badges": 0,
-    "medals": 0,
-    "id": "andyn"
+    "code": "239801453703"
   },
   {
     "name": "Atilajg",
     "team": "rocket",
     "winrate": 66,
-    "badges": 3,
-    "medals": 0,
-    "id": "atila"
+    "code": "331685196247",
+    "badges": "3"
   },
   {
     "name": "BarbaKetchum",
     "team": "plasma",
     "winrate": 30,
-    "badges": 0,
-    "medals": 0,
-    "id": "barba"
+    "code": "921591805604"
   },
   {
     "name": "BinhoZica01",
     "team": "skull",
     "winrate": 57,
-    "badges": 1,
-    "medals": 0,
-    "id": "binho"
+    "code": "163255380739",
+    "badges": "1"
   },
   {
     "name": "Brabrinha",
     "team": "magma",
     "winrate": 39,
-    "badges": 0,
-    "medals": 0,
-    "id": "brabr"
+    "code": "415146541213"
   },
   {
     "name": "brankinho40",
     "team": "aqua",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "brank"
+    "code": "533753943583"
   },
   {
     "name": "c4i00",
     "team": "skull",
     "winrate": 85,
-    "badges": 7,
-    "medals": 0,
-    "id": "c4i00"
+    "code": "803018513180",
+    "badges": "7"
   },
   {
     "name": "Cecmartins",
     "team": "skull",
     "winrate": 21,
-    "badges": 0,
-    "medals": 0,
-    "id": "cecma"
+    "code": "995719081018"
   },
   {
     "name": "chernandes10",
     "team": "magma",
     "winrate": 26,
-    "badges": 0,
-    "medals": 0,
-    "id": "chern"
+    "code": "334605724342"
   },
   {
     "name": "CopperKid",
     "team": "rocket",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "coppe"
+    "code": "779766947198"
   },
   {
     "name": "Danlannes",
     "team": "galactic",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "danla"
+    "code": "285358740732"
   },
   {
     "name": "DavidFirmin0",
     "team": "rocket",
     "winrate": 56,
-    "badges": 1,
-    "medals": 0,
-    "id": "david"
+    "code": "101436112956",
+    "badges": "1"
   },
   {
     "name": "DGKetchum1",
     "team": "plasma",
     "winrate": 10,
-    "badges": 0,
-    "medals": 0,
-    "id": "dgket"
+    "code": "854038959962"
   },
   {
     "name": "Didideluca",
     "team": "galactic",
     "winrate": 52,
-    "badges": 0,
-    "medals": 0,
-    "id": "didid"
+    "code": "891188072542"
   },
   {
     "name": "didisantista",
     "team": "galactic",
     "winrate": 48,
-    "badges": 0,
-    "medals": 0,
-    "id": "didis"
+    "code": "472763947821"
   },
   {
     "name": "Diogenest",
     "team": "aqua",
     "winrate": 52,
-    "badges": 1,
-    "medals": 0,
-    "id": "dioge"
+    "code": "386098947203",
+    "badges": "1"
   },
   {
     "name": "dodo1234...",
     "team": "magma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "dodo1"
+    "code": "651454446338"
   },
   {
     "name": "Douglete011",
     "team": "aqua",
     "winrate": 65,
-    "badges": 3,
-    "medals": 0,
-    "id": "dougl"
+    "code": "569909220513",
+    "badges": "3"
   },
   {
     "name": "eanassu",
     "team": "aqua",
     "winrate": 22,
-    "badges": 0,
-    "medals": 0,
-    "id": "eanas"
+    "code": "520811690469"
   },
   {
     "name": "FabianoCoelho",
     "team": "rocket",
     "winrate": 44,
-    "badges": 0,
-    "medals": 0,
-    "id": "fabia"
+    "code": "704365471052"
   },
   {
     "name": "Fgsanfre",
     "team": "flare",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "fgsan"
+    "code": "731775994309"
   },
   {
     "name": "gaaaary20",
     "team": "plasma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "gaaaa"
+    "code": "856649730040"
   },
   {
     "name": "GassanBr",
     "team": "galactic",
     "winrate": 76,
-    "badges": 11,
-    "medals": 1,
-    "id": "gassa"
+    "code": "833487868273",
+    "badges": "11",
+    "medals": "1"
   },
   {
     "name": "genosfull",
     "team": "plasma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "genos"
+    "code": "568581059304"
   },
   {
     "name": "GinoLucca",
     "team": "plasma",
     "winrate": 61,
-    "badges": 2,
-    "medals": 1,
-    "id": "ginol"
+    "code": "111280647917",
+    "badges": "2",
+    "medals": "1"
   },
   {
     "name": "Gsaito87",
     "team": "flare",
     "winrate": 69,
-    "badges": 4,
-    "medals": 0,
-    "id": "gsait"
+    "code": "930002890194",
+    "badges": "4"
   },
   {
     "name": "guiblima",
     "team": "skull",
     "winrate": 61,
-    "badges": 0,
-    "medals": 0,
-    "id": "guibl"
+    "code": "818062190830"
   },
   {
     "name": "Guilram91",
     "team": "aqua",
     "winrate": 37,
-    "badges": 0,
-    "medals": 0,
-    "id": "guilr"
+    "code": "380525396980"
   },
   {
     "name": "GuiMi19",
     "team": "flare",
     "winrate": 39,
-    "badges": 0,
-    "medals": 0,
-    "id": "guimi"
+    "code": "619100117133"
   },
   {
     "name": "haakaishin",
     "team": "flare",
     "winrate": 78,
-    "badges": 0,
-    "medals": 1,
-    "id": "haaka"
+    "code": "834479817690",
+    "badges": "1",
+    "medals": "1"
   },
   {
     "name": "Helior44",
     "team": "plasma",
     "winrate": 70,
-    "badges": 5,
-    "medals": 0,
-    "id": "helio"
+    "code": "579995940993",
+    "badges": "5"
   },
   {
     "name": "HenryRattlehead",
     "team": "rocket",
     "winrate": 44,
-    "badges": 0,
-    "medals": 0,
-    "id": "henry"
+    "code": "408756587760"
   },
   {
     "name": "HHazuka",
     "team": "flare",
     "winrate": 83,
-    "badges": 5,
-    "medals": 2,
-    "id": "hhazu"
+    "code": "343102082579",
+    "badges": "5",
+    "medals": "2"
   },
   {
     "name": "HigashiRicardo",
     "team": "rocket",
     "winrate": 24,
-    "badges": 0,
-    "medals": 0,
-    "id": "higas"
+    "code": "905444493266"
   },
   {
     "name": "JimbobAzul",
     "team": "flare",
     "winrate": 53,
-    "badges": 0,
-    "medals": 0,
-    "id": "jimbo"
-  },
-  {
-    "name": "JoasGarciaA",
-    "team": "skull",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "joasg"
+    "code": "143415207553"
   },
   {
     "name": "josenkio",
     "team": "flare",
     "winrate": 66,
-    "badges": 3,
-    "medals": 0,
-    "id": "josen"
+    "code": "235281722449",
+    "badges": "3"
   },
   {
     "name": "Juracrav",
     "team": "skull",
     "winrate": 23,
-    "badges": 1,
-    "medals": 0,
-    "id": "jurac"
+    "code": "019071746335",
+    "badges": "1"
   },
   {
     "name": "LagoaSeca12",
     "team": "magma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "lagoa"
+    "code": "014781589026"
   },
   {
     "name": "lahkehl",
     "team": "flare",
     "winrate": 44,
-    "badges": 2,
-    "medals": 0,
-    "id": "lahke"
-  },
-  {
-    "name": "LeoJesus55",
-    "team": "rocket",
-    "winrate": 14,
-    "badges": 0,
-    "medals": 1,
-    "id": "leoje"
+    "code": "649343184093",
+    "badges": "2"
   },
   {
     "name": "LetMKS",
     "team": "skull",
     "winrate": 66,
-    "badges": 3,
-    "medals": 0,
-    "id": "letmk"
+    "code": "702506240896",
+    "badges": "3"
+  },
+  {
+    "name": "LeoJesus55",
+    "team": "rocket",
+    "winrate": 14,
+    "code": "754330977882",
+    "medals": "1"
   },
   {
     "name": "llTk87ll",
     "team": "magma",
     "winrate": 79,
-    "badges": 1,
-    "medals": 0,
-    "id": "lltk8"
+    "code": "723587290554",
+    "badges": "1"
   },
   {
     "name": "LuksBertolli",
     "team": "magma",
     "winrate": 33,
-    "badges": 0,
-    "medals": 0,
-    "id": "luksb"
+    "code": "848667483882"
   },
   {
     "name": "MaikTheOne",
     "team": "plasma",
     "winrate": 43,
-    "badges": 0,
-    "medals": 1,
-    "id": "maikt"
+    "code": "097816265583",
+    "medals": "1"
   },
   {
     "name": "Mamazzaro",
     "team": "rocket",
     "winrate": 54,
-    "badges": 1,
-    "medals": 1,
-    "id": "mamaz"
+    "code": "355830688875",
+    "badges": "1",
+    "medals": "1"
   },
   {
     "name": "Manfrim11",
     "team": "galactic",
     "winrate": 62,
-    "badges": 6,
-    "medals": 1,
-    "id": "manfr"
+    "code": "200329493187",
+    "badges": "6",
+    "medals": "1"
   },
   {
     "name": "Marcelo69",
     "team": "skull",
     "winrate": 69,
-    "badges": 3,
-    "medals": 0,
-    "id": "marce"
+    "code": "578083988884",
+    "badges": "3"
   },
   {
     "name": "marcioljunior",
     "team": "galactic",
     "winrate": 67,
-    "badges": 1,
-    "medals": 0,
-    "id": "marci"
+    "code": "730206032115",
+    "badges": "1"
   },
   {
     "name": "MareFrz",
     "team": "skull",
     "winrate": 0,
-    "badges": 1,
-    "medals": 0,
-    "id": "maref"
+    "code": "271984736012",
+    "badges": "1"
   },
   {
     "name": "MasterLineYr",
     "team": "plasma",
     "winrate": 60,
-    "badges": 1,
-    "medals": 1,
-    "id": "maste"
+    "code": "816585183751",
+    "badges": "1",
+    "medals": "1"
   },
   {
     "name": "Matabanguela",
     "team": "magma",
     "winrate": 62,
-    "badges": 1,
-    "medals": 0,
-    "id": "matab"
+    "code": "099556286893",
+    "badges": "1"
   },
   {
     "name": "MauColella",
     "team": "aqua",
     "winrate": 43,
-    "badges": 0,
-    "medals": 0,
-    "id": "mauco"
-  },
-  {
-    "name": "mcbrublue",
-    "team": "aqua",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "mcbru"
+    "code": "879437881505"
   },
   {
     "name": "mestreDohko",
     "team": "rocket",
     "winrate": 54,
-    "badges": 1,
-    "medals": 0,
-    "id": "mestr"
+    "code": "584326552052",
+    "badges": "1"
   },
   {
     "name": "mi88akz",
     "team": "rocket",
     "winrate": 37,
-    "badges": 0,
-    "medals": 0,
-    "id": "mi88a"
+    "code": "441887245813"
+  },
+  {
+    "name": "mcbrublue",
+    "team": "aqua",
+    "winrate": 0,
+    "code": "933283696433"
   },
   {
     "name": "MuraKamiGu",
     "team": "magma",
     "winrate": 70,
-    "badges": 1,
-    "medals": 0,
-    "id": "murak"
+    "code": "943041469429",
+    "badges": "1"
   },
   {
     "name": "Nietzsche968",
     "team": "galactic",
     "winrate": 58,
-    "badges": 1,
-    "medals": 0,
-    "id": "nietz"
+    "code": "591839266050",
+    "badges": "1"
   },
   {
     "name": "Nyrskh",
     "team": "magma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "nyrsk"
+    "code": "414898998407"
   },
   {
     "name": "Oftentimes7",
     "team": "rocket",
     "winrate": 61,
-    "badges": 2,
-    "medals": 0,
-    "id": "often"
+    "code": "128021261433",
+    "badges": "2"
   },
   {
     "name": "P0keFer4",
     "team": "magma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "p0kef"
+    "code": "670123721251"
   },
   {
     "name": "Pamps2805",
     "team": "skull",
     "winrate": 65,
-    "badges": 1,
-    "medals": 0,
-    "id": "pamps"
+    "code": "600387330101",
+    "badges": "1"
   },
   {
     "name": "Patyeiko",
     "team": "rocket",
     "winrate": 26,
-    "badges": 0,
-    "medals": 1,
-    "id": "patye"
+    "code": "249082121327",
+    "medals": "1"
   },
   {
     "name": "PedrinhoGamarra",
     "team": "plasma",
     "winrate": 41,
-    "badges": 1,
-    "medals": 0,
-    "id": "pedri"
+    "code": "213953971383",
+    "badges": "1"
   },
   {
     "name": "qdeza",
     "team": "galactic",
     "winrate": 24,
-    "badges": 0,
-    "medals": 0,
-    "id": "qdeza"
+    "code": "637558482344"
   },
   {
     "name": "QueenBelinha",
     "team": "aqua",
     "winrate": 46,
-    "badges": 1,
-    "medals": 0,
-    "id": "queen"
+    "code": "826504047323",
+    "badges": "1"
   },
   {
     "name": "Rafa25Albertin",
     "team": "galactic",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "rafa2"
+    "code": "421331746493"
   },
   {
     "name": "Rafael31Ca",
     "team": "rocket",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "rafa3"
+    "code": "764229233464"
   },
   {
     "name": "Rafaetti2",
     "team": "flare",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "rafae"
+    "code": "139323447939"
   },
   {
     "name": "RaulAV1",
     "team": "galactic",
     "winrate": 53,
-    "badges": 3,
-    "medals": 0,
-    "id": "raula"
+    "code": "607220682578",
+    "badges": "3"
   },
   {
     "name": "Ravenaut",
     "team": "magma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "raven"
+    "code": "451498605537"
   },
   {
     "name": "RedZoom",
     "team": "magma",
     "winrate": 67,
-    "badges": 0,
-    "medals": 0,
-    "id": "redzo"
+    "code": "504055395575"
   },
   {
     "name": "RegininhaKawaii",
     "team": "flare",
     "winrate": 45,
-    "badges": 0,
-    "medals": 0,
-    "id": "regin"
+    "code": "488812459137"
   },
   {
     "name": "reidoidao",
     "team": "magma",
     "winrate": 59,
-    "badges": 0,
-    "medals": 0,
-    "id": "reido"
+    "code": "082602814123"
   },
   {
     "name": "renansuz",
     "team": "aqua",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "renan"
+    "code": "253315042288"
   },
   {
     "name": "rikardolima",
     "team": "galactic",
     "winrate": 37,
-    "badges": 2,
-    "medals": 0,
-    "id": "rikar"
+    "code": "088978236369",
+    "badges": "2"
   },
   {
     "name": "Rodrigorav4",
     "team": "skull",
     "winrate": 0,
-    "badges": 1,
-    "medals": 0,
-    "id": "rodri"
+    "code": "595532060834",
+    "badges": "1"
   },
   {
     "name": "Rsscoach",
     "team": "aqua",
     "winrate": 81,
-    "badges": 6,
-    "medals": 0,
-    "id": "rssco"
+    "code": "112943811164",
+    "badges": "6"
   },
   {
     "name": "SinGoLfaiRe",
     "team": "galactic",
     "winrate": 50,
-    "badges": 2,
-    "medals": 0,
-    "id": "singo"
+    "code": "636672895508",
+    "badges": "2"
   },
   {
     "name": "Sralador",
     "team": "aqua",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "srala"
+    "code": "669095829383"
   },
   {
     "name": "Tatinick82",
     "team": "plasma",
     "winrate": 35,
-    "badges": 0,
-    "medals": 1,
-    "id": "tatin"
+    "code": "469078426677",
+    "medals": "1"
   },
   {
     "name": "Teresak1",
     "team": "magma",
     "winrate": 52,
-    "badges": 0,
-    "medals": 0,
-    "id": "teres"
+    "code": "437264188622"
   },
   {
     "name": "TgoSorelli",
     "team": "flare",
     "winrate": 96,
-    "badges": 4,
-    "medals": 1,
-    "id": "tgoso"
+    "code": "301723344802",
+    "badges": "4",
+    "medals": "1"
   },
   {
     "name": "Thacod",
     "team": "aqua",
     "winrate": 8,
-    "badges": 0,
-    "medals": 0,
-    "id": "thaco"
+    "code": "222784210875"
   },
   {
     "name": "TioSan2108",
     "team": "rocket",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "tiosa"
+    "code": "633659390558"
   },
   {
     "name": "Tiringstorm34",
     "team": "plasma",
     "winrate": 35,
-    "badges": 0,
-    "medals": 0,
-    "id": "tirin"
+    "code": "550609499476"
   },
   {
     "name": "TomDSantos",
     "team": "aqua",
     "winrate": 72,
-    "badges": 4,
-    "medals": 0,
-    "id": "tomds"
+    "code": "425889026233",
+    "badges": "4"
   },
   {
     "name": "TsuSetoguchi",
     "team": "skull",
     "winrate": 67,
-    "badges": 1,
-    "medals": 0,
-    "id": "tsuse"
+    "code": "880469264760",
+    "badges": "1"
   },
   {
     "name": "VanEdipo",
     "team": "plasma",
     "winrate": 66,
-    "badges": 4,
-    "medals": 1,
-    "id": "vaned"
+    "code": "700261380254",
+    "badges": "4",
+    "medals": "1"
   },
   {
     "name": "vib",
     "team": "skull",
     "winrate": 80,
-    "badges": 5,
-    "medals": 2,
-    "id": "vib00"
+    "code": "779863542355",
+    "badges": "5",
+    "medals": "2"
   },
   {
     "name": "VicTavares",
     "team": "flare",
     "winrate": 58,
-    "badges": 0,
-    "medals": 0,
-    "id": "victa"
+    "code": "686001179734"
   },
   {
     "name": "WallanLima16",
     "team": "galactic",
     "winrate": 37,
-    "badges": 3,
-    "medals": 0,
-    "id": "walla"
+    "code": "419872243501",
+    "badges": "3"
   },
   {
     "name": "Weltson",
     "team": "plasma",
     "winrate": 7,
-    "badges": 0,
-    "medals": 0,
-    "id": "welts"
+    "code": "839955666285"
   },
   {
     "name": "Willbviana",
     "team": "flare",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "willb"
+    "code": "103513104868"
   },
   {
     "name": "Winiciuslb1810",
     "team": "plasma",
     "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "winic"
+    "code": "059710969419"
   },
   {
     "name": "Yeyas81",
     "team": "magma",
     "winrate": 54,
-    "badges": 0,
-    "medals": 0,
-    "id": "yeyas"
+    "code": "648413605060"
   },
   {
     "name": "ZuziaMao",
     "team": "flare",
     "winrate": 74,
-    "badges": 0,
-    "medals": 0,
-    "id": "zuzia"
+    "code": "020502284632"
   }
 ]

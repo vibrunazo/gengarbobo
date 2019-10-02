@@ -14,14 +14,19 @@ export function getMembersFromRows(rows: Array<any>): Member[] {
     if (r[0] && r[0].length > 1) {
       // console.log('r');
       // console.log(r);
-
-      const newMember: Member = {
-        name: r[0],
-        team: '',
-        winrate: +r[7].replace('%', ''),
-        code: r[2].replace(/\s/g, ''),
+      try {
+        const newMember: Member = {
+          name: r[0],
+          team: '',
+          winrate: +r[9].replace('%', ''),
+          code: r[4].replace(/\s/g, ''),
+        }
+        result.push(newMember);
+      } catch (e) {
+        console.log('error reading member from this row:');
+        console.log(r);
+        throw(e);
       }
-      result.push(newMember);
     }
   });
   return result;
@@ -160,7 +165,7 @@ export async function readAmizadesRows(client): Promise<string[][]>  {
   return readRangeRows(client, 'AMIZADES!A1:DH150');
 }
 export async function readMembrosRows(client) {
-  return readRangeRows(client, 'MEMBROS!A1:H150');
+  return readRangeRows(client, 'MEMBROS!A4:Z150');
 }
 export async function readEquipesRows(client) {
   return readRangeRows(client, 'EQUIPES!!A1:BZ30');
