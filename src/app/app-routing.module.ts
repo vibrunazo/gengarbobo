@@ -8,6 +8,7 @@ import { LigapvpComponent } from './ligapvp/ligapvp.component';
 import { MemberComponent } from './ligapvp/member/member.component';
 import { AdminComponent } from './ligapvp/admin/admin.component';
 import { TourneyComponent } from './ligapvp/tourney/tourney.component';
+import { SltablemakerComponent } from './ligapvp/tourney/sltablemaker/sltablemaker.component';
 
 const routes: Routes = [
   { path: '', component: NewsComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'liga', component: LigapvpComponent },
   { path: 'liga/m/:id', component: MemberComponent },
   { path: 'liga/t/:id', component: TourneyComponent },
+  { path: 'liga/t/:id/slmaker', component: SltablemakerComponent },
   { path: 'liga/admin', component: AdminComponent },
 ];
 

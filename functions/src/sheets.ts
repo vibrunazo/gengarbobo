@@ -123,7 +123,7 @@ export function getFriendsFromRows(rows: Array<any>, members: Member[]): Map<str
 
 // give me the rows from the Equipes Sheet and the current list of members
 // I'll add the parameters I find in those rows to those members
-export function setMemberParamsFromEquipesRows(rows: Array<any>, members: Member[]) {
+export function setMemberParamsFromEquipesRows(rows: Array<Array<string>>, members: Member[]) {
   buildTeams();
   // console.log(members);
 
@@ -144,8 +144,8 @@ export function setMemberParamsFromEquipesRows(rows: Array<any>, members: Member
       for (let row = 8; row < rows.length; row++) {
         const name = rows[row][column];
         if (name && name.length > 1) {
-          const badges = rows[row][column + 1];
-          const medals = rows[row][column + 2];
+          const badges: number = +rows[row][column + 1];
+          const medals: number = +rows[row][column + 2];
           addParamsToMember(name.toLowerCase(), teamName, badges, medals);
         }
       }

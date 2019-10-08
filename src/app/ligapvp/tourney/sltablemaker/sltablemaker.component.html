@@ -1,0 +1,79 @@
+<span *ngIf="!tourneyData">
+  Torneio não encontrado
+</span>
+<div *ngIf="tourneyData">
+  <mat-card>
+    <a [routerLink]="['..']">
+        {{ sl.name }}
+    </a>
+    <span class="options">
+      <span [routerLink]="['slmaker']">
+        Maker
+      </span>
+      <mat-slide-toggle [(ngModel)]="editMode">Editar</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="teamCheck" *ngIf="editMode">Evitar Mesmo time</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="showWinrate" *ngIf="editMode">Mostrar %vitórias</mat-slide-toggle>
+      <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>shuffle</mat-icon>random all</button>
+      <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Apaga tudo</button>
+    </span>
+  </mat-card>
+  <br />
+
+  <div class="tiersAndGroups">
+    <div class="tiers">
+      <ng-container class="" *ngFor="let t of tiers; let i = index">
+        <mat-card class="tier">
+          <mat-card-header>
+            Tier {{ i + 1 }}
+            <button mat-raised-button (click)="onClickRandom(t)" color="accent" class="rButt" [ngClass]="true ? '' : 'cannot'" [disabled]="false"><mat-icon>shuffle</mat-icon>random</button>
+          </mat-card-header>
+          <div *ngFor="let p of t">
+            <div class="nameplate">
+              <span>
+                {{ p.getTierIcon() }}
+              </span>
+              <img [src]="p.getTeamIcon()" class="teamIcon" />
+              <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
+                {{ p.getName() }}
+              </a>
+              <div class="nameTail">
+                <span class="wr" *ngIf="showWinrate"> {{ p.getWinrate() }}% </span>
+                <div class="addButton">
+                  <button mat-raised-button (click)="onAddPlayer(p)" class="bgGreen" [ngClass]="canAddPlayer(p) ? '' : 'cannot'" [disabled]="!canAddPlayer(p)" *ngIf="editMode"><mat-icon>add_circle_outline</mat-icon>add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </ng-container>
+    </div>
+
+    <div class="groups">
+      <ng-container class="" *ngFor="let g of sl.groups; let i = index">
+        <mat-card class="group" (click)="onClickGroup(i)" [ngClass]="isSelected(i) ? 'selected' : ''">
+          Grupo {{ g.name }}
+          <div *ngFor="let p of sl.groups[i].players">
+            <div class="nameplate">
+              <div>
+                {{ p.getTourneyRank("sl4") }}
+              </div>
+              <span>
+                {{ p.getTierIcon() }}
+              </span>
+              <img [src]="p.getTeamIcon()" class="teamIcon" />
+              <a [routerLink]="['/liga/m', p.getName()]" queryParamsHandling="merge">
+                {{ p.getName() }}
+              </a>
+              <div class="nameTail">
+                <span class="wr" *ngIf="showWinrate"> {{ p.getWinrate() }}% </span>
+                <div class="addButton">
+                  <button mat-raised-button (click)="onDelPlayer(p)" class="bgRed" *ngIf="editMode"><mat-icon>remove_circle_outline</mat-icon>del</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -54,6 +54,7 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { AdminComponent } from './ligapvp/admin/admin.component';
 import { LogsComponent } from './ligapvp/admin/logs/logs.component';
 import { TourneyComponent } from './ligapvp/tourney/tourney.component';
+import { SltablemakerComponent } from './ligapvp/tourney/sltablemaker/sltablemaker.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
@@ -85,7 +86,8 @@ const firebaseConfig = {
     EditDialogComponent,
     AdminComponent,
     LogsComponent,
-    TourneyComponent
+    TourneyComponent,
+    SltablemakerComponent
   ],
   imports: [
     BrowserModule,
