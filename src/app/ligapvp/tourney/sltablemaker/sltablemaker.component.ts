@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tourney, SuperLiga } from '../tourney.module';
+import { Tourney, SuperLiga, TourneyData } from '../tourney.module';
 import { Player, Liga } from 'src/app/shared/ligapvp.module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material';
 })
 export class SltablemakerComponent implements OnInit {
   tourneyId = '';
-  tourneyData: Tourney;
+  tourneyData: TourneyData;
   sl: SuperLiga;
   tiers: Player[][] = [];
   selectedGroup = 0;

@@ -2,8 +2,9 @@ import { Player, Liga } from 'src/app/shared/ligapvp.module';
 
 
 export interface TourneyData {
-  name;
-  id;
+  name: string;
+  id: string;
+  format?: string;
 }
 export interface SuperLigaData extends TourneyData {
   t1?;
@@ -16,12 +17,17 @@ export interface SuperLigaData extends TourneyData {
 export class Tourney {
   name;
   id;
-
+  format: string;
 
   constructor(data: TourneyData) {
     this.name = data.name;
     this.id = data.id;
+    this.format = data.format;
   }
+}
+
+export class LigaPrincipal extends Tourney {
+
 }
 
 export class SuperLiga extends Tourney {

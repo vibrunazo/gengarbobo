@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Tourney, SuperLiga } from './tourney.module';
+import { Tourney, SuperLiga, TourneyData } from './tourney.module';
 import { Liga, Player } from 'src/app/shared/ligapvp.module';
 import { AuthService } from 'src/app/services/auth.service';
 import { LambidaService } from 'src/app/services/lambida.service';
@@ -13,8 +13,9 @@ import { MatDialog } from '@angular/material';
 })
 export class TourneyComponent implements OnInit {
   tourneyId = '';
-  tourneyData: Tourney;
-  sl: SuperLiga;
+  tourneyData: TourneyData;
+  tourney: Tourney;
+  format: string;
   tiers: Player[][] = [];
   selectedGroup = 0;
   editMode = false;
@@ -36,11 +37,12 @@ export class TourneyComponent implements OnInit {
   setTourney(newId: string) {
     this.tourneyId = newId;
     this.tourneyData = Liga.getTourneyById(newId);
-    this.sl = new SuperLiga(this.tourneyData);
-    this.tiers.push(this.sl.t1Players);
-    this.tiers.push(this.sl.t2Players);
-    this.tiers.push(this.sl.t3Players);
-    this.tiers.push(this.sl.t4Players);
-    this.tiers.push(this.sl.t5Players);
+    this.tourney = new Tourney(this.tourneyData);
+    // this.sl = new SuperLiga(this.tourneyData);
+    // this.tiers.push(this.sl.t1Players);
+    // this.tiers.push(this.sl.t2Players);
+    // this.tiers.push(this.sl.t3Players);
+    // this.tiers.push(this.sl.t4Players);
+    // this.tiers.push(this.sl.t5Players);
   }
 }

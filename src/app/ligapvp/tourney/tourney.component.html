@@ -3,10 +3,13 @@
 </span>
 <div *ngIf="tourneyData">
   <mat-card>
-    {{ sl.name }}
+    {{ tourney.name }}
     <span class="options">
-      <a [routerLink]="['slmaker']">
-        Maker
+      <a [routerLink]="['slmaker']" *ngIf="tourney.format === 'sl'">
+        Editar Grupos
+      </a>
+      <a [routerLink]="['maker']" *ngIf="tourney.format === 'main'">
+        Tabela
       </a>
     </span>
   </mat-card>
