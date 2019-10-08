@@ -7,13 +7,14 @@
     "t4":["davidfirmin0","mestredohko","mamazzaro","teresak1","raulav1","didideluca","jimbobazul","binhozica01"],
     "t5":["allanlima04","queenbelinha","guilram91","brabrinha","maiktheone","andyneves29","regininhakawaii","lahkehl", "Singolfaire"],
     "id":"sl4",
-    "tema":"sinnoh",
+    "theme":"sinnoh",
     "format": "sl"
   },
   {
     "name": "Liga VII",
     "id": "liga7",
-    "tema": "Terra",
-    "format": "main"
+    "theme": "Terra",
+    "format": "main",
+    "players": ["vib", "atilajg", "rsscoach"]
   }
 ]

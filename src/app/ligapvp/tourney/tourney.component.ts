@@ -38,6 +38,9 @@ export class TourneyComponent implements OnInit {
     this.tourneyId = newId;
     this.tourneyData = Liga.getTourneyById(newId);
     this.tourney = new Tourney(this.tourneyData);
+    console.log(this.tourneyData);
+    console.log(this.tourney);
+
     // this.sl = new SuperLiga(this.tourneyData);
     // this.tiers.push(this.sl.t1Players);
     // this.tiers.push(this.sl.t2Players);

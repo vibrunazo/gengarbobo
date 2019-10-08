@@ -1,7 +1,7 @@
-<span *ngIf="!tourneyData">
+<span *ngIf="!tourney">
   Torneio não encontrado
 </span>
-<div *ngIf="tourneyData">
+<div *ngIf="tourney">
   <mat-card>
     {{ tourney.name }}
     <span class="options">
@@ -14,5 +14,23 @@
     </span>
   </mat-card>
   <br />
+
+  <mat-card class="tourneyCard">
+    Formato: {{ tourney.format }} <br>
+    Tema: {{ tourney.theme }} <br>
+
+    <mat-card *ngIf="tourney.players.length > 0">
+      Inscritos
+      <mat-divider></mat-divider>
+      <ng-container *ngFor="let p of tourney.players">
+        <div>
+            <img [src]="p.getTeamIcon()" class="teamIcon" />
+            <a [routerLink]="['/liga/m', p.getName()]">
+              {{ p.getName() }}
+            </a>
+        </div>
+      </ng-container>
+    </mat-card>
+  </mat-card>
 
 </div>

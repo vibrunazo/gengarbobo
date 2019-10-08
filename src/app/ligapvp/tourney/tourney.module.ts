@@ -5,6 +5,8 @@ export interface TourneyData {
   name: string;
   id: string;
   format?: string;
+  theme?: string;
+  players?: string[]; // player names
 }
 export interface SuperLigaData extends TourneyData {
   t1?;
@@ -18,11 +20,21 @@ export class Tourney {
   name;
   id;
   format: string;
+  theme: string;
+  players: Player[] = []; // player objects
 
   constructor(data: TourneyData) {
     this.name = data.name;
     this.id = data.id;
     this.format = data.format;
+    this.theme = data.theme;
+    this.buildPlayers(data);
+  }
+
+  buildPlayers(data: TourneyData) {
+    if (data.players && data.players.length > 0) {
+      data.players.forEach(p => this.players.push(Liga.getPlayerByName(p)));
+    }
   }
 }
 
