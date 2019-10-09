@@ -17,24 +17,51 @@ export interface SuperLigaData extends TourneyData {
 }
 
 export class Tourney {
-  name;
-  id;
-  format: string;
-  theme: string;
-  players: Player[] = []; // player objects
+  data: TourneyData;
+  private players: Player[] = []; // player objects
 
   constructor(data: TourneyData) {
-    this.name = data.name;
-    this.id = data.id;
-    this.format = data.format;
-    this.theme = data.theme;
+    this.data = data;
     this.buildPlayers(data);
   }
 
   buildPlayers(data: TourneyData) {
     if (data.players && data.players.length > 0) {
+      data.players.map(p => p.toLowerCase());
       data.players.forEach(p => this.players.push(Liga.getPlayerByName(p)));
     }
+  }
+
+  getName(): string {
+    return this.data.name;
+  }
+  getID(): string {
+    return this.data.id;
+  }
+  getFormat(): string {
+    return this.data.format;
+  }
+  getTheme(): string {
+    return this.data.theme;
+  }
+  getPlayers(): Player[] {
+    return this.players;
+  }
+  getPlayerNames(): string[] {
+    return this.data.players;
+  }
+
+  addPlayer(newPlayer: Player) {
+    if (!newPlayer || this.hasPlayer(newPlayer.getName())) { return; }
+    this.players.push(newPlayer);
+    this.data.players.push(newPlayer.getName().toLowerCase());
+  }
+  delPlayer(player: Player) {
+    this.players = this.players.filter(p => !p.is(player));
+    this.data.players = this.data.players.filter(p => (p.toLowerCase() !== player.getName().toLowerCase()));
+  }
+  hasPlayer(playerName: string): boolean {
+    return this.data.players.includes(playerName.toLowerCase());
   }
 }
 
@@ -66,25 +93,25 @@ export class SuperLiga extends Tourney {
     this.setAllGroups();
   }
 
-  hasPlayer(p: Player) {
+  hasPlayerInGroups(p: Player) {
     let result = false;
     this.groups.forEach(g => {
-      if (g.hasPlayer(p)) { result = true; }
+      if (g.hasPlayerInGroup(p)) { result = true; }
     });
     return result;
   }
 
-  addPlayerByName(name: string, group: number) {
+  addPlayerToGroupByName(name: string, group: number) {
     const p = Liga.getPlayerByName(name);
-    this.addPlayer(p, group, false);
+    this.addPlayerToGroup(p, group, false);
   }
 
-  addPlayer(player: Player, group: number, teamCheck = true) {
+  addPlayerToGroup(player: Player, group: number, teamCheck = true) {
     if (this.canAddPlayerToGroup(player, group, teamCheck)) {
       this.groups[group].addPlayer(player);
     }
   }
-  delPlayer(player: Player, group: number) {
+  delPlayerFromGroup(player: Player, group: number) {
     this.groups[group].delPlayer(player);
   }
 
@@ -96,8 +123,8 @@ export class SuperLiga extends Tourney {
 
   canAddPlayerToGroup(player: Player, group: number, teamCheck = true) {
     if (teamCheck && this.groups[group].hasTeam(player.getTeam())) { return false; }
-    if (this.groups[group].hasPlayer(player)) { return false; }
-    if (this.hasPlayer(player)) { return false; }
+    if (this.groups[group].hasPlayerInGroup(player)) { return false; }
+    if (this.hasPlayerInGroups(player)) { return false; }
     return true;
   }
 
@@ -172,7 +199,7 @@ class SLGroup {
     this.players = [];
   }
 
-  hasPlayer(player: Player) {
+  hasPlayerInGroup(player: Player) {
     return this.players.includes(player);
   }
 

@@ -16,15 +16,9 @@ export class TourneyComponent implements OnInit {
   tourneyData: TourneyData;
   tourney: Tourney;
   format: string;
-  tiers: Player[][] = [];
-  selectedGroup = 0;
-  editMode = false;
-  teamCheck = true;
-  showWinrate = false;
-  ls;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router,
-              private lambida: LambidaService, public dialog: MatDialog) {}
+              private lambida: LambidaService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -41,11 +35,5 @@ export class TourneyComponent implements OnInit {
     console.log(this.tourneyData);
     console.log(this.tourney);
 
-    // this.sl = new SuperLiga(this.tourneyData);
-    // this.tiers.push(this.sl.t1Players);
-    // this.tiers.push(this.sl.t2Players);
-    // this.tiers.push(this.sl.t3Players);
-    // this.tiers.push(this.sl.t4Players);
-    // this.tiers.push(this.sl.t5Players);
   }
 }

@@ -3,12 +3,17 @@
 </span>
 <div *ngIf="tourney">
   <mat-card>
-    {{ tourney.name }}
+    <a [routerLink]="['.']">
+        {{ tourney.getName() }}
+    </a>
     <span class="options">
-      <a [routerLink]="['slmaker']" *ngIf="tourney.format === 'sl'">
+      <a [routerLink]="['register']">
+        Registro
+      </a>
+      <a [routerLink]="['slmaker']" *ngIf="tourney.getFormat() === 'sl'">
         Editar Grupos
       </a>
-      <a [routerLink]="['maker']" *ngIf="tourney.format === 'main'">
+      <a [routerLink]="['maker']" *ngIf="tourney.getFormat() === 'main'">
         Tabela
       </a>
     </span>
@@ -16,8 +21,8 @@
   <br />
 
   <mat-card class="tourneyCard">
-    Formato: {{ tourney.format }} <br>
-    Tema: {{ tourney.theme }} <br>
+    Formato: {{ tourney.getFormat() }} <br>
+    Tema: {{ tourney.getTheme() }} <br>
 
     <mat-card *ngIf="tourney.players.length > 0">
       Inscritos

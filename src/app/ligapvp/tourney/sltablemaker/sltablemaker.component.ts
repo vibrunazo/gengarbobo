@@ -46,7 +46,7 @@ export class SltablemakerComponent implements OnInit {
     for (let i = 0; i < 8; i++) {
       const g = groups[i];
       g.players.forEach(p => {
-        this.sl.addPlayerByName(p.name, i);
+        this.sl.addPlayerToGroupByName(p.name, i);
       });
     }
   }
@@ -100,7 +100,7 @@ export class SltablemakerComponent implements OnInit {
     const rngPick = getRandomInt(0, length - 1);
     const rngPlayer = left[rngPick];
     // console.log(rngPlayer);
-    this.sl.addPlayer(rngPlayer, this.selectedGroup, teamCheck);
+    this.sl.addPlayerToGroup(rngPlayer, this.selectedGroup, teamCheck);
     this.saveLs();
 
     /**
@@ -126,11 +126,11 @@ export class SltablemakerComponent implements OnInit {
   }
   onAddPlayer(p) {
     // this.sl.groups[this.selectedGroup].players.push(p);
-    this.sl.addPlayer(p, this.selectedGroup, this.teamCheck);
+    this.sl.addPlayerToGroup(p, this.selectedGroup, this.teamCheck);
     this.saveLs();
   }
   onDelPlayer(p) {
-    this.sl.delPlayer(p, this.selectedGroup);
+    this.sl.delPlayerFromGroup(p, this.selectedGroup);
     this.saveLs();
   }
 

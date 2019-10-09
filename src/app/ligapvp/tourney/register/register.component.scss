@@ -1,0 +1,81 @@
+.options {
+  margin-left: 40px;
+}
+
+.options .mat-slide-toggle {
+  margin-left: 5px;
+}
+
+.options .rButt {
+  margin-left: 5px;
+}
+
+.tourneyCard {
+  width: fit-content;
+}
+
+
+.nameplate {
+  width: 100%;
+  // max-width: 150px;
+  display: flex;
+  align-items: flex-end;
+  // justify-content: space-between;
+  overflow: hidden;
+}
+.nameplate a {
+  // overflow: hidden !important;
+  width: 10px;
+}
+.nameplate .nameTail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: flex-end;
+}
+
+.wr {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  background-color: #424242;
+  // margin-left: auto;
+}
+
+.teamIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.tier .rButt {
+  margin-left: auto;
+  line-height: 26px !important;
+  padding: 3px;
+}
+
+.addButton .mat-raised-button {
+  line-height: 26px !important;
+  padding-left: 4px;
+  overflow: hidden;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.addButton {
+  margin-left: auto;
+}
+
+.addButton .mat-icon {
+  height: 20px;
+  width: 240x;
+  line-height: 20px;
+}
+
+.cannot {
+  // display: none !important;
+  background-color: grey !important;
+}
+
+.selected {
+  box-shadow: 0 0 3pt 2pt #ffeb3b;
+}

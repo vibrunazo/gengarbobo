@@ -55,6 +55,8 @@ import { AdminComponent } from './ligapvp/admin/admin.component';
 import { LogsComponent } from './ligapvp/admin/logs/logs.component';
 import { TourneyComponent } from './ligapvp/tourney/tourney.component';
 import { SltablemakerComponent } from './ligapvp/tourney/sltablemaker/sltablemaker.component';
+import { RegisterComponent } from './ligapvp/tourney/register/register.component';
+import { MaintablemakerComponent } from './ligapvp/tourney/maintablemaker/maintablemaker.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
@@ -87,7 +89,9 @@ const firebaseConfig = {
     AdminComponent,
     LogsComponent,
     TourneyComponent,
-    SltablemakerComponent
+    SltablemakerComponent,
+    RegisterComponent,
+    MaintablemakerComponent
   ],
   imports: [
     BrowserModule,
