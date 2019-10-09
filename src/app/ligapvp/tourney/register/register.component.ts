@@ -19,6 +19,9 @@ export class RegisterComponent implements OnInit {
   allNames: string[];
   filteredNames: string[];
   addName: string;
+  modeRegister: boolean;
+  modeGroups: boolean;
+  selectedGroup = 0;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router,
               private lambida: LambidaService) {}
@@ -33,7 +36,8 @@ export class RegisterComponent implements OnInit {
 
   setTourney(newId: string) {
     this.tourneyId = newId;
-    // this.loadLs();
+    this.loadLs();
+
     if (!this.tourneyData) {
       this.tourneyData = Liga.getTourneyById(newId);
       this.tourney = new Tourney(this.tourneyData);
@@ -83,6 +87,20 @@ export class RegisterComponent implements OnInit {
     console.log('deleting player ' + player);
     this.tourney.delPlayer(player);
     this.saveLs();
+  }
+
+  onAddPlayer(player: Player) {
+    console.log('adding player ' + player);
+    this.tourney.addToGroup(player.getName(), this.selectedGroup);
+
+  }
+
+  onClickGroup(index: number) {
+    this.selectedGroup = index;
+  }
+
+  isSelected(index: number): boolean {
+   return (this.modeGroups && index === this.selectedGroup);
   }
 
 }

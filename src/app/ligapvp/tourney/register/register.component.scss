@@ -1,9 +1,21 @@
+.mat-toolbar a {
+  color: #ffc107;
+}
+
+.barRow1 {
+  background-color: #424242;
+}
+.barRow2 {
+  // background-color: #424242;
+  font-size: 14px;
+}
+
 .options {
   margin-left: 40px;
 }
 
-.options .mat-slide-toggle {
-  margin-left: 5px;
+.barRow2 .mat-slide-toggle {
+  margin-right: 15px;
 }
 
 .options .rButt {
@@ -12,6 +24,24 @@
 
 .tourneyCard {
   width: fit-content;
+}
+
+.inscritosAndGroups {
+  display: flex;
+}
+
+.inscritosCard {
+  min-width: 140px;
+  padding: 6px 2px;
+}
+
+.groups {
+  display: flex;
+}
+
+.groupCard {
+  min-width: 140px;
+  padding: 6px 2px;
 }
 
 

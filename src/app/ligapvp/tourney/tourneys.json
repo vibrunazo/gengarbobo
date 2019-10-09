@@ -16,16 +16,11 @@
     "theme": "Terra",
     "format": "main",
     "players": ["vib", "atilajg", "rsscoach", "mamazzaro"],
-    "tiers": [
+    "groups": [
       {
-        "name": "diamond",
-        "players": ["vib", "atilajg", "rsscoach"],
-        "bgColor": "blue"
-      },
-      {
-        "name": "gold",
-        "players": ["c4i00", "alekasabbag", "haakaishin"],
-        "bgColor": "yellow"
+        "name": "bronze",
+        "players": [],
+        "bgColor": "red"
       },
       {
         "name": "silver",
@@ -33,9 +28,14 @@
         "bgColor": "gray"
       },
       {
-        "name": "bronze",
-        "players": [],
-        "bgColor": "red"
+        "name": "gold",
+        "players": ["c4i00", "alekasabbag", "haakaishin"],
+        "bgColor": "yellow"
+      },
+      {
+        "name": "diamond",
+        "players": ["vib", "atilajg", "rsscoach"],
+        "bgColor": "blue"
       }
     ]
   }

@@ -7,7 +7,7 @@ export interface TourneyData {
   format?: string;
   theme?: string;
   players?: string[]; // player names
-  tiers?: TourneyTier[];
+  groups?: TourneyGroup[];
 }
 export interface SuperLigaData extends TourneyData {
   t1?;
@@ -17,7 +17,7 @@ export interface SuperLigaData extends TourneyData {
   t5?;
 }
 
-export interface TourneyTier {
+export interface TourneyGroup {
   name: string;
   players: string[];
   bgColor?: string;
@@ -72,14 +72,18 @@ export class Tourney {
     return this.data.players.includes(playerName.toLowerCase());
   }
 
-  getTiers(): TourneyTier[] {
-    return this.data.tiers;
+  getGroups(): TourneyGroup[] {
+    return this.data.groups;
   }
 
-  getPlayersFromTierData(tier: TourneyTier): Player[] {
+  getPlayersFromGroupData(group: TourneyGroup): Player[] {
     const result: Player[] = [];
-    tier.players.forEach(pName => result.push(Liga.getPlayerByName(pName)));
+    group.players.forEach(pName => result.push(Liga.getPlayerByName(pName)));
     return result;
+  }
+
+  addToGroup(pName: string, group: number) {
+    this.data.groups[group].players.push(pName);
   }
 }
 
