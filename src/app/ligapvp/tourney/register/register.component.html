@@ -24,38 +24,59 @@
     Formato: {{ tourney.getFormat() }} <br />
     Tema: {{ tourney.getTheme() }} <br />
 
-    <mat-card>
-      Adicionar inscrito
-      <form (submit)="onSubmit()">
-        <mat-form-field id="pName">
-          <input matInput [(ngModel)]="addName" placeholder="Membro" [matAutocomplete]="auto" name="pName" (ngModelChange)="filterNames(addName)" />
-          <mat-autocomplete #auto="matAutocomplete" class="nameauto">
-            <mat-option *ngFor="let name of filteredNames" [value]="name.toLowerCase()" class="notranslate">
-              {{ name }}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-      </form>
-    </mat-card>
+    <div class="inscritos">
+      <mat-card>
+        Adicionar inscrito
+        <form (submit)="onSubmit()">
+          <mat-form-field id="pName">
+            <input matInput [(ngModel)]="addName" placeholder="Membro" [matAutocomplete]="auto" name="pName" (ngModelChange)="filterNames(addName)" />
+            <mat-autocomplete #auto="matAutocomplete" class="nameauto">
+              <mat-option *ngFor="let name of filteredNames" [value]="name.toLowerCase()" class="notranslate">
+                {{ name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </mat-card>
 
-    <mat-card *ngIf="tourney.getPlayers().length > 0">
-      Inscritos
-      <mat-divider></mat-divider>
-      <ng-container *ngFor="let p of tourney.getPlayers()">
-        <div>
-          <div class="nameplate">
-            <img [src]="p.getTeamIcon()" class="teamIcon" />
-            <a [routerLink]="['/liga/m', p.getName()]">
-              {{ p.getName() }}
-            </a>
-            <div class="nameTail">
-                <div class="addButton">
-                  <button mat-raised-button (click)="onDelPlayer(p)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
+      <mat-card *ngIf="tourney.getPlayers().length > 0">
+        Inscritos
+        <mat-divider></mat-divider>
+        <ng-container *ngFor="let p of tourney.getPlayers()">
+          <div>
+            <div class="nameplate">
+              <img [src]="p.getTeamIcon()" class="teamIcon" />
+              <a [routerLink]="['/liga/m', p.getName()]">
+                {{ p.getName() }}
+              </a>
+              <div class="nameTail">
+                  <div class="addButton">
+                    <button mat-raised-button (click)="onDelPlayer(p)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
+                  </div>
                 </div>
+            </div>
+            </div>
+        </ng-container>
+      </mat-card>
+
+    </div>
+
+    <mat-card class="groups">
+      Tiers
+      <ng-container *ngFor="let t of tourney.getTiers()">
+        <mat-card>
+          {{ t.name }}
+          <ng-container *ngFor="let p of tourney.getPlayersFromTierData(t)">
+              <div class="nameplate">
+                <img [src]="p.getTeamIcon()" class="teamIcon" />
+                <a [routerLink]="['/liga/m', p.getName()]">
+                  {{ p.getName() }}
+                </a>
               </div>
-          </div>
-          </div>
+          </ng-container>
+        </mat-card>
       </ng-container>
     </mat-card>
+
   </mat-card>
 </div>

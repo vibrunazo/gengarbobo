@@ -15,6 +15,28 @@
     "id": "liga7",
     "theme": "Terra",
     "format": "main",
-    "players": ["vib", "atilajg", "rsscoach"]
+    "players": ["vib", "atilajg", "rsscoach", "mamazzaro"],
+    "tiers": [
+      {
+        "name": "diamond",
+        "players": ["vib", "atilajg", "rsscoach"],
+        "bgColor": "blue"
+      },
+      {
+        "name": "gold",
+        "players": ["c4i00", "alekasabbag", "haakaishin"],
+        "bgColor": "yellow"
+      },
+      {
+        "name": "silver",
+        "players": ["mamazzaro", "mestredohko", "binhozica01"],
+        "bgColor": "gray"
+      },
+      {
+        "name": "bronze",
+        "players": [],
+        "bgColor": "red"
+      }
+    ]
   }
 ]

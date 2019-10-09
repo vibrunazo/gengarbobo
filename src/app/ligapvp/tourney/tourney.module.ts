@@ -7,6 +7,7 @@ export interface TourneyData {
   format?: string;
   theme?: string;
   players?: string[]; // player names
+  tiers?: TourneyTier[];
 }
 export interface SuperLigaData extends TourneyData {
   t1?;
@@ -14,6 +15,13 @@ export interface SuperLigaData extends TourneyData {
   t3?;
   t4?;
   t5?;
+}
+
+export interface TourneyTier {
+  name: string;
+  players: string[];
+  bgColor?: string;
+  icon?: string;
 }
 
 export class Tourney {
@@ -62,6 +70,16 @@ export class Tourney {
   }
   hasPlayer(playerName: string): boolean {
     return this.data.players.includes(playerName.toLowerCase());
+  }
+
+  getTiers(): TourneyTier[] {
+    return this.data.tiers;
+  }
+
+  getPlayersFromTierData(tier: TourneyTier): Player[] {
+    const result: Player[] = [];
+    tier.players.forEach(pName => result.push(Liga.getPlayerByName(pName)));
+    return result;
   }
 }
 

@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
 
   setTourney(newId: string) {
     this.tourneyId = newId;
-    this.loadLs();
+    // this.loadLs();
     if (!this.tourneyData) {
       this.tourneyData = Liga.getTourneyById(newId);
       this.tourney = new Tourney(this.tourneyData);
