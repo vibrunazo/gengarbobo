@@ -83,6 +83,11 @@
                     <a [routerLink]="['/liga/m', p.getName()]">
                       {{ p.getName() }}
                     </a>
+                    <div class="nameTail">
+                      <div class="addButton" *ngIf="modeGroups">
+                        <button mat-raised-button (click)="onDelFromGroup(p)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
+                      </div>
+                    </div>
                   </div>
               </ng-container>
             </mat-card>

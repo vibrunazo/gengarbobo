@@ -38,6 +38,7 @@ export class Tourney {
       data.players.map(p => p.toLowerCase());
       data.players.forEach(p => this.players.push(Liga.getPlayerByName(p)));
     }
+    this.data.groups.forEach(g => g.players = g.players.map(p => p.toLowerCase()));
   }
 
   getName(): string {
@@ -83,7 +84,14 @@ export class Tourney {
   }
 
   addToGroup(pName: string, group: number) {
-    this.data.groups[group].players.push(pName);
+    this.delFromAllGroups(pName);
+    this.data.groups[group].players.push(pName.toLowerCase());
+  }
+  delFromGroup(pName: string, group: number) {
+    this.data.groups[group].players = this.data.groups[group].players.filter(p => p !== pName.toLowerCase());
+  }
+  delFromAllGroups(pName: string) {
+    this.data.groups.forEach(g => g.players = g.players.filter(p => p !== pName.toLowerCase()));
   }
 }
 

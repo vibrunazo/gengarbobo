@@ -89,10 +89,15 @@ export class RegisterComponent implements OnInit {
     this.saveLs();
   }
 
+  onDelFromGroup(player: Player) {
+    this.tourney.delFromGroup(player.getName(), this.selectedGroup);
+    this.saveLs();
+  }
+
   onAddPlayer(player: Player) {
     console.log('adding player ' + player);
     this.tourney.addToGroup(player.getName(), this.selectedGroup);
-
+    this.saveLs();
   }
 
   onClickGroup(index: number) {
