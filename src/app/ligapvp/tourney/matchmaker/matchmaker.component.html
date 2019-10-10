@@ -21,6 +21,7 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="barRow2">
       <mat-slide-toggle [(ngModel)]="modeEdit">Editar</mat-slide-toggle>
+      <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>shuffle</mat-icon>random all</button>
       <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed"><mat-icon>cancel</mat-icon>Apaga tudo</button>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -46,7 +47,10 @@
                 <img [src]="p.getTeamIcon()" class="teamIcon" />
                 {{ p.getName() }}
               </button>
-              {{ tourney.getMatchCount(p.getName()) }}
+              <span class="matchCount">
+                {{ tourney.getMatchCount(p.getName()) }}
+              </span>
+              <span class="enemiesCount">{{ this.tourney.getEnemies(p).length }}</span>
             </div>
           </ng-container>
         </mat-card>

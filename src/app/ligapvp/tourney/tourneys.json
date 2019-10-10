@@ -33,13 +33,13 @@
         "name": "gold",
         "players": ["atilajg","mestredohko","oftentimes7","douglete011","manfrim11","raulav1","ginolucca","masterlineyr","vanedipo","gsaito87","binhozica01","marcelo69"],
         "bgColor": "yellow",
-        "maxMatches": 9
+        "maxMatches": 8
       },
       {
         "name": "diamond",
-        "players": ["rsscoach","tomdsantos","lltk87ll","murakamigu","13jcruel13","gassanbr","helior44","tgosorelli","zuziamao","alekasabbag","c4i00","vib", "hhazuka"],
+        "players": ["rsscoach","tomdsantos","lltk87ll","murakamigu","13jcruel13","gassanbr","helior44","tgosorelli","hhazuka","zuziamao","alekasabbag","c4i00","vib"],
         "bgColor": "blue",
-        "maxMatches": 9
+        "maxMatches": 8
       }
     ]
   }
