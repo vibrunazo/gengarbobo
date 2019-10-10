@@ -33,7 +33,7 @@
   <div class="groupsAndTable">
     <div class="groups">
       <ng-container *ngFor="let g of tourney.getGroups()">
-        <mat-card class="groupCard">
+        <mat-card class="groupCard" [ngClass]="g.name">
           <mat-card-header>
               {{ g.name }}
           </mat-card-header>

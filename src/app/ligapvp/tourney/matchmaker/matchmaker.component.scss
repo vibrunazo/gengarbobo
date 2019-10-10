@@ -29,6 +29,7 @@
 
 .groupsAndTable {
   display: flex;
+  align-items: flex-start;
 }
 
 .inscritosCard {
@@ -38,6 +39,7 @@
 
 .groups {
   display: flex;
+  align-items: flex-start;
 }
 
 .groupCard {
@@ -65,6 +67,7 @@
 .nameplate a {
   // overflow: hidden !important;
   width: 10px;
+  text-shadow: 2px 2px 2px #222;
 }
 .nameplate .nameTail {
   display: flex;
@@ -191,4 +194,17 @@
 
 .matchNames {
   font-size: 14px;
+}
+
+.bronze {
+  background-color: rgb(134, 99, 99);
+}
+.silver {
+  background-color: rgb(163, 157, 157);
+}
+.gold {
+  background-color: rgb(201, 177, 133);
+}
+.diamond {
+  background-color: rgb(115, 143, 155);
 }
