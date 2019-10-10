@@ -154,4 +154,8 @@ export class MatchmakerComponent implements OnInit {
     return this.tourney.getMaxMatches();
   }
 
+  getPlayer(pName: string): Player {
+    return Liga.getPlayerByName(pName);
+  }
+
 }
