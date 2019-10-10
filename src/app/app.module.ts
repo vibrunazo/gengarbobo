@@ -57,6 +57,7 @@ import { TourneyComponent } from './ligapvp/tourney/tourney.component';
 import { SltablemakerComponent } from './ligapvp/tourney/sltablemaker/sltablemaker.component';
 import { RegisterComponent } from './ligapvp/tourney/register/register.component';
 import { MatchmakerComponent } from './ligapvp/tourney/matchmaker/matchmaker.component';
+import { GcfgDialogComponent } from './ligapvp/tourney/register/gcfg-dialog/gcfg-dialog.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAyGNDZyvMXGlIX7BxRLyEn8Lujhvs2bXI',
@@ -91,7 +92,8 @@ const firebaseConfig = {
     TourneyComponent,
     SltablemakerComponent,
     RegisterComponent,
-    MatchmakerComponent
+    MatchmakerComponent,
+    GcfgDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -124,7 +126,8 @@ const firebaseConfig = {
     MatSlideToggleModule
   ],
   entryComponents: [
-    EditDialogComponent
+    EditDialogComponent,
+    GcfgDialogComponent
   ],
   providers: [
     {

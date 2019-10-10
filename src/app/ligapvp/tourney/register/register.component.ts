@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { TourneyData, Tourney } from '../tourney.module';
+import { TourneyData, Tourney, TourneyGroup } from '../tourney.module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { LambidaService } from 'src/app/services/lambida.service';
 import { Liga, Player } from 'src/app/shared/ligapvp.module';
+import { MatDialog } from '@angular/material';
+import { GcfgDialogComponent } from './gcfg-dialog/gcfg-dialog.component';
 
 @Component({
   selector: 'app-register',
@@ -23,7 +25,7 @@ export class RegisterComponent implements OnInit {
   selectedGroup = 0;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router,
-              private lambida: LambidaService) {}
+              private lambida: LambidaService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -98,6 +100,26 @@ export class RegisterComponent implements OnInit {
   onDelFromGroup(player: Player) {
     this.tourney.delFromGroup(player.getName(), this.selectedGroup);
     this.saveLs();
+  }
+
+  onConfig(group: TourneyGroup) {
+    console.log('config');
+    console.log(group);
+    // group.name = 'bronze';
+    // this.saveLs();
+    const dialogRef = this.dialog.open(GcfgDialogComponent, {
+      // height: 'fit-content',
+      // width: '300px',
+      data: group
+    });
+    dialogRef.afterClosed().subscribe((newData: TourneyGroup) => {
+      console.log('The dialog was closed');
+      console.log(newData);
+      this.saveLs();
+      // if (newData) {
+      // }
+    });
+
   }
 
   onAddPlayer(player: Player) {

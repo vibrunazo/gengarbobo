@@ -1,0 +1,10 @@
+<p>Edite as configurações do grupo!</p>
+As modificações são atualizadas na hora.
+<br><br>
+<mat-form-field id="name">
+  <input matInput [(ngModel)]="data.name" placeholder="Nome" name="nome" type="text"  min="0" max="100" step="1" >
+</mat-form-field>
+
+<mat-form-field id="matches">
+  <input matInput [(ngModel)]="data.maxMatches" placeholder="Max de Batalhas" name="matches" type="number"  min="0" max="100" step="1" >
+</mat-form-field>

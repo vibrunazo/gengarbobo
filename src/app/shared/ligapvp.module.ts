@@ -857,8 +857,11 @@ export class Liga {
 
   static getTourneyById(id: string): TourneyData {
     // this.allTourneys = Tourneys;
-    const tourney = Tourneys.find(t => t.id === id);
-    // const tourney = this.allTourneys.find(t => t.id === id);
+    // const tourney = Tourneys.find(t => t.id === id);
+    console.log('this.allTourneys');
+    console.log(this.allTourneys);
+
+    const tourney = this.allTourneys.find(t => t.id === id);
     return tourney;
   }
 

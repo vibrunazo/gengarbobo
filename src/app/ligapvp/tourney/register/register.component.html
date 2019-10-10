@@ -76,8 +76,13 @@
         Grupos
         <div class="groups">
           <ng-container *ngFor="let t of tourney.getGroups(); let i = index">
-            <mat-card class="groupCard"  (click)="onClickGroup(i)" [ngClass]="isSelected(i) ? 'selected' : ''">
-              {{ t.name }}
+            <mat-card class="groupCard"  (click)="onClickGroup(i)" [ngClass]="isSelected(i) ? 'selected ' + t.name : t.name">
+              <mat-card-header>
+                  {{ t.name }}
+                  <div class="addButton" *ngIf="modeGroups">
+                    <button mat-raised-button (click)="onConfig(t)" class="" color="accent"><mat-icon>edit</mat-icon>config</button>
+                  </div>
+              </mat-card-header>
               <ng-container *ngFor="let p of tourney.getPlayersFromGroupData(t)">
                   <div class="nameplate">
                     <img [src]="p.getTeamIcon()" class="teamIcon" />

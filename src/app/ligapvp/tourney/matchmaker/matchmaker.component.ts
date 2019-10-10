@@ -39,8 +39,8 @@ export class MatchmakerComponent implements OnInit {
 
   resetTourneyData() {
     const tourneyData = Liga.getTourneyById(this.tourneyId);
-    this.tourney = new Tourney(tourneyData);
     console.log(tourneyData);
+    this.tourney = new Tourney(tourneyData);
     console.log(this.tourney);
   }
 

@@ -29,6 +29,7 @@
 
 .inscritosAndGroups {
   display: flex;
+  align-items: flex-start;
 }
 
 .inscritosCard {
@@ -38,6 +39,7 @@
 
 .groups {
   display: flex;
+  align-items: flex-start;
 }
 
 .groupCard {
@@ -46,6 +48,9 @@
   margin: 3px;
 }
 
+.mat-card-header {
+  margin: 12px 2px;
+}
 
 .nameplate {
   width: 100%;
