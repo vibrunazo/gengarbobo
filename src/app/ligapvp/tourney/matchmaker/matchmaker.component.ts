@@ -14,7 +14,7 @@ export class MatchmakerComponent implements OnInit {
   tourneyId = '';
   tourney: Tourney;
   format: string;
-  modeEdit = false;
+  modeEdit = true;
   selectedPlayer: Player;
   enemies: Player[];
   enemyCount: number;
@@ -78,6 +78,12 @@ export class MatchmakerComponent implements OnInit {
   onMatch(player: Player) {
     console.log(`${this.selectedPlayer} x ${player}`);
     this.tourney.addMatch(this.selectedPlayer.getName(), player.getName());
+    this.saveLs();
+  }
+
+  onDelMatch(index: number) {
+    this.tourney.delMatch(index);
+    this.saveLs();
   }
 
   getSelectedName(): string {

@@ -78,10 +78,17 @@
       Batalhas
       <br>
       <div *ngIf="tourney.getMatches()">
-        <ng-container *ngFor="let m of tourney.getMatches()">
-          {{ m.players[0] }} x {{ m.players[1] }}
-          <br>
+        <ng-container *ngFor="let m of tourney.getMatches(); let i = index">
+          <div class="matchRow">
+            <span>
+              {{ m.players[0] }} x {{ m.players[1] }}
+            </span>
+            <div class="addButton" *ngIf="modeEdit">
+              <button mat-raised-button (click)="onDelMatch(i)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
+            </div>
+          </div>
         </ng-container>
+        <br>
       </div>
     </mat-card>
   </div>

@@ -91,6 +91,9 @@ export class Tourney {
     }
     return false;
   }
+  delMatch(index: number) {
+    this.data.matches.splice(index, 1);
+  }
 
   getMatches(): MatchData[] {
     return this.data.matches;
