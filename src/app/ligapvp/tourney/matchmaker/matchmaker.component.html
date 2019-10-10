@@ -90,9 +90,10 @@
       {{ getMatchesCount() }} de {{ getMatchesMaxTotal() }}
       <mat-divider></mat-divider>
       <div *ngIf="tourney.getMatches()">
+        <br>
         <ng-container *ngFor="let m of tourney.getMatches().slice().reverse(); let i = index">
           <div class="matchRow">
-            <span>
+            <span class="matchNames">
               {{ m.players[0] }} x {{ m.players[1] }}
             </span>
             <div class="addButton" *ngIf="modeEdit">
