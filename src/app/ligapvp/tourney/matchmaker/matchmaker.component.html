@@ -21,7 +21,7 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="barRow2">
       <mat-slide-toggle [(ngModel)]="modeEdit">Editar</mat-slide-toggle>
-      <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Apaga tudo</button>
+      <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed"><mat-icon>cancel</mat-icon>Apaga tudo</button>
     </mat-toolbar-row>
   </mat-toolbar>
   <br />
@@ -35,16 +35,22 @@
         <mat-card class="groupCard">
           {{ g.name }}
           <ng-container *ngFor="let p of tourney.getPlayersFromGroupData(g)">
-            <div class="nameplate">
+            <div class="nameplate" *ngIf="!modeEdit">
               <img [src]="p.getTeamIcon()" class="teamIcon" />
               <a [routerLink]="['/liga/m', p.getName()]">
                 {{ p.getName() }}
               </a>
               <div class="nameTail">
-                <div class="addButton">
-                  <button mat-raised-button (click)="onAddPlayer(p)" class="bgGreen" *ngIf="modeEdit"><mat-icon>add_circle_outline</mat-icon>add</button>
-                </div>
+
               </div>
+            </div>
+            <div class="selButton addButton" *ngIf="modeEdit">
+              <button mat-raised-button (click)="onAddPlayer(p)" class="" *ngIf="modeEdit" color="accent">
+                <!-- <mat-icon>add_circle_outline</mat-icon> -->
+                <img [src]="p.getTeamIcon()" class="teamIcon" />
+                {{ p.getName() }}
+              </button>
+              {{ tourney.getMatchCount(p.getName()) }}
             </div>
           </ng-container>
         </mat-card>

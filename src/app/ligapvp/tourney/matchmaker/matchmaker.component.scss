@@ -103,6 +103,17 @@
   line-height: 20px;
 }
 
+.selButton .mat-raised-button {
+  width: 100px;
+  text-align: left;
+  // background-color: #669;
+}
+
+.selButton .teamIcon {
+  margin-right: -3px;
+  margin-left: -2px;
+}
+
 .cannot {
   // display: none !important;
   background-color: grey !important;
