@@ -8,6 +8,7 @@ export interface TourneyData {
   theme?: string;
   players?: string[]; // player names
   groups?: TourneyGroup[];
+  matches?: MatchData[];
 }
 export interface SuperLigaData extends TourneyData {
   t1?;
@@ -15,6 +16,10 @@ export interface SuperLigaData extends TourneyData {
   t3?;
   t4?;
   t5?;
+}
+
+export interface MatchData {
+  players: string[];
 }
 
 export interface TourneyGroup {
@@ -39,7 +44,9 @@ export class Tourney {
   }
 
   buildPlayers(data: TourneyData) {
-    this.data.groups.forEach(g => g.players = g.players.map(p => this.addPlayerByName(p)));
+    if (this.data.groups) {
+      this.data.groups.forEach(g => g.players = g.players.map(p => this.addPlayerByName(p)));
+    }
     if (data.players && data.players.length > 0) {
       data.players.map(p => p.toLowerCase());
       data.players.forEach(p => this.players.push(Liga.getPlayerByName(p)));
@@ -66,6 +73,27 @@ export class Tourney {
   }
   getPlayerNames(): string[] {
     return this.data.players;
+  }
+
+  addMatch(p1: string, p2: string) {
+    if (!this.data.matches) { this.data.matches = []; }
+    if (this.hasMatch(p1, p2)) { return; }
+    const newMatch = {
+      players: [p1.toLowerCase(), p2.toLowerCase()],
+    };
+    this.data.matches.push(newMatch);
+  }
+  hasMatch(p1: string, p2: string): boolean {
+    for (const match of this.data.matches) {
+      if (match.players.includes(p1.toLowerCase()) && match.players.includes(p2.toLowerCase())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  getMatches(): MatchData[] {
+    return this.data.matches;
   }
 
   findGroupOfPlayer(pName: string): number {
@@ -96,6 +124,13 @@ export class Tourney {
   }
   hasPlayer(playerName: string): boolean {
     return this.data.players.includes(playerName.toLowerCase());
+  }
+
+  getEnemies(player: Player): Player[] {
+    const groupIndex = this.findGroupOfPlayer(player.getName());
+    const group = this.data.groups[groupIndex];
+    const groupPlayers = group.players;
+    return player.filterEnemies(groupPlayers);
   }
 
   getGroups(): TourneyGroup[] {

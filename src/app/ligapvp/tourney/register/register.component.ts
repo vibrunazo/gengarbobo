@@ -12,7 +12,6 @@ import { Liga, Player } from 'src/app/shared/ligapvp.module';
 })
 export class RegisterComponent implements OnInit {
   tourneyId = '';
-  // tourneyData: TourneyData;
   tourney: Tourney;
   format: string;
   allPlayers: Player[];
@@ -37,7 +36,6 @@ export class RegisterComponent implements OnInit {
   setTourney(newId: string) {
     this.tourneyId = newId;
     this.loadLs();
-
     if (!this.tourney) {
       this.resetTourneyData();
     }

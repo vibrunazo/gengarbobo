@@ -1,0 +1,88 @@
+<span *ngIf="!tourney">
+  Torneio não encontrado
+</span>
+<div *ngIf="tourney">
+  <mat-toolbar color="">
+    <mat-toolbar-row class="barRow1">
+      <a [routerLink]="['..']">
+        {{ tourney.getName() }}
+      </a>
+      <span class="options">
+        <a [routerLink]="['../register']">
+          Registro
+        </a>
+        <a [routerLink]="['../slmaker']" *ngIf="tourney.getFormat() === 'sl'">
+          Editar Grupos
+        </a>
+        <a [routerLink]="['../maker']" *ngIf="tourney.getFormat() === 'main'">
+          Tabela
+        </a>
+      </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="barRow2">
+      <mat-slide-toggle [(ngModel)]="modeEdit">Editar</mat-slide-toggle>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <br />
+
+  {{ tourney.getName() }}
+
+  <br />
+  <div class="groupsAndTable">
+    <div class="groups">
+      <ng-container *ngFor="let g of tourney.getGroups()">
+        <mat-card class="groupCard">
+          {{ g.name }}
+          <ng-container *ngFor="let p of tourney.getPlayersFromGroupData(g)">
+            <div class="nameplate">
+              <img [src]="p.getTeamIcon()" class="teamIcon" />
+              <a [routerLink]="['/liga/m', p.getName()]">
+                {{ p.getName() }}
+              </a>
+              <div class="nameTail">
+                <div class="addButton">
+                  <button mat-raised-button (click)="onAddPlayer(p)" class="bgGreen" *ngIf="modeEdit"><mat-icon>add_circle_outline</mat-icon>add</button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </mat-card>
+      </ng-container>
+    </div>
+    <mat-card class="oponentesCard">
+      <div *ngIf="selectedPlayer" class="oponentes">
+        {{ enemyCount }} Oponentes de
+        <div class="nameplate">
+          <img [src]="selectedPlayer.getTeamIcon()" class="teamIcon" />
+          <a [routerLink]="['/liga/m', selectedPlayer.getName()]">
+            {{ selectedPlayer.getName() }}
+          </a>
+        </div>
+        <mat-divider></mat-divider>
+        <ng-container *ngFor="let p of enemies">
+          <div class="nameplate">
+            <img [src]="p.getTeamIcon()" class="teamIcon" />
+            <a [routerLink]="['/liga/m', p.getName()]">
+              {{ p.getName() }}
+            </a>
+            <div class="nameTail">
+              <div class="addButton">
+                <button mat-raised-button (click)="onMatch(p)" class="bgGreen" *ngIf="modeEdit"><mat-icon>add_circle_outline</mat-icon>add</button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </mat-card>
+    <mat-card>
+      Batalhas
+      <br>
+      <div *ngIf="tourney.getMatches()">
+        <ng-container *ngFor="let m of tourney.getMatches()">
+          {{ m.players[0] }} x {{ m.players[1] }}
+          <br>
+        </ng-container>
+      </div>
+    </mat-card>
+  </div>
+</div>

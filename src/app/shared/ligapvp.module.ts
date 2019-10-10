@@ -770,14 +770,22 @@ export class Player {
     return result;
   }
 
+  /**
+   * From this list of player names, which ones are my enemies?
+   * @param players list of player names
+   */
+  filterEnemies(players: string[]): Player[] {
+    const enemies = this.getEnemies();
+    let result: Player[] = [];
+    result = enemies.filter(e => players.includes(e.getName().toLowerCase()));
+    return result;
+  }
+
   getEnemies(nivel?: Nivel, rank?: string): Player[] {
     const result: Player[] = [];
     const friends = this.getFriends();
     friends.forEach(f => {
       const t = f.team !== this.team;
-      // console.log(nivel);
-      // console.log(f);
-      // console.log(f.getNivel());
       const n = nivel === undefined || nivel === f.getNivel();
 
       const r = !rank || rank === f.getRank();
