@@ -15,26 +15,26 @@
     "id": "liga7",
     "theme": "Terra",
     "format": "main",
-    "players": ["vib", "atilajg", "rsscoach", "mamazzaro"],
+    "players": [],
     "groups": [
       {
         "name": "bronze",
-        "players": [],
+        "players": ["copperkid","davidfirmin0","higashiricardo","patyeiko","brankinho40","luksbertolli","redzoom","reidoidao","yeyas81","didideluca","didisantista","marcioljunior","qdeza","rafa25albertin","123catbond","barbaketchum","dgketchum1","genosfull","pedrinhogamarra","winiciuslb1810","fgsanfre","guimi19","cecmartins","juracrav","tsusetoguchi"],
         "bgColor": "red"
       },
       {
         "name": "silver",
-        "players": ["mamazzaro", "mestredohko", "binhozica01"],
+        "players": ["mamazzaro","mi88akz","allanlima04","diogenest","guilram91","maucolella","queenbelinha","brabrinha","teresak1","rikardolima","singolfaire","wallanlima16","maiktheone","tiringstorm34","jimbobazul","regininhakawaii","victavares","pamps2805"],
         "bgColor": "gray"
       },
       {
         "name": "gold",
-        "players": ["c4i00", "alekasabbag", "haakaishin"],
+        "players": ["atilajg","mestredohko","oftentimes7","douglete011","manfrim11","raulav1","ginolucca","masterlineyr","vanedipo","gsaito87","binhozica01","marcelo69"],
         "bgColor": "yellow"
       },
       {
         "name": "diamond",
-        "players": ["vib", "atilajg", "rsscoach"],
+        "players": ["rsscoach","tomdsantos","lltk87ll","murakamigu","13jcruel13","gassanbr","helior44","tgosorelli","zuziamao","alekasabbag","c4i00","vib"],
         "bgColor": "blue"
       }
     ]

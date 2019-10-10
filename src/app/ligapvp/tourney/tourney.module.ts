@@ -25,20 +25,25 @@ export interface TourneyGroup {
 }
 
 export class Tourney {
-  data: TourneyData;
+  data: TourneyData = {
+    name: '',
+    id: ''
+  };
   private players: Player[] = []; // player objects
 
   constructor(data: TourneyData) {
-    this.data = data;
+    this.data = JSON.parse(JSON.stringify(data));
+    // Object.assign(this.data, data);
+    // this.data = data;
     this.buildPlayers(data);
   }
 
   buildPlayers(data: TourneyData) {
+    this.data.groups.forEach(g => g.players = g.players.map(p => this.addPlayerByName(p)));
     if (data.players && data.players.length > 0) {
       data.players.map(p => p.toLowerCase());
       data.players.forEach(p => this.players.push(Liga.getPlayerByName(p)));
     }
-    this.data.groups.forEach(g => g.players = g.players.map(p => p.toLowerCase()));
   }
 
   getName(): string {
@@ -56,10 +61,29 @@ export class Tourney {
   getPlayers(): Player[] {
     return this.players;
   }
+  getPlayersNotInGroups(): Player[] {
+    return this.players.filter(p => this.findGroupOfPlayer(p.getName()) < 0);
+  }
   getPlayerNames(): string[] {
     return this.data.players;
   }
 
+  findGroupOfPlayer(pName: string): number {
+    for (let index = 0; index < this.data.groups.length; index++) {
+      if (this.data.groups[index].players.includes(pName.toLowerCase())) {
+        return index;
+      }
+    }
+    return -1;
+  }
+
+  addPlayerByName(pName: string): string {
+    if (!pName || pName === '' || this.hasPlayer(pName)) { return pName.toLowerCase(); }
+    const newPlayer = Liga.getPlayerByName(pName);
+    this.players.push(newPlayer);
+    this.data.players.push(pName);
+    return pName.toLowerCase();
+  }
   addPlayer(newPlayer: Player) {
     if (!newPlayer || this.hasPlayer(newPlayer.getName())) { return; }
     this.players.push(newPlayer);
@@ -68,6 +92,7 @@ export class Tourney {
   delPlayer(player: Player) {
     this.players = this.players.filter(p => !p.is(player));
     this.data.players = this.data.players.filter(p => (p.toLowerCase() !== player.getName().toLowerCase()));
+    this.delFromAllGroups(player.getName());
   }
   hasPlayer(playerName: string): boolean {
     return this.data.players.includes(playerName.toLowerCase());
@@ -80,6 +105,9 @@ export class Tourney {
   getPlayersFromGroupData(group: TourneyGroup): Player[] {
     const result: Player[] = [];
     group.players.forEach(pName => result.push(Liga.getPlayerByName(pName)));
+    // console.log('getting players from group');
+    // console.log(result);
+
     return result;
   }
 

@@ -848,7 +848,9 @@ export class Liga {
 
 
   static getTourneyById(id: string): TourneyData {
-    const tourney = this.allTourneys.find(t => t.id === id);
+    // this.allTourneys = Tourneys;
+    const tourney = Tourneys.find(t => t.id === id);
+    // const tourney = this.allTourneys.find(t => t.id === id);
     return tourney;
   }
 
@@ -879,6 +881,7 @@ export class Liga {
 
   // returns the Player object that has this name
   static getPlayerByName(name: string): Player {
+    if (!name) { return null; }
     return this.allPlayers.find(p => p.getName().toLowerCase() === name.toLowerCase());
   }
 

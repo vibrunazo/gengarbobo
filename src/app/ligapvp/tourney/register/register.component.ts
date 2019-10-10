@@ -12,7 +12,7 @@ import { Liga, Player } from 'src/app/shared/ligapvp.module';
 })
 export class RegisterComponent implements OnInit {
   tourneyId = '';
-  tourneyData: TourneyData;
+  // tourneyData: TourneyData;
   tourney: Tourney;
   format: string;
   allPlayers: Player[];
@@ -38,16 +38,20 @@ export class RegisterComponent implements OnInit {
     this.tourneyId = newId;
     this.loadLs();
 
-    if (!this.tourneyData) {
-      this.tourneyData = Liga.getTourneyById(newId);
-      this.tourney = new Tourney(this.tourneyData);
-      console.log(this.tourneyData);
-      console.log(this.tourney);
+    if (!this.tourney) {
+      this.resetTourneyData();
     }
     this.allPlayers = Liga.getAllPlayers();
     this.allNames = this.allPlayers.map(p => p.getName());
     this.filteredNames = this.allNames;
 
+  }
+
+  resetTourneyData() {
+    const tourneyData = Liga.getTourneyById(this.tourneyId);
+    this.tourney = new Tourney(tourneyData);
+    console.log(tourneyData);
+    console.log(this.tourney);
   }
 
   filterNames(name: string) {
@@ -72,14 +76,17 @@ export class RegisterComponent implements OnInit {
   saveLs() {
     localStorage.setItem(this.getLsId(), JSON.stringify(this.tourney.data));
   }
+  resetLs() {
+    localStorage.setItem(this.getLsId(), '');
+  }
 
   loadLs() {
     const ls = localStorage.getItem(this.getLsId());
     if (!ls) { return; }
-    this.tourneyData = JSON.parse(ls);
-    this.tourney = new Tourney(this.tourneyData);
+    const tourneyData = JSON.parse(ls);
+    this.tourney = new Tourney(tourneyData);
     console.log('loaded this.tourneyData');
-    console.log(this.tourneyData);
+    console.log(tourneyData);
     console.log(this.tourney);
   }
 
@@ -102,6 +109,14 @@ export class RegisterComponent implements OnInit {
 
   onClickGroup(index: number) {
     this.selectedGroup = index;
+  }
+
+  onClearAll() {
+    console.log('clear all');
+    this.resetLs();
+    this.resetTourneyData();
+    this.setTourney(this.tourneyId);
+
   }
 
   isSelected(index: number): boolean {

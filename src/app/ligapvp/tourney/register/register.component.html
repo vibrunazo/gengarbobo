@@ -22,6 +22,7 @@
     <mat-toolbar-row class="barRow2">
       <mat-slide-toggle [(ngModel)]="modeRegister">Editar Inscritos</mat-slide-toggle>
       <mat-slide-toggle [(ngModel)]="modeGroups">Editar Grupos</mat-slide-toggle>
+      <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Apaga tudo</button>
     </mat-toolbar-row>
   </mat-toolbar>
   <br />
@@ -49,7 +50,7 @@
         <mat-card *ngIf="tourney.getPlayers().length > 0" class="inscritosCard">
           Inscritos
           <mat-divider></mat-divider>
-          <ng-container *ngFor="let p of tourney.getPlayers()">
+          <ng-container *ngFor="let p of tourney.getPlayersNotInGroups()">
             <div>
               <div class="nameplate">
                 <img [src]="p.getTeamIcon()" class="teamIcon" />
