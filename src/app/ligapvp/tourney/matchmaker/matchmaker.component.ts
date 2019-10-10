@@ -62,7 +62,8 @@ export class MatchmakerComponent implements OnInit {
   loadLs() {
     const ls = localStorage.getItem(this.getLsId());
     if (!ls) { return; }
-    const tourneyData = JSON.parse(ls);
+    const tourneyData = JSON.parse(ls || 'null');
+    if (!tourneyData) { return; }
     this.tourney = new Tourney(tourneyData);
     console.log('loaded this.tourneyData');
     console.log(tourneyData);
