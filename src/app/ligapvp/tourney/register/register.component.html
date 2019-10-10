@@ -9,13 +9,13 @@
       </a>
       <span class="options">
         <a [routerLink]="['.']">
-          Registro
+          Conf. Grupos
         </a>
         <a [routerLink]="['../slmaker']" *ngIf="tourney.getFormat() === 'sl'">
           Editar Grupos
         </a>
         <a [routerLink]="['../maker']" *ngIf="tourney.getFormat() === 'main'">
-          Tabela
+          Sortear Partidas
         </a>
       </span>
     </mat-toolbar-row>

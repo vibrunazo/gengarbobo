@@ -9,13 +9,13 @@
       </a>
       <span class="options">
         <a [routerLink]="['../register']">
-          Registro
+          Conf. Grupos
         </a>
         <a [routerLink]="['../slmaker']" *ngIf="tourney.getFormat() === 'sl'">
           Editar Grupos
         </a>
         <a [routerLink]="['../maker']" *ngIf="tourney.getFormat() === 'main'">
-          Tabela
+          Sortear Partidas
         </a>
       </span>
     </mat-toolbar-row>
@@ -24,11 +24,6 @@
       <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed"><mat-icon>cancel</mat-icon>Apaga tudo</button>
     </mat-toolbar-row>
   </mat-toolbar>
-  <br />
-
-  {{ tourney.getName() }}
-
-  <br />
   <br />
   <div class="groupsAndTable">
     <div class="groups">
