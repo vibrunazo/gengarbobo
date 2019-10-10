@@ -81,9 +81,10 @@
     </mat-card>
     <mat-card>
       Batalhas
-      <br>
+      {{ getMatchesCount() }} de {{ getMatchesMaxTotal() }}
+      <mat-divider></mat-divider>
       <div *ngIf="tourney.getMatches()">
-        <ng-container *ngFor="let m of tourney.getMatches(); let i = index">
+        <ng-container *ngFor="let m of tourney.getMatches().slice().reverse(); let i = index">
           <div class="matchRow">
             <span>
               {{ m.players[0] }} x {{ m.players[1] }}

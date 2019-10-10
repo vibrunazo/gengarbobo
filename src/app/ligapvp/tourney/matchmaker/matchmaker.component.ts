@@ -89,14 +89,15 @@ export class MatchmakerComponent implements OnInit {
   }
 
   onDelMatch(index: number) {
-    this.tourney.delMatch(index);
+    // reverses the index because the array was inverted in the view
+    this.tourney.delMatch(this.tourney.getMatches().length - index - 1);
     this.saveLs();
   }
 
   canAddMatch(p1: Player, p2: Player): boolean {
     const p1n = p1.getName();
     const p2n = p2.getName();
-    // if (this.tourney.hasMaxMatches(p1n) || this.tourney.hasMaxMatches(p2n)) { return false; }
+    if (this.tourney.hasMaxMatches(p1n) || this.tourney.hasMaxMatches(p2n)) { return false; }
     if (this.tourney.hasMatch(p1n, p2n)) { return false; }
     return true;
   }
@@ -108,6 +109,14 @@ export class MatchmakerComponent implements OnInit {
 
   getEnemies(): Player[] {
     return this.tourney.getEnemies(this.selectedPlayer);
+  }
+
+  getMatchesCount(): number {
+    return this.tourney.getMatches().length;
+  }
+
+  getMatchesMaxTotal(): number {
+    return this.tourney.getMaxMatches();
   }
 
 }

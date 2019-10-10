@@ -125,6 +125,17 @@ export class Tourney {
     return this.data.matches;
   }
 
+  getMaxMatches(): number {
+    let total = 0;
+    for (let i = 0; i < this.data.groups.length; i++) {
+      const max = this.getMaxMatchesForGroup(i);
+      const players = this.data.groups[i].players.length;
+      const matches = (max * players) / 2;
+      total += matches;
+    }
+    return total;
+  }
+
   findGroupOfPlayer(pName: string): number {
     for (let index = 0; index < this.data.groups.length; index++) {
       if (this.data.groups[index].players.includes(pName.toLowerCase())) {
