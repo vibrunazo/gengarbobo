@@ -21,6 +21,7 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="barRow2">
       <mat-slide-toggle [(ngModel)]="modeEdit">Editar</mat-slide-toggle>
+      <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed" [disabled]="false"><mat-icon>cancel</mat-icon>Apaga tudo</button>
     </mat-toolbar-row>
   </mat-toolbar>
   <br />
@@ -58,6 +59,10 @@
             {{ selectedPlayer.getName() }}
           </a>
         </div>
+        <div>
+          {{ tourney.getMatchCount(selectedPlayer.getName()) }} de
+          {{ tourney.getMaxMatchesForPlayer(selectedPlayer.getName()) }} partidas
+        </div>
         <mat-divider></mat-divider>
         <ng-container *ngFor="let p of enemies">
           <div class="nameplate">
@@ -67,7 +72,7 @@
             </a>
             <div class="nameTail">
               <div class="addButton">
-                <button mat-raised-button (click)="onMatch(p)" class="bgGreen" *ngIf="modeEdit"><mat-icon>add_circle_outline</mat-icon>add</button>
+                <button mat-raised-button (click)="onMatch(p)" class="bgGreen" *ngIf="modeEdit" [ngClass]="canAddMatch(p, selectedPlayer) ? '' : 'cannot'" [disabled]="!canAddMatch(p, selectedPlayer)" ><mat-icon>add_circle_outline</mat-icon>add</button>
               </div>
             </div>
           </div>

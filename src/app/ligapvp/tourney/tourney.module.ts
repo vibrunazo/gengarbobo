@@ -27,6 +27,7 @@ export interface TourneyGroup {
   players: string[];
   bgColor?: string;
   icon?: string;
+  maxMatches?: number;
 }
 
 export class Tourney {
@@ -41,6 +42,7 @@ export class Tourney {
     // Object.assign(this.data, data);
     // this.data = data;
     this.buildPlayers(data);
+    if (!this.data.matches) { this.data.matches = []; }
   }
 
   buildPlayers(data: TourneyData) {
@@ -75,9 +77,33 @@ export class Tourney {
     return this.data.players;
   }
 
+  hasMaxMatches(playerName: string): boolean {
+    // console.log(`${this.getMatchCount(playerName)} < ${this.getMaxMatchesForPlayer(playerName)}`);
+    return this.getMatchCount(playerName) >= this.getMaxMatchesForPlayer(playerName);
+  }
+
+  getMatchCount(playerName: string): number {
+    let count = 0;
+    this.data.matches.forEach(m => {
+      if (m.players.includes(playerName.toLowerCase())) {
+        count++;
+      }
+    });
+    return count;
+  }
+
+  getMaxMatchesForPlayer(playerName: string): number {
+    if (!playerName) { return 0; }
+    const group = this.findGroupOfPlayer(playerName.toLowerCase());
+    return this.getMaxMatchesForGroup(group);
+  }
+
+  getMaxMatchesForGroup(group: number): number {
+    return this.data.groups[group].maxMatches;
+  }
+
   addMatch(p1: string, p2: string) {
-    if (!this.data.matches) { this.data.matches = []; }
-    if (this.hasMatch(p1, p2)) { return; }
+    if (this.hasMatch(p1, p2) || this.hasMaxMatches(p1) || this.hasMaxMatches(p2)) { return; }
     const newMatch = {
       players: [p1.toLowerCase(), p2.toLowerCase()],
     };

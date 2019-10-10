@@ -20,22 +20,26 @@
       {
         "name": "bronze",
         "players": ["copperkid","davidfirmin0","higashiricardo","patyeiko","brankinho40","luksbertolli","redzoom","reidoidao","yeyas81","didideluca","didisantista","marcioljunior","qdeza","rafa25albertin","123catbond","barbaketchum","dgketchum1","genosfull","pedrinhogamarra","winiciuslb1810","fgsanfre","guimi19","cecmartins","juracrav","tsusetoguchi"],
-        "bgColor": "red"
+        "bgColor": "red",
+        "maxMatches": 8
       },
       {
         "name": "silver",
         "players": ["mamazzaro","mi88akz","allanlima04","diogenest","guilram91","maucolella","queenbelinha","brabrinha","teresak1","rikardolima","singolfaire","wallanlima16","maiktheone","tiringstorm34","jimbobazul","regininhakawaii","victavares","pamps2805"],
-        "bgColor": "gray"
+        "bgColor": "gray",
+        "maxMatches": 8
       },
       {
         "name": "gold",
         "players": ["atilajg","mestredohko","oftentimes7","douglete011","manfrim11","raulav1","ginolucca","masterlineyr","vanedipo","gsaito87","binhozica01","marcelo69"],
-        "bgColor": "yellow"
+        "bgColor": "yellow",
+        "maxMatches": 9
       },
       {
         "name": "diamond",
         "players": ["rsscoach","tomdsantos","lltk87ll","murakamigu","13jcruel13","gassanbr","helior44","tgosorelli","zuziamao","alekasabbag","c4i00","vib"],
-        "bgColor": "blue"
+        "bgColor": "blue",
+        "maxMatches": 9
       }
     ]
   }

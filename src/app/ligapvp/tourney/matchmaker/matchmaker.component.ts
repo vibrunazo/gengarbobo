@@ -69,6 +69,13 @@ export class MatchmakerComponent implements OnInit {
     console.log(this.tourney);
   }
 
+  onClearAll() {
+    console.log('clear all');
+    this.resetLs();
+    this.resetTourneyData();
+    this.setTourney(this.tourneyId);
+  }
+
   onAddPlayer(player: Player) {
     this.selectedPlayer = player;
     this.enemies = this.getEnemies();
@@ -84,6 +91,14 @@ export class MatchmakerComponent implements OnInit {
   onDelMatch(index: number) {
     this.tourney.delMatch(index);
     this.saveLs();
+  }
+
+  canAddMatch(p1: Player, p2: Player): boolean {
+    const p1n = p1.getName();
+    const p2n = p2.getName();
+    // if (this.tourney.hasMaxMatches(p1n) || this.tourney.hasMaxMatches(p2n)) { return false; }
+    if (this.tourney.hasMatch(p1n, p2n)) { return false; }
+    return true;
   }
 
   getSelectedName(): string {
