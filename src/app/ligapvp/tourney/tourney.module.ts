@@ -120,6 +120,11 @@ export class Tourney {
   delMatch(index: number) {
     this.data.matches.splice(index, 1);
   }
+  delMatchByPlayers(p1: Player, p2: Player) {
+    const p1n = p1.getName().toLowerCase();
+    const p2n = p2.getName().toLowerCase();
+    this.data.matches = this.data.matches.filter(m => !(m.players.includes(p1n) && m.players.includes(p2n)));
+  }
 
   getMatches(): MatchData[] {
     return this.data.matches;

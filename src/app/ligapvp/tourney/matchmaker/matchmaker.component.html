@@ -40,9 +40,7 @@
               <a [routerLink]="['/liga/m', p.getName()]">
                 {{ p.getName() }}
               </a>
-              <div class="nameTail">
-
-              </div>
+              <div class="nameTail"></div>
             </div>
             <div class="selButton addButton" *ngIf="modeEdit">
               <button mat-raised-button (click)="onAddPlayer(p)" class="" *ngIf="modeEdit" color="accent">
@@ -65,23 +63,34 @@
             {{ selectedPlayer.getName() }}
           </a>
         </div>
-        <div>
-          {{ tourney.getMatchCount(selectedPlayer.getName()) }} de
-          {{ tourney.getMaxMatchesForPlayer(selectedPlayer.getName()) }} partidas
-        </div>
-        <button mat-raised-button (click)="onClickRandom()" color="accent" class="rButt" [ngClass]="true ? '' : 'cannot'"><mat-icon>shuffle</mat-icon>random</button>
+        <div>{{ tourney.getMatchCount(selectedPlayer.getName()) }} de {{ tourney.getMaxMatchesForPlayer(selectedPlayer.getName()) }} partidas</div>
+        <button mat-raised-button (click)="onClickRandom()" color="accent" class="rButt" [ngClass]="true ? '' : 'cannot'" *ngIf="modeEdit"><mat-icon>shuffle</mat-icon>random</button>
         <mat-divider></mat-divider>
         <ng-container *ngFor="let p of enemies">
-          <div class="nameplate">
+          <div class="nameplate" *ngIf="!modeEdit">
             <img [src]="p.getTeamIcon()" class="teamIcon" />
             <a [routerLink]="['/liga/m', p.getName()]">
               {{ p.getName() }}
             </a>
             <div class="nameTail">
               <div class="addButton">
-                <button mat-raised-button (click)="onMatch(p)" class="bgGreen" *ngIf="modeEdit" [ngClass]="canAddMatch(p, selectedPlayer) ? '' : 'cannot'" [disabled]="!canAddMatch(p, selectedPlayer)" ><mat-icon>add_circle_outline</mat-icon>add</button>
+                <button mat-raised-button (click)="onMatch(p)" class="bgGreen" *ngIf="modeEdit" [ngClass]="canAddMatch(p, selectedPlayer) ? '' : 'cannot'" [disabled]="!canAddMatch(p, selectedPlayer)"><mat-icon>add_circle_outline</mat-icon>add</button>
               </div>
             </div>
+          </div>
+          <div *ngIf="modeEdit" class="enemyFlex">
+            <div class="enemyButton ">
+              <button mat-raised-button (click)="onMatch(p)" class="bgGreen" *ngIf="modeEdit" color="" [ngClass]="canAddMatch(p, selectedPlayer) ? '' : 'cannot'" [disabled]="!canAddMatch(p, selectedPlayer)">
+                <!-- <mat-icon>add_circle_outline</mat-icon> -->
+                <img [src]="p.getTeamIcon()" class="teamIcon" />
+                {{ p.getName() }}
+              </button>
+              <span>{{ tourney.getMatchCount(p.getName()) }}</span>
+            </div>
+            <div class="delButton" *ngIf="tourney.hasMatch(p.getName(), selectedPlayer.getName())">
+              <button mat-raised-button (click)="onDelMatchByPlayers(p, selectedPlayer)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon></button>
+            </div>
+
           </div>
         </ng-container>
       </div>
@@ -91,18 +100,24 @@
       {{ getMatchesCount() }} de {{ getMatchesMaxTotal() }}
       <mat-divider></mat-divider>
       <div *ngIf="tourney.getMatches()">
-        <br>
-        <ng-container *ngFor="let m of tourney.getMatches().slice().reverse(); let i = index">
+        <br />
+        <ng-container
+          *ngFor="
+            let m of tourney
+              .getMatches()
+              .slice()
+              .reverse();
+            let i = index
+          "
+        >
           <div class="matchRow">
-            <span class="matchNames">
-              {{ m.players[0] }} x {{ m.players[1] }}
-            </span>
+            <span class="matchNames"> {{ m.players[0] }} x {{ m.players[1] }} </span>
             <div class="addButton" *ngIf="modeEdit">
               <button mat-raised-button (click)="onDelMatch(i)" class="bgRed"><mat-icon>remove_circle_outline</mat-icon>del</button>
             </div>
           </div>
         </ng-container>
-        <br>
+        <br />
       </div>
     </mat-card>
   </div>

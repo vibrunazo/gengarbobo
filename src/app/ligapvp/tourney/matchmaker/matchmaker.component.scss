@@ -103,6 +103,13 @@
   line-height: 20px;
 }
 
+// .delButton {
+//   width: 30px;
+// }
+// .delButton .mat-raised-button {
+//   width: 30px;
+// }
+
 .selButton .mat-raised-button {
   width: 100px;
   text-align: left;
@@ -113,6 +120,42 @@
   margin-right: -3px;
   margin-left: -2px;
 }
+
+.enemyFlex {
+  display: flex;
+  // justify-content: space-between;
+  width: 100%;
+}
+
+.enemyButton .mat-raised-button {
+  text-align: left;
+  line-height: 26px !important;
+  padding-left: 4px;
+  overflow: hidden;
+  margin-top: 3px;
+  margin-left: 3px;
+  width: 100px;
+}
+.enemyButton .mat-icon {
+  height: 20px;
+  width: 240x;
+  line-height: 20px;
+}
+.delButton {
+  widows: 30px;
+  margin-left: auto;
+}
+.delButton .mat-raised-button {
+  text-align: left;
+  line-height: 26px !important;
+  padding-left: 4px;
+  overflow: hidden;
+  margin-top: 3px;
+  margin-left: 3px;
+  width: 32px;
+  min-width: 32px;
+}
+
 
 .cannot {
   // display: none !important;

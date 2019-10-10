@@ -93,6 +93,10 @@ export class MatchmakerComponent implements OnInit {
     this.tourney.delMatch(this.tourney.getMatches().length - index - 1);
     this.saveLs();
   }
+  onDelMatchByPlayers(p1: Player, p2: Player) {
+    this.tourney.delMatchByPlayers(p1, p2);
+    this.saveLs();
+  }
 
   onClickRandom() {
     console.log('random');

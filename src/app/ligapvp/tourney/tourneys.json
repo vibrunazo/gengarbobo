@@ -19,7 +19,7 @@
     "groups": [
       {
         "name": "bronze",
-        "players": ["copperkid","davidfirmin0","higashiricardo","patyeiko","brankinho40","luksbertolli","redzoom","reidoidao","yeyas81","didideluca","didisantista","marcioljunior","qdeza","rafa25albertin","123catbond","barbaketchum","dgketchum1","genosfull","pedrinhogamarra","winiciuslb1810","fgsanfre","guimi19","cecmartins","juracrav","tsusetoguchi"],
+        "players": ["copperkid","davidfirmin0","higashiricardo","patyeiko","brankinho40","luksbertolli","redzoom","yeyas81","didideluca","didisantista","marcioljunior","qdeza","rafa25albertin","123catbond","barbaketchum","dgketchum1","genosfull","pedrinhogamarra","winiciuslb1810","fgsanfre","guimi19","cecmartins","juracrav","tsusetoguchi"],
         "bgColor": "red",
         "maxMatches": 8
       },
