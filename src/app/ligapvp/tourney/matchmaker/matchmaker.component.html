@@ -69,6 +69,7 @@
           {{ tourney.getMatchCount(selectedPlayer.getName()) }} de
           {{ tourney.getMaxMatchesForPlayer(selectedPlayer.getName()) }} partidas
         </div>
+        <button mat-raised-button (click)="onClickRandom()" color="accent" class="rButt" [ngClass]="true ? '' : 'cannot'"><mat-icon>shuffle</mat-icon>random</button>
         <mat-divider></mat-divider>
         <ng-container *ngFor="let p of enemies">
           <div class="nameplate">
