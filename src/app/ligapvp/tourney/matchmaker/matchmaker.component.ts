@@ -14,7 +14,7 @@ export class MatchmakerComponent implements OnInit {
   tourneyId = '';
   tourney: Tourney;
   format: string;
-  modeEdit = true;
+  modeEdit = false;
   selectedPlayer: Player;
   enemies: Player[];
   enemyCount: number;
