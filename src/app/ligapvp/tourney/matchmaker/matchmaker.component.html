@@ -29,11 +29,14 @@
   {{ tourney.getName() }}
 
   <br />
+  <br />
   <div class="groupsAndTable">
     <div class="groups">
       <ng-container *ngFor="let g of tourney.getGroups()">
         <mat-card class="groupCard">
-          {{ g.name }}
+          <mat-card-header>
+              {{ g.name }}
+          </mat-card-header>
           <ng-container *ngFor="let p of tourney.getPlayersFromGroupData(g)">
             <div class="nameplate" *ngIf="!modeEdit">
               <img [src]="p.getTeamIcon()" class="teamIcon" />
@@ -43,7 +46,7 @@
               <div class="nameTail"></div>
             </div>
             <div class="selButton addButton" *ngIf="modeEdit">
-              <button mat-raised-button (click)="onAddPlayer(p)" class="" *ngIf="modeEdit" color="accent">
+              <button mat-raised-button (click)="onAddPlayer(p)" class="" [ngClass]="isSelected(p) ? 'selected' : ''"  *ngIf="modeEdit" color="accent">
                 <!-- <mat-icon>add_circle_outline</mat-icon> -->
                 <img [src]="p.getTeamIcon()" class="teamIcon" />
                 {{ p.getName() }}
@@ -54,7 +57,7 @@
         </mat-card>
       </ng-container>
     </div>
-    <mat-card class="oponentesCard">
+    <mat-card class="oponentesCard" *ngIf="modeEdit">
       <div *ngIf="selectedPlayer" class="oponentes">
         {{ enemyCount }} Oponentes de
         <div class="nameplate">
@@ -65,7 +68,7 @@
         </div>
         <div>{{ tourney.getMatchCount(selectedPlayer.getName()) }} de {{ tourney.getMaxMatchesForPlayer(selectedPlayer.getName()) }} partidas</div>
         <button mat-raised-button (click)="onClickRandom()" color="accent" class="rButt" [ngClass]="true ? '' : 'cannot'" *ngIf="modeEdit"><mat-icon>shuffle</mat-icon>random</button>
-        <mat-divider></mat-divider>
+        <br><mat-divider></mat-divider><br>
         <ng-container *ngFor="let p of enemies">
           <div class="nameplate" *ngIf="!modeEdit">
             <img [src]="p.getTeamIcon()" class="teamIcon" />

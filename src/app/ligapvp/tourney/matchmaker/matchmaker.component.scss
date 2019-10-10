@@ -46,6 +46,13 @@
   margin: 3px;
 }
 
+.mat-card-header {
+  margin: 12px;
+}
+.mat-divider {
+  margin-top: 9px;
+}
+
 
 .nameplate {
   width: 100%;
@@ -140,6 +147,10 @@
   height: 20px;
   width: 240x;
   line-height: 20px;
+}
+.enemyButton .teamIcon {
+  margin-right: -3px;
+  margin-left: -2px;
 }
 .delButton {
   widows: 30px;

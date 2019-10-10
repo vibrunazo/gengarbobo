@@ -124,6 +124,10 @@ export class MatchmakerComponent implements OnInit {
 
   }
 
+  isSelected(p: Player): boolean {
+    return p === this.selectedPlayer;
+  }
+
   canAddMatch(p1: Player, p2: Player): boolean {
     const p1n = p1.getName();
     const p2n = p2.getName();
