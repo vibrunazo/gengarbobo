@@ -171,11 +171,38 @@ export class Tourney {
     return this.data.players.includes(playerName.toLowerCase());
   }
 
-  getEnemies(player: Player): Player[] {
+  getEnemies(player: Player, distance = 0): Player[] {
     const groupIndex = this.findGroupOfPlayer(player.getName());
     const group = this.data.groups[groupIndex];
-    const groupPlayers = group.players;
+    let groupPlayers = group.players;
+    if (distance > 0) {
+      for (let i = 1; i < this.data.groups.length + 1; i++) {
+        if (this.data.groups.length > groupIndex + i) {
+          const g1 = this.data.groups[groupIndex + i];
+          groupPlayers = groupPlayers.concat(g1.players);
+        }
+        if (groupIndex - i >= 0) {
+          const g1 = this.data.groups[groupIndex - i];
+          groupPlayers = groupPlayers.concat(g1.players);
+        }
+        if (i >= distance) {break; }
+      }
+    }
     return player.filterEnemies(groupPlayers);
+  }
+
+  getAllowedEnemies(player: Player, distance = 0): Player[] {
+    const enemies = this.getEnemies(player, distance);
+    const allowed = enemies.filter(e => this.canAddMatch(e, player));
+    return allowed;
+  }
+
+  canAddMatch(p1: Player, p2: Player): boolean {
+    const p1n = p1.getName();
+    const p2n = p2.getName();
+    if (this.hasMaxMatches(p1n) || this.hasMaxMatches(p2n)) { return false; }
+    if (this.hasMatch(p1n, p2n)) { return false; }
+    return true;
   }
 
   getGroups(): TourneyGroup[] {

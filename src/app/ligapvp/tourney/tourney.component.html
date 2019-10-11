@@ -24,10 +24,10 @@
     Formato: {{ tourney.getFormat() }} <br>
     Tema: {{ tourney.getTheme() }} <br>
 
-    <mat-card *ngIf="tourney.players.length > 0">
+    <mat-card *ngIf="tourney.getPlayers().length > 0">
       Inscritos
       <mat-divider></mat-divider>
-      <ng-container *ngFor="let p of tourney.players">
+      <ng-container *ngFor="let p of tourney.getPlayers()">
         <div>
             <img [src]="p.getTeamIcon()" class="teamIcon" />
             <a [routerLink]="['/liga/m', p.getName()]">

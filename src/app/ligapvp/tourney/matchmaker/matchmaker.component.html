@@ -23,6 +23,9 @@
       <mat-slide-toggle [(ngModel)]="modeEdit">Editar</mat-slide-toggle>
       <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>shuffle</mat-icon>random all</button>
       <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed"><mat-icon>cancel</mat-icon>Apaga tudo</button>
+      <mat-form-field class="distance">
+        <input matInput [(ngModel)]="distance" placeholder="Distância da busca entre grupos" name="distance" type="number"  min="0" max="10" step="1" >
+      </mat-form-field>
     </mat-toolbar-row>
   </mat-toolbar>
   <br />
@@ -50,7 +53,7 @@
               <span class="matchCount">
                 {{ tourney.getMatchCount(p.getName()) }}
               </span>
-              <span class="enemiesCount">{{ this.tourney.getEnemies(p).length }}</span>
+              <span class="enemiesCount">{{ getAllowedEnemies(p).length }}</span>
             </div>
           </ng-container>
         </mat-card>
@@ -58,7 +61,7 @@
     </div>
     <mat-card class="oponentesCard" *ngIf="modeEdit">
       <div *ngIf="selectedPlayer" class="oponentes">
-        {{ enemyCount }} Oponentes de
+        {{ getEnemies().length }} Oponentes de
         <div class="nameplate">
           <img [src]="selectedPlayer.getTeamIcon()" class="teamIcon" />
           <a [routerLink]="['/liga/m', selectedPlayer.getName()]">
@@ -68,7 +71,7 @@
         <div>{{ tourney.getMatchCount(selectedPlayer.getName()) }} de {{ tourney.getMaxMatchesForPlayer(selectedPlayer.getName()) }} partidas</div>
         <button mat-raised-button (click)="onClickRandom()" color="accent" class="rButt" [ngClass]="true ? '' : 'cannot'" *ngIf="modeEdit"><mat-icon>shuffle</mat-icon>random</button>
         <br /><mat-divider></mat-divider><br />
-        <ng-container *ngFor="let p of enemies">
+        <ng-container *ngFor="let p of getEnemies()">
           <div class="nameplate" *ngIf="!modeEdit">
             <img [src]="p.getTeamIcon()" class="teamIcon" />
             <a [routerLink]="['/liga/m', p.getName()]">

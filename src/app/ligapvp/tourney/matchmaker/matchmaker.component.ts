@@ -19,6 +19,7 @@ export class MatchmakerComponent implements OnInit {
   enemies: Player[];
   allowed: Player[];
   enemyCount: number;
+  distance = 0;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router, private lambida: LambidaService) { }
 
@@ -84,7 +85,7 @@ export class MatchmakerComponent implements OnInit {
     let groupIndex = 0;
     let currentGroup: TourneyGroup;
     let loops = 0;
-    const timer = setInterval(randomNext.bind(this), 200);
+    const timer = setInterval(randomNext.bind(this), 1);
 
     randomNext.bind(this)();
 
@@ -126,16 +127,17 @@ export class MatchmakerComponent implements OnInit {
 
     function getBestPlayer(players: string[]): string {
       // filter only those that has matches left
-      players = players.filter(p => !this.tourney.hasMaxMatches(p));
+      players = players.filter(p => this.canFight(p));
+      // console.log(`players: ${players}`);
       if (!players) {
-        console.log(`no players in thos group has any more matches, terminating`);
+        console.log(`no players in this group has any more matches, terminating`);
         return null;
       }
       let result = players[0];
-      let best = this.tourney.getMaxMatchesForGroup(groupIndex) * 10 + players.length * 1;
+      let best = this.tourney.getMaxMatchesForGroup(groupIndex) * 100 + players.length * 1;
       players.forEach(p => {
         const curPlayer = Liga.getPlayerByName(p);
-        const cur = this.tourney.getMatchCount(p) * 10 + this.tourney.getEnemies(curPlayer).length * 1;
+        const cur = this.tourney.getMatchCount(p) * 100 + this.tourney.getEnemies(curPlayer).length * 1;
         if (cur < best) {
           best = cur;
           result = p;
@@ -153,9 +155,13 @@ export class MatchmakerComponent implements OnInit {
     this.allowed = this.enemies.filter(e => this.canAddMatch(e, this.selectedPlayer));
   }
 
-  canFight(player: Player): boolean {
-    if (this.tourney.hasMaxMatches(player.getName())) { return false; }
-    return false;
+  canFight(pName: string): boolean {
+    const player = Liga.getPlayerByName(pName);
+    if (this.tourney.hasMaxMatches(pName)) { return false; }
+    const enemies = this.tourney.getEnemies(player);
+    const allowed = enemies.filter(e => this.canAddMatch(e, player));
+    if (allowed.length === 0) { return false; }
+    return true;
   }
 
   onMatch(player: Player) {
@@ -215,8 +221,11 @@ export class MatchmakerComponent implements OnInit {
     return '';
   }
 
-  getEnemies(): Player[] {
-    return this.tourney.getEnemies(this.selectedPlayer);
+  getEnemies(player = this.selectedPlayer): Player[] {
+    return this.tourney.getEnemies(player, this.distance);
+  }
+  getAllowedEnemies(player = this.selectedPlayer): Player[] {
+    return this.tourney.getAllowedEnemies(player, this.distance);
   }
 
   getMatchesCount(): number {
