@@ -20,6 +20,8 @@ export class MatchmakerComponent implements OnInit {
   allowed: Player[];
   enemyCount: number;
   distance = 0;
+  rspeed = 5;
+  rtimer;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router, private lambida: LambidaService) { }
 
@@ -79,13 +81,18 @@ export class MatchmakerComponent implements OnInit {
     this.setTourney(this.tourneyId);
   }
 
+  onPauseRandom() {
+    clearInterval(this.rtimer);
+    this.rtimer = null;
+  }
+
   onRandomAll() {
     console.log('rand all');
     // start from first group
     let groupIndex = 0;
     let currentGroup: TourneyGroup;
     let loops = 0;
-    const timer = setInterval(randomNext.bind(this), 1);
+    this.rtimer = setInterval(randomNext.bind(this), 100 * (10 - this.rspeed));
 
     randomNext.bind(this)();
 
@@ -105,12 +112,15 @@ export class MatchmakerComponent implements OnInit {
         nextGroup.bind(this)(); return;
       }
       // this.selectedPlayer = Liga.getPlayerByName(pname);
-      this.onClickRandom();
+      // this.onClickRandom();
+      const allowed = this.allowed.map(p => p.getName());
+      const bestEnemy = getBestPlayer.bind(this)(allowed);
+      this.onMatch(Liga.getPlayerByName(bestEnemy));
 
       loops++;
       if (loops > 1000) {
         console.log('took too long, terminating');
-        clearInterval(timer);
+        this.onPauseRandom();
       }
 
       // groupIndex++;
@@ -121,7 +131,7 @@ export class MatchmakerComponent implements OnInit {
       console.log(`Now on group ${groupIndex}`);
       if (groupIndex >= this.tourney.getGroups().length) {
         console.log(`No more groups, it's all over`);
-        clearInterval(timer);
+        this.onPauseRandom();
       }
     }
 

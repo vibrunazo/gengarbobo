@@ -21,7 +21,11 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="barRow2">
       <mat-slide-toggle [(ngModel)]="modeEdit">Editar</mat-slide-toggle>
-      <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt" [disabled]="false"><mat-icon>shuffle</mat-icon>random all</button>
+      <button mat-raised-button (click)="onRandomAll()" color="accent" class="rButt"  *ngIf="!this.rtimer"><mat-icon>shuffle</mat-icon>random all</button>
+      <button mat-raised-button (click)="onPauseRandom()" color="" class="rButt bgYellow" *ngIf="this.rtimer"><mat-icon>pause</mat-icon>Pause rand</button>
+      <mat-form-field class="distance">
+        <input matInput [(ngModel)]="rspeed" placeholder="Velocidade" name="distance" type="number"  min="0" max="10" step="1" >
+      </mat-form-field>
       <button mat-raised-button (click)="onClearAll()" color="accent" class="rButt bgRed"><mat-icon>cancel</mat-icon>Apaga tudo</button>
       <mat-form-field class="distance">
         <input matInput [(ngModel)]="distance" placeholder="Distância da busca entre grupos" name="distance" type="number"  min="0" max="10" step="1" >
