@@ -1,5 +1,5 @@
 import { Player, Liga } from 'src/app/shared/ligapvp.module';
-
+import Tourneys from './tourneys.json';
 
 export interface TourneyData {
   name: string;
@@ -31,11 +31,23 @@ export interface TourneyGroup {
 }
 
 export class Tourney {
+  static allTourneys: TourneyData[] = Tourneys;
+
   data: TourneyData = {
     name: '',
     id: ''
   };
   private players: Player[] = []; // player objects
+
+  static getTourneyById(id: string): TourneyData {
+    // this.allTourneys = Tourneys;
+    // const tourney = Tourneys.find(t => t.id === id);
+    console.log('this.allTourneys');
+    console.log(this.allTourneys);
+
+    const tourney = this.allTourneys.find(t => t.id === id);
+    return tourney;
+  }
 
   constructor(data: TourneyData) {
     this.data = JSON.parse(JSON.stringify(data));
@@ -228,6 +240,8 @@ export class Tourney {
   delFromAllGroups(pName: string) {
     this.data.groups.forEach(g => g.players = g.players.filter(p => p !== pName.toLowerCase()));
   }
+
+
 }
 
 export class LigaPrincipal extends Tourney {

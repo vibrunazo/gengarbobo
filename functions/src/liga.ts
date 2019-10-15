@@ -431,28 +431,37 @@ export async function readMembers(user): Promise<Member[]> {
   }
   if (isMember(user)) {
     console.log("I think he's a member");
-    result = membersCache;
+    result = filterDeleted(membersCache);
   } else {
     console.log('nope, not a member');
-    result = censorSecrets();
+    result = censorSecrets(filterDeleted(membersCache));
   }
 
   return result;
 }
 
 /**
+ * Returns a new array of members without the members that have state = 'deleted'
+ * @param members members to filter
+ */
+export function filterDeleted(members: Member[]): Member[] {
+  return members.filter(m => m.state !== 'deleted');
+}
+
+/**
  * Reads the global variable 'members' and returns a copy that has only the fields that are public
  */
-function censorSecrets(): Member[] {
-  let result: Member[] = membersCache;
-  result = membersCache.map(p => { return {
+function censorSecrets(members: Member[]): Member[] {
+  let result: Member[] = members;
+  result = members.map(p => { return {
     name: p.name,
     team: p.team,
     winrate: p.winrate,
     rank: p.rank,
     badges: (+p.badges!! || 0),
     medals: (+p.medals!! || 0),
-    id: p.id
+    id: p.id,
+    state: p.state
   }});
   return result;
 }
@@ -524,6 +533,7 @@ export async function writeMembers(memberList: Member[], userName: string) {
   console.log('Writing list of members to database.');
   const results: any[] = [];
   let result;
+  await findDeletedMembers(memberList);
   const p = new Promise(async (resolve, reject) => {
     try {
       for (const member of memberList) {
@@ -546,9 +556,12 @@ export async function checkWriteMembers(memberList: Member[], userName: string):
   console.log('Checking writing list of members to database.');
   const results: ServerLog[] = [];
   let result: ServerLog;
+  await findDeletedMembers(memberList);
   const p: Promise<ServerLog[]> = new Promise(async (resolve, reject) => {
     try {
       for (const member of memberList) {
+        // member.exists = false;
+        // member.badges = 999;
         result = await checkWriteMember(member, userName);
         if (result.body_new && Object.keys(result.body_new).length > 0) {
           results.push(result);
@@ -560,6 +573,20 @@ export async function checkWriteMembers(memberList: Member[], userName: string):
     }
   });
   return p;
+}
+
+async function findDeletedMembers(newMembers: Member[]) {
+  await readMembers(null);
+  membersCache.forEach(m => {
+    const oldname = m.name.toLowerCase();
+    const some = newMembers.some(n => n.name.toLowerCase() === oldname)
+    if (!some) {
+
+      const newMember: Member = JSON.parse(JSON.stringify(m));
+      newMember.state = `deleted`;
+      newMembers.push(newMember);
+    }
+  })
 }
 
 /**
@@ -698,11 +725,13 @@ function diffObjs(before: object| undefined, after: object | undefined): {diff: 
     original: {}
   };
   if (!before && after) { result.diff = after; return result; }
-  if (!after || !before) { return result; }
-  const fields: Array<any> = Object.entries(after!);
+  if (!before) { return result; }
+  if (!after) { result.original = before; result.diff = { state: 'deleted' }; return result; }
+  // if (!after || !before) { return result; }
+  const fields: Array<any> = Object.entries(after);
   fields.forEach(f => {      // for each field on 'after'
-    const a = after[f[0]]!;   // value of that field on 'after'
-    const b = before[f[0]]!;  // value of that field on 'before'
+    const a = after[f[0]];   // value of that field on 'after'
+    const b = before[f[0]];  // value of that field on 'before'
     const c = JSON.stringify(a) === JSON.stringify(b); // are they equal? stringified so I can compare arrays
     if (!c) {                                       // if not
       result.diff[f[0]] = f[1];                     // then add the value changed to the return 'diff'

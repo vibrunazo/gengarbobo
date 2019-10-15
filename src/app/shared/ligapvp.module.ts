@@ -3,7 +3,7 @@ import Friends from './friends.json';
 import Inscritos from './inscritos.json';
 import Tourneys from '../ligapvp/tourney/tourneys.json';
 import { Friendship } from 'functions/src/friends.model.js';
-import { Tourney, TourneyData, SuperLiga } from '../ligapvp/tourney/tourney.module.js';
+// import { Tourney, TourneyData, SuperLiga } from '../ligapvp/tourney/tourney.module.js';
 
 export interface PlayerData {
   name: string;
@@ -31,6 +31,12 @@ export class Match {
       return true;
     }
     return false;
+  }
+
+  hasTeam(team: string): Player {
+    if (this.p1.team === team) { return this.p1; }
+    if (this.p2.team === team) { return this.p2; }
+    return null;
   }
 
   // returns whether this match is between this 2 players
@@ -540,16 +546,16 @@ export class Player {
     return team.toLowerCase() === this.team.toLowerCase();
   }
 
-  getTourneyRank(tourneyId: string) {
-    const t = Liga.getTourneyById(tourneyId);
-    const sl = new SuperLiga(t);
-    if (sl.t1Players.includes(this)) { return 1; }
-    if (sl.t2Players.includes(this)) { return 2; }
-    if (sl.t3Players.includes(this)) { return 3; }
-    if (sl.t4Players.includes(this)) { return 4; }
-    if (sl.t5Players.includes(this)) { return 5; }
-    return 0;
-  }
+  // getTourneyRank(tourneyId: string) {
+  //   const t = Liga.getTourneyById(tourneyId);
+  //   const sl = new SuperLiga(t);
+  //   if (sl.t1Players.includes(this)) { return 1; }
+  //   if (sl.t2Players.includes(this)) { return 2; }
+  //   if (sl.t3Players.includes(this)) { return 3; }
+  //   if (sl.t4Players.includes(this)) { return 4; }
+  //   if (sl.t5Players.includes(this)) { return 5; }
+  //   return 0;
+  // }
 
   getName(): string {
     return this.name;
@@ -852,18 +858,18 @@ export class Player {
 export class Liga {
   static allPlayers: Player[] = Players.map(p => new Player(p));
   static allFriends = Friends;
-  static allTourneys: TourneyData[] = Tourneys;
+  // static allTourneys: TourneyData[] = Tourneys;
 
 
-  static getTourneyById(id: string): TourneyData {
-    // this.allTourneys = Tourneys;
-    // const tourney = Tourneys.find(t => t.id === id);
-    console.log('this.allTourneys');
-    console.log(this.allTourneys);
+  // static getTourneyById(id: string): TourneyData {
+  //   // this.allTourneys = Tourneys;
+  //   // const tourney = Tourneys.find(t => t.id === id);
+  //   console.log('this.allTourneys');
+  //   console.log(this.allTourneys);
 
-    const tourney = this.allTourneys.find(t => t.id === id);
-    return tourney;
-  }
+  //   const tourney = this.allTourneys.find(t => t.id === id);
+  //   return tourney;
+  // }
 
   // returns an array with all Players competing
   static getAllPlayers(): Player[] {

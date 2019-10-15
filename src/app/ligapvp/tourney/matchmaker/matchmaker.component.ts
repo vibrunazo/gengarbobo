@@ -22,6 +22,7 @@ export class MatchmakerComponent implements OnInit {
   distance = 0;
   rspeed = 5;
   rtimer;
+  groupIndex = 0;
 
   constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router, private lambida: LambidaService) { }
 
@@ -42,7 +43,7 @@ export class MatchmakerComponent implements OnInit {
   }
 
   resetTourneyData() {
-    const tourneyData = Liga.getTourneyById(this.tourneyId);
+    const tourneyData = Tourney.getTourneyById(this.tourneyId);
     console.log(tourneyData);
     this.tourney = new Tourney(tourneyData);
     console.log(this.tourney);
@@ -97,10 +98,15 @@ export class MatchmakerComponent implements OnInit {
     randomNext.bind(this)();
 
     function randomNext() {
+      loops++;
+      if (loops > 1000) {
+        console.log('took too long, terminating');
+        this.onPauseRandom();
+      }
       // select one member from that group
       currentGroup = this.tourney.getGroups()[groupIndex];
       const players = currentGroup.players;
-      const pname = getBestPlayer.bind(this)(players);
+      const pname = this.getBestPlayer(players);
       if (!pname) {
         nextGroup.bind(this)(); return;
       }
@@ -114,14 +120,8 @@ export class MatchmakerComponent implements OnInit {
       // this.selectedPlayer = Liga.getPlayerByName(pname);
       // this.onClickRandom();
       const allowed = this.allowed.map(p => p.getName());
-      const bestEnemy = getBestPlayer.bind(this)(allowed);
+      const bestEnemy = this.getBestPlayer(allowed);
       this.onMatch(Liga.getPlayerByName(bestEnemy));
-
-      loops++;
-      if (loops > 1000) {
-        console.log('took too long, terminating');
-        this.onPauseRandom();
-      }
 
       // groupIndex++;
     }
@@ -135,27 +135,27 @@ export class MatchmakerComponent implements OnInit {
       }
     }
 
-    function getBestPlayer(players: string[]): string {
-      // filter only those that has matches left
-      players = players.filter(p => this.canFight(p));
-      // console.log(`players: ${players}`);
-      if (!players) {
-        console.log(`no players in this group has any more matches, terminating`);
-        return null;
-      }
-      let result = players[0];
-      let best = this.tourney.getMaxMatchesForGroup(groupIndex) * 100 + players.length * 1;
-      players.forEach(p => {
-        const curPlayer = Liga.getPlayerByName(p);
-        const cur = this.tourney.getMatchCount(p) * 100 + this.tourney.getEnemies(curPlayer).length * 1;
-        if (cur < best) {
-          best = cur;
-          result = p;
-        }
-      });
-      return result;
+  }
+  getBestPlayer(players: string[]): string {
+    // filter only those that has matches left
+    players = players.filter(p => this.canFight(p));
+    // console.log(`players: ${players}`);
+    if (!players) {
+      console.log(`no players in this group has any more matches, terminating`);
+      return null;
     }
-
+    let result = players[0];
+    let best = this.tourney.getMaxMatchesForGroup(this.groupIndex) * 100 + players.length * 1;
+    players.forEach(p => {
+      const curPlayer = Liga.getPlayerByName(p);
+      const cur = this.tourney.getMatchCount(p) * 100 + this.getAllowedEnemies(curPlayer).length * 1;
+      // const cur = this.tourney.getMatchCount(p) * 100 + this.tourney.getEnemies(curPlayer).length * 1;
+      if (cur < best) {
+        best = cur;
+        result = p;
+      }
+    });
+    return result;
   }
 
   onAddPlayer(player: Player) {

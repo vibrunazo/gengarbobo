@@ -16,14 +16,6 @@
     "id": "13jcr"
   },
   {
-    "name": "AleeSafadao",
-    "team": "plasma",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "alees"
-  },
-  {
     "name": "AlekaSabbag",
     "team": "skull",
     "winrate": 73,
@@ -195,7 +187,7 @@
     "name": "Diogenest",
     "team": "aqua",
     "winrate": 52,
-    "badges": 1,
+    "badges": 2,
     "medals": 0,
     "id": "dioge"
   },
@@ -238,14 +230,6 @@
     "badges": 0,
     "medals": 0,
     "id": "fgsan"
-  },
-  {
-    "name": "gaaaary20",
-    "team": "plasma",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "gaaaa"
   },
   {
     "name": "GassanBr",
@@ -320,14 +304,6 @@
     "id": "helio"
   },
   {
-    "name": "HenryRattlehead",
-    "team": "rocket",
-    "winrate": 44,
-    "badges": 0,
-    "medals": 0,
-    "id": "henry"
-  },
-  {
     "name": "HHazuka",
     "team": "flare",
     "winrate": 83,
@@ -350,14 +326,6 @@
     "badges": 0,
     "medals": 0,
     "id": "jimbo"
-  },
-  {
-    "name": "JoasGarciaA",
-    "team": "skull",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "joasg"
   },
   {
     "name": "josenkio",
@@ -390,6 +358,14 @@
     "badges": 2,
     "medals": 0,
     "id": "lahke"
+  },
+  {
+    "name": "Lanmaga",
+    "team": "skull",
+    "winrate": 44,
+    "badges": 0,
+    "medals": 0,
+    "id": "lanma"
   },
   {
     "name": "LeoJesus55",
@@ -494,14 +470,6 @@
     "badges": 0,
     "medals": 0,
     "id": "mauco"
-  },
-  {
-    "name": "mcbrublue",
-    "team": "aqua",
-    "winrate": 0,
-    "badges": 0,
-    "medals": 0,
-    "id": "mcbru"
   },
   {
     "name": "mestreDohko",
@@ -664,12 +632,12 @@
     "id": "reido"
   },
   {
-    "name": "renansuz",
-    "team": "aqua",
+    "name": "Ricpts12",
+    "team": "rocket",
     "winrate": 0,
     "badges": 0,
     "medals": 0,
-    "id": "renan"
+    "id": "ricpt"
   },
   {
     "name": "rikardolima",
@@ -678,6 +646,14 @@
     "badges": 2,
     "medals": 0,
     "id": "rikar"
+  },
+  {
+    "name": "RiquinhoSurf013",
+    "team": "plasma",
+    "winrate": 0,
+    "badges": 0,
+    "medals": 0,
+    "id": "riqui"
   },
   {
     "name": "Rodrigorav4",
@@ -731,7 +707,7 @@
     "name": "TgoSorelli",
     "team": "flare",
     "winrate": 96,
-    "badges": 4,
+    "badges": 5,
     "medals": 1,
     "id": "tgoso"
   },
@@ -806,14 +782,6 @@
     "badges": 3,
     "medals": 0,
     "id": "walla"
-  },
-  {
-    "name": "Weltson",
-    "team": "plasma",
-    "winrate": 7,
-    "badges": 0,
-    "medals": 0,
-    "id": "welts"
   },
   {
     "name": "Willbviana",

@@ -183,6 +183,7 @@ app.get('/getAllMembers', async (req, res) => {
     msg: 'hello, these are all members',
     roles,
     members,
+    // members: members.filter(m => m.state !== 'deleted'),
   }
   res.status(200).send(out);
 });

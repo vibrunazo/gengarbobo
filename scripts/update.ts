@@ -8,15 +8,30 @@
 // the table is saved to src/app/dex/tableItems.ts
 
 import * as fs from 'fs';
-import Pokemon from '../src/app/shared/shared.module';
+import Pokemon, { Move } from '../src/app/shared/shared.module';
+import { liga7 } from './vbattlesliga7';
+// import { Match, Liga } from 'src/app/shared/ligapvp.module';
 
 console.log('update script running');
 let tableItems = [];
+let moveItems = [];
+let buffMoves: Move[] = [];
 
-genTableItems();
-sortTable();
-saveToFile();
+genMoves();
+// genTableItems();
+// sortTable();
+// saveToFile();
 
+function genMoves() {
+  buffMoves = [];
+  moveItems = [];
+  const allMoves: Move[] = Move.getAllMoves();
+  allMoves.forEach(m => {
+    if (m.buffs) { buffMoves.push(m); }
+  });
+  console.log('move 1');
+  console.log(buffMoves);
+}
 
 function genTableItems() {
   const dex = Pokemon.dex;

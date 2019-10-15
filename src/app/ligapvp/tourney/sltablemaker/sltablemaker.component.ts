@@ -136,7 +136,7 @@ export class SltablemakerComponent implements OnInit {
 
   setTourney(newId: string) {
     this.tourneyId = newId;
-    this.tourneyData = Liga.getTourneyById(newId);
+    this.tourneyData = Tourney.getTourneyById(newId);
     this.sl = new SuperLiga(this.tourneyData);
     this.tiers.push(this.sl.t1Players);
     this.tiers.push(this.sl.t2Players);

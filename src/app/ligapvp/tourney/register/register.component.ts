@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
   }
 
   resetTourneyData() {
-    const tourneyData = Liga.getTourneyById(this.tourneyId);
+    const tourneyData = Tourney.getTourneyById(this.tourneyId);
     this.tourney = new Tourney(tourneyData);
     console.log(tourneyData);
     console.log(this.tourney);

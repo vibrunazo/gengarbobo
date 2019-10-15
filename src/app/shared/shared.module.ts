@@ -28,6 +28,10 @@ export class Move {
     return move;
   }
 
+  static getAllMoves(): Move[] {
+    return DEX.moves;
+  }
+
   constructor() {}
 }
 

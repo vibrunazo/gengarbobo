@@ -30,7 +30,7 @@ export class TourneyComponent implements OnInit {
 
   setTourney(newId: string) {
     this.tourneyId = newId;
-    this.tourneyData = Liga.getTourneyById(newId);
+    this.tourneyData = Tourney.getTourneyById(newId);
     this.tourney = new Tourney(this.tourneyData);
     console.log(this.tourneyData);
     console.log(this.tourney);
