@@ -1042,7 +1042,9 @@ export class Liga {
     const id1 = friendshipId.slice(0, 5);
     const id2 = friendshipId.slice(5, 10);
     const p1 = this.getPLayerById(id1);
+    if (!p1) { console.log(`cannot find player of id ${id1}`); return ``; }
     const p2 = this.getPLayerById(id2);
+    if (!p2) { console.log(`cannot find player of id ${id2}`); return ``; }
     return `${p1.getName()}❤️${p2.getName()}`;
   }
 }

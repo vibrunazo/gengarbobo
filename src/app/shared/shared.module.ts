@@ -60,6 +60,7 @@ export class PokemonSpecies {
   fastMoves: string[];
   chargedMoves: string[];
   legacyMoves?: string[];
+  tags?: string[];
 }
 
 export class Pokemon {

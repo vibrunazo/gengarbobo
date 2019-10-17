@@ -7,7 +7,7 @@
 // the lists are saved to scripts/out/cups.json
 
 import * as fs from 'fs';
-import Pokemon from '../src/app/shared/shared.module';
+import Pokemon, { PokemonSpecies } from '../src/app/shared/shared.module';
 import LEGENDARIES from '../src/app/shared/legendaries';
 import LIGUINHA3 from '../src/app/shared/liguinha3';
 import { log } from 'util';
@@ -37,7 +37,13 @@ const cups = {
     leagues: [2500]
   },
   liguinha3: {
-    allowedList: []
+    allowedList: [],
+    leagues: [1500]
+  },
+  liguinha4: {
+    allowedList: [],
+    leagues: [1500],
+    search: ''
   }
 };
 
@@ -45,7 +51,7 @@ genTableItems();
 saveToFile();
 
 function genTableItems() {
-  const dex = Pokemon.dex;
+  const dex: PokemonSpecies[] = Pokemon.dex;
   let liguinha3 = 0;
   dex.forEach(p => {
     if (p.dex <= 151 && !p.speciesId.includes('alola')) {
@@ -66,6 +72,14 @@ function genTableItems() {
     if (LIGUINHA3.includes(p.dex) && p.speciesId !== 'persian') {
       cups.liguinha3.allowedList.push(p.speciesId);
       liguinha3++;
+    }
+
+    const li4types = ['electric', 'psychic', 'rock', 'steel', 'none'];
+    const li4b1 = p.types.every(t => li4types.includes(t));
+    const li4b2 = p.tags ? p.tags.every(t => t !== 'legendary' && t !== 'mythical') : true;
+    if (li4b1 && li4b2) {
+      cups.liguinha4.allowedList.push(p.speciesId);
+      cups.liguinha4.search += `${p.dex},`;
     }
 
 

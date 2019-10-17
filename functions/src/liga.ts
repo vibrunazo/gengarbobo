@@ -17,7 +17,7 @@ let friendsCache = {};
 let friendsCount = 0;
 let db;
 let rtdb;
-const allIds: string[] = [];
+export const allIds: string[] = [];
 
 export function setDb(dbRef) {
   db = dbRef;
@@ -598,7 +598,7 @@ export async function checkWriteMember(member: Member, userName: string): Promis
   const p: Promise<ServerLog> = new Promise(async (resolve, reject) => {
     try {
       const old = await readOneMember(member.name);
-      if (old && old.id) {
+      if (old && old.id && old.id) {
         if (!allIds.includes(old.id)) { allIds.push(old.id); }
       } else {
         member.id = genNewID(member);
@@ -677,6 +677,7 @@ function genNewID(member: Member): string {
       console.log('id exists ' + id + ' i:' + i);
       id = genIdFromName(name, i + 1);
     }
+    allIds.push(id);
     return id;
   }
 }

@@ -224,6 +224,7 @@ app.post('/checkDriveUpdate', async (req, res) => {
       msg: 'Check Drive update 1',
       logs,
       newMembers,
+      allIds: liga.allIds,
       // rowsEquipes
     }
     res.status(200).send(out)
