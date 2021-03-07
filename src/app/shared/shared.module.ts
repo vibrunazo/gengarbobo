@@ -52,15 +52,16 @@ export class PokemonSpecies {
   speciesId: string;
   dex: number;
   baseStats: {
-    atk: number;
-    def: number;
-    hp: number;
+    atk?: number;
+    def?: number;
+    hp?: number;
   };
   types: string[];
   fastMoves: string[];
   chargedMoves: string[];
   legacyMoves?: string[];
   tags?: string[];
+  eliteMoves?: string[];
 }
 
 export class Pokemon {
