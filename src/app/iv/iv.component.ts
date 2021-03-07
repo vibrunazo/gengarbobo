@@ -206,7 +206,7 @@ export class IvComponent implements OnInit, AfterViewInit {
     for (let atk = 0; atk < 16; atk++) {
       for (let def = 0; def < 16; def++) {
         for (let hp = 0; hp < 16; hp++) {
-          const level = 40;
+          const level = 51;
           this.addPkToList(new Pokemon(this.species, level, atk, def, hp));
         }
       }
