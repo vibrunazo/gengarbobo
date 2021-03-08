@@ -17,10 +17,10 @@ let tableItems = [];
 let moveItems = [];
 let buffMoves: Move[] = [];
 
-genMoves();
-// genTableItems();
-// sortTable();
-// saveToFile();
+// genMoves();
+genTableItems();
+sortTable();
+saveToFile();
 
 function genMoves() {
   buffMoves = [];
